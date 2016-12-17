@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on companionway</title>
+    <link>/page/</link>
+    <description>Recent content in Pages on companionway</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved - companionway - 2016</copyright>
+    <atom:link href="/page/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About</title>
+      <link>/page/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/page/about/</guid>
+      <description>&lt;p class=&#34;introduction&#34;&gt;I am a native of Northern Virginia, 
+grew up there, and worked
+most of my life there. I had all advantages that come with the area including a
+good school system and a relatively resilient economy.&lt;/p&gt;
+
+&lt;p&gt;I attend George Mason University and eventually found my way into&lt;br /&gt;
+the Fairfax County Fire Department. I had a wonderful 25 year career with
+the Fire Service and&lt;br /&gt;
+built strong friendships with many good people. I had the opportunity to serve in many&lt;br /&gt;
+capacities while with the Fire Department. I continued attending college&lt;br /&gt;
+and studying a variety of subjects, one of which turned out to be&lt;br /&gt;
+my second career and passion - computers.&lt;/p&gt;
+
+&lt;p&gt;This journey of passion led me to become a UNIX system administrator and to my good fortune&lt;br /&gt;
+I worked for several great mentors. I worked with Blair Miller several times&lt;br /&gt;
+after my initial employment with him where he gave my my first chance&lt;br /&gt;
+to learn the skills to be a productive system administrator and taught me&lt;br /&gt;
+invaluable lessons in all areas related to the IT world.&lt;/p&gt;
+
+&lt;p&gt;Many projects later, having worked with other great people, I had a healthy set&lt;br /&gt;
+of skills that allowed me to work with large corporations where I was challenged
+with large build outs designed to handle huge web volumes of dynamic delivery content.&lt;/p&gt;
+
+&lt;p&gt;Teaching and coaching have always played a role in my career.&lt;br /&gt;
+There is a reward for me in developing the knowledge base and skills of others that&lt;br /&gt;
+provides me with a productive sense of satisfaction.&lt;/p&gt;
+
+&lt;p&gt;I now enjoy learning new skills everyday and look forward to continuing to teach&lt;br /&gt;
+and coach others along the way.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+Hence this blog&amp;hellip;
+&lt;br&gt;
+Enjoy
+&lt;br&gt;
+-g-
+&lt;br&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>/page/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/page/links/</guid>
+      <description>
+
+&lt;h1 id=&#34;links:424069113a08a4256349764ee38dbbbf&#34;&gt;Links&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://github.com&#34;&gt;Link for gihub&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://git-scm.com&#34;&gt;Ling for git-scm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Link for jekyll&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ansible.com/home&#34;&gt;Link for ansible&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Link for vagrant&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://linuxcontainers.org/&#34;&gt;Link for lxc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://formspree.io&#34;&gt;Link for formspree.io&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.linuxtoday.com/&#34;&gt;Link for LinuxToday&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.dailyrotation.com/&#34;&gt;Link for DailyRotation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.drupal.org/&#34;&gt;Drupal&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.joomla.org/&#34;&gt;Joomla&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://getgrav.org/&#34;&gt;gravCMS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://picocms.org/&#34;&gt;picoCMS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://statamic.com&#34;&gt;statamic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://getkirby.com&#34;&gt;kirby&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.madebyfrog.com/&#34;&gt;FrogCMS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.cushycms.com/&#34;&gt;CushyCMS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kuba-moo/mt7630e.git&#34;&gt;github kuba-moo/mt7630e&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>/page/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/page/projects/</guid>
+      <description>
+
+&lt;h1 id=&#34;projects:3c42bb4157bf51d85ae7ffc4e1685909&#34;&gt;Projects&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/files/gomenu&#34;&gt;gomenu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/files/myphile&#34;&gt;myphile&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/files/myfiles&#34;&gt;myfiles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/files/utils&#34;&gt;utils&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;More to share &amp;hellip; see &lt;a href=&#34;/files/utils&#34;&gt;utils&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;vimrc&lt;/li&gt;
+&lt;li&gt;screenrc&lt;/li&gt;
+&lt;li&gt;raspberry pi - ask&lt;/li&gt;
+&lt;li&gt;web development - ask&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Enjoy!&lt;br /&gt;
+-g-&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

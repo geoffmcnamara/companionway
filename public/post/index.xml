@@ -1,0 +1,1232 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on companionway</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on companionway</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved - companionway - 2016</copyright>
+    <lastBuildDate>Thu, 15 Dec 2016 16:36:42 -0500</lastBuildDate>
+    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>sometimes it is the obvious</title>
+      <link>/post/post-title/</link>
+      <pubDate>Thu, 15 Dec 2016 16:36:42 -0500</pubDate>
+      
+      <guid>/post/post-title/</guid>
+      <description>&lt;p&gt;This was one of those &amp;ldquo;problems&amp;rdquo; that nagged me for many hours until the obvious dawned on me.
+I wrote a pythone script to grab the temperature and humidiy from a DHT22 sensor and then write the
+output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
+every 5 minutes and used a redirection to write out a file ie:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;*/5 * * * * /usr/local/bin/temphum.sh &amp;gt;/tmp/temphum.dat
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The wrapper script grabs output and sends it to the server. Having this wrapper script lets me run the
+python script independantly for testing or for curiousity.&lt;/p&gt;
+
+&lt;p&gt;It all worked fine but sometimes the temp would jump in one direction or another for brief period and that
+skewed the graphed - it was ugly so I decided to fix it.&lt;/p&gt;
+
+&lt;p&gt;I added code to the python script to look at the temperature that got recorded on the last run into the /tmp/temphum.dat
+file and then judged if the measured temperature greater or less than the &amp;ldquo;last&amp;rdquo; temp by a amount greater than a &amp;ldquo;trigger&amp;rdquo; amount (I orignally set the trigger to be a full degree, that is 1.0). If the difference between the last and the measured temp was greater
+than the &amp;ldquo;trigger&amp;rdquo; then I adjusted the measured temp up or down appropriately by and adjustment amount (0.2). This would smooth
+out the graph and with the readings being taken each 5 minutes everything would work out fine over time.&lt;/p&gt;
+
+&lt;p&gt;It all worked fine each time I ran it from the command line. But when the the temperature recorded into the /tmp/temphum.dat
+file was always the measured temp. The adjusted temperature never made it into the file unless I ran it from the command line.
+I assumed the problem was with the environment - this is a natural assumption given that when a cron job runs it inherits no
+environment settings. I adapated the python script to have its own environment PATH and I also changed the bash wrapper script
+to preset it&amp;rsquo;s own PATH settings. But all to no avail.&lt;/p&gt;
+
+&lt;p&gt;Then I realized the problem. As soon as the wrapper script runs, it opens a redirection out to &amp;gt;/tmp/temphum.dat. That is also the
+file that the python script reads but as soon as the redirection starts it &amp;ldquo;zeros out&amp;rdquo; the file - it builds an empty file. Now the
+python script has no &amp;ldquo;last&amp;rdquo; temperature to read and my script rightfully drops a null last temperature reading and therefore does no adjusting.&lt;/p&gt;
+
+&lt;p&gt;The solution was to drop the redirection from the cron entry and have the python script first open the /tmp/temphum.dat file for reading the last temperature, close the file, do the adjustment calculation, then re-open the file for &amp;ldquo;w&amp;rdquo;rite which empties the file for writing new content, then write the needed message lines to the file, and then close the file.&lt;/p&gt;
+
+&lt;p&gt;All is good now. So easy to overlook the simple/obvious show stopper.&lt;/p&gt;
+
+&lt;p&gt;Enjoy
+-g-&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>alway use visudo</title>
+      <link>/post/post-title/</link>
+      <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
+      
+      <guid>/post/post-title/</guid>
+      <description>&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Familiarity breeds contempt&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I get very comfortable with using the vim editor (take cover&amp;hellip; flame way ensuing) so
+comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
+to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
+/etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
+simple monitoring program (xymon) to be able to run &amp;ldquo;sudo ufw status&amp;rdquo; without a password and report
+back to the monitor server.&lt;/p&gt;
+
+&lt;p&gt;I fired up &lt;code&gt;sudo vim /etc/sudoers.d/xymon&lt;/code&gt; and started to add the needed line:
+&lt;code&gt;xymon ALL = NOPASSWD: /usr/sbin/ufw status&lt;/code&gt; but I got halfway through and could remember the exact location&lt;/p&gt;
+
+&lt;p&gt;of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the phsical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplimental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.&lt;/p&gt;
+
+&lt;p&gt;Lesson: &lt;em&gt;Always use visudo&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;By the way, to change the default editor from nano to vim for visudo (on unbuntu at least) you can run:
+&lt;code&gt;sudo update-alternatives --config editor&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;On my systems that exchange looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo update-alternatives --config editor
+There are 4 choices for the alternative editor (providing /usr/bin/editor).
+
+  Selection    Path                Priority   Status
+------------------------------------------------------------
+* 0            /bin/nano            40        auto mode
+  1            /bin/ed             -100       manual mode
+  2            /bin/nano            40        manual mode
+  3            /usr/bin/vim.basic   30        manual mode
+  4            /usr/bin/vim.tiny    10        manual mode
+
+Press &amp;lt;enter&amp;gt; to keep the current choice[*], or type selection number: 3
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in manual mode
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Enjoy
+-g-&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>recursive replace text</title>
+      <link>/post/post-title/</link>
+      <pubDate>Sat, 10 Dec 2016 20:38:12 -0500</pubDate>
+      
+      <guid>/post/post-title/</guid>
+      <description>&lt;p&gt;Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If I had to look it up, you have to suffer seeing it in my blog post&amp;hellip; &lt;smile&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;find ./ -name \*.md -print0 | xargs -0 sed -i &#39;s/header-img/img/&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.&lt;/p&gt;
+
+&lt;p&gt;Enjoy
+-g-&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Switched to Hugo</title>
+      <link>/post/post-title/</link>
+      <pubDate>Fri, 09 Dec 2016 10:57:45 -0500</pubDate>
+      
+      <guid>/post/post-title/</guid>
+      <description>&lt;p&gt;I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).&lt;/p&gt;
+
+&lt;p&gt;Here is why:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;It comes as a binary file that runs on pretty much any platform. A single file&amp;hellip; without a list of dependencies&lt;/li&gt;
+&lt;li&gt;I could stop with the last reason and it would be enough&amp;hellip; but I have to say that the file tree used in hugo is simple, and simple is beautiful. As Einstein once said:
+&amp;gt;“Make things as simple as possible, but not simpler.”&lt;/li&gt;
+&lt;li&gt;It is written in googles go language&amp;hellip; so it is fast and portable.&lt;/li&gt;
+&lt;li&gt;It is closely tied to git so it can easily be used on github and for version maintence.&lt;/li&gt;
+&lt;li&gt;it builds a clean directory [./public/] for the full site deploy and this can be rsync&amp;rsquo;d to where ever you like.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;No frustrating&lt;/em&gt; version incompatiblities (or at least very minimal) - unlike jekyll which seemed to break on me every few months.&lt;/li&gt;
+&lt;li&gt;hugo is relatively mature and has a huge developer backing.&lt;/li&gt;
+&lt;li&gt;configurable and changed without challenges&lt;/li&gt;
+&lt;li&gt;lots of themes to choose from&lt;/li&gt;
+&lt;li&gt;as the Hugo websites states - it makes the web fun again&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Did I mention that it is a single executable file?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Reference:
+&lt;a href=&#34;https://gohugo.io/#intro&#34;&gt;gohugo.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Enjoy
+-g-&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Converting Images</title>
+      <link>/post/Converting-Images/</link>
+      <pubDate>Tue, 06 Dec 2016 11:58:20 -0500</pubDate>
+      
+      <guid>/post/Converting-Images/</guid>
+      <description>&lt;p&gt;I have fought with trying to remember the syntax for Imagemagik&amp;rsquo;s convert command for years. I finaly caved in [from my normal position of &amp;ldquo;if you can&amp;rsquo;t do it from the commandline, then you are a wimp&amp;rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &amp;ldquo;conveseen&amp;rdquo;. It can do batch conversions or on selected files. Gets the job done without the challenge of looking up all the arguments for &amp;ldquo;convert&amp;rdquo;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>shell/bash uppercase arguments</title>
+      <link>/post/2015-05-11-post1/</link>
+      <pubDate>Mon, 11 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-05-11-post1/</guid>
+      <description>&lt;p&gt;To make a long story short&amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/bin/bash
+PATTERN=$(echo $1 | tr [:lower:] [:upper:])
+# or
+PATTERN=$(echo $1 | tr [a-z] [A-Z])
+# or
+PATTERN=$(echo $1 | awk &#39;{print toupper($0)}&#39;)
+
+echo &amp;quot;Your \$1 argument is now uppercase: $1&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To make a short story long&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Just to let you know a little more about me and reveal
+a few more shells tricks along the way.&lt;/p&gt;
+
+&lt;p&gt;I am a very conservative investor - always have been but
+the low interest rates over the recent past has forced me
+to try a squeeze a little more out of the stock market also
+known as a &amp;ldquo;a gentleman&amp;rsquo;s gambling parlor of greedy people&amp;rdquo;.
+To do this I have been using covered secure puts and covered calls (did
+I mention that I am conservative?). So what does this have to
+do with the title here?&lt;/p&gt;
+
+&lt;p&gt;I heavily use scripting to quickly determine current positions
+on stocks I track. It starts with a file listing details of
+those stocks on each line. Then run a script that will selectively
+get the current price on each of stock and calculate how close
+it is to my target option price. I am lazy - which is one indispensable
+trait of a good system admin or programmer (never do anything manually
+more than once). So I needed a way to get stock quotes on
+one of the stocks in my list. The obvious solution is to grab the stock
+out of the list using grep (or awk) but all the stocks need to
+be uppercase. I scrape the current price off of a financial site but it
+requires uppercase.&lt;/p&gt;
+
+&lt;p&gt;I mention all this because my underlying motive is to encourage people
+to leverage shell tools (principally grep and awk). Fact is,
+financial incentives work (maybe that is a sad thing).&lt;/p&gt;
+
+&lt;p&gt;By the way, my script will use command line arguments to give me
+a detailed single line output of selected stocks providing:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;current price, difference from target and %difference from target&lt;/li&gt;
+&lt;li&gt;target price and recent price, IV (implied volatility), and probability of out of the money&lt;/li&gt;
+&lt;li&gt;how many lots to offer as Puts or Calls for the selected account&lt;/li&gt;
+&lt;li&gt;purchase price if I bought in the past&lt;/li&gt;
+&lt;li&gt;PE and future PE, ROE, various ratings, and 52 week range&lt;/li&gt;
+&lt;li&gt;shares owned,percent of account(s), and any notes on the stock&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Lots of this is manually maintained and, yes, it can be tedious but I have the
+time. The script grabs only what I tell it through the command line (just puts or calls
+or selected stocks or all of them etc). Then it grabs the current price and tells me
+how close it is to my target price as a percentage. For example I can tell the
+script to just grab potential puts that are within X% (eg 6%) of its strike or target price.&lt;/p&gt;
+
+&lt;p&gt;This gives me a good starting point for doing further research on selected stocks
+for the day. For example this will give me all put options that interest me where
+the current price is within 6% of my target.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# get stocks with interesting put options, mark anything with 6% of the target/strike price
+# and grep out those marked stocks only
+getquotes.sh -p -m 6 -g
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I won&amp;rsquo;t bore you with anymore detail - besides anything after this gets pretty cryptic&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Enjoy&lt;/p&gt;
+
+&lt;p&gt;-g-&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The GrovePi kit</title>
+      <link>/post/2015-05-09-post1/</link>
+      <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-05-09-post1/</guid>
+      <description>
+
+&lt;h1 id=&#34;check-out-grovepi:ba51109feb164e48167f4e6090dda504&#34;&gt;Check out GrovePi&lt;/h1&gt;
+
+&lt;p&gt;These kits make working with the Raspberry Pi GPIO pins
+so simple and clean.  I just ordered one of these kits and
+I will try to write up a review after I work it over.&lt;/p&gt;
+
+&lt;p&gt;If you are interested in building a quick and easy raspberry pi
+for experimenting with the &amp;ldquo;Internet of Things&amp;rdquo; (aka IoT) platform - this board and kit
+looks like it will get you there in minutes. Approx: $89 -
+includes board, and &lt;em&gt;lots&lt;/em&gt; of sensors/accessories with wires
+and connectors.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/grovepi1.jpg&#34; alt=&#34;grovepi&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This company is doing cool things to make raspberry pi projects
+fun and easy - especially for students.&lt;/p&gt;
+
+&lt;p&gt;Just had to share - here is their link: &lt;a href=&#34;http://www.dexterindustries.com/&#34;&gt;Dexter Industries&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Enjoy&lt;/p&gt;
+
+&lt;p&gt;-g-&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How to print the remainder of a line using awk</title>
+      <link>/post/2015-05-02-post1/</link>
+      <pubDate>Sat, 02 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-05-02-post1/</guid>
+      <description>
+
+&lt;p&gt;#How to print remainder of line using awk&lt;/p&gt;
+
+&lt;h2 id=&#34;eliminate-the-first-x-columns:2c0617bf3b5ab6328428ad749a5685c3&#34;&gt;eliminate the first X columns&amp;hellip;&lt;/h2&gt;
+
+&lt;p&gt;Here is your challenge you have a list of cronjobs and you
+want to just execute the scheduled backup command with its
+arguments for a test run.&lt;/p&gt;
+
+&lt;p&gt;Using one command line, how would you do it?&lt;/p&gt;
+
+&lt;p&gt;Here is a sample root cronjob and I want to run the
+first entry with its arguments as a test run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# m h  dom mon dow   command
+ 0 16  *   *   * /data/share/home/geoffm/dev/utils/bak-it.sh -i /usr/local/etc/include.lst -e /usr/local/etc/exclude.lst -t /data/bak/`hostname` -s 7 &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+  5 0  *   *   * /data/share/motion/arch-files.sh &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+*/15 *  *   *   * /data/share/home/geoffm/grab-pic.sh &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+####### below are WIP or OLD ########
+# 16 6  *   *   * /usr/sbin/lynis -c --auditor &amp;quot;automated&amp;quot; --cronjob --quiet &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+#*/5 *  *   *   * /usr/local/bin/watch-proc.sh -f /usr/local/etc/watch-proc.conf -n geoffm@localhost &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+#*/5 * * * * /data/share/home/geoffm/ping-pong.sh &amp;quot;ping -c2 192.168.1.55&amp;quot; &amp;quot;ssh 192.168.1.1 reboot&amp;quot; &amp;gt;/dev/null
+#  7 * * * /usr/local/sbin/postfix_report.sh &amp;amp;&amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here is how I would do it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo $(sudo crontab -l | awk &#39;/bak-it/{$1=$2=$3=$4=$5=&amp;quot;&amp;quot;;print $0}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Examining this we first see this &lt;code&gt;$(...)&lt;/code&gt; structure which tells
+the shell to run whatever exists between the parens and replace the
+output right there. So first we call sudo crontab -l in order to
+make sure we get root&amp;rsquo;s crontab listed. The output is piped into
+awk where we give it a regex to search for in each string (ie /bak-it/).
+The trick here is we tell awk to make the first variable in the string
+equal to the second&amp;hellip; equal to the 3rd, 4th and 5th, and finally = &amp;ldquo;&amp;rdquo;.
+This effectively substitutes and empty string for the first 5 variables
+leaving the remained of the line which then gets printed with the
+&lt;code&gt;print $0&lt;/code&gt;. Actually you can leave off the &lt;code&gt;$0&lt;/code&gt; because awk will default
+to that if you just use &lt;code&gt;print&lt;/code&gt; alone.&lt;/p&gt;
+
+&lt;p&gt;Now there may be one more problem. If you run that command above it
+will execute the intended command along with the arguments BUT it will
+do it as the user who ran it. Obviously, if the commands come from the
+root crontab it may not run properly for another user.&lt;/p&gt;
+
+&lt;p&gt;I will leave it as an exercise for the reader to solve that problem.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Creating that special character in vim</title>
+      <link>/post/2015-04-30-post1/</link>
+      <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-04-30-post1/</guid>
+      <description>
+
+&lt;h1 id=&#34;entering-special-characters-into-vim:da51cb12537d21998bafd6db6ef7ceb4&#34;&gt;Entering special characters into vim&lt;/h1&gt;
+
+&lt;p&gt;I use vim as my editor. Despite this first sentence, this is not a
+beginning volley to an editor flame war. I will save that for another
+day.&lt;/p&gt;
+
+&lt;p&gt;Ever editor has its own unique features and vim definitely no stranger to
+that group. One feature I use quite a bit is what vim calls digraphs.&lt;/p&gt;
+
+&lt;p&gt;There are thousands of characters other than the standard keyboard character
+that can be displayed with vim. You may already know that you can use
+&lt;code&gt;CTRL-v &amp;lt;enter&amp;gt;&lt;/code&gt; to force a linefeed into even a DOS filetype. Actually
+`CTRL-v &lt;ascii###&gt; will force special characters from a long list of choices.&lt;/p&gt;
+
+&lt;p&gt;But I prefer using CTRL-K followed by two semi-meaningful (slightly resembles the
+intended special character) to create any one of literally thousands of special
+characters.&lt;/p&gt;
+
+&lt;p&gt;If you are in vim and you are not in INSERT mode (hit ESC a couple of times to
+make sure) you can type &lt;code&gt;:digraphs&lt;/code&gt; and see the first page of possible choices.
+This list is extensive and daunting when first viewed. It is really sets of 3 columns.
+The first column is the digraph CTRL-k combo to create what is seen in the second
+column. And the 3rd column is the &lt;code&gt;CTRL-v ###&lt;/code&gt; number to be used to create that same
+character.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s look at an example - the first column 11 rows down you should see the way to create
+the one cent character:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Ct ¢ 196 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What this tells you is that if you are in the INSERT mode (Esc Esc i)
+Then you can type either of these two commands to create a one cent symbol&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CTRL-k Ct
+# or
+CTRV-v 196
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If your scroll down the &lt;code&gt;:digraph&lt;/code&gt; list you will find just about any special
+character you can imagine.&lt;/p&gt;
+
+&lt;p&gt;BTW - to see what values correspond to a char - cursor to it and hit :as[cii]&lt;/p&gt;
+
+&lt;p&gt;Here are a few examples:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;CTRL-k 34 = ¾
+CTRL-k 12 = ½
+CTRL-k -&amp;lt; = ←
+CTRL-k -&amp;gt; = →
+CTRL-k -v = ↓
+CTRL-k -! = ↑
+CTRL-k &amp;lt;&amp;gt; = ↔
+CTRL-k =&amp;gt; = ⇒
+CTRL-k OK = ✓
+CTRL-k -X = ✠
+CTRL-k XX = ✗
+CTRL-k &amp;lt;&#39; = 「
+CTRL-k &amp;gt;&#39; = 」
+CTRL-k Fm = ♀
+CTRL-k Ml = ♂
+CTRL-k *1 = ☆ 
+CTRL-k *2 = ★
+CTRL-k D* = Δ
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br&gt;
+Enjoy
+&lt;br&gt;
+-g-&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>git inside, git better, git stronger</title>
+      <link>/post/2015-04-28-post1/</link>
+      <pubDate>Tue, 28 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-04-28-post1/</guid>
+      <description>
+
+&lt;h2 id=&#34;exploring-git-from-the-inside-out:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;&amp;hellip; exploring git from the inside out &amp;hellip;&lt;/h2&gt;
+
+&lt;p&gt;###Preface&lt;/p&gt;
+
+&lt;p&gt;&lt;p class=highcap&gt;Apologies up front - this is long&amp;hellip; very long, but there is food for the brain here.
+I will discuss git for personal use. Using it with many other contributors is
+an extension of the principle covered here. For simplicity, I am only going
+to discuss you working alone and only using a single &amp;ldquo;branch&amp;rdquo; of code for
+each project - again, for simplicity. Additionally we are going to examine
+the git &amp;ldquo;database&amp;rdquo; (stored as compressed SHA-1 named files/objects) as we go.
+We can gain a better understanding by reviewing the changes to the guts of
+your personal git repository. We will not cover branches, tags, or the git daemon
+in this discussion.&lt;/p&gt;
+
+&lt;p&gt;###Why git? (skip this if you are less than patient)&lt;/p&gt;
+
+&lt;p&gt;Many years ago I used backups of my projects or just documents, notes, etc.
+All worked well until it didn&amp;rsquo;t. If you make a mistake and back it up guess what,&lt;/p&gt;
+
+&lt;p&gt;now you have two broken copies. Then I used cvs - awesome. It worked for me
+for years. Never lost code (as long as I put it under cvs). Really, maintained my
+work and previous versions with only very minor issues but kept my data useful and
+available. I tried git but wow, so many moving parts, and I had trouble wrapping my
+head around the differences to older version control systems where a &amp;ldquo;master&amp;rdquo; copy
+was kept in one place and all other copies were &amp;ldquo;clients&amp;rdquo; who shared and merged with
+the master copy. But git is different and much better - every copy is a master,
+fully self standing, with it&amp;rsquo;s own repository residing within the project directory
+itself. Hidden in the .git directory but always working with you as your progress. Full
+blown copies can be &amp;ldquo;cloned&amp;rdquo; to any other server you desire. And any set of copies
+can all be merged together easily. As wonderful as this all is&amp;hellip;. alas, git has
+miles and miles of depth. That, like most really powerful programs, is a good bad thing.
+You can get lost in the features and they can trip you up but the secret is to learn
+incrementally. Bite off small bits at a time. Take your time and the investment will
+definitely be rewarding. When you extend git into a world with multiple (even many
+multiples) of contributors git really shines. All your files are stored in the
+.git/objects/pack/ directory with weird long name and as &lt;em&gt;read only&lt;/em&gt; protecting
+you from accidental deletion.&lt;/p&gt;
+
+&lt;p&gt;###Getting Started with git&lt;/p&gt;
+
+&lt;p&gt;I have, over the years, always had a &amp;ldquo;$HOME/dev/&amp;rdquo; directory where I keep all my code
+or even document files, graphics, etc. Really anything I want to preserve, especially
+if versions are involved. So this discussion will be using $HOME/dev to place our
+projects; each project with its own directory.&lt;/p&gt;
+
+&lt;h4 id=&#34;exercise:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;EXERCISE&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir -p $HOME/dev/mypjct
+cd $HOME/dev/myprjct
+ls -ltra
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Nothing exists in this directory.&lt;/p&gt;
+
+&lt;p&gt;We can initialize (start) a git repository any time you desire.
+Because you want to be very careful, you are going to initialize
+your project before creating any files. This will also allow us
+to see the changes to the git database (really the .git directory)
+as we work with git.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git init
+ls -ltra
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here is what your project directory looks like now.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+-----.git
+|     +-----branches
+|     +-----config
+|     +-----description
+|     +-----HEAD
+|     +-----hooks
+|     |     +-----applypatch-msg.sample
+|     |     +-----commit-msg.sample
+|     |     +-----post-update.sample
+|     |     +-----pre-applypatch.sample
+|     |     +-----pre-commit.sample
+|     |     +-----prepare-commit-msg.sample
+|     |     +-----pre-push.sample
+|     |     +-----pre-rebase.sample
+|     |     +-----update.sample
+|     +-----info
+|     |     +-----exclude
+|     +-----objects
+|     |     +-----info
+|     |     +-----pack
+|     +-----refs
+|     |     +-----heads
+|     |     +-----tags
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Please note the objects directory becuase that is where all your files changes will get recorded
+as you work with git.&lt;/p&gt;
+
+&lt;p&gt;We are going to create a test file called t.f and add the text &amp;ldquo;ver 1&amp;rdquo;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo &amp;quot;ver 1&amp;quot; &amp;gt;&amp;gt; t.f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;No changes have occurred to git at this point. You now have one &amp;ldquo;working&amp;rdquo; file
+in your project directory.&lt;/p&gt;
+
+&lt;p&gt;Now &amp;ldquo;stage&amp;rdquo; the new file [t.f] into git with this command.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git add -a * # or we can use a shortcut command: git add -A (which we use going forward)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now lets look at your project directory again and note the changes from above.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+-----.git
+|     +-----branches
+|     +-----config
+|     +-----description
+|     +-----HEAD
+|     +-----hooks
+|     |     +-----applypatch-msg.sample
+|     |     +-----commit-msg.sample
+|     |     +-----post-update.sample
+|     |     +-----pre-applypatch.sample
+|     |     +-----pre-commit.sample
+|     |     +-----prepare-commit-msg.sample
+|     |     +-----pre-push.sample
+|     |     +-----pre-rebase.sample
+|     |     +-----update.sample
+|     +-----index
+|     +-----info
+|     |     +-----exclude
+|     +-----objects
+|     |     +-----5b
+|     |     |     +-----d657f7b8fcd822d6e44202bc33e808cdd01ee7
+|     |     +-----info
+|     |     +-----pack
+|     +-----refs
+|     |     +-----heads
+|     |     +-----tags
++-----t.f
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we can see our new file listed last [t.f] and also a new
+directory [5b] under .git/objects and a file under that
+[d657f7b8fcd822d6e44202bc33e808cdd01ee7]. Here is where it gets a
+little complicated just stick with me. This is one git &amp;ldquo;object&amp;rdquo; which
+was a single file called [5bd657f7b8fcd822d6e44202bc33e808cdd01ee7] -
+the first two characters of this file where used to create a subdirectory and
+the rest of the name was used for a file name. The full name here is actually
+the SHA-1 hash value of the contents of the file. Also know that the contents
+of the file have been compressed with the zlib library. There is a git
+command to allow you to see the contents which will do here. Just understand
+that the git &amp;ldquo;object name&amp;rdquo; is really the subdirectory+filename hence
+[5bd657f7b8fcd822d6e44202bc33e808cdd01ee7] and the git way to print the
+contents out is a bit strange. You do not need to remember this command; it is
+just so we can monitor things as we go.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git cat-file -p 5bd657f7b8fcd822d6e44202bc33e808cdd01ee7
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This shows the content of the file only [ver 1].&lt;/p&gt;
+
+&lt;p&gt;Now just so you can see what can be done at this point let&amp;rsquo;s delete
+your working file and then list the directory to see that it is gone
+then use git to restore it!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;rm t.f
+ls -ltra
+# your t.f file is gone!
+git checkout t.f
+ls -ltra
+# your t.f file is back!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you examine the .git directory tree at this point you will that there are
+no changes. Now lets &amp;ldquo;commit&amp;rdquo; what we &amp;ldquo;staged&amp;rdquo; earlier and then examine the
+.git directory tree again to see what has occurred (we will only list
+the .git/objects tree for brevity.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git commit -m &amp;quot;commit of ver 1&amp;quot; # -m just means add this message - without it 
+                                # you would be forced into an editor and required
+                                # to add a message - a good/required habbit to get into.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now the .git/objects tree:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;objects
++-----03
+|     +-----f1148542c5dbf6347c7e8e6a62863258c1c3b0
++-----5b
+|     +-----d657f7b8fcd822d6e44202bc33e808cdd01ee7
++-----f0
+|     +-----fa0104ec53e1614f556472b6ec9e355e297d7f
++-----info
++-----pack
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Our original object which was &amp;ldquo;staged&amp;rdquo; is still here under [5b] and two
+new ones appear. Let&amp;rsquo;s look at the contents of each.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git cat-file -p 03f1148542c5dbf6347c7e8e6a62863258c1c3b0
+tree f0fa0104ec53e1614f556472b6ec9e355e297d7f
+author Geoff McNamara &amp;lt;geoff.mcnamara@gmail.com&amp;gt; 1430154082 -0400
+committer Geoff McNamara &amp;lt;geoff.mcnamara@gmail.com&amp;gt; 1430154082 -0400
+
+commit ver 1
+
+$ git cat-file -p 5bd657f7b8fcd822d6e44202bc33e808cdd01ee7
+ver 1
+
+$ git cat-file -p f0fa0104ec53e1614f556472b6ec9e355e297d7f
+100644 blob 5bd657f7b8fcd822d6e44202bc33e808cdd01ee7    t.f
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s also look at the git log&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ git log
+commit 03f1148542c5dbf6347c7e8e6a62863258c1c3b0
+Author: Geoff McNamara &amp;lt;geoff.mcnamara@gmail.com&amp;gt;
+Date:   Mon Apr 27 13:01:22 2015 -0400
+
+    commit ver 1
+
+$ git status
+On branch master
+nothing to commit, working directory clean
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The git log refers to the object which has the contents of the first file we examined above.&lt;/p&gt;
+
+&lt;p&gt;So how are these files/objects/versions connected? They are chained as parent/child.
+Lets examine a later (more recent) object and note it has a parent which is the object
+above. First we will modify the t.f file, git add it, and commit it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ echo &amp;quot;updating to ver 2&amp;quot; &amp;gt;&amp;gt; t.g
+$ git add -A
+$ git commit -m &amp;quot;committing ver 2&amp;quot;
+$ git cat-file -p 46769acc026e57212ca06ad8991643061ac429eb
+tree c828f096c4a01ca3cffa690c484b5ef8ee714a2c
+parent 03f1148542c5dbf6347c7e8e6a62863258c1c3b0
+author Geoff McNamara &amp;lt;geoff.mcnamara@gmail.com&amp;gt; 1430157487 -0400
+committer Geoff McNamara &amp;lt;geoff.mcnamara@gmail.com&amp;gt; 1430157487 -0400
+
+updating to ver 2
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is enough for you to start to appreciate how git stores data. Obviously
+we only scratched the surface here.&lt;/p&gt;
+
+&lt;p&gt;Repositories for git exists as either a working repository or a &amp;ldquo;shared&amp;rdquo;
+repository - created as &amp;ldquo;bare&amp;rdquo; with &amp;ldquo;git init &amp;ndash;bare&amp;rdquo; - more on this later.&lt;/p&gt;
+
+&lt;p&gt;Before we move on please take a look at your .git/config file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cat .git/config
+[core]
+        repositoryformatversion = 0
+        filemode = true
+        bare = false
+        logallrefupdates = true
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note the &amp;ldquo;bare = false&amp;rdquo; so by default this is not a &amp;ldquo;shared&amp;rdquo;
+repository. It is a &amp;ldquo;working&amp;rdquo; project directory.&lt;/p&gt;
+
+&lt;h3 id=&#34;setting-up-a-remote-shared-git-server:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;Setting up a remote &lt;em&gt;&lt;em&gt;shared&lt;/em&gt;&lt;/em&gt; git server&lt;/h3&gt;
+
+&lt;p&gt;#############################################&lt;/p&gt;
+
+&lt;p&gt;A remote shared server can be used as a personal storage/backup of your
+important code and files. It becomes especially useful if it is
+universally available from anywhere by ssh or http (read: internet accessible).&lt;/p&gt;
+
+&lt;p&gt;A &lt;em&gt;shared&lt;/em&gt; git repo is just a bit different from your self-standing git project
+&amp;ldquo;working&amp;rdquo; directory. It will only contain the git structure found in your .git directory
+and by convention it will have an extension on the name of [.git].
+Your project .git directory has these subdirectories or files branches, config,
+description, HEAD, hooks, info, objects, and refs. Your local project directory
+also has your working files. A remote shared directory has no working file - it
+acts only as a git repository so it has all the git files or subdirectories
+but no working files. It is created differently [&lt;code&gt;git init --bare&lt;/code&gt;] and used
+only remotely for checking files in (pushes) and checking them out (pulls).&lt;/p&gt;
+
+&lt;p&gt;Create a git user and a .ssh directory for that user on the remote server.
+&lt;em&gt;Or&lt;/em&gt; you can use any user on the remote server&amp;hellip; just understand the permission
+for the files are influenced by the user who tries to access them. We suggest
+a generic user name like &amp;ldquo;git&amp;rdquo; because this repository will be shared - it will
+not be a &amp;ldquo;working&amp;rdquo; project directory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; sudo adduser git
+ su git
+ cd
+ mkdir .ssh &amp;amp;&amp;amp; chmod 700 .ssh 
+ touch .ssh/authorized_keys &amp;amp;&amp;amp; chmod 600 .ssh/authorized_keys
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;to-make-logins-easier-passwordless:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;To make logins easier (passwordless)&lt;/h3&gt;
+
+&lt;p&gt;You need to add your SSH public keys to the remote authorized_keys
+file for the git user.
+You should take a look at it just to be familar with it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cat myhome/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NADAQABAAABAQCB007n/ww+ouN4gSLKssMxXnBOvf9LGt4L...dAv8JggJICUvax2T9va5... user@host
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Keep in mind that the content of this file is all one line.
+Now append that into to the git user’s authorized_keys &amp;hellip;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh-copy-id git@remote_server  # we use the tool provided by ssh 
+# This will do the same as this below
+# except it offers the advantage of making sure 
+# the ~/.ssh directory exists on the remote server.
+# 
+cat /tmp/id_rsa.pub &amp;gt;&amp;gt; git@remote_server:.ssh/authorized_keys
+# the above command requires that the 
+# remote user .ssh directory already exists. 
+# Best to use ssh-copy-id provided for this purpose
+# but know you know what it is doing for you.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;lock-down-the-git-user-shell:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;Lock down the git user shell&lt;/h3&gt;
+
+&lt;p&gt;Change the git user shell to: &lt;code&gt;/usr/bin/git-shell&lt;/code&gt; on the remote server.
+Make sure that git-shell exists in the &lt;code&gt;/etc/shells&lt;/code&gt; file
+&amp;gt;&amp;gt;Note: you will not be able to ssh into the server as the
+git user&amp;hellip; but it will allow git commands to work against it.&lt;/p&gt;
+
+&lt;h3 id=&#34;build-an-empty-git-initialized-prepared-directory-for-every-project:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;Build an empty git initialized/prepared directory for every project&lt;/h3&gt;
+
+&lt;p&gt;On the remote server you need to build out a project.git directory
+and initialize if with &lt;code&gt;git init --bare&lt;/code&gt; to allow a new project
+to be pushed to the remote server.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;NOTE: &lt;code&gt;git init --bare&lt;/code&gt; is &lt;em&gt;VERY DIFFERENT&lt;/em&gt; from &lt;code&gt;git init bare&lt;/code&gt;.
+The first creates a shared git repository (with no working files).
+The second command creates a local project directory named &amp;ldquo;bare&amp;rdquo;
+complete with its own .git directory. The &amp;ldquo;bare&amp;rdquo; project directory
+is ready to receive and git manage any new working files.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Create an empty shared git directory (remote repository) on the remote
+server for the project (same process for any new shared project).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; cd /opt/gitroot # I used /data/gitroot - you can name this 
+                 # git repo dir anything you want
+ mkdir project.git # yes, add the git extension - trust me here - it is convention
+ cd project.git # IMPORTANT - by convention shared git repos are named with a [.git] extension!!!
+ git init --bare # build out a default git directories with needed files (it will
+                 # not create .git - instead all the directories are not hidden
+                 # and at the project directory level. Do an `ls -l` to see the
+                 # difference
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;git init --bare&lt;/code&gt; builds out the bare .git/ directory with all the
+needed structure and files for controlling git but no .git subdirectory.&lt;/p&gt;
+
+&lt;p&gt;It will look like this before any pushes are done.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+-----branches
++-----config
++-----description
++-----HEAD
++-----hooks
+|     +-----applypatch-msg.sample
+|     +-----commit-msg.sample
+|     +-----post-update.sample
+|     +-----pre-applypatch.sample
+|     +-----pre-commit.sample
+|     +-----prepare-commit-msg.sample
+|     +-----pre-push.sample
+|     +-----pre-rebase.sample
+|     +-----update.sample
++-----info
+|     +-----exclude
++-----objects
+|     +-----info
+|     +-----pack
++-----refs
+|     +-----heads
+|     +-----tags
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note: no objects yet and no .git subdirectory (and no working files
+will be stored here).&lt;/p&gt;
+
+&lt;h3 id=&#34;prepare-your-project-directory-on-the-local-computer-if-you-haven-t-already:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;Prepare your project directory on the local computer if you haven&amp;rsquo;t already&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt; cd myproject # even when files already exist
+ git init # to build out the .git/ directory structure and files
+ git add . # stages files in the cache (staging area)
+ git commit -m &#39;Initial base commit&#39; # commits the staged files to you local git repo 
+ # the .git/ directory and files now has all the history and needed info making up
+ # your local git repo.
+ # this next command adds/changes a line in the local myproject/.git/config
+ git remote add origin git@gitserver:/opt/git/project.git
+ # the above line tells git you want a remote server which you are naming &amp;quot;origin&amp;quot;
+ # to act as another copy of your local git repo and its location is then declared
+ # This information is now stored in your prj/.git/config file - go look at it to see.
+ git push origin master # this pushes your git repo up to the declared remote server
+                        # which has the alias name &amp;quot;origin&amp;quot;
+ # git status # note the output on this will say you are &amp;quot;on branch master&amp;quot;
+ # that is the default working area.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now the remote &lt;em&gt;shared&lt;/em&gt; prj.git repository might look something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+-----branches
++-----config
++-----description
++-----HEAD
++-----hooks
+|     +-----applypatch-msg.sample
+|     +-----commit-msg.sample
+|     +-----post-update.sample
+|     +-----pre-applypatch.sample
+|     +-----pre-commit.sample
+|     +-----prepare-commit-msg.sample
+|     +-----pre-push.sample
+|     +-----pre-rebase.sample
+|     +-----update.sample
++-----info
+|     +-----exclude
++-----objects
+|     +-----03
+|     |     +-----f1148542c5dbf6347c7e8e6a62863258c1c3b0
+|     +-----46
+|     |     +-----769acc026e57212ca06ad8991643061ac429eb
+|     +-----4e
+|     |     +-----f21067659fb999c8efcdb03e800245dbd80eb0
+|     +-----5b
+|     |     +-----d657f7b8fcd822d6e44202bc33e808cdd01ee7
+|     +-----84
+|     |     +-----bce25cbc083f803b75fc34f4b4577ea95c6a0b
+|     +-----8a
+|     |     +-----611c4dabd6b8d8654d554a8d5378656682c4f9
+|     +-----c8
+|     |     +-----28f096c4a01ca3cffa690c484b5ef8ee714a2c
+|     +-----f0
+|     |     +-----fa0104ec53e1614f556472b6ec9e355e297d7f
+|     +-----f2
+|     |     +-----79361d9a6ab19614d57d96cafd47a17280b02e
+|     +-----info
+|     +-----pack
++-----refs
+|     +-----heads
+|     |     +-----master
+|     +-----tags
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note the additional objects and NO WORKING FILES.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Ok, lets have just a small aside on how git is different
+from other older version control programs like CVS. git likes
+living all alone by itself &lt;em&gt;but&lt;/em&gt; it is also just as happy to share
+life with others. When you do a &lt;code&gt;git init&lt;/code&gt; it builds out a whole
+new .git/ directory where - this becomes your local repository -
+complete in every way - all local to your project directory.
+When you do  a &lt;code&gt;git add .&lt;/code&gt; you
+&amp;ldquo;stage&amp;rdquo; files. This gives you a chance to unstage file(s)
+before committing them to the repository storage. Once you run &lt;code&gt;git commit&lt;/code&gt;
+all the staged files are stored as copies into the local repository
+and they are now available for checkout as the latest version.
+Everything is self contained in your local project directory - your
+original files and all changes, history, latest version etc all in
+the .git/ repository. So this doesn&amp;rsquo;t seem like it offers and safety
+advantages until your realize that you can &lt;em&gt;very easily&lt;/em&gt; clone everything
+onto any other PC &amp;hellip; and another and another - all existing as a full
+self-sufficient repository.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Anyone can now clone it and push changes back up just as easily:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# from another remote machine
+ git clone git@remoteserver:/opt/gitroot/project.git # clone the whole
+                                                     #  enchilada - notice
+                                                     # the .git extension
+                                                     # denoting this is
+                                                     # a shared git repos
+ cd project
+ vim README # make any change you want
+ git commit -am &#39;Small modification to README&#39; # commits it locally
+ git push origin master # pushes it to the server it was claned from above
+ # go look at .git/config to gain a little better understanding
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There you have it - one fully functional personal repository and one shared
+repository..&lt;/p&gt;
+
+&lt;p&gt;Enjoy,&lt;/p&gt;
+
+&lt;p&gt;-g-&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>LaTex and markdown</title>
+      <link>/post/2015-04-04-post1/</link>
+      <pubDate>Sat, 04 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-04-04-post1/</guid>
+      <description>&lt;p&gt;To get \(LaTex\) to work I had to add this to the _layout/footer.html&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;
+    src=&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and change the _config to use redcarpet for markdown&lt;/p&gt;
+
+&lt;p&gt;BTW - to get \(Latex\) in the same line use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;insert \\(LaTex\\) here
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now this code&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$$a^2 + b_i^2 = c^2 \left(\frac12\right) $$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;looks like this:
+$$a^2 + b_i^2 = c^2 \left(\frac12\right)$$
+or block \(Latex\):
+\[ \frac{1}{n^{2}} \]&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>startbootstrap-clean theme contact form</title>
+      <link>/post/2015-04-03-post1/</link>
+      <pubDate>Fri, 03 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-04-03-post1/</guid>
+      <description>&lt;p&gt;Getting the contact form to work on godaddy hosting was a trip, an ugly
+trip.&lt;/p&gt;
+
+&lt;p&gt;The contact form built into the jekyll startbootstrap-clean theme coding
+is a bit convoluted and needed tweaking to get it working.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;first you change the mail/contact_me.php to include to your email address
+(no problem there)&lt;/li&gt;
+&lt;li&gt;but it failed so I used google chrome developer tool (Ctrl-Shft-I) to diagnose what was failing.
+It was looking for the php script at /contact/mail/contact_me.php instead of /mail/contact_me.php
+(easily fixed by moving it).&lt;/li&gt;
+&lt;li&gt;by the way - this form does not pass the POST variables directly to the on script - it uses js/bootstrap-clean.js
+(which has been minified into js/bootstrap-clean-min.js) to validate the form entries and passes it on to contact_me.php
+as POST variables.&lt;/li&gt;
+&lt;li&gt;however, on godaddy hosting they restrict things quite a bit and you need to use their tools
+to send email. They place into your basic web site gdform.php and webformmailer.php (which is a link). I tried
+replacing contact_me.php with each of these&amp;hellip; only gdform.php worked. Their gdform.php script actually writes
+out your POSTED variables into a dated file (eg gform_8935621) into you $HOME/data/ directory. A cron job periodically
+mails out any gform_xxxxxxx file it finds to you.&lt;/li&gt;
+&lt;li&gt;bottom line &amp;hellip; I saved the original contact_me.php off and then on my godaddy site I copied gdform.php to /contact/mail/contact_me.php
+and all problems solved. Your contact email will eventually come when the cron runs to send it. You can check new conntact requests
+by looking for $HOME/data/gdform-xxxxxxx files.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Make sure if you sync files form you local machine to your website that you change
+your local contact_me.php similarly.&lt;/p&gt;
+
+&lt;p&gt;Enjoy
+-g-&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Centering a string</title>
+      <link>/post/2015-04-02-post1/</link>
+      <pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-04-02-post1/</guid>
+      <description>
+
+&lt;h1 id=&#34;center-a-string-using-awk:11a6877e6983186439ea558b645f2eab&#34;&gt;Center a string using awk&lt;/h1&gt;
+
+&lt;h2 id=&#34;awk-everyone-s-favorite-right:11a6877e6983186439ea558b645f2eab&#34;&gt;awk = everyone&amp;rsquo;s favorite - right?&lt;/h2&gt;
+
+&lt;p&gt;People who know me also know that I prefer simple
+universally available tools to get a job done. Awk is
+probably one of my favorites because it does pretty
+much anything I need for quick and simple jobs. It is
+far more powerful than most people realize including
+associative arrays and it will do anything grep and sed&lt;br /&gt;
+can do.&lt;/p&gt;
+
+&lt;p&gt;Recently I had the need to center a string of text. This
+is a easy problem that pretty much any freshman programmer
+can accomplish in a heartbeat but I decided to do it with
+awk. This sample gives you a chance to explore rudimentary
+features of awk.&lt;/p&gt;
+
+&lt;p&gt;Assumptions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;STRING = &amp;ldquo;my string for centering&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;LLEN = 65 # This is the line length&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;echo $STRING | awk -vllen=$LLEN &#39;
+  BEGIN{for(i=1;i&amp;lt;=llen;i++){printf i%10};printf &amp;quot;\n&amp;quot;}
+  {
+  startpos = (llen - length)/2;
+  for(i=1;i&amp;lt;=startpos;i++)
+  {
+    printf &amp;quot; &amp;quot;
+  }
+  print $0
+  }&#39; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The BEGIN section is just to provide a rule line&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;length&amp;rdquo; is the length of the line fed into awk ($0 variable).
+&amp;ldquo;startpos&amp;rdquo; is the start position for the string - the for&lt;br /&gt;
+loop just prints a space until startpos is reached (printf&lt;br /&gt;
+ is used to avoid a line break).&lt;/p&gt;
+
+&lt;p&gt;Not perfect but it works for me.&lt;/p&gt;
+
+&lt;p&gt;-g-&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Learning markdown ...</title>
+      <link>/post/2015-04-01-post1/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-04-01-post1/</guid>
+      <description>
+
+&lt;h1 id=&#34;markdown-this-heading-uses-setext-style:ed219d14eb367d0c2c4ea96328d19f7a&#34;&gt;Markdown - this heading uses Setext style&lt;/h1&gt;
+
+&lt;p&gt;You can&lt;br /&gt;
+break lines&lt;br /&gt;
+by adding &amp;gt;=2 spaces&lt;br /&gt;
+to the end
+before starting the next line&lt;/p&gt;
+
+&lt;h1 id=&#34;this-heading-uses-atx-style:ed219d14eb367d0c2c4ea96328d19f7a&#34;&gt;This heading uses atx style&lt;/h1&gt;
+
+&lt;p&gt;&lt;p&gt;I am learning that you have to name&lt;br /&gt;
+ your post file with YYYY-MM-DD-whatever.markdown&lt;/p&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;p&gt;the &lt;strong&gt;extension&lt;/strong&gt; &lt;em&gt;can&lt;/em&gt; be &amp;ldquo;.md&amp;rdquo;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;quoted text
+here&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A list:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;one&lt;/li&gt;
+&lt;li&gt;two&lt;/li&gt;
+&lt;li&gt;three&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To get \(LaTex\) to work I had to add this to the _includes/footer.html
+You can actually add it right into the markdown file itself. I put it
+in the footer because it is a bit more efficient to have the js loaded last.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;
+    src=&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and change the _config to use redcarpet for markdown&lt;/p&gt;
+
+&lt;p&gt;BTW - to get \(Latex\) in the same line use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;insert \\(LaTex\\) here
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now this code&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$$a^2 + b_i^2 = c^2 \left(\frac12\right) $$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;looks like this:
+$$a^2 + b_i^2 = c^2 \left(\frac12\right)$$
+or block \(Latex\):
+\[ \frac{1}{n^{2}}\]&lt;/p&gt;
+
+&lt;p&gt;Here is some ruby code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;ruby -run -e httpd . -p 9090 # which serves up the current directory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;{% highlight ruby linenos%}
+def foo
+  puts &amp;lsquo;foo&amp;rsquo;
+end
+{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;Inline code &lt;code&gt;echo DEBUG: $LINENO&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;A table ( arrrg &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:ed219d14eb367d0c2c4ea96328d19f7a:n&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:ed219d14eb367d0c2c4ea96328d19f7a:n&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;):&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;lets&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;do&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;a&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;table&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;with&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;more&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;rows&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;here&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table border=2&gt;
+ &lt;tr&gt;
+  &lt;td&gt;one&lt;/td&gt;&lt;td&gt;two&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;This code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; *italics*
+ **emphasis**   
+ _underline_      
+ ~~strikethrough~~   
+ [link title](http://companionway.net)   
+ ![alt name](/img/logo.png &amp;quot;logo&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Produces:&lt;br /&gt;
+&lt;em&gt;italics&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;emphasis&lt;/strong&gt;&lt;br /&gt;
+&lt;em&gt;underline&lt;/em&gt;&lt;br /&gt;
+&lt;del&gt;strikethrough&lt;/del&gt;&lt;br /&gt;
+&lt;a href=&#34;http://companionway.net&#34;&gt;link title&lt;/a&gt;&lt;br /&gt;
+&lt;img src=&#34;/img/logo.png&#34; alt=&#34;alt name&#34; title=&#34;logo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;End of post&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:ed219d14eb367d0c2c4ea96328d19f7a:n&#34;&gt;Don&amp;rsquo;t try to use the beginning or ending pipe | and spanning not working
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:ed219d14eb367d0c2c4ea96328d19f7a:n&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s change an image</title>
+      <link>/post/2015-04-01-post3/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-04-01-post3/</guid>
+      <description>
+
+&lt;h1 id=&#34;changing-an-image:aba29ba936576f527412a935dd26c686&#34;&gt;Changing an image&lt;/h1&gt;
+
+&lt;p&gt;The magic tool is adapt images is &lt;em&gt;convert&lt;/em&gt; from the imagemagick package.&lt;/p&gt;
+
+&lt;p&gt;To convert type: &lt;code&gt;convert myimage.png myimage.jpg&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is a way to resize an image: &lt;code&gt;convert myimage.png -resize 200x100 myimage.png&lt;/code&gt;
+&amp;gt;Notice: the image will be converted right over the top of itself&lt;/p&gt;
+
+&lt;p&gt;To darken (first argument to -modulate) an image and reduce&lt;br /&gt;
+the color (second argument to -modulate):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;convert -modulate 70,90 myimage.png myimage-darker.png
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What about rotation: `convert myimage.png -rotate 90 myimage.png&lt;/p&gt;
+
+&lt;p&gt;These are just a small, very small sampling of what &lt;em&gt;convert&lt;/em&gt; can do for your images&lt;/p&gt;
+
+&lt;p&gt;Just for grins: &lt;code&gt;convert myimage.jpg -charcoal 2 myimage-charcoal.jpg&lt;/code&gt;
+ The &amp;ldquo;2&amp;rdquo; is for setting the &amp;ldquo;strength&amp;rdquo; of the charcoal effect.&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

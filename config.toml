@@ -1,0 +1,41 @@
+# Site settings (baseurl must end with a trailing slash!)
+#baseURL = "https://companionway.net:/hugo/"
+#baseURL = "./"
+baseurl = "/"
+#relativeURLs = true
+#uglyURLs = true
+#canonifyURLs = false
+languageCode = "en-us"
+Title= "companionway"
+#paginate = 5
+Copyright = "All rights reserved - companionway - 2016"
+#DisqusShortname = "YOUR_SHORT_NAME_HERE"
+theme = "casper"
+
+[params]
+  description = "Meeting challenges with success!"
+  cover = "img/raspberry-pi-card.jpg"
+  author = "Geoff McNamara"
+  authorlocation = "Elizabeth City, NC"
+  authorwebsite = "http://companionway.net"
+  bio= "“Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien"
+  #logo = "images/logo.png"
+  googleAnalyticsUserID = "UA-79101-12"
+  # Optional RSS-Link, if not provided it defaults to the standard index.xml
+  #RSSLink = "http://feeds.feedburner.com/..."
+  githubName = "geoffmcnamara"
+  twitterName = "geoffmcnamara"
+  facebookName = "geoffmcnamara"
+  #linkedinName = "geoffmcnamara"
+  # set true if you are not proud of using Hugo (true will hide the footer note "Proudly published with HUGO.....")
+  hideHUGOSupport = false
+  [params.social]
+    twitter = "your_twitter"
+
+[[menu.main]]
+  name = "Home"
+  weight = -120
+  identifier = "blog"
+  url = "/"
+
+
