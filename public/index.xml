@@ -319,7 +319,7 @@ looks like it will get you there in minutes. Approx: $89 -
 includes board, and &lt;em&gt;lots&lt;/em&gt; of sensors/accessories with wires
 and connectors.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/grovepi1.jpg&#34; alt=&#34;grovepi&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/grovepi1.jpg&#34; alt=&#34;grovepi&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;This company is doing cool things to make raspberry pi projects
 fun and easy - especially for students.&lt;/p&gt;
@@ -1230,7 +1230,7 @@ end
 &lt;em&gt;underline&lt;/em&gt;&lt;br /&gt;
 &lt;del&gt;strikethrough&lt;/del&gt;&lt;br /&gt;
 &lt;a href=&#34;http://companionway.net&#34;&gt;link title&lt;/a&gt;&lt;br /&gt;
-&lt;img src=&#34;/img/logo.png&#34; alt=&#34;alt name&#34; title=&#34;logo&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;./img/logo.png&#34; alt=&#34;alt name&#34; title=&#34;logo&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;End of post&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
