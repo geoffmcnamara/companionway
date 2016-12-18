@@ -1,7 +1,7 @@
 # Site settings (baseurl must end with a trailing slash!)
 #baseURL = "https://companionway.net:/hugo/"
 baseurl = "/"
-relativeURLs = true
+#relativeURLs = true
 #uglyURLs = true
 #canonifyURLs = false
 languageCode = "en-us"
