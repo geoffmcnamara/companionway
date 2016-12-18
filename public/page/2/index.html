@@ -9,7 +9,7 @@
 
 
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:image" content="/img/raspberry-pi-card.jpg"/>
+    <meta name="twitter:image" content="/img/rpi-card-dark-crop.jpg"/>
 
 
 
@@ -110,7 +110,7 @@
 
 
 
-  <header class="main-header" style="background-image: url(/img/raspberry-pi-card.jpg)">
+  <header class="main-header" style="background-image: url(/img/rpi-card-dark-crop.jpg)">
   
 
 
@@ -212,6 +212,8 @@
     
         
     
+        
+    
 
     
         
@@ -235,6 +237,51 @@
 </nav>
 
     </div>
+
+    
+        
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/2015-04-28-post1/">git inside, git better, git stronger</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><h2 id="exploring-git-from-the-inside-out:13d1ef1aa2da144986cfdc7e7a64a8a1">&hellip; exploring git from the inside out &hellip;</h2>
+
+<p>###Preface</p>
+
+<p><p class=highcap>Apologies up front - this is long&hellip; very long, but there is food for the brain here.
+I will discuss git for personal use. Using it with many other contributors is
+an extension of the principle covered here. For simplicity, I am only going
+to discuss you working alone and only using a single &ldquo;branch&rdquo; of code for
+each project - again, for simplicity. Additionally we are going to examine
+the git &ldquo;database&rdquo; (stored as compressed SHA-1 named files/objects) as we go.
+We can gain a better understanding by reviewing the changes to the guts of
+your personal git repository. We will not cover branches, tags, or the git daemon
+in this discussion.</p>
+
+<p>###Why git? (skip this if you are less than patient)</p>
+
+<p>Many years ago I used backups of my projects or just documents, notes, etc.
+All worked well until it didn&rsquo;t. If you make a mistake and back it up guess what,</p>
+ <a class="read-more" href="/post/2015-04-28-post1/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+        
+
+        
+        
+            Geoff McNamara
+        
+        
+        <time class="post-date" datetime="2015-04-28T00:00:00Z">
+            28 Apr 2015
+        </time>
+    </footer>
+</article>
 
     
         
@@ -622,50 +669,6 @@ ago that  displays a disk tree structure (optionally with files).</p>
 are executed against the repository. I thought I would share it
 with you today.</p>
  <a class="read-more" href="/post/2015-04-27-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
-        </time>
-    </footer>
-</article>
-
-    
-        
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-26-post1/">Delete the last X files using sed</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h2 id="simple-sed-trick-keeping-the-last-x-files:5d948e22d0ba3ff855bef7293d043cd5">Simple sed trick - keeping the last X files</h2>
-
-<p>How would you remove all but the last 10 files in a directory?</p>
-
-<p>So let&rsquo;s create 15 files with one second between there
-creation time. Oldest one (first one) will be called
-1.file
-and the newest one (last one) will be called
-15.file</p>
-
-<p>Run this code to do that:</p>
-
-<pre><code>for i in `seq 1 15`; do
-  touch $i.fil
-  sleep 1
-done
-</code></pre>
- <a class="read-more" href="/post/2015-04-26-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         

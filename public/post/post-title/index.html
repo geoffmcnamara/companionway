@@ -9,36 +9,49 @@
 
 
     
-        <meta name="twitter:card" content="summary"/>
+        
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:image" content="/img/hugo-logo.png"/>
     
 
 
 
-<meta name="twitter:title" content="sometimes it is the obvious"/>
-<meta name="twitter:description" content="This was one of those &ldquo;problems&rdquo; that nagged me for many hours until the obvious dawned on me.
-I wrote a pythone script to grab the temperature and humidiy from a DHT22 sensor and then write the
-output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
-every 5 minutes and used a redirection to write out a file ie:
+<meta name="twitter:title" content="Switched to Hugo"/>
+<meta name="twitter:description" content="I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
 
-*/5 * * * * /usr/local/bin/temphum.sh &gt;/tmp/temphum.dat
+Here is why:
 
 
-The wrapper script grabs output and sends it to the server. Having this wrapper script lets me run the
-python script independantly for testing or for curiousity.
+It comes as a binary file that runs on pretty much any platform. A single file&hellip; without a list of dependencies
+I could stop with the last reason and it would be enough&hellip; but I have to say that the file tree used in hugo is simple, and simple is beautiful. As Einstein once said:
+&gt;“Make things as simple as possible, but not simpler.”
+It is written in googles go language&hellip; so it is fast and portable.
+It is closely tied to git so it can easily be used on github and for version maintence.
+it builds a clean directory [./public/] for the full site deploy and this can be rsync&rsquo;d to where ever you like.
+No frustrating version incompatiblities (or at least very minimal) - unlike jekyll which seemed to break on me every few months.
+hugo is relatively mature and has a huge developer backing.
+configurable and changed without challenges
+lots of themes to choose from
+as the Hugo websites states - it makes the web fun again&hellip;
+Did I mention that it is a single executable file?
+
+
+Reference:
+gohugo.io
 "/>
 
     <meta name="twitter:site" content="@your_twitter"/>
 
 
 
-  	<meta property="og:title" content=" sometimes it is the obvious &middot;  companionway" />
+  	<meta property="og:title" content=" Switched to Hugo &middot;  companionway" />
   	<meta property="og:site_name" content="companionway" />
   	<meta property="og:url" content="/post/post-title/" />
 
     
   	<meta property="og:type" content="article" />
 
-    <meta property="og:article:published_time" content="2016-12-15T16:36:42-05:00" />
+    <meta property="og:article:published_time" content="2016-12-09T10:57:45-05:00" />
 
     
     <meta property="og:article:tag" content="tag1" />
@@ -48,7 +61,7 @@ python script independantly for testing or for curiousity.
     
 
     <title>
-       sometimes it is the obvious &middot;  companionway
+       Switched to Hugo &middot;  companionway
     </title>
 
     <meta name="description" content="Meeting challenges with success!" />
@@ -129,8 +142,10 @@ python script independantly for testing or for curiousity.
 
 
 
-<header class="main-header post-head no-cover">
-  <nav class="main-nav clearfix">
+  
+  <header class="main-header post-head" style="background-image: url(/img/hugo-logo.png)">
+  
+  <nav class="main-nav overlay clearfix">
 
 
   
@@ -150,13 +165,13 @@ python script independantly for testing or for curiousity.
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">sometimes it is the obvious</h1>
+        <h1 class="post-title">Switched to Hugo</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2016-12-15T16:36:42-05:00">
-            Dec 15, 2016
+          <time class="post-date" datetime="2016-12-09T10:57:45-05:00">
+            Dec 9, 2016
           </time>
         
          
@@ -168,38 +183,27 @@ python script independantly for testing or for curiousity.
     </header>
 
     <section class="post-content">
-      <p>This was one of those &ldquo;problems&rdquo; that nagged me for many hours until the obvious dawned on me.
-I wrote a pythone script to grab the temperature and humidiy from a DHT22 sensor and then write the
-output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
-every 5 minutes and used a redirection to write out a file ie:</p>
+      <p>I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).</p>
 
-<pre><code>*/5 * * * * /usr/local/bin/temphum.sh &gt;/tmp/temphum.dat
-</code></pre>
+<p>Here is why:</p>
 
-<p>The wrapper script grabs output and sends it to the server. Having this wrapper script lets me run the
-python script independantly for testing or for curiousity.</p>
+<ul>
+<li>It comes as a binary file that runs on pretty much any platform. A single file&hellip; without a list of dependencies</li>
+<li>I could stop with the last reason and it would be enough&hellip; but I have to say that the file tree used in hugo is simple, and simple is beautiful. As Einstein once said:
+&gt;“Make things as simple as possible, but not simpler.”</li>
+<li>It is written in googles go language&hellip; so it is fast and portable.</li>
+<li>It is closely tied to git so it can easily be used on github and for version maintence.</li>
+<li>it builds a clean directory [./public/] for the full site deploy and this can be rsync&rsquo;d to where ever you like.</li>
+<li><em>No frustrating</em> version incompatiblities (or at least very minimal) - unlike jekyll which seemed to break on me every few months.</li>
+<li>hugo is relatively mature and has a huge developer backing.</li>
+<li>configurable and changed without challenges</li>
+<li>lots of themes to choose from</li>
+<li>as the Hugo websites states - it makes the web fun again&hellip;</li>
+<li>Did I mention that it is a single executable file?</li>
+</ul>
 
-<p>It all worked fine but sometimes the temp would jump in one direction or another for brief period and that
-skewed the graphed - it was ugly so I decided to fix it.</p>
-
-<p>I added code to the python script to look at the temperature that got recorded on the last run into the /tmp/temphum.dat
-file and then judged if the measured temperature greater or less than the &ldquo;last&rdquo; temp by a amount greater than a &ldquo;trigger&rdquo; amount (I orignally set the trigger to be a full degree, that is 1.0). If the difference between the last and the measured temp was greater
-than the &ldquo;trigger&rdquo; then I adjusted the measured temp up or down appropriately by and adjustment amount (0.2). This would smooth
-out the graph and with the readings being taken each 5 minutes everything would work out fine over time.</p>
-
-<p>It all worked fine each time I ran it from the command line. But when the the temperature recorded into the /tmp/temphum.dat
-file was always the measured temp. The adjusted temperature never made it into the file unless I ran it from the command line.
-I assumed the problem was with the environment - this is a natural assumption given that when a cron job runs it inherits no
-environment settings. I adapated the python script to have its own environment PATH and I also changed the bash wrapper script
-to preset it&rsquo;s own PATH settings. But all to no avail.</p>
-
-<p>Then I realized the problem. As soon as the wrapper script runs, it opens a redirection out to &gt;/tmp/temphum.dat. That is also the
-file that the python script reads but as soon as the redirection starts it &ldquo;zeros out&rdquo; the file - it builds an empty file. Now the
-python script has no &ldquo;last&rdquo; temperature to read and my script rightfully drops a null last temperature reading and therefore does no adjusting.</p>
-
-<p>The solution was to drop the redirection from the cron entry and have the python script first open the /tmp/temphum.dat file for reading the last temperature, close the file, do the adjustment calculation, then re-open the file for &ldquo;w&rdquo;rite which empties the file for writing new content, then write the needed message lines to the file, and then close the file.</p>
-
-<p>All is good now. So easy to overlook the simple/obvious show stopper.</p>
+<p>Reference:
+<a href="https://gohugo.io/#intro">gohugo.io</a></p>
 
 <p>Enjoy
 -g-</p>
@@ -234,7 +238,7 @@ python script has no &ldquo;last&rdquo; temperature to read and my script rightf
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=sometimes%20it%20is%20the%20obvious&nbsp;-&nbsp;companionway&amp;url=%2fpost%2fpost-title%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Switched%20to%20Hugo&nbsp;-&nbsp;companionway&amp;url=%2fpost%2fpost-title%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
@@ -242,7 +246,7 @@ python script has no &ldquo;last&rdquo; temperature to read and my script rightf
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fpost-title%2f&amp;description=sometimes%20it%20is%20the%20obvious"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fpost-title%2f&amp;description=Switched%20to%20Hugo"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>

@@ -8,7 +8,7 @@ menu = ""
 share = true
 slug = "post-title"
 tags = ["tag1", "tag2"]
-title = "recursive replace text"
+title = "Recursively Replace Text"
 
 +++
 

@@ -7,11 +7,62 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Thu, 15 Dec 2016 16:36:42 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 16 Dec 2016 12:27:36 -0500</lastBuildDate>
     <atom:link href="/tags/tag1/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>sometimes it is the obvious</title>
+      <title>Raspberry Pi and Xrdp</title>
+      <link>/post/post-title/</link>
+      <pubDate>Fri, 16 Dec 2016 12:27:36 -0500</pubDate>
+      
+      <guid>/post/post-title/</guid>
+      <description>&lt;p&gt;I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
+any linux machine) can be done so many different ways - but the easiest from my perspective is xrdp. It is available
+really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
+xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
+Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
+almost any linux distro.&lt;/p&gt;
+
+&lt;p&gt;When you launch remmina it will ask for a username and password for a connection onto the IP machine you declare in the setup.
+If the xrdp service is properly running on the remote machine it will server up a personal desktop for the user login
+independant of any other desktop sessions that might be running.
+But - I am a fan of enlightment desktop e17 for a whole lot of reasons, many of which are personal history. Enlightenment desktop
+is lightweight so it works well on a raspberry pi. My task was to install e17 onto the raspberry pi and it becomes an
+alternet desktop and then make it available to me over xrdp. My quick searches on the internet turned up a good deal of bogus
+dead ends but I looked over the startup scripts for xsession and noticed it by default looks for and will launch&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-$HOME/.xsession```.&#34;&gt;
+I am using Raspbian 8.0 debian jessie on my raspberry pi. Well, no, actually, I am using berryboot to launch Rasbian 8.0 but that
+has no bearing on this discussion. Rasbian now comes with the pixel desktop which includes the lxterminal program by default
+so I call that up in my ```$HOME/.xsession``` script before launching the enlightnement destop. Here is my script
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#!/usr/bin/env bash
+lxterminal &amp;amp;
+enlightenment_start&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+Then restart the xrdp service with:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;sudo systemctl restart xrdp.service
+```&lt;/p&gt;
+
+&lt;p&gt;If it is your first launch of enightenment you will have to go through the brief setup - for the most part, pick the defaults and happy days are here again.&lt;/p&gt;
+
+&lt;p&gt;Oh but then you will run into this rather serious problem - half of your keys won&amp;rsquo;t work! I have a solution but it probably
+isn&amp;rsquo;t the best solution - it just happens to be the  only one I came across that worked for me.
+Use the mouse in enlightenment and navigate through &lt;code&gt;Settings-&amp;gt;All-&amp;gt;Input-&amp;gt;Key Bindings ... click on Delete All&lt;/code&gt;
+This works and you lose keybindings that you probably wouldn&amp;rsquo;t use through vnc anyway.&lt;/p&gt;
+
+&lt;p&gt;Enjoy
+-g-&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Sometimes It Is The Obvious</title>
       <link>/post/post-title/</link>
       <pubDate>Thu, 15 Dec 2016 16:36:42 -0500</pubDate>
       
@@ -55,7 +106,7 @@ python script has no &amp;ldquo;last&amp;rdquo; temperature to read and my scrip
     </item>
     
     <item>
-      <title>alway use visudo</title>
+      <title>Alway Use Visudo</title>
       <link>/post/post-title/</link>
       <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
       
@@ -106,7 +157,7 @@ update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor
     </item>
     
     <item>
-      <title>recursive replace text</title>
+      <title>Recursively Replace Text</title>
       <link>/post/post-title/</link>
       <pubDate>Sat, 10 Dec 2016 20:38:12 -0500</pubDate>
       

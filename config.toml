@@ -14,7 +14,7 @@ theme = "casper"
 
 [params]
   description = "Meeting challenges with success!"
-  cover = "img/raspberry-pi-card.jpg"
+  cover = "img/rpi-card-dark-crop.jpg"
   author = "Geoff McNamara"
   authorlocation = "Elizabeth City, NC"
   authorwebsite = "http://companionway.net"

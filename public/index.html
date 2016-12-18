@@ -9,7 +9,7 @@
 
 
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:image" content="/img/raspberry-pi-card.jpg"/>
+    <meta name="twitter:image" content="/img/rpi-card-dark-crop.jpg"/>
 
 
 
@@ -110,7 +110,7 @@
 
 
 
-  <header class="main-header" style="background-image: url(/img/raspberry-pi-card.jpg)">
+  <header class="main-header" style="background-image: url(/img/rpi-card-dark-crop.jpg)">
   
 
 
@@ -212,6 +212,8 @@
     
         
     
+        
+    
 
     
         
@@ -238,7 +240,43 @@
         
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/post-title/">sometimes it is the obvious</a></h2>
+        <h2 class="post-title"><a href="/post/post-title/">Raspberry Pi and Xrdp</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><p>I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
+any linux machine) can be done so many different ways - but the easiest from my perspective is xrdp. It is available
+really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
+xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
+Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
+almost any linux distro.</p>
+ <a class="read-more" href="/post/post-title/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+
+        
+        
+            Geoff McNamara
+        
+        on
+            
+                <a href="/tags/tag1/">#tag1</a>,
+            
+                <a href="/tags/tag2/">#tag2</a>,
+            
+        
+        <time class="post-date" datetime="2016-12-16T12:27:36-05:00">
+            16 Dec 2016
+        </time>
+    </footer>
+</article>
+
+    
+        
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/post-title/">Sometimes It Is The Obvious</a></h2>
     </header>
     <section class="post-excerpt">
         <p><p>This was one of those &ldquo;problems&rdquo; that nagged me for many hours until the obvious dawned on me.
@@ -278,7 +316,7 @@ python script independantly for testing or for curiousity.</p>
         
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/post-title/">alway use visudo</a></h2>
+        <h2 class="post-title"><a href="/post/post-title/">Alway Use Visudo</a></h2>
     </header>
     <section class="post-excerpt">
         <p><blockquote>
@@ -323,7 +361,7 @@ back to the monitor server.</p>
         
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/post-title/">recursive replace text</a></h2>
+        <h2 class="post-title"><a href="/post/post-title/">Recursively Replace Text</a></h2>
     </header>
     <section class="post-excerpt">
         <p><p>Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If I had to look it up, you have to suffer seeing it in my blog post&hellip; <smile></p>
@@ -413,7 +451,7 @@ back to the monitor server.</p>
         <h2 class="post-title"><a href="/post/Converting-Images/">Converting Images</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>I have fought with trying to remember the syntax for Imagemagik&rsquo;s convert command for years. I finaly caved in [from my normal position of &ldquo;if you can&rsquo;t do it from the commandline, then you are a wimp&rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &ldquo;conveseen&rdquo;. <a class="read-more" href="/post/Converting-Images/">&raquo;</a></p>
+        <p>I have fought with trying to remember the syntax for Imagemagik&rsquo;s convert command for years. I finaly caved in [from my normal position of &ldquo;if you can&rsquo;t do it from the commandline, then you are a wimp&rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &ldquo;converseen&rdquo;. <a class="read-more" href="/post/Converting-Images/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -603,51 +641,6 @@ characters.</p>
         
         <time class="post-date" datetime="2015-04-30T00:00:00Z">
             30 Apr 2015
-        </time>
-    </footer>
-</article>
-
-    
-        
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-28-post1/">git inside, git better, git stronger</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h2 id="exploring-git-from-the-inside-out:13d1ef1aa2da144986cfdc7e7a64a8a1">&hellip; exploring git from the inside out &hellip;</h2>
-
-<p>###Preface</p>
-
-<p><p class=highcap>Apologies up front - this is long&hellip; very long, but there is food for the brain here.
-I will discuss git for personal use. Using it with many other contributors is
-an extension of the principle covered here. For simplicity, I am only going
-to discuss you working alone and only using a single &ldquo;branch&rdquo; of code for
-each project - again, for simplicity. Additionally we are going to examine
-the git &ldquo;database&rdquo; (stored as compressed SHA-1 named files/objects) as we go.
-We can gain a better understanding by reviewing the changes to the guts of
-your personal git repository. We will not cover branches, tags, or the git daemon
-in this discussion.</p>
-
-<p>###Why git? (skip this if you are less than patient)</p>
-
-<p>Many years ago I used backups of my projects or just documents, notes, etc.
-All worked well until it didn&rsquo;t. If you make a mistake and back it up guess what,</p>
- <a class="read-more" href="/post/2015-04-28-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="2015-04-28T00:00:00Z">
-            28 Apr 2015
         </time>
     </footer>
 </article>
