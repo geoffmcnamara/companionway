@@ -1,6 +1,5 @@
 # Site settings (baseurl must end with a trailing slash!)
 #baseURL = "https://companionway.net:/hugo/"
-#baseURL = "./"
 baseurl = "/"
 #relativeURLs = true
 #uglyURLs = true
