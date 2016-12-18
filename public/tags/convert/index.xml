@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Convert on companionway</title>
+    <link>/tags/convert/</link>
+    <description>Recent content in Convert on companionway</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved - companionway - 2016</copyright>
+    <lastBuildDate>Tue, 06 Dec 2016 11:58:20 -0500</lastBuildDate>
+    <atom:link href="/tags/convert/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Converting Images</title>
+      <link>/post/Converting-Images/</link>
+      <pubDate>Tue, 06 Dec 2016 11:58:20 -0500</pubDate>
+      
+      <guid>/post/Converting-Images/</guid>
+      <description>&lt;p&gt;I have fought with trying to remember the syntax for Imagemagik&amp;rsquo;s convert command for years. I finaly caved in [from my normal position of &amp;ldquo;if you can&amp;rsquo;t do it from the commandline, then you are a wimp&amp;rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &amp;ldquo;converseen&amp;rdquo;. It can do batch conversions or on selected files. Gets the job done without the challenge of looking up all the arguments for &amp;ldquo;convert&amp;rdquo;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s change an image</title>
+      <link>/post/2015-04-01-post3/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-04-01-post3/</guid>
+      <description>
+
+&lt;h1 id=&#34;changing-an-image:aba29ba936576f527412a935dd26c686&#34;&gt;Changing an image&lt;/h1&gt;
+
+&lt;p&gt;The magic tool is adapt images is &lt;em&gt;convert&lt;/em&gt; from the imagemagick package.&lt;/p&gt;
+
+&lt;p&gt;To convert type: &lt;code&gt;convert myimage.png myimage.jpg&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is a way to resize an image: &lt;code&gt;convert myimage.png -resize 200x100 myimage.png&lt;/code&gt;
+&amp;gt;Notice: the image will be converted right over the top of itself&lt;/p&gt;
+
+&lt;p&gt;To darken (first argument to -modulate) an image and reduce&lt;br /&gt;
+the color (second argument to -modulate):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;convert -modulate 70,90 myimage.png myimage-darker.png
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What about rotation: `convert myimage.png -rotate 90 myimage.png&lt;/p&gt;
+
+&lt;p&gt;These are just a small, very small sampling of what &lt;em&gt;convert&lt;/em&gt; can do for your images&lt;/p&gt;
+
+&lt;p&gt;Just for grins: &lt;code&gt;convert myimage.jpg -charcoal 2 myimage-charcoal.jpg&lt;/code&gt;
+ The &amp;ldquo;2&amp;rdquo; is for setting the &amp;ldquo;strength&amp;rdquo; of the charcoal effect.&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

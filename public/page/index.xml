@@ -15,35 +15,17 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/page/about/</guid>
-      <description>&lt;p class=&#34;introduction&#34;&gt;I am a native of Northern Virginia, 
-grew up there, and worked
-most of my life there. I had all advantages that come with the area including a
-good school system and a relatively resilient economy.&lt;/p&gt;
+      <description>&lt;p class=&#34;introduction&#34;&gt;I am a native of Northern Virginia, grew up there, and worked most of my life there. I had all advantages that come with the area including a good school system and a relatively resilient economy.&lt;/p&gt;
 
-&lt;p&gt;I attend George Mason University and eventually found my way into&lt;br /&gt;
-the Fairfax County Fire Department. I had a wonderful 25 year career with
-the Fire Service and&lt;br /&gt;
-built strong friendships with many good people. I had the opportunity to serve in many&lt;br /&gt;
-capacities while with the Fire Department. I continued attending college&lt;br /&gt;
-and studying a variety of subjects, one of which turned out to be&lt;br /&gt;
-my second career and passion - computers.&lt;/p&gt;
+&lt;p&gt;I attend George Mason University and eventually found my way into  the Fairfax County Fire Department. I had a wonderful 25 year career with the Fire Service and  built strong friendships with many good people. I had the opportunity to serve in many  capacities while with the Fire Department. I continued attending college  and studying a variety of subjects, one of which turned out to be  my second career and passion - computers.&lt;/p&gt;
 
-&lt;p&gt;This journey of passion led me to become a UNIX system administrator and to my good fortune&lt;br /&gt;
-I worked for several great mentors. I worked with Blair Miller several times&lt;br /&gt;
-after my initial employment with him where he gave my my first chance&lt;br /&gt;
-to learn the skills to be a productive system administrator and taught me&lt;br /&gt;
-invaluable lessons in all areas related to the IT world.&lt;/p&gt;
+&lt;p&gt;This journey of passion led me to become a UNIX system administrator and to my good fortune  I worked for several great mentors. I worked with Blair Miller several times  after my initial employment with him where he gave my my first chance  to learn the skills to be a productive system administrator and taught me  invaluable lessons in all areas related to the IT world.&lt;/p&gt;
 
-&lt;p&gt;Many projects later, having worked with other great people, I had a healthy set&lt;br /&gt;
-of skills that allowed me to work with large corporations where I was challenged
-with large build outs designed to handle huge web volumes of dynamic delivery content.&lt;/p&gt;
+&lt;p&gt;Many projects later, having worked with other great people, I had a healthy set  of skills that allowed me to work with large corporations where I was challenged with large build outs designed to handle huge web volumes of dynamic delivery content.&lt;/p&gt;
 
-&lt;p&gt;Teaching and coaching have always played a role in my career.&lt;br /&gt;
-There is a reward for me in developing the knowledge base and skills of others that&lt;br /&gt;
-provides me with a productive sense of satisfaction.&lt;/p&gt;
+&lt;p&gt;Teaching and coaching have always played a role in my career.   There is a reward for me in developing the knowledge base and skills of others that  provides me with a productive sense of satisfaction.&lt;/p&gt;
 
-&lt;p&gt;I now enjoy learning new skills everyday and look forward to continuing to teach&lt;br /&gt;
-and coach others along the way.&lt;/p&gt;
+&lt;p&gt;I now enjoy learning new skills everyday and look forward to continuing to teach  and coach others along the way.&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
 Hence this blog&amp;hellip;
@@ -120,13 +102,13 @@ Enjoy
 &lt;h1 id=&#34;projects:3c42bb4157bf51d85ae7ffc4e1685909&#34;&gt;Projects&lt;/h1&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../files/gomenu&#34;&gt;gomenu&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../files/myphile&#34;&gt;myphile&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../files/myfiles&#34;&gt;myfiles&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../files/utils&#34;&gt;utils&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/files/gomenu&#34;&gt;gomenu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/files/myphile&#34;&gt;myphile&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/files/myfiles&#34;&gt;myfiles&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/files/utils&#34;&gt;utils&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;More to share &amp;hellip; see &lt;a href=&#34;../files/utils&#34;&gt;utils&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;More to share &amp;hellip; see &lt;a href=&#34;/files/utils&#34;&gt;utils&lt;/a&gt;&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;vimrc&lt;/li&gt;

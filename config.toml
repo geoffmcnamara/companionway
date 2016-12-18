@@ -19,7 +19,7 @@ theme = "casper"
   authorwebsite = "http://companionway.net"
   bio= "“Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien"
   #logo = "images/logo.png"
-  googleAnalyticsUserID = "UA-79101-12"
+  googleAnalyticsUserID = "UA-6970218-1"
   # Optional RSS-Link, if not provided it defaults to the standard index.xml
   #RSSLink = "http://feeds.feedburner.com/..."
   githubName = "geoffmcnamara"
@@ -29,7 +29,7 @@ theme = "casper"
   # set true if you are not proud of using Hugo (true will hide the footer note "Proudly published with HUGO.....")
   hideHUGOSupport = false
   [params.social]
-    twitter = "your_twitter"
+    twitter = "@geoffmcnamara"
 
 [[menu.main]]
   name = "Home"

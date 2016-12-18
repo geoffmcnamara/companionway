@@ -7,7 +7,7 @@ image = ""
 menu = ""
 share = true
 slug = ""
-tags = []
+tags = ["convert"]
 title = "Converting Images"
 
 +++

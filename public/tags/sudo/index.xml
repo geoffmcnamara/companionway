@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sudo on companionway</title>
+    <link>/tags/sudo/</link>
+    <description>Recent content in Sudo on companionway</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved - companionway - 2016</copyright>
+    <lastBuildDate>Wed, 14 Dec 2016 10:59:38 -0500</lastBuildDate>
+    <atom:link href="/tags/sudo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Alway Use Visudo</title>
+      <link>/post/post-title/</link>
+      <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
+      
+      <guid>/post/post-title/</guid>
+      <description>&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Familiarity breeds contempt&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I get very comfortable with using the vim editor (take cover&amp;hellip; flame way ensuing) so
+comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
+to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
+/etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
+simple monitoring program (xymon) to be able to run &amp;ldquo;sudo ufw status&amp;rdquo; without a password and report
+back to the monitor server.&lt;/p&gt;
+
+&lt;p&gt;I fired up &lt;code&gt;sudo vim /etc/sudoers.d/xymon&lt;/code&gt; and started to add the needed line:
+&lt;code&gt;xymon ALL = NOPASSWD: /usr/sbin/ufw status&lt;/code&gt; but I got halfway through and could remember the exact location&lt;/p&gt;
+
+&lt;p&gt;of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the phsical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplimental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.&lt;/p&gt;
+
+&lt;p&gt;Lesson: &lt;em&gt;Always use visudo&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;By the way, to change the default editor from nano to vim for visudo (on unbuntu at least) you can run:
+&lt;code&gt;sudo update-alternatives --config editor&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;On my systems that exchange looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ sudo update-alternatives --config editor
+There are 4 choices for the alternative editor (providing /usr/bin/editor).
+
+  Selection    Path                Priority   Status
+------------------------------------------------------------
+* 0            /bin/nano            40        auto mode
+  1            /bin/ed             -100       manual mode
+  2            /bin/nano            40        manual mode
+  3            /usr/bin/vim.basic   30        manual mode
+  4            /usr/bin/vim.tiny    10        manual mode
+
+Press &amp;lt;enter&amp;gt; to keep the current choice[*], or type selection number: 3
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in manual mode
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Enjoy
+-g-&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

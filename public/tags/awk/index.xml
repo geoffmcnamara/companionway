@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Awk on companionway</title>
+    <link>/tags/awk/</link>
+    <description>Recent content in Awk on companionway</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved - companionway - 2016</copyright>
+    <lastBuildDate>Sat, 02 May 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/awk/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to print the remainder of a line using awk</title>
+      <link>/post/2015-05-02-post1/</link>
+      <pubDate>Sat, 02 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-05-02-post1/</guid>
+      <description>
+
+&lt;p&gt;#How to print remainder of line using awk&lt;/p&gt;
+
+&lt;h2 id=&#34;eliminate-the-first-x-columns:2c0617bf3b5ab6328428ad749a5685c3&#34;&gt;eliminate the first X columns&amp;hellip;&lt;/h2&gt;
+
+&lt;p&gt;Here is your challenge you have a list of cronjobs and you
+want to just execute the scheduled backup command with its
+arguments for a test run.&lt;/p&gt;
+
+&lt;p&gt;Using one command line, how would you do it?&lt;/p&gt;
+
+&lt;p&gt;Here is a sample root cronjob and I want to run the
+first entry with its arguments as a test run:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# m h  dom mon dow   command
+ 0 16  *   *   * /data/share/home/geoffm/dev/utils/bak-it.sh -i /usr/local/etc/include.lst -e /usr/local/etc/exclude.lst -t /data/bak/`hostname` -s 7 &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+  5 0  *   *   * /data/share/motion/arch-files.sh &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+*/15 *  *   *   * /data/share/home/geoffm/grab-pic.sh &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+####### below are WIP or OLD ########
+# 16 6  *   *   * /usr/sbin/lynis -c --auditor &amp;quot;automated&amp;quot; --cronjob --quiet &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+#*/5 *  *   *   * /usr/local/bin/watch-proc.sh -f /usr/local/etc/watch-proc.conf -n geoffm@localhost &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
+#*/5 * * * * /data/share/home/geoffm/ping-pong.sh &amp;quot;ping -c2 192.168.1.55&amp;quot; &amp;quot;ssh 192.168.1.1 reboot&amp;quot; &amp;gt;/dev/null
+#  7 * * * /usr/local/sbin/postfix_report.sh &amp;amp;&amp;gt; /dev/null
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here is how I would do it:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo $(sudo crontab -l | awk &#39;/bak-it/{$1=$2=$3=$4=$5=&amp;quot;&amp;quot;;print $0}&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Examining this we first see this &lt;code&gt;$(...)&lt;/code&gt; structure which tells
+the shell to run whatever exists between the parens and replace the
+output right there. So first we call sudo crontab -l in order to
+make sure we get root&amp;rsquo;s crontab listed. The output is piped into
+awk where we give it a regex to search for in each string (ie /bak-it/).
+The trick here is we tell awk to make the first variable in the string
+equal to the second&amp;hellip; equal to the 3rd, 4th and 5th, and finally = &amp;ldquo;&amp;rdquo;.
+This effectively substitutes and empty string for the first 5 variables
+leaving the remained of the line which then gets printed with the
+&lt;code&gt;print $0&lt;/code&gt;. Actually you can leave off the &lt;code&gt;$0&lt;/code&gt; because awk will default
+to that if you just use &lt;code&gt;print&lt;/code&gt; alone.&lt;/p&gt;
+
+&lt;p&gt;Now there may be one more problem. If you run that command above it
+will execute the intended command along with the arguments BUT it will
+do it as the user who ran it. Obviously, if the commands come from the
+root crontab it may not run properly for another user.&lt;/p&gt;
+
+&lt;p&gt;I will leave it as an exercise for the reader to solve that problem.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Centering a string</title>
+      <link>/post/2015-04-02-post1/</link>
+      <pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-04-02-post1/</guid>
+      <description>
+
+&lt;h1 id=&#34;center-a-string-using-awk:11a6877e6983186439ea558b645f2eab&#34;&gt;Center a string using awk&lt;/h1&gt;
+
+&lt;h2 id=&#34;awk-everyone-s-favorite-right:11a6877e6983186439ea558b645f2eab&#34;&gt;awk = everyone&amp;rsquo;s favorite - right?&lt;/h2&gt;
+
+&lt;p&gt;People who know me also know that I prefer simple
+universally available tools to get a job done. Awk is
+probably one of my favorites because it does pretty
+much anything I need for quick and simple jobs. It is
+far more powerful than most people realize including
+associative arrays and it will do anything grep and sed&lt;br /&gt;
+can do.&lt;/p&gt;
+
+&lt;p&gt;Recently I had the need to center a string of text. This
+is a easy problem that pretty much any freshman programmer
+can accomplish in a heartbeat but I decided to do it with
+awk. This sample gives you a chance to explore rudimentary
+features of awk.&lt;/p&gt;
+
+&lt;p&gt;Assumptions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;STRING = &amp;ldquo;my string for centering&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;LLEN = 65 # This is the line length&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;echo $STRING | awk -vllen=$LLEN &#39;
+  BEGIN{for(i=1;i&amp;lt;=llen;i++){printf i%10};printf &amp;quot;\n&amp;quot;}
+  {
+  startpos = (llen - length)/2;
+  for(i=1;i&amp;lt;=startpos;i++)
+  {
+    printf &amp;quot; &amp;quot;
+  }
+  print $0
+  }&#39; 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The BEGIN section is just to provide a rule line&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;length&amp;rdquo; is the length of the line fed into awk ($0 variable).
+&amp;ldquo;startpos&amp;rdquo; is the start position for the string - the for&lt;br /&gt;
+loop just prints a space until startpos is reached (printf&lt;br /&gt;
+ is used to avoid a line break).&lt;/p&gt;
+
+&lt;p&gt;Not perfect but it works for me.&lt;/p&gt;
+
+&lt;p&gt;-g-&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

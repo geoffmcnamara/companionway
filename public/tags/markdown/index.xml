@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on companionway</title>
+    <link>/tags/markdown/</link>
+    <description>Recent content in Markdown on companionway</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved - companionway - 2016</copyright>
+    <lastBuildDate>Wed, 01 Apr 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Learning markdown ...</title>
+      <link>/post/2015-04-01-post1/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2015-04-01-post1/</guid>
+      <description>
+
+&lt;h1 id=&#34;markdown-this-heading-uses-setext-style:ed219d14eb367d0c2c4ea96328d19f7a&#34;&gt;Markdown - this heading uses Setext style&lt;/h1&gt;
+
+&lt;p&gt;You can&lt;br /&gt;
+break lines&lt;br /&gt;
+by adding &amp;gt;=2 spaces&lt;br /&gt;
+to the end
+before starting the next line&lt;/p&gt;
+
+&lt;h1 id=&#34;this-heading-uses-atx-style:ed219d14eb367d0c2c4ea96328d19f7a&#34;&gt;This heading uses atx style&lt;/h1&gt;
+
+&lt;p&gt;&lt;p&gt;I am learning that you have to name&lt;br /&gt;
+ your post file with YYYY-MM-DD-whatever.markdown&lt;/p&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;p&gt;the &lt;strong&gt;extension&lt;/strong&gt; &lt;em&gt;can&lt;/em&gt; be &amp;ldquo;.md&amp;rdquo;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;quoted text
+here&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;A list:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;one&lt;/li&gt;
+&lt;li&gt;two&lt;/li&gt;
+&lt;li&gt;three&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To get \(LaTex\) to work I had to add this to the _includes/footer.html
+You can actually add it right into the markdown file itself. I put it
+in the footer because it is a bit more efficient to have the js loaded last.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;
+    src=&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and change the _config to use redcarpet for markdown&lt;/p&gt;
+
+&lt;p&gt;BTW - to get \(Latex\) in the same line use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;insert \\(LaTex\\) here
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now this code&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$$a^2 + b_i^2 = c^2 \left(\frac12\right) $$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;looks like this:
+$$a^2 + b_i^2 = c^2 \left(\frac12\right)$$
+or block \(Latex\):
+\[ \frac{1}{n^{2}}\]&lt;/p&gt;
+
+&lt;p&gt;Here is some ruby code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-ruby&#34;&gt;ruby -run -e httpd . -p 9090 # which serves up the current directory
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;{% highlight ruby linenos%}
+def foo
+  puts &amp;lsquo;foo&amp;rsquo;
+end
+{% endhighlight %}&lt;/p&gt;
+
+&lt;p&gt;Inline code &lt;code&gt;echo DEBUG: $LINENO&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;A table ( arrrg &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:ed219d14eb367d0c2c4ea96328d19f7a:n&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:ed219d14eb367d0c2c4ea96328d19f7a:n&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;):&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;lets&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;do&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;a&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;table&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;with&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;more&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;rows&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;here&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;table border=2&gt;
+ &lt;tr&gt;
+  &lt;td&gt;one&lt;/td&gt;&lt;td&gt;two&lt;/td&gt;
+ &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;This code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; *italics*
+ **emphasis**   
+ _underline_      
+ ~~strikethrough~~   
+ [link title](http://companionway.net)   
+ ![alt name](/img/logo.png &amp;quot;logo&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Produces:&lt;br /&gt;
+&lt;em&gt;italics&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;emphasis&lt;/strong&gt;&lt;br /&gt;
+&lt;em&gt;underline&lt;/em&gt;&lt;br /&gt;
+&lt;del&gt;strikethrough&lt;/del&gt;&lt;br /&gt;
+&lt;a href=&#34;http://companionway.net&#34;&gt;link title&lt;/a&gt;&lt;br /&gt;
+&lt;img src=&#34;/img/logo.png&#34; alt=&#34;alt name&#34; title=&#34;logo&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;End of post&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:ed219d14eb367d0c2c4ea96328d19f7a:n&#34;&gt;Don&amp;rsquo;t try to use the beginning or ending pipe | and spanning not working
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:ed219d14eb367d0c2c4ea96328d19f7a:n&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

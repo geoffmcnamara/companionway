@@ -7,7 +7,7 @@ image = ""
 menu = ""
 share = true
 slug = "post-title"
-tags = ["tag1", "tag2"]
+tags = ["sudo"]
 title = "Alway Use Visudo"
 
 +++
