@@ -8,7 +8,7 @@ menu = ""
 share = true
 slug = "post-title"
 tags = ["sudo"]
-title = "Alway Use Visudo"
+title = "Always Use Visudo"
 
 +++
 
