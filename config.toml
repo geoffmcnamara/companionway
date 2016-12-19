@@ -18,7 +18,7 @@ theme = "casper"
   authorlocation = "Elizabeth City, NC"
   authorwebsite = "http://companionway.net"
   bio= "“Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien"
-  #logo = "images/logo.png"
+  #logo = "img/cos-logo.png"
   googleAnalyticsUserID = "UA-6970218-1"
   # Optional RSS-Link, if not provided it defaults to the standard index.xml
   #RSSLink = "http://feeds.feedburner.com/..."

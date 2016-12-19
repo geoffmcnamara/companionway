@@ -1,22 +1,23 @@
-//I wanted to change the header on the theme for my web site
-//to display a slide down and in header.
+//  gwm added 
 
-//The script needed to be a combination of two jquery animations.
+// fonts
+//<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Architects Daughter">
+//<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300">
+//<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Philosopher">
+//<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400,600">
+//<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Vollkorn">
+
+// jquery scripting 
  src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
 
-// add id=fadeInDown to a <div> to invloke this.
-//```javascript
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
+// quick n dirty fade down code - needs jquery
+  $(document).ready(function(){
     $('#fadeInDown')
     .css('display', "none")
-    .slideDown(2000)
+    .slideDown(1000)
     .animate(
       { opacity: 1 },
-      { queue: false, duration: 2300 }
-      );
-    });
-</script>
-//```
+      { queue: false, duration: 1000 }
+    );
+  });
 
