@@ -1,18 +1,5 @@
 {{ partial "header.html" . }}
-<!--
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-    $('#fadeInDown')
-    .css('display', "none")
-    .slideDown(2000)
-    .animate(
-      { opacity: 1 },
-      { queue: false, duration: 2300 }
-      );
-    });
-</script>
--->
+
 {{if .Site.Params.cover}}
 {{if or (eq (substr .Site.Params.cover 0 7) "http://") (eq (substr .Site.Params.cover 0 8) "https://")}}
   <header id='fadeInDown' class="main-header" style="background-image: url({{.Site.Params.cover}})">
@@ -129,5 +116,4 @@ $(document).ready(function(){
 
 </main>
 
-{{ partial "scripts.html" . }}
 {{ partial "footer.html" . }}
