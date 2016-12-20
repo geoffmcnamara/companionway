@@ -6,7 +6,6 @@ draft = false
 image = "img/hugo-logo.png"
 menu = ""
 share = true
-slug = "post-title"
 tags = ["hugo", "jekyll", "cms"]
 title = "Switched to Hugo"
 

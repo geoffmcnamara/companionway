@@ -45,10 +45,13 @@ Enjoy
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/page/links/</guid>
-      <description>&lt;ul&gt;
+      <description>
+
+&lt;h2 id=&#34;sysadmin-or-web-dev-tools:424069113a08a4256349764ee38dbbbf&#34;&gt;sysadmin or web dev tools&lt;/h2&gt;
+
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://github.com&#34;&gt;Link for gihub&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://git-scm.com&#34;&gt;Ling for git-scm&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Link for jekyll&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.ansible.com/home&#34;&gt;Link for ansible&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.vagrantup.com/&#34;&gt;Link for vagrant&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://linuxcontainers.org/&#34;&gt;Link for lxc&lt;/a&gt;&lt;/li&gt;
@@ -57,12 +60,16 @@ Enjoy
 
 &lt;hr /&gt;
 
+&lt;h2 id=&#34;quick-tech-headline-news:424069113a08a4256349764ee38dbbbf&#34;&gt;Quick tech headline news&lt;/h2&gt;
+
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.linuxtoday.com/&#34;&gt;Link for LinuxToday&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.dailyrotation.com/&#34;&gt;Link for DailyRotation&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
+
+&lt;h2 id=&#34;dynamic-content-management-systems-dynamic-cms:424069113a08a4256349764ee38dbbbf&#34;&gt;dynamic content management systems [dynamic CMS]&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt;&lt;/li&gt;
@@ -72,7 +79,11 @@ Enjoy
 
 &lt;hr /&gt;
 
+&lt;h2 id=&#34;static-content-managment-systems-static-cms:424069113a08a4256349764ee38dbbbf&#34;&gt;static content managment systems [static CMS]&lt;/h2&gt;
+
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://jekyllrb.com/&#34;&gt;jekyll&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gohugo.io&#34;&gt;hugo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://getgrav.org/&#34;&gt;gravCMS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://picocms.org/&#34;&gt;picoCMS&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://statamic.com&#34;&gt;statamic&lt;/a&gt;&lt;/li&gt;
@@ -83,8 +94,10 @@ Enjoy
 
 &lt;hr /&gt;
 
+&lt;h2 id=&#34;learning:424069113a08a4256349764ee38dbbbf&#34;&gt;learning&lt;/h2&gt;
+
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/kuba-moo/mt7630e.git&#34;&gt;github kuba-moo/mt7630e&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://linuxconfig.org/learn-python-fundamentals&#34;&gt;learn python fundamentals&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

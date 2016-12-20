@@ -12,10 +12,10 @@
     
     <item>
       <title>Recursively Replace Text</title>
-      <link>/post/post-title/</link>
+      <link>/post/recursive-replace-text/</link>
       <pubDate>Sat, 10 Dec 2016 20:38:12 -0500</pubDate>
       
-      <guid>/post/post-title/</guid>
+      <guid>/post/recursive-replace-text/</guid>
       <description>&lt;p&gt;Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If I had to look it up, you have to suffer seeing it in my blog post&amp;hellip; &lt;smile&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;find ./ -name \*.md -print0 | xargs -0 sed -i &#39;s/header-img/img/&#39;

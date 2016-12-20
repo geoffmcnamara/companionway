@@ -6,7 +6,6 @@ draft = false
 image = "img/raspberry-pi-card.jpg"
 menu = ""
 share = true
-slug = "post-title"
 tags = ["raspberry", "rdp"]
 title = "Raspberry Pi and Xrdp"
 

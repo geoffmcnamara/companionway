@@ -6,10 +6,10 @@ image: "img/anchor_chain.jpg"
 menu: main
 ---
 
+## sysadmin or web dev tools
 
 * [Link for gihub](http://github.com)
 * [Ling for git-scm](http://git-scm.com)
-* [Link for jekyll](http://jekyllrb.com/)
 * [Link for ansible](http://www.ansible.com/home)
 * [Link for vagrant](https://www.vagrantup.com/)
 * [Link for lxc](https://linuxcontainers.org/)
@@ -17,10 +17,14 @@ menu: main
 
 ----------------------
 
+## Quick tech headline news
+
 * [Link for LinuxToday](http://www.linuxtoday.com/)
 * [Link for DailyRotation](http://www.dailyrotation.com/)
 
 ----------------------
+
+## dynamic content management systems [dynamic CMS]
 
 * [Wordpress](https://wordpress.org/)
 * [Drupal](https://www.drupal.org/)
@@ -28,6 +32,10 @@ menu: main
 
 ------------
 
+## static content managment systems [static CMS]
+
+* [jekyll](http://jekyllrb.com/)
+* [hugo](https://gohugo.io)
 * [gravCMS](http://getgrav.org/)
 * [picoCMS](http://picocms.org/)
 * [statamic](http://statamic.com)
@@ -37,5 +45,7 @@ menu: main
 
 --------------
 
-* [github kuba-moo/mt7630e] (https://github.com/kuba-moo/mt7630e.git)
+## learning  ##
+
+* [learn python fundamentals](https://linuxconfig.org/learn-python-fundamentals)
 

@@ -6,7 +6,6 @@ draft = false
 image = "img/visudo.jpg"
 menu = ""
 share = true
-slug = "post-title"
 tags = ["sudo"]
 title = "Always Use Visudo"
 

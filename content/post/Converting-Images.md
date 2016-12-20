@@ -3,10 +3,9 @@ author = ""
 comments = false
 date = "2016-12-06T11:58:20-05:00"
 draft = false
-image = ""
+image = "img/converseen-sshot.png"
 menu = ""
 share = true
-slug = ""
 tags = ["convert"]
 title = "Converting Images"
 

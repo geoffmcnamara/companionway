@@ -12,10 +12,10 @@
     
     <item>
       <title>Switched to Hugo</title>
-      <link>/post/post-title/</link>
+      <link>/post/Switched-to-Hugo/</link>
       <pubDate>Fri, 09 Dec 2016 10:57:45 -0500</pubDate>
       
-      <guid>/post/post-title/</guid>
+      <guid>/post/Switched-to-Hugo/</guid>
       <description>&lt;p&gt;I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
 &lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 

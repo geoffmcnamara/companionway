@@ -6,7 +6,6 @@ draft = false
 image = "img/owl.jpg"
 menu = ""
 share = true
-slug = "post-title"
 tags = ["scripting", "python"]
 title = "Sometimes It Is The Obvious"
 

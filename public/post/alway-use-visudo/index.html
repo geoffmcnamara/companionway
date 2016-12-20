@@ -11,34 +11,49 @@
     
         
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:image" content="/img/converseen-sshot.png"/>
+        <meta name="twitter:image" content="/img/visudo.jpg"/>
     
 
 
 
-<meta name="twitter:title" content="Converting Images"/>
-<meta name="twitter:description" content="I have fought with trying to remember the syntax for Imagemagik&rsquo;s convert command for years. I finaly caved in [from my normal position of &ldquo;if you can&rsquo;t do it from the commandline, then you are a wimp&rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &ldquo;converseen&rdquo;."/>
+<meta name="twitter:title" content="Always Use Visudo"/>
+<meta name="twitter:description" content="
+
+&ldquo;Familiarity breeds contempt&rdquo;
+
+
+
+I get very comfortable with using the vim editor (take cover&hellip; flame way ensuing) so
+comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
+to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
+/etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
+simple monitoring program (xymon) to be able to run &ldquo;sudo ufw status&rdquo; without a password and report
+back to the monitor server.
+
+I fired up sudo vim /etc/sudoers.d/xymon and started to add the needed line:
+xymon ALL = NOPASSWD: /usr/sbin/ufw status but I got halfway through and could remember the exact location
+"/>
 
     <meta name="twitter:site" content="@@geoffmcnamara"/>
 
 
 
-		<meta property="og:title" content=" Converting Images &middot;  companionway" />
+		<meta property="og:title" content=" Always Use Visudo &middot;  companionway" />
 		<meta property="og:site_name" content="companionway" />
-		<meta property="og:url" content="/post/Converting-Images/" />
+		<meta property="og:url" content="/post/alway-use-visudo/" />
 
 		
 		<meta property="og:type" content="article" />
 
-		<meta property="og:article:published_time" content="2016-12-06T11:58:20-05:00" />
+		<meta property="og:article:published_time" content="2016-12-14T10:59:38-05:00" />
 
 		
-		<meta property="og:article:tag" content="convert" />
+		<meta property="og:article:tag" content="sudo" />
 		
 		
 
 		<title>
-			 Converting Images &middot;  companionway
+			 Always Use Visudo &middot;  companionway
 		</title>
 
 		<meta name="description" content="Meeting challenges with success!" />
@@ -74,7 +89,7 @@
 		
 		<meta name="generator" content="Hugo 0.16-DEV" />
 
-		<link rel="canonical" href="/post/Converting-Images/" />
+		<link rel="canonical" href="/post/alway-use-visudo/" />
 
     <link ref="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=EB+Garamond' >
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Architects Daughter" >
@@ -144,7 +159,7 @@ ga('send', 'pageview');
 
 
   
-  <header class="main-header post-head" style="background-image: url(/img/converseen-sshot.png)">
+  <header class="main-header post-head" style="background-image: url(/img/visudo.jpg)">
   
   <nav class="main-nav overlay clearfix">
 
@@ -166,23 +181,64 @@ ga('send', 'pageview');
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Converting Images</h1>
+        <h1 class="post-title">Always Use Visudo</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2016-12-06T11:58:20-05:00">
-            Dec 6, 2016
+          <time class="post-date" datetime="2016-12-14T10:59:38-05:00">
+            Dec 14, 2016
           </time>
         
          
-          <span class="post-tag small"><a href="/tags/convert/">#convert</a></span>
+          <span class="post-tag small"><a href="/tags/sudo/">#sudo</a></span>
          
         </section>
     </header>
 
     <section class="post-content">
-      <p>I have fought with trying to remember the syntax for Imagemagik&rsquo;s convert command for years. I finaly caved in [from my normal position of &ldquo;if you can&rsquo;t do it from the commandline, then you are a wimp&rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &ldquo;converseen&rdquo;. It can do batch conversions or on selected files. Gets the job done without the challenge of looking up all the arguments for &ldquo;convert&rdquo;.</p>
+      <blockquote>
+<blockquote>
+<p>&ldquo;Familiarity breeds contempt&rdquo;</p>
+</blockquote>
+</blockquote>
+
+<p>I get very comfortable with using the vim editor (take cover&hellip; flame way ensuing) so
+comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
+to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
+/etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
+simple monitoring program (xymon) to be able to run &ldquo;sudo ufw status&rdquo; without a password and report
+back to the monitor server.</p>
+
+<p>I fired up <code>sudo vim /etc/sudoers.d/xymon</code> and started to add the needed line:
+<code>xymon ALL = NOPASSWD: /usr/sbin/ufw status</code> but I got halfway through and could remember the exact location</p>
+
+<p>of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the phsical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplimental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.</p>
+
+<p>Lesson: <em>Always use visudo</em></p>
+
+<p>By the way, to change the default editor from nano to vim for visudo (on unbuntu at least) you can run:
+<code>sudo update-alternatives --config editor</code></p>
+
+<p>On my systems that exchange looks like this:</p>
+
+<pre><code>$ sudo update-alternatives --config editor
+There are 4 choices for the alternative editor (providing /usr/bin/editor).
+
+  Selection    Path                Priority   Status
+------------------------------------------------------------
+* 0            /bin/nano            40        auto mode
+  1            /bin/ed             -100       manual mode
+  2            /bin/nano            40        manual mode
+  3            /usr/bin/vim.basic   30        manual mode
+  4            /usr/bin/vim.tiny    10        manual mode
+
+Press &lt;enter&gt; to keep the current choice[*], or type selection number: 3
+update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in manual mode
+</code></pre>
+
+<p>Enjoy
+-g-</p>
 
     </section>
 
@@ -214,19 +270,19 @@ ga('send', 'pageview');
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Converting%20Images&nbsp;-&nbsp;companionway&amp;url=%2fpost%2fConverting-Images%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Always%20Use%20Visudo&nbsp;-&nbsp;companionway&amp;url=%2fpost%2falway-use-visudo%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fConverting-Images%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2falway-use-visudo%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fConverting-Images%2f&amp;description=Converting%20Images"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2falway-use-visudo%2f&amp;description=Always%20Use%20Visudo"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fpost%2fConverting-Images%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fpost%2falway-use-visudo%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>

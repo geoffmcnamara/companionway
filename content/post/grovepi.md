@@ -4,7 +4,7 @@ title:      The GrovePi kit
 subtitle:   make the raspberry pi GPIO pins quick and easy to use
 date:       2015-05-09
 author:     geoffm
-image: "img/thrutheseaoats-dark.jpg"
+image:     "img/grovepi1.jpg"
 comments: true
 tags: ["grovepi"]
 ---
