@@ -37,4 +37,13 @@ theme = "casper"
   identifier = "blog"
   url = "/"
 
+[[menu.main]]
+  name = "Posts"
+  weight = -120
+  identifier = "posts"
+  url = "/post"
 
+[params.recent_posts]
+    enable = true
+    title = "Most Recent Posts from Our Site"
+    subtitle = ""

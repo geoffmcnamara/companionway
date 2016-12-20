@@ -6,7 +6,6 @@ image: "img/anchor_chain.jpg"
 menu: main
 ---
 
-# Links
 
 * [Link for gihub](http://github.com)
 * [Ling for git-scm](http://git-scm.com)

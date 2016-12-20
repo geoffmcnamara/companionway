@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sections on companionway</title>
+    <link>/section/</link>
+    <description>Recent content in Sections on companionway</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>All rights reserved - companionway - 2016</copyright>
+    <lastBuildDate>Wed, 30 Nov 2016 12:58:32 -0500</lastBuildDate>
+    <atom:link href="/section/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title></title>
+      <link>/section/gads/</link>
+      <pubDate>Wed, 30 Nov 2016 12:58:32 -0500</pubDate>
+      
+      <guid>/section/gads/</guid>
+      <description>&lt;hr&gt;
+
+&lt;div id=&#39;gads&#39;&gt;
+&lt;ins class=&#34;adsbygoogle&#34;
+     style=&#34;display:block&#34;
+     data-ad-client=&#34;ca-pub-6986704271237340&#34;
+     data-ad-slot=&#34;6884077067&#34;
+     data-ad-format=&#34;auto&#34;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

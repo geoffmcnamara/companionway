@@ -1,19 +1,14 @@
 {{ partial "header.html" . }}
+<!-- header.html includes partial "styles.html" -->
 
 {{if .Site.Params.cover}}
 {{if or (eq (substr .Site.Params.cover 0 7) "http://") (eq (substr .Site.Params.cover 0 8) "https://")}}
   <header id='fadeInDown' class="main-header" style="background-image: url({{.Site.Params.cover}})">
-  <!--
-  <header class="main-header" style="background-image: url({{.Site.Params.cover}})">
-  -->
   {{ else }}
   <header id='fadeInDown' class="main-header" style="background-image: url({{.Site.BaseURL}}{{.Site.Params.cover}})">
-  <!--
-  <header class="main-header" style="background-image: url({{.Site.BaseURL}}{{.Site.Params.cover}})">
-  -->
   {{ end }}
 {{else}}
-<header class="main-header no-cover"> 
+  <header class="main-header no-cover"> 
 {{end}}
 
     <nav class="main-nav overlay clearfix">
@@ -77,43 +72,23 @@
 
             <h1 class="page-title">{{ .Site.Title }}</h1>
             <h2 class="page-description">{{ .Site.Params.description }}</h2>
-        </div>
-    </div>
+        </div> <!-- /.main-header-content inner -->
+    </div> <!-- /.vertical [social links] -->
     <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
 </header>
 
 <main id="content" class="content" role="main" >
 
-    {{ range .Data.Pages }}
-        {{if eq .Type "index" }}
-        <div class="index-content post">
-        {{.Content}}
-        </div>
-        {{end}}
-    {{ end }}
+    <!-- SECTIONS -->
+    {{ partial "sections.html" . }}
+    <!-- /.SECTIONS -->
 
-    {{ if not ($.Scratch.Get "paginatedSections") }}
-        {{ if isset .Site.Params "paginatedSections" }}
-            {{ $.Scratch.Set "paginatedSections" .Site.Params.paginatedSections }}
-        {{ else }}
-            {{ $.Scratch.Set "paginatedSections" "post" }}
-        {{ end }}
-    {{ end }}
 
-    {{ $list := where .Data.Pages "Section" "in" ($.Scratch.Get "paginatedSections") }}
-    {{ $list := where $list "Section" "!=" "" }}
-    {{ $paginator := .Paginate ( $list ) }}
-
-    <div class="extra-pagination inner">
-        {{ partial "pagination.html" $paginator }}
-    </div>
-
-    {{ range $index, $page := $paginator.Pages }}
-        {{ partial "li.html" . }}
-    {{ end }}
-
-    {{ partial "pagination.html" $paginator }}
+    <!-- POSTS ... This is a WIP adapted from hugo-universal-theme - 3 column teaser -->
+    {{ partial "recent-posts.html" . }}
+    <!-- /. POSTS -->
 
 </main>
 
+<!-- footer.html includes partial "scripts.html" -->
 {{ partial "footer.html" . }}
