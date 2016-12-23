@@ -23,3 +23,5 @@ weight = 15
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
+<hr>
+<br>
