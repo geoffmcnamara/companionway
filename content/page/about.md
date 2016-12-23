@@ -16,7 +16,7 @@ Many projects later, having worked with other great people, I had a healthy set 
 
 Teaching and coaching have always played a role in my career.   There is a reward for me in developing the knowledge base and skills of others.
 
-I am blessed with a beautiful wife and a loving family. I enjoy coding, building automation tools, guitar, sailing, reading, and a good craft beer or a glass of tanin rich red wine.
+I am blessed with a beautiful wife and a loving family. I enjoy coding, building automation tools, guitar, sailing, reading, history, science, astronomy, theology, philosophy, finance, and a good craft beer or a glass of tanin rich red wine. Yes, the list on interests is long but ADHD has no limits. :)
 
 I enjoy learning new skills and look forward to continuing to teach/coach others along the way. 
 

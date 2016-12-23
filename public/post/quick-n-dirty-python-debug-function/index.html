@@ -8,28 +8,136 @@
 		
 
 
-    <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:image" content="/img/rpi-card-dark-crop.jpg"/>
+    
+        
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:image" content="/img/python-logo.png"/>
+    
 
 
 
-<meta name="twitter:title" content="companionway"/>
-<meta name="twitter:description" content="Meeting challenges with success!"/>
+<meta name="twitter:title" content="Quick N Dirty Python Debug Function"/>
+<meta name="twitter:description" content="Pdb is a great debugger for python but I like to use my own simple debug functions.
+Here is a simple debug function for python which could definitely be improved:
+
+#!/usr/bin/env python
+
+import os
+import sys
+from inspect import (getframeinfo, currentframe, getouterframes)
+
+
+DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
+#DLOG=os.path.basename(sys.argv[0])&#43;&quot;.log&quot; # will append to log to file if this is not commented out
+
+def dbug(msg):
+  &quot;&quot;&quot;
+   At the top of your script set these global values:
+    from inspect import (getframeinfo, currentframe, getouterframes)
+    DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
+    #DLOG=os.path.basename(sys.argv[0])&#43;&quot;.log&quot; # will append to log to file if this is not commented out
+   Function: dbug() will print (or log) DEBUG: (datetime) [lineno] msg
+   print this function doc with CLI help(dbug) or CODE dbug.__doc__
+   needs: from inspect import currentframe.
+   Simple to use... dbug(&quot;my message here&quot;)
+   &quot;&quot;&quot;
+
+  cf = currentframe()
+  msg=&quot;DEBUG: [&quot;&#43;str(cf.f_back.f_lineno)&#43;&quot;] &quot;&#43;msg
+
+  try:
+    if DBUG==2:
+      fname=str(getframeinfo(currentframe().f_back).function)
+      fdoc=eval(fname&#43;.__doc__
+      fdoc=fdoc if fdoc else &#39;undocumented&#39;
+      msg=msg&#43;&quot; Func: &quot;&#43;fname&#43;&quot; Doc: &quot;&#43;fdoc
+  except:
+    pass
+
+  try:
+    if DLOG != &quot;&quot;:
+      fh_dbug=open(DLOG,&quot;a&quot;)
+      fh_dbug.write(dtime&#43;&quot; &quot;&#43;msg&#43;&quot;\n&quot;)
+      fh_dbug.close
+  except:
+    pass
+
+  try:
+    if DBUG&gt;=0:
+      print msg
+  except:
+    pass
+
+def myFunc(myvar=&quot;eulav&quot;):
+  &quot;&quot;&quot;
+   myFunc(&quot;something&quot;) -requires one string
+   prints out the string backwards - it uses the extended slice operator
+   ie [begin:end:step]
+   The default here prints &quot;value&quot;
+  &quot;&quot;&quot;
+  dbug(&quot;how does it work&quot;)
+  print myvar[::-1]
+
+### Main Code ###
+if __name__ == &#39;__main__&#39;:
+  dbug(&quot;Please note that the name of this function is dbug -- not debug just to avoid conflicts elsewhere&quot;)
+
+  dbug(&quot;How does this work?&quot;)
+  myFunc(&quot;this is my string&quot;)
+
+  DBUG=1
+  dbug(&quot;And now the reverse&quot;)
+  myFunc(&quot;gnirts ym si siht&quot;)
+
+  dbug(&quot;Let see what the default is...&quot;)
+  myFunc() # reverses the default
+### EOF ####
+&#39;&#39;&#39;
+
+Output from this should look something like this:
+
+
+DEBUG: [97] Please note that the name of this function is dbug &ndash; not debug just to avoid conflicts elsewhere
+DEBUG: [98] How does this work?
+DEBUG: [92] how does it work Func: myFunc Doc:
+   myFunc(&ldquo;something&rdquo;) -requires one string
+   prints out the string backwards - it uses the extended slice operator
+   ie [begin:end:step]
+   The default here print &ldquo;value&rdquo;
+
+gnirts ym si siht
+DEBUG: [102] And now the reverse
+DEBUG: [92] how does it work
+this is my string
+DEBUG: [105] Let see what the default is&hellip;
+DEBUG: [92] how does it work
+value
+```
+
+Enjoy!
+-g-
+
+###
+"/>
 
     <meta name="twitter:site" content="@@geoffmcnamara"/>
 
 
 
-		<meta property="og:title" content=" companionway" />
+		<meta property="og:title" content=" Quick N Dirty Python Debug Function &middot;  companionway" />
 		<meta property="og:site_name" content="companionway" />
-		<meta property="og:url" content="/" />
+		<meta property="og:url" content="/post/quick-n-dirty-python-debug-function/" />
 
 		
-		<meta property="og:type" content="website" />
+		<meta property="og:type" content="article" />
+
+		<meta property="og:article:published_time" content="2016-12-22T14:08:05-05:00" />
+
+		
 		
 
 		<title>
-			 companionway
+			 Quick N Dirty Python Debug Function &middot;  companionway
 		</title>
 
 		<meta name="description" content="Meeting challenges with success!" />
@@ -59,13 +167,13 @@
 
 		
 		
-		
 		<link href="/index.xml" rel="alternate" type="application/rss+xml" title="companionway" />
+		
 		
 		
 		<meta name="generator" content="Hugo 0.16-DEV" />
 
-		<link rel="canonical" href="/" />
+		<link rel="canonical" href="/post/quick-n-dirty-python-debug-function/" />
 
     <link ref="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=EB+Garamond' >
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Architects Daughter" >
@@ -101,7 +209,7 @@ ga('send', 'pageview');
         
         
             
-            <li class="nav-opened nav-current" role="presentation">
+            <li class="nav-opened" role="presentation">
             	<a href="/">Home</a>
             </li>
         
@@ -135,125 +243,43 @@ ga('send', 'pageview');
 
 
   
-    <header id='fadeInDown' class="main-header" style="background-image: url(/img/rpi-card-dark-crop.jpg)">
+  <header class="main-header post-head" style="background-image: url(/img/python-logo.png)">
   
+  <nav class="main-nav overlay clearfix">
 
 
-     
-    <nav class="main-nav overlay clearfix">
-        
-        
-            <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-        
-    </nav>
-    <div class="vertical" >
-        <div class="main-header-content inner">
-            
-            
-                <a class="bloglogo" href="https://github.com/geoffmcnamara" target="_blank">
-                <span class="icon-github" style="color:white;font-size:2em"></span>
-                </a>
-            &nbsp;
-            
-            
-                <a class="bloglogo" href="https://twitter.com/geoffmcnamara" target="_blank">
-                    <span class="icon-twitter" style="color:white;font-size:2em"></span>
-                </a>
-            &nbsp;
-            
-            
-                <a class="bloglogo" href="https://www.facebook.com/geoffmcnamara" target="_blank">
-                    <span class="icon-facebook" style="color:white;font-size:2em"></span>
-                </a>
-            &nbsp;
-            
-            
-            
-            
-
-            <h1 class="page-title">companionway</h1>
-            <h2 class="page-description">Meeting challenges with success!</h2>
-        </div> 
-    </div> 
-    <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
 </header>
 
-<main id="content" class="content" role="main" >
 
-    
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Quick N Dirty Python Debug Function</h1>
+        <small></small>
+
+        <section class="post-meta">
         
-    
-    
-    
-    
-      
-      <hr>
+          <time class="post-date" datetime="2016-12-22T14:08:05-05:00">
+            Dec 22, 2016
+          </time>
+        
+         
+        </section>
+    </header>
 
-<div id='gads'>
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6986704271237340"
-     data-ad-slot="6884077067"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
-
-      
-    
-    
-    
-
-
-    
-
-
-    
-    
-
-<section class="bar background-white no-mb">
-	<div class="container">
-
-		<div class="col-md-12">
-			<div class="heading text-center">
-				<h2>Most Recent Posts</h2>
-			</div> 
-
-			<p class="lead">
-			An overtaxed patience gives way to fury. - Publilius Syrus
-			</p>
-
-
-			
-
-			<div class="row">
-				
-				
-				<div class="col-md-4 col-sm-6">
-					<div class="box-image-text blog">
-
-						<div class="top">
-							<div class="image" style="overflow:hidden">
-                 
-								<img src="/img/python-logo.png" class="img-responsive" alt="" >
-								
-							</div> 
-								<div class="bg"></div>
-								<div class="text">
-									<p class="buttons">
-									<a href="/post/quick-n-dirty-python-debug-function/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
-									</p>
-								</div> 
-						</div> 
-
-						<div class="content">
-							<h4><a href="/post/quick-n-dirty-python-debug-function/">Quick N Dirty Python Debug Function</a></h4>
-							<p class="author-category">
-							
-							on December 22, 2016
-							</p>
-							<p class="intro"><p>Pdb is a great debugger for python but I like to use my own simple debug functions.
+    <section class="post-content">
+      <p>Pdb is a great debugger for python but I like to use my own simple debug functions.
 Here is a simple debug function for python which could definitely be improved:</p>
 
 <pre><code class="language-python">#!/usr/bin/env python
@@ -354,117 +380,67 @@ value
 -g-</p>
 
 <p>###</p>
-</p>
-							<p class="read-more">
-							<a href="/post/quick-n-dirty-python-debug-function/" class="btn btn-template-main">Continue reading</a>
-							</p>
-						</div> 
 
-					</div> 
+<p>Enjoy
+-g-</p>
 
-				</div> 
-				
-				<div class="col-md-4 col-sm-6">
-					<div class="box-image-text blog">
+    </section>
 
-						<div class="top">
-							<div class="image" style="overflow:hidden">
-                 
-								<img src="/img/raspberry-pi-card.jpg" class="img-responsive" alt="" >
-								
-							</div> 
-								<div class="bg"></div>
-								<div class="text">
-									<p class="buttons">
-									<a href="/post/raspberry-pi-and-xrdp/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
-									</p>
-								</div> 
-						</div> 
 
-						<div class="content">
-							<h4><a href="/post/raspberry-pi-and-xrdp/">Raspberry Pi and Xrdp</a></h4>
-							<p class="author-category">
-							
-							on December 16, 2016
-							</p>
-							<p class="intro"><p>I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
-any linux machine) can be done so many different ways - but the easiest from my perspective is xrdp. It is available
-really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
-xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
-Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
-almost any linux distro.</p>
-</p>
-							<p class="read-more">
-							<a href="/post/raspberry-pi-and-xrdp/" class="btn btn-template-main">Continue reading</a>
-							</p>
-						</div> 
+  <footer class="post-footer">
 
-					</div> 
 
-				</div> 
-				
-				<div class="col-md-4 col-sm-6">
-					<div class="box-image-text blog">
+    
 
-						<div class="top">
-							<div class="image" style="overflow:hidden">
-                 
-								<img src="/img/owl.jpg" class="img-responsive" alt="" >
-								
-							</div> 
-								<div class="bg"></div>
-								<div class="text">
-									<p class="buttons">
-									<a href="/post/sometimes-it-is-the-obvious/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
-									</p>
-								</div> 
-						</div> 
+    
 
-						<div class="content">
-							<h4><a href="/post/sometimes-it-is-the-obvious/">Sometimes It Is The Obvious</a></h4>
-							<p class="author-category">
-							
-							on December 15, 2016
-							</p>
-							<p class="intro"><p>This was one of those &ldquo;problems&rdquo; that nagged me for many hours until the obvious dawned on me.
-I wrote a python script to grab the temperature and humidiy from a DHT22 sensor and then write the
-output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
-every 5 minutes and used a redirection to write out a file ie:</p>
 
-<pre><code>*/5 * * * * /usr/local/bin/temphum.sh &gt;/tmp/temphum.dat
-</code></pre>
 
-<p>The wrapper script grabs output and sends it to the server. Having this wrapper script lets me run the
-python script independantly for testing or for curiousity.</p>
-</p>
-							<p class="read-more">
-							<a href="/post/sometimes-it-is-the-obvious/" class="btn btn-template-main">Continue reading</a>
-							</p>
-						</div> 
 
-					</div> 
 
-				</div> 
-				
-
-			</div> 
-
-			
-
-      <center><a class="btn btn-primary" href="/post/index.html">All Posts</a></center>
-
-		</div> 
-	</div> 
+<section class="author">
+  <h4><a href="/">Geoff McNamara</a></h4>
+  
+  <p>“Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">Elizabeth City, NC</span>
+    <span class="author-link icon-link"><a href="https://www.companionway.net">https://www.companionway.net</a></span>
+  </div>
 </section>
 
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Quick%20N%20Dirty%20Python%20Debug%20Function&nbsp;-&nbsp;companionway&amp;url=%2fpost%2fquick-n-dirty-python-debug-function%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fquick-n-dirty-python-debug-function%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fquick-n-dirty-python-debug-function%2f&amp;description=Quick%20N%20Dirty%20Python%20Debug%20Function"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fpost%2fquick-n-dirty-python-debug-function%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
 
 
 
     
 
+
+  </footer>
+</article>
+
 </main>
-
-
 
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery.fitvids.js"></script>

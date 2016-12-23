@@ -1,5 +1,5 @@
 # Site settings (baseurl must end with a trailing slash!)
-#baseURL = "https://companionway.net:/hugo/"
+#baseURL = "https://www.companionway.net:"
 baseurl = "/"
 #relativeURLs = true
 #uglyURLs = true
@@ -16,7 +16,7 @@ theme = "casper"
   cover = "img/rpi-card-dark-crop.jpg"
   author = "Geoff McNamara"
   authorlocation = "Elizabeth City, NC"
-  authorwebsite = "http://companionway.net"
+  authorwebsite = "https://www.companionway.net"
   bio= "“Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien"
   #logo = "img/cos-logo.png"
   googleAnalyticsUserID = "UA-6970218-1"
@@ -45,5 +45,5 @@ theme = "casper"
 
 [params.recent_posts]
     enable = true
-    title = "Most Recent Posts from Our Site"
-    subtitle = ""
+    title = "Most Recent Posts"
+    subtitle = "An overtaxed patience gives way to fury. - Publilius Syrus"

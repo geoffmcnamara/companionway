@@ -7,8 +7,121 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Fri, 16 Dec 2016 12:27:36 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 22 Dec 2016 14:08:05 -0500</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Quick N Dirty Python Debug Function</title>
+      <link>/post/quick-n-dirty-python-debug-function/</link>
+      <pubDate>Thu, 22 Dec 2016 14:08:05 -0500</pubDate>
+      
+      <guid>/post/quick-n-dirty-python-debug-function/</guid>
+      <description>&lt;p&gt;Pdb is a great debugger for python but I like to use my own simple debug functions.
+Here is a simple debug function for python which could definitely be improved:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#!/usr/bin/env python
+
+import os
+import sys
+from inspect import (getframeinfo, currentframe, getouterframes)
+
+
+DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
+#DLOG=os.path.basename(sys.argv[0])+&amp;quot;.log&amp;quot; # will append to log to file if this is not commented out
+
+def dbug(msg):
+  &amp;quot;&amp;quot;&amp;quot;
+   At the top of your script set these global values:
+    from inspect import (getframeinfo, currentframe, getouterframes)
+    DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
+    #DLOG=os.path.basename(sys.argv[0])+&amp;quot;.log&amp;quot; # will append to log to file if this is not commented out
+   Function: dbug() will print (or log) DEBUG: (datetime) [lineno] msg
+   print this function doc with CLI help(dbug) or CODE dbug.__doc__
+   needs: from inspect import currentframe.
+   Simple to use... dbug(&amp;quot;my message here&amp;quot;)
+   &amp;quot;&amp;quot;&amp;quot;
+
+  cf = currentframe()
+  msg=&amp;quot;DEBUG: [&amp;quot;+str(cf.f_back.f_lineno)+&amp;quot;] &amp;quot;+msg
+
+  try:
+    if DBUG==2:
+      fname=str(getframeinfo(currentframe().f_back).function)
+      fdoc=eval(fname+.__doc__
+      fdoc=fdoc if fdoc else &#39;undocumented&#39;
+      msg=msg+&amp;quot; Func: &amp;quot;+fname+&amp;quot; Doc: &amp;quot;+fdoc
+  except:
+    pass
+
+  try:
+    if DLOG != &amp;quot;&amp;quot;:
+      fh_dbug=open(DLOG,&amp;quot;a&amp;quot;)
+      fh_dbug.write(dtime+&amp;quot; &amp;quot;+msg+&amp;quot;\n&amp;quot;)
+      fh_dbug.close
+  except:
+    pass
+
+  try:
+    if DBUG&amp;gt;=0:
+      print msg
+  except:
+    pass
+
+def myFunc(myvar=&amp;quot;eulav&amp;quot;):
+  &amp;quot;&amp;quot;&amp;quot;
+   myFunc(&amp;quot;something&amp;quot;) -requires one string
+   prints out the string backwards - it uses the extended slice operator
+   ie [begin:end:step]
+   The default here prints &amp;quot;value&amp;quot;
+  &amp;quot;&amp;quot;&amp;quot;
+  dbug(&amp;quot;how does it work&amp;quot;)
+  print myvar[::-1]
+
+### Main Code ###
+if __name__ == &#39;__main__&#39;:
+  dbug(&amp;quot;Please note that the name of this function is dbug -- not debug just to avoid conflicts elsewhere&amp;quot;)
+
+  dbug(&amp;quot;How does this work?&amp;quot;)
+  myFunc(&amp;quot;this is my string&amp;quot;)
+
+  DBUG=1
+  dbug(&amp;quot;And now the reverse&amp;quot;)
+  myFunc(&amp;quot;gnirts ym si siht&amp;quot;)
+
+  dbug(&amp;quot;Let see what the default is...&amp;quot;)
+  myFunc() # reverses the default
+### EOF ####
+&#39;&#39;&#39;
+
+Output from this should look something like this:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;DEBUG: [97] Please note that the name of this function is dbug &amp;ndash; not debug just to avoid conflicts elsewhere
+DEBUG: [98] How does this work?
+DEBUG: [92] how does it work Func: myFunc Doc:
+   myFunc(&amp;ldquo;something&amp;rdquo;) -requires one string
+   prints out the string backwards - it uses the extended slice operator
+   ie [begin:end:step]
+   The default here print &amp;ldquo;value&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;gnirts ym si siht
+DEBUG: [102] And now the reverse
+DEBUG: [92] how does it work
+this is my string
+DEBUG: [105] Let see what the default is&amp;hellip;
+DEBUG: [92] how does it work
+value
+```&lt;/p&gt;
+
+&lt;p&gt;Enjoy!
+-g-&lt;/p&gt;
+
+&lt;p&gt;###&lt;/p&gt;
+
+&lt;p&gt;Enjoy
+-g-&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Raspberry Pi and Xrdp</title>
@@ -68,7 +181,7 @@ This works and you lose keybindings that you probably wouldn&amp;rsquo;t use thr
       
       <guid>/post/sometimes-it-is-the-obvious/</guid>
       <description>&lt;p&gt;This was one of those &amp;ldquo;problems&amp;rdquo; that nagged me for many hours until the obvious dawned on me.
-I wrote a pythone script to grab the temperature and humidiy from a DHT22 sensor and then write the
+I wrote a python script to grab the temperature and humidiy from a DHT22 sensor and then write the
 output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
 every 5 minutes and used a redirection to write out a file ie:&lt;/p&gt;
 
@@ -1107,42 +1220,6 @@ loop just prints a space until startpos is reached (printf&lt;br /&gt;
 &lt;p&gt;Not perfect but it works for me.&lt;/p&gt;
 
 &lt;p&gt;-g-&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/post/2015-04-01-post2/</link>
-      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2015-04-01-post2/</guid>
-      <description>
-
-&lt;h1 id=&#34;this-website:4224afbb7574788ef8279bacbff78e41&#34;&gt;This website&lt;/h1&gt;
-
-&lt;p&gt;&amp;hellip; was created (and is maintained) using jekyll.&lt;/p&gt;
-
-&lt;p&gt;But getting here was a bit of a struggle.&lt;br /&gt;
-I started using Jekyll quite some time ago. I love ruby and when I&lt;br /&gt;
-found Jekyll I thought my mutual love for ruby and website design
-had perfectly come together.&lt;/p&gt;
-
-&lt;p&gt;Not so fast there buckeroo. I could not easily manage themes in a way&lt;br /&gt;
-that satisfied me&amp;hellip; so I went exploring. I tried dozens of flat CMS&lt;br /&gt;
-generators. My journey lasted months. I was very impressed with gravCMS&lt;br /&gt;
-but I still fought with theme manipulation.&lt;/p&gt;
-
-&lt;p&gt;Sinatra and nanco were inspiring but somewhere I came across a blog&lt;br /&gt;
-which I don&amp;rsquo;t recall now, that had me building my own theme. That&lt;br /&gt;
-gave me enought traction to begin to understand how to control themes.&lt;/p&gt;
-
-&lt;p&gt;What brought me back to jekyll was github. I have been building out&lt;br /&gt;
-my github site and it is built with jekyll. It is hard to fight success&lt;br /&gt;
-and obviously jekyll has had a strong history of success with github. Then&lt;br /&gt;
-I pounded a handful of themes available and recently found myself working&lt;br /&gt;
-more and more with the startbootstrap-clean-blog-jekyll.&lt;/p&gt;
-
-&lt;p&gt;More to come&amp;hellip;&lt;/p&gt;
 </description>
     </item>
     

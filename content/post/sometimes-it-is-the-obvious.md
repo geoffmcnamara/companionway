@@ -12,7 +12,7 @@ title = "Sometimes It Is The Obvious"
 +++
 
 This was one of those "problems" that nagged me for many hours until the obvious dawned on me.
-I wrote a pythone script to grab the temperature and humidiy from a DHT22 sensor and then write the
+I wrote a python script to grab the temperature and humidiy from a DHT22 sensor and then write the
 output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
 every 5 minutes and used a redirection to write out a file ie:
 ```
