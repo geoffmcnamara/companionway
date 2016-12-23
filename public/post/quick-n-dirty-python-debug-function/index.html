@@ -20,104 +20,27 @@
 <meta name="twitter:description" content="Pdb is a great debugger for python but I like to use my own simple debug functions.
 Here is a simple debug function for python which could definitely be improved:
 
+```python
 #!/usr/bin/env python
 
 import os
 import sys
 from inspect import (getframeinfo, currentframe, getouterframes)
 
-
-DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
-#DLOG=os.path.basename(sys.argv[0])&#43;&quot;.log&quot; # will append to log to file if this is not commented out
+DBUG=2 # will print to stdout if set to 1 &ndash; use 2 to add funcname and funcdocs
+#DLOG=os.path.basename(sys.argv[0])&#43;&ldquo;.log&rdquo; # will append to log to file if this is not commented out
 
 def dbug(msg):
-  &quot;&quot;&quot;
+  &ldquo;&rdquo;&rdquo;
    At the top of your script set these global values:
     from inspect import (getframeinfo, currentframe, getouterframes)
-    DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
-    #DLOG=os.path.basename(sys.argv[0])&#43;&quot;.log&quot; # will append to log to file if this is not commented out
+    DBUG=2 # will print to stdout if set to 1 &ndash; use 2 to add funcname and funcdocs
+    #DLOG=os.path.basename(sys.argv[0])&#43;&ldquo;.log&rdquo; # will append to log to file if this is not commented out
    Function: dbug() will print (or log) DEBUG: (datetime) [lineno] msg
-   print this function doc with CLI help(dbug) or CODE dbug.__doc__
+   print this function doc with CLI help(dbug) or CODE dbug.doc
    needs: from inspect import currentframe.
-   Simple to use... dbug(&quot;my message here&quot;)
-   &quot;&quot;&quot;
-
-  cf = currentframe()
-  msg=&quot;DEBUG: [&quot;&#43;str(cf.f_back.f_lineno)&#43;&quot;] &quot;&#43;msg
-
-  try:
-    if DBUG==2:
-      fname=str(getframeinfo(currentframe().f_back).function)
-      fdoc=eval(fname&#43;.__doc__
-      fdoc=fdoc if fdoc else &#39;undocumented&#39;
-      msg=msg&#43;&quot; Func: &quot;&#43;fname&#43;&quot; Doc: &quot;&#43;fdoc
-  except:
-    pass
-
-  try:
-    if DLOG != &quot;&quot;:
-      fh_dbug=open(DLOG,&quot;a&quot;)
-      fh_dbug.write(dtime&#43;&quot; &quot;&#43;msg&#43;&quot;\n&quot;)
-      fh_dbug.close
-  except:
-    pass
-
-  try:
-    if DBUG&gt;=0:
-      print msg
-  except:
-    pass
-
-def myFunc(myvar=&quot;eulav&quot;):
-  &quot;&quot;&quot;
-   myFunc(&quot;something&quot;) -requires one string
-   prints out the string backwards - it uses the extended slice operator
-   ie [begin:end:step]
-   The default here prints &quot;value&quot;
-  &quot;&quot;&quot;
-  dbug(&quot;how does it work&quot;)
-  print myvar[::-1]
-
-### Main Code ###
-if __name__ == &#39;__main__&#39;:
-  dbug(&quot;Please note that the name of this function is dbug -- not debug just to avoid conflicts elsewhere&quot;)
-
-  dbug(&quot;How does this work?&quot;)
-  myFunc(&quot;this is my string&quot;)
-
-  DBUG=1
-  dbug(&quot;And now the reverse&quot;)
-  myFunc(&quot;gnirts ym si siht&quot;)
-
-  dbug(&quot;Let see what the default is...&quot;)
-  myFunc() # reverses the default
-### EOF ####
-&#39;&#39;&#39;
-
-Output from this should look something like this:
-
-
-DEBUG: [97] Please note that the name of this function is dbug &ndash; not debug just to avoid conflicts elsewhere
-DEBUG: [98] How does this work?
-DEBUG: [92] how does it work Func: myFunc Doc:
-   myFunc(&ldquo;something&rdquo;) -requires one string
-   prints out the string backwards - it uses the extended slice operator
-   ie [begin:end:step]
-   The default here print &ldquo;value&rdquo;
-
-gnirts ym si siht
-DEBUG: [102] And now the reverse
-DEBUG: [92] how does it work
-this is my string
-DEBUG: [105] Let see what the default is&hellip;
-DEBUG: [92] how does it work
-value
-```
-
-Enjoy!
--g-
-
-###
+   Simple to use&hellip; dbug(&ldquo;my message here&rdquo;)
+   &ldquo;&rdquo;&rdquo;
 "/>
 
     <meta name="twitter:site" content="@@geoffmcnamara"/>
@@ -304,6 +227,7 @@ def dbug(msg):
    Simple to use... dbug(&quot;my message here&quot;)
    &quot;&quot;&quot;
 
+
   cf = currentframe()
   msg=&quot;DEBUG: [&quot;+str(cf.f_back.f_lineno)+&quot;] &quot;+msg
 
@@ -379,9 +303,8 @@ value
 <p>Enjoy!
 -g-</p>
 
-<p>###</p>
-
-<p>Enjoy
+<p>###
+Enjoy
 -g-</p>
 
     </section>

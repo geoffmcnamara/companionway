@@ -37,6 +37,7 @@ def dbug(msg):
    Simple to use... dbug("my message here")
    """
 
+<!--more-->
   cf = currentframe()
   msg="DEBUG: ["+str(cf.f_back.f_lineno)+"] "+msg
 
@@ -116,6 +117,5 @@ Enjoy!
 
 
 ###
-<!--more-->
 Enjoy
 -g-

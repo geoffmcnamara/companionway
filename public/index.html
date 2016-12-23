@@ -258,104 +258,27 @@ ga('send', 'pageview');
 							<p class="intro"><p>Pdb is a great debugger for python but I like to use my own simple debug functions.
 Here is a simple debug function for python which could definitely be improved:</p>
 
-<pre><code class="language-python">#!/usr/bin/env python
+<p>```python
+#!/usr/bin/env python</p>
 
-import os
+<p>import os
 import sys
-from inspect import (getframeinfo, currentframe, getouterframes)
+from inspect import (getframeinfo, currentframe, getouterframes)</p>
 
+<p>DBUG=2 # will print to stdout if set to 1 &ndash; use 2 to add funcname and funcdocs
+#DLOG=os.path.basename(sys.argv[0])+&ldquo;.log&rdquo; # will append to log to file if this is not commented out</p>
 
-DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
-#DLOG=os.path.basename(sys.argv[0])+&quot;.log&quot; # will append to log to file if this is not commented out
-
-def dbug(msg):
-  &quot;&quot;&quot;
+<p>def dbug(msg):
+  &ldquo;&rdquo;&rdquo;
    At the top of your script set these global values:
     from inspect import (getframeinfo, currentframe, getouterframes)
-    DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
-    #DLOG=os.path.basename(sys.argv[0])+&quot;.log&quot; # will append to log to file if this is not commented out
+    DBUG=2 # will print to stdout if set to 1 &ndash; use 2 to add funcname and funcdocs
+    #DLOG=os.path.basename(sys.argv[0])+&ldquo;.log&rdquo; # will append to log to file if this is not commented out
    Function: dbug() will print (or log) DEBUG: (datetime) [lineno] msg
-   print this function doc with CLI help(dbug) or CODE dbug.__doc__
+   print this function doc with CLI help(dbug) or CODE dbug.<strong>doc</strong>
    needs: from inspect import currentframe.
-   Simple to use... dbug(&quot;my message here&quot;)
-   &quot;&quot;&quot;
-
-  cf = currentframe()
-  msg=&quot;DEBUG: [&quot;+str(cf.f_back.f_lineno)+&quot;] &quot;+msg
-
-  try:
-    if DBUG==2:
-      fname=str(getframeinfo(currentframe().f_back).function)
-      fdoc=eval(fname+.__doc__
-      fdoc=fdoc if fdoc else 'undocumented'
-      msg=msg+&quot; Func: &quot;+fname+&quot; Doc: &quot;+fdoc
-  except:
-    pass
-
-  try:
-    if DLOG != &quot;&quot;:
-      fh_dbug=open(DLOG,&quot;a&quot;)
-      fh_dbug.write(dtime+&quot; &quot;+msg+&quot;\n&quot;)
-      fh_dbug.close
-  except:
-    pass
-
-  try:
-    if DBUG&gt;=0:
-      print msg
-  except:
-    pass
-
-def myFunc(myvar=&quot;eulav&quot;):
-  &quot;&quot;&quot;
-   myFunc(&quot;something&quot;) -requires one string
-   prints out the string backwards - it uses the extended slice operator
-   ie [begin:end:step]
-   The default here prints &quot;value&quot;
-  &quot;&quot;&quot;
-  dbug(&quot;how does it work&quot;)
-  print myvar[::-1]
-
-### Main Code ###
-if __name__ == '__main__':
-  dbug(&quot;Please note that the name of this function is dbug -- not debug just to avoid conflicts elsewhere&quot;)
-
-  dbug(&quot;How does this work?&quot;)
-  myFunc(&quot;this is my string&quot;)
-
-  DBUG=1
-  dbug(&quot;And now the reverse&quot;)
-  myFunc(&quot;gnirts ym si siht&quot;)
-
-  dbug(&quot;Let see what the default is...&quot;)
-  myFunc() # reverses the default
-### EOF ####
-'''
-
-Output from this should look something like this:
-</code></pre>
-
-<p>DEBUG: [97] Please note that the name of this function is dbug &ndash; not debug just to avoid conflicts elsewhere
-DEBUG: [98] How does this work?
-DEBUG: [92] how does it work Func: myFunc Doc:
-   myFunc(&ldquo;something&rdquo;) -requires one string
-   prints out the string backwards - it uses the extended slice operator
-   ie [begin:end:step]
-   The default here print &ldquo;value&rdquo;</p>
-
-<p>gnirts ym si siht
-DEBUG: [102] And now the reverse
-DEBUG: [92] how does it work
-this is my string
-DEBUG: [105] Let see what the default is&hellip;
-DEBUG: [92] how does it work
-value
-```</p>
-
-<p>Enjoy!
--g-</p>
-
-<p>###</p>
+   Simple to use&hellip; dbug(&ldquo;my message here&rdquo;)
+   &ldquo;&rdquo;&rdquo;</p>
 </p>
 							<p class="read-more">
 							<a href="/post/quick-n-dirty-python-debug-function/" class="btn btn-template-main">Continue reading</a>
