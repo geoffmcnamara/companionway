@@ -46,4 +46,6 @@ theme = "casper"
 [params.recent_posts]
     enable = true
     title = "Most Recent Posts"
+    randomlines = true # true will use random lines from static/lines.dat instead on subtitle below
     subtitle = "An overtaxed patience gives way to fury. - Publilius Syrus"
+   

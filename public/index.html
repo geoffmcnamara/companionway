@@ -46,7 +46,7 @@
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/screen.css" />
 <link rel="stylesheet" type="text/css" href="/css/nav.css" />
-
+<link rel="stylesheet" type="text/css" href="/css/custom.css" />
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
@@ -67,11 +67,11 @@
 
 		<link rel="canonical" href="/" />
 
-    <link ref="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=EB+Garamond' >
+    
+<link ref="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=EB+Garamond' >
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Architects Daughter" >
 <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300' >
 <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Philosopher'>
-
 
 
 		
@@ -222,10 +222,13 @@ ga('send', 'pageview');
 				<h2>Most Recent Posts</h2>
 			</div> 
 
-			<p class="lead">
-			An overtaxed patience gives way to fury. - Publilius Syrus
-			</p>
-
+      
+				<p class="lead">
+				<center>
+						<div id="random-line"  class="tshadow"></div>
+				</center>
+				</p>
+      
 
 			
 
@@ -257,28 +260,6 @@ ga('send', 'pageview');
 							</p>
 							<p class="intro"><p>Pdb is a great debugger for python but I like to use my own simple debug functions.
 Here is a simple debug function for python which could definitely be improved:</p>
-
-<p>```python
-#!/usr/bin/env python</p>
-
-<p>import os
-import sys
-from inspect import (getframeinfo, currentframe, getouterframes)</p>
-
-<p>DBUG=2 # will print to stdout if set to 1 &ndash; use 2 to add funcname and funcdocs
-#DLOG=os.path.basename(sys.argv[0])+&ldquo;.log&rdquo; # will append to log to file if this is not commented out</p>
-
-<p>def dbug(msg):
-  &ldquo;&rdquo;&rdquo;
-   At the top of your script set these global values:
-    from inspect import (getframeinfo, currentframe, getouterframes)
-    DBUG=2 # will print to stdout if set to 1 &ndash; use 2 to add funcname and funcdocs
-    #DLOG=os.path.basename(sys.argv[0])+&ldquo;.log&rdquo; # will append to log to file if this is not commented out
-   Function: dbug() will print (or log) DEBUG: (datetime) [lineno] msg
-   print this function doc with CLI help(dbug) or CODE dbug.<strong>doc</strong>
-   needs: from inspect import currentframe.
-   Simple to use&hellip; dbug(&ldquo;my message here&rdquo;)
-   &ldquo;&rdquo;&rdquo;</p>
 </p>
 							<p class="read-more">
 							<a href="/post/quick-n-dirty-python-debug-function/" class="btn btn-template-main">Continue reading</a>
@@ -396,8 +377,8 @@ python script independantly for testing or for curiousity.</p>
 <script type="text/javascript" src="/js/index.js"></script>
 <script type="text/javascript" src="/js/bootstrap.min..js"></script>
 <script type="text/javascript" src="/js/npm.js"></script>
-<script type="text/javascript" src="/js/custom.js"></script>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script type="text/javascript" src="/js/custom.js"></script>
 
 
 

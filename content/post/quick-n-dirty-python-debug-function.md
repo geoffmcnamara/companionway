@@ -14,6 +14,8 @@ title = "Quick N Dirty Python Debug Function"
 Pdb is a great debugger for python but I like to use my own simple debug functions. 
 Here is a simple debug function for python which could definitely be improved:
 
+<!--more-->
+
 ```python
 #!/usr/bin/env python
 
@@ -37,7 +39,6 @@ def dbug(msg):
    Simple to use... dbug("my message here")
    """
 
-<!--more-->
   cf = currentframe()
   msg="DEBUG: ["+str(cf.f_back.f_lineno)+"] "+msg
 

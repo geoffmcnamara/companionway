@@ -1,12 +1,5 @@
 //  gwm added 
 
-// fonts
-//<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Architects Daughter">
-//<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300">
-//<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Philosopher">
-//<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400,600">
-//<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Vollkorn">
-
 // jquery scripting 
  src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
 
@@ -20,4 +13,24 @@
       { queue: false, duration: 1000 }
     );
   });
+
+// 
+//
+var request = new XMLHttpRequest();
+request.onload = function() {
+    // get the file contents
+    var fileContent = this.responseText;
+    // split into lines
+    var fileContentLines = fileContent.split( '\n' );
+    // get a random index (line number)
+    var randomLineIndex = Math.floor( Math.random() * fileContentLines.length );
+    // extract the value
+    var randomLine = fileContentLines[ randomLineIndex ];
+
+    // add the random line in a div
+    document.getElementById( 'random-line' ).innerHTML = randomLine;
+};
+//request.open( 'GET', 'http://localhost:1313/lines.dat', true );
+request.open( 'GET', './lines.dat', true );
+request.send();
 

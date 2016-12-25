@@ -8,10 +8,19 @@
 				<h2>{{ .Site.Params.recent_posts.title }}</h2>
 			</div> <!-- /.heading text-center -->
 
-			<p class="lead">
-			{{ .Site.Params.recent_posts.subtitle }}
-			</p>
-
+      {{ if .Site.Params.recent_posts.randomlines }}
+				<p class="lead">
+				<center>
+						<div id="random-line"  class="tshadow"></div>
+				</center>
+				</p>
+      {{ else }}
+				<p class="lead">
+				<center>
+				{{ .Site.Params.recent_posts.subtitle }}
+				</center>
+				</p>
+      {{ end }}
 
 			<!-- *** BLOG HOMEPAGE *** -->
 
