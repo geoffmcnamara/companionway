@@ -26,11 +26,13 @@ request.onload = function() {
     var randomLineIndex = Math.floor( Math.random() * fileContentLines.length );
     // extract the value
     var randomLine = fileContentLines[ randomLineIndex ];
-
+    
+    var splitLine=randomLine.split("-")
     // add the random line in a div
-    document.getElementById( 'random-line' ).innerHTML = randomLine;
+    document.getElementById('quote').innerHTML = splitLine[0];
+    document.getElementById('author').innerHTML = splitLine[1];
+    document.getElementById('random-line').innerHTML = randomLine;
 };
 //request.open( 'GET', 'http://localhost:1313/lines.dat', true );
 request.open( 'GET', './lines.dat', true );
 request.send();
-
