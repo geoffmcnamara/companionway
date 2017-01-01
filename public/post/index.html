@@ -174,6 +174,44 @@ ga('send', 'pageview');
 	   
 <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/post/post-title/">Sorting IPs</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><p>I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
+laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
+parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
+in most repositories). So output might look like this:</p>
+
+<p>```
+$ sudo arp-scan -I wlo1 192.168.1.0/24
+Interface: wlo1, datalink type: EN10MB (Ethernet)
+Starting arp-scan 1.8.1 with 256 hosts (<a href="http://www.nta-monitor.com/tools/arp-scan/">http://www.nta-monitor.com/tools/arp-scan/</a>)
+192.168.1.1     44:94:fc:93:4f:26       (Unknown)
+192.168.1.2     00:17:88:2a:b5:12       Philips Lighting BV
+192.168.1.17    b8:27:eb:42:e9:01       (Unknown)
+192.168.1.62    b8:27:eb:42:e9:01       (Unknown)
+192.168.1.72    b8:27:eb:42:e9:01       (Unknown)</p>
+ <a class="read-more" href="/post/post-title/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+
+        
+        
+            Geoff McNamara
+        
+        
+        <time class="post-date" datetime="2017-01-01T15:53:14-05:00">
+            1 Jan 2017
+        </time>
+    </footer>
+</article>
+
+	
+	   
+<article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/post/quick-n-dirty-python-debug-function/">Quick N Dirty Python Debug Function</a></h2>
     </header>
     <section class="post-excerpt">
@@ -523,60 +561,6 @@ and connectors.</p>
         
         <time class="post-date" datetime="2015-05-09T00:00:00Z">
             9 May 2015
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-05-02-post1/">How to print the remainder of a line using awk</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>#How to print remainder of line using awk</p>
-
-<h2 id="eliminate-the-first-x-columns:2c0617bf3b5ab6328428ad749a5685c3">eliminate the first X columns&hellip;</h2>
-
-<p>Here is your challenge you have a list of cronjobs and you
-want to just execute the scheduled backup command with its
-arguments for a test run.</p>
-
-<p>Using one command line, how would you do it?</p>
-
-<p>Here is a sample root cronjob and I want to run the
-first entry with its arguments as a test run:</p>
-
-<pre><code># m h  dom mon dow   command
- 0 16  *   *   * /data/share/home/geoffm/dev/utils/bak-it.sh -i /usr/local/etc/include.lst -e /usr/local/etc/exclude.lst -t /data/bak/`hostname` -s 7 &gt;/dev/null 2&gt;&amp;1
-  5 0  *   *   * /data/share/motion/arch-files.sh &gt;/dev/null 2&gt;&amp;1
-*/15 *  *   *   * /data/share/home/geoffm/grab-pic.sh &gt;/dev/null 2&gt;&amp;1
-####### below are WIP or OLD ########
-# 16 6  *   *   * /usr/sbin/lynis -c --auditor &quot;automated&quot; --cronjob --quiet &gt;/dev/null 2&gt;&amp;1
-#*/5 *  *   *   * /usr/local/bin/watch-proc.sh -f /usr/local/etc/watch-proc.conf -n geoffm@localhost &gt;/dev/null 2&gt;&amp;1
-#*/5 * * * * /data/share/home/geoffm/ping-pong.sh &quot;ping -c2 192.168.1.55&quot; &quot;ssh 192.168.1.1 reboot&quot; &gt;/dev/null
-#  7 * * * /usr/local/sbin/postfix_report.sh &amp;&gt; /dev/null
-</code></pre>
- <a class="read-more" href="/post/2015-05-02-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="/tags/awk/">#awk</a>,
-            
-        
-        <time class="post-date" datetime="2015-05-02T00:00:00Z">
-            2 May 2015
         </time>
     </footer>
 </article>

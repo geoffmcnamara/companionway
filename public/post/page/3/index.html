@@ -174,6 +174,57 @@ ga('send', 'pageview');
 	   
 <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/post/2015-04-17-post1/">Ansible - modifying sudoers</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><h1 id="ansible-modifying-etc-sudoers:dbdeabbb3d7b028d3191787318659934">Ansible - modifying /etc/sudoers</h1>
+
+<p>I have locked administrators out of using sudo with a simple typo.</p>
+
+<p>With ansible you can lockup sudo on every machine with a single error. So
+I get pretty cautious with editing /etc/sudoers through any deployment application.</p>
+
+<p>Here is a quick example of going overboard to protect your sudoers file
+when using ansible. This is in my <code>$ANSIBLE_DIR/roles/common/tasks/main.yml</code> file</p>
+
+<pre><code>- name: Copy sudoers for safety
+  command: cp /etc/sudoers /etc/sudoers.tmp
+
+- name: Create sudoers.bak
+  command: cp /etc/sudoers /etc/sudoers.bak
+
+- name: Ensure admin group is in sudoers with NOPASSWD
+  lineinfile: &quot;dest=/etc/sudoers.tmp state=present regexp='^%admin ' line='%admin ALL=(ALL) NOPASSWD: ALL' validate='visudo -cf %s'&quot;
+  register: sudoers_tmp_ok
+
+- name: Copy sudoers.tmp to sudoers
+  when: sudoers_tmp_ok|success
+  command: cp /etc/sudoers.tmp /etc/sudoers
+</code></pre>
+ <a class="read-more" href="/post/2015-04-17-post1/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+        
+
+        
+        
+            Geoff McNamara
+        
+        
+        <time class="post-date" datetime="0001-01-01T00:00:00Z">
+            1 Jan 0001
+        </time>
+    </footer>
+</article>
+
+	
+	   
+<article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/post/2015-04-27-post1/">Command line disk tree</a></h2>
     </header>
     <section class="post-excerpt">

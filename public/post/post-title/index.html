@@ -11,61 +11,46 @@
     
         
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:image" content="/img/hugo-logo.png"/>
+        <meta name="twitter:image" content="/img/sorting-hat.jpg"/>
     
 
 
 
-<meta name="twitter:title" content="Switched to Hugo"/>
-<meta name="twitter:description" content="I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
+<meta name="twitter:title" content="Sorting IPs"/>
+<meta name="twitter:description" content="I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
+laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
+parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
+in most repositories). So output might look like this:
 
-
-Here is why:
-
-
-It comes as a binary file that runs on pretty much any platform. A single file&hellip; without a list of dependencies
-I could stop with the last reason and it would be enough&hellip; but I have to say that the file tree used in hugo is simple, and simple is beautiful. As Einstein once said:
-&gt;“Make things as simple as possible, but not simpler.”
-It is written in googles go language&hellip; so it is fast and portable.
-It is closely tied to git so it can easily be used on github and for version maintence.
-it builds a clean directory [./public/] for the full site deploy and this can be rsync&rsquo;d to where ever you like.
-or &hellip; just git push it to hithub and use something like netlify.com to host from your github!
-No frustrating version incompatiblities (or at least very minimal) - unlike jekyll which seemed to break on me every few months.
-hugo is relatively mature and has a huge developer backing.
-configurable and changed without challenges
-lots of themes to choose from
-as the Hugo websites states - it makes the web fun again&hellip;
-Did I mention that it is a single executable file?
-
-
-Reference:
-gohugo.io
+```
+$ sudo arp-scan -I wlo1 192.168.1.0/24
+Interface: wlo1, datalink type: EN10MB (Ethernet)
+Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
+192.168.1.1     44:94:fc:93:4f:26       (Unknown)
+192.168.1.2     00:17:88:2a:b5:12       Philips Lighting BV
+192.168.1.17    b8:27:eb:42:e9:01       (Unknown)
+192.168.1.62    b8:27:eb:42:e9:01       (Unknown)
+192.168.1.72    b8:27:eb:42:e9:01       (Unknown)
 "/>
 
     <meta name="twitter:site" content="@@geoffmcnamara"/>
 
 
 
-		<meta property="og:title" content=" Switched to Hugo &middot;  companionway" />
+		<meta property="og:title" content=" Sorting IPs &middot;  companionway" />
 		<meta property="og:site_name" content="companionway" />
 		<meta property="og:url" content="/post/post-title/" />
 
 		
 		<meta property="og:type" content="article" />
 
-		<meta property="og:article:published_time" content="2016-12-09T10:57:45-05:00" />
+		<meta property="og:article:published_time" content="2017-01-01T15:53:14-05:00" />
 
-		
-		<meta property="og:article:tag" content="hugo" />
-		
-		<meta property="og:article:tag" content="jekyll" />
-		
-		<meta property="og:article:tag" content="cms" />
 		
 		
 
 		<title>
-			 Switched to Hugo &middot;  companionway
+			 Sorting IPs &middot;  companionway
 		</title>
 
 		<meta name="description" content="Meeting challenges with success!" />
@@ -82,7 +67,7 @@ gohugo.io
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/screen.css" />
 <link rel="stylesheet" type="text/css" href="/css/nav.css" />
-
+<link rel="stylesheet" type="text/css" href="/css/custom.css" />
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
@@ -103,11 +88,11 @@ gohugo.io
 
 		<link rel="canonical" href="/post/post-title/" />
 
-    <link ref="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=EB+Garamond' >
+    
+<link ref="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=EB+Garamond' >
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Architects Daughter" >
 <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300' >
 <link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Philosopher'>
-
 
 
 		
@@ -171,7 +156,7 @@ ga('send', 'pageview');
 
 
   
-  <header class="main-header post-head" style="background-image: url(/img/hugo-logo.png)">
+  <header class="main-header post-head" style="background-image: url(/img/sorting-hat.jpg)">
   
   <nav class="main-nav overlay clearfix">
 
@@ -193,49 +178,98 @@ ga('send', 'pageview');
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Switched to Hugo</h1>
+        <h1 class="post-title">Sorting IPs</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2016-12-09T10:57:45-05:00">
-            Dec 9, 2016
+          <time class="post-date" datetime="2017-01-01T15:53:14-05:00">
+            Jan 1, 2017
           </time>
         
-         
-          <span class="post-tag small"><a href="/tags/hugo/">#hugo</a></span>
-         
-          <span class="post-tag small"><a href="/tags/jekyll/">#jekyll</a></span>
-         
-          <span class="post-tag small"><a href="/tags/cms/">#cms</a></span>
          
         </section>
     </header>
 
     <section class="post-content">
-      <p>I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
-<a href="https://gohugo.io"><img src="/img/hugo-h.jpg" alt="alt text" title="goHugo.io" /></a></p>
+      <p>I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
+laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
+parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
+in most repositories). So output might look like this:</p>
 
-<p>Here is why:</p>
+<pre><code>$ sudo arp-scan -I wlo1 192.168.1.0/24
+Interface: wlo1, datalink type: EN10MB (Ethernet)
+Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
+192.168.1.1     44:94:fc:93:4f:26       (Unknown)
+192.168.1.2     00:17:88:2a:b5:12       Philips Lighting BV
+192.168.1.17    b8:27:eb:42:e9:01       (Unknown)
+192.168.1.62    b8:27:eb:42:e9:01       (Unknown)
+192.168.1.72    b8:27:eb:42:e9:01       (Unknown)
 
-<ul>
-<li>It comes as a binary file that runs on pretty much any platform. A single file&hellip; without a list of dependencies</li>
-<li>I could stop with the last reason and it would be enough&hellip; but I have to say that the file tree used in hugo is simple, and simple is beautiful. As Einstein once said:
-&gt;“Make things as simple as possible, but not simpler.”</li>
-<li>It is written in googles go language&hellip; so it is fast and portable.</li>
-<li>It is closely tied to git so it can easily be used on github and for version maintence.</li>
-<li>it builds a clean directory [./public/] for the full site deploy and this can be rsync&rsquo;d to where ever you like.
-or &hellip; just git push it to hithub and use something like netlify.com to host from your github!</li>
-<li><em>No frustrating</em> version incompatiblities (or at least very minimal) - unlike jekyll which seemed to break on me every few months.</li>
-<li>hugo is relatively mature and has a huge developer backing.</li>
-<li>configurable and changed without challenges</li>
-<li>lots of themes to choose from</li>
-<li>as the Hugo websites states - it makes the web fun again&hellip;</li>
-<li>Did I mention that it is a single executable file?</li>
-</ul>
 
-<p>Reference:
-<a href="https://gohugo.io/#intro">gohugo.io</a></p>
+
+192.168.1.4     50:f5:da:52:08:8b       (Unknown)
+192.168.1.90    54:42:49:a4:d7:b0       Sony Corporation
+192.168.1.11    64:eb:8c:6f:e7:4c       (Unknown)
+192.168.1.13    5c:ff:35:21:21:d4       Wistron Corporation
+192.168.1.8     7c:c7:09:88:07:79       (Unknown)
+192.168.1.17    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
+192.168.1.10    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
+192.168.1.7     6c:ad:f8:33:09:e8       (Unknown)
+192.168.1.21    f0:25:b7:35:e7:33       (Unknown)
+192.168.1.29    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
+192.168.1.61    b8:27:eb:4b:b6:4c       (Unknown)
+192.168.1.76    1c:3e:84:5e:b5:bc       (Unknown)
+192.168.1.64    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
+192.168.1.62    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
+192.168.1.72    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
+192.168.1.20    b2:c5:54:0b:de:50       (Unknown)
+192.168.1.24    00:0d:4b:80:18:6d       Roku, LLC
+192.168.1.131   50:c7:bf:13:44:73       (Unknown)
+
+23 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.8.1: 256 hosts scanned in 1.576 seconds (162.44 hosts/sec). 23 responded
+
+</code></pre>
+
+<p>But this listing is unsorted; I need it in ascending IP order. The solution is to creatively
+use the unix sort command declaring the field &ldquo;termination&rdquo; character as &ldquo;.&rdquo; and then declaring
+the key fields to sort on. Here is the final run:</p>
+
+<pre><code>$ sudo arp-scan -I wlo1 192.168.1.0/24|sort -t . -k3,3n -k4,4n
+
+24 packets received by filter, 0 packets dropped by kernel
+Interface: wlo1, datalink type: EN10MB (Ethernet)
+Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
+192.168.1.1     44:94:fc:93:4f:26       (Unknown)
+192.168.1.2     00:17:88:2a:b5:12       Philips Lighting BV
+192.168.1.4     50:f5:da:52:08:8b       (Unknown)
+192.168.1.7     6c:ad:f8:33:09:e8       (Unknown)
+192.168.1.8     7c:c7:09:88:07:79       (Unknown)
+192.168.1.10    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
+192.168.1.11    64:eb:8c:6f:e7:4c       (Unknown)
+192.168.1.13    5c:ff:35:21:21:d4       Wistron Corporation
+192.168.1.17    b8:27:eb:42:e9:01       (Unknown)
+192.168.1.17    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
+192.168.1.20    b2:c5:54:0b:de:50       (Unknown)
+192.168.1.21    f0:25:b7:35:e7:33       (Unknown)
+192.168.1.24    00:0d:4b:80:18:6d       Roku, LLC
+192.168.1.29    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
+192.168.1.61    b8:27:eb:4b:b6:4c       (Unknown)
+192.168.1.62    b8:27:eb:42:e9:01       (Unknown)
+192.168.1.62    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
+192.168.1.63    b2:c5:54:0b:de:50       (Unknown)
+192.168.1.64    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
+192.168.1.72    b8:27:eb:42:e9:01       (Unknown)
+192.168.1.72    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
+192.168.1.76    1c:3e:84:5e:b5:bc       (Unknown)
+192.168.1.90    54:42:49:a4:d7:b0       Sony Corporation
+192.168.1.131   50:c7:bf:13:44:73       (Unknown)
+Ending arp-scan 1.8.1: 256 hosts scanned in 1.520 seconds (168.42 hosts/sec). 24 responded
+</code></pre>
+
+<p>Enjoy
+-g-</p>
 
 <p>Enjoy
 -g-</p>
@@ -261,7 +295,7 @@ or &hellip; just git push it to hithub and use something like netlify.com to hos
   
   <div class="author-meta">
     <span class="author-location icon-location">Elizabeth City, NC</span>
-    <span class="author-link icon-link"><a href="http://companionway.net">http://companionway.net</a></span>
+    <span class="author-link icon-link"><a href="https://www.companionway.net">https://www.companionway.net</a></span>
   </div>
 </section>
 
@@ -270,7 +304,7 @@ or &hellip; just git push it to hithub and use something like netlify.com to hos
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Switched%20to%20Hugo&nbsp;-&nbsp;companionway&amp;url=%2fpost%2fpost-title%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Sorting%20IPs&nbsp;-&nbsp;companionway&amp;url=%2fpost%2fpost-title%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
@@ -278,7 +312,7 @@ or &hellip; just git push it to hithub and use something like netlify.com to hos
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fpost-title%2f&amp;description=Switched%20to%20Hugo"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fpost%2fpost-title%2f&amp;description=Sorting%20IPs"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
@@ -301,8 +335,9 @@ or &hellip; just git push it to hithub and use something like netlify.com to hos
 <script type="text/javascript" src="/js/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="/js/index.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min..js"></script>
-<script type="text/javascript" src="/js/npm.js"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script type="text/javascript" src="/js/custom.js"></script>
 
 
