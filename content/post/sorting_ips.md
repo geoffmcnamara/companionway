@@ -91,6 +91,3 @@ Ending arp-scan 1.8.1: 256 hosts scanned in 1.520 seconds (168.42 hosts/sec). 24
 
 Enjoy
 -g-
-
-Enjoy
--g-
