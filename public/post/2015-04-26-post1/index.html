@@ -32,6 +32,7 @@ for i in `seq 1 15`; do
   sleep 1
 done
 
+
 "/>
 
     <meta name="twitter:site" content="@@geoffmcnamara"/>
@@ -85,7 +86,7 @@ done
 		
 		
 		
-		<meta name="generator" content="Hugo 0.16-DEV" />
+		<meta name="generator" content="Hugo 0.18.1" />
 
 		<link rel="canonical" href="/post/2015-04-26-post1/" />
 
@@ -191,9 +192,7 @@ ga('send', 'pageview');
     </header>
 
     <section class="post-content">
-      
-
-<h2 id="simple-sed-trick-keeping-the-last-x-files:5d948e22d0ba3ff855bef7293d043cd5">Simple sed trick - keeping the last X files</h2>
+      <h2 id="simple-sed-trick-keeping-the-last-x-files">Simple sed trick - keeping the last X files</h2>
 
 <p>How would you remove all but the last 10 files in a directory?</p>
 
@@ -210,6 +209,8 @@ and the newest one (last one) will be called
   sleep 1
 done
 </code></pre>
+
+<p></p>
 
 <p>What this does is runs <code>seq 1 15</code> in a shell first and substitutes
 its output into a list which the variable &ldquo;i&rdquo; will iterate through.
@@ -263,7 +264,6 @@ echo :</p>
 <p>Enjoy</p>
 
 <p>-g-</p>
-
     </section>
 
 

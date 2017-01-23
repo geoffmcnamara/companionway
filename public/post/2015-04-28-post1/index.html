@@ -31,11 +31,7 @@ We can gain a better understanding by reviewing the changes to the guts of
 your personal git repository. We will not cover branches, tags, or the git daemon
 in this discussion.
 
-###Why git? (skip this if you are less than patient)
-
-Many years ago I used backups of my projects or just documents, notes, etc.
-All worked well until it didn&rsquo;t. If you make a mistake and back it up guess what,
-"/>
+###Why git? (skip this if you are less than patient)"/>
 
     <meta name="twitter:site" content="@@geoffmcnamara"/>
 
@@ -88,7 +84,7 @@ All worked well until it didn&rsquo;t. If you make a mistake and back it up gues
 		
 		
 		
-		<meta name="generator" content="Hugo 0.16-DEV" />
+		<meta name="generator" content="Hugo 0.18.1" />
 
 		<link rel="canonical" href="/post/2015-04-28-post1/" />
 
@@ -196,9 +192,7 @@ ga('send', 'pageview');
     </header>
 
     <section class="post-content">
-      
-
-<h2 id="exploring-git-from-the-inside-out:13d1ef1aa2da144986cfdc7e7a64a8a1">&hellip; exploring git from the inside out &hellip;</h2>
+      <h2 id="exploring-git-from-the-inside-out">&hellip; exploring git from the inside out &hellip;</h2>
 
 <p>###Preface</p>
 
@@ -215,9 +209,9 @@ in this discussion.</p>
 <p>###Why git? (skip this if you are less than patient)</p>
 
 <p>Many years ago I used backups of my projects or just documents, notes, etc.
-All worked well until it didn&rsquo;t. If you make a mistake and back it up guess what,</p>
+All worked well until it didn&rsquo;t. If you make a mistake and back it up guess what,
 
-<p>now you have two broken copies. Then I used cvs - awesome. It worked for me
+now you have two broken copies. Then I used cvs - awesome. It worked for me
 for years. Never lost code (as long as I put it under cvs). Really, maintained my
 work and previous versions with only very minor issues but kept my data useful and
 available. I tried git but wow, so many moving parts, and I had trouble wrapping my
@@ -243,7 +237,7 @@ or even document files, graphics, etc. Really anything I want to preserve, espec
 if versions are involved. So this discussion will be using $HOME/dev to place our
 projects; each project with its own directory.</p>
 
-<h4 id="exercise:13d1ef1aa2da144986cfdc7e7a64a8a1">EXERCISE</h4>
+<h4 id="exercise">EXERCISE</h4>
 
 <pre><code>mkdir -p $HOME/dev/mypjct
 cd $HOME/dev/myprjct
@@ -462,7 +456,7 @@ repository - created as &ldquo;bare&rdquo; with &ldquo;git init &ndash;bare&rdqu
 <p>Note the &ldquo;bare = false&rdquo; so by default this is not a &ldquo;shared&rdquo;
 repository. It is a &ldquo;working&rdquo; project directory.</p>
 
-<h3 id="setting-up-a-remote-shared-git-server:13d1ef1aa2da144986cfdc7e7a64a8a1">Setting up a remote <em><em>shared</em></em> git server</h3>
+<h3 id="setting-up-a-remote-shared-git-server">Setting up a remote <em><em>shared</em></em> git server</h3>
 
 <p>#############################################</p>
 
@@ -493,7 +487,7 @@ not be a &ldquo;working&rdquo; project directory.</p>
  touch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys
 </code></pre>
 
-<h3 id="to-make-logins-easier-passwordless:13d1ef1aa2da144986cfdc7e7a64a8a1">To make logins easier (passwordless)</h3>
+<h3 id="to-make-logins-easier-passwordless">To make logins easier (passwordless)</h3>
 
 <p>You need to add your SSH public keys to the remote authorized_keys
 file for the git user.
@@ -518,14 +512,14 @@ cat /tmp/id_rsa.pub &gt;&gt; git@remote_server:.ssh/authorized_keys
 # but know you know what it is doing for you.
 </code></pre>
 
-<h3 id="lock-down-the-git-user-shell:13d1ef1aa2da144986cfdc7e7a64a8a1">Lock down the git user shell</h3>
+<h3 id="lock-down-the-git-user-shell">Lock down the git user shell</h3>
 
 <p>Change the git user shell to: <code>/usr/bin/git-shell</code> on the remote server.
 Make sure that git-shell exists in the <code>/etc/shells</code> file
 &gt;&gt;Note: you will not be able to ssh into the server as the
 git user&hellip; but it will allow git commands to work against it.</p>
 
-<h3 id="build-an-empty-git-initialized-prepared-directory-for-every-project:13d1ef1aa2da144986cfdc7e7a64a8a1">Build an empty git initialized/prepared directory for every project</h3>
+<h3 id="build-an-empty-git-initialized-prepared-directory-for-every-project">Build an empty git initialized/prepared directory for every project</h3>
 
 <p>On the remote server you need to build out a project.git directory
 and initialize if with <code>git init --bare</code> to allow a new project
@@ -586,7 +580,7 @@ needed structure and files for controlling git but no .git subdirectory.</p>
 <p>Note: no objects yet and no .git subdirectory (and no working files
 will be stored here).</p>
 
-<h3 id="prepare-your-project-directory-on-the-local-computer-if-you-haven-t-already:13d1ef1aa2da144986cfdc7e7a64a8a1">Prepare your project directory on the local computer if you haven&rsquo;t already</h3>
+<h3 id="prepare-your-project-directory-on-the-local-computer-if-you-haven-t-already">Prepare your project directory on the local computer if you haven&rsquo;t already</h3>
 
 <pre><code> cd myproject # even when files already exist
  git init # to build out the .git/ directory structure and files
@@ -695,7 +689,6 @@ repository..</p>
 <p>Enjoy,</p>
 
 <p>-g-</p>
-
     </section>
 
 

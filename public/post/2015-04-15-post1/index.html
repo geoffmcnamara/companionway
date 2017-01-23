@@ -43,6 +43,7 @@ Finland, designed the first version of the protocol (now called SSH-1) prompted 
 
 
 &hellip;
+
 "/>
 
     <meta name="twitter:site" content="@@geoffmcnamara"/>
@@ -96,7 +97,7 @@ Finland, designed the first version of the protocol (now called SSH-1) prompted 
 		
 		
 		
-		<meta name="generator" content="Hugo 0.16-DEV" />
+		<meta name="generator" content="Hugo 0.18.1" />
 
 		<link rel="canonical" href="/post/2015-04-15-post1/" />
 
@@ -202,11 +203,9 @@ ga('send', 'pageview');
     </header>
 
     <section class="post-content">
-      
+      <h1 id="ssh">SSH</h1>
 
-<h1 id="ssh:f091cc6d5a5e076f03b1f5fbda7656c9">SSH</h1>
-
-<h2 id="debug-with-verbose-output:f091cc6d5a5e076f03b1f5fbda7656c9">Debug with verbose output</h2>
+<h2 id="debug-with-verbose-output">Debug with verbose output</h2>
 
 <p>$HOME/.ssh/config first and foremost - debug with -vvvv</p>
 
@@ -216,7 +215,7 @@ ga('send', 'pageview');
 
 <hr />
 
-<h3 id="from-wikipedia-paraphrased:f091cc6d5a5e076f03b1f5fbda7656c9">From Wikipedia (paraphrased):</h3>
+<h3 id="from-wikipedia-paraphrased">From Wikipedia (paraphrased):</h3>
 
 <blockquote>
 <p>Secure Shell, or SSH, is a cryptographic (encrypted) network
@@ -233,6 +232,8 @@ Finland, designed the first version of the protocol (now called SSH-1) prompted 
 
 <p>&hellip;</p>
 
+<p></p>
+
 <blockquote>
 <p>OpenSSH and OSSH :  In 1999, developers wanting a free software version to be available went back to the older 1.2.12 release of the original SSH program  &hellip; Shortly thereafter, OpenBSD developers forked Grönvall&rsquo;s code and did extensive work on it, creating OpenSSH, which shipped with the 2.6 release of OpenBSD.</p>
 </blockquote>
@@ -243,7 +244,7 @@ Finland, designed the first version of the protocol (now called SSH-1) prompted 
 
 <p>SSH gave an option for the insecure nature of telnet, rsh, ftp, http. They are all inherently insecure.</p>
 
-<h2 id="uses:f091cc6d5a5e076f03b1f5fbda7656c9">Uses:</h2>
+<h2 id="uses">Uses:</h2>
 
 <ul>
 <li>ssh - secure login and controlled secure execution (feature: with X
@@ -255,9 +256,9 @@ forwarding possibility)</li>
 <li>port forwarding - secure tunnelling</li>
 </ul>
 
-<h2 id="first-thing-everyone-wants-is-passwordless-login:f091cc6d5a5e076f03b1f5fbda7656c9">First thing everyone wants is passwordless login</h2>
+<h2 id="first-thing-everyone-wants-is-passwordless-login">First thing everyone wants is passwordless login</h2>
 
-<h3 id="convenience-vs-security:f091cc6d5a5e076f03b1f5fbda7656c9">convenience vs security</h3>
+<h3 id="convenience-vs-security">convenience vs security</h3>
 
 <p>This next command will ask for a passphrase
 - if you want simple - leave the passphrase blank
@@ -286,7 +287,7 @@ ssh-add id_rsa
 It is only created when it is needed - eg when you ssh to another server
  - because it creates an .ssh/known_hosts file</p>
 
-<h2 id="the-power-in-authorized-keys:f091cc6d5a5e076f03b1f5fbda7656c9">The power in authorized_keys</h2>
+<h2 id="the-power-in-authorized-keys">The power in authorized_keys</h2>
 
 <pre><code>OPTIONS KEY_TYPE KEY COMMENT 
 ...  
@@ -298,7 +299,7 @@ OPTIONS KEY_TYPE KEY COMMENT
 <pre><code>command=&quot;/bin/ls -ltr&quot;,no-port-forwarding,no-X11-forwarding,no-agent-forwarding ssh-rsa KEY...ENDKEY user@FromHost
 </code></pre>
 
-<h2 id="restricting-shell-access:f091cc6d5a5e076f03b1f5fbda7656c9">restricting shell access</h2>
+<h2 id="restricting-shell-access">restricting shell access</h2>
 
 <p>scponly - once installed set up a new scponlyuser</p>
 
@@ -346,7 +347,7 @@ case $SSH_ORIGINAL_COMMAND in
 esac
 </code></pre>
 
-<h2 id="sftp:f091cc6d5a5e076f03b1f5fbda7656c9">sftp</h2>
+<h2 id="sftp">sftp</h2>
 
 <p>Subsystem sftp internal-sftp
 Match group sftponly
@@ -355,7 +356,7 @@ Match group sftponly
 <p>add the chrootDirectory %h and AllowTcpForwarding no after the match section to force the sftponly users to chroot to their home. please note that the match should (must!) be the last section on the ssh config and options after that are options just for the matched users –  higuita May 28 &lsquo;13<br />
 ForceCommand internal-sftp -u 0077 -d /uploaddir can farther harden it, by forcing a umask on an upload directory. In conjunction with &lsquo;ChrootDirectory` it creates a very controlled, isolated upload environment. Bonus note: the default dir and the umask must be set in the ForceCommand, not in the Subsystem directive, if you want them to work. –  Marcin Jun 6 &lsquo;14</p>
 
-<h2 id="sshfs:f091cc6d5a5e076f03b1f5fbda7656c9">sshfs</h2>
+<h2 id="sshfs">sshfs</h2>
 
 <pre><code>sudo apt-get install sshfs
 # make sure permissions allow what you attempt
@@ -364,7 +365,7 @@ mkdir $HOME/mnt/ssh sshfs hostname:/data/share $HOME/mnt/ssh df -h
 fusermount -u $HOME/mnt/ssh df -h ```
 </code></pre>
 
-<h2 id="port-forwarding:f091cc6d5a5e076f03b1f5fbda7656c9">Port Forwarding</h2>
+<h2 id="port-forwarding">Port Forwarding</h2>
 
 <p>==================
 Creates a secure connection between computers through which services can be relayed.</p>
@@ -385,7 +386,7 @@ Creates a secure connection between computers through which services can be rela
 <p>Second - you need to determine the appropriate source and destination ports
   and destination IP</p>
 
-<h3 id="local-port-forwarding:f091cc6d5a5e076f03b1f5fbda7656c9">Local port forwarding</h3>
+<h3 id="local-port-forwarding">Local port forwarding</h3>
 
 <p>Example - local port forwarding:</p>
 
@@ -399,7 +400,7 @@ Creates a secure connection between computers through which services can be rela
 
 <p>Now you have 2 port forward connection - one listening on 8080 the other on 12345.</p>
 
-<h3 id="remote-port-forwarding:f091cc6d5a5e076f03b1f5fbda7656c9">Remote port forwarding</h3>
+<h3 id="remote-port-forwarding">Remote port forwarding</h3>
 
 <p>Example: you want to let a friend use your PC - assume you have vnc running on your
 pc.</p>
@@ -412,7 +413,7 @@ pc.</p>
 <p>Your friend can no access your vnc desktop by connection a vnc client to
 5900 on HIS pc!</p>
 
-<h3 id="x-forwarding:f091cc6d5a5e076f03b1f5fbda7656c9">X forwarding</h3>
+<h3 id="x-forwarding">X forwarding</h3>
 
 <p>Your ssh server will forward X apps natively if it is allowed in the sshd_config.</p>
 
@@ -438,7 +439,6 @@ ssh -f -T -X otherhost firefox
 <p>Wednesday, 15. April 2015 02:13PM</p>
 
 <hr />
-
     </section>
 
 

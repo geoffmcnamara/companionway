@@ -2,12 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Financial on companionway</title>
-    <link>/tags/financial/</link>
+    <link>/tags/financial/index.xml</link>
     <description>Recent content in Financial on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Mon, 11 May 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/financial/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -33,7 +32,8 @@ echo &amp;quot;Your \$1 argument is now uppercase: $1&amp;quot;
 &lt;p&gt;Just to let you know a little more about me and reveal
 a few more shells tricks along the way.&lt;/p&gt;
 
-&lt;p&gt;I am a very conservative investor - always have been but
+&lt;p&gt;
+I am a very conservative investor - always have been but
 the low interest rates over the recent past has forced me
 to try a squeeze a little more out of the stock market also
 known as a &amp;ldquo;a gentleman&amp;rsquo;s gambling parlor of greedy people&amp;rdquo;.
@@ -88,8 +88,7 @@ getquotes.sh -p -m 6 -g
 
 &lt;p&gt;Enjoy&lt;/p&gt;
 
-&lt;p&gt;-g-&lt;/p&gt;
-</description>
+&lt;p&gt;-g-&lt;/p&gt;</description>
     </item>
     
   </channel>

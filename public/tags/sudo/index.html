@@ -65,7 +65,7 @@
 		<link href="/tags/sudo/index.xml" rel="alternate" type="application/rss+xml" title="Sudo &middot; companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.16-DEV" />
+		<meta name="generator" content="Hugo 0.18.1" />
 
 		<link rel="canonical" href="/tags/sudo/" />
 
@@ -186,11 +186,7 @@ comfortable that using any other editor leaves me just a bit unnerved. I constan
 to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
 /etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
 simple monitoring program (xymon) to be able to run &ldquo;sudo ufw status&rdquo; without a password and report
-back to the monitor server.</p>
-
-<p>I fired up <code>sudo vim /etc/sudoers.d/xymon</code> and started to add the needed line:
-<code>xymon ALL = NOPASSWD: /usr/sbin/ufw status</code> but I got halfway through and could remember the exact location</p>
- <a class="read-more" href="/post/alway-use-visudo/">&raquo;</a></p>
+back to the monitor server.</p> <a class="read-more" href="/post/alway-use-visudo/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         

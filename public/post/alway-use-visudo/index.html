@@ -28,11 +28,7 @@ comfortable that using any other editor leaves me just a bit unnerved. I constan
 to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
 /etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
 simple monitoring program (xymon) to be able to run &ldquo;sudo ufw status&rdquo; without a password and report
-back to the monitor server.
-
-I fired up sudo vim /etc/sudoers.d/xymon and started to add the needed line:
-xymon ALL = NOPASSWD: /usr/sbin/ufw status but I got halfway through and could remember the exact location
-"/>
+back to the monitor server."/>
 
     <meta name="twitter:site" content="@@geoffmcnamara"/>
 
@@ -87,7 +83,7 @@ xymon ALL = NOPASSWD: /usr/sbin/ufw status but I got halfway through and could r
 		
 		
 		
-		<meta name="generator" content="Hugo 0.16-DEV" />
+		<meta name="generator" content="Hugo 0.18.1" />
 
 		<link rel="canonical" href="/post/alway-use-visudo/" />
 
@@ -211,9 +207,9 @@ simple monitoring program (xymon) to be able to run &ldquo;sudo ufw status&rdquo
 back to the monitor server.</p>
 
 <p>I fired up <code>sudo vim /etc/sudoers.d/xymon</code> and started to add the needed line:
-<code>xymon ALL = NOPASSWD: /usr/sbin/ufw status</code> but I got halfway through and could remember the exact location</p>
+<code>xymon ALL = NOPASSWD: /usr/sbin/ufw status</code> but I got halfway through and could remember the exact location
 
-<p>of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the phsical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplimental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.</p>
+of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the phsical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplimental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.</p>
 
 <p>Lesson: <em>Always use visudo</em></p>
 
@@ -239,7 +235,6 @@ update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor
 
 <p>Enjoy
 -g-</p>
-
     </section>
 
 

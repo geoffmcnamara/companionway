@@ -1,0 +1,603 @@
++++
+author = ""
+comments = false
+date = "2017-01-10T14:27:35-05:00"
+draft = false
+#image = "/img/raspberry.png"
+#image = "/img/k-pi1.jpg"
+image = "/img/mmirror.png"
+menu = ""
+share = true
+slug = "post-title"
+title = "Raspberry Pi MagicMirror on a Touchscreen with Alexa and fauxmo"
+
++++
+
+### Warning: what follows is a cascade of issues and lessons learned... but just plain fun!
+
+## The goal
+
+This project is designed to provide a reliable MagicMirror2 on a Raspberry Pi fitted with a 5 inch touchscreen that doubles to provide browsing if needed. This comes from a desire to have a quick aide in the kitchen that reports standard information when needed or a browser for looking up and displaying recipes etc.
+<!--more-->
+
+The result is a raspberry pi with one wire that stands on its edge without a case and has a 5 inch display. The display can show any of the modules provided for magicmirror2 on command to Alexa or stop magicmirror on command. The rasbian desktop along with an inboard keyboard pad and touch "pen" allows you to launch a browser (or any other program) and navigate to any url. When the desktop is idle a screensaver comes up with anynumber of pleasing animations - selectable and can be rotated with screen blanking possible as well. The backlight of the screen is enough to act as a soothing nightlight. All in all, I am very pleased (and so is my wife) with the final result of this project.
+
+
+There is a LOT of information here and lots of steps but it is worth it and you will definately learn lots of useful tricks. I am sure there are many improvements that could be made.
+
+![alt text](/img/k-pi1.jpg "Kitchen Pi Image:1")
+
+## Materials
+
+Hardware
+- rasberry pi (in my case a model 3) with powersuppy
+- 5 inch touchscreen with plastic pen
+- USB storage (optional but recommended)
+- you will need a temporary keyboard/mouse attached to set things up.
+
+Software
+- berryboot (which will load rasbian)
+- apache2 and php
+- magicmirror2 and various modules
+- fauxmo (from Maker Musings)
+- software for the touchscreen including touch a calibration tool
+- matchbox-keyboard
+- xcreensaver
+
+<!--more-->
+
+## Problems Encountered
+
+There were lots of challenges that thwarted what seemed like a simple goal to achieve.
+- fauxmo needs a little more documentation on how to build the "virtual switch" html code. I will proyvide a sample here.
+- Alexa tends to not forget discovered devices when told to find devices again.
+- Troubleshooting the HEADER return code from html and php scripts is essential to making all the players between Alexa/fauxmo/and the "virtual switch" happy.
+- a 5 inch touchscreen is too small for a default MagicMirror run but there are solutions.
+- turning the display and getting the touchscreen calibrated correctly can be difficult until you know how to do it
+- the software that comes with the touchscreen will clobber a berryboot config - and pretty much any other custom config you have for the raspberry pi.
+- finding ways to get the html/web server to execute commands within a users X display can be daunting
+Y- when php executes and external shell command - things can silently hang with out easy indication.
+- magicmirror2 can be a little overwhelming with npm and electron running under it - especially when you are trying to get the webserver (and ultimately Alexa/Amazon echo) to control it all.
+
+## Shoutouts
+
+- berryboot works well and provides (at least for me) a more reliable raspberry pi OS file system solution than an SD card only.
+- magicmirror2 is just plain fun
+- fauxmo (a wemo emulator) is a crazy easy solution to using Alexa to turn on or off anything if you are willing to do a little coding.
+- php remains my goto language for simple web projects.
+- the touchscreens for the raspberry pi have come a long way in that they basically plug onto the raspberry pi board, do a little software tweaking and it is up and ready to go.
+- xscreensaver - I gained a renewed respect for this fun application... it continues to provide fun idle entertainment.
+
+## Solving the problems
+
+### Berryboot on a Raspberry Pi
+
+Just do it. Too many times I have had SD cards loose their minds. The filesystem burps with all the activity and you are forced
+to reboot the raspberry pi; hopefully the filesystem repair goes smoothly on reboot. I am inherently lazy so getting up and rebooting the raspberry pi is not my first choice, especially when you have them hidden away in some back compartment. Berryboot
+allows you to boot from a USB storage device like a USB stick or a USD drive. You can also have it boot across the network from
+another storage device but I will leave that up to you. In my case I use a (cheap) 16G USB stick and all my raspberry pi servers have wifi. 
+Berryboot allows you to store multiple OS distros and select which to boot. You can save and restore images and download new OS distros.
+
+ - go download the latest berryboot zip to your PC/laptop [berryboot](http://www.berryterminal.com/doku.php/berryboot)
+ - assuming your SD card has a standard (FAT) partition just copy all the zip contents to it. You can quicly format
+   your SD card with one partition using your camera. You may want to remove any directories that your camera might create first.
+ - Put the Berryboot SD card in the raspberry pi making sure your display, USB storage and wifi are attached and boot up.
+ - If your display is an HDMI TV you can use your remote control to navigate but I find that cumbersome so I added a USB keyboard/touchpad like the Rii mini X1
+ - First get the wifi connected ... near the bottom of the Berryboot screen is abutton for that. Configure the SSID and password and then you can tell Berryboot to download any of its prepared OS distros. One challenge is that Berryboot needs an OS that has been constructed for its use but down't let this hold you back. A list of images can be found here: [berryboot images](http://berryboot.alexgoldcheidt.com/images/)
+ - After it boots go look at /boot/config.txt to see how the magick works. Keep in mind that if this file gets clobberred berryboot will be toast.
+ - Enjoy
+
+### MagicMirror2 on the raspberry pi
+
+This can "seem" more difficult than it really is. I do pretty much everything by ssh at the commandline.
+- ssh into the raspberry pi
+- You can use the git source for MagicMirror2 but really this next command saves steps and is the first recommendation in the docs
+```
+curl -sL https://raw.githubusercontent.com/MichMich/MagicMirror/master/installers/raspberry.sh | bash
+```
+Lots of needed dependencies will get loaded - additionally you may have to use apt install node-legacy (with sudo of course).
+This will build out MagicMirror off your $HOME directory. I didn't like this a first but it simply works so best not to fight it.
+- cd ~/MagicMirror
+- run 
+DISPLAY=:0
+npm start &
+```
+Now use your browser and go hit http://[raspberry-pi-IP]:8080.
+This can run without a web server or along side a web server as long as the browser (or any other application) isn't using the 8080 port.
+
+![alt text](/img/k-pi2.jpg "Kitchen Pi Image:2")
+
+MagicMirror can look a little intimidating but have no fear. It uses lots of javascript (.js files) but it wraps those files with electron to create a "running HTML/js/node.js/CSS application" on the local machine. Read more on electron here: [electron.atom.io](http://electron.atom.io/) and then it uses npm (node package manager) to assemble all the java script and install all the dependencies. More info on npm can be found here: [npmjs](https://www.npmjs.com/)
+
+Now we have MagicMirror running. Lets turn our attention using the display on the raspberry pi.
+
+There are lots of changes you can make to MagicMirror but lets move on and we will explore those changes after we reconfigure the touch screen to a portrait display instead of the default landscape mode.
+
+## X display on Raspberry Pi
+Configure the raspberry pi to boot up with X windows running.
+- log in to the raspberry pi with ssh (by the way - to log in an redirect any X apps to your local display use `ssh -X user@raspberry-IP`) 
+- run `sudo raspi-config` and set the boot up to GUI (Graphical User Interface) appropriately.
+
+Now it gets a little tricky here. You can configure the server to boot right into the GUI and bring up MagicMirror as the `pi` user (which is the default) but I changed this up a little. 
+The rasberry pi default setup for rasbian (jessie) will set the user 'pi' as the default X login so I wanted to change that to my own username - here is how to do it. Edit as the superuser (use sudo) the `/etc/lightdm/lightdm,conf` file and change this line appropriately:
+```autologin-user=yourname```
+There, moved one more step forward.
+
+## xscreensaver
+
+Add xscreensaver to both your desktop/laptop and the raspberry pi.
+```
+sudo pt install xscreensaver xscreensaver-data xscreensaver-data-extra  xscreensaver-gl 
+```
+I added xscreensaver for several reasons. It provides a console to control how long the screen will stay active until it blanks and
+the screensaver screens provide interesting displays on an idle screen. I set up what I wanted on my laptop and then transferred
+the $HOME/.xscreensaver file to the home dir of the raspberry pi. 
+
+You have to run xscreenserver-demo on the magicmirror server to get it to configure properly on that server.
+
+## configure the 5 inch touchscreen
+
+For this project I needed a keyboard/mouse-pad for two phases, installing berryboot and for configuring the touchscreen.
+For my touchscreen (yours may be different) I needed these files
+ - 5.0 Inch display User Guide.pdf
+ - LCD-show-161112.tar.gz
+ - Xinput-calibrator_0.7.5-1_armhf.zip
+Go to this website for info: [5inch HDMI LCD](http://www.waveshare.com/wiki/5inch_HDMI_LCD)
+
+BE CAREFULL HERE... if your follow the instructions and run their install script (not necessary) you will overwrite
+the /boot/config.txt file and clobber the berryboot you installed above. Took me a bit to figure that one out. You only
+need to add a few lines to the /boot/config.txt - which is essentially what their install script does.
+Just add these lines to /boot/config.txt
+```
+#####
+hdmi_group=2
+hdmi_mode=1
+hdmi_mode=87
+hdmi_cvt 800 480 60 6 0 0 0
+dtoverlay=ads7846,cs=1,penirq=25,penirq_pull=2,speed=50000,keep_vref_on=0,swapxy=0,pmax=255,xohms=150,xmin=200,xmax=3900,ymin=200,ymax=3900
+#display_rotate=1
+#display_rotate=2
+display_rotate=3
+avoid_warnings=1
+
+disable_overscan=1
+start_x=1
+###
+```
+I loaded these before the berryboot settings and it worked fine. You may want to experiment with the rotation to find what works
+best for you.
+
+The next part is where it gets interesting. The screen is probably calibrated totally wrong for touch so fire up the calibration tool you installed from the file above and use this touch pen to calibrate - it will write out /etc/X11/xorg.conf.d/99-calibrate.conf with the new settings. All of this will require your keyboard.
+
+By the way, I also installed matchbox-keyboard to allow this raspberry pi the ability to work without an attached keyboard just using the touch screen.
+```
+sudo apt install matchbox-keyboard
+```
+
+## configure fauxmo and Alexa
+
+Installing fauxmo and configuring it is where it gets fun because it allows you to use Alexa to fire up MagicMirror or shut it down so the raspberry pi can be used for browsing the internet or whatever you choose.
+
+The documentation for fauxmo is good but not great. It will get you just so far but fails to provide examples of HTML code to use with it but I will remedy that situation here. The original fauxmo code build is located here: [makemuse fauxmo](https://github.com/makermusings/fauxmo.git). However, to confuse things, there is another build that is more "sophisticated" (for me it is more complicated) and is available using python pip. It also has limited documentation and configuring it can be a challenge so I am sticking with the original makermuse version of fauxmo. 
+
+To install:
+```
+git clone https://github.com/makermusings/fauxmo.git
+cd fauxmo
+sudo cp fauxmo.py /usr/local/bin
+# you will need to edit/configure /usr/local/bin/fauxmo.py
+```
+
+You can put fauxmo.py on any server but you want to put it on one that stays up all the time.
+For me that is a raspberry pi that I use as my master server (rasp1)
+
+You can run the trigger webserver on any other server or the same on but in this case it will be the one where you have magicmirror running (rasp5).
+
+You need to: 
+ - configure the fauxmo.py script on your master server (rasp1 for my network)
+ - install an rc startup script for fauxmo on your master server (rasp1 for my network)
+ - write some simple html/php code to run on a webserver (with php) where magicmirror is installed
+ - write a simple shell launch/kill script for magicmirror where magicmirror is installed
+ - make sure your firewalls allow the needed ports 1900 52001 52002 on the master server and port 80 for the magicmirror server
+ - tell Alexa to find devices
+ - test Alexa and enjoy
+
+First step: configure fauxmo.py:
+```
+FAUXMOS = [
+    ['garage door',rest_api_handler('http://192.168.1.63/fauxmo.php?garage_door=1','http://192.168.1.63/fauxmo.php?garage_door=0'),52001],
+    ['kitchen pie',rest_api_handler('http://192.168.1.65/fauxmo.php?switch=on','http://192.168.1.65/fauxmo.php?switch=off'),52002],
+]
+```
+This section is near line 340 or so.
+Use whatevername you want ... in this case I used "kitchen pie" so my command to Alexa will be 
+> Alexa turn on kitchen pie
+or
+> Alexa kitchen pi off
+The IP address is for the server where I have a webserver and magicmirror running. The port number 52002 is my selection and can be
+any unprivileged port you desire but do not leave the port optional - Alexa remembers this port number for triggering the related device name.
+
+fauxmo.py runs as a daemon on your master server and serves up configured device names and ports when queried by Alexa on port 1900. So you need to make sure your firewall is open on port 1900 to this server thus allowing Alexa to find the devices. When the user tells Alexa to turn a named device on or off it will relay the request to the repective port... for the example above "kitchen pie" will be triggered through port 52002.
+
+The fauxmo.py daemon will in turn send out an HTML GET request to the declared port with the configured URI -- in this case
+`http://192.168.1.65/fauxmo.php?switch=on` (or off). We will get to what fauxmo.php looks like in a minute.
+
+Now create a script to fire /usr/local/bin/fauxmo.py up on bootup:
+Create /etc/init.d/fauxmorc with this content:
+```
+#!/bin/bash
+### BEGIN INIT INFO
+# Provides:          fauxmo
+# Required-Start:
+# Required-Stop:
+# Should-Start:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Run fauxmo as a listening server - emulates a wemo hub
+# Description:
+### END INIT INFO
+
+
+PATH=/usr/local/bin:/home/geoffm/dev/utils:/home/geoffm/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/geoffm/dev/utils:/usr/share/ruby-rvm/bin:/home/geoffm/.rvm/bin
+
+PATH=$PATH:/sbin:/usr/sbin:/bin:/usr/bin
+. /lib/init/vars.sh
+
+PATH=$PATH:/usr/local/bin
+CMD="fauxmo.py -d"
+
+do_start () {
+  sleep 5 # not sure if this will help # gwm 20160903
+  echo "Now running: $CMD \&" | tee -a /tmp/fauxmorc
+        $CMD &
+}
+
+do_status () {
+        #if ps -ef|grep $CMD>/dev/null ; then
+        if ps -ef|grep $CMD|grep -v grep ; then
+                return 0
+         else
+                return 4
+        fi
+}
+
+case "$1" in
+#  start|"")
+  start)
+          do_start
+        ;;
+  restart|reload|force-reload)
+          echo "Error: argument '$1' not supported" >&2
+          exit 3
+        ;;
+  stop)
+          # No-op
+   kill $( ps -ef | grep $CMD | grep -v grep | awk '{print $2}' )
+    do_status
+        ;;
+  status)
+    ps -ef | grep $CMD | grep -v grep
+          do_status
+          exit $?
+        ;;
+  *)
+          echo "Usage: $0 [start|stop|status]" >&2
+          exit 3
+        ;;
+esac
+```
+
+Enable and start this script with these commands:
+```
+sudo systemctl daemon-reload # to let systemctl know you changed things
+sudo systemctl enable fauxmorc # to tell systemctl to enable this script after each reboot
+sudo systemctl start fauxmorc # to fire it up
+```
+
+Verify that it is running with something like `ps -ef | grep fauxmo`
+
+Now lets go write the trigger scripts on the magicmirror server.
+Set up apache2 or nginx with PHP. Write this script: /var/www/html/fauxmo.php (or call it whatever you called it in the fauxmo.py configuration.
+
+NOTE: where you see "myname" substitute your username where MagicMirror got installed.
+
+```
+<?php
+### configure options ###
+$get_key="switch";
+$exec_script_on="sudo -u myname -i /var/www/scripts/mm2ctrl.sh on";
+$exec_script_off="sudo -u myname -i /var/www/scripts//mm2ctrl.sh off";
+$exec_script_stat="sudo -u myname -i /var/www/scripts//mm2ctrl.sh stat";
+$exec_script_test="sudo -u myname -i /var/www/scripts//mm2ctrl.sh test";
+
+### Main Code ###
+switch ($_GET[$get_key]) {
+    case "on":
+        $full_cmd=$exec_script_on." >/dev/null &";
+        break;
+    case "off":
+        $full_cmd=$exec_script_off." >/dev/null &";
+        break;
+    case "stat":
+        $full_cmd=$exec_script_stat;
+        break;
+    case "test":
+        $full_cmd=$exec_script_test;
+        break;
+    default:
+        header("HTTP/1.1 900 NOT OK");
+        echo "Unrecognized switch command [".$_GET[$get_key]."] given";
+        # end exit so the command below does not try to execute
+        exit;
+}
+
+# if all is well after the checks, execute the proper command
+header("HTTP/1.1 200 OK");
+$output=shell_exec($full_cmd);
+echo "<pre>".$output."</pre>";
+?>
+```
+
+You notice that this script actually executes another script to accomplish running or killing off magicmirror.
+That script is, in my case, /var/www/scripts/mm2ctrl.sh which looks like this:
+```
+#!/bin/bash
+
+### GLOBALS ###
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+dtime=`date +%Y%m%d-%H%M`
+LOG_FILE=/tmp/mm2ctrl.sh.out
+BASE_DIR=/home/myname/MagicMirror
+
+### FUNCTIONS ###
+
+#########
+killike ()
+#########
+{
+  kill -9 `ps -aef | grep $1 | grep -v "grep "|awk '{print $2}'`;
+}
+
+#################
+### Main Code ###
+#################
+echo Changing dir to $BASE_DIR
+cd $BASE_DIR
+
+### on ###
+if [ x$1 = "xon" ] ; then
+  export DISPLAY=:0
+  #DISPLAY=:0 nohup npm start &
+  nohup npm start &
+  killike xscreensaver
+  xset s reset
+  xset dpms force on
+  echo ${dtime}: Turning on MagicMirror | tee -a $LOG_FILE
+  ps -ef | grep npm  | tee -a $LOG_FILE
+fi
+
+### off ###
+if [ x$1 = "xoff" ] ; then
+  killike npm
+  killike electron
+  echo ${dtime}: Turning off MagicMirror | tee -a $LOG_FILE
+  ps -ef | grep npm |tee -a $LOG_FILE
+  ps -ef | grep electron | tee -a $LOG_FILE
+  nohup xscreensaver -display :0 -no-splash &
+fi
+
+### stat[us] ###
+if [ x$1 = "xstat" ] ; then
+  ps -ef | grep npm
+  ps -ef | grep electron
+  netstat -an|grep 8080
+fi
+
+if [ x$1 = "xtest" ]; then
+  export DISPLAY=:0
+  xset s reset
+  xset dpms force on
+  xset q
+fi
+
+echo Finished
+### EOF ###
+------
+
+Privileges for the files is important and can be a show stopper.
+Use `sudo visudo /etc/sudoers.d/www-data` and add just this one line:
+```
+www-data ALL=(myname) NOPASSWD: ALL
+```
+
+DANGER: do not let this server live out on the internet because you have to give www-data shell privileges and that is VERY INSECURE!
+The line in my /etc/passwd file for www-data is:
+```
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+```
+
+I had to play with this shell script a lot and with the calling php script to get it all to work as expected. One thing to keep
+in mind is that Alexa wants a fairly quick response of HTML code 200 OK or it will fail. So I worked to get the execution of underlying commands to happen in the background allowing the php script to quickly return the 200 OK html code.
+
+
+I added the capability to look at the status but Alex and fauxmo.py will never execute that - it is only for your use should you need it.
+
+Make sure your firewall port is open for 80 (http) on this (maginmirror) server.
+
+Things should work for you now.
+Try: `Alexa turn on kitchen pie` - or whatever name you used for the "device". When complications occur check the http access and error log on the magicmirror server and the syslog on the fauxmo.py server.
+
+
+## one last tweak - configuring magicmirror
+
+Add any modules you want to magicmirror but because the 5inch touchscreen is size challenged you will have to work to provide room for all the info you want to display. The easiest way for me to share what I did is to show you my config for magic mirror.
+
+[MagicMirror2 modules](https://github.com/MichMich/MagicMirror/wiki/MagicMirror%C2%B2-Modules)
+
+
+NOTE: the Carousel plugin was instrumental in allowing all the info to be rotated in magicmirror.
+
+I am listing the possible position settings: top_ bar, top_left, top_center, top_right, upper_third, middle_center, lower_third, bottom_left, bottom_center, bottom_right, bottom_bar, fullscreen_above, and fullscreen_below. In the MagicMirror files structure you will find a custom.css file in the css directory waiting for you to put in any overrides you want. This link will give you an idea of how the regions are setup by default [MagicMirror regions](https://forum.magicmirror.builders/topic/286/regions)
+
+Here is the contents of $HOME/MagicMirror/config/config.js
+```
+/* Magic Mirror Config Sample
+ *
+ * By Michael Teeuw http://michaelteeuw.nl
+ * MIT Licensed.
+ */
+
+var config = {
+  port: 8080,
+  ipWhitelist: ["127.0.0.1", "192.168.1.71","::ffff:127.0.0.1", "::1", "::ffff:192.168.1.71"],
+  language: 'en',
+  timeFormat: 12,
+  units: 'imperial',
+
+  modules: [
+    {
+      module: 'MMM-Carousel',
+      config: {
+        ignoreModules: [ 'alert','stocks','MMM-RandomPhoto','clock','currentweather' ],
+        transitionalInterval: 35000
+      }
+    },
+    {
+      module: 'alert',
+    Y},
+    {
+      module: "updatenotification",
+      position: "top_bar"
+    },
+    {
+      module: 'clock',
+      position: 'top_left'
+    },
+    {
+      module: 'calendar',
+      header: 'US Holidays',
+      position: 'top_left',
+      config: {
+        calendars: [
+          {
+            symbol: 'calendar-check-o ',
+            url: 'webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics'
+          }
+        ]
+      }
+    },
+    {
+      module: 'compliments',
+      //position: 'lower_center'
+      position: 'top_left'
+    },
+    {
+      module: 'currentweather',
+      position: 'bottom_right',
+      config: {
+        location: 'Elizabeth City',
+        locationID: '4465088', //ID from http://www.openweathermap.org
+        appid: 'aee32e69be313e1f94557d6a1fc8b075'
+      }
+    },
+    {
+      module: 'weatherforecast',
+      position: 'top_left',
+      header: 'Weather Forecast',
+      config: {
+        location: 'Elizabeth City',
+        locationID: '4465088', //ID from http://www.openweathermap.org
+        appid: 'aee32e69be313e1f94557d6a1fc8b075'
+      }
+    },
+    {
+      module: 'newsfeed',
+      //position: 'bottom_bar',
+      //position: 'top_bar',
+      //position: 'upper_third',
+      position: 'top_left',
+      config: {
+        feeds: [
+          {
+            title: "New York Times",
+            url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"
+          },
+          {
+            title: "BBC",
+            url: "http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk",
+          },
+        ],
+        showSourceTitle: true,
+        showPublishDate: true,
+        updateInterval: 20000
+      }
+    },
+//    {
+//      module: 'helloworld',
+//      position: 'bottom_bar',
+//      config: {
+//          text: 'hello world!'
+//        }
+//    },
+    {
+      module: 'MMM-RandomPhoto',
+      position: 'fullscreen_below',
+      config: {
+        opacity: 0.3,
+        animationSpeed: 500,
+        updateInterval: 60,
+        url: 'https://unsplash.it/1920/1080/?random'
+      }
+    },
+//    {
+//      module: 'MMM-Remote-Control',
+//      // uncomment the following line to show the URL of the remote control on the mirror
+//      position: 'bottom_left'
+//      // you can hide this module afterwards from the remote control itself
+//    },
+    {
+      module: 'stocks',
+      position: 'bottom_bar',
+      config: {
+        stocks: '.DJI,IBM,AAPL,GOOG,INTC,CSCO,ABBV,FDC,SQ,M,CVS,CVEO',
+        updateInterval: 41000
+      }
+    },
+    {
+      module: 'random_quotes',
+//      position: 'upper_third',
+        position: 'top_left',
+        config: {
+        // The config property is optional
+        // Without a config, a random quote is shown,
+        // selected from all of the categories available.
+          updateInterval: 120
+//        category: 'positive'
+        }
+    },
+    {
+      module: 'MMM-DailyBibleVerse',
+      //position: 'top_left',
+      position: 'upper_third',
+      config: {
+      version: 'NIV' // This can be changed to any version you want that is offered by Bible Gateway. For a list, go here: https://www.biblegateway.com/usage/linking/versionslist/
+      }
+    },
+//   {
+//    module: 'DailyXKCD',
+//    position: 'top_left',
+//    config: {
+//        invertColors: true,
+//        title: true,
+//        altText: false
+//      }
+//   },
+  ]
+};
+
+/*************** DO NOT EDIT THE LINE BELOW ***************/
+if (typeof module !== 'undefined') {module.exports = config;}
+```
+
+Good luck and enjoy!
+-g-

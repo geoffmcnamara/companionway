@@ -2,12 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on companionway</title>
-    <link>/tags/python/</link>
+    <link>/tags/python/index.xml</link>
     <description>Recent content in Python on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Thu, 15 Dec 2016 16:36:42 -0500</lastBuildDate>
     <atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -27,7 +26,8 @@ every 5 minutes and used a redirection to write out a file ie:&lt;/p&gt;
 &lt;p&gt;The wrapper script grabs output and sends it to the server. Having this wrapper script lets me run the
 python script independantly for testing or for curiousity.&lt;/p&gt;
 
-&lt;p&gt;It all worked fine but sometimes the temp would jump in one direction or another for brief period and that
+&lt;p&gt;
+It all worked fine but sometimes the temp would jump in one direction or another for brief period and that
 skewed the graphed - it was ugly so I decided to fix it.&lt;/p&gt;
 
 &lt;p&gt;I added code to the python script to look at the temperature that got recorded on the last run into the /tmp/temphum.dat
@@ -50,8 +50,7 @@ python script has no &amp;ldquo;last&amp;rdquo; temperature to read and my scrip
 &lt;p&gt;All is good now. So easy to overlook the simple/obvious show stopper.&lt;/p&gt;
 
 &lt;p&gt;Enjoy
--g-&lt;/p&gt;
-</description>
+-g-&lt;/p&gt;</description>
     </item>
     
   </channel>

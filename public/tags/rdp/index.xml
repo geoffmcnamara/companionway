@@ -2,12 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rdp on companionway</title>
-    <link>/tags/rdp/</link>
+    <link>/tags/rdp/index.xml</link>
     <description>Recent content in Rdp on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Fri, 16 Dec 2016 12:27:36 -0500</lastBuildDate>
     <atom:link href="/tags/rdp/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -22,6 +21,8 @@ really on any linux distro and works with Windows remote desktop protocol (kinda
 xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
 Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
 almost any linux distro.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;When you launch remmina it will ask for a username and password for a connection onto the IP machine you declare in the setup.
 If the xrdp service is properly running on the remote machine it will server up a personal desktop for the user login
@@ -57,8 +58,7 @@ Use the mouse in enlightenment and navigate through &lt;code&gt;Settings-&amp;gt
 This works and you lose keybindings that you probably wouldn&amp;rsquo;t use through vnc anyway.&lt;/p&gt;
 
 &lt;p&gt;Enjoy
--g-&lt;/p&gt;
-</description>
+-g-&lt;/p&gt;</description>
     </item>
     
   </channel>

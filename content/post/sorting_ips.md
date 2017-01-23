@@ -15,6 +15,7 @@ I scan my home network frequently. There are a good number of smarthome devices,
 laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
 parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
 in most repositories). So output might look like this:
+<!--more-->
 
 ```
 $ sudo arp-scan -I wlo1 192.168.1.0/24
@@ -26,7 +27,6 @@ Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-sca
 192.168.1.62    b8:27:eb:42:e9:01       (Unknown)
 192.168.1.72    b8:27:eb:42:e9:01       (Unknown)
 
-<!--more-->
 
 192.168.1.4     50:f5:da:52:08:8b       (Unknown)
 192.168.1.90    54:42:49:a4:d7:b0       Sony Corporation

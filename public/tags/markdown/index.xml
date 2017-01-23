@@ -2,12 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Markdown on companionway</title>
-    <link>/tags/markdown/</link>
+    <link>/tags/markdown/index.xml</link>
     <description>Recent content in Markdown on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Wed, 01 Apr 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -16,9 +15,7 @@
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>/post/2015-04-01-post1/</guid>
-      <description>
-
-&lt;h1 id=&#34;markdown-this-heading-uses-setext-style:ed219d14eb367d0c2c4ea96328d19f7a&#34;&gt;Markdown - this heading uses Setext style&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;markdown-this-heading-uses-setext-style&#34;&gt;Markdown - this heading uses Setext style&lt;/h1&gt;
 
 &lt;p&gt;You can&lt;br /&gt;
 break lines&lt;br /&gt;
@@ -26,7 +23,7 @@ by adding &amp;gt;=2 spaces&lt;br /&gt;
 to the end
 before starting the next line&lt;/p&gt;
 
-&lt;h1 id=&#34;this-heading-uses-atx-style:ed219d14eb367d0c2c4ea96328d19f7a&#34;&gt;This heading uses atx style&lt;/h1&gt;
+&lt;h1 id=&#34;this-heading-uses-atx-style&#34;&gt;This heading uses atx style&lt;/h1&gt;
 
 &lt;p&gt;&lt;p&gt;I am learning that you have to name&lt;br /&gt;
  your post file with YYYY-MM-DD-whatever.markdown&lt;/p&gt;
@@ -40,6 +37,8 @@ before starting the next line&lt;/p&gt;
 &lt;p&gt;quoted text
 here&lt;/p&gt;
 &lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;A list:&lt;/p&gt;
 
@@ -88,7 +87,7 @@ end
 
 &lt;p&gt;Inline code &lt;code&gt;echo DEBUG: $LINENO&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;A table ( arrrg &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:ed219d14eb367d0c2c4ea96328d19f7a:n&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:ed219d14eb367d0c2c4ea96328d19f7a:n&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;):&lt;/p&gt;
+&lt;p&gt;A table ( arrrg &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:n&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:n&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;):&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
@@ -140,11 +139,10 @@ end
 &lt;hr /&gt;
 
 &lt;ol&gt;
-&lt;li id=&#34;fn:ed219d14eb367d0c2c4ea96328d19f7a:n&#34;&gt;Don&amp;rsquo;t try to use the beginning or ending pipe | and spanning not working
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:ed219d14eb367d0c2c4ea96328d19f7a:n&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:n&#34;&gt;Don&amp;rsquo;t try to use the beginning or ending pipe | and spanning not working
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:n&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-</description>
+&lt;/div&gt;</description>
     </item>
     
   </channel>

@@ -2,13 +2,643 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on companionway</title>
-    <link>/post/</link>
+    <link>/post/index.xml</link>
     <description>Recent content in Posts on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 15:53:14 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 10 Jan 2017 14:27:35 -0500</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Raspberry Pi MagicMirror on a Touchscreen with Alexa and fauxmo</title>
+      <link>/post/post-title/</link>
+      <pubDate>Tue, 10 Jan 2017 14:27:35 -0500</pubDate>
+      
+      <guid>/post/post-title/</guid>
+      <description>&lt;h3 id=&#34;warning-what-follows-is-a-cascade-of-issues-and-lessons-learned-but-just-plain-fun&#34;&gt;Warning: what follows is a cascade of issues and lessons learned&amp;hellip; but just plain fun!&lt;/h3&gt;
+
+&lt;h2 id=&#34;the-goal&#34;&gt;The goal&lt;/h2&gt;
+
+&lt;p&gt;This project is designed to provide a reliable MagicMirror2 on a Raspberry Pi fitted with a 5 inch touchscreen that doubles to provide browsing if needed. This comes from a desire to have a quick aide in the kitchen that reports standard information when needed or a browser for looking up and displaying recipes etc.
+&lt;/p&gt;
+
+&lt;p&gt;The result is a raspberry pi with one wire that stands on its edge without a case and has a 5 inch display. The display can show any of the modules provided for magicmirror2 on command to Alexa or stop magicmirror on command. The rasbian desktop along with an inboard keyboard pad and touch &amp;ldquo;pen&amp;rdquo; allows you to launch a browser (or any other program) and navigate to any url. When the desktop is idle a screensaver comes up with anynumber of pleasing animations - selectable and can be rotated with screen blanking possible as well. The backlight of the screen is enough to act as a soothing nightlight. All in all, I am very pleased (and so is my wife) with the final result of this project.&lt;/p&gt;
+
+&lt;p&gt;There is a LOT of information here and lots of steps but it is worth it and you will definately learn lots of useful tricks. I am sure there are many improvements that could be made.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/k-pi1.jpg&#34; alt=&#34;alt text&#34; title=&#34;Kitchen Pi Image:1&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;materials&#34;&gt;Materials&lt;/h2&gt;
+
+&lt;p&gt;Hardware
+- rasberry pi (in my case a model 3) with powersuppy
+- 5 inch touchscreen with plastic pen
+- USB storage (optional but recommended)
+- you will need a temporary keyboard/mouse attached to set things up.&lt;/p&gt;
+
+&lt;p&gt;Software
+- berryboot (which will load rasbian)
+- apache2 and php
+- magicmirror2 and various modules
+- fauxmo (from Maker Musings)
+- software for the touchscreen including touch a calibration tool
+- matchbox-keyboard
+- xcreensaver&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+&lt;h2 id=&#34;problems-encountered&#34;&gt;Problems Encountered&lt;/h2&gt;
+
+&lt;p&gt;There were lots of challenges that thwarted what seemed like a simple goal to achieve.
+- fauxmo needs a little more documentation on how to build the &amp;ldquo;virtual switch&amp;rdquo; html code. I will proyvide a sample here.
+- Alexa tends to not forget discovered devices when told to find devices again.
+- Troubleshooting the HEADER return code from html and php scripts is essential to making all the players between Alexa/fauxmo/and the &amp;ldquo;virtual switch&amp;rdquo; happy.
+- a 5 inch touchscreen is too small for a default MagicMirror run but there are solutions.
+- turning the display and getting the touchscreen calibrated correctly can be difficult until you know how to do it
+- the software that comes with the touchscreen will clobber a berryboot config - and pretty much any other custom config you have for the raspberry pi.
+- finding ways to get the html/web server to execute commands within a users X display can be daunting
+Y- when php executes and external shell command - things can silently hang with out easy indication.
+- magicmirror2 can be a little overwhelming with npm and electron running under it - especially when you are trying to get the webserver (and ultimately Alexa/Amazon echo) to control it all.&lt;/p&gt;
+
+&lt;h2 id=&#34;shoutouts&#34;&gt;Shoutouts&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;berryboot works well and provides (at least for me) a more reliable raspberry pi OS file system solution than an SD card only.&lt;/li&gt;
+&lt;li&gt;magicmirror2 is just plain fun&lt;/li&gt;
+&lt;li&gt;fauxmo (a wemo emulator) is a crazy easy solution to using Alexa to turn on or off anything if you are willing to do a little coding.&lt;/li&gt;
+&lt;li&gt;php remains my goto language for simple web projects.&lt;/li&gt;
+&lt;li&gt;the touchscreens for the raspberry pi have come a long way in that they basically plug onto the raspberry pi board, do a little software tweaking and it is up and ready to go.&lt;/li&gt;
+&lt;li&gt;xscreensaver - I gained a renewed respect for this fun application&amp;hellip; it continues to provide fun idle entertainment.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;solving-the-problems&#34;&gt;Solving the problems&lt;/h2&gt;
+
+&lt;h3 id=&#34;berryboot-on-a-raspberry-pi&#34;&gt;Berryboot on a Raspberry Pi&lt;/h3&gt;
+
+&lt;p&gt;Just do it. Too many times I have had SD cards loose their minds. The filesystem burps with all the activity and you are forced
+to reboot the raspberry pi; hopefully the filesystem repair goes smoothly on reboot. I am inherently lazy so getting up and rebooting the raspberry pi is not my first choice, especially when you have them hidden away in some back compartment. Berryboot
+allows you to boot from a USB storage device like a USB stick or a USD drive. You can also have it boot across the network from
+another storage device but I will leave that up to you. In my case I use a (cheap) 16G USB stick and all my raspberry pi servers have wifi.
+Berryboot allows you to store multiple OS distros and select which to boot. You can save and restore images and download new OS distros.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;go download the latest berryboot zip to your PC/laptop &lt;a href=&#34;http://www.berryterminal.com/doku.php/berryboot&#34;&gt;berryboot&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;assuming your SD card has a standard (FAT) partition just copy all the zip contents to it. You can quicly format
+your SD card with one partition using your camera. You may want to remove any directories that your camera might create first.&lt;/li&gt;
+&lt;li&gt;Put the Berryboot SD card in the raspberry pi making sure your display, USB storage and wifi are attached and boot up.&lt;/li&gt;
+&lt;li&gt;If your display is an HDMI TV you can use your remote control to navigate but I find that cumbersome so I added a USB keyboard/touchpad like the Rii mini X1&lt;/li&gt;
+&lt;li&gt;First get the wifi connected &amp;hellip; near the bottom of the Berryboot screen is abutton for that. Configure the SSID and password and then you can tell Berryboot to download any of its prepared OS distros. One challenge is that Berryboot needs an OS that has been constructed for its use but down&amp;rsquo;t let this hold you back. A list of images can be found here: &lt;a href=&#34;http://berryboot.alexgoldcheidt.com/images/&#34;&gt;berryboot images&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;After it boots go look at /boot/config.txt to see how the magick works. Keep in mind that if this file gets clobberred berryboot will be toast.&lt;/li&gt;
+&lt;li&gt;Enjoy&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;magicmirror2-on-the-raspberry-pi&#34;&gt;MagicMirror2 on the raspberry pi&lt;/h3&gt;
+
+&lt;p&gt;This can &amp;ldquo;seem&amp;rdquo; more difficult than it really is. I do pretty much everything by ssh at the commandline.
+- ssh into the raspberry pi
+- You can use the git source for MagicMirror2 but really this next command saves steps and is the first recommendation in the docs&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;curl -sL https://raw.githubusercontent.com/MichMich/MagicMirror/master/installers/raspberry.sh | bash
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lots of needed dependencies will get loaded - additionally you may have to use apt install node-legacy (with sudo of course).
+This will build out MagicMirror off your $HOME directory. I didn&amp;rsquo;t like this a first but it simply works so best not to fight it.
+- cd ~/MagicMirror
+- run
+DISPLAY=:0
+npm start &amp;amp;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Now use your browser and go hit http://[raspberry-pi-IP]:8080.
+This can run without a web server or along side a web server as long as the browser (or any other application) isn&#39;t using the 8080 port.
+
+![alt text](/img/k-pi2.jpg &amp;quot;Kitchen Pi Image:2&amp;quot;)
+
+MagicMirror can look a little intimidating but have no fear. It uses lots of javascript (.js files) but it wraps those files with electron to create a &amp;quot;running HTML/js/node.js/CSS application&amp;quot; on the local machine. Read more on electron here: [electron.atom.io](http://electron.atom.io/) and then it uses npm (node package manager) to assemble all the java script and install all the dependencies. More info on npm can be found here: [npmjs](https://www.npmjs.com/)
+
+Now we have MagicMirror running. Lets turn our attention using the display on the raspberry pi.
+
+There are lots of changes you can make to MagicMirror but lets move on and we will explore those changes after we reconfigure the touch screen to a portrait display instead of the default landscape mode.
+
+## X display on Raspberry Pi
+Configure the raspberry pi to boot up with X windows running.
+- log in to the raspberry pi with ssh (by the way - to log in an redirect any X apps to your local display use `ssh -X user@raspberry-IP`) 
+- run `sudo raspi-config` and set the boot up to GUI (Graphical User Interface) appropriately.
+
+Now it gets a little tricky here. You can configure the server to boot right into the GUI and bring up MagicMirror as the `pi` user (which is the default) but I changed this up a little. 
+The rasberry pi default setup for rasbian (jessie) will set the user &#39;pi&#39; as the default X login so I wanted to change that to my own username - here is how to do it. Edit as the superuser (use sudo) the `/etc/lightdm/lightdm,conf` file and change this line appropriately:
+```autologin-user=yourname```
+There, moved one more step forward.
+
+## xscreensaver
+
+Add xscreensaver to both your desktop/laptop and the raspberry pi.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;sudo pt install xscreensaver xscreensaver-data xscreensaver-data-extra  xscreensaver-gl&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I added xscreensaver for several reasons. It provides a console to control how long the screen will stay active until it blanks and
+the screensaver screens provide interesting displays on an idle screen. I set up what I wanted on my laptop and then transferred
+the $HOME/.xscreensaver file to the home dir of the raspberry pi. 
+
+You have to run xscreenserver-demo on the magicmirror server to get it to configure properly on that server.
+
+## configure the 5 inch touchscreen
+
+For this project I needed a keyboard/mouse-pad for two phases, installing berryboot and for configuring the touchscreen.
+For my touchscreen (yours may be different) I needed these files
+ - 5.0 Inch display User Guide.pdf
+ - LCD-show-161112.tar.gz
+ - Xinput-calibrator_0.7.5-1_armhf.zip
+Go to this website for info: [5inch HDMI LCD](http://www.waveshare.com/wiki/5inch_HDMI_LCD)
+
+BE CAREFULL HERE... if your follow the instructions and run their install script (not necessary) you will overwrite
+the /boot/config.txt file and clobber the berryboot you installed above. Took me a bit to figure that one out. You only
+need to add a few lines to the /boot/config.txt - which is essentially what their install script does.
+Just add these lines to /boot/config.txt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#####
+hdmi_group=2
+hdmi_mode=1
+hdmi_mode=87
+hdmi_cvt 800 480 60 6 0 0 0
+dtoverlay=ads7846,cs=1,penirq=25,penirq_pull=2,speed=50000,keep_vref_on=0,swapxy=0,pmax=255,xohms=150,xmin=200,xmax=3900,ymin=200,ymax=3900
+#display_rotate=1
+#display_rotate=2
+display_rotate=3
+avoid_warnings=1&lt;/p&gt;
+
+&lt;p&gt;disable_overscan=1
+start_x=1
+###&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;I loaded these before the berryboot settings and it worked fine. You may want to experiment with the rotation to find what works
+best for you.
+
+The next part is where it gets interesting. The screen is probably calibrated totally wrong for touch so fire up the calibration tool you installed from the file above and use this touch pen to calibrate - it will write out /etc/X11/xorg.conf.d/99-calibrate.conf with the new settings. All of this will require your keyboard.
+
+By the way, I also installed matchbox-keyboard to allow this raspberry pi the ability to work without an attached keyboard just using the touch screen.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;sudo apt install matchbox-keyboard&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+## configure fauxmo and Alexa
+
+Installing fauxmo and configuring it is where it gets fun because it allows you to use Alexa to fire up MagicMirror or shut it down so the raspberry pi can be used for browsing the internet or whatever you choose.
+
+The documentation for fauxmo is good but not great. It will get you just so far but fails to provide examples of HTML code to use with it but I will remedy that situation here. The original fauxmo code build is located here: [makemuse fauxmo](https://github.com/makermusings/fauxmo.git). However, to confuse things, there is another build that is more &amp;quot;sophisticated&amp;quot; (for me it is more complicated) and is available using python pip. It also has limited documentation and configuring it can be a challenge so I am sticking with the original makermuse version of fauxmo. 
+
+To install:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;git clone &lt;a href=&#34;https://github.com/makermusings/fauxmo.git&#34;&gt;https://github.com/makermusings/fauxmo.git&lt;/a&gt;
+cd fauxmo
+sudo cp fauxmo.py /usr/local/bin&lt;/p&gt;
+
+&lt;h1 id=&#34;you-will-need-to-edit-configure-usr-local-bin-fauxmo-py&#34;&gt;you will need to edit/configure /usr/local/bin/fauxmo.py&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code&gt;
+You can put fauxmo.py on any server but you want to put it on one that stays up all the time.
+For me that is a raspberry pi that I use as my master server (rasp1)
+
+You can run the trigger webserver on any other server or the same on but in this case it will be the one where you have magicmirror running (rasp5).
+
+You need to: 
+ - configure the fauxmo.py script on your master server (rasp1 for my network)
+ - install an rc startup script for fauxmo on your master server (rasp1 for my network)
+ - write some simple html/php code to run on a webserver (with php) where magicmirror is installed
+ - write a simple shell launch/kill script for magicmirror where magicmirror is installed
+ - make sure your firewalls allow the needed ports 1900 52001 52002 on the master server and port 80 for the magicmirror server
+ - tell Alexa to find devices
+ - test Alexa and enjoy
+
+First step: configure fauxmo.py:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;FAUXMOS = [
+    [&amp;lsquo;garage door&amp;rsquo;,rest_api_handler(&amp;lsquo;&lt;a href=&#34;http://192.168.1.63/fauxmo.php?garage_door=1&#39;,&#39;http://192.168.1.63/fauxmo.php?garage_door=0&#39;),52001&#34;&gt;http://192.168.1.63/fauxmo.php?garage_door=1&#39;,&#39;http://192.168.1.63/fauxmo.php?garage_door=0&#39;),52001&lt;/a&gt;],
+    [&amp;lsquo;kitchen pie&amp;rsquo;,rest_api_handler(&amp;lsquo;&lt;a href=&#34;http://192.168.1.65/fauxmo.php?switch=on&#39;,&#39;http://192.168.1.65/fauxmo.php?switch=off&#39;),52002&#34;&gt;http://192.168.1.65/fauxmo.php?switch=on&#39;,&#39;http://192.168.1.65/fauxmo.php?switch=off&#39;),52002&lt;/a&gt;],
+]&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This section is near line 340 or so.
+Use whatevername you want ... in this case I used &amp;quot;kitchen pie&amp;quot; so my command to Alexa will be 
+&amp;gt; Alexa turn on kitchen pie
+or
+&amp;gt; Alexa kitchen pi off
+The IP address is for the server where I have a webserver and magicmirror running. The port number 52002 is my selection and can be
+any unprivileged port you desire but do not leave the port optional - Alexa remembers this port number for triggering the related device name.
+
+fauxmo.py runs as a daemon on your master server and serves up configured device names and ports when queried by Alexa on port 1900. So you need to make sure your firewall is open on port 1900 to this server thus allowing Alexa to find the devices. When the user tells Alexa to turn a named device on or off it will relay the request to the repective port... for the example above &amp;quot;kitchen pie&amp;quot; will be triggered through port 52002.
+
+The fauxmo.py daemon will in turn send out an HTML GET request to the declared port with the configured URI -- in this case
+`http://192.168.1.65/fauxmo.php?switch=on` (or off). We will get to what fauxmo.php looks like in a minute.
+
+Now create a script to fire /usr/local/bin/fauxmo.py up on bootup:
+Create /etc/init.d/fauxmorc with this content:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#!/bin/bash&lt;/p&gt;
+
+&lt;h3 id=&#34;begin-init-info&#34;&gt;BEGIN INIT INFO&lt;/h3&gt;
+
+&lt;h1 id=&#34;provides-fauxmo&#34;&gt;Provides:          fauxmo&lt;/h1&gt;
+
+&lt;h1 id=&#34;required-start&#34;&gt;Required-Start:&lt;/h1&gt;
+
+&lt;h1 id=&#34;required-stop&#34;&gt;Required-Stop:&lt;/h1&gt;
+
+&lt;h1 id=&#34;should-start&#34;&gt;Should-Start:&lt;/h1&gt;
+
+&lt;h1 id=&#34;default-start-2-3-4-5&#34;&gt;Default-Start:     2 3 4 5&lt;/h1&gt;
+
+&lt;h1 id=&#34;default-stop&#34;&gt;Default-Stop:&lt;/h1&gt;
+
+&lt;h1 id=&#34;short-description-run-fauxmo-as-a-listening-server-emulates-a-wemo-hub&#34;&gt;Short-Description: Run fauxmo as a listening server - emulates a wemo hub&lt;/h1&gt;
+
+&lt;h1 id=&#34;description&#34;&gt;Description:&lt;/h1&gt;
+
+&lt;h3 id=&#34;end-init-info&#34;&gt;END INIT INFO&lt;/h3&gt;
+
+&lt;p&gt;PATH=/usr/local/bin:/home/geoffm/dev/utils:/home/geoffm/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/geoffm/dev/utils:/usr/share/ruby-rvm/bin:/home/geoffm/.rvm/bin&lt;/p&gt;
+
+&lt;p&gt;PATH=$PATH:/sbin:/usr/sbin:/bin:/usr/bin
+. /lib/init/vars.sh&lt;/p&gt;
+
+&lt;p&gt;PATH=$PATH:/usr/local/bin
+CMD=&amp;ldquo;fauxmo.py -d&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;do_start () {
+  sleep 5 # not sure if this will help # gwm 20160903
+  echo &amp;ldquo;Now running: $CMD &amp;amp;&amp;rdquo; | tee -a /tmp/fauxmorc
+        $CMD &amp;amp;
+}&lt;/p&gt;
+
+&lt;p&gt;do_status () {
+        #if ps -ef|grep $CMD&amp;gt;/dev/null ; then
+        if ps -ef|grep $CMD|grep -v grep ; then
+                return 0
+         else
+                return 4
+        fi
+}&lt;/p&gt;
+
+&lt;p&gt;case &amp;ldquo;$1&amp;rdquo; in&lt;/p&gt;
+
+&lt;h1 id=&#34;start&#34;&gt;start|&amp;ldquo;&amp;rdquo;)&lt;/h1&gt;
+
+&lt;p&gt;start)
+          do_start
+        ;;
+  restart|reload|force-reload)
+          echo &amp;ldquo;Error: argument &amp;lsquo;$1&amp;rsquo; not supported&amp;rdquo; &amp;gt;&amp;amp;2
+          exit 3
+        ;;
+  stop)
+          # No-op
+   kill $( ps -ef | grep $CMD | grep -v grep | awk &amp;lsquo;{print $2}&amp;rsquo; )
+    do_status
+        ;;
+  status)
+    ps -ef | grep $CMD | grep -v grep
+          do_status
+          exit $?
+        ;;
+  *)
+          echo &amp;ldquo;Usage: $0 [start|stop|status]&amp;rdquo; &amp;gt;&amp;amp;2
+          exit 3
+        ;;
+esac&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+Enable and start this script with these commands:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;sudo systemctl daemon-reload # to let systemctl know you changed things
+sudo systemctl enable fauxmorc # to tell systemctl to enable this script after each reboot
+sudo systemctl start fauxmorc # to fire it up&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+Verify that it is running with something like `ps -ef | grep fauxmo`
+
+Now lets go write the trigger scripts on the magicmirror server.
+Set up apache2 or nginx with PHP. Write this script: /var/www/html/fauxmo.php (or call it whatever you called it in the fauxmo.py configuration.
+
+NOTE: where you see &amp;quot;myname&amp;quot; substitute your username where MagicMirror got installed.
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;lt;?php&lt;/p&gt;
+
+&lt;h3 id=&#34;configure-options&#34;&gt;configure options&lt;/h3&gt;
+
+&lt;p&gt;$get_key=&amp;ldquo;switch&amp;rdquo;;
+$exec_script_on=&amp;ldquo;sudo -u myname -i /var/www/scripts/mm2ctrl.sh on&amp;rdquo;;
+$exec_script_off=&amp;ldquo;sudo -u myname -i /var/www/scripts//mm2ctrl.sh off&amp;rdquo;;
+$exec_script_stat=&amp;ldquo;sudo -u myname -i /var/www/scripts//mm2ctrl.sh stat&amp;rdquo;;
+$exec_script_test=&amp;ldquo;sudo -u myname -i /var/www/scripts//mm2ctrl.sh test&amp;rdquo;;&lt;/p&gt;
+
+&lt;h3 id=&#34;main-code&#34;&gt;Main Code&lt;/h3&gt;
+
+&lt;p&gt;switch ($_GET[$get_key]) {
+    case &amp;ldquo;on&amp;rdquo;:
+        $full_cmd=$exec_script_on.&amp;rdquo; &amp;gt;/dev/null &amp;amp;&amp;ldquo;;
+        break;
+    case &amp;ldquo;off&amp;rdquo;:
+        $full_cmd=$exec_script_off.&amp;rdquo; &amp;gt;/dev/null &amp;amp;&amp;ldquo;;
+        break;
+    case &amp;ldquo;stat&amp;rdquo;:
+        $full_cmd=$exec_script_stat;
+        break;
+    case &amp;ldquo;test&amp;rdquo;:
+        $full_cmd=$exec_script_test;
+        break;
+    default:
+        header(&amp;ldquo;HTTP/1.1 900 NOT OK&amp;rdquo;);
+        echo &amp;ldquo;Unrecognized switch command [&amp;ldquo;.$_GET[$get_key].&amp;ldquo;] given&amp;rdquo;;
+        # end exit so the command below does not try to execute
+        exit;
+}&lt;/p&gt;
+
+&lt;h1 id=&#34;if-all-is-well-after-the-checks-execute-the-proper-command&#34;&gt;if all is well after the checks, execute the proper command&lt;/h1&gt;
+
+&lt;p&gt;header(&amp;ldquo;HTTP/1.1 200 OK&amp;rdquo;);
+$output=shell_exec($full_cmd);
+echo &amp;ldquo;&lt;pre&gt;&amp;rdquo;.$output.&amp;rdquo;&lt;/pre&gt;&amp;rdquo;;
+?&amp;gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+You notice that this script actually executes another script to accomplish running or killing off magicmirror.
+That script is, in my case, /var/www/scripts/mm2ctrl.sh which looks like this:
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;#!/bin/bash&lt;/p&gt;
+
+&lt;h3 id=&#34;globals&#34;&gt;GLOBALS&lt;/h3&gt;
+
+&lt;p&gt;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+dtime=&lt;code&gt;date +%Y%m%d-%H%M&lt;/code&gt;
+LOG_FILE=/tmp/mm2ctrl.sh.out
+BASE_DIR=/home/myname/MagicMirror&lt;/p&gt;
+
+&lt;h3 id=&#34;functions&#34;&gt;FUNCTIONS&lt;/h3&gt;
+
+&lt;p&gt;#########
+killike ()
+#########
+{
+  kill -9 &lt;code&gt;ps -aef | grep $1 | grep -v &amp;quot;grep &amp;quot;|awk &#39;{print $2}&#39;&lt;/code&gt;;
+}&lt;/p&gt;
+
+&lt;p&gt;#################&lt;/p&gt;
+
+&lt;h3 id=&#34;main-code-1&#34;&gt;Main Code&lt;/h3&gt;
+
+&lt;p&gt;#################
+echo Changing dir to $BASE_DIR
+cd $BASE_DIR&lt;/p&gt;
+
+&lt;h3 id=&#34;on&#34;&gt;on&lt;/h3&gt;
+
+&lt;p&gt;if [ x$1 = &amp;ldquo;xon&amp;rdquo; ] ; then
+  export DISPLAY=:0
+  #DISPLAY=:0 nohup npm start &amp;amp;
+  nohup npm start &amp;amp;
+  killike xscreensaver
+  xset s reset
+  xset dpms force on
+  echo ${dtime}: Turning on MagicMirror | tee -a $LOG_FILE
+  ps -ef | grep npm  | tee -a $LOG_FILE
+fi&lt;/p&gt;
+
+&lt;h3 id=&#34;off&#34;&gt;off&lt;/h3&gt;
+
+&lt;p&gt;if [ x$1 = &amp;ldquo;xoff&amp;rdquo; ] ; then
+  killike npm
+  killike electron
+  echo ${dtime}: Turning off MagicMirror | tee -a $LOG_FILE
+  ps -ef | grep npm |tee -a $LOG_FILE
+  ps -ef | grep electron | tee -a $LOG_FILE
+  nohup xscreensaver -display :0 -no-splash &amp;amp;
+fi&lt;/p&gt;
+
+&lt;h3 id=&#34;stat-us&#34;&gt;stat[us]&lt;/h3&gt;
+
+&lt;p&gt;if [ x$1 = &amp;ldquo;xstat&amp;rdquo; ] ; then
+  ps -ef | grep npm
+  ps -ef | grep electron
+  netstat -an|grep 8080
+fi&lt;/p&gt;
+
+&lt;p&gt;if [ x$1 = &amp;ldquo;xtest&amp;rdquo; ]; then
+  export DISPLAY=:0
+  xset s reset
+  xset dpms force on
+  xset q
+fi&lt;/p&gt;
+
+&lt;p&gt;echo Finished&lt;/p&gt;
+
+&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Privileges for the files is important and can be a show stopper.
+Use &lt;code&gt;sudo visudo /etc/sudoers.d/www-data&lt;/code&gt; and add just this one line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;www-data ALL=(myname) NOPASSWD: ALL
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;DANGER: do not let this server live out on the internet because you have to give www-data shell privileges and that is VERY INSECURE!
+The line in my /etc/passwd file for www-data is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I had to play with this shell script a lot and with the calling php script to get it all to work as expected. One thing to keep
+in mind is that Alexa wants a fairly quick response of HTML code 200 OK or it will fail. So I worked to get the execution of underlying commands to happen in the background allowing the php script to quickly return the 200 OK html code.&lt;/p&gt;
+
+&lt;p&gt;I added the capability to look at the status but Alex and fauxmo.py will never execute that - it is only for your use should you need it.&lt;/p&gt;
+
+&lt;p&gt;Make sure your firewall port is open for 80 (http) on this (maginmirror) server.&lt;/p&gt;
+
+&lt;p&gt;Things should work for you now.
+Try: &lt;code&gt;Alexa turn on kitchen pie&lt;/code&gt; - or whatever name you used for the &amp;ldquo;device&amp;rdquo;. When complications occur check the http access and error log on the magicmirror server and the syslog on the fauxmo.py server.&lt;/p&gt;
+
+&lt;h2 id=&#34;one-last-tweak-configuring-magicmirror&#34;&gt;one last tweak - configuring magicmirror&lt;/h2&gt;
+
+&lt;p&gt;Add any modules you want to magicmirror but because the 5inch touchscreen is size challenged you will have to work to provide room for all the info you want to display. The easiest way for me to share what I did is to show you my config for magic mirror.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/MichMich/MagicMirror/wiki/MagicMirror%C2%B2-Modules&#34;&gt;MagicMirror2 modules&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;NOTE: the Carousel plugin was instrumental in allowing all the info to be rotated in magicmirror.&lt;/p&gt;
+
+&lt;p&gt;I am listing the possible position settings: top_ bar, top_left, top_center, top_right, upper_third, middle_center, lower_third, bottom_left, bottom_center, bottom_right, bottom_bar, fullscreen_above, and fullscreen_below. In the MagicMirror files structure you will find a custom.css file in the css directory waiting for you to put in any overrides you want. This link will give you an idea of how the regions are setup by default &lt;a href=&#34;https://forum.magicmirror.builders/topic/286/regions&#34;&gt;MagicMirror regions&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is the contents of $HOME/MagicMirror/config/config.js&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/* Magic Mirror Config Sample
+ *
+ * By Michael Teeuw http://michaelteeuw.nl
+ * MIT Licensed.
+ */
+
+var config = {
+  port: 8080,
+  ipWhitelist: [&amp;quot;127.0.0.1&amp;quot;, &amp;quot;192.168.1.71&amp;quot;,&amp;quot;::ffff:127.0.0.1&amp;quot;, &amp;quot;::1&amp;quot;, &amp;quot;::ffff:192.168.1.71&amp;quot;],
+  language: &#39;en&#39;,
+  timeFormat: 12,
+  units: &#39;imperial&#39;,
+
+  modules: [
+    {
+      module: &#39;MMM-Carousel&#39;,
+      config: {
+        ignoreModules: [ &#39;alert&#39;,&#39;stocks&#39;,&#39;MMM-RandomPhoto&#39;,&#39;clock&#39;,&#39;currentweather&#39; ],
+        transitionalInterval: 35000
+      }
+    },
+    {
+      module: &#39;alert&#39;,
+    Y},
+    {
+      module: &amp;quot;updatenotification&amp;quot;,
+      position: &amp;quot;top_bar&amp;quot;
+    },
+    {
+      module: &#39;clock&#39;,
+      position: &#39;top_left&#39;
+    },
+    {
+      module: &#39;calendar&#39;,
+      header: &#39;US Holidays&#39;,
+      position: &#39;top_left&#39;,
+      config: {
+        calendars: [
+          {
+            symbol: &#39;calendar-check-o &#39;,
+            url: &#39;webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics&#39;
+          }
+        ]
+      }
+    },
+    {
+      module: &#39;compliments&#39;,
+      //position: &#39;lower_center&#39;
+      position: &#39;top_left&#39;
+    },
+    {
+      module: &#39;currentweather&#39;,
+      position: &#39;bottom_right&#39;,
+      config: {
+        location: &#39;Elizabeth City&#39;,
+        locationID: &#39;4465088&#39;, //ID from http://www.openweathermap.org
+        appid: &#39;aee32e69be313e1f94557d6a1fc8b075&#39;
+      }
+    },
+    {
+      module: &#39;weatherforecast&#39;,
+      position: &#39;top_left&#39;,
+      header: &#39;Weather Forecast&#39;,
+      config: {
+        location: &#39;Elizabeth City&#39;,
+        locationID: &#39;4465088&#39;, //ID from http://www.openweathermap.org
+        appid: &#39;aee32e69be313e1f94557d6a1fc8b075&#39;
+      }
+    },
+    {
+      module: &#39;newsfeed&#39;,
+      //position: &#39;bottom_bar&#39;,
+      //position: &#39;top_bar&#39;,
+      //position: &#39;upper_third&#39;,
+      position: &#39;top_left&#39;,
+      config: {
+        feeds: [
+          {
+            title: &amp;quot;New York Times&amp;quot;,
+            url: &amp;quot;http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml&amp;quot;
+          },
+          {
+            title: &amp;quot;BBC&amp;quot;,
+            url: &amp;quot;http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk&amp;quot;,
+          },
+        ],
+        showSourceTitle: true,
+        showPublishDate: true,
+        updateInterval: 20000
+      }
+    },
+//    {
+//      module: &#39;helloworld&#39;,
+//      position: &#39;bottom_bar&#39;,
+//      config: {
+//          text: &#39;hello world!&#39;
+//        }
+//    },
+    {
+      module: &#39;MMM-RandomPhoto&#39;,
+      position: &#39;fullscreen_below&#39;,
+      config: {
+        opacity: 0.3,
+        animationSpeed: 500,
+        updateInterval: 60,
+        url: &#39;https://unsplash.it/1920/1080/?random&#39;
+      }
+    },
+//    {
+//      module: &#39;MMM-Remote-Control&#39;,
+//      // uncomment the following line to show the URL of the remote control on the mirror
+//      position: &#39;bottom_left&#39;
+//      // you can hide this module afterwards from the remote control itself
+//    },
+    {
+      module: &#39;stocks&#39;,
+      position: &#39;bottom_bar&#39;,
+      config: {
+        stocks: &#39;.DJI,IBM,AAPL,GOOG,INTC,CSCO,ABBV,FDC,SQ,M,CVS,CVEO&#39;,
+        updateInterval: 41000
+      }
+    },
+    {
+      module: &#39;random_quotes&#39;,
+//      position: &#39;upper_third&#39;,
+        position: &#39;top_left&#39;,
+        config: {
+        // The config property is optional
+        // Without a config, a random quote is shown,
+        // selected from all of the categories available.
+          updateInterval: 120
+//        category: &#39;positive&#39;
+        }
+    },
+    {
+      module: &#39;MMM-DailyBibleVerse&#39;,
+      //position: &#39;top_left&#39;,
+      position: &#39;upper_third&#39;,
+      config: {
+      version: &#39;NIV&#39; // This can be changed to any version you want that is offered by Bible Gateway. For a list, go here: https://www.biblegateway.com/usage/linking/versionslist/
+      }
+    },
+//   {
+//    module: &#39;DailyXKCD&#39;,
+//    position: &#39;top_left&#39;,
+//    config: {
+//        invertColors: true,
+//        title: true,
+//        altText: false
+//      }
+//   },
+  ]
+};
+
+/*************** DO NOT EDIT THE LINE BELOW ***************/
+if (typeof module !== &#39;undefined&#39;) {module.exports = config;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Good luck and enjoy!
+-g-&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Sorting IPs</title>
@@ -19,7 +649,8 @@
       <description>&lt;p&gt;I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
 laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
 parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
-in most repositories). So output might look like this:&lt;/p&gt;
+in most repositories). So output might look like this:
+&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$ sudo arp-scan -I wlo1 192.168.1.0/24
 Interface: wlo1, datalink type: EN10MB (Ethernet)
@@ -29,7 +660,6 @@ Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-sca
 192.168.1.17    b8:27:eb:42:e9:01       (Unknown)
 192.168.1.62    b8:27:eb:42:e9:01       (Unknown)
 192.168.1.72    b8:27:eb:42:e9:01       (Unknown)
-
 
 
 192.168.1.4     50:f5:da:52:08:8b       (Unknown)
@@ -93,8 +723,7 @@ Ending arp-scan 1.8.1: 256 hosts scanned in 1.520 seconds (168.42 hosts/sec). 24
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Enjoy
--g-&lt;/p&gt;
-</description>
+-g-&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -105,6 +734,8 @@ Ending arp-scan 1.8.1: 256 hosts scanned in 1.520 seconds (168.42 hosts/sec). 24
       <guid>/post/quick-n-dirty-python-debug-function/</guid>
       <description>&lt;p&gt;Pdb is a great debugger for python but I like to use my own simple debug functions.
 Here is a simple debug function for python which could definitely be improved:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#!/usr/bin/env python
 
@@ -205,8 +836,7 @@ value
 
 &lt;p&gt;###
 Enjoy
--g-&lt;/p&gt;
-</description>
+-g-&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -221,6 +851,8 @@ really on any linux distro and works with Windows remote desktop protocol (kinda
 xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
 Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
 almost any linux distro.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;When you launch remmina it will ask for a username and password for a connection onto the IP machine you declare in the setup.
 If the xrdp service is properly running on the remote machine it will server up a personal desktop for the user login
@@ -256,8 +888,7 @@ Use the mouse in enlightenment and navigate through &lt;code&gt;Settings-&amp;gt
 This works and you lose keybindings that you probably wouldn&amp;rsquo;t use through vnc anyway.&lt;/p&gt;
 
 &lt;p&gt;Enjoy
--g-&lt;/p&gt;
-</description>
+-g-&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -277,7 +908,8 @@ every 5 minutes and used a redirection to write out a file ie:&lt;/p&gt;
 &lt;p&gt;The wrapper script grabs output and sends it to the server. Having this wrapper script lets me run the
 python script independantly for testing or for curiousity.&lt;/p&gt;
 
-&lt;p&gt;It all worked fine but sometimes the temp would jump in one direction or another for brief period and that
+&lt;p&gt;
+It all worked fine but sometimes the temp would jump in one direction or another for brief period and that
 skewed the graphed - it was ugly so I decided to fix it.&lt;/p&gt;
 
 &lt;p&gt;I added code to the python script to look at the temperature that got recorded on the last run into the /tmp/temphum.dat
@@ -300,8 +932,7 @@ python script has no &amp;ldquo;last&amp;rdquo; temperature to read and my scrip
 &lt;p&gt;All is good now. So easy to overlook the simple/obvious show stopper.&lt;/p&gt;
 
 &lt;p&gt;Enjoy
--g-&lt;/p&gt;
-</description>
+-g-&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -324,9 +955,9 @@ simple monitoring program (xymon) to be able to run &amp;ldquo;sudo ufw status&a
 back to the monitor server.&lt;/p&gt;
 
 &lt;p&gt;I fired up &lt;code&gt;sudo vim /etc/sudoers.d/xymon&lt;/code&gt; and started to add the needed line:
-&lt;code&gt;xymon ALL = NOPASSWD: /usr/sbin/ufw status&lt;/code&gt; but I got halfway through and could remember the exact location&lt;/p&gt;
+&lt;code&gt;xymon ALL = NOPASSWD: /usr/sbin/ufw status&lt;/code&gt; but I got halfway through and could remember the exact location
 
-&lt;p&gt;of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the phsical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplimental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.&lt;/p&gt;
+of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the phsical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplimental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.&lt;/p&gt;
 
 &lt;p&gt;Lesson: &lt;em&gt;Always use visudo&lt;/em&gt;&lt;/p&gt;
 
@@ -351,8 +982,7 @@ update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Enjoy
--g-&lt;/p&gt;
-</description>
+-g-&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -368,9 +998,9 @@ update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor
 
 &lt;p&gt;Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.&lt;/p&gt;
 
-&lt;p&gt;Enjoy
--g-&lt;/p&gt;
-</description>
+&lt;p&gt;
+Enjoy
+-g-&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -403,9 +1033,9 @@ or &amp;hellip; just git push it to hithub and use something like netlify.com to
 &lt;p&gt;Reference:
 &lt;a href=&#34;https://gohugo.io/#intro&#34;&gt;gohugo.io&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Enjoy
--g-&lt;/p&gt;
-</description>
+&lt;p&gt;
+Enjoy
+-g-&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -441,7 +1071,8 @@ echo &amp;quot;Your \$1 argument is now uppercase: $1&amp;quot;
 &lt;p&gt;Just to let you know a little more about me and reveal
 a few more shells tricks along the way.&lt;/p&gt;
 
-&lt;p&gt;I am a very conservative investor - always have been but
+&lt;p&gt;
+I am a very conservative investor - always have been but
 the low interest rates over the recent past has forced me
 to try a squeeze a little more out of the stock market also
 known as a &amp;ldquo;a gentleman&amp;rsquo;s gambling parlor of greedy people&amp;rdquo;.
@@ -496,8 +1127,7 @@ getquotes.sh -p -m 6 -g
 
 &lt;p&gt;Enjoy&lt;/p&gt;
 
-&lt;p&gt;-g-&lt;/p&gt;
-</description>
+&lt;p&gt;-g-&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -506,9 +1136,7 @@ getquotes.sh -p -m 6 -g
       <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
       
       <guid>/post/grovepi/</guid>
-      <description>
-
-&lt;h1 id=&#34;check-out-grovepi:83c031248d66ea65300901b7302784b2&#34;&gt;Check out GrovePi&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;check-out-grovepi&#34;&gt;Check out GrovePi&lt;/h1&gt;
 
 &lt;p&gt;These kits make working with the Raspberry Pi GPIO pins
 so simple and clean.  I just ordered one of these kits and
@@ -522,6 +1150,8 @@ and connectors.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;/img/grovepi1.jpg&#34; alt=&#34;grovepi&#34; /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;/p&gt;
+
 &lt;p&gt;This company is doing cool things to make raspberry pi projects
 fun and easy - especially for students.&lt;/p&gt;
 
@@ -529,8 +1159,7 @@ fun and easy - especially for students.&lt;/p&gt;
 
 &lt;p&gt;Enjoy&lt;/p&gt;
 
-&lt;p&gt;-g-&lt;/p&gt;
-</description>
+&lt;p&gt;-g-&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -539,11 +1168,9 @@ fun and easy - especially for students.&lt;/p&gt;
       <pubDate>Sat, 02 May 2015 00:00:00 +0000</pubDate>
       
       <guid>/post/2015-05-02-post1/</guid>
-      <description>
+      <description>&lt;p&gt;#How to print remainder of line using awk&lt;/p&gt;
 
-&lt;p&gt;#How to print remainder of line using awk&lt;/p&gt;
-
-&lt;h2 id=&#34;eliminate-the-first-x-columns:2c0617bf3b5ab6328428ad749a5685c3&#34;&gt;eliminate the first X columns&amp;hellip;&lt;/h2&gt;
+&lt;h2 id=&#34;eliminate-the-first-x-columns&#34;&gt;eliminate the first X columns&amp;hellip;&lt;/h2&gt;
 
 &lt;p&gt;Here is your challenge you have a list of cronjobs and you
 want to just execute the scheduled backup command with its
@@ -564,6 +1191,8 @@ first entry with its arguments as a test run:&lt;/p&gt;
 #*/5 * * * * /data/share/home/geoffm/ping-pong.sh &amp;quot;ping -c2 192.168.1.55&amp;quot; &amp;quot;ssh 192.168.1.1 reboot&amp;quot; &amp;gt;/dev/null
 #  7 * * * /usr/local/sbin/postfix_report.sh &amp;amp;&amp;gt; /dev/null
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is how I would do it:&lt;/p&gt;
 
@@ -587,8 +1216,7 @@ will execute the intended command along with the arguments BUT it will
 do it as the user who ran it. Obviously, if the commands come from the
 root crontab it may not run properly for another user.&lt;/p&gt;
 
-&lt;p&gt;I will leave it as an exercise for the reader to solve that problem.&lt;/p&gt;
-</description>
+&lt;p&gt;I will leave it as an exercise for the reader to solve that problem.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -597,9 +1225,7 @@ root crontab it may not run properly for another user.&lt;/p&gt;
       <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>/post/2015-04-30-post1/</guid>
-      <description>
-
-&lt;h1 id=&#34;entering-special-characters-into-vim:da51cb12537d21998bafd6db6ef7ceb4&#34;&gt;Entering special characters into vim&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;entering-special-characters-into-vim&#34;&gt;Entering special characters into vim&lt;/h1&gt;
 
 &lt;p&gt;I use vim as my editor. Despite this first sentence, this is not a
 beginning volley to an editor flame war. I will save that for another
@@ -616,6 +1242,8 @@ that can be displayed with vim. You may already know that you can use
 &lt;p&gt;But I prefer using CTRL-K followed by two semi-meaningful (slightly resembles the
 intended special character) to create any one of literally thousands of special
 characters.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;If you are in vim and you are not in INSERT mode (hit ESC a couple of times to
 make sure) you can type &lt;code&gt;:digraphs&lt;/code&gt; and see the first page of possible choices.
@@ -668,8 +1296,7 @@ CTRL-k D* = Δ
 &lt;p&gt;&lt;br&gt;
 Enjoy
 &lt;br&gt;
--g-&lt;/p&gt;
-</description>
+-g-&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -678,9 +1305,7 @@ Enjoy
       <pubDate>Tue, 28 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>/post/2015-04-28-post1/</guid>
-      <description>
-
-&lt;h2 id=&#34;exploring-git-from-the-inside-out:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;&amp;hellip; exploring git from the inside out &amp;hellip;&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;exploring-git-from-the-inside-out&#34;&gt;&amp;hellip; exploring git from the inside out &amp;hellip;&lt;/h2&gt;
 
 &lt;p&gt;###Preface&lt;/p&gt;
 
@@ -697,9 +1322,9 @@ in this discussion.&lt;/p&gt;
 &lt;p&gt;###Why git? (skip this if you are less than patient)&lt;/p&gt;
 
 &lt;p&gt;Many years ago I used backups of my projects or just documents, notes, etc.
-All worked well until it didn&amp;rsquo;t. If you make a mistake and back it up guess what,&lt;/p&gt;
+All worked well until it didn&amp;rsquo;t. If you make a mistake and back it up guess what,
 
-&lt;p&gt;now you have two broken copies. Then I used cvs - awesome. It worked for me
+now you have two broken copies. Then I used cvs - awesome. It worked for me
 for years. Never lost code (as long as I put it under cvs). Really, maintained my
 work and previous versions with only very minor issues but kept my data useful and
 available. I tried git but wow, so many moving parts, and I had trouble wrapping my
@@ -725,7 +1350,7 @@ or even document files, graphics, etc. Really anything I want to preserve, espec
 if versions are involved. So this discussion will be using $HOME/dev to place our
 projects; each project with its own directory.&lt;/p&gt;
 
-&lt;h4 id=&#34;exercise:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;EXERCISE&lt;/h4&gt;
+&lt;h4 id=&#34;exercise&#34;&gt;EXERCISE&lt;/h4&gt;
 
 &lt;pre&gt;&lt;code&gt;mkdir -p $HOME/dev/mypjct
 cd $HOME/dev/myprjct
@@ -944,7 +1569,7 @@ repository - created as &amp;ldquo;bare&amp;rdquo; with &amp;ldquo;git init &amp
 &lt;p&gt;Note the &amp;ldquo;bare = false&amp;rdquo; so by default this is not a &amp;ldquo;shared&amp;rdquo;
 repository. It is a &amp;ldquo;working&amp;rdquo; project directory.&lt;/p&gt;
 
-&lt;h3 id=&#34;setting-up-a-remote-shared-git-server:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;Setting up a remote &lt;em&gt;&lt;em&gt;shared&lt;/em&gt;&lt;/em&gt; git server&lt;/h3&gt;
+&lt;h3 id=&#34;setting-up-a-remote-shared-git-server&#34;&gt;Setting up a remote &lt;em&gt;&lt;em&gt;shared&lt;/em&gt;&lt;/em&gt; git server&lt;/h3&gt;
 
 &lt;p&gt;#############################################&lt;/p&gt;
 
@@ -975,7 +1600,7 @@ not be a &amp;ldquo;working&amp;rdquo; project directory.&lt;/p&gt;
  touch .ssh/authorized_keys &amp;amp;&amp;amp; chmod 600 .ssh/authorized_keys
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;to-make-logins-easier-passwordless:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;To make logins easier (passwordless)&lt;/h3&gt;
+&lt;h3 id=&#34;to-make-logins-easier-passwordless&#34;&gt;To make logins easier (passwordless)&lt;/h3&gt;
 
 &lt;p&gt;You need to add your SSH public keys to the remote authorized_keys
 file for the git user.
@@ -1000,14 +1625,14 @@ cat /tmp/id_rsa.pub &amp;gt;&amp;gt; git@remote_server:.ssh/authorized_keys
 # but know you know what it is doing for you.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;lock-down-the-git-user-shell:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;Lock down the git user shell&lt;/h3&gt;
+&lt;h3 id=&#34;lock-down-the-git-user-shell&#34;&gt;Lock down the git user shell&lt;/h3&gt;
 
 &lt;p&gt;Change the git user shell to: &lt;code&gt;/usr/bin/git-shell&lt;/code&gt; on the remote server.
 Make sure that git-shell exists in the &lt;code&gt;/etc/shells&lt;/code&gt; file
 &amp;gt;&amp;gt;Note: you will not be able to ssh into the server as the
 git user&amp;hellip; but it will allow git commands to work against it.&lt;/p&gt;
 
-&lt;h3 id=&#34;build-an-empty-git-initialized-prepared-directory-for-every-project:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;Build an empty git initialized/prepared directory for every project&lt;/h3&gt;
+&lt;h3 id=&#34;build-an-empty-git-initialized-prepared-directory-for-every-project&#34;&gt;Build an empty git initialized/prepared directory for every project&lt;/h3&gt;
 
 &lt;p&gt;On the remote server you need to build out a project.git directory
 and initialize if with &lt;code&gt;git init --bare&lt;/code&gt; to allow a new project
@@ -1068,7 +1693,7 @@ needed structure and files for controlling git but no .git subdirectory.&lt;/p&g
 &lt;p&gt;Note: no objects yet and no .git subdirectory (and no working files
 will be stored here).&lt;/p&gt;
 
-&lt;h3 id=&#34;prepare-your-project-directory-on-the-local-computer-if-you-haven-t-already:13d1ef1aa2da144986cfdc7e7a64a8a1&#34;&gt;Prepare your project directory on the local computer if you haven&amp;rsquo;t already&lt;/h3&gt;
+&lt;h3 id=&#34;prepare-your-project-directory-on-the-local-computer-if-you-haven-t-already&#34;&gt;Prepare your project directory on the local computer if you haven&amp;rsquo;t already&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt; cd myproject # even when files already exist
  git init # to build out the .git/ directory structure and files
@@ -1176,8 +1801,7 @@ repository..&lt;/p&gt;
 
 &lt;p&gt;Enjoy,&lt;/p&gt;
 
-&lt;p&gt;-g-&lt;/p&gt;
-</description>
+&lt;p&gt;-g-&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1200,6 +1824,8 @@ repository..&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;insert \\(LaTex\\) here
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;/p&gt;
+
 &lt;p&gt;Now this code&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;$$a^2 + b_i^2 = c^2 \left(\frac12\right) $$
@@ -1208,47 +1834,7 @@ repository..&lt;/p&gt;
 &lt;p&gt;looks like this:
 $$a^2 + b_i^2 = c^2 \left(\frac12\right)$$
 or block \(Latex\):
-\[ \frac{1}{n^{2}} \]&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>startbootstrap-clean theme contact form</title>
-      <link>/post/2015-04-03-post1/</link>
-      <pubDate>Fri, 03 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>/post/2015-04-03-post1/</guid>
-      <description>&lt;p&gt;Getting the contact form to work on godaddy hosting was a trip, an ugly
-trip.&lt;/p&gt;
-
-&lt;p&gt;The contact form built into the jekyll startbootstrap-clean theme coding
-is a bit convoluted and needed tweaking to get it working.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;first you change the mail/contact_me.php to include to your email address
-(no problem there)&lt;/li&gt;
-&lt;li&gt;but it failed so I used google chrome developer tool (Ctrl-Shft-I) to diagnose what was failing.
-It was looking for the php script at /contact/mail/contact_me.php instead of /mail/contact_me.php
-(easily fixed by moving it).&lt;/li&gt;
-&lt;li&gt;by the way - this form does not pass the POST variables directly to the on script - it uses js/bootstrap-clean.js
-(which has been minified into js/bootstrap-clean-min.js) to validate the form entries and passes it on to contact_me.php
-as POST variables.&lt;/li&gt;
-&lt;li&gt;however, on godaddy hosting they restrict things quite a bit and you need to use their tools
-to send email. They place into your basic web site gdform.php and webformmailer.php (which is a link). I tried
-replacing contact_me.php with each of these&amp;hellip; only gdform.php worked. Their gdform.php script actually writes
-out your POSTED variables into a dated file (eg gform_8935621) into you $HOME/data/ directory. A cron job periodically
-mails out any gform_xxxxxxx file it finds to you.&lt;/li&gt;
-&lt;li&gt;bottom line &amp;hellip; I saved the original contact_me.php off and then on my godaddy site I copied gdform.php to /contact/mail/contact_me.php
-and all problems solved. Your contact email will eventually come when the cron runs to send it. You can check new conntact requests
-by looking for $HOME/data/gdform-xxxxxxx files.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Make sure if you sync files form you local machine to your website that you change
-your local contact_me.php similarly.&lt;/p&gt;
-
-&lt;p&gt;Enjoy
--g-&lt;/p&gt;
-</description>
+\[ \frac{1}{n^{2}} \]&lt;/p&gt;</description>
     </item>
     
   </channel>

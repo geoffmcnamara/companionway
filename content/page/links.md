@@ -48,4 +48,6 @@ menu: main
 ## learning  ##
 
 * [learn python fundamentals](https://linuxconfig.org/learn-python-fundamentals)
+* [canonical ubuntu tutorials](https://tutorials.ubuntu.com)
+
 

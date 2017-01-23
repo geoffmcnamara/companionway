@@ -33,6 +33,7 @@ lxc is much much faster to bring up, halt, tear down.. and
 you can do quich-n-dirty temporary testing with lxc-start-ephemeral.
 Just too many advantages for developing and testing code in a
 small network.
+
 "/>
 
     <meta name="twitter:site" content="@@geoffmcnamara"/>
@@ -86,7 +87,7 @@ small network.
 		
 		
 		
-		<meta name="generator" content="Hugo 0.16-DEV" />
+		<meta name="generator" content="Hugo 0.18.1" />
 
 		<link rel="canonical" href="/post/2015-04-22-post1/" />
 
@@ -192,11 +193,9 @@ ga('send', 'pageview');
     </header>
 
     <section class="post-content">
-      
+      <h1 id="using-vagrant-with-lxc">Using vagrant with lxc</h1>
 
-<h1 id="using-vagrant-with-lxc:f93fe333ef0dfa8ac9937662e779e2bb">Using vagrant with lxc</h1>
-
-<h3 id="one-command-vagrant-up:f93fe333ef0dfa8ac9937662e779e2bb">One command; vagrant up</h3>
+<h3 id="one-command-vagrant-up">One command; vagrant up</h3>
 
 <p>Now that I successfully managed to get vagrant-lxc plugin to
 work (see previous post),  I decided to migrate my virtualbox Vagrantfile to vagrant lxc.
@@ -213,11 +212,13 @@ you can do quich-n-dirty temporary testing with lxc-start-ephemeral.
 Just too many advantages for developing and testing code in a
 small network.</p>
 
+<p></p>
+
 <p>The drawback is that vagrant-lxc is not as mature as vagrant with
 virtualbox. But the lxc tools easily get you around all this. I&rsquo;ll
 discuss some tips on this too.</p>
 
-<h2 id="getting-started-with-lxc:f93fe333ef0dfa8ac9937662e779e2bb">Getting started with lxc</h2>
+<h2 id="getting-started-with-lxc">Getting started with lxc</h2>
 
 <p>This all assume ubuntu (translation for using another Linux platform is an exercise for the reader)</p>
 
@@ -371,7 +372,6 @@ a playbook.yml file&hellip;. I will save that for an upcoming post.</p>
 <p>Enjoy</p>
 
 <p>-g-</p>
-
     </section>
 
 

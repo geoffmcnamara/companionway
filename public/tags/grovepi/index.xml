@@ -2,12 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Grovepi on companionway</title>
-    <link>/tags/grovepi/</link>
+    <link>/tags/grovepi/index.xml</link>
     <description>Recent content in Grovepi on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Sat, 09 May 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/grovepi/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -16,9 +15,7 @@
       <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
       
       <guid>/post/grovepi/</guid>
-      <description>
-
-&lt;h1 id=&#34;check-out-grovepi:83c031248d66ea65300901b7302784b2&#34;&gt;Check out GrovePi&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;check-out-grovepi&#34;&gt;Check out GrovePi&lt;/h1&gt;
 
 &lt;p&gt;These kits make working with the Raspberry Pi GPIO pins
 so simple and clean.  I just ordered one of these kits and
@@ -32,6 +29,8 @@ and connectors.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;/img/grovepi1.jpg&#34; alt=&#34;grovepi&#34; /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;/p&gt;
+
 &lt;p&gt;This company is doing cool things to make raspberry pi projects
 fun and easy - especially for students.&lt;/p&gt;
 
@@ -39,8 +38,7 @@ fun and easy - especially for students.&lt;/p&gt;
 
 &lt;p&gt;Enjoy&lt;/p&gt;
 
-&lt;p&gt;-g-&lt;/p&gt;
-</description>
+&lt;p&gt;-g-&lt;/p&gt;</description>
     </item>
     
   </channel>

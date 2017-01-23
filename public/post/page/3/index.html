@@ -65,7 +65,7 @@
 		<link href="/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.16-DEV" />
+		<meta name="generator" content="Hugo 0.18.1" />
 
 		<link rel="canonical" href="/post/" />
 
@@ -174,10 +174,66 @@ ga('send', 'pageview');
 	   
 <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/post/2015-04-05-post1/">Adding fade in and down javascript</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><h1 id="javascript-fade-in-and-down">Javascript fade in and down</h1>
+
+<p>I wanted to change the header on the theme for my web site
+to display a slide down and in header.</p>
+
+<p>The script needed to be a combination of two jquery animations.</p>
+
+<pre><code class="language-javascript">&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+    $('#fadeInDown')
+    .css('display', &quot;none&quot;)
+    .slideDown(2000)
+    .animate(
+      { opacity: 1 },
+      { queue: false, duration: 2300 }
+      );
+    });
+&lt;/script&gt;
+</code></pre>
+
+<p>First we load in the jquery code from google nut this a single point of failure.
+If there is network interruption jquery code is lost. But in my instance if the
+network is failing then my web site probably is too.</p>
+
+<p></p> <a class="read-more" href="/post/2015-04-05-post1/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+        
+
+        
+        
+            Geoff McNamara
+        
+        on
+            
+                <a href="/tags/js/">#js</a>,
+            
+        
+        <time class="post-date" datetime="0001-01-01T00:00:00Z">
+            1 Jan 0001
+        </time>
+    </footer>
+</article>
+
+	
+	   
+<article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/post/2015-04-17-post1/">Ansible - modifying sudoers</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h1 id="ansible-modifying-etc-sudoers:dbdeabbb3d7b028d3191787318659934">Ansible - modifying /etc/sudoers</h1>
+        <p><h1 id="ansible-modifying-etc-sudoers">Ansible - modifying /etc/sudoers</h1>
 
 <p>I have locked administrators out of using sudo with a simple typo.</p>
 
@@ -201,7 +257,8 @@ when using ansible. This is in my <code>$ANSIBLE_DIR/roles/common/tasks/main.yml
   when: sudoers_tmp_ok|success
   command: cp /etc/sudoers.tmp /etc/sudoers
 </code></pre>
- <a class="read-more" href="/post/2015-04-17-post1/">&raquo;</a></p>
+
+<p></p> <a class="read-more" href="/post/2015-04-17-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -228,7 +285,7 @@ when using ansible. This is in my <code>$ANSIBLE_DIR/roles/common/tasks/main.yml
         <h2 class="post-title"><a href="/post/2015-04-27-post1/">Command line disk tree</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h1 id="command-line-disk-tree:3fe48c8b8c20c2b7d9631ba93ec365a2">Command line disk tree</h1>
+        <p><h1 id="command-line-disk-tree">Command line disk tree</h1>
 
 <p>I am writing another article on the basics of using git. It
 was going to be a short article however, given the subject it is
@@ -239,7 +296,8 @@ ago that  displays a disk tree structure (optionally with files).</p>
 <p>I needed a way to see the changes to the .git directory as git commands
 are executed against the repository. I thought I would share it
 with you today.</p>
- <a class="read-more" href="/post/2015-04-27-post1/">&raquo;</a></p>
+
+<p></p> <a class="read-more" href="/post/2015-04-27-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -266,7 +324,7 @@ with you today.</p>
         <h2 class="post-title"><a href="/post/2015-04-26-post1/">Delete the last X files using sed</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h2 id="simple-sed-trick-keeping-the-last-x-files:5d948e22d0ba3ff855bef7293d043cd5">Simple sed trick - keeping the last X files</h2>
+        <p><h2 id="simple-sed-trick-keeping-the-last-x-files">Simple sed trick - keeping the last X files</h2>
 
 <p>How would you remove all but the last 10 files in a directory?</p>
 
@@ -283,7 +341,8 @@ and the newest one (last one) will be called
   sleep 1
 done
 </code></pre>
- <a class="read-more" href="/post/2015-04-26-post1/">&raquo;</a></p>
+
+<p></p> <a class="read-more" href="/post/2015-04-26-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -310,7 +369,7 @@ done
         <h2 class="post-title"><a href="/post/2015-04-26-post2/">MT7630e Wifi build and install</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h1 id="wifi-mt7630e:b257a35c22d205656053b0477bf3a974">Wifi mt7630e</h1>
+        <p><h1 id="wifi-mt7630e">Wifi mt7630e</h1>
 
 <p>Today&rsquo;s hero is Jakub Kicinski. He rewrote the Mediatek MT7630e drivers
 to clean up the code <em>and</em> work with the new kernels. I have been waiting
@@ -320,7 +379,8 @@ for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.<
 
 <p>Here is the link:
 <a href="https://github.com/kuba-moo/mt7630e.git">github kuba-moo/mt7630e</a></p>
- <a class="read-more" href="/post/2015-04-26-post2/">&raquo;</a></p>
+
+<p></p> <a class="read-more" href="/post/2015-04-26-post2/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -347,9 +407,9 @@ for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.<
         <h2 class="post-title"><a href="/post/2015-04-15-post1/">SSH basics</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h1 id="ssh:f091cc6d5a5e076f03b1f5fbda7656c9">SSH</h1>
+        <p><h1 id="ssh">SSH</h1>
 
-<h2 id="debug-with-verbose-output:f091cc6d5a5e076f03b1f5fbda7656c9">Debug with verbose output</h2>
+<h2 id="debug-with-verbose-output">Debug with verbose output</h2>
 
 <p>$HOME/.ssh/config first and foremost - debug with -vvvv</p>
 
@@ -359,7 +419,7 @@ for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.<
 
 <hr />
 
-<h3 id="from-wikipedia-paraphrased:f091cc6d5a5e076f03b1f5fbda7656c9">From Wikipedia (paraphrased):</h3>
+<h3 id="from-wikipedia-paraphrased">From Wikipedia (paraphrased):</h3>
 
 <blockquote>
 <p>Secure Shell, or SSH, is a cryptographic (encrypted) network
@@ -375,7 +435,8 @@ Finland, designed the first version of the protocol (now called SSH-1) prompted 
 </blockquote>
 
 <p>&hellip;</p>
- <a class="read-more" href="/post/2015-04-15-post1/">&raquo;</a></p>
+
+<p></p> <a class="read-more" href="/post/2015-04-15-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -402,9 +463,9 @@ Finland, designed the first version of the protocol (now called SSH-1) prompted 
         <h2 class="post-title"><a href="/post/2015-04-23-post1/">vagrant and ansible</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h1 id="vagrant-and-ansible:7adc9e7dc478cddf925e559f4136131a">vagrant and ansible</h1>
+        <p><h1 id="vagrant-and-ansible">vagrant and ansible</h1>
 
-<h2 id="putting-vagrant-on-steroids:7adc9e7dc478cddf925e559f4136131a">putting vagrant on steroids</h2>
+<h2 id="putting-vagrant-on-steroids">putting vagrant on steroids</h2>
 
 <p>First, set up vagrant to create a group of guest virtual machines (see previous posts).
 We will assume your Vagrantfile is configured to build/start 3 nodes (node1, node2, node3). If these are
@@ -417,7 +478,8 @@ for universal time; not what you want. It is simple to just edit the
 you have lots of machines or tear these machines down and stand them back up
 frequently then exercises like this will get very tedious. Additionally
 there are and handful of packages you typically want one every machine.</p>
- <a class="read-more" href="/post/2015-04-23-post1/">&raquo;</a></p>
+
+<p></p> <a class="read-more" href="/post/2015-04-23-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -444,9 +506,9 @@ there are and handful of packages you typically want one every machine.</p>
         <h2 class="post-title"><a href="/post/2015-04-22-post1/">vagrant lxc nodes</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h1 id="using-vagrant-with-lxc:f93fe333ef0dfa8ac9937662e779e2bb">Using vagrant with lxc</h1>
+        <p><h1 id="using-vagrant-with-lxc">Using vagrant with lxc</h1>
 
-<h3 id="one-command-vagrant-up:f93fe333ef0dfa8ac9937662e779e2bb">One command; vagrant up</h3>
+<h3 id="one-command-vagrant-up">One command; vagrant up</h3>
 
 <p>Now that I successfully managed to get vagrant-lxc plugin to
 work (see previous post),  I decided to migrate my virtualbox Vagrantfile to vagrant lxc.
@@ -462,7 +524,8 @@ lxc is much much faster to bring up, halt, tear down.. and
 you can do quich-n-dirty temporary testing with lxc-start-ephemeral.
 Just too many advantages for developing and testing code in a
 small network.</p>
- <a class="read-more" href="/post/2015-04-22-post1/">&raquo;</a></p>
+
+<p></p> <a class="read-more" href="/post/2015-04-22-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -489,7 +552,7 @@ small network.</p>
         <h2 class="post-title"><a href="/post/2015-04-21-post1/">vagrant-lxc plugin</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h1 id="vagrant-lxc-plugin:9559ee0313acb50080161a07662a4bd8">vagrant-lxc plugin</h1>
+        <p><h1 id="vagrant-lxc-plugin">vagrant-lxc plugin</h1>
 
 <p>OK today I finally had time to get vagrant-lxc to work.
 Up until now I have had vagrant virtualbox working just fine but
@@ -506,7 +569,8 @@ even though this command showed it listed:</p>
 
 <pre><code>vagrant plugin list
 </code></pre>
- <a class="read-more" href="/post/2015-04-21-post1/">&raquo;</a></p>
+
+<p></p> <a class="read-more" href="/post/2015-04-21-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         

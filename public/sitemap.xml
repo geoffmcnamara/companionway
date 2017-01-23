@@ -2,9 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/</loc>
-    <lastmod>2017-01-01T15:53:14-05:00</lastmod>
-    <priority>0</priority>
+    <loc>/section/gads/</loc>
+    <lastmod>2016-11-30T12:58:32-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/post-title/</loc>
+    <lastmod>2017-01-10T14:27:35-05:00</lastmod>
   </url>
   
   <url>
@@ -115,11 +119,64 @@
   </url>
   
   <url>
+    <loc>/tags/awk/</loc>
+    <lastmod>2015-05-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/cms/</loc>
+    <lastmod>2016-12-09T10:57:45-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/post/2015-04-27-post1/</loc>
   </url>
   
   <url>
+    <loc>/tags/convert/</loc>
+    <lastmod>2016-12-06T11:58:20-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/post/2015-04-26-post1/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/financial/</loc>
+    <lastmod>2015-05-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/grovepi/</loc>
+    <lastmod>2015-05-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/hugo/</loc>
+    <lastmod>2016-12-09T10:57:45-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/imagemagic/</loc>
+    <lastmod>2015-04-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/jekyll/</loc>
+    <lastmod>2016-12-09T10:57:45-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/js/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -131,11 +188,87 @@
   </url>
   
   <url>
+    <loc>/tags/markdown/</loc>
+    <lastmod>2015-04-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/page/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2017-01-10T14:27:35-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/page/projects/</loc>
   </url>
   
   <url>
+    <loc>/tags/python/</loc>
+    <lastmod>2016-12-15T16:36:42-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/raspberry/</loc>
+    <lastmod>2016-12-16T12:27:36-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/rdp/</loc>
+    <lastmod>2016-12-16T12:27:36-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/post/2015-04-15-post1/</loc>
+  </url>
+  
+  <url>
+    <loc>/tags/scripting/</loc>
+    <lastmod>2016-12-15T16:36:42-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/section/</loc>
+    <lastmod>2016-11-30T12:58:32-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/sed/</loc>
+    <lastmod>2016-12-10T20:38:12-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/sudo/</loc>
+    <lastmod>2016-12-14T10:59:38-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/xargs/</loc>
+    <lastmod>2016-12-10T20:38:12-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2016-11-30T12:58:32-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -148,11 +281,6 @@
   
   <url>
     <loc>/post/2015-04-21-post1/</loc>
-  </url>
-  
-  <url>
-    <loc>/section/gads/</loc>
-    <lastmod>2016-11-30T12:58:32-05:00</lastmod>
   </url>
   
 </urlset>

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Js on companionway</title>
-    <link>/tags/js/</link>
+    <link>/tags/js/index.xml</link>
     <description>Recent content in Js on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -15,9 +15,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/post/2015-04-05-post1/</guid>
-      <description>
-
-&lt;h1 id=&#34;javascript-fade-in-and-down:e19e01f6911443e7fbc14d7c2ede446a&#34;&gt;Javascript fade in and down&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;javascript-fade-in-and-down&#34;&gt;Javascript fade in and down&lt;/h1&gt;
 
 &lt;p&gt;I wanted to change the header on the theme for my web site
 to display a slide down and in header.&lt;/p&gt;
@@ -41,6 +39,8 @@ $(document).ready(function(){
 &lt;p&gt;First we load in the jquery code from google nut this a single point of failure.
 If there is network interruption jquery code is lost. But in my instance if the
 network is failing then my web site probably is too.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
 
 &lt;p&gt;Now in my html I just need to put an &lt;code&gt;id=fadeInDown&lt;/code&gt; at the appropriate
 place - that will invoke the code.&lt;/p&gt;
@@ -96,8 +96,7 @@ pages by adding this to&lt;/code&gt;_include/footer`.&lt;/p&gt;
 &lt;p&gt;It does what I wanted&amp;hellip; thought I would share it with you.&lt;/p&gt;
 
 &lt;p&gt;Enjoy,&lt;br /&gt;
--geoff-&lt;/p&gt;
-</description>
+-geoff-&lt;/p&gt;</description>
     </item>
     
   </channel>

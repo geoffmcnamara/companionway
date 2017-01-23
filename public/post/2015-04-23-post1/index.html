@@ -30,6 +30,7 @@ for universal time; not what you want. It is simple to just edit the
 you have lots of machines or tear these machines down and stand them back up
 frequently then exercises like this will get very tedious. Additionally
 there are and handful of packages you typically want one every machine.
+
 "/>
 
     <meta name="twitter:site" content="@@geoffmcnamara"/>
@@ -83,7 +84,7 @@ there are and handful of packages you typically want one every machine.
 		
 		
 		
-		<meta name="generator" content="Hugo 0.16-DEV" />
+		<meta name="generator" content="Hugo 0.18.1" />
 
 		<link rel="canonical" href="/post/2015-04-23-post1/" />
 
@@ -189,11 +190,9 @@ ga('send', 'pageview');
     </header>
 
     <section class="post-content">
-      
+      <h1 id="vagrant-and-ansible">vagrant and ansible</h1>
 
-<h1 id="vagrant-and-ansible:7adc9e7dc478cddf925e559f4136131a">vagrant and ansible</h1>
-
-<h2 id="putting-vagrant-on-steroids:7adc9e7dc478cddf925e559f4136131a">putting vagrant on steroids</h2>
+<h2 id="putting-vagrant-on-steroids">putting vagrant on steroids</h2>
 
 <p>First, set up vagrant to create a group of guest virtual machines (see previous posts).
 We will assume your Vagrantfile is configured to build/start 3 nodes (node1, node2, node3). If these are
@@ -206,6 +205,8 @@ for universal time; not what you want. It is simple to just edit the
 you have lots of machines or tear these machines down and stand them back up
 frequently then exercises like this will get very tedious. Additionally
 there are and handful of packages you typically want one every machine.</p>
+
+<p></p>
 
 <p>The provision tool named ansible was designed by the author to be &ldquo;a tool that
 I could not use for 6 months, come back later, and still remember how it worked&rdquo;.
@@ -433,7 +434,6 @@ vagrant status
 <p>Have a nice day, enjoy,</p>
 
 <p>-g-</p>
-
     </section>
 
 

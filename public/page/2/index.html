@@ -63,7 +63,7 @@
 		<link href="/index.xml" rel="alternate" type="application/rss+xml" title="companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.16-DEV" />
+		<meta name="generator" content="Hugo 0.18.1" />
 
 		<link rel="canonical" href="/" />
 
@@ -242,6 +242,55 @@ ga('send', 'pageview');
 						<div class="top">
 							<div class="image" style="overflow:hidden">
                  
+								<img src="/img/grovepi1.jpg" class="img-responsive" alt="" >
+								
+							</div> 
+								<div class="bg"></div>
+								<div class="text">
+									<p class="buttons">
+									<a href="/post/grovepi/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+									</p>
+								</div> 
+						</div> 
+
+						<div class="content">
+							<h4><a href="/post/grovepi/">The GrovePi kit</a></h4>
+							<p class="author-category">
+							
+							By <a href="#">geoffm</a>
+							
+							on May 9, 2015
+							</p>
+							<p class="intro"><h1 id="check-out-grovepi">Check out GrovePi</h1>
+
+<p>These kits make working with the Raspberry Pi GPIO pins
+so simple and clean.  I just ordered one of these kits and
+I will try to write up a review after I work it over.</p>
+
+<p>If you are interested in building a quick and easy raspberry pi
+for experimenting with the &ldquo;Internet of Things&rdquo; (aka IoT) platform - this board and kit
+looks like it will get you there in minutes. Approx: $89 -
+includes board, and <em>lots</em> of sensors/accessories with wires
+and connectors.</p>
+
+<p><img src="/img/grovepi1.jpg" alt="grovepi" /></p>
+
+<p></p></p>
+							<p class="read-more">
+							<a href="/post/grovepi/" class="btn btn-template-main">Continue reading</a>
+							</p>
+						</div> 
+
+					</div> 
+
+				</div> 
+				
+				<div class="col-md-4 col-sm-6">
+					<div class="box-image-text blog">
+
+						<div class="top">
+							<div class="image" style="overflow:hidden">
+                 
 								<img src="/img/thrutheseaoats-dark.jpg" class="img-responsive" alt="" >
 								
 							</div> 
@@ -263,7 +312,7 @@ ga('send', 'pageview');
 							</p>
 							<p class="intro"><p>#How to print remainder of line using awk</p>
 
-<h2 id="eliminate-the-first-x-columns:2c0617bf3b5ab6328428ad749a5685c3">eliminate the first X columns&hellip;</h2>
+<h2 id="eliminate-the-first-x-columns">eliminate the first X columns&hellip;</h2>
 
 <p>Here is your challenge you have a list of cronjobs and you
 want to just execute the scheduled backup command with its
@@ -284,7 +333,8 @@ first entry with its arguments as a test run:</p>
 #*/5 * * * * /data/share/home/geoffm/ping-pong.sh &quot;ping -c2 192.168.1.55&quot; &quot;ssh 192.168.1.1 reboot&quot; &gt;/dev/null
 #  7 * * * /usr/local/sbin/postfix_report.sh &amp;&gt; /dev/null
 </code></pre>
-</p>
+
+<p></p></p>
 							<p class="read-more">
 							<a href="/post/2015-05-02-post1/" class="btn btn-template-main">Continue reading</a>
 							</p>
@@ -319,7 +369,7 @@ first entry with its arguments as a test run:</p>
 							
 							on April 30, 2015
 							</p>
-							<p class="intro"><h1 id="entering-special-characters-into-vim:da51cb12537d21998bafd6db6ef7ceb4">Entering special characters into vim</h1>
+							<p class="intro"><h1 id="entering-special-characters-into-vim">Entering special characters into vim</h1>
 
 <p>I use vim as my editor. Despite this first sentence, this is not a
 beginning volley to an editor flame war. I will save that for another
@@ -336,62 +386,10 @@ that can be displayed with vim. You may already know that you can use
 <p>But I prefer using CTRL-K followed by two semi-meaningful (slightly resembles the
 intended special character) to create any one of literally thousands of special
 characters.</p>
-</p>
+
+<p></p></p>
 							<p class="read-more">
 							<a href="/post/2015-04-30-post1/" class="btn btn-template-main">Continue reading</a>
-							</p>
-						</div> 
-
-					</div> 
-
-				</div> 
-				
-				<div class="col-md-4 col-sm-6">
-					<div class="box-image-text blog">
-
-						<div class="top">
-							<div class="image" style="overflow:hidden">
-                 
-								<img src="/img/thrutheseaoats-dark.jpg" class="img-responsive" alt="" >
-								
-							</div> 
-								<div class="bg"></div>
-								<div class="text">
-									<p class="buttons">
-									<a href="/post/2015-04-28-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
-									</p>
-								</div> 
-						</div> 
-
-						<div class="content">
-							<h4><a href="/post/2015-04-28-post1/">git inside, git better, git stronger</a></h4>
-							<p class="author-category">
-							
-							By <a href="#">geoffm</a>
-							
-							on April 28, 2015
-							</p>
-							<p class="intro"><h2 id="exploring-git-from-the-inside-out:13d1ef1aa2da144986cfdc7e7a64a8a1">&hellip; exploring git from the inside out &hellip;</h2>
-
-<p>###Preface</p>
-
-<p><p class=highcap>Apologies up front - this is long&hellip; very long, but there is food for the brain here.
-I will discuss git for personal use. Using it with many other contributors is
-an extension of the principle covered here. For simplicity, I am only going
-to discuss you working alone and only using a single &ldquo;branch&rdquo; of code for
-each project - again, for simplicity. Additionally we are going to examine
-the git &ldquo;database&rdquo; (stored as compressed SHA-1 named files/objects) as we go.
-We can gain a better understanding by reviewing the changes to the guts of
-your personal git repository. We will not cover branches, tags, or the git daemon
-in this discussion.</p>
-
-<p>###Why git? (skip this if you are less than patient)</p>
-
-<p>Many years ago I used backups of my projects or just documents, notes, etc.
-All worked well until it didn&rsquo;t. If you make a mistake and back it up guess what,</p>
-</p>
-							<p class="read-more">
-							<a href="/post/2015-04-28-post1/" class="btn btn-template-main">Continue reading</a>
 							</p>
 						</div> 
 

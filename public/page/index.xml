@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on companionway</title>
-    <link>/page/</link>
+    <link>/page/index.xml</link>
     <description>Recent content in Pages on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
@@ -47,7 +47,7 @@ Enjoy
       <guid>/page/links/</guid>
       <description>
 
-&lt;h2 id=&#34;sysadmin-or-web-dev-tools:424069113a08a4256349764ee38dbbbf&#34;&gt;sysadmin or web dev tools&lt;/h2&gt;
+&lt;h2 id=&#34;sysadmin-or-web-dev-tools&#34;&gt;sysadmin or web dev tools&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://github.com&#34;&gt;Link for gihub&lt;/a&gt;&lt;/li&gt;
@@ -60,7 +60,7 @@ Enjoy
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;quick-tech-headline-news:424069113a08a4256349764ee38dbbbf&#34;&gt;Quick tech headline news&lt;/h2&gt;
+&lt;h2 id=&#34;quick-tech-headline-news&#34;&gt;Quick tech headline news&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.linuxtoday.com/&#34;&gt;Link for LinuxToday&lt;/a&gt;&lt;/li&gt;
@@ -69,7 +69,7 @@ Enjoy
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;dynamic-content-management-systems-dynamic-cms:424069113a08a4256349764ee38dbbbf&#34;&gt;dynamic content management systems [dynamic CMS]&lt;/h2&gt;
+&lt;h2 id=&#34;dynamic-content-management-systems-dynamic-cms&#34;&gt;dynamic content management systems [dynamic CMS]&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://wordpress.org/&#34;&gt;Wordpress&lt;/a&gt;&lt;/li&gt;
@@ -79,7 +79,7 @@ Enjoy
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;static-content-managment-systems-static-cms:424069113a08a4256349764ee38dbbbf&#34;&gt;static content managment systems [static CMS]&lt;/h2&gt;
+&lt;h2 id=&#34;static-content-managment-systems-static-cms&#34;&gt;static content managment systems [static CMS]&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://jekyllrb.com/&#34;&gt;jekyll&lt;/a&gt;&lt;/li&gt;
@@ -94,10 +94,11 @@ Enjoy
 
 &lt;hr /&gt;
 
-&lt;h2 id=&#34;learning:424069113a08a4256349764ee38dbbbf&#34;&gt;learning&lt;/h2&gt;
+&lt;h2 id=&#34;learning&#34;&gt;learning&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://linuxconfig.org/learn-python-fundamentals&#34;&gt;learn python fundamentals&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tutorials.ubuntu.com&#34;&gt;canonical ubuntu tutorials&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -110,7 +111,7 @@ Enjoy
       <guid>/page/projects/</guid>
       <description>
 
-&lt;h1 id=&#34;projects:3c42bb4157bf51d85ae7ffc4e1685909&#34;&gt;Projects&lt;/h1&gt;
+&lt;h1 id=&#34;projects&#34;&gt;Projects&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;/files/gomenu&#34;&gt;gomenu&lt;/a&gt;&lt;/li&gt;

@@ -2,12 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xargs on companionway</title>
-    <link>/tags/xargs/</link>
+    <link>/tags/xargs/index.xml</link>
     <description>Recent content in Xargs on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Sat, 10 Dec 2016 20:38:12 -0500</lastBuildDate>
     <atom:link href="/tags/xargs/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -23,9 +22,9 @@
 
 &lt;p&gt;Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.&lt;/p&gt;
 
-&lt;p&gt;Enjoy
--g-&lt;/p&gt;
-</description>
+&lt;p&gt;
+Enjoy
+-g-&lt;/p&gt;</description>
     </item>
     
   </channel>

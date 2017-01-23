@@ -2,12 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on companionway</title>
-    <link>/tags/hugo/</link>
+    <link>/tags/hugo/index.xml</link>
     <description>Recent content in Hugo on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Fri, 09 Dec 2016 10:57:45 -0500</lastBuildDate>
     <atom:link href="/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -40,9 +39,9 @@ or &amp;hellip; just git push it to hithub and use something like netlify.com to
 &lt;p&gt;Reference:
 &lt;a href=&#34;https://gohugo.io/#intro&#34;&gt;gohugo.io&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Enjoy
--g-&lt;/p&gt;
-</description>
+&lt;p&gt;
+Enjoy
+-g-&lt;/p&gt;</description>
     </item>
     
   </channel>
