@@ -49,6 +49,7 @@ Software
 ## Problems Encountered
 
 There were lots of challenges that thwarted what seemed like a simple goal to achieve.
+
 - fauxmo needs a little more documentation on how to build the "virtual switch" html code. I will proyvide a sample here.
 - Alexa tends to not forget discovered devices when told to find devices again.
 - Troubleshooting the HEADER return code from html and php scripts is essential to making all the players between Alexa/fauxmo/and the "virtual switch" happy.
@@ -90,18 +91,25 @@ Berryboot allows you to store multiple OS distros and select which to boot. You 
 ### MagicMirror2 on the raspberry pi
 
 This can "seem" more difficult than it really is. I do pretty much everything by ssh at the commandline.
+
 - ssh into the raspberry pi
 - You can use the git source for MagicMirror2 but really this next command saves steps and is the first recommendation in the docs
+
 ```
 curl -sL https://raw.githubusercontent.com/MichMich/MagicMirror/master/installers/raspberry.sh | bash
 ```
+
 Lots of needed dependencies will get loaded - additionally you may have to use apt install node-legacy (with sudo of course).
 This will build out MagicMirror off your $HOME directory. I didn't like this a first but it simply works so best not to fight it.
+
 - cd ~/MagicMirror
 - run 
+
+```
 DISPLAY=:0
 npm start &
 ```
+
 Now use your browser and go hit http://[raspberry-pi-IP]:8080.
 This can run without a web server or along side a web server as long as the browser (or any other application) isn't using the 8080 port.
 
@@ -114,21 +122,26 @@ Now we have MagicMirror running. Lets turn our attention using the display on th
 There are lots of changes you can make to MagicMirror but lets move on and we will explore those changes after we reconfigure the touch screen to a portrait display instead of the default landscape mode.
 
 ## X display on Raspberry Pi
+
 Configure the raspberry pi to boot up with X windows running.
+
 - log in to the raspberry pi with ssh (by the way - to log in an redirect any X apps to your local display use `ssh -X user@raspberry-IP`) 
 - run `sudo raspi-config` and set the boot up to GUI (Graphical User Interface) appropriately.
 
 Now it gets a little tricky here. You can configure the server to boot right into the GUI and bring up MagicMirror as the `pi` user (which is the default) but I changed this up a little. 
 The rasberry pi default setup for rasbian (jessie) will set the user 'pi' as the default X login so I wanted to change that to my own username - here is how to do it. Edit as the superuser (use sudo) the `/etc/lightdm/lightdm,conf` file and change this line appropriately:
+
 ```autologin-user=yourname```
 There, moved one more step forward.
 
 ## xscreensaver
 
 Add xscreensaver to both your desktop/laptop and the raspberry pi.
+
 ```
 sudo pt install xscreensaver xscreensaver-data xscreensaver-data-extra  xscreensaver-gl 
 ```
+
 I added xscreensaver for several reasons. It provides a console to control how long the screen will stay active until it blanks and
 the screensaver screens provide interesting displays on an idle screen. I set up what I wanted on my laptop and then transferred
 the $HOME/.xscreensaver file to the home dir of the raspberry pi. 
@@ -139,15 +152,18 @@ You have to run xscreenserver-demo on the magicmirror server to get it to config
 
 For this project I needed a keyboard/mouse-pad for two phases, installing berryboot and for configuring the touchscreen.
 For my touchscreen (yours may be different) I needed these files
+
  - 5.0 Inch display User Guide.pdf
  - LCD-show-161112.tar.gz
  - Xinput-calibrator_0.7.5-1_armhf.zip
+
 Go to this website for info: [5inch HDMI LCD](http://www.waveshare.com/wiki/5inch_HDMI_LCD)
 
 BE CAREFULL HERE... if your follow the instructions and run their install script (not necessary) you will overwrite
 the /boot/config.txt file and clobber the berryboot you installed above. Took me a bit to figure that one out. You only
 need to add a few lines to the /boot/config.txt - which is essentially what their install script does.
 Just add these lines to /boot/config.txt
+
 ```
 #####
 hdmi_group=2
@@ -164,12 +180,14 @@ disable_overscan=1
 start_x=1
 ###
 ```
+
 I loaded these before the berryboot settings and it worked fine. You may want to experiment with the rotation to find what works
 best for you.
 
 The next part is where it gets interesting. The screen is probably calibrated totally wrong for touch so fire up the calibration tool you installed from the file above and use this touch pen to calibrate - it will write out /etc/X11/xorg.conf.d/99-calibrate.conf with the new settings. All of this will require your keyboard.
 
 By the way, I also installed matchbox-keyboard to allow this raspberry pi the ability to work without an attached keyboard just using the touch screen.
+
 ```
 sudo apt install matchbox-keyboard
 ```
@@ -181,6 +199,7 @@ Installing fauxmo and configuring it is where it gets fun because it allows you 
 The documentation for fauxmo is good but not great. It will get you just so far but fails to provide examples of HTML code to use with it but I will remedy that situation here. The original fauxmo code build is located here: [makemuse fauxmo](https://github.com/makermusings/fauxmo.git). However, to confuse things, there is another build that is more "sophisticated" (for me it is more complicated) and is available using python pip. It also has limited documentation and configuring it can be a challenge so I am sticking with the original makermuse version of fauxmo. 
 
 To install:
+
 ```
 git clone https://github.com/makermusings/fauxmo.git
 cd fauxmo
@@ -194,6 +213,7 @@ For me that is a raspberry pi that I use as my master server (rasp1)
 You can run the trigger webserver on any other server or the same on but in this case it will be the one where you have magicmirror running (rasp5).
 
 You need to: 
+
  - configure the fauxmo.py script on your master server (rasp1 for my network)
  - install an rc startup script for fauxmo on your master server (rasp1 for my network)
  - write some simple html/php code to run on a webserver (with php) where magicmirror is installed
@@ -203,17 +223,23 @@ You need to:
  - test Alexa and enjoy
 
 First step: configure fauxmo.py:
+
 ```
 FAUXMOS = [
     ['garage door',rest_api_handler('http://192.168.1.63/fauxmo.php?garage_door=1','http://192.168.1.63/fauxmo.php?garage_door=0'),52001],
     ['kitchen pie',rest_api_handler('http://192.168.1.65/fauxmo.php?switch=on','http://192.168.1.65/fauxmo.php?switch=off'),52002],
 ]
 ```
+
 This section is near line 340 or so.
 Use whatevername you want ... in this case I used "kitchen pie" so my command to Alexa will be 
+
 > Alexa turn on kitchen pie
+
 or
+
 > Alexa kitchen pi off
+
 The IP address is for the server where I have a webserver and magicmirror running. The port number 52002 is my selection and can be
 any unprivileged port you desire but do not leave the port optional - Alexa remembers this port number for triggering the related device name.
 
@@ -224,6 +250,7 @@ The fauxmo.py daemon will in turn send out an HTML GET request to the declared p
 
 Now create a script to fire /usr/local/bin/fauxmo.py up on bootup:
 Create /etc/init.d/fauxmorc with this content:
+
 ```
 #!/bin/bash
 ### BEGIN INIT INFO
@@ -236,7 +263,6 @@ Create /etc/init.d/fauxmorc with this content:
 # Short-Description: Run fauxmo as a listening server - emulates a wemo hub
 # Description:
 ### END INIT INFO
-
 
 PATH=/usr/local/bin:/home/geoffm/dev/utils:/home/geoffm/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/geoffm/dev/utils:/usr/share/ruby-rvm/bin:/home/geoffm/.rvm/bin
 
@@ -288,6 +314,7 @@ esac
 ```
 
 Enable and start this script with these commands:
+
 ```
 sudo systemctl daemon-reload # to let systemctl know you changed things
 sudo systemctl enable fauxmorc # to tell systemctl to enable this script after each reboot
@@ -340,6 +367,7 @@ echo "<pre>".$output."</pre>";
 
 You notice that this script actually executes another script to accomplish running or killing off magicmirror.
 That script is, in my case, /var/www/scripts/mm2ctrl.sh which looks like this:
+
 ```
 #!/bin/bash
 
@@ -402,16 +430,19 @@ fi
 
 echo Finished
 ### EOF ###
-------
+```
 
 Privileges for the files is important and can be a show stopper.
 Use `sudo visudo /etc/sudoers.d/www-data` and add just this one line:
+
 ```
 www-data ALL=(myname) NOPASSWD: ALL
 ```
 
 DANGER: do not let this server live out on the internet because you have to give www-data shell privileges and that is VERY INSECURE!
+
 The line in my /etc/passwd file for www-data is:
+
 ```
 www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
 ```
@@ -434,12 +465,12 @@ Add any modules you want to magicmirror but because the 5inch touchscreen is siz
 
 [MagicMirror2 modules](https://github.com/MichMich/MagicMirror/wiki/MagicMirror%C2%B2-Modules)
 
-
 NOTE: the Carousel plugin was instrumental in allowing all the info to be rotated in magicmirror.
 
 I am listing the possible position settings: top_ bar, top_left, top_center, top_right, upper_third, middle_center, lower_third, bottom_left, bottom_center, bottom_right, bottom_bar, fullscreen_above, and fullscreen_below. In the MagicMirror files structure you will find a custom.css file in the css directory waiting for you to put in any overrides you want. This link will give you an idea of how the regions are setup by default [MagicMirror regions](https://forum.magicmirror.builders/topic/286/regions)
 
 Here is the contents of $HOME/MagicMirror/config/config.js
+
 ```
 /* Magic Mirror Config Sample
  *

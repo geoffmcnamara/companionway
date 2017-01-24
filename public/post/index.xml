@@ -50,16 +50,19 @@
 
 &lt;h2 id=&#34;problems-encountered&#34;&gt;Problems Encountered&lt;/h2&gt;
 
-&lt;p&gt;There were lots of challenges that thwarted what seemed like a simple goal to achieve.
-- fauxmo needs a little more documentation on how to build the &amp;ldquo;virtual switch&amp;rdquo; html code. I will proyvide a sample here.
-- Alexa tends to not forget discovered devices when told to find devices again.
-- Troubleshooting the HEADER return code from html and php scripts is essential to making all the players between Alexa/fauxmo/and the &amp;ldquo;virtual switch&amp;rdquo; happy.
-- a 5 inch touchscreen is too small for a default MagicMirror run but there are solutions.
-- turning the display and getting the touchscreen calibrated correctly can be difficult until you know how to do it
-- the software that comes with the touchscreen will clobber a berryboot config - and pretty much any other custom config you have for the raspberry pi.
-- finding ways to get the html/web server to execute commands within a users X display can be daunting
-Y- when php executes and external shell command - things can silently hang with out easy indication.
-- magicmirror2 can be a little overwhelming with npm and electron running under it - especially when you are trying to get the webserver (and ultimately Alexa/Amazon echo) to control it all.&lt;/p&gt;
+&lt;p&gt;There were lots of challenges that thwarted what seemed like a simple goal to achieve.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;fauxmo needs a little more documentation on how to build the &amp;ldquo;virtual switch&amp;rdquo; html code. I will proyvide a sample here.&lt;/li&gt;
+&lt;li&gt;Alexa tends to not forget discovered devices when told to find devices again.&lt;/li&gt;
+&lt;li&gt;Troubleshooting the HEADER return code from html and php scripts is essential to making all the players between Alexa/fauxmo/and the &amp;ldquo;virtual switch&amp;rdquo; happy.&lt;/li&gt;
+&lt;li&gt;a 5 inch touchscreen is too small for a default MagicMirror run but there are solutions.&lt;/li&gt;
+&lt;li&gt;turning the display and getting the touchscreen calibrated correctly can be difficult until you know how to do it&lt;/li&gt;
+&lt;li&gt;the software that comes with the touchscreen will clobber a berryboot config - and pretty much any other custom config you have for the raspberry pi.&lt;/li&gt;
+&lt;li&gt;finding ways to get the html/web server to execute commands within a users X display can be daunting
+Y- when php executes and external shell command - things can silently hang with out easy indication.&lt;/li&gt;
+&lt;li&gt;magicmirror2 can be a little overwhelming with npm and electron running under it - especially when you are trying to get the webserver (and ultimately Alexa/Amazon echo) to control it all.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&#34;shoutouts&#34;&gt;Shoutouts&lt;/h2&gt;
 
@@ -95,49 +98,63 @@ your SD card with one partition using your camera. You may want to remove any di
 
 &lt;h3 id=&#34;magicmirror2-on-the-raspberry-pi&#34;&gt;MagicMirror2 on the raspberry pi&lt;/h3&gt;
 
-&lt;p&gt;This can &amp;ldquo;seem&amp;rdquo; more difficult than it really is. I do pretty much everything by ssh at the commandline.
-- ssh into the raspberry pi
-- You can use the git source for MagicMirror2 but really this next command saves steps and is the first recommendation in the docs&lt;/p&gt;
+&lt;p&gt;This can &amp;ldquo;seem&amp;rdquo; more difficult than it really is. I do pretty much everything by ssh at the commandline.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ssh into the raspberry pi&lt;/li&gt;
+&lt;li&gt;You can use the git source for MagicMirror2 but really this next command saves steps and is the first recommendation in the docs&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;pre&gt;&lt;code&gt;curl -sL https://raw.githubusercontent.com/MichMich/MagicMirror/master/installers/raspberry.sh | bash
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Lots of needed dependencies will get loaded - additionally you may have to use apt install node-legacy (with sudo of course).
-This will build out MagicMirror off your $HOME directory. I didn&amp;rsquo;t like this a first but it simply works so best not to fight it.
-- cd ~/MagicMirror
-- run
-DISPLAY=:0
-npm start &amp;amp;&lt;/p&gt;
+This will build out MagicMirror off your $HOME directory. I didn&amp;rsquo;t like this a first but it simply works so best not to fight it.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;Now use your browser and go hit http://[raspberry-pi-IP]:8080.
-This can run without a web server or along side a web server as long as the browser (or any other application) isn&#39;t using the 8080 port.
+&lt;ul&gt;
+&lt;li&gt;cd ~/MagicMirror&lt;/li&gt;
+&lt;li&gt;run&lt;/li&gt;
+&lt;/ul&gt;
 
-![alt text](/img/k-pi2.jpg &amp;quot;Kitchen Pi Image:2&amp;quot;)
+&lt;pre&gt;&lt;code&gt;DISPLAY=:0
+npm start &amp;amp;
+&lt;/code&gt;&lt;/pre&gt;
 
-MagicMirror can look a little intimidating but have no fear. It uses lots of javascript (.js files) but it wraps those files with electron to create a &amp;quot;running HTML/js/node.js/CSS application&amp;quot; on the local machine. Read more on electron here: [electron.atom.io](http://electron.atom.io/) and then it uses npm (node package manager) to assemble all the java script and install all the dependencies. More info on npm can be found here: [npmjs](https://www.npmjs.com/)
+&lt;p&gt;Now use your browser and go hit http://[raspberry-pi-IP]:8080.
+This can run without a web server or along side a web server as long as the browser (or any other application) isn&amp;rsquo;t using the 8080 port.&lt;/p&gt;
 
-Now we have MagicMirror running. Lets turn our attention using the display on the raspberry pi.
+&lt;p&gt;&lt;img src=&#34;/img/k-pi2.jpg&#34; alt=&#34;alt text&#34; title=&#34;Kitchen Pi Image:2&#34; /&gt;&lt;/p&gt;
 
-There are lots of changes you can make to MagicMirror but lets move on and we will explore those changes after we reconfigure the touch screen to a portrait display instead of the default landscape mode.
+&lt;p&gt;MagicMirror can look a little intimidating but have no fear. It uses lots of javascript (.js files) but it wraps those files with electron to create a &amp;ldquo;running HTML/js/node.js/CSS application&amp;rdquo; on the local machine. Read more on electron here: &lt;a href=&#34;http://electron.atom.io/&#34;&gt;electron.atom.io&lt;/a&gt; and then it uses npm (node package manager) to assemble all the java script and install all the dependencies. More info on npm can be found here: &lt;a href=&#34;https://www.npmjs.com/&#34;&gt;npmjs&lt;/a&gt;&lt;/p&gt;
 
-## X display on Raspberry Pi
-Configure the raspberry pi to boot up with X windows running.
-- log in to the raspberry pi with ssh (by the way - to log in an redirect any X apps to your local display use `ssh -X user@raspberry-IP`) 
-- run `sudo raspi-config` and set the boot up to GUI (Graphical User Interface) appropriately.
+&lt;p&gt;Now we have MagicMirror running. Lets turn our attention using the display on the raspberry pi.&lt;/p&gt;
 
-Now it gets a little tricky here. You can configure the server to boot right into the GUI and bring up MagicMirror as the `pi` user (which is the default) but I changed this up a little. 
-The rasberry pi default setup for rasbian (jessie) will set the user &#39;pi&#39; as the default X login so I wanted to change that to my own username - here is how to do it. Edit as the superuser (use sudo) the `/etc/lightdm/lightdm,conf` file and change this line appropriately:
-```autologin-user=yourname```
-There, moved one more step forward.
+&lt;p&gt;There are lots of changes you can make to MagicMirror but lets move on and we will explore those changes after we reconfigure the touch screen to a portrait display instead of the default landscape mode.&lt;/p&gt;
+
+&lt;h2 id=&#34;x-display-on-raspberry-pi&#34;&gt;X display on Raspberry Pi&lt;/h2&gt;
+
+&lt;p&gt;Configure the raspberry pi to boot up with X windows running.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;log in to the raspberry pi with ssh (by the way - to log in an redirect any X apps to your local display use &lt;code&gt;ssh -X user@raspberry-IP&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;run &lt;code&gt;sudo raspi-config&lt;/code&gt; and set the boot up to GUI (Graphical User Interface) appropriately.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now it gets a little tricky here. You can configure the server to boot right into the GUI and bring up MagicMirror as the &lt;code&gt;pi&lt;/code&gt; user (which is the default) but I changed this up a little.
+The rasberry pi default setup for rasbian (jessie) will set the user &amp;lsquo;pi&amp;rsquo; as the default X login so I wanted to change that to my own username - here is how to do it. Edit as the superuser (use sudo) the &lt;code&gt;/etc/lightdm/lightdm,conf&lt;/code&gt; file and change this line appropriately:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-autologin-user=yourname```&#34;&gt;There, moved one more step forward.
 
 ## xscreensaver
 
 Add xscreensaver to both your desktop/laptop and the raspberry pi.
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;sudo pt install xscreensaver xscreensaver-data xscreensaver-data-extra  xscreensaver-gl&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;I added xscreensaver for several reasons. It provides a console to control how long the screen will stay active until it blanks and
+&lt;pre&gt;&lt;code&gt;
+I added xscreensaver for several reasons. It provides a console to control how long the screen will stay active until it blanks and
 the screensaver screens provide interesting displays on an idle screen. I set up what I wanted on my laptop and then transferred
 the $HOME/.xscreensaver file to the home dir of the raspberry pi. 
 
@@ -147,15 +164,18 @@ You have to run xscreenserver-demo on the magicmirror server to get it to config
 
 For this project I needed a keyboard/mouse-pad for two phases, installing berryboot and for configuring the touchscreen.
 For my touchscreen (yours may be different) I needed these files
+
  - 5.0 Inch display User Guide.pdf
  - LCD-show-161112.tar.gz
  - Xinput-calibrator_0.7.5-1_armhf.zip
+
 Go to this website for info: [5inch HDMI LCD](http://www.waveshare.com/wiki/5inch_HDMI_LCD)
 
 BE CAREFULL HERE... if your follow the instructions and run their install script (not necessary) you will overwrite
 the /boot/config.txt file and clobber the berryboot you installed above. Took me a bit to figure that one out. You only
 need to add a few lines to the /boot/config.txt - which is essentially what their install script does.
 Just add these lines to /boot/config.txt
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;#####
@@ -173,12 +193,14 @@ avoid_warnings=1&lt;/p&gt;
 start_x=1
 ###&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;I loaded these before the berryboot settings and it worked fine. You may want to experiment with the rotation to find what works
+&lt;pre&gt;&lt;code&gt;
+I loaded these before the berryboot settings and it worked fine. You may want to experiment with the rotation to find what works
 best for you.
 
 The next part is where it gets interesting. The screen is probably calibrated totally wrong for touch so fire up the calibration tool you installed from the file above and use this touch pen to calibrate - it will write out /etc/X11/xorg.conf.d/99-calibrate.conf with the new settings. All of this will require your keyboard.
 
 By the way, I also installed matchbox-keyboard to allow this raspberry pi the ability to work without an attached keyboard just using the touch screen.
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;sudo apt install matchbox-keyboard&lt;/p&gt;
@@ -191,6 +213,7 @@ Installing fauxmo and configuring it is where it gets fun because it allows you 
 The documentation for fauxmo is good but not great. It will get you just so far but fails to provide examples of HTML code to use with it but I will remedy that situation here. The original fauxmo code build is located here: [makemuse fauxmo](https://github.com/makermusings/fauxmo.git). However, to confuse things, there is another build that is more &amp;quot;sophisticated&amp;quot; (for me it is more complicated) and is available using python pip. It also has limited documentation and configuring it can be a challenge so I am sticking with the original makermuse version of fauxmo. 
 
 To install:
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;git clone &lt;a href=&#34;https://github.com/makermusings/fauxmo.git&#34;&gt;https://github.com/makermusings/fauxmo.git&lt;/a&gt;
@@ -206,6 +229,7 @@ For me that is a raspberry pi that I use as my master server (rasp1)
 You can run the trigger webserver on any other server or the same on but in this case it will be the one where you have magicmirror running (rasp5).
 
 You need to: 
+
  - configure the fauxmo.py script on your master server (rasp1 for my network)
  - install an rc startup script for fauxmo on your master server (rasp1 for my network)
  - write some simple html/php code to run on a webserver (with php) where magicmirror is installed
@@ -215,6 +239,7 @@ You need to:
  - test Alexa and enjoy
 
 First step: configure fauxmo.py:
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;FAUXMOS = [
@@ -222,11 +247,16 @@ First step: configure fauxmo.py:
     [&amp;lsquo;kitchen pie&amp;rsquo;,rest_api_handler(&amp;lsquo;&lt;a href=&#34;http://192.168.1.65/fauxmo.php?switch=on&#39;,&#39;http://192.168.1.65/fauxmo.php?switch=off&#39;),52002&#34;&gt;http://192.168.1.65/fauxmo.php?switch=on&#39;,&#39;http://192.168.1.65/fauxmo.php?switch=off&#39;),52002&lt;/a&gt;],
 ]&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;This section is near line 340 or so.
+&lt;pre&gt;&lt;code&gt;
+This section is near line 340 or so.
 Use whatevername you want ... in this case I used &amp;quot;kitchen pie&amp;quot; so my command to Alexa will be 
+
 &amp;gt; Alexa turn on kitchen pie
+
 or
+
 &amp;gt; Alexa kitchen pi off
+
 The IP address is for the server where I have a webserver and magicmirror running. The port number 52002 is my selection and can be
 any unprivileged port you desire but do not leave the port optional - Alexa remembers this port number for triggering the related device name.
 
@@ -237,6 +267,7 @@ The fauxmo.py daemon will in turn send out an HTML GET request to the declared p
 
 Now create a script to fire /usr/local/bin/fauxmo.py up on bootup:
 Create /etc/init.d/fauxmorc with this content:
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;#!/bin/bash&lt;/p&gt;
@@ -313,6 +344,7 @@ esac&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;
 Enable and start this script with these commands:
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;sudo systemctl daemon-reload # to let systemctl know you changed things
@@ -371,6 +403,7 @@ echo &amp;ldquo;&lt;pre&gt;&amp;rdquo;.$output.&amp;rdquo;&lt;/pre&gt;&amp;rdquo
 &lt;pre&gt;&lt;code&gt;
 You notice that this script actually executes another script to accomplish running or killing off magicmirror.
 That script is, in my case, /var/www/scripts/mm2ctrl.sh which looks like this:
+
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;#!/bin/bash&lt;/p&gt;
@@ -442,126 +475,134 @@ fi&lt;/p&gt;
 
 &lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
 
-&lt;hr /&gt;
+&lt;pre&gt;&lt;code&gt;
+Privileges for the files is important and can be a show stopper.
+Use `sudo visudo /etc/sudoers.d/www-data` and add just this one line:
 
-&lt;p&gt;Privileges for the files is important and can be a show stopper.
-Use &lt;code&gt;sudo visudo /etc/sudoers.d/www-data&lt;/code&gt; and add just this one line:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;www-data ALL=(myname) NOPASSWD: ALL
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;DANGER: do not let this server live out on the internet because you have to give www-data shell privileges and that is VERY INSECURE!
-The line in my /etc/passwd file for www-data is:&lt;/p&gt;
+&lt;p&gt;www-data ALL=(myname) NOPASSWD: ALL&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+&lt;pre&gt;&lt;code&gt;
+DANGER: do not let this server live out on the internet because you have to give www-data shell privileges and that is VERY INSECURE!
+
+The line in my /etc/passwd file for www-data is:
+
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;I had to play with this shell script a lot and with the calling php script to get it all to work as expected. One thing to keep
-in mind is that Alexa wants a fairly quick response of HTML code 200 OK or it will fail. So I worked to get the execution of underlying commands to happen in the background allowing the php script to quickly return the 200 OK html code.&lt;/p&gt;
+&lt;p&gt;www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin&lt;/p&gt;
 
-&lt;p&gt;I added the capability to look at the status but Alex and fauxmo.py will never execute that - it is only for your use should you need it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;
+I had to play with this shell script a lot and with the calling php script to get it all to work as expected. One thing to keep
+in mind is that Alexa wants a fairly quick response of HTML code 200 OK or it will fail. So I worked to get the execution of underlying commands to happen in the background allowing the php script to quickly return the 200 OK html code.
 
-&lt;p&gt;Make sure your firewall port is open for 80 (http) on this (maginmirror) server.&lt;/p&gt;
 
-&lt;p&gt;Things should work for you now.
-Try: &lt;code&gt;Alexa turn on kitchen pie&lt;/code&gt; - or whatever name you used for the &amp;ldquo;device&amp;rdquo;. When complications occur check the http access and error log on the magicmirror server and the syslog on the fauxmo.py server.&lt;/p&gt;
+I added the capability to look at the status but Alex and fauxmo.py will never execute that - it is only for your use should you need it.
 
-&lt;h2 id=&#34;one-last-tweak-configuring-magicmirror&#34;&gt;one last tweak - configuring magicmirror&lt;/h2&gt;
+Make sure your firewall port is open for 80 (http) on this (maginmirror) server.
 
-&lt;p&gt;Add any modules you want to magicmirror but because the 5inch touchscreen is size challenged you will have to work to provide room for all the info you want to display. The easiest way for me to share what I did is to show you my config for magic mirror.&lt;/p&gt;
+Things should work for you now.
+Try: `Alexa turn on kitchen pie` - or whatever name you used for the &amp;quot;device&amp;quot;. When complications occur check the http access and error log on the magicmirror server and the syslog on the fauxmo.py server.
 
-&lt;p&gt;&lt;a href=&#34;https://github.com/MichMich/MagicMirror/wiki/MagicMirror%C2%B2-Modules&#34;&gt;MagicMirror2 modules&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;NOTE: the Carousel plugin was instrumental in allowing all the info to be rotated in magicmirror.&lt;/p&gt;
+## one last tweak - configuring magicmirror
 
-&lt;p&gt;I am listing the possible position settings: top_ bar, top_left, top_center, top_right, upper_third, middle_center, lower_third, bottom_left, bottom_center, bottom_right, bottom_bar, fullscreen_above, and fullscreen_below. In the MagicMirror files structure you will find a custom.css file in the css directory waiting for you to put in any overrides you want. This link will give you an idea of how the regions are setup by default &lt;a href=&#34;https://forum.magicmirror.builders/topic/286/regions&#34;&gt;MagicMirror regions&lt;/a&gt;&lt;/p&gt;
+Add any modules you want to magicmirror but because the 5inch touchscreen is size challenged you will have to work to provide room for all the info you want to display. The easiest way for me to share what I did is to show you my config for magic mirror.
 
-&lt;p&gt;Here is the contents of $HOME/MagicMirror/config/config.js&lt;/p&gt;
+[MagicMirror2 modules](https://github.com/MichMich/MagicMirror/wiki/MagicMirror%C2%B2-Modules)
 
-&lt;pre&gt;&lt;code&gt;/* Magic Mirror Config Sample
+NOTE: the Carousel plugin was instrumental in allowing all the info to be rotated in magicmirror.
+
+I am listing the possible position settings: top_ bar, top_left, top_center, top_right, upper_third, middle_center, lower_third, bottom_left, bottom_center, bottom_right, bottom_bar, fullscreen_above, and fullscreen_below. In the MagicMirror files structure you will find a custom.css file in the css directory waiting for you to put in any overrides you want. This link will give you an idea of how the regions are setup by default [MagicMirror regions](https://forum.magicmirror.builders/topic/286/regions)
+
+Here is the contents of $HOME/MagicMirror/config/config.js
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;/* Magic Mirror Config Sample
  *
- * By Michael Teeuw http://michaelteeuw.nl
+ * By Michael Teeuw &lt;a href=&#34;http://michaelteeuw.nl&#34;&gt;http://michaelteeuw.nl&lt;/a&gt;
  * MIT Licensed.
- */
+ */&lt;/p&gt;
 
-var config = {
+&lt;p&gt;var config = {
   port: 8080,
-  ipWhitelist: [&amp;quot;127.0.0.1&amp;quot;, &amp;quot;192.168.1.71&amp;quot;,&amp;quot;::ffff:127.0.0.1&amp;quot;, &amp;quot;::1&amp;quot;, &amp;quot;::ffff:192.168.1.71&amp;quot;],
-  language: &#39;en&#39;,
+  ipWhitelist: [&amp;ldquo;127.0.0.1&amp;rdquo;, &amp;ldquo;192.168.1.71&amp;rdquo;,&amp;rdquo;::ffff:127.0.0.1&amp;rdquo;, &amp;ldquo;::1&amp;rdquo;, &amp;ldquo;::ffff:192.168.1.71&amp;rdquo;],
+  language: &amp;lsquo;en&amp;rsquo;,
   timeFormat: 12,
-  units: &#39;imperial&#39;,
+  units: &amp;lsquo;imperial&amp;rsquo;,&lt;/p&gt;
 
-  modules: [
+&lt;p&gt;modules: [
     {
-      module: &#39;MMM-Carousel&#39;,
+      module: &amp;lsquo;MMM-Carousel&amp;rsquo;,
       config: {
-        ignoreModules: [ &#39;alert&#39;,&#39;stocks&#39;,&#39;MMM-RandomPhoto&#39;,&#39;clock&#39;,&#39;currentweather&#39; ],
+        ignoreModules: [ &amp;lsquo;alert&amp;rsquo;,&amp;lsquo;stocks&amp;rsquo;,&amp;lsquo;MMM-RandomPhoto&amp;rsquo;,&amp;lsquo;clock&amp;rsquo;,&amp;lsquo;currentweather&amp;rsquo; ],
         transitionalInterval: 35000
       }
     },
     {
-      module: &#39;alert&#39;,
+      module: &amp;lsquo;alert&amp;rsquo;,
     Y},
     {
-      module: &amp;quot;updatenotification&amp;quot;,
-      position: &amp;quot;top_bar&amp;quot;
+      module: &amp;ldquo;updatenotification&amp;rdquo;,
+      position: &amp;ldquo;top_bar&amp;rdquo;
     },
     {
-      module: &#39;clock&#39;,
-      position: &#39;top_left&#39;
+      module: &amp;lsquo;clock&amp;rsquo;,
+      position: &amp;lsquo;top_left&amp;rsquo;
     },
     {
-      module: &#39;calendar&#39;,
-      header: &#39;US Holidays&#39;,
-      position: &#39;top_left&#39;,
+      module: &amp;lsquo;calendar&amp;rsquo;,
+      header: &amp;lsquo;US Holidays&amp;rsquo;,
+      position: &amp;lsquo;top_left&amp;rsquo;,
       config: {
         calendars: [
           {
-            symbol: &#39;calendar-check-o &#39;,
-            url: &#39;webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics&#39;
+            symbol: &amp;lsquo;calendar-check-o &amp;lsquo;,
+            url: &amp;lsquo;webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics&amp;rsquo;
           }
         ]
       }
     },
     {
-      module: &#39;compliments&#39;,
-      //position: &#39;lower_center&#39;
-      position: &#39;top_left&#39;
+      module: &amp;lsquo;compliments&amp;rsquo;,
+      //position: &amp;lsquo;lower_center&amp;rsquo;
+      position: &amp;lsquo;top_left&amp;rsquo;
     },
     {
-      module: &#39;currentweather&#39;,
-      position: &#39;bottom_right&#39;,
+      module: &amp;lsquo;currentweather&amp;rsquo;,
+      position: &amp;lsquo;bottom_right&amp;rsquo;,
       config: {
-        location: &#39;Elizabeth City&#39;,
-        locationID: &#39;4465088&#39;, //ID from http://www.openweathermap.org
-        appid: &#39;aee32e69be313e1f94557d6a1fc8b075&#39;
+        location: &amp;lsquo;Elizabeth City&amp;rsquo;,
+        locationID: &amp;lsquo;4465088&amp;rsquo;, //ID from &lt;a href=&#34;http://www.openweathermap.org&#34;&gt;http://www.openweathermap.org&lt;/a&gt;
+        appid: &amp;lsquo;aee32e69be313e1f94557d6a1fc8b075&amp;rsquo;
       }
     },
     {
-      module: &#39;weatherforecast&#39;,
-      position: &#39;top_left&#39;,
-      header: &#39;Weather Forecast&#39;,
+      module: &amp;lsquo;weatherforecast&amp;rsquo;,
+      position: &amp;lsquo;top_left&amp;rsquo;,
+      header: &amp;lsquo;Weather Forecast&amp;rsquo;,
       config: {
-        location: &#39;Elizabeth City&#39;,
-        locationID: &#39;4465088&#39;, //ID from http://www.openweathermap.org
-        appid: &#39;aee32e69be313e1f94557d6a1fc8b075&#39;
+        location: &amp;lsquo;Elizabeth City&amp;rsquo;,
+        locationID: &amp;lsquo;4465088&amp;rsquo;, //ID from &lt;a href=&#34;http://www.openweathermap.org&#34;&gt;http://www.openweathermap.org&lt;/a&gt;
+        appid: &amp;lsquo;aee32e69be313e1f94557d6a1fc8b075&amp;rsquo;
       }
     },
     {
-      module: &#39;newsfeed&#39;,
-      //position: &#39;bottom_bar&#39;,
-      //position: &#39;top_bar&#39;,
-      //position: &#39;upper_third&#39;,
-      position: &#39;top_left&#39;,
+      module: &amp;lsquo;newsfeed&amp;rsquo;,
+      //position: &amp;lsquo;bottom_bar&amp;rsquo;,
+      //position: &amp;lsquo;top_bar&amp;rsquo;,
+      //position: &amp;lsquo;upper_third&amp;rsquo;,
+      position: &amp;lsquo;top_left&amp;rsquo;,
       config: {
         feeds: [
           {
-            title: &amp;quot;New York Times&amp;quot;,
-            url: &amp;quot;http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml&amp;quot;
+            title: &amp;ldquo;New York Times&amp;rdquo;,
+            url: &amp;ldquo;&lt;a href=&#34;http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml&amp;quot;&#34;&gt;http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml&amp;quot;&lt;/a&gt;
           },
           {
-            title: &amp;quot;BBC&amp;quot;,
-            url: &amp;quot;http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk&amp;quot;,
+            title: &amp;ldquo;BBC&amp;rdquo;,
+            url: &amp;ldquo;&lt;a href=&#34;http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk&amp;quot;&#34;&gt;http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk&amp;quot;&lt;/a&gt;,
           },
         ],
         showSourceTitle: true,
@@ -570,59 +611,59 @@ var config = {
       }
     },
 //    {
-//      module: &#39;helloworld&#39;,
-//      position: &#39;bottom_bar&#39;,
+//      module: &amp;lsquo;helloworld&amp;rsquo;,
+//      position: &amp;lsquo;bottom_bar&amp;rsquo;,
 //      config: {
-//          text: &#39;hello world!&#39;
+//          text: &amp;lsquo;hello world!&amp;rsquo;
 //        }
 //    },
     {
-      module: &#39;MMM-RandomPhoto&#39;,
-      position: &#39;fullscreen_below&#39;,
+      module: &amp;lsquo;MMM-RandomPhoto&amp;rsquo;,
+      position: &amp;lsquo;fullscreen_below&amp;rsquo;,
       config: {
         opacity: 0.3,
         animationSpeed: 500,
         updateInterval: 60,
-        url: &#39;https://unsplash.it/1920/1080/?random&#39;
+        url: &amp;lsquo;&lt;a href=&#34;https://unsplash.it/1920/1080/?random&#39;&#34;&gt;https://unsplash.it/1920/1080/?random&#39;&lt;/a&gt;
       }
     },
 //    {
-//      module: &#39;MMM-Remote-Control&#39;,
+//      module: &amp;lsquo;MMM-Remote-Control&amp;rsquo;,
 //      // uncomment the following line to show the URL of the remote control on the mirror
-//      position: &#39;bottom_left&#39;
+//      position: &amp;lsquo;bottom_left&amp;rsquo;
 //      // you can hide this module afterwards from the remote control itself
 //    },
     {
-      module: &#39;stocks&#39;,
-      position: &#39;bottom_bar&#39;,
+      module: &amp;lsquo;stocks&amp;rsquo;,
+      position: &amp;lsquo;bottom_bar&amp;rsquo;,
       config: {
-        stocks: &#39;.DJI,IBM,AAPL,GOOG,INTC,CSCO,ABBV,FDC,SQ,M,CVS,CVEO&#39;,
+        stocks: &amp;lsquo;.DJI,IBM,AAPL,GOOG,INTC,CSCO,ABBV,FDC,SQ,M,CVS,CVEO&amp;rsquo;,
         updateInterval: 41000
       }
     },
     {
-      module: &#39;random_quotes&#39;,
-//      position: &#39;upper_third&#39;,
-        position: &#39;top_left&#39;,
+      module: &amp;lsquo;random_quotes&amp;rsquo;,
+//      position: &amp;lsquo;upper_third&amp;rsquo;,
+        position: &amp;lsquo;top_left&amp;rsquo;,
         config: {
         // The config property is optional
         // Without a config, a random quote is shown,
         // selected from all of the categories available.
           updateInterval: 120
-//        category: &#39;positive&#39;
+//        category: &amp;lsquo;positive&amp;rsquo;
         }
     },
     {
-      module: &#39;MMM-DailyBibleVerse&#39;,
-      //position: &#39;top_left&#39;,
-      position: &#39;upper_third&#39;,
+      module: &amp;lsquo;MMM-DailyBibleVerse&amp;rsquo;,
+      //position: &amp;lsquo;top_left&amp;rsquo;,
+      position: &amp;lsquo;upper_third&amp;rsquo;,
       config: {
-      version: &#39;NIV&#39; // This can be changed to any version you want that is offered by Bible Gateway. For a list, go here: https://www.biblegateway.com/usage/linking/versionslist/
+      version: &amp;lsquo;NIV&amp;rsquo; // This can be changed to any version you want that is offered by Bible Gateway. For a list, go here: &lt;a href=&#34;https://www.biblegateway.com/usage/linking/versionslist/&#34;&gt;https://www.biblegateway.com/usage/linking/versionslist/&lt;/a&gt;
       }
     },
 //   {
-//    module: &#39;DailyXKCD&#39;,
-//    position: &#39;top_left&#39;,
+//    module: &amp;lsquo;DailyXKCD&amp;rsquo;,
+//    position: &amp;lsquo;top_left&amp;rsquo;,
 //    config: {
 //        invertColors: true,
 //        title: true,
@@ -630,11 +671,11 @@ var config = {
 //      }
 //   },
   ]
-};
+};&lt;/p&gt;
 
-/*************** DO NOT EDIT THE LINE BELOW ***************/
-if (typeof module !== &#39;undefined&#39;) {module.exports = config;}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;/*************** DO NOT EDIT THE LINE BELOW ***************/
+if (typeof module !== &amp;lsquo;undefined&amp;rsquo;) {module.exports = config;}
+```&lt;/p&gt;
 
 &lt;p&gt;Good luck and enjoy!
 -g-&lt;/p&gt;</description>
