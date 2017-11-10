@@ -11,36 +11,37 @@
     
         
         <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:image" content="https://www.companionway.netimg/sorting-hat.jpg"/>
+        <meta name="twitter:image" content="https://www.companionway.netimg/mmirror.png"/>
     
 
 
 
-<meta name="twitter:title" content="Sorting IPs"/>
-<meta name="twitter:description" content="I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
-laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
-parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
-in most repositories). So output might look like this:
+<meta name="twitter:title" content="Raspberry Pi MagicMirror on a Touchscreen with Alexa and fauxmo"/>
+<meta name="twitter:description" content="Warning: what follows is a cascade of issues and lessons learned&hellip; but just plain fun!
+
+The goal
+
+This project is designed to provide a reliable MagicMirror2 on a Raspberry Pi fitted with a 5 inch touchscreen that doubles to provide browsing if needed. This comes from a desire to have a quick aide in the kitchen that reports standard information when needed or a browser for looking up and displaying recipes etc.
 "/>
 
     <meta name="twitter:site" content="@@geoffmcnamara"/>
 
 
 
-		<meta property="og:title" content=" Sorting IPs &middot;  companionway" />
+		<meta property="og:title" content=" Raspberry Pi MagicMirror on a Touchscreen with Alexa and fauxmo &middot;  companionway" />
 		<meta property="og:site_name" content="companionway" />
 		<meta property="og:url" content="https://www.companionway.net/post/post-title/" />
 
 		
 		<meta property="og:type" content="article" />
 
-		<meta property="og:article:published_time" content="2017-01-01T15:53:14-05:00" />
+		<meta property="og:article:published_time" content="2017-01-10T14:27:35-05:00" />
 
 		
 		
 
 		<title>
-			 Sorting IPs &middot;  companionway
+			 Raspberry Pi MagicMirror on a Touchscreen with Alexa and fauxmo &middot;  companionway
 		</title>
 
 		<meta name="description" content="Meeting challenges with success!" />
@@ -54,10 +55,10 @@ in most repositories). So output might look like this:
 
     
 
-<link rel="stylesheet" type="text/css" href="https://www.companionway.netcss/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="https://www.companionway.netcss/screen.css" />
-<link rel="stylesheet" type="text/css" href="https://www.companionway.netcss/nav.css" />
-<link rel="stylesheet" type="text/css" href="https://www.companionway.netcss/custom.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/screen.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/nav.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/custom.css" />
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
@@ -156,7 +157,7 @@ ga('send', 'pageview');
 
 
   
-  <header class="main-header post-head" style="background-image: url(https://www.companionway.netimg/sorting-hat.jpg)">
+  <header class="main-header post-head" style="background-image: url(https://www.companionway.netimg/mmirror.png)">
   
   <nav class="main-nav overlay clearfix">
 
@@ -178,13 +179,13 @@ ga('send', 'pageview');
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Sorting IPs</h1>
+        <h1 class="post-title">Raspberry Pi MagicMirror on a Touchscreen with Alexa and fauxmo</h1>
         <small></small>
 
         <section class="post-meta">
         
-          <time class="post-date" datetime="2017-01-01T15:53:14-05:00">
-            Jan 1, 2017
+          <time class="post-date" datetime="2017-01-10T14:27:35-05:00">
+            Jan 10, 2017
           </time>
         
          
@@ -192,83 +193,668 @@ ga('send', 'pageview');
     </header>
 
     <section class="post-content">
-      <p>I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
-laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
-parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
-in most repositories). So output might look like this:
+      <h3 id="warning-what-follows-is-a-cascade-of-issues-and-lessons-learned-but-just-plain-fun">Warning: what follows is a cascade of issues and lessons learned&hellip; but just plain fun!</h3>
+
+<h2 id="the-goal">The goal</h2>
+
+<p>This project is designed to provide a reliable MagicMirror2 on a Raspberry Pi fitted with a 5 inch touchscreen that doubles to provide browsing if needed. This comes from a desire to have a quick aide in the kitchen that reports standard information when needed or a browser for looking up and displaying recipes etc.
 </p>
 
-<pre><code>$ sudo arp-scan -I wlo1 192.168.1.0/24
-Interface: wlo1, datalink type: EN10MB (Ethernet)
-Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
-192.168.1.1     44:94:fc:93:4f:26       (Unknown)
-192.168.1.2     00:17:88:2a:b5:12       Philips Lighting BV
-192.168.1.17    b8:27:eb:42:e9:01       (Unknown)
-192.168.1.62    b8:27:eb:42:e9:01       (Unknown)
-192.168.1.72    b8:27:eb:42:e9:01       (Unknown)
+<p>The result is a raspberry pi with one wire that stands on its edge without a case and has a 5 inch display. The display can show any of the modules provided for magicmirror2 on command to Alexa or stop magicmirror on command. The rasbian desktop along with an inboard keyboard pad and touch &ldquo;pen&rdquo; allows you to launch a browser (or any other program) and navigate to any url. When the desktop is idle a screensaver comes up with anynumber of pleasing animations - selectable and can be rotated with screen blanking possible as well. The backlight of the screen is enough to act as a soothing nightlight. All in all, I am very pleased (and so is my wife) with the final result of this project.</p>
 
+<p>There is a LOT of information here and lots of steps but it is worth it and you will definately learn lots of useful tricks. I am sure there are many improvements that could be made.</p>
 
-192.168.1.4     50:f5:da:52:08:8b       (Unknown)
-192.168.1.90    54:42:49:a4:d7:b0       Sony Corporation
-192.168.1.11    64:eb:8c:6f:e7:4c       (Unknown)
-192.168.1.13    5c:ff:35:21:21:d4       Wistron Corporation
-192.168.1.8     7c:c7:09:88:07:79       (Unknown)
-192.168.1.17    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
-192.168.1.10    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
-192.168.1.7     6c:ad:f8:33:09:e8       (Unknown)
-192.168.1.21    f0:25:b7:35:e7:33       (Unknown)
-192.168.1.29    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
-192.168.1.61    b8:27:eb:4b:b6:4c       (Unknown)
-192.168.1.76    1c:3e:84:5e:b5:bc       (Unknown)
-192.168.1.64    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
-192.168.1.62    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
-192.168.1.72    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
-192.168.1.20    b2:c5:54:0b:de:50       (Unknown)
-192.168.1.24    00:0d:4b:80:18:6d       Roku, LLC
-192.168.1.131   50:c7:bf:13:44:73       (Unknown)
+<p><img src="/img/k-pi1.jpg" alt="alt text" title="Kitchen Pi Image:1" /></p>
 
-23 packets received by filter, 0 packets dropped by kernel
-Ending arp-scan 1.8.1: 256 hosts scanned in 1.576 seconds (162.44 hosts/sec). 23 responded
+<h2 id="materials">Materials</h2>
+
+<p>Hardware
+- rasberry pi (in my case a model 3) with powersuppy
+- 5 inch touchscreen with plastic pen
+- USB storage (optional but recommended)
+- you will need a temporary keyboard/mouse attached to set things up.</p>
+
+<p>Software
+- berryboot (which will load rasbian)
+- apache2 and php
+- magicmirror2 and various modules
+- fauxmo (from Maker Musings)
+- software for the touchscreen including touch a calibration tool
+- matchbox-keyboard
+- xcreensaver</p>
+
+<!--more-->
+
+<h2 id="problems-encountered">Problems Encountered</h2>
+
+<p>There were lots of challenges that thwarted what seemed like a simple goal to achieve.</p>
+
+<ul>
+<li>fauxmo needs a little more documentation on how to build the &ldquo;virtual switch&rdquo; html code. I will proyvide a sample here.</li>
+<li>Alexa tends to not forget discovered devices when told to find devices again.</li>
+<li>Troubleshooting the HEADER return code from html and php scripts is essential to making all the players between Alexa/fauxmo/and the &ldquo;virtual switch&rdquo; happy.</li>
+<li>a 5 inch touchscreen is too small for a default MagicMirror run but there are solutions.</li>
+<li>turning the display and getting the touchscreen calibrated correctly can be difficult until you know how to do it</li>
+<li>the software that comes with the touchscreen will clobber a berryboot config - and pretty much any other custom config you have for the raspberry pi.</li>
+<li>finding ways to get the html/web server to execute commands within a users X display can be daunting
+Y- when php executes and external shell command - things can silently hang with out easy indication.</li>
+<li>magicmirror2 can be a little overwhelming with npm and electron running under it - especially when you are trying to get the webserver (and ultimately Alexa/Amazon echo) to control it all.</li>
+</ul>
+
+<h2 id="shoutouts">Shoutouts</h2>
+
+<ul>
+<li>berryboot works well and provides (at least for me) a more reliable raspberry pi OS file system solution than an SD card only.</li>
+<li>magicmirror2 is just plain fun</li>
+<li>fauxmo (a wemo emulator) is a crazy easy solution to using Alexa to turn on or off anything if you are willing to do a little coding.</li>
+<li>php remains my goto language for simple web projects.</li>
+<li>the touchscreens for the raspberry pi have come a long way in that they basically plug onto the raspberry pi board, do a little software tweaking and it is up and ready to go.</li>
+<li>xscreensaver - I gained a renewed respect for this fun application&hellip; it continues to provide fun idle entertainment.</li>
+</ul>
+
+<h2 id="solving-the-problems">Solving the problems</h2>
+
+<h3 id="berryboot-on-a-raspberry-pi">Berryboot on a Raspberry Pi</h3>
+
+<p>Just do it. Too many times I have had SD cards loose their minds. The filesystem burps with all the activity and you are forced
+to reboot the raspberry pi; hopefully the filesystem repair goes smoothly on reboot. I am inherently lazy so getting up and rebooting the raspberry pi is not my first choice, especially when you have them hidden away in some back compartment. Berryboot
+allows you to boot from a USB storage device like a USB stick or a USD drive. You can also have it boot across the network from
+another storage device but I will leave that up to you. In my case I use a (cheap) 16G USB stick and all my raspberry pi servers have wifi.
+Berryboot allows you to store multiple OS distros and select which to boot. You can save and restore images and download new OS distros.</p>
+
+<ul>
+<li>go download the latest berryboot zip to your PC/laptop <a href="http://www.berryterminal.com/doku.php/berryboot">berryboot</a></li>
+<li>assuming your SD card has a standard (FAT) partition just copy all the zip contents to it. You can quicly format
+your SD card with one partition using your camera. You may want to remove any directories that your camera might create first.</li>
+<li>Put the Berryboot SD card in the raspberry pi making sure your display, USB storage and wifi are attached and boot up.</li>
+<li>If your display is an HDMI TV you can use your remote control to navigate but I find that cumbersome so I added a USB keyboard/touchpad like the Rii mini X1</li>
+<li>First get the wifi connected &hellip; near the bottom of the Berryboot screen is abutton for that. Configure the SSID and password and then you can tell Berryboot to download any of its prepared OS distros. One challenge is that Berryboot needs an OS that has been constructed for its use but down&rsquo;t let this hold you back. A list of images can be found here: <a href="http://berryboot.alexgoldcheidt.com/images/">berryboot images</a></li>
+<li>After it boots go look at /boot/config.txt to see how the magick works. Keep in mind that if this file gets clobberred berryboot will be toast.</li>
+<li>Enjoy</li>
+</ul>
+
+<h3 id="magicmirror2-on-the-raspberry-pi">MagicMirror2 on the raspberry pi</h3>
+
+<p>This can &ldquo;seem&rdquo; more difficult than it really is. I do pretty much everything by ssh at the commandline.</p>
+
+<ul>
+<li>ssh into the raspberry pi</li>
+<li>You can use the git source for MagicMirror2 but really this next command saves steps and is the first recommendation in the docs</li>
+</ul>
+
+<pre><code>curl -sL https://raw.githubusercontent.com/MichMich/MagicMirror/master/installers/raspberry.sh | bash
+</code></pre>
+
+<p>Lots of needed dependencies will get loaded - additionally you may have to use apt install node-legacy (with sudo of course).
+This will build out MagicMirror off your $HOME directory. I didn&rsquo;t like this a first but it simply works so best not to fight it.</p>
+
+<ul>
+<li>cd ~/MagicMirror</li>
+<li>run</li>
+</ul>
+
+<pre><code>DISPLAY=:0
+npm start &amp;
+</code></pre>
+
+<p>Now use your browser and go hit http://[raspberry-pi-IP]:8080.
+This can run without a web server or along side a web server as long as the browser (or any other application) isn&rsquo;t using the 8080 port.</p>
+
+<p><img src="/img/k-pi2.jpg" alt="alt text" title="Kitchen Pi Image:2" /></p>
+
+<p>MagicMirror can look a little intimidating but have no fear. It uses lots of javascript (.js files) but it wraps those files with electron to create a &ldquo;running HTML/js/node.js/CSS application&rdquo; on the local machine. Read more on electron here: <a href="http://electron.atom.io/">electron.atom.io</a> and then it uses npm (node package manager) to assemble all the java script and install all the dependencies. More info on npm can be found here: <a href="https://www.npmjs.com/">npmjs</a></p>
+
+<p>Now we have MagicMirror running. Lets turn our attention using the display on the raspberry pi.</p>
+
+<p>There are lots of changes you can make to MagicMirror but lets move on and we will explore those changes after we reconfigure the touch screen to a portrait display instead of the default landscape mode.</p>
+
+<h2 id="x-display-on-raspberry-pi">X display on Raspberry Pi</h2>
+
+<p>Configure the raspberry pi to boot up with X windows running.</p>
+
+<ul>
+<li>log in to the raspberry pi with ssh (by the way - to log in an redirect any X apps to your local display use <code>ssh -X user@raspberry-IP</code>)</li>
+<li>run <code>sudo raspi-config</code> and set the boot up to GUI (Graphical User Interface) appropriately.</li>
+</ul>
+
+<p>Now it gets a little tricky here. You can configure the server to boot right into the GUI and bring up MagicMirror as the <code>pi</code> user (which is the default) but I changed this up a little.
+The rasberry pi default setup for rasbian (jessie) will set the user &lsquo;pi&rsquo; as the default X login so I wanted to change that to my own username - here is how to do it. Edit as the superuser (use sudo) the <code>/etc/lightdm/lightdm,conf</code> file and change this line appropriately:</p>
+
+<pre><code class="language-autologin-user=yourname```">There, moved one more step forward.
+
+## xscreensaver
+
+Add xscreensaver to both your desktop/laptop and the raspberry pi.
 
 </code></pre>
 
-<p>But this listing is unsorted; I need it in ascending IP order. The solution is to creatively
-use the unix sort command declaring the field &ldquo;termination&rdquo; character as &ldquo;.&rdquo; and then declaring
-the key fields to sort on. Here is the final run:</p>
+<p>sudo pt install xscreensaver xscreensaver-data xscreensaver-data-extra  xscreensaver-gl</p>
 
-<pre><code>$ sudo arp-scan -I wlo1 192.168.1.0/24|sort -t . -k3,3n -k4,4n
+<pre><code>
+I added xscreensaver for several reasons. It provides a console to control how long the screen will stay active until it blanks and
+the screensaver screens provide interesting displays on an idle screen. I set up what I wanted on my laptop and then transferred
+the $HOME/.xscreensaver file to the home dir of the raspberry pi. 
 
-24 packets received by filter, 0 packets dropped by kernel
-Interface: wlo1, datalink type: EN10MB (Ethernet)
-Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
-192.168.1.1     44:94:fc:93:4f:26       (Unknown)
-192.168.1.2     00:17:88:2a:b5:12       Philips Lighting BV
-192.168.1.4     50:f5:da:52:08:8b       (Unknown)
-192.168.1.7     6c:ad:f8:33:09:e8       (Unknown)
-192.168.1.8     7c:c7:09:88:07:79       (Unknown)
-192.168.1.10    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
-192.168.1.11    64:eb:8c:6f:e7:4c       (Unknown)
-192.168.1.13    5c:ff:35:21:21:d4       Wistron Corporation
-192.168.1.17    b8:27:eb:42:e9:01       (Unknown)
-192.168.1.17    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
-192.168.1.20    b2:c5:54:0b:de:50       (Unknown)
-192.168.1.21    f0:25:b7:35:e7:33       (Unknown)
-192.168.1.24    00:0d:4b:80:18:6d       Roku, LLC
-192.168.1.29    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
-192.168.1.61    b8:27:eb:4b:b6:4c       (Unknown)
-192.168.1.62    b8:27:eb:42:e9:01       (Unknown)
-192.168.1.62    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
-192.168.1.63    b2:c5:54:0b:de:50       (Unknown)
-192.168.1.64    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
-192.168.1.72    b8:27:eb:42:e9:01       (Unknown)
-192.168.1.72    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
-192.168.1.76    1c:3e:84:5e:b5:bc       (Unknown)
-192.168.1.90    54:42:49:a4:d7:b0       Sony Corporation
-192.168.1.131   50:c7:bf:13:44:73       (Unknown)
-Ending arp-scan 1.8.1: 256 hosts scanned in 1.520 seconds (168.42 hosts/sec). 24 responded
+You have to run xscreenserver-demo on the magicmirror server to get it to configure properly on that server.
+
+## configure the 5 inch touchscreen
+
+For this project I needed a keyboard/mouse-pad for two phases, installing berryboot and for configuring the touchscreen.
+For my touchscreen (yours may be different) I needed these files
+
+ - 5.0 Inch display User Guide.pdf
+ - LCD-show-161112.tar.gz
+ - Xinput-calibrator_0.7.5-1_armhf.zip
+
+Go to this website for info: [5inch HDMI LCD](http://www.waveshare.com/wiki/5inch_HDMI_LCD)
+
+BE CAREFULL HERE... if your follow the instructions and run their install script (not necessary) you will overwrite
+the /boot/config.txt file and clobber the berryboot you installed above. Took me a bit to figure that one out. You only
+need to add a few lines to the /boot/config.txt - which is essentially what their install script does.
+Just add these lines to /boot/config.txt
+
 </code></pre>
 
-<p>Enjoy
+<p>#####
+hdmi_group=2
+hdmi_mode=1
+hdmi_mode=87
+hdmi_cvt 800 480 60 6 0 0 0
+dtoverlay=ads7846,cs=1,penirq=25,penirq_pull=2,speed=50000,keep_vref_on=0,swapxy=0,pmax=255,xohms=150,xmin=200,xmax=3900,ymin=200,ymax=3900
+#display_rotate=1
+#display_rotate=2
+display_rotate=3
+avoid_warnings=1</p>
+
+<p>disable_overscan=1
+start_x=1
+###</p>
+
+<pre><code>
+I loaded these before the berryboot settings and it worked fine. You may want to experiment with the rotation to find what works
+best for you.
+
+The next part is where it gets interesting. The screen is probably calibrated totally wrong for touch so fire up the calibration tool you installed from the file above and use this touch pen to calibrate - it will write out /etc/X11/xorg.conf.d/99-calibrate.conf with the new settings. All of this will require your keyboard.
+
+By the way, I also installed matchbox-keyboard to allow this raspberry pi the ability to work without an attached keyboard just using the touch screen.
+
+</code></pre>
+
+<p>sudo apt install matchbox-keyboard</p>
+
+<pre><code>
+## configure fauxmo and Alexa
+
+Installing fauxmo and configuring it is where it gets fun because it allows you to use Alexa to fire up MagicMirror or shut it down so the raspberry pi can be used for browsing the internet or whatever you choose.
+
+The documentation for fauxmo is good but not great. It will get you just so far but fails to provide examples of HTML code to use with it but I will remedy that situation here. The original fauxmo code build is located here: [makemuse fauxmo](https://github.com/makermusings/fauxmo.git). However, to confuse things, there is another build that is more &quot;sophisticated&quot; (for me it is more complicated) and is available using python pip. It also has limited documentation and configuring it can be a challenge so I am sticking with the original makermuse version of fauxmo. 
+
+To install:
+
+</code></pre>
+
+<p>git clone <a href="https://github.com/makermusings/fauxmo.git">https://github.com/makermusings/fauxmo.git</a>
+cd fauxmo
+sudo cp fauxmo.py /usr/local/bin</p>
+
+<h1 id="you-will-need-to-edit-configure-usr-local-bin-fauxmo-py">you will need to edit/configure /usr/local/bin/fauxmo.py</h1>
+
+<pre><code>
+You can put fauxmo.py on any server but you want to put it on one that stays up all the time.
+For me that is a raspberry pi that I use as my master server (rasp1)
+
+You can run the trigger webserver on any other server or the same on but in this case it will be the one where you have magicmirror running (rasp5).
+
+You need to: 
+
+ - configure the fauxmo.py script on your master server (rasp1 for my network)
+ - install an rc startup script for fauxmo on your master server (rasp1 for my network)
+ - write some simple html/php code to run on a webserver (with php) where magicmirror is installed
+ - write a simple shell launch/kill script for magicmirror where magicmirror is installed
+ - make sure your firewalls allow the needed ports 1900 52001 52002 on the master server and port 80 for the magicmirror server
+ - tell Alexa to find devices
+ - test Alexa and enjoy
+
+First step: configure fauxmo.py:
+
+</code></pre>
+
+<p>FAUXMOS = [
+    [&lsquo;garage door&rsquo;,rest_api_handler(&lsquo;<a href="http://192.168.1.63/fauxmo.php?garage_door=1','http://192.168.1.63/fauxmo.php?garage_door=0'),52001">http://192.168.1.63/fauxmo.php?garage_door=1','http://192.168.1.63/fauxmo.php?garage_door=0'),52001</a>],
+    [&lsquo;kitchen pie&rsquo;,rest_api_handler(&lsquo;<a href="http://192.168.1.65/fauxmo.php?switch=on','http://192.168.1.65/fauxmo.php?switch=off'),52002">http://192.168.1.65/fauxmo.php?switch=on','http://192.168.1.65/fauxmo.php?switch=off'),52002</a>],
+]</p>
+
+<pre><code>
+This section is near line 340 or so.
+Use whatevername you want ... in this case I used &quot;kitchen pie&quot; so my command to Alexa will be 
+
+&gt; Alexa turn on kitchen pie
+
+or
+
+&gt; Alexa kitchen pi off
+
+The IP address is for the server where I have a webserver and magicmirror running. The port number 52002 is my selection and can be
+any unprivileged port you desire but do not leave the port optional - Alexa remembers this port number for triggering the related device name.
+
+fauxmo.py runs as a daemon on your master server and serves up configured device names and ports when queried by Alexa on port 1900. So you need to make sure your firewall is open on port 1900 to this server thus allowing Alexa to find the devices. When the user tells Alexa to turn a named device on or off it will relay the request to the repective port... for the example above &quot;kitchen pie&quot; will be triggered through port 52002.
+
+The fauxmo.py daemon will in turn send out an HTML GET request to the declared port with the configured URI -- in this case
+`http://192.168.1.65/fauxmo.php?switch=on` (or off). We will get to what fauxmo.php looks like in a minute.
+
+Now create a script to fire /usr/local/bin/fauxmo.py up on bootup:
+Create /etc/init.d/fauxmorc with this content:
+
+</code></pre>
+
+<p>#!/bin/bash</p>
+
+<h3 id="begin-init-info">BEGIN INIT INFO</h3>
+
+<h1 id="provides-fauxmo">Provides:          fauxmo</h1>
+
+<h1 id="required-start">Required-Start:</h1>
+
+<h1 id="required-stop">Required-Stop:</h1>
+
+<h1 id="should-start">Should-Start:</h1>
+
+<h1 id="default-start-2-3-4-5">Default-Start:     2 3 4 5</h1>
+
+<h1 id="default-stop">Default-Stop:</h1>
+
+<h1 id="short-description-run-fauxmo-as-a-listening-server-emulates-a-wemo-hub">Short-Description: Run fauxmo as a listening server - emulates a wemo hub</h1>
+
+<h1 id="description">Description:</h1>
+
+<h3 id="end-init-info">END INIT INFO</h3>
+
+<p>PATH=/usr/local/bin:/home/geoffm/dev/utils:/home/geoffm/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/geoffm/dev/utils:/usr/share/ruby-rvm/bin:/home/geoffm/.rvm/bin</p>
+
+<p>PATH=$PATH:/sbin:/usr/sbin:/bin:/usr/bin
+. /lib/init/vars.sh</p>
+
+<p>PATH=$PATH:/usr/local/bin
+CMD=&ldquo;fauxmo.py -d&rdquo;</p>
+
+<p>do_start () {
+  sleep 5 # not sure if this will help # gwm 20160903
+  echo &ldquo;Now running: $CMD &amp;&rdquo; | tee -a /tmp/fauxmorc
+        $CMD &amp;
+}</p>
+
+<p>do_status () {
+        #if ps -ef|grep $CMD&gt;/dev/null ; then
+        if ps -ef|grep $CMD|grep -v grep ; then
+                return 0
+         else
+                return 4
+        fi
+}</p>
+
+<p>case &ldquo;$1&rdquo; in</p>
+
+<h1 id="start">start|&ldquo;&rdquo;)</h1>
+
+<p>start)
+          do_start
+        ;;
+  restart|reload|force-reload)
+          echo &ldquo;Error: argument &lsquo;$1&rsquo; not supported&rdquo; &gt;&amp;2
+          exit 3
+        ;;
+  stop)
+          # No-op
+   kill $( ps -ef | grep $CMD | grep -v grep | awk &lsquo;{print $2}&rsquo; )
+    do_status
+        ;;
+  status)
+    ps -ef | grep $CMD | grep -v grep
+          do_status
+          exit $?
+        ;;
+  *)
+          echo &ldquo;Usage: $0 [start|stop|status]&rdquo; &gt;&amp;2
+          exit 3
+        ;;
+esac</p>
+
+<pre><code>
+Enable and start this script with these commands:
+
+</code></pre>
+
+<p>sudo systemctl daemon-reload # to let systemctl know you changed things
+sudo systemctl enable fauxmorc # to tell systemctl to enable this script after each reboot
+sudo systemctl start fauxmorc # to fire it up</p>
+
+<pre><code>
+Verify that it is running with something like `ps -ef | grep fauxmo`
+
+Now lets go write the trigger scripts on the magicmirror server.
+Set up apache2 or nginx with PHP. Write this script: /var/www/html/fauxmo.php (or call it whatever you called it in the fauxmo.py configuration.
+
+NOTE: where you see &quot;myname&quot; substitute your username where MagicMirror got installed.
+
+</code></pre>
+
+<p>&lt;?php</p>
+
+<h3 id="configure-options">configure options</h3>
+
+<p>$get_key=&ldquo;switch&rdquo;;
+$exec_script_on=&ldquo;sudo -u myname -i /var/www/scripts/mm2ctrl.sh on&rdquo;;
+$exec_script_off=&ldquo;sudo -u myname -i /var/www/scripts//mm2ctrl.sh off&rdquo;;
+$exec_script_stat=&ldquo;sudo -u myname -i /var/www/scripts//mm2ctrl.sh stat&rdquo;;
+$exec_script_test=&ldquo;sudo -u myname -i /var/www/scripts//mm2ctrl.sh test&rdquo;;</p>
+
+<h3 id="main-code">Main Code</h3>
+
+<p>switch ($_GET[$get_key]) {
+    case &ldquo;on&rdquo;:
+        $full_cmd=$exec_script_on.&rdquo; &gt;/dev/null &amp;&ldquo;;
+        break;
+    case &ldquo;off&rdquo;:
+        $full_cmd=$exec_script_off.&rdquo; &gt;/dev/null &amp;&ldquo;;
+        break;
+    case &ldquo;stat&rdquo;:
+        $full_cmd=$exec_script_stat;
+        break;
+    case &ldquo;test&rdquo;:
+        $full_cmd=$exec_script_test;
+        break;
+    default:
+        header(&ldquo;HTTP/1.1 900 NOT OK&rdquo;);
+        echo &ldquo;Unrecognized switch command [&ldquo;.$_GET[$get_key].&ldquo;] given&rdquo;;
+        # end exit so the command below does not try to execute
+        exit;
+}</p>
+
+<h1 id="if-all-is-well-after-the-checks-execute-the-proper-command">if all is well after the checks, execute the proper command</h1>
+
+<p>header(&ldquo;HTTP/1.1 200 OK&rdquo;);
+$output=shell_exec($full_cmd);
+echo &ldquo;<pre>&rdquo;.$output.&rdquo;</pre>&rdquo;;
+?&gt;</p>
+
+<pre><code>
+You notice that this script actually executes another script to accomplish running or killing off magicmirror.
+That script is, in my case, /var/www/scripts/mm2ctrl.sh which looks like this:
+
+</code></pre>
+
+<p>#!/bin/bash</p>
+
+<h3 id="globals">GLOBALS</h3>
+
+<p>PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+dtime=<code>date +%Y%m%d-%H%M</code>
+LOG_FILE=/tmp/mm2ctrl.sh.out
+BASE_DIR=/home/myname/MagicMirror</p>
+
+<h3 id="functions">FUNCTIONS</h3>
+
+<p>#########
+killike ()
+#########
+{
+  kill -9 <code>ps -aef | grep $1 | grep -v &quot;grep &quot;|awk '{print $2}'</code>;
+}</p>
+
+<p>#################</p>
+
+<h3 id="main-code-1">Main Code</h3>
+
+<p>#################
+echo Changing dir to $BASE_DIR
+cd $BASE_DIR</p>
+
+<h3 id="on">on</h3>
+
+<p>if [ x$1 = &ldquo;xon&rdquo; ] ; then
+  export DISPLAY=:0
+  #DISPLAY=:0 nohup npm start &amp;
+  nohup npm start &amp;
+  killike xscreensaver
+  xset s reset
+  xset dpms force on
+  echo ${dtime}: Turning on MagicMirror | tee -a $LOG_FILE
+  ps -ef | grep npm  | tee -a $LOG_FILE
+fi</p>
+
+<h3 id="off">off</h3>
+
+<p>if [ x$1 = &ldquo;xoff&rdquo; ] ; then
+  killike npm
+  killike electron
+  echo ${dtime}: Turning off MagicMirror | tee -a $LOG_FILE
+  ps -ef | grep npm |tee -a $LOG_FILE
+  ps -ef | grep electron | tee -a $LOG_FILE
+  nohup xscreensaver -display :0 -no-splash &amp;
+fi</p>
+
+<h3 id="stat-us">stat[us]</h3>
+
+<p>if [ x$1 = &ldquo;xstat&rdquo; ] ; then
+  ps -ef | grep npm
+  ps -ef | grep electron
+  netstat -an|grep 8080
+fi</p>
+
+<p>if [ x$1 = &ldquo;xtest&rdquo; ]; then
+  export DISPLAY=:0
+  xset s reset
+  xset dpms force on
+  xset q
+fi</p>
+
+<p>echo Finished</p>
+
+<h3 id="eof">EOF</h3>
+
+<pre><code>
+Privileges for the files is important and can be a show stopper.
+Use `sudo visudo /etc/sudoers.d/www-data` and add just this one line:
+
+</code></pre>
+
+<p>www-data ALL=(myname) NOPASSWD: ALL</p>
+
+<pre><code>
+DANGER: do not let this server live out on the internet because you have to give www-data shell privileges and that is VERY INSECURE!
+
+The line in my /etc/passwd file for www-data is:
+
+</code></pre>
+
+<p>www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin</p>
+
+<pre><code>
+I had to play with this shell script a lot and with the calling php script to get it all to work as expected. One thing to keep
+in mind is that Alexa wants a fairly quick response of HTML code 200 OK or it will fail. So I worked to get the execution of underlying commands to happen in the background allowing the php script to quickly return the 200 OK html code.
+
+
+I added the capability to look at the status but Alex and fauxmo.py will never execute that - it is only for your use should you need it.
+
+Make sure your firewall port is open for 80 (http) on this (maginmirror) server.
+
+Things should work for you now.
+Try: `Alexa turn on kitchen pie` - or whatever name you used for the &quot;device&quot;. When complications occur check the http access and error log on the magicmirror server and the syslog on the fauxmo.py server.
+
+
+## one last tweak - configuring magicmirror
+
+Add any modules you want to magicmirror but because the 5inch touchscreen is size challenged you will have to work to provide room for all the info you want to display. The easiest way for me to share what I did is to show you my config for magic mirror.
+
+[MagicMirror2 modules](https://github.com/MichMich/MagicMirror/wiki/MagicMirror%C2%B2-Modules)
+
+NOTE: the Carousel plugin was instrumental in allowing all the info to be rotated in magicmirror.
+
+I am listing the possible position settings: top_ bar, top_left, top_center, top_right, upper_third, middle_center, lower_third, bottom_left, bottom_center, bottom_right, bottom_bar, fullscreen_above, and fullscreen_below. In the MagicMirror files structure you will find a custom.css file in the css directory waiting for you to put in any overrides you want. This link will give you an idea of how the regions are setup by default [MagicMirror regions](https://forum.magicmirror.builders/topic/286/regions)
+
+Here is the contents of $HOME/MagicMirror/config/config.js
+
+</code></pre>
+
+<p>/* Magic Mirror Config Sample
+ *
+ * By Michael Teeuw <a href="http://michaelteeuw.nl">http://michaelteeuw.nl</a>
+ * MIT Licensed.
+ */</p>
+
+<p>var config = {
+  port: 8080,
+  ipWhitelist: [&ldquo;127.0.0.1&rdquo;, &ldquo;192.168.1.71&rdquo;,&rdquo;::ffff:127.0.0.1&rdquo;, &ldquo;::1&rdquo;, &ldquo;::ffff:192.168.1.71&rdquo;],
+  language: &lsquo;en&rsquo;,
+  timeFormat: 12,
+  units: &lsquo;imperial&rsquo;,</p>
+
+<p>modules: [
+    {
+      module: &lsquo;MMM-Carousel&rsquo;,
+      config: {
+        ignoreModules: [ &lsquo;alert&rsquo;,&lsquo;stocks&rsquo;,&lsquo;MMM-RandomPhoto&rsquo;,&lsquo;clock&rsquo;,&lsquo;currentweather&rsquo; ],
+        transitionalInterval: 35000
+      }
+    },
+    {
+      module: &lsquo;alert&rsquo;,
+    Y},
+    {
+      module: &ldquo;updatenotification&rdquo;,
+      position: &ldquo;top_bar&rdquo;
+    },
+    {
+      module: &lsquo;clock&rsquo;,
+      position: &lsquo;top_left&rsquo;
+    },
+    {
+      module: &lsquo;calendar&rsquo;,
+      header: &lsquo;US Holidays&rsquo;,
+      position: &lsquo;top_left&rsquo;,
+      config: {
+        calendars: [
+          {
+            symbol: &lsquo;calendar-check-o &lsquo;,
+            url: &lsquo;webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics&rsquo;
+          }
+        ]
+      }
+    },
+    {
+      module: &lsquo;compliments&rsquo;,
+      //position: &lsquo;lower_center&rsquo;
+      position: &lsquo;top_left&rsquo;
+    },
+    {
+      module: &lsquo;currentweather&rsquo;,
+      position: &lsquo;bottom_right&rsquo;,
+      config: {
+        location: &lsquo;Elizabeth City&rsquo;,
+        locationID: &lsquo;4465088&rsquo;, //ID from <a href="http://www.openweathermap.org">http://www.openweathermap.org</a>
+        appid: &lsquo;aee32e69be313e1f94557d6a1fc8b075&rsquo;
+      }
+    },
+    {
+      module: &lsquo;weatherforecast&rsquo;,
+      position: &lsquo;top_left&rsquo;,
+      header: &lsquo;Weather Forecast&rsquo;,
+      config: {
+        location: &lsquo;Elizabeth City&rsquo;,
+        locationID: &lsquo;4465088&rsquo;, //ID from <a href="http://www.openweathermap.org">http://www.openweathermap.org</a>
+        appid: &lsquo;aee32e69be313e1f94557d6a1fc8b075&rsquo;
+      }
+    },
+    {
+      module: &lsquo;newsfeed&rsquo;,
+      //position: &lsquo;bottom_bar&rsquo;,
+      //position: &lsquo;top_bar&rsquo;,
+      //position: &lsquo;upper_third&rsquo;,
+      position: &lsquo;top_left&rsquo;,
+      config: {
+        feeds: [
+          {
+            title: &ldquo;New York Times&rdquo;,
+            url: &ldquo;<a href="http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml&quot;">http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml&quot;</a>
+          },
+          {
+            title: &ldquo;BBC&rdquo;,
+            url: &ldquo;<a href="http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk&quot;">http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk&quot;</a>,
+          },
+        ],
+        showSourceTitle: true,
+        showPublishDate: true,
+        updateInterval: 20000
+      }
+    },
+//    {
+//      module: &lsquo;helloworld&rsquo;,
+//      position: &lsquo;bottom_bar&rsquo;,
+//      config: {
+//          text: &lsquo;hello world!&rsquo;
+//        }
+//    },
+    {
+      module: &lsquo;MMM-RandomPhoto&rsquo;,
+      position: &lsquo;fullscreen_below&rsquo;,
+      config: {
+        opacity: 0.3,
+        animationSpeed: 500,
+        updateInterval: 60,
+        url: &lsquo;<a href="https://unsplash.it/1920/1080/?random'">https://unsplash.it/1920/1080/?random'</a>
+      }
+    },
+//    {
+//      module: &lsquo;MMM-Remote-Control&rsquo;,
+//      // uncomment the following line to show the URL of the remote control on the mirror
+//      position: &lsquo;bottom_left&rsquo;
+//      // you can hide this module afterwards from the remote control itself
+//    },
+    {
+      module: &lsquo;stocks&rsquo;,
+      position: &lsquo;bottom_bar&rsquo;,
+      config: {
+        stocks: &lsquo;.DJI,IBM,AAPL,GOOG,INTC,CSCO,ABBV,FDC,SQ,M,CVS,CVEO&rsquo;,
+        updateInterval: 41000
+      }
+    },
+    {
+      module: &lsquo;random_quotes&rsquo;,
+//      position: &lsquo;upper_third&rsquo;,
+        position: &lsquo;top_left&rsquo;,
+        config: {
+        // The config property is optional
+        // Without a config, a random quote is shown,
+        // selected from all of the categories available.
+          updateInterval: 120
+//        category: &lsquo;positive&rsquo;
+        }
+    },
+    {
+      module: &lsquo;MMM-DailyBibleVerse&rsquo;,
+      //position: &lsquo;top_left&rsquo;,
+      position: &lsquo;upper_third&rsquo;,
+      config: {
+      version: &lsquo;NIV&rsquo; // This can be changed to any version you want that is offered by Bible Gateway. For a list, go here: <a href="https://www.biblegateway.com/usage/linking/versionslist/">https://www.biblegateway.com/usage/linking/versionslist/</a>
+      }
+    },
+//   {
+//    module: &lsquo;DailyXKCD&rsquo;,
+//    position: &lsquo;top_left&rsquo;,
+//    config: {
+//        invertColors: true,
+//        title: true,
+//        altText: false
+//      }
+//   },
+  ]
+};</p>
+
+<p>/*************** DO NOT EDIT THE LINE BELOW ***************/
+if (typeof module !== &lsquo;undefined&rsquo;) {module.exports = config;}
+```</p>
+
+<p>Good luck and enjoy!
 -g-</p>
     </section>
 
@@ -300,7 +886,7 @@ Ending arp-scan 1.8.1: 256 hosts scanned in 1.520 seconds (168.42 hosts/sec). 24
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Sorting%20IPs&nbsp;-&nbsp;companionway&amp;url=https%3a%2f%2fwww.companionway.net%2fpost%2fpost-title%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Raspberry%20Pi%20MagicMirror%20on%20a%20Touchscreen%20with%20Alexa%20and%20fauxmo&nbsp;-&nbsp;companionway&amp;url=https%3a%2f%2fwww.companionway.net%2fpost%2fpost-title%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
@@ -308,7 +894,7 @@ Ending arp-scan 1.8.1: 256 hosts scanned in 1.520 seconds (168.42 hosts/sec). 24
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.companionway.net%2fpost%2fpost-title%2f&amp;description=Sorting%20IPs"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fwww.companionway.net%2fpost%2fpost-title%2f&amp;description=Raspberry%20Pi%20MagicMirror%20on%20a%20Touchscreen%20with%20Alexa%20and%20fauxmo"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
