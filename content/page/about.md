@@ -1,7 +1,7 @@
 +++
 title = "About"
 description = "Education is learning rules, experience is learning the exceptions"
-image = "img/gwm-n-jjm2014.jpg"
+image = "/img/gwm-n-jjm2014.jpg"
 menu = "main"
 +++
 

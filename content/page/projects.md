@@ -1,7 +1,7 @@
 ---
 title: "Projects"
 description: "Prosperity not shared is worth but half its value - Cicero"
-image: "img/projects.png"
+image: "/img/projects.png"
 menu: "main"
 ---
 

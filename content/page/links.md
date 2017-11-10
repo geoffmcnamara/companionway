@@ -1,7 +1,7 @@
 ---
 title: "Links"
 description: He who asks a question is a fool for a minute, he who does not remains a fool forever
-image: "img/anchor_chain.jpg"
+image: "/img/anchor_chain.jpg"
 menu: "main"
 ---
 
