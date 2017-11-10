@@ -34,5 +34,5 @@ request.onload = function() {
     document.getElementById('random-line').innerHTML = randomLine;
 };
 //request.open( 'GET', 'http://localhost:1313/lines.dat', true );
-request.open( 'GET', './lines.dat', true );
+request.open( 'GET', '/lines.dat', true );
 request.send();
