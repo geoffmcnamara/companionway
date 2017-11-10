@@ -1,9 +1,8 @@
 ---
-layout: page
 title: "Links"
 description: He who asks a question is a fool for a minute, he who does not remains a fool forever
 image: "img/anchor_chain.jpg"
-menu: main
+menu: "main"
 ---
 
 ## sysadmin or web dev tools
@@ -14,6 +13,7 @@ menu: main
 * [Link for vagrant](https://www.vagrantup.com/)
 * [Link for lxc](https://linuxcontainers.org/)
 * [Link for formspree.io](http://formspree.io)
+* [Link for adminer](http://adminer.org)
 
 ----------------------
 
@@ -26,6 +26,7 @@ menu: main
 
 ## dynamic content management systems [dynamic CMS]
 
+* [hugo](https://gohugo.io/)
 * [Wordpress](https://wordpress.org/)
 * [Drupal](https://www.drupal.org/)
 * [Joomla](http://www.joomla.org/)

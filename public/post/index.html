@@ -9,7 +9,7 @@
 
 
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:image" content="/img/rpi-card-dark-crop.jpg"/>
+    <meta name="twitter:image" content="https://www.companionway.net/img/obxwavefrompier.jpg"/>
 
 
 
@@ -22,7 +22,7 @@
 
 		<meta property="og:title" content=" Posts &middot;  companionway" />
 		<meta property="og:site_name" content="companionway" />
-		<meta property="og:url" content="/post/" />
+		<meta property="og:url" content="https://www.companionway.net/post/" />
 
 		
 		<meta property="og:type" content="website" />
@@ -37,16 +37,16 @@
 		<meta name="HandheldFriendly" content="True" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link rel="shortcut icon" href="/images/favicon.ico">
-		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+		<link rel="shortcut icon" href="https://www.companionway.netimages/favicon.ico">
+		<link rel="apple-touch-icon" href="https://www.companionway.netimages/apple-touch-icon.png" />
 
 
     
 
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/screen.css" />
-<link rel="stylesheet" type="text/css" href="/css/nav.css" />
-<link rel="stylesheet" type="text/css" href="/css/custom.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.netcss/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.netcss/screen.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.netcss/nav.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.netcss/custom.css" />
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
@@ -59,15 +59,15 @@
 
 		
 		
-		<link href="/index.xml" rel="alternate" type="application/rss+xml" title="companionway" />
+		<link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
 		
 		
-		<link href="/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
+		<link href="https://www.companionway.net/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.18.1" />
+		<meta name="generator" content="Hugo 0.30.2" />
 
-		<link rel="canonical" href="/post/" />
+		<link rel="canonical" href="https://www.companionway.net/post/" />
 
     
 <link ref="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=EB+Garamond' >
@@ -122,10 +122,20 @@ ga('send', 'pageview');
             	<a href="/page/links/">Links</a>
             </li>
         
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/articles/">Newspaper</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/page/projects/">Projects</a>
+            </li>
+        
     </ul>
     
     
-    <a class="subscribe-button icon-feed" href="/post/index.xml">Subscribe</a>
+    <a class="subscribe-button icon-feed" href="https://www.companionway.net/post/index.xml">Subscribe</a>
     
 </div>
 <span class="nav-cover"></span>
@@ -137,7 +147,7 @@ ga('send', 'pageview');
 
 
 	 
-  <header class="main-header tag-head" style="background-image: url(/img/rpi-card-dark-crop.jpg)">
+  <header class="main-header tag-head" style="background-image: url(https://www.companionway.net/img/obxwavefrompier.jpg)">
   
 
     <nav class="main-nav overlay clearfix">
@@ -169,6 +179,55 @@ ga('send', 'pageview');
 </nav>
 
 	</div>
+
+	
+	   
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/newspaper-hugo-subtheme/">How this theme evolved</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><h3 id="announcing-a-new-project-newspaper-hugo-subtheme">Announcing a new project: newspaper-hugo-subtheme</h3>
+
+<p>First credit goes to Silke V at codepen.io name &ldquo;silkine&rdquo; [<a href="http://www.silkevoigts.de/">http://www.silkevoigts.de/</a>].
+Original source code can be found here: <a href="https://codepen.io/silkine/pen/jldif">https://codepen.io/silkine/pen/jldif</a></p>
+
+<p>I had a coworker who had a non-profit business blog that wanted to offer a newsletter to her clients.
+So I got interested in finding an HTML format that gave an old traditional newspaper style
+and Silke offered a solution that provided a strong simple css base. Currently (2017) I find
+the hugo cms system to be the easiest most portable static web building application freely available.
+The challenge was to create a full newsletter style theme as a subtheme within an existing theme
+structure. So I mocked up a ported version of Silke&rsquo;s newspaper css into a hugo &ldquo;section&rdquo;.</p>
+
+<p>This project is a drop in offering to any existing hugo themed structure which will produce
+a newsletter format in an &ldquo;article(s)&rdquo; hugo section. A user only needs to change the title, city,
+and state varbiable that are stored as front matter in the ./content/articles/_index.md file.
+Hugo uses this file natively to discover section (in this case &ldquo;articles&rdquo;) specific data. All
+posts to the newsletter subtheme should be created in this ./content/articles/ directory as markdown
+files. Running hugo new articles/mynewarticle.md will create a new file with the default front matter
+pulled from ./archtypes/articles.md.</p>
+
+<p>This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.</p>
+
+<p></p> <a class="read-more" href="/post/newspaper-hugo-subtheme/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+        
+
+        
+        
+            Geoff McNamara
+        
+        
+        <time class="post-date" datetime="2017-11-03T10:54:24&#43;02:00">
+            3 Nov 2017
+        </time>
+    </footer>
+</article>
 
 	
 	   
@@ -280,9 +339,9 @@ almost any linux distro.</p>
         
         on
             
-                <a href="/tags/raspberry/">#raspberry</a>,
+                <a href="https://www.companionway.nettags/raspberry/">#raspberry</a>,
             
-                <a href="/tags/rdp/">#rdp</a>,
+                <a href="https://www.companionway.nettags/rdp/">#rdp</a>,
             
         
         <time class="post-date" datetime="2016-12-16T12:27:36-05:00">
@@ -319,9 +378,9 @@ python script independantly for testing or for curiousity.</p> <a class="read-mo
         
         on
             
-                <a href="/tags/scripting/">#scripting</a>,
+                <a href="https://www.companionway.nettags/scripting/">#scripting</a>,
             
-                <a href="/tags/python/">#python</a>,
+                <a href="https://www.companionway.nettags/python/">#python</a>,
             
         
         <time class="post-date" datetime="2016-12-15T16:36:42-05:00">
@@ -360,7 +419,7 @@ back to the monitor server.</p> <a class="read-more" href="/post/alway-use-visud
         
         on
             
-                <a href="/tags/sudo/">#sudo</a>,
+                <a href="https://www.companionway.nettags/sudo/">#sudo</a>,
             
         
         <time class="post-date" datetime="2016-12-14T10:59:38-05:00">
@@ -393,9 +452,9 @@ back to the monitor server.</p> <a class="read-more" href="/post/alway-use-visud
         
         on
             
-                <a href="/tags/xargs/">#xargs</a>,
+                <a href="https://www.companionway.nettags/xargs/">#xargs</a>,
             
-                <a href="/tags/sed/">#sed</a>,
+                <a href="https://www.companionway.nettags/sed/">#sed</a>,
             
         
         <time class="post-date" datetime="2016-12-10T20:38:12-05:00">
@@ -408,7 +467,7 @@ back to the monitor server.</p> <a class="read-more" href="/post/alway-use-visud
 	   
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/Switched-to-Hugo/">Switched to Hugo</a></h2>
+        <h2 class="post-title"><a href="/post/switched-to-hugo/">Switched to Hugo</a></h2>
     </header>
     <section class="post-excerpt">
         <p><p>I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
@@ -433,7 +492,7 @@ or &hellip; just git push it to hithub and use something like netlify.com to hos
 </ul>
 
 <p>Reference:
-<a href="https://gohugo.io/#intro">gohugo.io</a></p> <a class="read-more" href="/post/Switched-to-Hugo/">&raquo;</a></p>
+<a href="https://gohugo.io/#intro">gohugo.io</a></p> <a class="read-more" href="/post/switched-to-hugo/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -445,11 +504,11 @@ or &hellip; just git push it to hithub and use something like netlify.com to hos
         
         on
             
-                <a href="/tags/hugo/">#hugo</a>,
+                <a href="https://www.companionway.nettags/hugo/">#hugo</a>,
             
-                <a href="/tags/jekyll/">#jekyll</a>,
+                <a href="https://www.companionway.nettags/jekyll/">#jekyll</a>,
             
-                <a href="/tags/cms/">#cms</a>,
+                <a href="https://www.companionway.nettags/cms/">#cms</a>,
             
         
         <time class="post-date" datetime="2016-12-09T10:57:45-05:00">
@@ -462,10 +521,10 @@ or &hellip; just git push it to hithub and use something like netlify.com to hos
 	   
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/Converting-Images/">Converting Images</a></h2>
+        <h2 class="post-title"><a href="/post/converting-images/">Converting Images</a></h2>
     </header>
     <section class="post-excerpt">
-        <p>I have fought with trying to remember the syntax for Imagemagik&rsquo;s convert command for years. I finaly caved in [from my normal position of &ldquo;if you can&rsquo;t do it from the commandline, then you are a wimp&rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &ldquo;converseen&rdquo;. <a class="read-more" href="/post/Converting-Images/">&raquo;</a></p>
+        <p>I have fought with trying to remember the syntax for Imagemagik&rsquo;s convert command for years. I finaly caved in [from my normal position of &ldquo;if you can&rsquo;t do it from the commandline, then you are a wimp&rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &ldquo;converseen&rdquo;. <a class="read-more" href="/post/converting-images/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -477,59 +536,11 @@ or &hellip; just git push it to hithub and use something like netlify.com to hos
         
         on
             
-                <a href="/tags/convert/">#convert</a>,
+                <a href="https://www.companionway.nettags/convert/">#convert</a>,
             
         
         <time class="post-date" datetime="2016-12-06T11:58:20-05:00">
             6 Dec 2016
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-05-11-post1/">shell/bash uppercase arguments</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>To make a long story short&hellip;</p>
-
-<pre><code>#!/bin/bash
-PATTERN=$(echo $1 | tr [:lower:] [:upper:])
-# or
-PATTERN=$(echo $1 | tr [a-z] [A-Z])
-# or
-PATTERN=$(echo $1 | awk '{print toupper($0)}')
-
-echo &quot;Your \$1 argument is now uppercase: $1&quot;
-</code></pre>
-
-<p>To make a short story long&hellip;</p>
-
-<p>Just to let you know a little more about me and reveal
-a few more shells tricks along the way.</p> <a class="read-more" href="/post/2015-05-11-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="/tags/scripting/">#scripting</a>,
-            
-                <a href="/tags/financial/">#financial</a>,
-            
-        
-        <time class="post-date" datetime="2015-05-11T00:00:00Z">
-            11 May 2015
         </time>
     </footer>
 </article>
@@ -549,13 +560,13 @@ a few more shells tricks along the way.</p> <a class="read-more" href="/post/201
 
 
 
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="/js/index.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.companionway.netjs/jquery.js"></script>
+<script type="text/javascript" src="https://www.companionway.netjs/jquery.fitvids.js"></script>
+<script type="text/javascript" src="https://www.companionway.netjs/index.js"></script>
+<script type="text/javascript" src="https://www.companionway.netjs/bootstrap.min.js"></script>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script type="text/javascript" src="/js/custom.js"></script>
+<script type="text/javascript" src="https://www.companionway.netjs/custom.js"></script>
 
 
 

@@ -1,6 +1,7 @@
 # Site settings (baseurl must end with a trailing slash!)
-#baseURL = "https://www.companionway.net:"
-baseurl = "/"
+baseURL = "https://www.companionway.net"
+#baseurl = "/"
+#baseurl = "/companionway.net/"
 #relativeURLs = true
 #uglyURLs = true
 #canonifyURLs = false
@@ -13,7 +14,8 @@ theme = "casper"
 
 [params]
   description = "Meeting challenges with success!"
-  cover = "img/rpi-card-dark-crop.jpg"
+  #cover = "img/rpi-card-dark-crop.jpg"
+  cover = "/img/obxwavefrompier.jpg"
   author = "Geoff McNamara"
   authorlocation = "Elizabeth City, NC"
   authorwebsite = "https://www.companionway.net"

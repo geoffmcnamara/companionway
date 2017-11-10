@@ -2,890 +2,92 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on companionway</title>
-    <link>/post/index.xml</link>
+    <link>https://www.companionway.net/post/</link>
     <description>Recent content in Posts on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Tue, 10 Jan 2017 14:27:35 -0500</lastBuildDate>
-    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Nov 2017 10:54:24 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.companionway.net/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How this theme evolved</title>
+      <link>https://www.companionway.net/post/newspaper-hugo-subtheme/</link>
+      <pubDate>Fri, 03 Nov 2017 10:54:24 +0200</pubDate>
+      
+      <guid>https://www.companionway.net/post/newspaper-hugo-subtheme/</guid>
+      <description>&lt;h3 id=&#34;announcing-a-new-project-newspaper-hugo-subtheme&#34;&gt;Announcing a new project: newspaper-hugo-subtheme&lt;/h3&gt;
+
+&lt;p&gt;First credit goes to Silke V at codepen.io name &amp;ldquo;silkine&amp;rdquo; [&lt;a href=&#34;http://www.silkevoigts.de/&#34;&gt;http://www.silkevoigts.de/&lt;/a&gt;].
+Original source code can be found here: &lt;a href=&#34;https://codepen.io/silkine/pen/jldif&#34;&gt;https://codepen.io/silkine/pen/jldif&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I had a coworker who had a non-profit business blog that wanted to offer a newsletter to her clients.
+So I got interested in finding an HTML format that gave an old traditional newspaper style
+and Silke offered a solution that provided a strong simple css base. Currently (2017) I find
+the hugo cms system to be the easiest most portable static web building application freely available.
+The challenge was to create a full newsletter style theme as a subtheme within an existing theme
+structure. So I mocked up a ported version of Silke&amp;rsquo;s newspaper css into a hugo &amp;ldquo;section&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;This project is a drop in offering to any existing hugo themed structure which will produce
+a newsletter format in an &amp;ldquo;article(s)&amp;rdquo; hugo section. A user only needs to change the title, city,
+and state varbiable that are stored as front matter in the ./content/articles/_index.md file.
+Hugo uses this file natively to discover section (in this case &amp;ldquo;articles&amp;rdquo;) specific data. All
+posts to the newsletter subtheme should be created in this ./content/articles/ directory as markdown
+files. Running hugo new articles/mynewarticle.md will create a new file with the default front matter
+pulled from ./archtypes/articles.md.&lt;/p&gt;
+
+&lt;p&gt;This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Raspberry Pi MagicMirror on a Touchscreen with Alexa and fauxmo</title>
-      <link>/post/post-title/</link>
+      <link>https://www.companionway.net/post/post-title/</link>
       <pubDate>Tue, 10 Jan 2017 14:27:35 -0500</pubDate>
       
-      <guid>/post/post-title/</guid>
+      <guid>https://www.companionway.net/post/post-title/</guid>
       <description>&lt;h3 id=&#34;warning-what-follows-is-a-cascade-of-issues-and-lessons-learned-but-just-plain-fun&#34;&gt;Warning: what follows is a cascade of issues and lessons learned&amp;hellip; but just plain fun!&lt;/h3&gt;
 
 &lt;h2 id=&#34;the-goal&#34;&gt;The goal&lt;/h2&gt;
 
 &lt;p&gt;This project is designed to provide a reliable MagicMirror2 on a Raspberry Pi fitted with a 5 inch touchscreen that doubles to provide browsing if needed. This comes from a desire to have a quick aide in the kitchen that reports standard information when needed or a browser for looking up and displaying recipes etc.
-&lt;/p&gt;
-
-&lt;p&gt;The result is a raspberry pi with one wire that stands on its edge without a case and has a 5 inch display. The display can show any of the modules provided for magicmirror2 on command to Alexa or stop magicmirror on command. The rasbian desktop along with an inboard keyboard pad and touch &amp;ldquo;pen&amp;rdquo; allows you to launch a browser (or any other program) and navigate to any url. When the desktop is idle a screensaver comes up with anynumber of pleasing animations - selectable and can be rotated with screen blanking possible as well. The backlight of the screen is enough to act as a soothing nightlight. All in all, I am very pleased (and so is my wife) with the final result of this project.&lt;/p&gt;
-
-&lt;p&gt;There is a LOT of information here and lots of steps but it is worth it and you will definately learn lots of useful tricks. I am sure there are many improvements that could be made.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/img/k-pi1.jpg&#34; alt=&#34;alt text&#34; title=&#34;Kitchen Pi Image:1&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;materials&#34;&gt;Materials&lt;/h2&gt;
-
-&lt;p&gt;Hardware
-- rasberry pi (in my case a model 3) with powersuppy
-- 5 inch touchscreen with plastic pen
-- USB storage (optional but recommended)
-- you will need a temporary keyboard/mouse attached to set things up.&lt;/p&gt;
-
-&lt;p&gt;Software
-- berryboot (which will load rasbian)
-- apache2 and php
-- magicmirror2 and various modules
-- fauxmo (from Maker Musings)
-- software for the touchscreen including touch a calibration tool
-- matchbox-keyboard
-- xcreensaver&lt;/p&gt;
-
-&lt;!--more--&gt;
-
-&lt;h2 id=&#34;problems-encountered&#34;&gt;Problems Encountered&lt;/h2&gt;
-
-&lt;p&gt;There were lots of challenges that thwarted what seemed like a simple goal to achieve.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;fauxmo needs a little more documentation on how to build the &amp;ldquo;virtual switch&amp;rdquo; html code. I will proyvide a sample here.&lt;/li&gt;
-&lt;li&gt;Alexa tends to not forget discovered devices when told to find devices again.&lt;/li&gt;
-&lt;li&gt;Troubleshooting the HEADER return code from html and php scripts is essential to making all the players between Alexa/fauxmo/and the &amp;ldquo;virtual switch&amp;rdquo; happy.&lt;/li&gt;
-&lt;li&gt;a 5 inch touchscreen is too small for a default MagicMirror run but there are solutions.&lt;/li&gt;
-&lt;li&gt;turning the display and getting the touchscreen calibrated correctly can be difficult until you know how to do it&lt;/li&gt;
-&lt;li&gt;the software that comes with the touchscreen will clobber a berryboot config - and pretty much any other custom config you have for the raspberry pi.&lt;/li&gt;
-&lt;li&gt;finding ways to get the html/web server to execute commands within a users X display can be daunting
-Y- when php executes and external shell command - things can silently hang with out easy indication.&lt;/li&gt;
-&lt;li&gt;magicmirror2 can be a little overwhelming with npm and electron running under it - especially when you are trying to get the webserver (and ultimately Alexa/Amazon echo) to control it all.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;shoutouts&#34;&gt;Shoutouts&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;berryboot works well and provides (at least for me) a more reliable raspberry pi OS file system solution than an SD card only.&lt;/li&gt;
-&lt;li&gt;magicmirror2 is just plain fun&lt;/li&gt;
-&lt;li&gt;fauxmo (a wemo emulator) is a crazy easy solution to using Alexa to turn on or off anything if you are willing to do a little coding.&lt;/li&gt;
-&lt;li&gt;php remains my goto language for simple web projects.&lt;/li&gt;
-&lt;li&gt;the touchscreens for the raspberry pi have come a long way in that they basically plug onto the raspberry pi board, do a little software tweaking and it is up and ready to go.&lt;/li&gt;
-&lt;li&gt;xscreensaver - I gained a renewed respect for this fun application&amp;hellip; it continues to provide fun idle entertainment.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;solving-the-problems&#34;&gt;Solving the problems&lt;/h2&gt;
-
-&lt;h3 id=&#34;berryboot-on-a-raspberry-pi&#34;&gt;Berryboot on a Raspberry Pi&lt;/h3&gt;
-
-&lt;p&gt;Just do it. Too many times I have had SD cards loose their minds. The filesystem burps with all the activity and you are forced
-to reboot the raspberry pi; hopefully the filesystem repair goes smoothly on reboot. I am inherently lazy so getting up and rebooting the raspberry pi is not my first choice, especially when you have them hidden away in some back compartment. Berryboot
-allows you to boot from a USB storage device like a USB stick or a USD drive. You can also have it boot across the network from
-another storage device but I will leave that up to you. In my case I use a (cheap) 16G USB stick and all my raspberry pi servers have wifi.
-Berryboot allows you to store multiple OS distros and select which to boot. You can save and restore images and download new OS distros.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;go download the latest berryboot zip to your PC/laptop &lt;a href=&#34;http://www.berryterminal.com/doku.php/berryboot&#34;&gt;berryboot&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;assuming your SD card has a standard (FAT) partition just copy all the zip contents to it. You can quicly format
-your SD card with one partition using your camera. You may want to remove any directories that your camera might create first.&lt;/li&gt;
-&lt;li&gt;Put the Berryboot SD card in the raspberry pi making sure your display, USB storage and wifi are attached and boot up.&lt;/li&gt;
-&lt;li&gt;If your display is an HDMI TV you can use your remote control to navigate but I find that cumbersome so I added a USB keyboard/touchpad like the Rii mini X1&lt;/li&gt;
-&lt;li&gt;First get the wifi connected &amp;hellip; near the bottom of the Berryboot screen is abutton for that. Configure the SSID and password and then you can tell Berryboot to download any of its prepared OS distros. One challenge is that Berryboot needs an OS that has been constructed for its use but down&amp;rsquo;t let this hold you back. A list of images can be found here: &lt;a href=&#34;http://berryboot.alexgoldcheidt.com/images/&#34;&gt;berryboot images&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;After it boots go look at /boot/config.txt to see how the magick works. Keep in mind that if this file gets clobberred berryboot will be toast.&lt;/li&gt;
-&lt;li&gt;Enjoy&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;magicmirror2-on-the-raspberry-pi&#34;&gt;MagicMirror2 on the raspberry pi&lt;/h3&gt;
-
-&lt;p&gt;This can &amp;ldquo;seem&amp;rdquo; more difficult than it really is. I do pretty much everything by ssh at the commandline.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ssh into the raspberry pi&lt;/li&gt;
-&lt;li&gt;You can use the git source for MagicMirror2 but really this next command saves steps and is the first recommendation in the docs&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;curl -sL https://raw.githubusercontent.com/MichMich/MagicMirror/master/installers/raspberry.sh | bash
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Lots of needed dependencies will get loaded - additionally you may have to use apt install node-legacy (with sudo of course).
-This will build out MagicMirror off your $HOME directory. I didn&amp;rsquo;t like this a first but it simply works so best not to fight it.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;cd ~/MagicMirror&lt;/li&gt;
-&lt;li&gt;run&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;DISPLAY=:0
-npm start &amp;amp;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now use your browser and go hit http://[raspberry-pi-IP]:8080.
-This can run without a web server or along side a web server as long as the browser (or any other application) isn&amp;rsquo;t using the 8080 port.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;/img/k-pi2.jpg&#34; alt=&#34;alt text&#34; title=&#34;Kitchen Pi Image:2&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;MagicMirror can look a little intimidating but have no fear. It uses lots of javascript (.js files) but it wraps those files with electron to create a &amp;ldquo;running HTML/js/node.js/CSS application&amp;rdquo; on the local machine. Read more on electron here: &lt;a href=&#34;http://electron.atom.io/&#34;&gt;electron.atom.io&lt;/a&gt; and then it uses npm (node package manager) to assemble all the java script and install all the dependencies. More info on npm can be found here: &lt;a href=&#34;https://www.npmjs.com/&#34;&gt;npmjs&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Now we have MagicMirror running. Lets turn our attention using the display on the raspberry pi.&lt;/p&gt;
-
-&lt;p&gt;There are lots of changes you can make to MagicMirror but lets move on and we will explore those changes after we reconfigure the touch screen to a portrait display instead of the default landscape mode.&lt;/p&gt;
-
-&lt;h2 id=&#34;x-display-on-raspberry-pi&#34;&gt;X display on Raspberry Pi&lt;/h2&gt;
-
-&lt;p&gt;Configure the raspberry pi to boot up with X windows running.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;log in to the raspberry pi with ssh (by the way - to log in an redirect any X apps to your local display use &lt;code&gt;ssh -X user@raspberry-IP&lt;/code&gt;)&lt;/li&gt;
-&lt;li&gt;run &lt;code&gt;sudo raspi-config&lt;/code&gt; and set the boot up to GUI (Graphical User Interface) appropriately.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Now it gets a little tricky here. You can configure the server to boot right into the GUI and bring up MagicMirror as the &lt;code&gt;pi&lt;/code&gt; user (which is the default) but I changed this up a little.
-The rasberry pi default setup for rasbian (jessie) will set the user &amp;lsquo;pi&amp;rsquo; as the default X login so I wanted to change that to my own username - here is how to do it. Edit as the superuser (use sudo) the &lt;code&gt;/etc/lightdm/lightdm,conf&lt;/code&gt; file and change this line appropriately:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-autologin-user=yourname```&#34;&gt;There, moved one more step forward.
-
-## xscreensaver
-
-Add xscreensaver to both your desktop/laptop and the raspberry pi.
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;sudo pt install xscreensaver xscreensaver-data xscreensaver-data-extra  xscreensaver-gl&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-I added xscreensaver for several reasons. It provides a console to control how long the screen will stay active until it blanks and
-the screensaver screens provide interesting displays on an idle screen. I set up what I wanted on my laptop and then transferred
-the $HOME/.xscreensaver file to the home dir of the raspberry pi. 
-
-You have to run xscreenserver-demo on the magicmirror server to get it to configure properly on that server.
-
-## configure the 5 inch touchscreen
-
-For this project I needed a keyboard/mouse-pad for two phases, installing berryboot and for configuring the touchscreen.
-For my touchscreen (yours may be different) I needed these files
-
- - 5.0 Inch display User Guide.pdf
- - LCD-show-161112.tar.gz
- - Xinput-calibrator_0.7.5-1_armhf.zip
-
-Go to this website for info: [5inch HDMI LCD](http://www.waveshare.com/wiki/5inch_HDMI_LCD)
-
-BE CAREFULL HERE... if your follow the instructions and run their install script (not necessary) you will overwrite
-the /boot/config.txt file and clobber the berryboot you installed above. Took me a bit to figure that one out. You only
-need to add a few lines to the /boot/config.txt - which is essentially what their install script does.
-Just add these lines to /boot/config.txt
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;#####
-hdmi_group=2
-hdmi_mode=1
-hdmi_mode=87
-hdmi_cvt 800 480 60 6 0 0 0
-dtoverlay=ads7846,cs=1,penirq=25,penirq_pull=2,speed=50000,keep_vref_on=0,swapxy=0,pmax=255,xohms=150,xmin=200,xmax=3900,ymin=200,ymax=3900
-#display_rotate=1
-#display_rotate=2
-display_rotate=3
-avoid_warnings=1&lt;/p&gt;
-
-&lt;p&gt;disable_overscan=1
-start_x=1
-###&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-I loaded these before the berryboot settings and it worked fine. You may want to experiment with the rotation to find what works
-best for you.
-
-The next part is where it gets interesting. The screen is probably calibrated totally wrong for touch so fire up the calibration tool you installed from the file above and use this touch pen to calibrate - it will write out /etc/X11/xorg.conf.d/99-calibrate.conf with the new settings. All of this will require your keyboard.
-
-By the way, I also installed matchbox-keyboard to allow this raspberry pi the ability to work without an attached keyboard just using the touch screen.
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;sudo apt install matchbox-keyboard&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-## configure fauxmo and Alexa
-
-Installing fauxmo and configuring it is where it gets fun because it allows you to use Alexa to fire up MagicMirror or shut it down so the raspberry pi can be used for browsing the internet or whatever you choose.
-
-The documentation for fauxmo is good but not great. It will get you just so far but fails to provide examples of HTML code to use with it but I will remedy that situation here. The original fauxmo code build is located here: [makemuse fauxmo](https://github.com/makermusings/fauxmo.git). However, to confuse things, there is another build that is more &amp;quot;sophisticated&amp;quot; (for me it is more complicated) and is available using python pip. It also has limited documentation and configuring it can be a challenge so I am sticking with the original makermuse version of fauxmo. 
-
-To install:
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;git clone &lt;a href=&#34;https://github.com/makermusings/fauxmo.git&#34;&gt;https://github.com/makermusings/fauxmo.git&lt;/a&gt;
-cd fauxmo
-sudo cp fauxmo.py /usr/local/bin&lt;/p&gt;
-
-&lt;h1 id=&#34;you-will-need-to-edit-configure-usr-local-bin-fauxmo-py&#34;&gt;you will need to edit/configure /usr/local/bin/fauxmo.py&lt;/h1&gt;
-
-&lt;pre&gt;&lt;code&gt;
-You can put fauxmo.py on any server but you want to put it on one that stays up all the time.
-For me that is a raspberry pi that I use as my master server (rasp1)
-
-You can run the trigger webserver on any other server or the same on but in this case it will be the one where you have magicmirror running (rasp5).
-
-You need to: 
-
- - configure the fauxmo.py script on your master server (rasp1 for my network)
- - install an rc startup script for fauxmo on your master server (rasp1 for my network)
- - write some simple html/php code to run on a webserver (with php) where magicmirror is installed
- - write a simple shell launch/kill script for magicmirror where magicmirror is installed
- - make sure your firewalls allow the needed ports 1900 52001 52002 on the master server and port 80 for the magicmirror server
- - tell Alexa to find devices
- - test Alexa and enjoy
-
-First step: configure fauxmo.py:
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;FAUXMOS = [
-    [&amp;lsquo;garage door&amp;rsquo;,rest_api_handler(&amp;lsquo;&lt;a href=&#34;http://192.168.1.63/fauxmo.php?garage_door=1&#39;,&#39;http://192.168.1.63/fauxmo.php?garage_door=0&#39;),52001&#34;&gt;http://192.168.1.63/fauxmo.php?garage_door=1&#39;,&#39;http://192.168.1.63/fauxmo.php?garage_door=0&#39;),52001&lt;/a&gt;],
-    [&amp;lsquo;kitchen pie&amp;rsquo;,rest_api_handler(&amp;lsquo;&lt;a href=&#34;http://192.168.1.65/fauxmo.php?switch=on&#39;,&#39;http://192.168.1.65/fauxmo.php?switch=off&#39;),52002&#34;&gt;http://192.168.1.65/fauxmo.php?switch=on&#39;,&#39;http://192.168.1.65/fauxmo.php?switch=off&#39;),52002&lt;/a&gt;],
-]&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-This section is near line 340 or so.
-Use whatevername you want ... in this case I used &amp;quot;kitchen pie&amp;quot; so my command to Alexa will be 
-
-&amp;gt; Alexa turn on kitchen pie
-
-or
-
-&amp;gt; Alexa kitchen pi off
-
-The IP address is for the server where I have a webserver and magicmirror running. The port number 52002 is my selection and can be
-any unprivileged port you desire but do not leave the port optional - Alexa remembers this port number for triggering the related device name.
-
-fauxmo.py runs as a daemon on your master server and serves up configured device names and ports when queried by Alexa on port 1900. So you need to make sure your firewall is open on port 1900 to this server thus allowing Alexa to find the devices. When the user tells Alexa to turn a named device on or off it will relay the request to the repective port... for the example above &amp;quot;kitchen pie&amp;quot; will be triggered through port 52002.
-
-The fauxmo.py daemon will in turn send out an HTML GET request to the declared port with the configured URI -- in this case
-`http://192.168.1.65/fauxmo.php?switch=on` (or off). We will get to what fauxmo.php looks like in a minute.
-
-Now create a script to fire /usr/local/bin/fauxmo.py up on bootup:
-Create /etc/init.d/fauxmorc with this content:
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;#!/bin/bash&lt;/p&gt;
-
-&lt;h3 id=&#34;begin-init-info&#34;&gt;BEGIN INIT INFO&lt;/h3&gt;
-
-&lt;h1 id=&#34;provides-fauxmo&#34;&gt;Provides:          fauxmo&lt;/h1&gt;
-
-&lt;h1 id=&#34;required-start&#34;&gt;Required-Start:&lt;/h1&gt;
-
-&lt;h1 id=&#34;required-stop&#34;&gt;Required-Stop:&lt;/h1&gt;
-
-&lt;h1 id=&#34;should-start&#34;&gt;Should-Start:&lt;/h1&gt;
-
-&lt;h1 id=&#34;default-start-2-3-4-5&#34;&gt;Default-Start:     2 3 4 5&lt;/h1&gt;
-
-&lt;h1 id=&#34;default-stop&#34;&gt;Default-Stop:&lt;/h1&gt;
-
-&lt;h1 id=&#34;short-description-run-fauxmo-as-a-listening-server-emulates-a-wemo-hub&#34;&gt;Short-Description: Run fauxmo as a listening server - emulates a wemo hub&lt;/h1&gt;
-
-&lt;h1 id=&#34;description&#34;&gt;Description:&lt;/h1&gt;
-
-&lt;h3 id=&#34;end-init-info&#34;&gt;END INIT INFO&lt;/h3&gt;
-
-&lt;p&gt;PATH=/usr/local/bin:/home/geoffm/dev/utils:/home/geoffm/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/geoffm/dev/utils:/usr/share/ruby-rvm/bin:/home/geoffm/.rvm/bin&lt;/p&gt;
-
-&lt;p&gt;PATH=$PATH:/sbin:/usr/sbin:/bin:/usr/bin
-. /lib/init/vars.sh&lt;/p&gt;
-
-&lt;p&gt;PATH=$PATH:/usr/local/bin
-CMD=&amp;ldquo;fauxmo.py -d&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;do_start () {
-  sleep 5 # not sure if this will help # gwm 20160903
-  echo &amp;ldquo;Now running: $CMD &amp;amp;&amp;rdquo; | tee -a /tmp/fauxmorc
-        $CMD &amp;amp;
-}&lt;/p&gt;
-
-&lt;p&gt;do_status () {
-        #if ps -ef|grep $CMD&amp;gt;/dev/null ; then
-        if ps -ef|grep $CMD|grep -v grep ; then
-                return 0
-         else
-                return 4
-        fi
-}&lt;/p&gt;
-
-&lt;p&gt;case &amp;ldquo;$1&amp;rdquo; in&lt;/p&gt;
-
-&lt;h1 id=&#34;start&#34;&gt;start|&amp;ldquo;&amp;rdquo;)&lt;/h1&gt;
-
-&lt;p&gt;start)
-          do_start
-        ;;
-  restart|reload|force-reload)
-          echo &amp;ldquo;Error: argument &amp;lsquo;$1&amp;rsquo; not supported&amp;rdquo; &amp;gt;&amp;amp;2
-          exit 3
-        ;;
-  stop)
-          # No-op
-   kill $( ps -ef | grep $CMD | grep -v grep | awk &amp;lsquo;{print $2}&amp;rsquo; )
-    do_status
-        ;;
-  status)
-    ps -ef | grep $CMD | grep -v grep
-          do_status
-          exit $?
-        ;;
-  *)
-          echo &amp;ldquo;Usage: $0 [start|stop|status]&amp;rdquo; &amp;gt;&amp;amp;2
-          exit 3
-        ;;
-esac&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-Enable and start this script with these commands:
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;sudo systemctl daemon-reload # to let systemctl know you changed things
-sudo systemctl enable fauxmorc # to tell systemctl to enable this script after each reboot
-sudo systemctl start fauxmorc # to fire it up&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-Verify that it is running with something like `ps -ef | grep fauxmo`
-
-Now lets go write the trigger scripts on the magicmirror server.
-Set up apache2 or nginx with PHP. Write this script: /var/www/html/fauxmo.php (or call it whatever you called it in the fauxmo.py configuration.
-
-NOTE: where you see &amp;quot;myname&amp;quot; substitute your username where MagicMirror got installed.
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&amp;lt;?php&lt;/p&gt;
-
-&lt;h3 id=&#34;configure-options&#34;&gt;configure options&lt;/h3&gt;
-
-&lt;p&gt;$get_key=&amp;ldquo;switch&amp;rdquo;;
-$exec_script_on=&amp;ldquo;sudo -u myname -i /var/www/scripts/mm2ctrl.sh on&amp;rdquo;;
-$exec_script_off=&amp;ldquo;sudo -u myname -i /var/www/scripts//mm2ctrl.sh off&amp;rdquo;;
-$exec_script_stat=&amp;ldquo;sudo -u myname -i /var/www/scripts//mm2ctrl.sh stat&amp;rdquo;;
-$exec_script_test=&amp;ldquo;sudo -u myname -i /var/www/scripts//mm2ctrl.sh test&amp;rdquo;;&lt;/p&gt;
-
-&lt;h3 id=&#34;main-code&#34;&gt;Main Code&lt;/h3&gt;
-
-&lt;p&gt;switch ($_GET[$get_key]) {
-    case &amp;ldquo;on&amp;rdquo;:
-        $full_cmd=$exec_script_on.&amp;rdquo; &amp;gt;/dev/null &amp;amp;&amp;ldquo;;
-        break;
-    case &amp;ldquo;off&amp;rdquo;:
-        $full_cmd=$exec_script_off.&amp;rdquo; &amp;gt;/dev/null &amp;amp;&amp;ldquo;;
-        break;
-    case &amp;ldquo;stat&amp;rdquo;:
-        $full_cmd=$exec_script_stat;
-        break;
-    case &amp;ldquo;test&amp;rdquo;:
-        $full_cmd=$exec_script_test;
-        break;
-    default:
-        header(&amp;ldquo;HTTP/1.1 900 NOT OK&amp;rdquo;);
-        echo &amp;ldquo;Unrecognized switch command [&amp;ldquo;.$_GET[$get_key].&amp;ldquo;] given&amp;rdquo;;
-        # end exit so the command below does not try to execute
-        exit;
-}&lt;/p&gt;
-
-&lt;h1 id=&#34;if-all-is-well-after-the-checks-execute-the-proper-command&#34;&gt;if all is well after the checks, execute the proper command&lt;/h1&gt;
-
-&lt;p&gt;header(&amp;ldquo;HTTP/1.1 200 OK&amp;rdquo;);
-$output=shell_exec($full_cmd);
-echo &amp;ldquo;&lt;pre&gt;&amp;rdquo;.$output.&amp;rdquo;&lt;/pre&gt;&amp;rdquo;;
-?&amp;gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-You notice that this script actually executes another script to accomplish running or killing off magicmirror.
-That script is, in my case, /var/www/scripts/mm2ctrl.sh which looks like this:
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;#!/bin/bash&lt;/p&gt;
-
-&lt;h3 id=&#34;globals&#34;&gt;GLOBALS&lt;/h3&gt;
-
-&lt;p&gt;PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-dtime=&lt;code&gt;date +%Y%m%d-%H%M&lt;/code&gt;
-LOG_FILE=/tmp/mm2ctrl.sh.out
-BASE_DIR=/home/myname/MagicMirror&lt;/p&gt;
-
-&lt;h3 id=&#34;functions&#34;&gt;FUNCTIONS&lt;/h3&gt;
-
-&lt;p&gt;#########
-killike ()
-#########
-{
-  kill -9 &lt;code&gt;ps -aef | grep $1 | grep -v &amp;quot;grep &amp;quot;|awk &#39;{print $2}&#39;&lt;/code&gt;;
-}&lt;/p&gt;
-
-&lt;p&gt;#################&lt;/p&gt;
-
-&lt;h3 id=&#34;main-code-1&#34;&gt;Main Code&lt;/h3&gt;
-
-&lt;p&gt;#################
-echo Changing dir to $BASE_DIR
-cd $BASE_DIR&lt;/p&gt;
-
-&lt;h3 id=&#34;on&#34;&gt;on&lt;/h3&gt;
-
-&lt;p&gt;if [ x$1 = &amp;ldquo;xon&amp;rdquo; ] ; then
-  export DISPLAY=:0
-  #DISPLAY=:0 nohup npm start &amp;amp;
-  nohup npm start &amp;amp;
-  killike xscreensaver
-  xset s reset
-  xset dpms force on
-  echo ${dtime}: Turning on MagicMirror | tee -a $LOG_FILE
-  ps -ef | grep npm  | tee -a $LOG_FILE
-fi&lt;/p&gt;
-
-&lt;h3 id=&#34;off&#34;&gt;off&lt;/h3&gt;
-
-&lt;p&gt;if [ x$1 = &amp;ldquo;xoff&amp;rdquo; ] ; then
-  killike npm
-  killike electron
-  echo ${dtime}: Turning off MagicMirror | tee -a $LOG_FILE
-  ps -ef | grep npm |tee -a $LOG_FILE
-  ps -ef | grep electron | tee -a $LOG_FILE
-  nohup xscreensaver -display :0 -no-splash &amp;amp;
-fi&lt;/p&gt;
-
-&lt;h3 id=&#34;stat-us&#34;&gt;stat[us]&lt;/h3&gt;
-
-&lt;p&gt;if [ x$1 = &amp;ldquo;xstat&amp;rdquo; ] ; then
-  ps -ef | grep npm
-  ps -ef | grep electron
-  netstat -an|grep 8080
-fi&lt;/p&gt;
-
-&lt;p&gt;if [ x$1 = &amp;ldquo;xtest&amp;rdquo; ]; then
-  export DISPLAY=:0
-  xset s reset
-  xset dpms force on
-  xset q
-fi&lt;/p&gt;
-
-&lt;p&gt;echo Finished&lt;/p&gt;
-
-&lt;h3 id=&#34;eof&#34;&gt;EOF&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;
-Privileges for the files is important and can be a show stopper.
-Use `sudo visudo /etc/sudoers.d/www-data` and add just this one line:
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;www-data ALL=(myname) NOPASSWD: ALL&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-DANGER: do not let this server live out on the internet because you have to give www-data shell privileges and that is VERY INSECURE!
-
-The line in my /etc/passwd file for www-data is:
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-I had to play with this shell script a lot and with the calling php script to get it all to work as expected. One thing to keep
-in mind is that Alexa wants a fairly quick response of HTML code 200 OK or it will fail. So I worked to get the execution of underlying commands to happen in the background allowing the php script to quickly return the 200 OK html code.
-
-
-I added the capability to look at the status but Alex and fauxmo.py will never execute that - it is only for your use should you need it.
-
-Make sure your firewall port is open for 80 (http) on this (maginmirror) server.
-
-Things should work for you now.
-Try: `Alexa turn on kitchen pie` - or whatever name you used for the &amp;quot;device&amp;quot;. When complications occur check the http access and error log on the magicmirror server and the syslog on the fauxmo.py server.
-
-
-## one last tweak - configuring magicmirror
-
-Add any modules you want to magicmirror but because the 5inch touchscreen is size challenged you will have to work to provide room for all the info you want to display. The easiest way for me to share what I did is to show you my config for magic mirror.
-
-[MagicMirror2 modules](https://github.com/MichMich/MagicMirror/wiki/MagicMirror%C2%B2-Modules)
-
-NOTE: the Carousel plugin was instrumental in allowing all the info to be rotated in magicmirror.
-
-I am listing the possible position settings: top_ bar, top_left, top_center, top_right, upper_third, middle_center, lower_third, bottom_left, bottom_center, bottom_right, bottom_bar, fullscreen_above, and fullscreen_below. In the MagicMirror files structure you will find a custom.css file in the css directory waiting for you to put in any overrides you want. This link will give you an idea of how the regions are setup by default [MagicMirror regions](https://forum.magicmirror.builders/topic/286/regions)
-
-Here is the contents of $HOME/MagicMirror/config/config.js
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;/* Magic Mirror Config Sample
- *
- * By Michael Teeuw &lt;a href=&#34;http://michaelteeuw.nl&#34;&gt;http://michaelteeuw.nl&lt;/a&gt;
- * MIT Licensed.
- */&lt;/p&gt;
-
-&lt;p&gt;var config = {
-  port: 8080,
-  ipWhitelist: [&amp;ldquo;127.0.0.1&amp;rdquo;, &amp;ldquo;192.168.1.71&amp;rdquo;,&amp;rdquo;::ffff:127.0.0.1&amp;rdquo;, &amp;ldquo;::1&amp;rdquo;, &amp;ldquo;::ffff:192.168.1.71&amp;rdquo;],
-  language: &amp;lsquo;en&amp;rsquo;,
-  timeFormat: 12,
-  units: &amp;lsquo;imperial&amp;rsquo;,&lt;/p&gt;
-
-&lt;p&gt;modules: [
-    {
-      module: &amp;lsquo;MMM-Carousel&amp;rsquo;,
-      config: {
-        ignoreModules: [ &amp;lsquo;alert&amp;rsquo;,&amp;lsquo;stocks&amp;rsquo;,&amp;lsquo;MMM-RandomPhoto&amp;rsquo;,&amp;lsquo;clock&amp;rsquo;,&amp;lsquo;currentweather&amp;rsquo; ],
-        transitionalInterval: 35000
-      }
-    },
-    {
-      module: &amp;lsquo;alert&amp;rsquo;,
-    Y},
-    {
-      module: &amp;ldquo;updatenotification&amp;rdquo;,
-      position: &amp;ldquo;top_bar&amp;rdquo;
-    },
-    {
-      module: &amp;lsquo;clock&amp;rsquo;,
-      position: &amp;lsquo;top_left&amp;rsquo;
-    },
-    {
-      module: &amp;lsquo;calendar&amp;rsquo;,
-      header: &amp;lsquo;US Holidays&amp;rsquo;,
-      position: &amp;lsquo;top_left&amp;rsquo;,
-      config: {
-        calendars: [
-          {
-            symbol: &amp;lsquo;calendar-check-o &amp;lsquo;,
-            url: &amp;lsquo;webcal://www.calendarlabs.com/templates/ical/US-Holidays.ics&amp;rsquo;
-          }
-        ]
-      }
-    },
-    {
-      module: &amp;lsquo;compliments&amp;rsquo;,
-      //position: &amp;lsquo;lower_center&amp;rsquo;
-      position: &amp;lsquo;top_left&amp;rsquo;
-    },
-    {
-      module: &amp;lsquo;currentweather&amp;rsquo;,
-      position: &amp;lsquo;bottom_right&amp;rsquo;,
-      config: {
-        location: &amp;lsquo;Elizabeth City&amp;rsquo;,
-        locationID: &amp;lsquo;4465088&amp;rsquo;, //ID from &lt;a href=&#34;http://www.openweathermap.org&#34;&gt;http://www.openweathermap.org&lt;/a&gt;
-        appid: &amp;lsquo;aee32e69be313e1f94557d6a1fc8b075&amp;rsquo;
-      }
-    },
-    {
-      module: &amp;lsquo;weatherforecast&amp;rsquo;,
-      position: &amp;lsquo;top_left&amp;rsquo;,
-      header: &amp;lsquo;Weather Forecast&amp;rsquo;,
-      config: {
-        location: &amp;lsquo;Elizabeth City&amp;rsquo;,
-        locationID: &amp;lsquo;4465088&amp;rsquo;, //ID from &lt;a href=&#34;http://www.openweathermap.org&#34;&gt;http://www.openweathermap.org&lt;/a&gt;
-        appid: &amp;lsquo;aee32e69be313e1f94557d6a1fc8b075&amp;rsquo;
-      }
-    },
-    {
-      module: &amp;lsquo;newsfeed&amp;rsquo;,
-      //position: &amp;lsquo;bottom_bar&amp;rsquo;,
-      //position: &amp;lsquo;top_bar&amp;rsquo;,
-      //position: &amp;lsquo;upper_third&amp;rsquo;,
-      position: &amp;lsquo;top_left&amp;rsquo;,
-      config: {
-        feeds: [
-          {
-            title: &amp;ldquo;New York Times&amp;rdquo;,
-            url: &amp;ldquo;&lt;a href=&#34;http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml&amp;quot;&#34;&gt;http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml&amp;quot;&lt;/a&gt;
-          },
-          {
-            title: &amp;ldquo;BBC&amp;rdquo;,
-            url: &amp;ldquo;&lt;a href=&#34;http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk&amp;quot;&#34;&gt;http://feeds.bbci.co.uk/news/video_and_audio/news_front_page/rss.xml?edition=uk&amp;quot;&lt;/a&gt;,
-          },
-        ],
-        showSourceTitle: true,
-        showPublishDate: true,
-        updateInterval: 20000
-      }
-    },
-//    {
-//      module: &amp;lsquo;helloworld&amp;rsquo;,
-//      position: &amp;lsquo;bottom_bar&amp;rsquo;,
-//      config: {
-//          text: &amp;lsquo;hello world!&amp;rsquo;
-//        }
-//    },
-    {
-      module: &amp;lsquo;MMM-RandomPhoto&amp;rsquo;,
-      position: &amp;lsquo;fullscreen_below&amp;rsquo;,
-      config: {
-        opacity: 0.3,
-        animationSpeed: 500,
-        updateInterval: 60,
-        url: &amp;lsquo;&lt;a href=&#34;https://unsplash.it/1920/1080/?random&#39;&#34;&gt;https://unsplash.it/1920/1080/?random&#39;&lt;/a&gt;
-      }
-    },
-//    {
-//      module: &amp;lsquo;MMM-Remote-Control&amp;rsquo;,
-//      // uncomment the following line to show the URL of the remote control on the mirror
-//      position: &amp;lsquo;bottom_left&amp;rsquo;
-//      // you can hide this module afterwards from the remote control itself
-//    },
-    {
-      module: &amp;lsquo;stocks&amp;rsquo;,
-      position: &amp;lsquo;bottom_bar&amp;rsquo;,
-      config: {
-        stocks: &amp;lsquo;.DJI,IBM,AAPL,GOOG,INTC,CSCO,ABBV,FDC,SQ,M,CVS,CVEO&amp;rsquo;,
-        updateInterval: 41000
-      }
-    },
-    {
-      module: &amp;lsquo;random_quotes&amp;rsquo;,
-//      position: &amp;lsquo;upper_third&amp;rsquo;,
-        position: &amp;lsquo;top_left&amp;rsquo;,
-        config: {
-        // The config property is optional
-        // Without a config, a random quote is shown,
-        // selected from all of the categories available.
-          updateInterval: 120
-//        category: &amp;lsquo;positive&amp;rsquo;
-        }
-    },
-    {
-      module: &amp;lsquo;MMM-DailyBibleVerse&amp;rsquo;,
-      //position: &amp;lsquo;top_left&amp;rsquo;,
-      position: &amp;lsquo;upper_third&amp;rsquo;,
-      config: {
-      version: &amp;lsquo;NIV&amp;rsquo; // This can be changed to any version you want that is offered by Bible Gateway. For a list, go here: &lt;a href=&#34;https://www.biblegateway.com/usage/linking/versionslist/&#34;&gt;https://www.biblegateway.com/usage/linking/versionslist/&lt;/a&gt;
-      }
-    },
-//   {
-//    module: &amp;lsquo;DailyXKCD&amp;rsquo;,
-//    position: &amp;lsquo;top_left&amp;rsquo;,
-//    config: {
-//        invertColors: true,
-//        title: true,
-//        altText: false
-//      }
-//   },
-  ]
-};&lt;/p&gt;
-
-&lt;p&gt;/*************** DO NOT EDIT THE LINE BELOW ***************/
-if (typeof module !== &amp;lsquo;undefined&amp;rsquo;) {module.exports = config;}
-```&lt;/p&gt;
-
-&lt;p&gt;Good luck and enjoy!
--g-&lt;/p&gt;</description>
+&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Sorting IPs</title>
-      <link>/post/post-title/</link>
+      <link>https://www.companionway.net/post/post-title/</link>
       <pubDate>Sun, 01 Jan 2017 15:53:14 -0500</pubDate>
       
-      <guid>/post/post-title/</guid>
+      <guid>https://www.companionway.net/post/post-title/</guid>
       <description>&lt;p&gt;I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
 laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
 parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
 in most repositories). So output might look like this:
-&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo arp-scan -I wlo1 192.168.1.0/24
-Interface: wlo1, datalink type: EN10MB (Ethernet)
-Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
-192.168.1.1     44:94:fc:93:4f:26       (Unknown)
-192.168.1.2     00:17:88:2a:b5:12       Philips Lighting BV
-192.168.1.17    b8:27:eb:42:e9:01       (Unknown)
-192.168.1.62    b8:27:eb:42:e9:01       (Unknown)
-192.168.1.72    b8:27:eb:42:e9:01       (Unknown)
-
-
-192.168.1.4     50:f5:da:52:08:8b       (Unknown)
-192.168.1.90    54:42:49:a4:d7:b0       Sony Corporation
-192.168.1.11    64:eb:8c:6f:e7:4c       (Unknown)
-192.168.1.13    5c:ff:35:21:21:d4       Wistron Corporation
-192.168.1.8     7c:c7:09:88:07:79       (Unknown)
-192.168.1.17    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
-192.168.1.10    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
-192.168.1.7     6c:ad:f8:33:09:e8       (Unknown)
-192.168.1.21    f0:25:b7:35:e7:33       (Unknown)
-192.168.1.29    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
-192.168.1.61    b8:27:eb:4b:b6:4c       (Unknown)
-192.168.1.76    1c:3e:84:5e:b5:bc       (Unknown)
-192.168.1.64    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
-192.168.1.62    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
-192.168.1.72    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
-192.168.1.20    b2:c5:54:0b:de:50       (Unknown)
-192.168.1.24    00:0d:4b:80:18:6d       Roku, LLC
-192.168.1.131   50:c7:bf:13:44:73       (Unknown)
-
-23 packets received by filter, 0 packets dropped by kernel
-Ending arp-scan 1.8.1: 256 hosts scanned in 1.576 seconds (162.44 hosts/sec). 23 responded
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;But this listing is unsorted; I need it in ascending IP order. The solution is to creatively
-use the unix sort command declaring the field &amp;ldquo;termination&amp;rdquo; character as &amp;ldquo;.&amp;rdquo; and then declaring
-the key fields to sort on. Here is the final run:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo arp-scan -I wlo1 192.168.1.0/24|sort -t . -k3,3n -k4,4n
-
-24 packets received by filter, 0 packets dropped by kernel
-Interface: wlo1, datalink type: EN10MB (Ethernet)
-Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
-192.168.1.1     44:94:fc:93:4f:26       (Unknown)
-192.168.1.2     00:17:88:2a:b5:12       Philips Lighting BV
-192.168.1.4     50:f5:da:52:08:8b       (Unknown)
-192.168.1.7     6c:ad:f8:33:09:e8       (Unknown)
-192.168.1.8     7c:c7:09:88:07:79       (Unknown)
-192.168.1.10    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
-192.168.1.11    64:eb:8c:6f:e7:4c       (Unknown)
-192.168.1.13    5c:ff:35:21:21:d4       Wistron Corporation
-192.168.1.17    b8:27:eb:42:e9:01       (Unknown)
-192.168.1.17    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
-192.168.1.20    b2:c5:54:0b:de:50       (Unknown)
-192.168.1.21    f0:25:b7:35:e7:33       (Unknown)
-192.168.1.24    00:0d:4b:80:18:6d       Roku, LLC
-192.168.1.29    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
-192.168.1.61    b8:27:eb:4b:b6:4c       (Unknown)
-192.168.1.62    b8:27:eb:42:e9:01       (Unknown)
-192.168.1.62    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
-192.168.1.63    b2:c5:54:0b:de:50       (Unknown)
-192.168.1.64    c0:c1:c0:dc:29:69       Cisco-Linksys, LLC
-192.168.1.72    b8:27:eb:42:e9:01       (Unknown)
-192.168.1.72    c8:3a:35:cb:90:8f       Tenda Technology Co., Ltd. (DUP: 2)
-192.168.1.76    1c:3e:84:5e:b5:bc       (Unknown)
-192.168.1.90    54:42:49:a4:d7:b0       Sony Corporation
-192.168.1.131   50:c7:bf:13:44:73       (Unknown)
-Ending arp-scan 1.8.1: 256 hosts scanned in 1.520 seconds (168.42 hosts/sec). 24 responded
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Enjoy
--g-&lt;/p&gt;</description>
+&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Quick N Dirty Python Debug Function</title>
-      <link>/post/quick-n-dirty-python-debug-function/</link>
+      <link>https://www.companionway.net/post/quick-n-dirty-python-debug-function/</link>
       <pubDate>Thu, 22 Dec 2016 14:08:05 -0500</pubDate>
       
-      <guid>/post/quick-n-dirty-python-debug-function/</guid>
+      <guid>https://www.companionway.net/post/quick-n-dirty-python-debug-function/</guid>
       <description>&lt;p&gt;Pdb is a great debugger for python but I like to use my own simple debug functions.
 Here is a simple debug function for python which could definitely be improved:&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;#!/usr/bin/env python
-
-import os
-import sys
-from inspect import (getframeinfo, currentframe, getouterframes)
-
-
-DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
-#DLOG=os.path.basename(sys.argv[0])+&amp;quot;.log&amp;quot; # will append to log to file if this is not commented out
-
-def dbug(msg):
-  &amp;quot;&amp;quot;&amp;quot;
-   At the top of your script set these global values:
-    from inspect import (getframeinfo, currentframe, getouterframes)
-    DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
-    #DLOG=os.path.basename(sys.argv[0])+&amp;quot;.log&amp;quot; # will append to log to file if this is not commented out
-   Function: dbug() will print (or log) DEBUG: (datetime) [lineno] msg
-   print this function doc with CLI help(dbug) or CODE dbug.__doc__
-   needs: from inspect import currentframe.
-   Simple to use... dbug(&amp;quot;my message here&amp;quot;)
-   &amp;quot;&amp;quot;&amp;quot;
-
-  cf = currentframe()
-  msg=&amp;quot;DEBUG: [&amp;quot;+str(cf.f_back.f_lineno)+&amp;quot;] &amp;quot;+msg
-
-  try:
-    if DBUG==2:
-      fname=str(getframeinfo(currentframe().f_back).function)
-      fdoc=eval(fname+.__doc__
-      fdoc=fdoc if fdoc else &#39;undocumented&#39;
-      msg=msg+&amp;quot; Func: &amp;quot;+fname+&amp;quot; Doc: &amp;quot;+fdoc
-  except:
-    pass
-
-  try:
-    if DLOG != &amp;quot;&amp;quot;:
-      fh_dbug=open(DLOG,&amp;quot;a&amp;quot;)
-      fh_dbug.write(dtime+&amp;quot; &amp;quot;+msg+&amp;quot;\n&amp;quot;)
-      fh_dbug.close
-  except:
-    pass
-
-  try:
-    if DBUG&amp;gt;=0:
-      print msg
-  except:
-    pass
-
-def myFunc(myvar=&amp;quot;eulav&amp;quot;):
-  &amp;quot;&amp;quot;&amp;quot;
-   myFunc(&amp;quot;something&amp;quot;) -requires one string
-   prints out the string backwards - it uses the extended slice operator
-   ie [begin:end:step]
-   The default here prints &amp;quot;value&amp;quot;
-  &amp;quot;&amp;quot;&amp;quot;
-  dbug(&amp;quot;how does it work&amp;quot;)
-  print myvar[::-1]
-
-### Main Code ###
-if __name__ == &#39;__main__&#39;:
-  dbug(&amp;quot;Please note that the name of this function is dbug -- not debug just to avoid conflicts elsewhere&amp;quot;)
-
-  dbug(&amp;quot;How does this work?&amp;quot;)
-  myFunc(&amp;quot;this is my string&amp;quot;)
-
-  DBUG=1
-  dbug(&amp;quot;And now the reverse&amp;quot;)
-  myFunc(&amp;quot;gnirts ym si siht&amp;quot;)
-
-  dbug(&amp;quot;Let see what the default is...&amp;quot;)
-  myFunc() # reverses the default
-### EOF ####
-&#39;&#39;&#39;
-
-Output from this should look something like this:
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;DEBUG: [97] Please note that the name of this function is dbug &amp;ndash; not debug just to avoid conflicts elsewhere
-DEBUG: [98] How does this work?
-DEBUG: [92] how does it work Func: myFunc Doc:
-   myFunc(&amp;ldquo;something&amp;rdquo;) -requires one string
-   prints out the string backwards - it uses the extended slice operator
-   ie [begin:end:step]
-   The default here print &amp;ldquo;value&amp;rdquo;&lt;/p&gt;
-
-&lt;p&gt;gnirts ym si siht
-DEBUG: [102] And now the reverse
-DEBUG: [92] how does it work
-this is my string
-DEBUG: [105] Let see what the default is&amp;hellip;
-DEBUG: [92] how does it work
-value
-```&lt;/p&gt;
-
-&lt;p&gt;Enjoy!
--g-&lt;/p&gt;
-
-&lt;p&gt;###
-Enjoy
--g-&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Raspberry Pi and Xrdp</title>
-      <link>/post/raspberry-pi-and-xrdp/</link>
+      <link>https://www.companionway.net/post/raspberry-pi-and-xrdp/</link>
       <pubDate>Fri, 16 Dec 2016 12:27:36 -0500</pubDate>
       
-      <guid>/post/raspberry-pi-and-xrdp/</guid>
+      <guid>https://www.companionway.net/post/raspberry-pi-and-xrdp/</guid>
       <description>&lt;p&gt;I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
 any linux machine) can be done so many different ways - but the easiest from my perspective is xrdp. It is available
 really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
@@ -893,51 +95,15 @@ xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver
 Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
 almost any linux distro.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;When you launch remmina it will ask for a username and password for a connection onto the IP machine you declare in the setup.
-If the xrdp service is properly running on the remote machine it will server up a personal desktop for the user login
-independant of any other desktop sessions that might be running.
-But - I am a fan of enlightment desktop e17 for a whole lot of reasons, many of which are personal history. Enlightenment desktop
-is lightweight so it works well on a raspberry pi. My task was to install e17 onto the raspberry pi and it becomes an
-alternet desktop and then make it available to me over xrdp. My quick searches on the internet turned up a good deal of bogus
-dead ends but I looked over the startup scripts for xsession and noticed it by default looks for and will launch&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-$HOME/.xsession```.&#34;&gt;
-I am using Raspbian 8.0 debian jessie on my raspberry pi. Well, no, actually, I am using berryboot to launch Rasbian 8.0 but that
-has no bearing on this discussion. Rasbian now comes with the pixel desktop which includes the lxterminal program by default
-so I call that up in my ```$HOME/.xsession``` script before launching the enlightnement destop. Here is my script
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;#!/usr/bin/env bash
-lxterminal &amp;amp;
-enlightenment_start&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;
-Then restart the xrdp service with:
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;sudo systemctl restart xrdp.service
-```&lt;/p&gt;
-
-&lt;p&gt;If it is your first launch of enightenment you will have to go through the brief setup - for the most part, pick the defaults and happy days are here again.&lt;/p&gt;
-
-&lt;p&gt;Oh but then you will run into this rather serious problem - half of your keys won&amp;rsquo;t work! I have a solution but it probably
-isn&amp;rsquo;t the best solution - it just happens to be the  only one I came across that worked for me.
-Use the mouse in enlightenment and navigate through &lt;code&gt;Settings-&amp;gt;All-&amp;gt;Input-&amp;gt;Key Bindings ... click on Delete All&lt;/code&gt;
-This works and you lose keybindings that you probably wouldn&amp;rsquo;t use through vnc anyway.&lt;/p&gt;
-
-&lt;p&gt;Enjoy
--g-&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Sometimes It Is The Obvious</title>
-      <link>/post/sometimes-it-is-the-obvious/</link>
+      <link>https://www.companionway.net/post/sometimes-it-is-the-obvious/</link>
       <pubDate>Thu, 15 Dec 2016 16:36:42 -0500</pubDate>
       
-      <guid>/post/sometimes-it-is-the-obvious/</guid>
+      <guid>https://www.companionway.net/post/sometimes-it-is-the-obvious/</guid>
       <description>&lt;p&gt;This was one of those &amp;ldquo;problems&amp;rdquo; that nagged me for many hours until the obvious dawned on me.
 I wrote a python script to grab the temperature and humidiy from a DHT22 sensor and then write the
 output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
@@ -947,41 +113,15 @@ every 5 minutes and used a redirection to write out a file ie:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The wrapper script grabs output and sends it to the server. Having this wrapper script lets me run the
-python script independantly for testing or for curiousity.&lt;/p&gt;
-
-&lt;p&gt;
-It all worked fine but sometimes the temp would jump in one direction or another for brief period and that
-skewed the graphed - it was ugly so I decided to fix it.&lt;/p&gt;
-
-&lt;p&gt;I added code to the python script to look at the temperature that got recorded on the last run into the /tmp/temphum.dat
-file and then judged if the measured temperature greater or less than the &amp;ldquo;last&amp;rdquo; temp by a amount greater than a &amp;ldquo;trigger&amp;rdquo; amount (I orignally set the trigger to be a full degree, that is 1.0). If the difference between the last and the measured temp was greater
-than the &amp;ldquo;trigger&amp;rdquo; then I adjusted the measured temp up or down appropriately by and adjustment amount (0.2). This would smooth
-out the graph and with the readings being taken each 5 minutes everything would work out fine over time.&lt;/p&gt;
-
-&lt;p&gt;It all worked fine each time I ran it from the command line. But when the the temperature recorded into the /tmp/temphum.dat
-file was always the measured temp. The adjusted temperature never made it into the file unless I ran it from the command line.
-I assumed the problem was with the environment - this is a natural assumption given that when a cron job runs it inherits no
-environment settings. I adapated the python script to have its own environment PATH and I also changed the bash wrapper script
-to preset it&amp;rsquo;s own PATH settings. But all to no avail.&lt;/p&gt;
-
-&lt;p&gt;Then I realized the problem. As soon as the wrapper script runs, it opens a redirection out to &amp;gt;/tmp/temphum.dat. That is also the
-file that the python script reads but as soon as the redirection starts it &amp;ldquo;zeros out&amp;rdquo; the file - it builds an empty file. Now the
-python script has no &amp;ldquo;last&amp;rdquo; temperature to read and my script rightfully drops a null last temperature reading and therefore does no adjusting.&lt;/p&gt;
-
-&lt;p&gt;The solution was to drop the redirection from the cron entry and have the python script first open the /tmp/temphum.dat file for reading the last temperature, close the file, do the adjustment calculation, then re-open the file for &amp;ldquo;w&amp;rdquo;rite which empties the file for writing new content, then write the needed message lines to the file, and then close the file.&lt;/p&gt;
-
-&lt;p&gt;All is good now. So easy to overlook the simple/obvious show stopper.&lt;/p&gt;
-
-&lt;p&gt;Enjoy
--g-&lt;/p&gt;</description>
+python script independantly for testing or for curiousity.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Always Use Visudo</title>
-      <link>/post/alway-use-visudo/</link>
+      <link>https://www.companionway.net/post/alway-use-visudo/</link>
       <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
       
-      <guid>/post/alway-use-visudo/</guid>
+      <guid>https://www.companionway.net/post/alway-use-visudo/</guid>
       <description>&lt;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;ldquo;Familiarity breeds contempt&amp;rdquo;&lt;/p&gt;
@@ -993,65 +133,31 @@ comfortable that using any other editor leaves me just a bit unnerved. I constan
 to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
 /etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
 simple monitoring program (xymon) to be able to run &amp;ldquo;sudo ufw status&amp;rdquo; without a password and report
-back to the monitor server.&lt;/p&gt;
-
-&lt;p&gt;I fired up &lt;code&gt;sudo vim /etc/sudoers.d/xymon&lt;/code&gt; and started to add the needed line:
-&lt;code&gt;xymon ALL = NOPASSWD: /usr/sbin/ufw status&lt;/code&gt; but I got halfway through and could remember the exact location
-
-of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the phsical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplimental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.&lt;/p&gt;
-
-&lt;p&gt;Lesson: &lt;em&gt;Always use visudo&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;By the way, to change the default editor from nano to vim for visudo (on unbuntu at least) you can run:
-&lt;code&gt;sudo update-alternatives --config editor&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;On my systems that exchange looks like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ sudo update-alternatives --config editor
-There are 4 choices for the alternative editor (providing /usr/bin/editor).
-
-  Selection    Path                Priority   Status
-------------------------------------------------------------
-* 0            /bin/nano            40        auto mode
-  1            /bin/ed             -100       manual mode
-  2            /bin/nano            40        manual mode
-  3            /usr/bin/vim.basic   30        manual mode
-  4            /usr/bin/vim.tiny    10        manual mode
-
-Press &amp;lt;enter&amp;gt; to keep the current choice[*], or type selection number: 3
-update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in manual mode
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Enjoy
--g-&lt;/p&gt;</description>
+back to the monitor server.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Recursively Replace Text</title>
-      <link>/post/recursive-replace-text/</link>
+      <link>https://www.companionway.net/post/recursive-replace-text/</link>
       <pubDate>Sat, 10 Dec 2016 20:38:12 -0500</pubDate>
       
-      <guid>/post/recursive-replace-text/</guid>
+      <guid>https://www.companionway.net/post/recursive-replace-text/</guid>
       <description>&lt;p&gt;Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If I had to look it up, you have to suffer seeing it in my blog post&amp;hellip; &lt;smile&gt;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;find ./ -name \*.md -print0 | xargs -0 sed -i &#39;s/header-img/img/&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.&lt;/p&gt;
-
-&lt;p&gt;
-Enjoy
--g-&lt;/p&gt;</description>
+&lt;p&gt;Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Switched to Hugo</title>
-      <link>/post/Switched-to-Hugo/</link>
+      <link>https://www.companionway.net/post/switched-to-hugo/</link>
       <pubDate>Fri, 09 Dec 2016 10:57:45 -0500</pubDate>
       
-      <guid>/post/Switched-to-Hugo/</guid>
+      <guid>https://www.companionway.net/post/switched-to-hugo/</guid>
       <description>&lt;p&gt;I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
-&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;https://www.companionway.net/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is why:&lt;/p&gt;
 
@@ -1072,29 +178,24 @@ or &amp;hellip; just git push it to hithub and use something like netlify.com to
 &lt;/ul&gt;
 
 &lt;p&gt;Reference:
-&lt;a href=&#34;https://gohugo.io/#intro&#34;&gt;gohugo.io&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;
-Enjoy
--g-&lt;/p&gt;</description>
+&lt;a href=&#34;https://gohugo.io/#intro&#34;&gt;gohugo.io&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Converting Images</title>
-      <link>/post/Converting-Images/</link>
+      <link>https://www.companionway.net/post/converting-images/</link>
       <pubDate>Tue, 06 Dec 2016 11:58:20 -0500</pubDate>
       
-      <guid>/post/Converting-Images/</guid>
-      <description>&lt;p&gt;I have fought with trying to remember the syntax for Imagemagik&amp;rsquo;s convert command for years. I finaly caved in [from my normal position of &amp;ldquo;if you can&amp;rsquo;t do it from the commandline, then you are a wimp&amp;rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &amp;ldquo;converseen&amp;rdquo;. It can do batch conversions or on selected files. Gets the job done without the challenge of looking up all the arguments for &amp;ldquo;convert&amp;rdquo;.&lt;/p&gt;
-</description>
+      <guid>https://www.companionway.net/post/converting-images/</guid>
+      <description>I have fought with trying to remember the syntax for Imagemagik&amp;rsquo;s convert command for years. I finaly caved in [from my normal position of &amp;ldquo;if you can&amp;rsquo;t do it from the commandline, then you are a wimp&amp;rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &amp;ldquo;converseen&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>shell/bash uppercase arguments</title>
-      <link>/post/2015-05-11-post1/</link>
+      <link>https://www.companionway.net/post/2015-05-11-post1/</link>
       <pubDate>Mon, 11 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-05-11-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-05-11-post1/</guid>
       <description>&lt;p&gt;To make a long story short&amp;hellip;&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;#!/bin/bash
@@ -1110,73 +211,15 @@ echo &amp;quot;Your \$1 argument is now uppercase: $1&amp;quot;
 &lt;p&gt;To make a short story long&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;Just to let you know a little more about me and reveal
-a few more shells tricks along the way.&lt;/p&gt;
-
-&lt;p&gt;
-I am a very conservative investor - always have been but
-the low interest rates over the recent past has forced me
-to try a squeeze a little more out of the stock market also
-known as a &amp;ldquo;a gentleman&amp;rsquo;s gambling parlor of greedy people&amp;rdquo;.
-To do this I have been using covered secure puts and covered calls (did
-I mention that I am conservative?). So what does this have to
-do with the title here?&lt;/p&gt;
-
-&lt;p&gt;I heavily use scripting to quickly determine current positions
-on stocks I track. It starts with a file listing details of
-those stocks on each line. Then run a script that will selectively
-get the current price on each of stock and calculate how close
-it is to my target option price. I am lazy - which is one indispensable
-trait of a good system admin or programmer (never do anything manually
-more than once). So I needed a way to get stock quotes on
-one of the stocks in my list. The obvious solution is to grab the stock
-out of the list using grep (or awk) but all the stocks need to
-be uppercase. I scrape the current price off of a financial site but it
-requires uppercase.&lt;/p&gt;
-
-&lt;p&gt;I mention all this because my underlying motive is to encourage people
-to leverage shell tools (principally grep and awk). Fact is,
-financial incentives work (maybe that is a sad thing).&lt;/p&gt;
-
-&lt;p&gt;By the way, my script will use command line arguments to give me
-a detailed single line output of selected stocks providing:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;current price, difference from target and %difference from target&lt;/li&gt;
-&lt;li&gt;target price and recent price, IV (implied volatility), and probability of out of the money&lt;/li&gt;
-&lt;li&gt;how many lots to offer as Puts or Calls for the selected account&lt;/li&gt;
-&lt;li&gt;purchase price if I bought in the past&lt;/li&gt;
-&lt;li&gt;PE and future PE, ROE, various ratings, and 52 week range&lt;/li&gt;
-&lt;li&gt;shares owned,percent of account(s), and any notes on the stock&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Lots of this is manually maintained and, yes, it can be tedious but I have the
-time. The script grabs only what I tell it through the command line (just puts or calls
-or selected stocks or all of them etc). Then it grabs the current price and tells me
-how close it is to my target price as a percentage. For example I can tell the
-script to just grab potential puts that are within X% (eg 6%) of its strike or target price.&lt;/p&gt;
-
-&lt;p&gt;This gives me a good starting point for doing further research on selected stocks
-for the day. For example this will give me all put options that interest me where
-the current price is within 6% of my target.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# get stocks with interesting put options, mark anything with 6% of the target/strike price
-# and grep out those marked stocks only
-getquotes.sh -p -m 6 -g
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I won&amp;rsquo;t bore you with anymore detail - besides anything after this gets pretty cryptic&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;Enjoy&lt;/p&gt;
-
-&lt;p&gt;-g-&lt;/p&gt;</description>
+a few more shells tricks along the way.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>The GrovePi kit</title>
-      <link>/post/grovepi/</link>
+      <link>https://www.companionway.net/post/grovepi/</link>
       <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/grovepi/</guid>
+      <guid>https://www.companionway.net/post/grovepi/</guid>
       <description>&lt;h1 id=&#34;check-out-grovepi&#34;&gt;Check out GrovePi&lt;/h1&gt;
 
 &lt;p&gt;These kits make working with the Raspberry Pi GPIO pins
@@ -1189,26 +232,17 @@ looks like it will get you there in minutes. Approx: $89 -
 includes board, and &lt;em&gt;lots&lt;/em&gt; of sensors/accessories with wires
 and connectors.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;/img/grovepi1.jpg&#34; alt=&#34;grovepi&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/grovepi1.jpg&#34; alt=&#34;grovepi&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;This company is doing cool things to make raspberry pi projects
-fun and easy - especially for students.&lt;/p&gt;
-
-&lt;p&gt;Just had to share - here is their link: &lt;a href=&#34;http://www.dexterindustries.com/&#34;&gt;Dexter Industries&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Enjoy&lt;/p&gt;
-
-&lt;p&gt;-g-&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>How to print the remainder of a line using awk</title>
-      <link>/post/2015-05-02-post1/</link>
+      <link>https://www.companionway.net/post/2015-05-02-post1/</link>
       <pubDate>Sat, 02 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-05-02-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-05-02-post1/</guid>
       <description>&lt;p&gt;#How to print remainder of line using awk&lt;/p&gt;
 
 &lt;h2 id=&#34;eliminate-the-first-x-columns&#34;&gt;eliminate the first X columns&amp;hellip;&lt;/h2&gt;
@@ -1233,39 +267,15 @@ first entry with its arguments as a test run:&lt;/p&gt;
 #  7 * * * /usr/local/sbin/postfix_report.sh &amp;amp;&amp;gt; /dev/null
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Here is how I would do it:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo $(sudo crontab -l | awk &#39;/bak-it/{$1=$2=$3=$4=$5=&amp;quot;&amp;quot;;print $0}&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Examining this we first see this &lt;code&gt;$(...)&lt;/code&gt; structure which tells
-the shell to run whatever exists between the parens and replace the
-output right there. So first we call sudo crontab -l in order to
-make sure we get root&amp;rsquo;s crontab listed. The output is piped into
-awk where we give it a regex to search for in each string (ie /bak-it/).
-The trick here is we tell awk to make the first variable in the string
-equal to the second&amp;hellip; equal to the 3rd, 4th and 5th, and finally = &amp;ldquo;&amp;rdquo;.
-This effectively substitutes and empty string for the first 5 variables
-leaving the remained of the line which then gets printed with the
-&lt;code&gt;print $0&lt;/code&gt;. Actually you can leave off the &lt;code&gt;$0&lt;/code&gt; because awk will default
-to that if you just use &lt;code&gt;print&lt;/code&gt; alone.&lt;/p&gt;
-
-&lt;p&gt;Now there may be one more problem. If you run that command above it
-will execute the intended command along with the arguments BUT it will
-do it as the user who ran it. Obviously, if the commands come from the
-root crontab it may not run properly for another user.&lt;/p&gt;
-
-&lt;p&gt;I will leave it as an exercise for the reader to solve that problem.&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Creating that special character in vim</title>
-      <link>/post/2015-04-30-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-30-post1/</link>
       <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-04-30-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-30-post1/</guid>
       <description>&lt;h1 id=&#34;entering-special-characters-into-vim&#34;&gt;Entering special characters into vim&lt;/h1&gt;
 
 &lt;p&gt;I use vim as my editor. Despite this first sentence, this is not a
@@ -1284,68 +294,15 @@ that can be displayed with vim. You may already know that you can use
 intended special character) to create any one of literally thousands of special
 characters.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;If you are in vim and you are not in INSERT mode (hit ESC a couple of times to
-make sure) you can type &lt;code&gt;:digraphs&lt;/code&gt; and see the first page of possible choices.
-This list is extensive and daunting when first viewed. It is really sets of 3 columns.
-The first column is the digraph CTRL-k combo to create what is seen in the second
-column. And the 3rd column is the &lt;code&gt;CTRL-v ###&lt;/code&gt; number to be used to create that same
-character.&lt;/p&gt;
-
-&lt;p&gt;Let&amp;rsquo;s look at an example - the first column 11 rows down you should see the way to create
-the one cent character:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Ct ¢ 196 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;What this tells you is that if you are in the INSERT mode (Esc Esc i)
-Then you can type either of these two commands to create a one cent symbol&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;CTRL-k Ct
-# or
-CTRV-v 196
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If your scroll down the &lt;code&gt;:digraph&lt;/code&gt; list you will find just about any special
-character you can imagine.&lt;/p&gt;
-
-&lt;p&gt;BTW - to see what values correspond to a char - cursor to it and hit :as[cii]&lt;/p&gt;
-
-&lt;p&gt;Here are a few examples:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;CTRL-k 34 = ¾
-CTRL-k 12 = ½
-CTRL-k -&amp;lt; = ←
-CTRL-k -&amp;gt; = →
-CTRL-k -v = ↓
-CTRL-k -! = ↑
-CTRL-k &amp;lt;&amp;gt; = ↔
-CTRL-k =&amp;gt; = ⇒
-CTRL-k OK = ✓
-CTRL-k -X = ✠
-CTRL-k XX = ✗
-CTRL-k &amp;lt;&#39; = 「
-CTRL-k &amp;gt;&#39; = 」
-CTRL-k Fm = ♀
-CTRL-k Ml = ♂
-CTRL-k *1 = ☆ 
-CTRL-k *2 = ★
-CTRL-k D* = Δ
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;br&gt;
-Enjoy
-&lt;br&gt;
--g-&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>git inside, git better, git stronger</title>
-      <link>/post/2015-04-28-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-28-post1/</link>
       <pubDate>Tue, 28 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-04-28-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-28-post1/</guid>
       <description>&lt;h2 id=&#34;exploring-git-from-the-inside-out&#34;&gt;&amp;hellip; exploring git from the inside out &amp;hellip;&lt;/h2&gt;
 
 &lt;p&gt;###Preface&lt;/p&gt;
@@ -1360,497 +317,15 @@ We can gain a better understanding by reviewing the changes to the guts of
 your personal git repository. We will not cover branches, tags, or the git daemon
 in this discussion.&lt;/p&gt;
 
-&lt;p&gt;###Why git? (skip this if you are less than patient)&lt;/p&gt;
-
-&lt;p&gt;Many years ago I used backups of my projects or just documents, notes, etc.
-All worked well until it didn&amp;rsquo;t. If you make a mistake and back it up guess what,
-
-now you have two broken copies. Then I used cvs - awesome. It worked for me
-for years. Never lost code (as long as I put it under cvs). Really, maintained my
-work and previous versions with only very minor issues but kept my data useful and
-available. I tried git but wow, so many moving parts, and I had trouble wrapping my
-head around the differences to older version control systems where a &amp;ldquo;master&amp;rdquo; copy
-was kept in one place and all other copies were &amp;ldquo;clients&amp;rdquo; who shared and merged with
-the master copy. But git is different and much better - every copy is a master,
-fully self standing, with it&amp;rsquo;s own repository residing within the project directory
-itself. Hidden in the .git directory but always working with you as your progress. Full
-blown copies can be &amp;ldquo;cloned&amp;rdquo; to any other server you desire. And any set of copies
-can all be merged together easily. As wonderful as this all is&amp;hellip;. alas, git has
-miles and miles of depth. That, like most really powerful programs, is a good bad thing.
-You can get lost in the features and they can trip you up but the secret is to learn
-incrementally. Bite off small bits at a time. Take your time and the investment will
-definitely be rewarding. When you extend git into a world with multiple (even many
-multiples) of contributors git really shines. All your files are stored in the
-.git/objects/pack/ directory with weird long name and as &lt;em&gt;read only&lt;/em&gt; protecting
-you from accidental deletion.&lt;/p&gt;
-
-&lt;p&gt;###Getting Started with git&lt;/p&gt;
-
-&lt;p&gt;I have, over the years, always had a &amp;ldquo;$HOME/dev/&amp;rdquo; directory where I keep all my code
-or even document files, graphics, etc. Really anything I want to preserve, especially
-if versions are involved. So this discussion will be using $HOME/dev to place our
-projects; each project with its own directory.&lt;/p&gt;
-
-&lt;h4 id=&#34;exercise&#34;&gt;EXERCISE&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;mkdir -p $HOME/dev/mypjct
-cd $HOME/dev/myprjct
-ls -ltra
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Nothing exists in this directory.&lt;/p&gt;
-
-&lt;p&gt;We can initialize (start) a git repository any time you desire.
-Because you want to be very careful, you are going to initialize
-your project before creating any files. This will also allow us
-to see the changes to the git database (really the .git directory)
-as we work with git.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git init
-ls -ltra
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Here is what your project directory looks like now.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;+-----.git
-|     +-----branches
-|     +-----config
-|     +-----description
-|     +-----HEAD
-|     +-----hooks
-|     |     +-----applypatch-msg.sample
-|     |     +-----commit-msg.sample
-|     |     +-----post-update.sample
-|     |     +-----pre-applypatch.sample
-|     |     +-----pre-commit.sample
-|     |     +-----prepare-commit-msg.sample
-|     |     +-----pre-push.sample
-|     |     +-----pre-rebase.sample
-|     |     +-----update.sample
-|     +-----info
-|     |     +-----exclude
-|     +-----objects
-|     |     +-----info
-|     |     +-----pack
-|     +-----refs
-|     |     +-----heads
-|     |     +-----tags
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Please note the objects directory becuase that is where all your files changes will get recorded
-as you work with git.&lt;/p&gt;
-
-&lt;p&gt;We are going to create a test file called t.f and add the text &amp;ldquo;ver 1&amp;rdquo;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;echo &amp;quot;ver 1&amp;quot; &amp;gt;&amp;gt; t.f
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;No changes have occurred to git at this point. You now have one &amp;ldquo;working&amp;rdquo; file
-in your project directory.&lt;/p&gt;
-
-&lt;p&gt;Now &amp;ldquo;stage&amp;rdquo; the new file [t.f] into git with this command.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git add -a * # or we can use a shortcut command: git add -A (which we use going forward)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now lets look at your project directory again and note the changes from above.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;+-----.git
-|     +-----branches
-|     +-----config
-|     +-----description
-|     +-----HEAD
-|     +-----hooks
-|     |     +-----applypatch-msg.sample
-|     |     +-----commit-msg.sample
-|     |     +-----post-update.sample
-|     |     +-----pre-applypatch.sample
-|     |     +-----pre-commit.sample
-|     |     +-----prepare-commit-msg.sample
-|     |     +-----pre-push.sample
-|     |     +-----pre-rebase.sample
-|     |     +-----update.sample
-|     +-----index
-|     +-----info
-|     |     +-----exclude
-|     +-----objects
-|     |     +-----5b
-|     |     |     +-----d657f7b8fcd822d6e44202bc33e808cdd01ee7
-|     |     +-----info
-|     |     +-----pack
-|     +-----refs
-|     |     +-----heads
-|     |     +-----tags
-+-----t.f
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now we can see our new file listed last [t.f] and also a new
-directory [5b] under .git/objects and a file under that
-[d657f7b8fcd822d6e44202bc33e808cdd01ee7]. Here is where it gets a
-little complicated just stick with me. This is one git &amp;ldquo;object&amp;rdquo; which
-was a single file called [5bd657f7b8fcd822d6e44202bc33e808cdd01ee7] -
-the first two characters of this file where used to create a subdirectory and
-the rest of the name was used for a file name. The full name here is actually
-the SHA-1 hash value of the contents of the file. Also know that the contents
-of the file have been compressed with the zlib library. There is a git
-command to allow you to see the contents which will do here. Just understand
-that the git &amp;ldquo;object name&amp;rdquo; is really the subdirectory+filename hence
-[5bd657f7b8fcd822d6e44202bc33e808cdd01ee7] and the git way to print the
-contents out is a bit strange. You do not need to remember this command; it is
-just so we can monitor things as we go.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git cat-file -p 5bd657f7b8fcd822d6e44202bc33e808cdd01ee7
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This shows the content of the file only [ver 1].&lt;/p&gt;
-
-&lt;p&gt;Now just so you can see what can be done at this point let&amp;rsquo;s delete
-your working file and then list the directory to see that it is gone
-then use git to restore it!&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;rm t.f
-ls -ltra
-# your t.f file is gone!
-git checkout t.f
-ls -ltra
-# your t.f file is back!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;If you examine the .git directory tree at this point you will that there are
-no changes. Now lets &amp;ldquo;commit&amp;rdquo; what we &amp;ldquo;staged&amp;rdquo; earlier and then examine the
-.git directory tree again to see what has occurred (we will only list
-the .git/objects tree for brevity.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git commit -m &amp;quot;commit of ver 1&amp;quot; # -m just means add this message - without it 
-                                # you would be forced into an editor and required
-                                # to add a message - a good/required habbit to get into.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now the .git/objects tree:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;objects
-+-----03
-|     +-----f1148542c5dbf6347c7e8e6a62863258c1c3b0
-+-----5b
-|     +-----d657f7b8fcd822d6e44202bc33e808cdd01ee7
-+-----f0
-|     +-----fa0104ec53e1614f556472b6ec9e355e297d7f
-+-----info
-+-----pack
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Our original object which was &amp;ldquo;staged&amp;rdquo; is still here under [5b] and two
-new ones appear. Let&amp;rsquo;s look at the contents of each.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git cat-file -p 03f1148542c5dbf6347c7e8e6a62863258c1c3b0
-tree f0fa0104ec53e1614f556472b6ec9e355e297d7f
-author Geoff McNamara &amp;lt;geoff.mcnamara@gmail.com&amp;gt; 1430154082 -0400
-committer Geoff McNamara &amp;lt;geoff.mcnamara@gmail.com&amp;gt; 1430154082 -0400
-
-commit ver 1
-
-$ git cat-file -p 5bd657f7b8fcd822d6e44202bc33e808cdd01ee7
-ver 1
-
-$ git cat-file -p f0fa0104ec53e1614f556472b6ec9e355e297d7f
-100644 blob 5bd657f7b8fcd822d6e44202bc33e808cdd01ee7    t.f
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Let&amp;rsquo;s also look at the git log&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ git log
-commit 03f1148542c5dbf6347c7e8e6a62863258c1c3b0
-Author: Geoff McNamara &amp;lt;geoff.mcnamara@gmail.com&amp;gt;
-Date:   Mon Apr 27 13:01:22 2015 -0400
-
-    commit ver 1
-
-$ git status
-On branch master
-nothing to commit, working directory clean
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The git log refers to the object which has the contents of the first file we examined above.&lt;/p&gt;
-
-&lt;p&gt;So how are these files/objects/versions connected? They are chained as parent/child.
-Lets examine a later (more recent) object and note it has a parent which is the object
-above. First we will modify the t.f file, git add it, and commit it.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ echo &amp;quot;updating to ver 2&amp;quot; &amp;gt;&amp;gt; t.g
-$ git add -A
-$ git commit -m &amp;quot;committing ver 2&amp;quot;
-$ git cat-file -p 46769acc026e57212ca06ad8991643061ac429eb
-tree c828f096c4a01ca3cffa690c484b5ef8ee714a2c
-parent 03f1148542c5dbf6347c7e8e6a62863258c1c3b0
-author Geoff McNamara &amp;lt;geoff.mcnamara@gmail.com&amp;gt; 1430157487 -0400
-committer Geoff McNamara &amp;lt;geoff.mcnamara@gmail.com&amp;gt; 1430157487 -0400
-
-updating to ver 2
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This is enough for you to start to appreciate how git stores data. Obviously
-we only scratched the surface here.&lt;/p&gt;
-
-&lt;p&gt;Repositories for git exists as either a working repository or a &amp;ldquo;shared&amp;rdquo;
-repository - created as &amp;ldquo;bare&amp;rdquo; with &amp;ldquo;git init &amp;ndash;bare&amp;rdquo; - more on this later.&lt;/p&gt;
-
-&lt;p&gt;Before we move on please take a look at your .git/config file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cat .git/config
-[core]
-        repositoryformatversion = 0
-        filemode = true
-        bare = false
-        logallrefupdates = true
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note the &amp;ldquo;bare = false&amp;rdquo; so by default this is not a &amp;ldquo;shared&amp;rdquo;
-repository. It is a &amp;ldquo;working&amp;rdquo; project directory.&lt;/p&gt;
-
-&lt;h3 id=&#34;setting-up-a-remote-shared-git-server&#34;&gt;Setting up a remote &lt;em&gt;&lt;em&gt;shared&lt;/em&gt;&lt;/em&gt; git server&lt;/h3&gt;
-
-&lt;p&gt;#############################################&lt;/p&gt;
-
-&lt;p&gt;A remote shared server can be used as a personal storage/backup of your
-important code and files. It becomes especially useful if it is
-universally available from anywhere by ssh or http (read: internet accessible).&lt;/p&gt;
-
-&lt;p&gt;A &lt;em&gt;shared&lt;/em&gt; git repo is just a bit different from your self-standing git project
-&amp;ldquo;working&amp;rdquo; directory. It will only contain the git structure found in your .git directory
-and by convention it will have an extension on the name of [.git].
-Your project .git directory has these subdirectories or files branches, config,
-description, HEAD, hooks, info, objects, and refs. Your local project directory
-also has your working files. A remote shared directory has no working file - it
-acts only as a git repository so it has all the git files or subdirectories
-but no working files. It is created differently [&lt;code&gt;git init --bare&lt;/code&gt;] and used
-only remotely for checking files in (pushes) and checking them out (pulls).&lt;/p&gt;
-
-&lt;p&gt;Create a git user and a .ssh directory for that user on the remote server.
-&lt;em&gt;Or&lt;/em&gt; you can use any user on the remote server&amp;hellip; just understand the permission
-for the files are influenced by the user who tries to access them. We suggest
-a generic user name like &amp;ldquo;git&amp;rdquo; because this repository will be shared - it will
-not be a &amp;ldquo;working&amp;rdquo; project directory.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; sudo adduser git
- su git
- cd
- mkdir .ssh &amp;amp;&amp;amp; chmod 700 .ssh 
- touch .ssh/authorized_keys &amp;amp;&amp;amp; chmod 600 .ssh/authorized_keys
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;to-make-logins-easier-passwordless&#34;&gt;To make logins easier (passwordless)&lt;/h3&gt;
-
-&lt;p&gt;You need to add your SSH public keys to the remote authorized_keys
-file for the git user.
-You should take a look at it just to be familar with it.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cat myhome/.ssh/id_rsa.pub
-ssh-rsa AAAAB3NADAQABAAABAQCB007n/ww+ouN4gSLKssMxXnBOvf9LGt4L...dAv8JggJICUvax2T9va5... user@host
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Keep in mind that the content of this file is all one line.
-Now append that into to the git user’s authorized_keys &amp;hellip;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ssh-copy-id git@remote_server  # we use the tool provided by ssh 
-# This will do the same as this below
-# except it offers the advantage of making sure 
-# the ~/.ssh directory exists on the remote server.
-# 
-cat /tmp/id_rsa.pub &amp;gt;&amp;gt; git@remote_server:.ssh/authorized_keys
-# the above command requires that the 
-# remote user .ssh directory already exists. 
-# Best to use ssh-copy-id provided for this purpose
-# but know you know what it is doing for you.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;lock-down-the-git-user-shell&#34;&gt;Lock down the git user shell&lt;/h3&gt;
-
-&lt;p&gt;Change the git user shell to: &lt;code&gt;/usr/bin/git-shell&lt;/code&gt; on the remote server.
-Make sure that git-shell exists in the &lt;code&gt;/etc/shells&lt;/code&gt; file
-&amp;gt;&amp;gt;Note: you will not be able to ssh into the server as the
-git user&amp;hellip; but it will allow git commands to work against it.&lt;/p&gt;
-
-&lt;h3 id=&#34;build-an-empty-git-initialized-prepared-directory-for-every-project&#34;&gt;Build an empty git initialized/prepared directory for every project&lt;/h3&gt;
-
-&lt;p&gt;On the remote server you need to build out a project.git directory
-and initialize if with &lt;code&gt;git init --bare&lt;/code&gt; to allow a new project
-to be pushed to the remote server.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;NOTE: &lt;code&gt;git init --bare&lt;/code&gt; is &lt;em&gt;VERY DIFFERENT&lt;/em&gt; from &lt;code&gt;git init bare&lt;/code&gt;.
-The first creates a shared git repository (with no working files).
-The second command creates a local project directory named &amp;ldquo;bare&amp;rdquo;
-complete with its own .git directory. The &amp;ldquo;bare&amp;rdquo; project directory
-is ready to receive and git manage any new working files.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Create an empty shared git directory (remote repository) on the remote
-server for the project (same process for any new shared project).&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; cd /opt/gitroot # I used /data/gitroot - you can name this 
-                 # git repo dir anything you want
- mkdir project.git # yes, add the git extension - trust me here - it is convention
- cd project.git # IMPORTANT - by convention shared git repos are named with a [.git] extension!!!
- git init --bare # build out a default git directories with needed files (it will
-                 # not create .git - instead all the directories are not hidden
-                 # and at the project directory level. Do an `ls -l` to see the
-                 # difference
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;git init --bare&lt;/code&gt; builds out the bare .git/ directory with all the
-needed structure and files for controlling git but no .git subdirectory.&lt;/p&gt;
-
-&lt;p&gt;It will look like this before any pushes are done.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;+-----branches
-+-----config
-+-----description
-+-----HEAD
-+-----hooks
-|     +-----applypatch-msg.sample
-|     +-----commit-msg.sample
-|     +-----post-update.sample
-|     +-----pre-applypatch.sample
-|     +-----pre-commit.sample
-|     +-----prepare-commit-msg.sample
-|     +-----pre-push.sample
-|     +-----pre-rebase.sample
-|     +-----update.sample
-+-----info
-|     +-----exclude
-+-----objects
-|     +-----info
-|     +-----pack
-+-----refs
-|     +-----heads
-|     +-----tags
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note: no objects yet and no .git subdirectory (and no working files
-will be stored here).&lt;/p&gt;
-
-&lt;h3 id=&#34;prepare-your-project-directory-on-the-local-computer-if-you-haven-t-already&#34;&gt;Prepare your project directory on the local computer if you haven&amp;rsquo;t already&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt; cd myproject # even when files already exist
- git init # to build out the .git/ directory structure and files
- git add . # stages files in the cache (staging area)
- git commit -m &#39;Initial base commit&#39; # commits the staged files to you local git repo 
- # the .git/ directory and files now has all the history and needed info making up
- # your local git repo.
- # this next command adds/changes a line in the local myproject/.git/config
- git remote add origin git@gitserver:/opt/git/project.git
- # the above line tells git you want a remote server which you are naming &amp;quot;origin&amp;quot;
- # to act as another copy of your local git repo and its location is then declared
- # This information is now stored in your prj/.git/config file - go look at it to see.
- git push origin master # this pushes your git repo up to the declared remote server
-                        # which has the alias name &amp;quot;origin&amp;quot;
- # git status # note the output on this will say you are &amp;quot;on branch master&amp;quot;
- # that is the default working area.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now the remote &lt;em&gt;shared&lt;/em&gt; prj.git repository might look something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;+-----branches
-+-----config
-+-----description
-+-----HEAD
-+-----hooks
-|     +-----applypatch-msg.sample
-|     +-----commit-msg.sample
-|     +-----post-update.sample
-|     +-----pre-applypatch.sample
-|     +-----pre-commit.sample
-|     +-----prepare-commit-msg.sample
-|     +-----pre-push.sample
-|     +-----pre-rebase.sample
-|     +-----update.sample
-+-----info
-|     +-----exclude
-+-----objects
-|     +-----03
-|     |     +-----f1148542c5dbf6347c7e8e6a62863258c1c3b0
-|     +-----46
-|     |     +-----769acc026e57212ca06ad8991643061ac429eb
-|     +-----4e
-|     |     +-----f21067659fb999c8efcdb03e800245dbd80eb0
-|     +-----5b
-|     |     +-----d657f7b8fcd822d6e44202bc33e808cdd01ee7
-|     +-----84
-|     |     +-----bce25cbc083f803b75fc34f4b4577ea95c6a0b
-|     +-----8a
-|     |     +-----611c4dabd6b8d8654d554a8d5378656682c4f9
-|     +-----c8
-|     |     +-----28f096c4a01ca3cffa690c484b5ef8ee714a2c
-|     +-----f0
-|     |     +-----fa0104ec53e1614f556472b6ec9e355e297d7f
-|     +-----f2
-|     |     +-----79361d9a6ab19614d57d96cafd47a17280b02e
-|     +-----info
-|     +-----pack
-+-----refs
-|     +-----heads
-|     |     +-----master
-|     +-----tags
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Note the additional objects and NO WORKING FILES.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Ok, lets have just a small aside on how git is different
-from other older version control programs like CVS. git likes
-living all alone by itself &lt;em&gt;but&lt;/em&gt; it is also just as happy to share
-life with others. When you do a &lt;code&gt;git init&lt;/code&gt; it builds out a whole
-new .git/ directory where - this becomes your local repository -
-complete in every way - all local to your project directory.
-When you do  a &lt;code&gt;git add .&lt;/code&gt; you
-&amp;ldquo;stage&amp;rdquo; files. This gives you a chance to unstage file(s)
-before committing them to the repository storage. Once you run &lt;code&gt;git commit&lt;/code&gt;
-all the staged files are stored as copies into the local repository
-and they are now available for checkout as the latest version.
-Everything is self contained in your local project directory - your
-original files and all changes, history, latest version etc all in
-the .git/ repository. So this doesn&amp;rsquo;t seem like it offers and safety
-advantages until your realize that you can &lt;em&gt;very easily&lt;/em&gt; clone everything
-onto any other PC &amp;hellip; and another and another - all existing as a full
-self-sufficient repository.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Anyone can now clone it and push changes back up just as easily:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;# from another remote machine
- git clone git@remoteserver:/opt/gitroot/project.git # clone the whole
-                                                     #  enchilada - notice
-                                                     # the .git extension
-                                                     # denoting this is
-                                                     # a shared git repos
- cd project
- vim README # make any change you want
- git commit -am &#39;Small modification to README&#39; # commits it locally
- git push origin master # pushes it to the server it was claned from above
- # go look at .git/config to gain a little better understanding
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;There you have it - one fully functional personal repository and one shared
-repository..&lt;/p&gt;
-
-&lt;p&gt;Enjoy,&lt;/p&gt;
-
-&lt;p&gt;-g-&lt;/p&gt;</description>
+&lt;p&gt;###Why git? (skip this if you are less than patient)&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>LaTex and markdown</title>
-      <link>/post/2015-04-04-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-04-post1/</link>
       <pubDate>Sat, 04 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-04-04-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-04-post1/</guid>
       <description>&lt;p&gt;To get \(LaTex\) to work I had to add this to the _layout/footer.html&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;
@@ -1865,17 +340,399 @@ repository..&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;insert \\(LaTex\\) here
 &lt;/code&gt;&lt;/pre&gt;
 
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>startbootstrap-clean theme contact form</title>
+      <link>https://www.companionway.net/post/2015-04-03-post1/</link>
+      <pubDate>Fri, 03 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-03-post1/</guid>
+      <description>&lt;p&gt;Getting the contact form to work on godaddy hosting was a trip, an ugly
+trip.&lt;/p&gt;
+
+&lt;p&gt;The contact form built into the jekyll startbootstrap-clean theme coding
+is a bit convoluted and needed tweaking to get it working.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;first you change the mail/contact_me.php to include to your email address
+(no problem there)&lt;/li&gt;
+&lt;li&gt;but it failed so I used google chrome developer tool (Ctrl-Shft-I) to diagnose what was failing.
+It was looking for the php script at /contact/mail/contact_me.php instead of /mail/contact_me.php
+(easily fixed by moving it).&lt;/li&gt;
+&lt;li&gt;by the way - this form does not pass the POST variables directly to the on script - it uses js/bootstrap-clean.js
+(which has been minified into js/bootstrap-clean-min.js) to validate the form entries and passes it on to contact_me.php
+as POST variables.&lt;/li&gt;
+&lt;li&gt;however, on godaddy hosting they restrict things quite a bit and you need to use their tools
+to send email. They place into your basic web site gdform.php and webformmailer.php (which is a link). I tried
+replacing contact_me.php with each of these&amp;hellip; only gdform.php worked. Their gdform.php script actually writes
+out your POSTED variables into a dated file (eg gform_8935621) into you $HOME/data/ directory. A cron job periodically
+mails out any gform_xxxxxxx file it finds to you.&lt;/li&gt;
+&lt;li&gt;bottom line &amp;hellip; I saved the original contact_me.php off and then on my godaddy site I copied gdform.php to /contact/mail/contact_me.php
+and all problems solved. Your contact email will eventually come when the cron runs to send it. You can check new conntact requests
+by looking for $HOME/data/gdform-xxxxxxx files.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Centering a string</title>
+      <link>https://www.companionway.net/post/2015-04-02-post1/</link>
+      <pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-02-post1/</guid>
+      <description>&lt;h1 id=&#34;center-a-string-using-awk&#34;&gt;Center a string using awk&lt;/h1&gt;
+
+&lt;h2 id=&#34;awk-everyone-s-favorite-right&#34;&gt;awk = everyone&amp;rsquo;s favorite - right?&lt;/h2&gt;
+
+&lt;p&gt;People who know me also know that I prefer simple
+universally available tools to get a job done. Awk is
+probably one of my favorites because it does pretty
+much anything I need for quick and simple jobs. It is
+far more powerful than most people realize including
+associative arrays and it will do anything grep and sed&lt;br /&gt;
+can do.&lt;/p&gt;
+
+&lt;p&gt;Recently I had the need to center a string of text. This
+is a easy problem that pretty much any freshman programmer
+can accomplish in a heartbeat but I decided to do it with
+awk. This sample gives you a chance to explore rudimentary
+features of awk.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.companionway.net/post/2015-04-01-post2/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-01-post2/</guid>
+      <description>&lt;h1 id=&#34;this-website&#34;&gt;This website&lt;/h1&gt;
+
+&lt;p&gt;&amp;hellip; was created (and is maintained) using jekyll.&lt;/p&gt;
+
+&lt;p&gt;But getting here was a bit of a struggle.&lt;br /&gt;
+I started using Jekyll quite some time ago. I love ruby and when I&lt;br /&gt;
+found Jekyll I thought my mutual love for ruby and website design
+had perfectly come together.&lt;/p&gt;
+
+&lt;p&gt;Not so fast there buckeroo. I could not easily manage themes in a way&lt;br /&gt;
+that satisfied me&amp;hellip; so I went exploring. I tried dozens of flat CMS&lt;br /&gt;
+generators. My journey lasted months. I was very impressed with gravCMS&lt;br /&gt;
+but I still fought with theme manipulation.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Learning markdown ...</title>
+      <link>https://www.companionway.net/post/2015-04-01-post1/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-01-post1/</guid>
+      <description>&lt;h1 id=&#34;markdown-this-heading-uses-setext-style&#34;&gt;Markdown - this heading uses Setext style&lt;/h1&gt;
+
+&lt;p&gt;You can&lt;br /&gt;
+break lines&lt;br /&gt;
+by adding &amp;gt;=2 spaces&lt;br /&gt;
+to the end
+before starting the next line&lt;/p&gt;
+
+&lt;h1 id=&#34;this-heading-uses-atx-style&#34;&gt;This heading uses atx style&lt;/h1&gt;
+
+&lt;p&gt;&lt;p&gt;I am learning that you have to name&lt;br /&gt;
+ your post file with YYYY-MM-DD-whatever.markdown&lt;/p&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;p&gt;the &lt;strong&gt;extension&lt;/strong&gt; &lt;em&gt;can&lt;/em&gt; be &amp;ldquo;.md&amp;rdquo;
 &lt;p&gt;&lt;/p&gt;
 
-&lt;p&gt;Now this code&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;quoted text
+here&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;pre&gt;&lt;code&gt;$$a^2 + b_i^2 = c^2 \left(\frac12\right) $$
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Let&#39;s change an image</title>
+      <link>https://www.companionway.net/post/2015-04-01-post3/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-01-post3/</guid>
+      <description>&lt;h1 id=&#34;changing-an-image&#34;&gt;Changing an image&lt;/h1&gt;
+
+&lt;p&gt;The magic tool is adapt images is &lt;em&gt;convert&lt;/em&gt; from the imagemagick package.&lt;/p&gt;
+
+&lt;p&gt;To convert type: &lt;code&gt;convert myimage.png myimage.jpg&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is a way to resize an image: &lt;code&gt;convert myimage.png -resize 200x100 myimage.png&lt;/code&gt;
+&amp;gt;Notice: the image will be converted right over the top of itself&lt;/p&gt;
+
+&lt;p&gt;To darken (first argument to -modulate) an image and reduce&lt;br /&gt;
+the color (second argument to -modulate):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;convert -modulate 70,90 myimage.png myimage-darker.png
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;looks like this:
-$$a^2 + b_i^2 = c^2 \left(\frac12\right)$$
-or block \(Latex\):
-\[ \frac{1}{n^{2}} \]&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Adding fade in and down javascript</title>
+      <link>https://www.companionway.net/post/2015-04-05-post1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-05-post1/</guid>
+      <description>&lt;h1 id=&#34;javascript-fade-in-and-down&#34;&gt;Javascript fade in and down&lt;/h1&gt;
+
+&lt;p&gt;I wanted to change the header on the theme for my web site
+to display a slide down and in header.&lt;/p&gt;
+
+&lt;p&gt;The script needed to be a combination of two jquery animations.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;script src=&amp;quot;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
+&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
+$(document).ready(function(){
+    $(&#39;#fadeInDown&#39;)
+    .css(&#39;display&#39;, &amp;quot;none&amp;quot;)
+    .slideDown(2000)
+    .animate(
+      { opacity: 1 },
+      { queue: false, duration: 2300 }
+      );
+    });
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;First we load in the jquery code from google nut this a single point of failure.
+If there is network interruption jquery code is lost. But in my instance if the
+network is failing then my web site probably is too.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Ansible - modifying sudoers</title>
+      <link>https://www.companionway.net/post/2015-04-17-post1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-17-post1/</guid>
+      <description>&lt;h1 id=&#34;ansible-modifying-etc-sudoers&#34;&gt;Ansible - modifying /etc/sudoers&lt;/h1&gt;
+
+&lt;p&gt;I have locked administrators out of using sudo with a simple typo.&lt;/p&gt;
+
+&lt;p&gt;With ansible you can lockup sudo on every machine with a single error. So
+I get pretty cautious with editing /etc/sudoers through any deployment application.&lt;/p&gt;
+
+&lt;p&gt;Here is a quick example of going overboard to protect your sudoers file
+when using ansible. This is in my &lt;code&gt;$ANSIBLE_DIR/roles/common/tasks/main.yml&lt;/code&gt; file&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;- name: Copy sudoers for safety
+  command: cp /etc/sudoers /etc/sudoers.tmp
+
+- name: Create sudoers.bak
+  command: cp /etc/sudoers /etc/sudoers.bak
+
+- name: Ensure admin group is in sudoers with NOPASSWD
+  lineinfile: &amp;quot;dest=/etc/sudoers.tmp state=present regexp=&#39;^%admin &#39; line=&#39;%admin ALL=(ALL) NOPASSWD: ALL&#39; validate=&#39;visudo -cf %s&#39;&amp;quot;
+  register: sudoers_tmp_ok
+
+- name: Copy sudoers.tmp to sudoers
+  when: sudoers_tmp_ok|success
+  command: cp /etc/sudoers.tmp /etc/sudoers
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Command line disk tree</title>
+      <link>https://www.companionway.net/post/2015-04-27-post1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-27-post1/</guid>
+      <description>&lt;h1 id=&#34;command-line-disk-tree&#34;&gt;Command line disk tree&lt;/h1&gt;
+
+&lt;p&gt;I am writing another article on the basics of using git. It
+was going to be a short article however, given the subject it is
+turning out to be much longer than I expected. But in the process
+of writing it I had to frequently use a shell function I wrote years
+ago that  displays a disk tree structure (optionally with files).&lt;/p&gt;
+
+&lt;p&gt;I needed a way to see the changes to the .git directory as git commands
+are executed against the repository. I thought I would share it
+with you today.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Delete the last X files using sed</title>
+      <link>https://www.companionway.net/post/2015-04-26-post1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-26-post1/</guid>
+      <description>&lt;h2 id=&#34;simple-sed-trick-keeping-the-last-x-files&#34;&gt;Simple sed trick - keeping the last X files&lt;/h2&gt;
+
+&lt;p&gt;How would you remove all but the last 10 files in a directory?&lt;/p&gt;
+
+&lt;p&gt;So let&amp;rsquo;s create 15 files with one second between there
+creation time. Oldest one (first one) will be called
+1.file
+and the newest one (last one) will be called
+15.file&lt;/p&gt;
+
+&lt;p&gt;Run this code to do that:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;for i in `seq 1 15`; do
+  touch $i.fil
+  sleep 1
+done
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MT7630e Wifi build and install</title>
+      <link>https://www.companionway.net/post/2015-04-26-post2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-26-post2/</guid>
+      <description>&lt;h1 id=&#34;wifi-mt7630e&#34;&gt;Wifi mt7630e&lt;/h1&gt;
+
+&lt;p&gt;Today&amp;rsquo;s hero is Jakub Kicinski. He rewrote the Mediatek MT7630e drivers
+to clean up the code &lt;em&gt;and&lt;/em&gt; work with the new kernels. I have been waiting
+for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.&lt;/p&gt;
+
+&lt;p&gt;Kudo&amp;rsquo;s to Mr. Kicinski!&lt;/p&gt;
+
+&lt;p&gt;Here is the link:
+&lt;a href=&#34;https://github.com/kuba-moo/mt7630e.git&#34;&gt;github kuba-moo/mt7630e&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SSH basics</title>
+      <link>https://www.companionway.net/post/2015-04-15-post1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-15-post1/</guid>
+      <description>&lt;h1 id=&#34;ssh&#34;&gt;SSH&lt;/h1&gt;
+
+&lt;h2 id=&#34;debug-with-verbose-output&#34;&gt;Debug with verbose output&lt;/h2&gt;
+
+&lt;p&gt;$HOME/.ssh/config first and foremost - debug with -vvvv&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;actually do it before you need to so you can see how it works&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&#34;from-wikipedia-paraphrased&#34;&gt;From Wikipedia (paraphrased):&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Secure Shell, or SSH, is a cryptographic (encrypted) network
+protocol for initiating text-based shell sessions[clarification needed] on
+remote machines in a secure way.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;In 1995, Tatu Ylönen, a researcher at Helsinki University of Technology,
+Finland, designed the first version of the protocol (now called SSH-1) prompted by a password-sniffing attack at his university network.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vagrant and ansible</title>
+      <link>https://www.companionway.net/post/2015-04-23-post1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-23-post1/</guid>
+      <description>&lt;h1 id=&#34;vagrant-and-ansible&#34;&gt;vagrant and ansible&lt;/h1&gt;
+
+&lt;h2 id=&#34;putting-vagrant-on-steroids&#34;&gt;putting vagrant on steroids&lt;/h2&gt;
+
+&lt;p&gt;First, set up vagrant to create a group of guest virtual machines (see previous posts).
+We will assume your Vagrantfile is configured to build/start 3 nodes (node1, node2, node3). If these are
+bare builds you will want to personalize or customize each of them.&lt;/p&gt;
+
+&lt;p&gt;Chances are you will want to give each of them a common base of applications
+and configuration. As a significant example, downloaded images are set
+for universal time; not what you want. It is simple to just edit the
+/etc/timezone file or write a script to change it on multiple machines. But if
+you have lots of machines or tear these machines down and stand them back up
+frequently then exercises like this will get very tedious. Additionally
+there are and handful of packages you typically want one every machine.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vagrant lxc nodes</title>
+      <link>https://www.companionway.net/post/2015-04-22-post1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-22-post1/</guid>
+      <description>&lt;h1 id=&#34;using-vagrant-with-lxc&#34;&gt;Using vagrant with lxc&lt;/h1&gt;
+
+&lt;h3 id=&#34;one-command-vagrant-up&#34;&gt;One command; vagrant up&lt;/h3&gt;
+
+&lt;p&gt;Now that I successfully managed to get vagrant-lxc plugin to
+work (see previous post),  I decided to migrate my virtualbox Vagrantfile to vagrant lxc.
+I have used vagrant and virtualbox to create and bring up
+3 vm guest nodes on my laptop and then use node1 as a dev
+machine, node2 as a staging machine, and node3 as a production
+machine. That way I can test easily with greater confidence
+with each promotion of new code.&lt;/p&gt;
+
+&lt;p&gt;So why use lxc when virtualbox is working fine? The answer is
+obvious for anyone who is familiar with these platforms&amp;hellip;
+lxc is much much faster to bring up, halt, tear down.. and
+you can do quich-n-dirty temporary testing with lxc-start-ephemeral.
+Just too many advantages for developing and testing code in a
+small network.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>vagrant-lxc plugin</title>
+      <link>https://www.companionway.net/post/2015-04-21-post1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-21-post1/</guid>
+      <description>&lt;h1 id=&#34;vagrant-lxc-plugin&#34;&gt;vagrant-lxc plugin&lt;/h1&gt;
+
+&lt;p&gt;OK today I finally had time to get vagrant-lxc to work.
+Up until now I have had vagrant virtualbox working just fine but
+when I looked into lxc containers with vagrant I ran into a
+little problem. First, I added vagrant-lxc plugin with this
+command&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vagran plugin install vagrant-lxc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;But this failed first asking for hostsupname plugin so I added that &amp;hellip;
+Then it complained about not being able to find the vagrant-lxc plugin
+even though this command showed it listed:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;vagrant plugin list
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

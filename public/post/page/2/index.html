@@ -9,7 +9,7 @@
 
 
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:image" content="/img/rpi-card-dark-crop.jpg"/>
+    <meta name="twitter:image" content="https://www.companionway.net/img/obxwavefrompier.jpg"/>
 
 
 
@@ -22,7 +22,7 @@
 
 		<meta property="og:title" content=" Posts &middot;  companionway" />
 		<meta property="og:site_name" content="companionway" />
-		<meta property="og:url" content="/post/" />
+		<meta property="og:url" content="https://www.companionway.net/post/" />
 
 		
 		<meta property="og:type" content="website" />
@@ -37,16 +37,16 @@
 		<meta name="HandheldFriendly" content="True" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link rel="shortcut icon" href="/images/favicon.ico">
-		<link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+		<link rel="shortcut icon" href="https://www.companionway.netimages/favicon.ico">
+		<link rel="apple-touch-icon" href="https://www.companionway.netimages/apple-touch-icon.png" />
 
 
     
 
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/screen.css" />
-<link rel="stylesheet" type="text/css" href="/css/nav.css" />
-<link rel="stylesheet" type="text/css" href="/css/custom.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.netcss/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.netcss/screen.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.netcss/nav.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.netcss/custom.css" />
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Inconsolata" />
@@ -59,15 +59,15 @@
 
 		
 		
-		<link href="/index.xml" rel="alternate" type="application/rss+xml" title="companionway" />
+		<link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
 		
 		
-		<link href="/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
+		<link href="https://www.companionway.net/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.18.1" />
+		<meta name="generator" content="Hugo 0.30.2" />
 
-		<link rel="canonical" href="/post/" />
+		<link rel="canonical" href="https://www.companionway.net/post/" />
 
     
 <link ref="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=EB+Garamond' >
@@ -122,10 +122,20 @@ ga('send', 'pageview');
             	<a href="/page/links/">Links</a>
             </li>
         
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/articles/">Newspaper</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/page/projects/">Projects</a>
+            </li>
+        
     </ul>
     
     
-    <a class="subscribe-button icon-feed" href="/post/index.xml">Subscribe</a>
+    <a class="subscribe-button icon-feed" href="https://www.companionway.net/post/index.xml">Subscribe</a>
     
 </div>
 <span class="nav-cover"></span>
@@ -137,7 +147,7 @@ ga('send', 'pageview');
 
 
 	 
-  <header class="main-header tag-head" style="background-image: url(/img/rpi-card-dark-crop.jpg)">
+  <header class="main-header tag-head" style="background-image: url(https://www.companionway.net/img/obxwavefrompier.jpg)">
   
 
     <nav class="main-nav overlay clearfix">
@@ -176,6 +186,54 @@ ga('send', 'pageview');
 	   
 <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="/post/2015-05-11-post1/">shell/bash uppercase arguments</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><p>To make a long story short&hellip;</p>
+
+<pre><code>#!/bin/bash
+PATTERN=$(echo $1 | tr [:lower:] [:upper:])
+# or
+PATTERN=$(echo $1 | tr [a-z] [A-Z])
+# or
+PATTERN=$(echo $1 | awk '{print toupper($0)}')
+
+echo &quot;Your \$1 argument is now uppercase: $1&quot;
+</code></pre>
+
+<p>To make a short story long&hellip;</p>
+
+<p>Just to let you know a little more about me and reveal
+a few more shells tricks along the way.</p> <a class="read-more" href="/post/2015-05-11-post1/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+        
+
+        
+        
+            Geoff McNamara
+        
+        on
+            
+                <a href="https://www.companionway.nettags/scripting/">#scripting</a>,
+            
+                <a href="https://www.companionway.nettags/financial/">#financial</a>,
+            
+        
+        <time class="post-date" datetime="2015-05-11T00:00:00Z">
+            11 May 2015
+        </time>
+    </footer>
+</article>
+
+	
+	   
+<article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="/post/grovepi/">The GrovePi kit</a></h2>
     </header>
     <section class="post-excerpt">
@@ -208,7 +266,7 @@ and connectors.</p>
         
         on
             
-                <a href="/tags/grovepi/">#grovepi</a>,
+                <a href="https://www.companionway.nettags/grovepi/">#grovepi</a>,
             
         
         <time class="post-date" datetime="2015-05-09T00:00:00Z">
@@ -263,7 +321,7 @@ first entry with its arguments as a test run:</p>
         
         on
             
-                <a href="/tags/awk/">#awk</a>,
+                <a href="https://www.companionway.nettags/awk/">#awk</a>,
             
         
         <time class="post-date" datetime="2015-05-02T00:00:00Z">
@@ -446,7 +504,7 @@ by looking for $HOME/data/gdform-xxxxxxx files.</li>
         
         on
             
-                <a href="/tags/jekyll/">#jekyll</a>,
+                <a href="https://www.companionway.nettags/jekyll/">#jekyll</a>,
             
         
         <time class="post-date" datetime="2015-04-03T00:00:00Z">
@@ -493,7 +551,7 @@ features of awk.</p> <a class="read-more" href="/post/2015-04-02-post1/">&raquo;
         
         on
             
-                <a href="/tags/awk/">#awk</a>,
+                <a href="https://www.companionway.nettags/awk/">#awk</a>,
             
         
         <time class="post-date" datetime="2015-04-02T00:00:00Z">
@@ -538,7 +596,7 @@ but I still fought with theme manipulation.</p>
         
         on
             
-                <a href="/tags/jekyll/">#jekyll</a>,
+                <a href="https://www.companionway.nettags/jekyll/">#jekyll</a>,
             
         
         <time class="post-date" datetime="2015-04-01T00:00:00Z">
@@ -592,55 +650,7 @@ here</p>
         
         on
             
-                <a href="/tags/markdown/">#markdown</a>,
-            
-        
-        <time class="post-date" datetime="2015-04-01T00:00:00Z">
-            1 Apr 2015
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-01-post3/">Let&#39;s change an image</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="changing-an-image">Changing an image</h1>
-
-<p>The magic tool is adapt images is <em>convert</em> from the imagemagick package.</p>
-
-<p>To convert type: <code>convert myimage.png myimage.jpg</code></p>
-
-<p>Here is a way to resize an image: <code>convert myimage.png -resize 200x100 myimage.png</code>
-&gt;Notice: the image will be converted right over the top of itself</p>
-
-<p>To darken (first argument to -modulate) an image and reduce<br />
-the color (second argument to -modulate):</p>
-
-<pre><code>convert -modulate 70,90 myimage.png myimage-darker.png
-</code></pre>
-
-<p></p> <a class="read-more" href="/post/2015-04-01-post3/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="/tags/imagemagic/">#imagemagic</a>,
-            
-                <a href="/tags/convert/">#convert</a>,
+                <a href="https://www.companionway.nettags/markdown/">#markdown</a>,
             
         
         <time class="post-date" datetime="2015-04-01T00:00:00Z">
@@ -666,13 +676,13 @@ the color (second argument to -modulate):</p>
 
 
 
-<script type="text/javascript" src="/js/jquery.js"></script>
-<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="/js/index.js"></script>
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.companionway.netjs/jquery.js"></script>
+<script type="text/javascript" src="https://www.companionway.netjs/jquery.fitvids.js"></script>
+<script type="text/javascript" src="https://www.companionway.netjs/index.js"></script>
+<script type="text/javascript" src="https://www.companionway.netjs/bootstrap.min.js"></script>
 
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script type="text/javascript" src="/js/custom.js"></script>
+<script type="text/javascript" src="https://www.companionway.netjs/custom.js"></script>
 
 
 

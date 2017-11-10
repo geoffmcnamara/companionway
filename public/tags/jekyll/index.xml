@@ -2,21 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jekyll on companionway</title>
-    <link>/tags/jekyll/index.xml</link>
+    <link>https://www.companionway.net/tags/jekyll/</link>
     <description>Recent content in Jekyll on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <atom:link href="/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Dec 2016 10:57:45 -0500</lastBuildDate>
+    
+	<atom:link href="https://www.companionway.net/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Switched to Hugo</title>
-      <link>/post/Switched-to-Hugo/</link>
+      <link>https://www.companionway.net/post/switched-to-hugo/</link>
       <pubDate>Fri, 09 Dec 2016 10:57:45 -0500</pubDate>
       
-      <guid>/post/Switched-to-Hugo/</guid>
+      <guid>https://www.companionway.net/post/switched-to-hugo/</guid>
       <description>&lt;p&gt;I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
-&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;https://www.companionway.net/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is why:&lt;/p&gt;
 
@@ -37,19 +40,15 @@ or &amp;hellip; just git push it to hithub and use something like netlify.com to
 &lt;/ul&gt;
 
 &lt;p&gt;Reference:
-&lt;a href=&#34;https://gohugo.io/#intro&#34;&gt;gohugo.io&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;
-Enjoy
--g-&lt;/p&gt;</description>
+&lt;a href=&#34;https://gohugo.io/#intro&#34;&gt;gohugo.io&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>startbootstrap-clean theme contact form</title>
-      <link>/post/2015-04-03-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-03-post1/</link>
       <pubDate>Fri, 03 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-04-03-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-03-post1/</guid>
       <description>&lt;p&gt;Getting the contact form to work on godaddy hosting was a trip, an ugly
 trip.&lt;/p&gt;
 
@@ -75,21 +74,15 @@ and all problems solved. Your contact email will eventually come when the cron r
 by looking for $HOME/data/gdform-xxxxxxx files.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Make sure if you sync files form you local machine to your website that you change
-your local contact_me.php similarly.&lt;/p&gt;
-
-&lt;p&gt;Enjoy
--g-&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title></title>
-      <link>/post/2015-04-01-post2/</link>
+      <link>https://www.companionway.net/post/2015-04-01-post2/</link>
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-04-01-post2/</guid>
+      <guid>https://www.companionway.net/post/2015-04-01-post2/</guid>
       <description>&lt;h1 id=&#34;this-website&#34;&gt;This website&lt;/h1&gt;
 
 &lt;p&gt;&amp;hellip; was created (and is maintained) using jekyll.&lt;/p&gt;
@@ -104,19 +97,7 @@ that satisfied me&amp;hellip; so I went exploring. I tried dozens of flat CMS&lt
 generators. My journey lasted months. I was very impressed with gravCMS&lt;br /&gt;
 but I still fought with theme manipulation.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Sinatra and nanco were inspiring but somewhere I came across a blog&lt;br /&gt;
-which I don&amp;rsquo;t recall now, that had me building my own theme. That&lt;br /&gt;
-gave me enought traction to begin to understand how to control themes.&lt;/p&gt;
-
-&lt;p&gt;What brought me back to jekyll was github. I have been building out&lt;br /&gt;
-my github site and it is built with jekyll. It is hard to fight success&lt;br /&gt;
-and obviously jekyll has had a strong history of success with github. Then&lt;br /&gt;
-I pounded a handful of themes available and recently found myself working&lt;br /&gt;
-more and more with the startbootstrap-clean-blog-jekyll.&lt;/p&gt;
-
-&lt;p&gt;More to come&amp;hellip;&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

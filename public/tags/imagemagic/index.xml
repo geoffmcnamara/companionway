@@ -2,19 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Imagemagic on companionway</title>
-    <link>/tags/imagemagic/index.xml</link>
+    <link>https://www.companionway.net/tags/imagemagic/</link>
     <description>Recent content in Imagemagic on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <atom:link href="/tags/imagemagic/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Apr 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.companionway.net/tags/imagemagic/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Let&#39;s change an image</title>
-      <link>/post/2015-04-01-post3/</link>
+      <link>https://www.companionway.net/post/2015-04-01-post3/</link>
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-04-01-post3/</guid>
+      <guid>https://www.companionway.net/post/2015-04-01-post3/</guid>
       <description>&lt;h1 id=&#34;changing-an-image&#34;&gt;Changing an image&lt;/h1&gt;
 
 &lt;p&gt;The magic tool is adapt images is &lt;em&gt;convert&lt;/em&gt; from the imagemagick package.&lt;/p&gt;
@@ -30,16 +33,7 @@ the color (second argument to -modulate):&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;convert -modulate 70,90 myimage.png myimage-darker.png
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;What about rotation: `convert myimage.png -rotate 90 myimage.png&lt;/p&gt;
-
-&lt;p&gt;These are just a small, very small sampling of what &lt;em&gt;convert&lt;/em&gt; can do for your images&lt;/p&gt;
-
-&lt;p&gt;Just for grins: &lt;code&gt;convert myimage.jpg -charcoal 2 myimage-charcoal.jpg&lt;/code&gt;
- The &amp;ldquo;2&amp;rdquo; is for setting the &amp;ldquo;strength&amp;rdquo; of the charcoal effect.&lt;/p&gt;
-
-&lt;hr /&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

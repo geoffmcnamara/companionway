@@ -2,19 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Js on companionway</title>
-    <link>/tags/js/index.xml</link>
+    <link>https://www.companionway.net/tags/js/</link>
     <description>Recent content in Js on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <atom:link href="/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://www.companionway.net/tags/js/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Adding fade in and down javascript</title>
-      <link>/post/2015-04-05-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-05-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/post/2015-04-05-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-05-post1/</guid>
       <description>&lt;h1 id=&#34;javascript-fade-in-and-down&#34;&gt;Javascript fade in and down&lt;/h1&gt;
 
 &lt;p&gt;I wanted to change the header on the theme for my web site
@@ -40,63 +42,7 @@ $(document).ready(function(){
 If there is network interruption jquery code is lost. But in my instance if the
 network is failing then my web site probably is too.&lt;/p&gt;
 
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;Now in my html I just need to put an &lt;code&gt;id=fadeInDown&lt;/code&gt; at the appropriate
-place - that will invoke the code.&lt;/p&gt;
-
-&lt;p&gt;Note below how I changed the &lt;code&gt;&amp;lt;div id=fadeInDown class=&amp;quot;site-heading&amp;quot;&amp;gt;&lt;/code&gt; line here in my themes
-&lt;code&gt;_layout/page.html file&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;...
-&amp;lt;header class=&amp;quot;intro-header&amp;quot; style=&amp;quot;background-image: url(&#39;{{ site.baseurl }}/{% if page.image %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}&#39;)&amp;quot;&amp;gt;
-    &amp;lt;div  class=&amp;quot;container&amp;quot;&amp;gt;
-        &amp;lt;div class=&amp;quot;row&amp;quot;&amp;gt;
-            &amp;lt;div class=&amp;quot;col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1&amp;quot;&amp;gt;
-                &amp;lt;div id=fadeInDown class=&amp;quot;site-heading&amp;quot;&amp;gt;
-                    &amp;lt;h1&amp;gt;{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}&amp;lt;/h1&amp;gt;
-                    &amp;lt;hr class=&amp;quot;small&amp;quot;&amp;gt;
-                    &amp;lt;span class=&amp;quot;subheading&amp;quot;&amp;gt;{{ page.description }}&amp;lt;/span&amp;gt;
-                &amp;lt;/div&amp;gt;
-            &amp;lt;/div&amp;gt;
-        &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt;
-&amp;lt;/header&amp;gt;
-...
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This code works but I needed to make it as a part of the theme I use so first I wrote
-my own javascript &lt;code&gt;.js&lt;/code&gt; file called &lt;code&gt;js/custom.js&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;I also added an &lt;code&gt;&amp;lt;script&amp;gt;...&amp;lt;/script&amp;gt; wrapped include line to the footer of my
-pages by adding this to&lt;/code&gt;_include/footer`.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;script src=&amp;quot;{{ &amp;quot;/js/custom.js &amp;quot; | prepend: site.baseurl }}&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now I can write the file &lt;code&gt;custom.js&lt;/code&gt; with this content:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// jquery scripting
- src=&amp;quot;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&amp;quot;
-
-// quick n dirty fade down code - needs jquery
-  $(document).ready(function(){
-    $(&#39;#fadeInDown&#39;)
-    .css(&#39;display&#39;, &amp;quot;none&amp;quot;)
-    .slideDown(1000)
-    .animate(
-      { opacity: 1 },
-      { queue: false, duration: 1000 }
-    );
-  });
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;It does what I wanted&amp;hellip; thought I would share it with you.&lt;/p&gt;
-
-&lt;p&gt;Enjoy,&lt;br /&gt;
--geoff-&lt;/p&gt;</description>
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

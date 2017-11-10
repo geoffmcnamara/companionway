@@ -1,10 +1,9 @@
----
-layout: page
-title: "About"
-description: "Education is learning rules, experience is learning the exceptions"
-image: "img/gwm-n-jjm2014.jpg"
-menu: main
----
++++
+title = "About"
+description = "Education is learning rules, experience is learning the exceptions"
+image = "img/gwm-n-jjm2014.jpg"
+menu = "main"
++++
 
 <p class="introduction">I am a native of Northern Virginia, grew up there, and worked most of my life there. I had all advantages that come with the area including a good school system and a relatively resilient economy.</p>
 
