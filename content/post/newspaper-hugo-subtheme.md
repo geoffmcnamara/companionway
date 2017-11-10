@@ -21,6 +21,8 @@ the hugo cms system to be the easiest most portable static web building applicat
 The challenge was to create a full newsletter style theme as a subtheme within an existing theme
 structure. So I mocked up a ported version of Silke's newspaper css into a hugo "section".
 
+An example of this subtheme can be seen here: [[newspaper-hugo-subtheme]](/articles)
+
 This project is a drop in offering to any existing hugo themed structure which will produce
 a newsletter format in an "article(s)" hugo section. A user only needs to change the title, city,
 and state varbiable that are stored as front matter in the ./content/articles/_index.md file.
