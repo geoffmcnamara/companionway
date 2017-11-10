@@ -1,23 +1,23 @@
 {{ partial "scripts.html" . }}
 
 <footer class="site-footer clearfix">
-          <center>
-          <div id="site-footer">
-            <hr style="padding: 0px; margin: 0px;">
-            <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
-            <span>
-              {{ if .Site.Copyright }}
-              {{ .Site.Copyright | markdownify}}
-              {{ else }}
-              Copyright (c) {{ .Site.LastChange.Format "2006" }}, <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-              {{ end }}
-            </span>
-            <hr style="padding: 0px; margin: 0px;">
-          </div>
-          </center>
-     {{ if .Site.Params.customFooterPartial }}
-         {{ partial .Site.Params.customFooterPartial . }}
-     {{ end }}
+<center>
+<div id="site-footer">
+<hr style="padding: 0px; margin: 0px;">
+<span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+<span>
+{{ if .Site.Copyright }}
+{{ .Site.Copyright | markdownify}}
+{{ else }}
+Copyright (c) {{ .Site.LastChange.Format "2006" }}, <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+{{ end }}
+</span>
+<hr style="padding: 0px; margin: 0px;">
+</div>
+</center>
+{{ if .Site.Params.customFooterPartial }}
+{{ partial .Site.Params.customFooterPartial . }}
+{{ end }}
 
 </footer>
 </body>
