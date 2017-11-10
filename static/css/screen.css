@@ -161,6 +161,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 */
 
 /* Apply these base styles to all icons */
+/*
 [class^="icon-"]:before, [class*=" icon-"]:before {
     font-family: "genericons", "Open Sans", sans-serif;
     speak: none;
@@ -173,7 +174,7 @@ table { border-collapse: collapse; border-spacing: 0; }
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
+*/
 /* In order to have correct background when using the monokai pygments style*/
 .highlight pre {
   background-color: inherit;
