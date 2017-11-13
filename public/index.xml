@@ -33,8 +33,8 @@ Original source code can be found here: &lt;a href=&#34;https://codepen.io/silki
 &lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/newspaper-hugo-subtheme.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I had a coworker who had a non-profit business blog that wanted to offer a newsletter to her clients.
-So I got interested in finding an HTML format that gave an old traditional newspaper style
-and Silke offered a solution that provided a strong simple css base. Currently (2017) I find
+So I got interested in finding an HTML format that gave an old traditional newspaper style.
+Silke offered a solution that provided a strong simple css base. Currently (2017) I find
 the hugo cms system to be the easiest most portable static web building application freely available.
 The challenge was to create a full newsletter style theme as a subtheme within an existing theme
 structure. So I mocked up a ported version of Silke&amp;rsquo;s newspaper css into a hugo &amp;ldquo;section&amp;rdquo;.&lt;/p&gt;

@@ -20,8 +20,8 @@ Original source code can be found here: https://codepen.io/silkine/pen/jldif
 ![](/img/newspaper-hugo-subtheme.png)
 
 I had a coworker who had a non-profit business blog that wanted to offer a newsletter to her clients.
-So I got interested in finding an HTML format that gave an old traditional newspaper style
-and Silke offered a solution that provided a strong simple css base. Currently (2017) I find
+So I got interested in finding an HTML format that gave an old traditional newspaper style.
+Silke offered a solution that provided a strong simple css base. Currently (2017) I find
 the hugo cms system to be the easiest most portable static web building application freely available.
 The challenge was to create a full newsletter style theme as a subtheme within an existing theme
 structure. So I mocked up a ported version of Silke's newspaper css into a hugo "section".
