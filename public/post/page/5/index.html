@@ -13,21 +13,21 @@
 
 
 
-<meta name="twitter:title" content="Imagemagic"/>
+<meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content="Meeting challenges with success!"/>
 
 
 
-<meta property="og:title" content=" Imagemagic &middot;  companionway" />
+<meta property="og:title" content=" Posts &middot;  companionway" />
 <meta property="og:site_name" content="companionway" />
-<meta property="og:url" content="https://www.companionway.net/tags/imagemagic/" />
+<meta property="og:url" content="https://www.companionway.net/post/" />
 
 
 <meta property="og:type" content="website" />
 
 
 <title>
- Imagemagic &middot;  companionway
+ Posts &middot;  companionway
 </title>
 
 <meta name="description" content="Meeting challenges with success!" />
@@ -51,12 +51,12 @@
 <link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
 
 
-<link href="https://www.companionway.net/tags/imagemagic/index.xml" rel="alternate" type="application/rss+xml" title="Imagemagic &middot; companionway" />
+<link href="https://www.companionway.net/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
 
 
 <meta name="generator" content="Hugo 0.30.2" />
 
-<link rel="canonical" href="https://www.companionway.net/tags/imagemagic/" />
+<link rel="canonical" href="https://www.companionway.net/post/" />
 
 
 <link ref="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=EB+Garamond' >
@@ -126,7 +126,7 @@ ga('send', 'pageview');
     </ul>
     
     
-    <a class="subscribe-button icon-feed" href="https://www.companionway.net/tags/imagemagic/index.xml">Subscribe</a>
+    <a class="subscribe-button icon-feed" href="https://www.companionway.net/post/index.xml">Subscribe</a>
     
 </div>
 <span class="nav-cover"></span>
@@ -151,7 +151,7 @@ ga('send', 'pageview');
 </nav>
 <div class="vertical">
 <div class="main-header-content inner">
-<h1 class="page-title">Imagemagic</h1>
+<h1 class="page-title">Posts</h1>
 <h2 class="page-description">
 
 </h2>
@@ -165,7 +165,11 @@ ga('send', 'pageview');
 <div class="extra-pagination inner">
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 of 1</span>
+	    <a class="newer-posts" href="/post/page/4/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 5 of 6</span>
+	
+	    <a class="older-posts" href="/post/page/6/">Older Posts &rarr;</a>
 	
 </nav>
 
@@ -223,9 +227,213 @@ the color (second argument to -modulate):</p>
 
 
 
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/2015-04-05-post1/">Adding fade in and down javascript</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><h1 id="javascript-fade-in-and-down">Javascript fade in and down</h1>
+
+<p>I wanted to change the header on the theme for my web site
+to display a slide down and in header.</p>
+
+<p>The script needed to be a combination of two jquery animations.</p>
+
+<pre><code class="language-javascript">&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+    $('#fadeInDown')
+    .css('display', &quot;none&quot;)
+    .slideDown(2000)
+    .animate(
+      { opacity: 1 },
+      { queue: false, duration: 2300 }
+      );
+    });
+&lt;/script&gt;
+</code></pre>
+
+<p>First we load in the jquery code from google nut this a single point of failure.
+If there is network interruption jquery code is lost. But in my instance if the
+network is failing then my web site probably is too.</p>
+
+<p></p> <a class="read-more" href="/post/2015-04-05-post1/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+        
+
+        
+            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+        
+        
+            Geoff McNamara
+        
+        on
+            
+                <a href="https://www.companionway.nettags/js/">#js</a>,
+            
+        
+        <time class="post-date" datetime="0001-01-01T00:00:00Z">
+            1 Jan 0001
+        </time>
+    </footer>
+</article>
+
+
+
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/2015-04-17-post1/">Ansible - modifying sudoers</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><h1 id="ansible-modifying-etc-sudoers">Ansible - modifying /etc/sudoers</h1>
+
+<p>I have locked administrators out of using sudo with a simple typo.</p>
+
+<p>With ansible you can lockup sudo on every machine with a single error. So
+I get pretty cautious with editing /etc/sudoers through any deployment application.</p>
+
+<p>Here is a quick example of going overboard to protect your sudoers file
+when using ansible. This is in my <code>$ANSIBLE_DIR/roles/common/tasks/main.yml</code> file</p>
+
+<pre><code>- name: Copy sudoers for safety
+  command: cp /etc/sudoers /etc/sudoers.tmp
+
+- name: Create sudoers.bak
+  command: cp /etc/sudoers /etc/sudoers.bak
+
+- name: Ensure admin group is in sudoers with NOPASSWD
+  lineinfile: &quot;dest=/etc/sudoers.tmp state=present regexp='^%admin ' line='%admin ALL=(ALL) NOPASSWD: ALL' validate='visudo -cf %s'&quot;
+  register: sudoers_tmp_ok
+
+- name: Copy sudoers.tmp to sudoers
+  when: sudoers_tmp_ok|success
+  command: cp /etc/sudoers.tmp /etc/sudoers
+</code></pre>
+
+<p></p> <a class="read-more" href="/post/2015-04-17-post1/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+        
+
+        
+            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+        
+        
+            Geoff McNamara
+        
+        
+        <time class="post-date" datetime="0001-01-01T00:00:00Z">
+            1 Jan 0001
+        </time>
+    </footer>
+</article>
+
+
+
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/2015-04-27-post1/">Command line disk tree</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><h1 id="command-line-disk-tree">Command line disk tree</h1>
+
+<p>I am writing another article on the basics of using git. It
+was going to be a short article however, given the subject it is
+turning out to be much longer than I expected. But in the process
+of writing it I had to frequently use a shell function I wrote years
+ago that  displays a disk tree structure (optionally with files).</p>
+
+<p>I needed a way to see the changes to the .git directory as git commands
+are executed against the repository. I thought I would share it
+with you today.</p>
+
+<p></p> <a class="read-more" href="/post/2015-04-27-post1/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+        
+
+        
+            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+        
+        
+            Geoff McNamara
+        
+        
+        <time class="post-date" datetime="0001-01-01T00:00:00Z">
+            1 Jan 0001
+        </time>
+    </footer>
+</article>
+
+
+
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/2015-04-26-post1/">Delete the last X files using sed</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><h2 id="simple-sed-trick-keeping-the-last-x-files">Simple sed trick - keeping the last X files</h2>
+
+<p>How would you remove all but the last 10 files in a directory?</p>
+
+<p>So let&rsquo;s create 15 files with one second between there
+creation time. Oldest one (first one) will be called
+1.file
+and the newest one (last one) will be called
+15.file</p>
+
+<p>Run this code to do that:</p>
+
+<pre><code>for i in `seq 1 15`; do
+  touch $i.fil
+  sleep 1
+done
+</code></pre>
+
+<p></p> <a class="read-more" href="/post/2015-04-26-post1/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+        
+
+        
+            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+        
+        
+            Geoff McNamara
+        
+        
+        <time class="post-date" datetime="0001-01-01T00:00:00Z">
+            1 Jan 0001
+        </time>
+    </footer>
+</article>
+
+
+
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 of 1</span>
+	    <a class="newer-posts" href="/post/page/4/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 5 of 6</span>
+	
+	    <a class="older-posts" href="/post/page/6/">Older Posts &rarr;</a>
 	
 </nav>
 

@@ -5,15 +5,28 @@
 {{$authorlocation := or $author.location .Site.Params.authorlocation }}
 {{$authorwebsite := or $author.website .Site.Params.authorwebsite }}
 <section class="author">
-  <h4><a href="{{.Site.BaseURL}}">{{$authorname}}</a></h4>
-  {{if $authorbio}}
-  <p>{{$authorbio}}</p>
-  {{else}}
-  <p>Read <a href="{{.Site.BaseURL}}">more posts</a> by this author.</p>
-  {{end}}
-  <div class="author-meta">
-    {{with $authorlocation}}<span class="author-location icon-location">{{.}}</span>{{end}}
-    {{with $authorwebsite}}<span class="author-link icon-link"><a href="{{.}}">{{.}}</a></span>{{end}}
-  </div>
+<h4><a href="{{.Site.BaseURL}}">{{$authorname}}</a></h4>
+{{if $authorbio}}
+<p>{{$authorbio}}</p>
+{{else}}
+<p>Read <a href="{{.Site.BaseURL}}">more posts</a> by this author.</p>
+{{end}}
+<div class="author-meta">
+{{with $authorlocation}}
+<i class="fa fa-map-marker"></i>
+blah
+<!--
+<span class="author-location xicon-location">{{.}}
+-->
+<span class="author-location">{{.}}
+</span>{{end}}
+{{with $authorwebsite}}
+<i class="fa fa-link"></i>
+<span class="author-link"><a href="{{.}}">{{.}}</a></span>
+<!--
+<span class="author-link xicon-link"><a href="{{.}}">{{.}}</a></span>
+-->
+{{end}}
+</div>
 </section>
 {{end}}

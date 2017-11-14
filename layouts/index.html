@@ -20,9 +20,9 @@
 <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
 {{else}}
 {{ if .Site.Params.RSSLink}}
-<a class="menu-button icon-feed" href="{{.Site.Params.RSSLink }}">&nbsp;&nbsp;Subscribe</a>
+<a class="menu-button xicon-feed" href="{{.Site.Params.RSSLink }}"><i class="fa fa-rss"></i>&nbsp;&nbsp;Subscribe</a>
 {{else}}
-<a class="menu-button icon-feed" href="{{ .RSSLink }}">&nbsp;&nbsp;Subscribe</a>
+<a class="menu-button xicon-feed" href="{{ .RSSLink }}"><i class="fa fa-rss"></i>&nbsp;&nbsp;Subscribe</a>
 {{end}}
 {{end}}
 </nav>
@@ -30,65 +30,50 @@
 <div class="main-header-content inner">
 {{ if .Site.Params.linkedinName }}
 <a class="bloglogo" href="https://www.linkedin.com/in/{{ .Site.Params.linkedinName }}" target="_blank">
-<!--
-<span class="icon-linkedin" style="color:white;font-size:2em"></span>
--->
-<i class="fa fa-linkedin fa-3x" aria-hidden="true"></i>
+<span class="xicon-linkedin" style="color:white;font-size:2em"></span>
+<i class="fa fa-linkedin fa-3x"></i>
 </a>
 &nbsp;
 {{end}}
 {{ if .Site.Params.githubName }}
 <a class="bloglogo" href="https://github.com/{{ .Site.Params.githubName }}" target="_blank">
-<!--
-<span class="icon-github" style="color:white;font-size:2em"></span>
-<span class="fa fa-github" style="color:white;font-size:2em"></span>
--->
-<i class="fa fa-github fa-3x" aria-hidden="true"></i>
+<span class="xicon-github" style="color:white;font-size:2em"></span>
+<i class="fa fa-github fa-3x"></i>
 </a>
 &nbsp;
 {{end}}
 {{ if .Site.Params.twitterName }}
 <a class="bloglogo" href="https://twitter.com/{{ .Site.Params.twitterName }}" target="_blank">
-<!--
-<span class="icon-twitter" style="color:white;font-size:2em"></span>
--->
-<i class="fa fa-twitter fa-3x" aria-hidden="true"></i>
+<span class="xicon-twitter" style="color:white;font-size:2em"></span>
+<i class="fa fa-twitter fa-3x"></i>
 </a>
 &nbsp;
 {{end}}
 {{ if .Site.Params.facebookName }}
 <a class="bloglogo" href="https://www.facebook.com/{{ .Site.Params.facebookName }}" target="_blank">
-<!--
-<span class="icon-facebook" style="color:white;font-size:2em"></span>
--->
-<i class="fa fa-facebook fa-3x" aria-hidden="true"></i>
+<span class="xicon-facebook" style="color:white;font-size:2em"></span>
+<i class="fa fa-facebook fa-3x"></i>
 </a>
 &nbsp;
 {{end}}
 {{ if .Site.Params.instagramName }}
 <a class="bloglogo" href="https://instagram.com/{{ .Site.Params.instagramName }}" target="_blank">
-<!--
-<span class="icon-instagram" style="color:white;font-size:2em"></span>
--->
-<i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+<span class="xicon-instagram" style="color:white;font-size:2em"></span>
+<i class="fa fa-instagram fa-3x"></i>
 </a>
 &nbsp;
 {{end}}
 {{ if .Site.Params.pinterestName }}
 <a class="bloglogo" href="https://www.pinterest.com/{{ .Site.Params.pinterestName }}" target="_blank">
-<!--
-<span class="icon-pinterest" style="color:white;font-size:2em"></span>
--->
-<i class="fa fa-pinterest fa-3x" aria-hidden="true"></i>
+<span class="xicon-pinterest" style="color:white;font-size:2em"></span>
+<i class="fa fa-pinterest fa-3x"></i>
 </a>
 &nbsp;
 {{end}}
 {{ if .Site.Params.googlePlusName }}
 <a class="bloglogo" href="https://google.com/+{{ .Site.Params.googlePlusName }}" target="_blank">
-<!--
-<span class="icon-google-plus" style="color:white;font-size:2em"></span>
--->
-<i class="fa fa-google-plus fa-3x" aria-hidden="true"></i>
+<span class="xicon-google-plus" style="color:white;font-size:2em"></span>
+<i class="fa fa-google-plus fa-3x"></i>
 </a>
 &nbsp;
 {{end}}
@@ -97,7 +82,10 @@
 <h2 class="page-description">{{ .Site.Params.description }}</h2>
 </div> <!-- /.main-header-content inner -->
 </div> <!-- /.vertical [social links] -->
-<a class="scroll-down" href="#content"><span class="xhidden"><i class="fa fa-chevron-down fa-1x"></i></span></a>
+<!--
+<a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+-->
+<a class="scroll-down" href="#content"><span><i class="fa fa-chevron-down fa-1x"></i></span></a>
 </header>
 
 <main id="content" class="content" role="main" >

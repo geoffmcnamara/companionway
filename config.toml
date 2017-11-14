@@ -5,11 +5,11 @@ baseURL = "https://www.companionway.net"
 #relativeURLs = true
 #uglyURLs = true
 #canonifyURLs = false
-languageCode = "en-us"
+#languageCode = "en-us"
 Title= "companionway"
-#paginate = 5
+paginate = 5
 Copyright = "All rights reserved - companionway - 2016"
-#DisqusShortname = "YOUR_SHORT_NAME_HERE"
+DisqusShortname = "companionway.net"
 theme = "casper"
 
 [params]

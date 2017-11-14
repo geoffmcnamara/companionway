@@ -268,37 +268,37 @@ ga('send', 'pageview');
 <div class="bg"></div>
 <div class="text">
 <p class="buttons">
-<a href="https://www.companionway.net/post/2015-05-11-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+<a href="https://www.companionway.net/post/2015-04-01-post3/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
 </p>
 </div> 
 </div> 
 
 <div class="content">
-<h4><a href="https://www.companionway.net/post/2015-05-11-post1/">shell/bash uppercase arguments</a></h4>
+<h4><a href="https://www.companionway.net/post/2015-04-01-post3/">Let&#39;s change an image</a></h4>
 <p class="author-category">
 
 By <a href="#">geoffm</a>
 
-on May 11, 2015
+on April 1, 2015
 </p>
-<p class="intro"><p>To make a long story short&hellip;</p>
+<p class="intro"><h1 id="changing-an-image">Changing an image</h1>
 
-<pre><code>#!/bin/bash
-PATTERN=$(echo $1 | tr [:lower:] [:upper:])
-# or
-PATTERN=$(echo $1 | tr [a-z] [A-Z])
-# or
-PATTERN=$(echo $1 | awk '{print toupper($0)}')
+<p>The magic tool is adapt images is <em>convert</em> from the imagemagick package.</p>
 
-echo &quot;Your \$1 argument is now uppercase: $1&quot;
+<p>To convert type: <code>convert myimage.png myimage.jpg</code></p>
+
+<p>Here is a way to resize an image: <code>convert myimage.png -resize 200x100 myimage.png</code>
+&gt;Notice: the image will be converted right over the top of itself</p>
+
+<p>To darken (first argument to -modulate) an image and reduce<br />
+the color (second argument to -modulate):</p>
+
+<pre><code>convert -modulate 70,90 myimage.png myimage-darker.png
 </code></pre>
 
-<p>To make a short story long&hellip;</p>
-
-<p>Just to let you know a little more about me and reveal
-a few more shells tricks along the way.</p></p>
+<p></p></p>
 <p class="read-more">
-<a href="https://www.companionway.net/post/2015-05-11-post1/" class="btn btn-template-main">Continue reading</a>
+<a href="https://www.companionway.net/post/2015-04-01-post3/" class="btn btn-template-main">Continue reading</a>
 </p>
 </div> 
 
@@ -311,43 +311,54 @@ a few more shells tricks along the way.</p></p>
 
 <div class="top">
 <div class="image" style="overflow:hidden">
- 
-<img src="https://www.companionway.net/img/grovepi1.jpg" class="img-responsive" alt="" >
+
+<img src="https://www.companionway.net/img/placeholder.png" class="img-responsive" alt="">
 
 </div> 
 <div class="bg"></div>
 <div class="text">
 <p class="buttons">
-<a href="https://www.companionway.net/post/grovepi/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+<a href="https://www.companionway.net/post/2015-04-05-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
 </p>
 </div> 
 </div> 
 
 <div class="content">
-<h4><a href="https://www.companionway.net/post/grovepi/">The GrovePi kit</a></h4>
+<h4><a href="https://www.companionway.net/post/2015-04-05-post1/">Adding fade in and down javascript</a></h4>
 <p class="author-category">
 
 By <a href="#">geoffm</a>
 
-on May 9, 2015
+on January 1, 0001
 </p>
-<p class="intro"><h1 id="check-out-grovepi">Check out GrovePi</h1>
+<p class="intro"><h1 id="javascript-fade-in-and-down">Javascript fade in and down</h1>
 
-<p>These kits make working with the Raspberry Pi GPIO pins
-so simple and clean.  I just ordered one of these kits and
-I will try to write up a review after I work it over.</p>
+<p>I wanted to change the header on the theme for my web site
+to display a slide down and in header.</p>
 
-<p>If you are interested in building a quick and easy raspberry pi
-for experimenting with the &ldquo;Internet of Things&rdquo; (aka IoT) platform - this board and kit
-looks like it will get you there in minutes. Approx: $89 -
-includes board, and <em>lots</em> of sensors/accessories with wires
-and connectors.</p>
+<p>The script needed to be a combination of two jquery animations.</p>
 
-<p><img src="/img/grovepi1.jpg" alt="grovepi" /></p>
+<pre><code class="language-javascript">&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+    $('#fadeInDown')
+    .css('display', &quot;none&quot;)
+    .slideDown(2000)
+    .animate(
+      { opacity: 1 },
+      { queue: false, duration: 2300 }
+      );
+    });
+&lt;/script&gt;
+</code></pre>
+
+<p>First we load in the jquery code from google nut this a single point of failure.
+If there is network interruption jquery code is lost. But in my instance if the
+network is failing then my web site probably is too.</p>
 
 <p></p></p>
 <p class="read-more">
-<a href="https://www.companionway.net/post/grovepi/" class="btn btn-template-main">Continue reading</a>
+<a href="https://www.companionway.net/post/2015-04-05-post1/" class="btn btn-template-main">Continue reading</a>
 </p>
 </div> 
 
@@ -360,53 +371,54 @@ and connectors.</p>
 
 <div class="top">
 <div class="image" style="overflow:hidden">
- 
-<img src="https://www.companionway.net/img/thrutheseaoats-dark.jpg" class="img-responsive" alt="" >
+
+<img src="https://www.companionway.net/img/placeholder.png" class="img-responsive" alt="">
 
 </div> 
 <div class="bg"></div>
 <div class="text">
 <p class="buttons">
-<a href="https://www.companionway.net/post/2015-05-02-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+<a href="https://www.companionway.net/post/2015-04-17-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
 </p>
 </div> 
 </div> 
 
 <div class="content">
-<h4><a href="https://www.companionway.net/post/2015-05-02-post1/">How to print the remainder of a line using awk</a></h4>
+<h4><a href="https://www.companionway.net/post/2015-04-17-post1/">Ansible - modifying sudoers</a></h4>
 <p class="author-category">
 
 By <a href="#">geoffm</a>
 
-on May 2, 2015
+on January 1, 0001
 </p>
-<p class="intro"><p>#How to print remainder of line using awk</p>
+<p class="intro"><h1 id="ansible-modifying-etc-sudoers">Ansible - modifying /etc/sudoers</h1>
 
-<h2 id="eliminate-the-first-x-columns">eliminate the first X columns&hellip;</h2>
+<p>I have locked administrators out of using sudo with a simple typo.</p>
 
-<p>Here is your challenge you have a list of cronjobs and you
-want to just execute the scheduled backup command with its
-arguments for a test run.</p>
+<p>With ansible you can lockup sudo on every machine with a single error. So
+I get pretty cautious with editing /etc/sudoers through any deployment application.</p>
 
-<p>Using one command line, how would you do it?</p>
+<p>Here is a quick example of going overboard to protect your sudoers file
+when using ansible. This is in my <code>$ANSIBLE_DIR/roles/common/tasks/main.yml</code> file</p>
 
-<p>Here is a sample root cronjob and I want to run the
-first entry with its arguments as a test run:</p>
+<pre><code>- name: Copy sudoers for safety
+  command: cp /etc/sudoers /etc/sudoers.tmp
 
-<pre><code># m h  dom mon dow   command
- 0 16  *   *   * /data/share/home/geoffm/dev/utils/bak-it.sh -i /usr/local/etc/include.lst -e /usr/local/etc/exclude.lst -t /data/bak/`hostname` -s 7 &gt;/dev/null 2&gt;&amp;1
-  5 0  *   *   * /data/share/motion/arch-files.sh &gt;/dev/null 2&gt;&amp;1
-*/15 *  *   *   * /data/share/home/geoffm/grab-pic.sh &gt;/dev/null 2&gt;&amp;1
-####### below are WIP or OLD ########
-# 16 6  *   *   * /usr/sbin/lynis -c --auditor &quot;automated&quot; --cronjob --quiet &gt;/dev/null 2&gt;&amp;1
-#*/5 *  *   *   * /usr/local/bin/watch-proc.sh -f /usr/local/etc/watch-proc.conf -n geoffm@localhost &gt;/dev/null 2&gt;&amp;1
-#*/5 * * * * /data/share/home/geoffm/ping-pong.sh &quot;ping -c2 192.168.1.55&quot; &quot;ssh 192.168.1.1 reboot&quot; &gt;/dev/null
-#  7 * * * /usr/local/sbin/postfix_report.sh &amp;&gt; /dev/null
+- name: Create sudoers.bak
+  command: cp /etc/sudoers /etc/sudoers.bak
+
+- name: Ensure admin group is in sudoers with NOPASSWD
+  lineinfile: &quot;dest=/etc/sudoers.tmp state=present regexp='^%admin ' line='%admin ALL=(ALL) NOPASSWD: ALL' validate='visudo -cf %s'&quot;
+  register: sudoers_tmp_ok
+
+- name: Copy sudoers.tmp to sudoers
+  when: sudoers_tmp_ok|success
+  command: cp /etc/sudoers.tmp /etc/sudoers
 </code></pre>
 
 <p></p></p>
 <p class="read-more">
-<a href="https://www.companionway.net/post/2015-05-02-post1/" class="btn btn-template-main">Continue reading</a>
+<a href="https://www.companionway.net/post/2015-04-17-post1/" class="btn btn-template-main">Continue reading</a>
 </p>
 </div> 
 

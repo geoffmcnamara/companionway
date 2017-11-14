@@ -165,9 +165,9 @@ ga('send', 'pageview');
 <div class="extra-pagination inner">
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 of 6</span>
+	    <a class="newer-posts" href="/post/page/5/">&larr; Newer Posts</a>
 	
-	    <a class="older-posts" href="/post/page/2/">Older Posts &rarr;</a>
+	<span class="page-number">Page 6 of 6</span>
 	
 </nav>
 
@@ -177,34 +177,21 @@ ga('send', 'pageview');
 
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/newspaper-hugo-subtheme/">How this theme evolved</a></h2>
+        <h2 class="post-title"><a href="/post/2015-04-26-post2/">MT7630e Wifi build and install</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h3 id="announcing-a-new-project-newspaper-hugo-subtheme">Announcing a new project: newspaper-hugo-subtheme</h3>
+        <p><h1 id="wifi-mt7630e">Wifi mt7630e</h1>
 
-<p>First credit goes to Silke V at codepen.io name &ldquo;silkine&rdquo; [<a href="http://www.silkevoigts.de/">http://www.silkevoigts.de/</a>].
-Original source code can be found here: <a href="https://codepen.io/silkine/pen/jldif">https://codepen.io/silkine/pen/jldif</a></p>
+<p>Today&rsquo;s hero is Jakub Kicinski. He rewrote the Mediatek MT7630e drivers
+to clean up the code <em>and</em> work with the new kernels. I have been waiting
+for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.</p>
 
-<p>I had a coworker who had a non-profit business blog that wanted to offer a newsletter to her clients.
-So I got interested in finding an HTML format that gave an old traditional newspaper style
-and Silke offered a solution that provided a strong simple css base. Currently (2017) I find
-the hugo cms system to be the easiest most portable static web building application freely available.
-The challenge was to create a full newsletter style theme as a subtheme within an existing theme
-structure. So I mocked up a ported version of Silke&rsquo;s newspaper css into a hugo &ldquo;section&rdquo;.</p>
+<p>Kudo&rsquo;s to Mr. Kicinski!</p>
 
-<p>An example of this subtheme can be seen here: <a href="/articles">[newspaper-hugo-subtheme]</a></p>
+<p>Here is the link:
+<a href="https://github.com/kuba-moo/mt7630e.git">github kuba-moo/mt7630e</a></p>
 
-<p>This project is a drop in offering to any existing hugo themed structure which will produce
-a newsletter format in an &ldquo;article(s)&rdquo; hugo section. A user only needs to change the title, city,
-and state varbiable that are stored as front matter in the ./content/articles/_index.md file.
-Hugo uses this file natively to discover section (in this case &ldquo;articles&rdquo;) specific data. All
-posts to the newsletter subtheme should be created in this ./content/articles/ directory as markdown
-files. Running hugo new articles/mynewarticle.md will create a new file with the default front matter
-pulled from ./archtypes/articles.md.</p>
-
-<p>This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.</p>
-
-<p></p> <a class="read-more" href="/post/newspaper-hugo-subtheme/">&raquo;</a></p>
+<p></p> <a class="read-more" href="/post/2015-04-26-post2/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -220,8 +207,8 @@ pulled from ./archtypes/articles.md.</p>
             Geoff McNamara
         
         
-        <time class="post-date" datetime="2017-11-03T10:54:24&#43;02:00">
-            3 Nov 2017
+        <time class="post-date" datetime="0001-01-01T00:00:00Z">
+            1 Jan 0001
         </time>
     </footer>
 </article>
@@ -230,18 +217,45 @@ pulled from ./archtypes/articles.md.</p>
 
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/post-title/">Raspberry Pi MagicMirror on a Touchscreen with Alexa and fauxmo</a></h2>
+        <h2 class="post-title"><a href="/post/2015-04-15-post1/">SSH basics</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h3 id="warning-what-follows-is-a-cascade-of-issues-and-lessons-learned-but-just-plain-fun">Warning: what follows is a cascade of issues and lessons learned&hellip; but just plain fun!</h3>
+        <p><h1 id="ssh">SSH</h1>
 
-<h2 id="the-goal">The goal</h2>
+<h2 id="debug-with-verbose-output">Debug with verbose output</h2>
 
-<p>This project is designed to provide a reliable MagicMirror2 on a Raspberry Pi fitted with a 5 inch touchscreen that doubles to provide browsing if needed. This comes from a desire to have a quick aide in the kitchen that reports standard information when needed or a browser for looking up and displaying recipes etc.
-</p> <a class="read-more" href="/post/post-title/">&raquo;</a></p>
+<p>$HOME/.ssh/config first and foremost - debug with -vvvv</p>
+
+<ul>
+<li>actually do it before you need to so you can see how it works</li>
+</ul>
+
+<hr />
+
+<h3 id="from-wikipedia-paraphrased">From Wikipedia (paraphrased):</h3>
+
+<blockquote>
+<p>Secure Shell, or SSH, is a cryptographic (encrypted) network
+protocol for initiating text-based shell sessions[clarification needed] on
+remote machines in a secure way.</p>
+</blockquote>
+
+<p>&hellip;</p>
+
+<blockquote>
+<p>In 1995, Tatu Ylönen, a researcher at Helsinki University of Technology,
+Finland, designed the first version of the protocol (now called SSH-1) prompted by a password-sniffing attack at his university network.</p>
+</blockquote>
+
+<p>&hellip;</p>
+
+<p></p> <a class="read-more" href="/post/2015-04-15-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
+        
+            
+            
         
 
         
@@ -251,8 +265,8 @@ pulled from ./archtypes/articles.md.</p>
             Geoff McNamara
         
         
-        <time class="post-date" datetime="2017-01-10T14:27:35-05:00">
-            10 Jan 2017
+        <time class="post-date" datetime="0001-01-01T00:00:00Z">
+            1 Jan 0001
         </time>
     </footer>
 </article>
@@ -261,17 +275,32 @@ pulled from ./archtypes/articles.md.</p>
 
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/post-title/">Sorting IPs</a></h2>
+        <h2 class="post-title"><a href="/post/2015-04-23-post1/">vagrant and ansible</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><p>I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
-laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
-parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
-in most repositories). So output might look like this:
-</p> <a class="read-more" href="/post/post-title/">&raquo;</a></p>
+        <p><h1 id="vagrant-and-ansible">vagrant and ansible</h1>
+
+<h2 id="putting-vagrant-on-steroids">putting vagrant on steroids</h2>
+
+<p>First, set up vagrant to create a group of guest virtual machines (see previous posts).
+We will assume your Vagrantfile is configured to build/start 3 nodes (node1, node2, node3). If these are
+bare builds you will want to personalize or customize each of them.</p>
+
+<p>Chances are you will want to give each of them a common base of applications
+and configuration. As a significant example, downloaded images are set
+for universal time; not what you want. It is simple to just edit the
+/etc/timezone file or write a script to change it on multiple machines. But if
+you have lots of machines or tear these machines down and stand them back up
+frequently then exercises like this will get very tedious. Additionally
+there are and handful of packages you typically want one every machine.</p>
+
+<p></p> <a class="read-more" href="/post/2015-04-23-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
+        
+            
+            
         
 
         
@@ -281,8 +310,8 @@ in most repositories). So output might look like this:
             Geoff McNamara
         
         
-        <time class="post-date" datetime="2017-01-01T15:53:14-05:00">
-            1 Jan 2017
+        <time class="post-date" datetime="0001-01-01T00:00:00Z">
+            1 Jan 0001
         </time>
     </footer>
 </article>
@@ -291,16 +320,35 @@ in most repositories). So output might look like this:
 
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/quick-n-dirty-python-debug-function/">Quick N Dirty Python Debug Function</a></h2>
+        <h2 class="post-title"><a href="/post/2015-04-22-post1/">vagrant lxc nodes</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><p>Pdb is a great debugger for python but I like to use my own simple debug functions.
-Here is a simple debug function for python which could definitely be improved:</p>
+        <p><h1 id="using-vagrant-with-lxc">Using vagrant with lxc</h1>
 
-<p></p> <a class="read-more" href="/post/quick-n-dirty-python-debug-function/">&raquo;</a></p>
+<h3 id="one-command-vagrant-up">One command; vagrant up</h3>
+
+<p>Now that I successfully managed to get vagrant-lxc plugin to
+work (see previous post),  I decided to migrate my virtualbox Vagrantfile to vagrant lxc.
+I have used vagrant and virtualbox to create and bring up
+3 vm guest nodes on my laptop and then use node1 as a dev
+machine, node2 as a staging machine, and node3 as a production
+machine. That way I can test easily with greater confidence
+with each promotion of new code.</p>
+
+<p>So why use lxc when virtualbox is working fine? The answer is
+obvious for anyone who is familiar with these platforms&hellip;
+lxc is much much faster to bring up, halt, tear down.. and
+you can do quich-n-dirty temporary testing with lxc-start-ephemeral.
+Just too many advantages for developing and testing code in a
+small network.</p>
+
+<p></p> <a class="read-more" href="/post/2015-04-22-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
+        
+            
+            
         
 
         
@@ -310,8 +358,8 @@ Here is a simple debug function for python which could definitely be improved:</
             Geoff McNamara
         
         
-        <time class="post-date" datetime="2016-12-22T14:08:05-05:00">
-            22 Dec 2016
+        <time class="post-date" datetime="0001-01-01T00:00:00Z">
+            1 Jan 0001
         </time>
     </footer>
 </article>
@@ -320,20 +368,34 @@ Here is a simple debug function for python which could definitely be improved:</
 
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/raspberry-pi-and-xrdp/">Raspberry Pi and Xrdp</a></h2>
+        <h2 class="post-title"><a href="/post/2015-04-21-post1/">vagrant-lxc plugin</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><p>I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
-any linux machine) can be done so many different ways - but the easiest from my perspective is xrdp. It is available
-really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
-xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
-Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
-almost any linux distro.</p>
+        <p><h1 id="vagrant-lxc-plugin">vagrant-lxc plugin</h1>
 
-<p></p> <a class="read-more" href="/post/raspberry-pi-and-xrdp/">&raquo;</a></p>
+<p>OK today I finally had time to get vagrant-lxc to work.
+Up until now I have had vagrant virtualbox working just fine but
+when I looked into lxc containers with vagrant I ran into a
+little problem. First, I added vagrant-lxc plugin with this
+command</p>
+
+<pre><code>vagran plugin install vagrant-lxc
+</code></pre>
+
+<p>But this failed first asking for hostsupname plugin so I added that &hellip;
+Then it complained about not being able to find the vagrant-lxc plugin
+even though this command showed it listed:</p>
+
+<pre><code>vagrant plugin list
+</code></pre>
+
+<p></p> <a class="read-more" href="/post/2015-04-21-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
+        
+            
+            
         
 
         
@@ -342,15 +404,9 @@ almost any linux distro.</p>
         
             Geoff McNamara
         
-        on
-            
-                <a href="https://www.companionway.nettags/raspberry/">#raspberry</a>,
-            
-                <a href="https://www.companionway.nettags/rdp/">#rdp</a>,
-            
         
-        <time class="post-date" datetime="2016-12-16T12:27:36-05:00">
-            16 Dec 2016
+        <time class="post-date" datetime="0001-01-01T00:00:00Z">
+            1 Jan 0001
         </time>
     </footer>
 </article>
@@ -359,9 +415,9 @@ almost any linux distro.</p>
 
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 of 6</span>
+	    <a class="newer-posts" href="/post/page/5/">&larr; Newer Posts</a>
 	
-	    <a class="older-posts" href="/post/page/2/">Older Posts &rarr;</a>
+	<span class="page-number">Page 6 of 6</span>
 	
 </nav>
 

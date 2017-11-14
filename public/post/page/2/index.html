@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="">
 <head>
 
 <meta charset="utf-8" />
@@ -137,73 +137,64 @@ ga('send', 'pageview');
 
 
 
-	 
-  <header class="main-header tag-head" style="background-image: url(https://www.companionway.net/img/obxwavefrompier.jpg)">
-  
 
-    <nav class="main-nav overlay clearfix">
-      
-        <a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
-      
-      
-          <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-      
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">Posts</h1>
-            <h2 class="page-description">
-                
-            </h2>
-        </div>
-    </div>
+<header class="main-header tag-head" style="background-image: url(https://www.companionway.net/img/obxwavefrompier.jpg)">
+
+
+<nav class="main-nav overlay clearfix">
+
+<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
+
+
+<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+
+</nav>
+<div class="vertical">
+<div class="main-header-content inner">
+<h1 class="page-title">Posts</h1>
+<h2 class="page-description">
+
+</h2>
+</div>
+</div>
 </header>
 
 <main class="content" role="main">
-    
 
-	<div class="extra-pagination inner">
-    <nav class="pagination" role="navigation">
+
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/post/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 2 of 3</span>
+	<span class="page-number">Page 2 of 6</span>
 	
 	    <a class="older-posts" href="/post/page/3/">Older Posts &rarr;</a>
 	
 </nav>
 
-	</div>
+</div>
 
-	
-	   
+
+
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-05-11-post1/">shell/bash uppercase arguments</a></h2>
+        <h2 class="post-title"><a href="/post/sometimes-it-is-the-obvious/">Sometimes It Is The Obvious</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><p>To make a long story short&hellip;</p>
+        <p><p>This was one of those &ldquo;problems&rdquo; that nagged me for many hours until the obvious dawned on me.
+I wrote a python script to grab the temperature and humidiy from a DHT22 sensor and then write the
+output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
+every 5 minutes and used a redirection to write out a file ie:</p>
 
-<pre><code>#!/bin/bash
-PATTERN=$(echo $1 | tr [:lower:] [:upper:])
-# or
-PATTERN=$(echo $1 | tr [a-z] [A-Z])
-# or
-PATTERN=$(echo $1 | awk '{print toupper($0)}')
-
-echo &quot;Your \$1 argument is now uppercase: $1&quot;
+<pre><code>*/5 * * * * /usr/local/bin/temphum.sh &gt;/tmp/temphum.dat
 </code></pre>
 
-<p>To make a short story long&hellip;</p>
-
-<p>Just to let you know a little more about me and reveal
-a few more shells tricks along the way.</p> <a class="read-more" href="/post/2015-05-11-post1/">&raquo;</a></p>
+<p>The wrapper script grabs output and sends it to the server. Having this wrapper script lets me run the
+python script independantly for testing or for curiousity.</p> <a class="read-more" href="/post/sometimes-it-is-the-obvious/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
-        
-            
-            
         
 
         
@@ -216,443 +207,37 @@ a few more shells tricks along the way.</p> <a class="read-more" href="/post/201
             
                 <a href="https://www.companionway.nettags/scripting/">#scripting</a>,
             
-                <a href="https://www.companionway.nettags/financial/">#financial</a>,
+                <a href="https://www.companionway.nettags/python/">#python</a>,
             
         
-        <time class="post-date" datetime="2015-05-11T00:00:00Z">
-            11 May 2015
+        <time class="post-date" datetime="2016-12-15T16:36:42-05:00">
+            15 Dec 2016
         </time>
     </footer>
 </article>
 
-	
-	   
+
+
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/grovepi/">The GrovePi kit</a></h2>
+        <h2 class="post-title"><a href="/post/alway-use-visudo/">Always Use Visudo</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h1 id="check-out-grovepi">Check out GrovePi</h1>
-
-<p>These kits make working with the Raspberry Pi GPIO pins
-so simple and clean.  I just ordered one of these kits and
-I will try to write up a review after I work it over.</p>
-
-<p>If you are interested in building a quick and easy raspberry pi
-for experimenting with the &ldquo;Internet of Things&rdquo; (aka IoT) platform - this board and kit
-looks like it will get you there in minutes. Approx: $89 -
-includes board, and <em>lots</em> of sensors/accessories with wires
-and connectors.</p>
-
-<p><img src="/img/grovepi1.jpg" alt="grovepi" /></p>
-
-<p></p> <a class="read-more" href="/post/grovepi/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/grovepi/">#grovepi</a>,
-            
-        
-        <time class="post-date" datetime="2015-05-09T00:00:00Z">
-            9 May 2015
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-05-02-post1/">How to print the remainder of a line using awk</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>#How to print remainder of line using awk</p>
-
-<h2 id="eliminate-the-first-x-columns">eliminate the first X columns&hellip;</h2>
-
-<p>Here is your challenge you have a list of cronjobs and you
-want to just execute the scheduled backup command with its
-arguments for a test run.</p>
-
-<p>Using one command line, how would you do it?</p>
-
-<p>Here is a sample root cronjob and I want to run the
-first entry with its arguments as a test run:</p>
-
-<pre><code># m h  dom mon dow   command
- 0 16  *   *   * /data/share/home/geoffm/dev/utils/bak-it.sh -i /usr/local/etc/include.lst -e /usr/local/etc/exclude.lst -t /data/bak/`hostname` -s 7 &gt;/dev/null 2&gt;&amp;1
-  5 0  *   *   * /data/share/motion/arch-files.sh &gt;/dev/null 2&gt;&amp;1
-*/15 *  *   *   * /data/share/home/geoffm/grab-pic.sh &gt;/dev/null 2&gt;&amp;1
-####### below are WIP or OLD ########
-# 16 6  *   *   * /usr/sbin/lynis -c --auditor &quot;automated&quot; --cronjob --quiet &gt;/dev/null 2&gt;&amp;1
-#*/5 *  *   *   * /usr/local/bin/watch-proc.sh -f /usr/local/etc/watch-proc.conf -n geoffm@localhost &gt;/dev/null 2&gt;&amp;1
-#*/5 * * * * /data/share/home/geoffm/ping-pong.sh &quot;ping -c2 192.168.1.55&quot; &quot;ssh 192.168.1.1 reboot&quot; &gt;/dev/null
-#  7 * * * /usr/local/sbin/postfix_report.sh &amp;&gt; /dev/null
-</code></pre>
-
-<p></p> <a class="read-more" href="/post/2015-05-02-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/awk/">#awk</a>,
-            
-        
-        <time class="post-date" datetime="2015-05-02T00:00:00Z">
-            2 May 2015
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-30-post1/">Creating that special character in vim</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="entering-special-characters-into-vim">Entering special characters into vim</h1>
-
-<p>I use vim as my editor. Despite this first sentence, this is not a
-beginning volley to an editor flame war. I will save that for another
-day.</p>
-
-<p>Ever editor has its own unique features and vim definitely no stranger to
-that group. One feature I use quite a bit is what vim calls digraphs.</p>
-
-<p>There are thousands of characters other than the standard keyboard character
-that can be displayed with vim. You may already know that you can use
-<code>CTRL-v &lt;enter&gt;</code> to force a linefeed into even a DOS filetype. Actually
-`CTRL-v <ascii###> will force special characters from a long list of choices.</p>
-
-<p>But I prefer using CTRL-K followed by two semi-meaningful (slightly resembles the
-intended special character) to create any one of literally thousands of special
-characters.</p>
-
-<p></p> <a class="read-more" href="/post/2015-04-30-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="2015-04-30T00:00:00Z">
-            30 Apr 2015
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-28-post1/">git inside, git better, git stronger</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h2 id="exploring-git-from-the-inside-out">&hellip; exploring git from the inside out &hellip;</h2>
-
-<p>###Preface</p>
-
-<p><p class=highcap>Apologies up front - this is long&hellip; very long, but there is food for the brain here.
-I will discuss git for personal use. Using it with many other contributors is
-an extension of the principle covered here. For simplicity, I am only going
-to discuss you working alone and only using a single &ldquo;branch&rdquo; of code for
-each project - again, for simplicity. Additionally we are going to examine
-the git &ldquo;database&rdquo; (stored as compressed SHA-1 named files/objects) as we go.
-We can gain a better understanding by reviewing the changes to the guts of
-your personal git repository. We will not cover branches, tags, or the git daemon
-in this discussion.</p>
-
-<p>###Why git? (skip this if you are less than patient)</p> <a class="read-more" href="/post/2015-04-28-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="2015-04-28T00:00:00Z">
-            28 Apr 2015
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-04-post1/">LaTex and markdown</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>To get \(LaTex\) to work I had to add this to the _layout/footer.html</p>
-
-<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;
-    src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
-&lt;/script&gt;
-</code></pre>
-
-<p>and change the _config to use redcarpet for markdown</p>
-
-<p>BTW - to get \(Latex\) in the same line use:</p>
-
-<pre><code>insert \\(LaTex\\) here
-</code></pre>
-
-<p></p> <a class="read-more" href="/post/2015-04-04-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="2015-04-04T00:00:00Z">
-            4 Apr 2015
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-03-post1/">startbootstrap-clean theme contact form</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>Getting the contact form to work on godaddy hosting was a trip, an ugly
-trip.</p>
-
-<p>The contact form built into the jekyll startbootstrap-clean theme coding
-is a bit convoluted and needed tweaking to get it working.</p>
-
-<ul>
-<li>first you change the mail/contact_me.php to include to your email address
-(no problem there)</li>
-<li>but it failed so I used google chrome developer tool (Ctrl-Shft-I) to diagnose what was failing.
-It was looking for the php script at /contact/mail/contact_me.php instead of /mail/contact_me.php
-(easily fixed by moving it).</li>
-<li>by the way - this form does not pass the POST variables directly to the on script - it uses js/bootstrap-clean.js
-(which has been minified into js/bootstrap-clean-min.js) to validate the form entries and passes it on to contact_me.php
-as POST variables.</li>
-<li>however, on godaddy hosting they restrict things quite a bit and you need to use their tools
-to send email. They place into your basic web site gdform.php and webformmailer.php (which is a link). I tried
-replacing contact_me.php with each of these&hellip; only gdform.php worked. Their gdform.php script actually writes
-out your POSTED variables into a dated file (eg gform_8935621) into you $HOME/data/ directory. A cron job periodically
-mails out any gform_xxxxxxx file it finds to you.</li>
-<li>bottom line &hellip; I saved the original contact_me.php off and then on my godaddy site I copied gdform.php to /contact/mail/contact_me.php
-and all problems solved. Your contact email will eventually come when the cron runs to send it. You can check new conntact requests
-by looking for $HOME/data/gdform-xxxxxxx files.</li>
-</ul>
-
-<p></p> <a class="read-more" href="/post/2015-04-03-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/jekyll/">#jekyll</a>,
-            
-        
-        <time class="post-date" datetime="2015-04-03T00:00:00Z">
-            3 Apr 2015
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-02-post1/">Centering a string</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="center-a-string-using-awk">Center a string using awk</h1>
-
-<h2 id="awk-everyone-s-favorite-right">awk = everyone&rsquo;s favorite - right?</h2>
-
-<p>People who know me also know that I prefer simple
-universally available tools to get a job done. Awk is
-probably one of my favorites because it does pretty
-much anything I need for quick and simple jobs. It is
-far more powerful than most people realize including
-associative arrays and it will do anything grep and sed<br />
-can do.</p>
-
-<p>Recently I had the need to center a string of text. This
-is a easy problem that pretty much any freshman programmer
-can accomplish in a heartbeat but I decided to do it with
-awk. This sample gives you a chance to explore rudimentary
-features of awk.</p> <a class="read-more" href="/post/2015-04-02-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/awk/">#awk</a>,
-            
-        
-        <time class="post-date" datetime="2015-04-02T00:00:00Z">
-            2 Apr 2015
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-01-post2/"></a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="this-website">This website</h1>
-
-<p>&hellip; was created (and is maintained) using jekyll.</p>
-
-<p>But getting here was a bit of a struggle.<br />
-I started using Jekyll quite some time ago. I love ruby and when I<br />
-found Jekyll I thought my mutual love for ruby and website design
-had perfectly come together.</p>
-
-<p>Not so fast there buckeroo. I could not easily manage themes in a way<br />
-that satisfied me&hellip; so I went exploring. I tried dozens of flat CMS<br />
-generators. My journey lasted months. I was very impressed with gravCMS<br />
-but I still fought with theme manipulation.</p>
-
-<p></p> <a class="read-more" href="/post/2015-04-01-post2/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/jekyll/">#jekyll</a>,
-            
-        
-        <time class="post-date" datetime="2015-04-01T00:00:00Z">
-            1 Apr 2015
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-01-post1/">Learning markdown ...</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="markdown-this-heading-uses-setext-style">Markdown - this heading uses Setext style</h1>
-
-<p>You can<br />
-break lines<br />
-by adding &gt;=2 spaces<br />
-to the end
-before starting the next line</p>
-
-<h1 id="this-heading-uses-atx-style">This heading uses atx style</h1>
-
-<p><p>I am learning that you have to name<br />
- your post file with YYYY-MM-DD-whatever.markdown</p>
-
-<p>or</p>
-
-<p>the <strong>extension</strong> <em>can</em> be &ldquo;.md&rdquo;
-<p></p>
-
+        <p><blockquote>
 <blockquote>
-<p>quoted text
-here</p>
+<p>&ldquo;Familiarity breeds contempt&rdquo;</p>
+</blockquote>
 </blockquote>
 
-<p></p> <a class="read-more" href="/post/2015-04-01-post1/">&raquo;</a></p>
+<p>I get very comfortable with using the vim editor (take cover&hellip; flame way ensuing) so
+comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
+to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
+/etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
+simple monitoring program (xymon) to be able to run &ldquo;sudo ufw status&rdquo; without a password and report
+back to the monitor server.</p> <a class="read-more" href="/post/alway-use-visudo/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
-        
-            
-            
         
 
         
@@ -663,22 +248,145 @@ here</p>
         
         on
             
-                <a href="https://www.companionway.nettags/markdown/">#markdown</a>,
+                <a href="https://www.companionway.nettags/sudo/">#sudo</a>,
             
         
-        <time class="post-date" datetime="2015-04-01T00:00:00Z">
-            1 Apr 2015
+        <time class="post-date" datetime="2016-12-14T10:59:38-05:00">
+            14 Dec 2016
         </time>
     </footer>
 </article>
 
-	
 
-	<nav class="pagination" role="navigation">
+
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/recursive-replace-text/">Recursively Replace Text</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><p>Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If I had to look it up, you have to suffer seeing it in my blog post&hellip; <smile></p>
+
+<pre><code>find ./ -name \*.md -print0 | xargs -0 sed -i 's/header-img/img/'
+</code></pre>
+
+<p>Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.</p> <a class="read-more" href="/post/recursive-replace-text/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+
+        
+            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+        
+        
+            Geoff McNamara
+        
+        on
+            
+                <a href="https://www.companionway.nettags/xargs/">#xargs</a>,
+            
+                <a href="https://www.companionway.nettags/sed/">#sed</a>,
+            
+        
+        <time class="post-date" datetime="2016-12-10T20:38:12-05:00">
+            10 Dec 2016
+        </time>
+    </footer>
+</article>
+
+
+
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/switched-to-hugo/">Switched to Hugo</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><p>I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
+<a href="https://gohugo.io"><img src="/img/hugo-h.jpg" alt="alt text" title="goHugo.io" /></a></p>
+
+<p>Here is why:</p>
+
+<ul>
+<li>It comes as a binary file that runs on pretty much any platform. A single file&hellip; without a list of dependencies</li>
+<li>I could stop with the last reason and it would be enough&hellip; but I have to say that the file tree used in hugo is simple, and simple is beautiful. As Einstein once said:
+&gt;“Make things as simple as possible, but not simpler.”</li>
+<li>It is written in googles go language&hellip; so it is fast and portable.</li>
+<li>It is closely tied to git so it can easily be used on github and for version maintence.</li>
+<li>it builds a clean directory [./public/] for the full site deploy and this can be rsync&rsquo;d to where ever you like.
+or &hellip; just git push it to hithub and use something like netlify.com to host from your github!</li>
+<li><em>No frustrating</em> version incompatiblities (or at least very minimal) - unlike jekyll which seemed to break on me every few months.</li>
+<li>hugo is relatively mature and has a huge developer backing.</li>
+<li>configurable and changed without challenges</li>
+<li>lots of themes to choose from</li>
+<li>as the Hugo websites states - it makes the web fun again&hellip;</li>
+<li>Did I mention that it is a single executable file?</li>
+</ul>
+
+<p>Reference:
+<a href="https://gohugo.io/#intro">gohugo.io</a></p> <a class="read-more" href="/post/switched-to-hugo/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+
+        
+            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+        
+        
+            Geoff McNamara
+        
+        on
+            
+                <a href="https://www.companionway.nettags/hugo/">#hugo</a>,
+            
+                <a href="https://www.companionway.nettags/jekyll/">#jekyll</a>,
+            
+                <a href="https://www.companionway.nettags/cms/">#cms</a>,
+            
+        
+        <time class="post-date" datetime="2016-12-09T10:57:45-05:00">
+            9 Dec 2016
+        </time>
+    </footer>
+</article>
+
+
+
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/converting-images/">Converting Images</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p>I have fought with trying to remember the syntax for Imagemagik&rsquo;s convert command for years. I finaly caved in [from my normal position of &ldquo;if you can&rsquo;t do it from the commandline, then you are a wimp&rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &ldquo;converseen&rdquo;. <a class="read-more" href="/post/converting-images/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+
+        
+            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+        
+        
+            Geoff McNamara
+        
+        on
+            
+                <a href="https://www.companionway.nettags/convert/">#convert</a>,
+            
+        
+        <time class="post-date" datetime="2016-12-06T11:58:20-05:00">
+            6 Dec 2016
+        </time>
+    </footer>
+</article>
+
+
+
+<nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/post/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 2 of 3</span>
+	<span class="page-number">Page 2 of 6</span>
 	
 	    <a class="older-posts" href="/post/page/3/">Older Posts &rarr;</a>
 	
@@ -695,6 +403,8 @@ here</p>
 <script type="text/javascript" src="https://www.companionway.net/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script>
 <script type="text/javascript" src="https://www.companionway.net/js/custom.js"></script>
+<script id="dsq-count-scr" src="//companionway-net.disqus.com/count.js" async></script>
+
 
 
 <footer class="site-footer clearfix">
@@ -715,3 +425,4 @@ All rights reserved - companionway - 2016
 </footer>
 </body>
 </html>
+

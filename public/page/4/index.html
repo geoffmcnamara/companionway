@@ -268,37 +268,36 @@ ga('send', 'pageview');
 <div class="bg"></div>
 <div class="text">
 <p class="buttons">
-<a href="https://www.companionway.net/post/2015-05-11-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+<a href="https://www.companionway.net/post/2015-04-04-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
 </p>
 </div> 
 </div> 
 
 <div class="content">
-<h4><a href="https://www.companionway.net/post/2015-05-11-post1/">shell/bash uppercase arguments</a></h4>
+<h4><a href="https://www.companionway.net/post/2015-04-04-post1/">LaTex and markdown</a></h4>
 <p class="author-category">
 
 By <a href="#">geoffm</a>
 
-on May 11, 2015
+on April 4, 2015
 </p>
-<p class="intro"><p>To make a long story short&hellip;</p>
+<p class="intro"><p>To get \(LaTex\) to work I had to add this to the _layout/footer.html</p>
 
-<pre><code>#!/bin/bash
-PATTERN=$(echo $1 | tr [:lower:] [:upper:])
-# or
-PATTERN=$(echo $1 | tr [a-z] [A-Z])
-# or
-PATTERN=$(echo $1 | awk '{print toupper($0)}')
-
-echo &quot;Your \$1 argument is now uppercase: $1&quot;
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;
+    src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
 </code></pre>
 
-<p>To make a short story long&hellip;</p>
+<p>and change the _config to use redcarpet for markdown</p>
 
-<p>Just to let you know a little more about me and reveal
-a few more shells tricks along the way.</p></p>
+<p>BTW - to get \(Latex\) in the same line use:</p>
+
+<pre><code>insert \\(LaTex\\) here
+</code></pre>
+
+<p></p></p>
 <p class="read-more">
-<a href="https://www.companionway.net/post/2015-05-11-post1/" class="btn btn-template-main">Continue reading</a>
+<a href="https://www.companionway.net/post/2015-04-04-post1/" class="btn btn-template-main">Continue reading</a>
 </p>
 </div> 
 
@@ -312,42 +311,53 @@ a few more shells tricks along the way.</p></p>
 <div class="top">
 <div class="image" style="overflow:hidden">
  
-<img src="https://www.companionway.net/img/grovepi1.jpg" class="img-responsive" alt="" >
+<img src="https://www.companionway.net/img/mail.jpg" class="img-responsive" alt="" >
 
 </div> 
 <div class="bg"></div>
 <div class="text">
 <p class="buttons">
-<a href="https://www.companionway.net/post/grovepi/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+<a href="https://www.companionway.net/post/2015-04-03-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
 </p>
 </div> 
 </div> 
 
 <div class="content">
-<h4><a href="https://www.companionway.net/post/grovepi/">The GrovePi kit</a></h4>
+<h4><a href="https://www.companionway.net/post/2015-04-03-post1/">startbootstrap-clean theme contact form</a></h4>
 <p class="author-category">
 
 By <a href="#">geoffm</a>
 
-on May 9, 2015
+on April 3, 2015
 </p>
-<p class="intro"><h1 id="check-out-grovepi">Check out GrovePi</h1>
+<p class="intro"><p>Getting the contact form to work on godaddy hosting was a trip, an ugly
+trip.</p>
 
-<p>These kits make working with the Raspberry Pi GPIO pins
-so simple and clean.  I just ordered one of these kits and
-I will try to write up a review after I work it over.</p>
+<p>The contact form built into the jekyll startbootstrap-clean theme coding
+is a bit convoluted and needed tweaking to get it working.</p>
 
-<p>If you are interested in building a quick and easy raspberry pi
-for experimenting with the &ldquo;Internet of Things&rdquo; (aka IoT) platform - this board and kit
-looks like it will get you there in minutes. Approx: $89 -
-includes board, and <em>lots</em> of sensors/accessories with wires
-and connectors.</p>
-
-<p><img src="/img/grovepi1.jpg" alt="grovepi" /></p>
+<ul>
+<li>first you change the mail/contact_me.php to include to your email address
+(no problem there)</li>
+<li>but it failed so I used google chrome developer tool (Ctrl-Shft-I) to diagnose what was failing.
+It was looking for the php script at /contact/mail/contact_me.php instead of /mail/contact_me.php
+(easily fixed by moving it).</li>
+<li>by the way - this form does not pass the POST variables directly to the on script - it uses js/bootstrap-clean.js
+(which has been minified into js/bootstrap-clean-min.js) to validate the form entries and passes it on to contact_me.php
+as POST variables.</li>
+<li>however, on godaddy hosting they restrict things quite a bit and you need to use their tools
+to send email. They place into your basic web site gdform.php and webformmailer.php (which is a link). I tried
+replacing contact_me.php with each of these&hellip; only gdform.php worked. Their gdform.php script actually writes
+out your POSTED variables into a dated file (eg gform_8935621) into you $HOME/data/ directory. A cron job periodically
+mails out any gform_xxxxxxx file it finds to you.</li>
+<li>bottom line &hellip; I saved the original contact_me.php off and then on my godaddy site I copied gdform.php to /contact/mail/contact_me.php
+and all problems solved. Your contact email will eventually come when the cron runs to send it. You can check new conntact requests
+by looking for $HOME/data/gdform-xxxxxxx files.</li>
+</ul>
 
 <p></p></p>
 <p class="read-more">
-<a href="https://www.companionway.net/post/grovepi/" class="btn btn-template-main">Continue reading</a>
+<a href="https://www.companionway.net/post/2015-04-03-post1/" class="btn btn-template-main">Continue reading</a>
 </p>
 </div> 
 
@@ -367,46 +377,38 @@ and connectors.</p>
 <div class="bg"></div>
 <div class="text">
 <p class="buttons">
-<a href="https://www.companionway.net/post/2015-05-02-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+<a href="https://www.companionway.net/post/2015-04-02-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
 </p>
 </div> 
 </div> 
 
 <div class="content">
-<h4><a href="https://www.companionway.net/post/2015-05-02-post1/">How to print the remainder of a line using awk</a></h4>
+<h4><a href="https://www.companionway.net/post/2015-04-02-post1/">Centering a string</a></h4>
 <p class="author-category">
 
 By <a href="#">geoffm</a>
 
-on May 2, 2015
+on April 2, 2015
 </p>
-<p class="intro"><p>#How to print remainder of line using awk</p>
+<p class="intro"><h1 id="center-a-string-using-awk">Center a string using awk</h1>
 
-<h2 id="eliminate-the-first-x-columns">eliminate the first X columns&hellip;</h2>
+<h2 id="awk-everyone-s-favorite-right">awk = everyone&rsquo;s favorite - right?</h2>
 
-<p>Here is your challenge you have a list of cronjobs and you
-want to just execute the scheduled backup command with its
-arguments for a test run.</p>
+<p>People who know me also know that I prefer simple
+universally available tools to get a job done. Awk is
+probably one of my favorites because it does pretty
+much anything I need for quick and simple jobs. It is
+far more powerful than most people realize including
+associative arrays and it will do anything grep and sed<br />
+can do.</p>
 
-<p>Using one command line, how would you do it?</p>
-
-<p>Here is a sample root cronjob and I want to run the
-first entry with its arguments as a test run:</p>
-
-<pre><code># m h  dom mon dow   command
- 0 16  *   *   * /data/share/home/geoffm/dev/utils/bak-it.sh -i /usr/local/etc/include.lst -e /usr/local/etc/exclude.lst -t /data/bak/`hostname` -s 7 &gt;/dev/null 2&gt;&amp;1
-  5 0  *   *   * /data/share/motion/arch-files.sh &gt;/dev/null 2&gt;&amp;1
-*/15 *  *   *   * /data/share/home/geoffm/grab-pic.sh &gt;/dev/null 2&gt;&amp;1
-####### below are WIP or OLD ########
-# 16 6  *   *   * /usr/sbin/lynis -c --auditor &quot;automated&quot; --cronjob --quiet &gt;/dev/null 2&gt;&amp;1
-#*/5 *  *   *   * /usr/local/bin/watch-proc.sh -f /usr/local/etc/watch-proc.conf -n geoffm@localhost &gt;/dev/null 2&gt;&amp;1
-#*/5 * * * * /data/share/home/geoffm/ping-pong.sh &quot;ping -c2 192.168.1.55&quot; &quot;ssh 192.168.1.1 reboot&quot; &gt;/dev/null
-#  7 * * * /usr/local/sbin/postfix_report.sh &amp;&gt; /dev/null
-</code></pre>
-
-<p></p></p>
+<p>Recently I had the need to center a string of text. This
+is a easy problem that pretty much any freshman programmer
+can accomplish in a heartbeat but I decided to do it with
+awk. This sample gives you a chance to explore rudimentary
+features of awk.</p></p>
 <p class="read-more">
-<a href="https://www.companionway.net/post/2015-05-02-post1/" class="btn btn-template-main">Continue reading</a>
+<a href="https://www.companionway.net/post/2015-04-02-post1/" class="btn btn-template-main">Continue reading</a>
 </p>
 </div> 
 

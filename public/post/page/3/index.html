@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="">
 <head>
 
 <meta charset="utf-8" />
@@ -137,65 +137,67 @@ ga('send', 'pageview');
 
 
 
-	 
-  <header class="main-header tag-head" style="background-image: url(https://www.companionway.net/img/obxwavefrompier.jpg)">
-  
 
-    <nav class="main-nav overlay clearfix">
-      
-        <a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
-      
-      
-          <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-      
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">Posts</h1>
-            <h2 class="page-description">
-                
-            </h2>
-        </div>
-    </div>
+<header class="main-header tag-head" style="background-image: url(https://www.companionway.net/img/obxwavefrompier.jpg)">
+
+
+<nav class="main-nav overlay clearfix">
+
+<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
+
+
+<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+
+</nav>
+<div class="vertical">
+<div class="main-header-content inner">
+<h1 class="page-title">Posts</h1>
+<h2 class="page-description">
+
+</h2>
+</div>
+</div>
 </header>
 
 <main class="content" role="main">
-    
 
-	<div class="extra-pagination inner">
-    <nav class="pagination" role="navigation">
+
+<div class="extra-pagination inner">
+<nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/post/page/2/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 3 of 3</span>
+	<span class="page-number">Page 3 of 6</span>
+	
+	    <a class="older-posts" href="/post/page/4/">Older Posts &rarr;</a>
 	
 </nav>
 
-	</div>
+</div>
 
-	
-	   
+
+
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-01-post3/">Let&#39;s change an image</a></h2>
+        <h2 class="post-title"><a href="/post/2015-05-11-post1/">shell/bash uppercase arguments</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h1 id="changing-an-image">Changing an image</h1>
+        <p><p>To make a long story short&hellip;</p>
 
-<p>The magic tool is adapt images is <em>convert</em> from the imagemagick package.</p>
+<pre><code>#!/bin/bash
+PATTERN=$(echo $1 | tr [:lower:] [:upper:])
+# or
+PATTERN=$(echo $1 | tr [a-z] [A-Z])
+# or
+PATTERN=$(echo $1 | awk '{print toupper($0)}')
 
-<p>To convert type: <code>convert myimage.png myimage.jpg</code></p>
-
-<p>Here is a way to resize an image: <code>convert myimage.png -resize 200x100 myimage.png</code>
-&gt;Notice: the image will be converted right over the top of itself</p>
-
-<p>To darken (first argument to -modulate) an image and reduce<br />
-the color (second argument to -modulate):</p>
-
-<pre><code>convert -modulate 70,90 myimage.png myimage-darker.png
+echo &quot;Your \$1 argument is now uppercase: $1&quot;
 </code></pre>
 
-<p></p> <a class="read-more" href="/post/2015-04-01-post3/">&raquo;</a></p>
+<p>To make a short story long&hellip;</p>
+
+<p>Just to let you know a little more about me and reveal
+a few more shells tricks along the way.</p> <a class="read-more" href="/post/2015-05-11-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -212,50 +214,39 @@ the color (second argument to -modulate):</p>
         
         on
             
-                <a href="https://www.companionway.nettags/imagemagic/">#imagemagic</a>,
+                <a href="https://www.companionway.nettags/scripting/">#scripting</a>,
             
-                <a href="https://www.companionway.nettags/convert/">#convert</a>,
+                <a href="https://www.companionway.nettags/financial/">#financial</a>,
             
         
-        <time class="post-date" datetime="2015-04-01T00:00:00Z">
-            1 Apr 2015
+        <time class="post-date" datetime="2015-05-11T00:00:00Z">
+            11 May 2015
         </time>
     </footer>
 </article>
 
-	
-	   
+
+
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-05-post1/">Adding fade in and down javascript</a></h2>
+        <h2 class="post-title"><a href="/post/grovepi/">The GrovePi kit</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h1 id="javascript-fade-in-and-down">Javascript fade in and down</h1>
+        <p><h1 id="check-out-grovepi">Check out GrovePi</h1>
 
-<p>I wanted to change the header on the theme for my web site
-to display a slide down and in header.</p>
+<p>These kits make working with the Raspberry Pi GPIO pins
+so simple and clean.  I just ordered one of these kits and
+I will try to write up a review after I work it over.</p>
 
-<p>The script needed to be a combination of two jquery animations.</p>
+<p>If you are interested in building a quick and easy raspberry pi
+for experimenting with the &ldquo;Internet of Things&rdquo; (aka IoT) platform - this board and kit
+looks like it will get you there in minutes. Approx: $89 -
+includes board, and <em>lots</em> of sensors/accessories with wires
+and connectors.</p>
 
-<pre><code class="language-javascript">&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-$(document).ready(function(){
-    $('#fadeInDown')
-    .css('display', &quot;none&quot;)
-    .slideDown(2000)
-    .animate(
-      { opacity: 1 },
-      { queue: false, duration: 2300 }
-      );
-    });
-&lt;/script&gt;
-</code></pre>
+<p><img src="/img/grovepi1.jpg" alt="grovepi" /></p>
 
-<p>First we load in the jquery code from google nut this a single point of failure.
-If there is network interruption jquery code is lost. But in my instance if the
-network is failing then my web site probably is too.</p>
-
-<p></p> <a class="read-more" href="/post/2015-04-05-post1/">&raquo;</a></p>
+<p></p> <a class="read-more" href="/post/grovepi/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -272,48 +263,47 @@ network is failing then my web site probably is too.</p>
         
         on
             
-                <a href="https://www.companionway.nettags/js/">#js</a>,
+                <a href="https://www.companionway.nettags/grovepi/">#grovepi</a>,
             
         
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
+        <time class="post-date" datetime="2015-05-09T00:00:00Z">
+            9 May 2015
         </time>
     </footer>
 </article>
 
-	
-	   
+
+
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-17-post1/">Ansible - modifying sudoers</a></h2>
+        <h2 class="post-title"><a href="/post/2015-05-02-post1/">How to print the remainder of a line using awk</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h1 id="ansible-modifying-etc-sudoers">Ansible - modifying /etc/sudoers</h1>
+        <p><p>#How to print remainder of line using awk</p>
 
-<p>I have locked administrators out of using sudo with a simple typo.</p>
+<h2 id="eliminate-the-first-x-columns">eliminate the first X columns&hellip;</h2>
 
-<p>With ansible you can lockup sudo on every machine with a single error. So
-I get pretty cautious with editing /etc/sudoers through any deployment application.</p>
+<p>Here is your challenge you have a list of cronjobs and you
+want to just execute the scheduled backup command with its
+arguments for a test run.</p>
 
-<p>Here is a quick example of going overboard to protect your sudoers file
-when using ansible. This is in my <code>$ANSIBLE_DIR/roles/common/tasks/main.yml</code> file</p>
+<p>Using one command line, how would you do it?</p>
 
-<pre><code>- name: Copy sudoers for safety
-  command: cp /etc/sudoers /etc/sudoers.tmp
+<p>Here is a sample root cronjob and I want to run the
+first entry with its arguments as a test run:</p>
 
-- name: Create sudoers.bak
-  command: cp /etc/sudoers /etc/sudoers.bak
-
-- name: Ensure admin group is in sudoers with NOPASSWD
-  lineinfile: &quot;dest=/etc/sudoers.tmp state=present regexp='^%admin ' line='%admin ALL=(ALL) NOPASSWD: ALL' validate='visudo -cf %s'&quot;
-  register: sudoers_tmp_ok
-
-- name: Copy sudoers.tmp to sudoers
-  when: sudoers_tmp_ok|success
-  command: cp /etc/sudoers.tmp /etc/sudoers
+<pre><code># m h  dom mon dow   command
+ 0 16  *   *   * /data/share/home/geoffm/dev/utils/bak-it.sh -i /usr/local/etc/include.lst -e /usr/local/etc/exclude.lst -t /data/bak/`hostname` -s 7 &gt;/dev/null 2&gt;&amp;1
+  5 0  *   *   * /data/share/motion/arch-files.sh &gt;/dev/null 2&gt;&amp;1
+*/15 *  *   *   * /data/share/home/geoffm/grab-pic.sh &gt;/dev/null 2&gt;&amp;1
+####### below are WIP or OLD ########
+# 16 6  *   *   * /usr/sbin/lynis -c --auditor &quot;automated&quot; --cronjob --quiet &gt;/dev/null 2&gt;&amp;1
+#*/5 *  *   *   * /usr/local/bin/watch-proc.sh -f /usr/local/etc/watch-proc.conf -n geoffm@localhost &gt;/dev/null 2&gt;&amp;1
+#*/5 * * * * /data/share/home/geoffm/ping-pong.sh &quot;ping -c2 192.168.1.55&quot; &quot;ssh 192.168.1.1 reboot&quot; &gt;/dev/null
+#  7 * * * /usr/local/sbin/postfix_report.sh &amp;&gt; /dev/null
 </code></pre>
 
-<p></p> <a class="read-more" href="/post/2015-04-17-post1/">&raquo;</a></p>
+<p></p> <a class="read-more" href="/post/2015-05-02-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -328,33 +318,43 @@ when using ansible. This is in my <code>$ANSIBLE_DIR/roles/common/tasks/main.yml
         
             Geoff McNamara
         
+        on
+            
+                <a href="https://www.companionway.nettags/awk/">#awk</a>,
+            
         
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
+        <time class="post-date" datetime="2015-05-02T00:00:00Z">
+            2 May 2015
         </time>
     </footer>
 </article>
 
-	
-	   
+
+
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-27-post1/">Command line disk tree</a></h2>
+        <h2 class="post-title"><a href="/post/2015-04-30-post1/">Creating that special character in vim</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h1 id="command-line-disk-tree">Command line disk tree</h1>
+        <p><h1 id="entering-special-characters-into-vim">Entering special characters into vim</h1>
 
-<p>I am writing another article on the basics of using git. It
-was going to be a short article however, given the subject it is
-turning out to be much longer than I expected. But in the process
-of writing it I had to frequently use a shell function I wrote years
-ago that  displays a disk tree structure (optionally with files).</p>
+<p>I use vim as my editor. Despite this first sentence, this is not a
+beginning volley to an editor flame war. I will save that for another
+day.</p>
 
-<p>I needed a way to see the changes to the .git directory as git commands
-are executed against the repository. I thought I would share it
-with you today.</p>
+<p>Ever editor has its own unique features and vim definitely no stranger to
+that group. One feature I use quite a bit is what vim calls digraphs.</p>
 
-<p></p> <a class="read-more" href="/post/2015-04-27-post1/">&raquo;</a></p>
+<p>There are thousands of characters other than the standard keyboard character
+that can be displayed with vim. You may already know that you can use
+<code>CTRL-v &lt;enter&gt;</code> to force a linefeed into even a DOS filetype. Actually
+`CTRL-v <ascii###> will force special characters from a long list of choices.</p>
+
+<p>But I prefer using CTRL-K followed by two semi-meaningful (slightly resembles the
+intended special character) to create any one of literally thousands of special
+characters.</p>
+
+<p></p> <a class="read-more" href="/post/2015-04-30-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -370,38 +370,34 @@ with you today.</p>
             Geoff McNamara
         
         
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
+        <time class="post-date" datetime="2015-04-30T00:00:00Z">
+            30 Apr 2015
         </time>
     </footer>
 </article>
 
-	
-	   
+
+
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-26-post1/">Delete the last X files using sed</a></h2>
+        <h2 class="post-title"><a href="/post/2015-04-28-post1/">git inside, git better, git stronger</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><h2 id="simple-sed-trick-keeping-the-last-x-files">Simple sed trick - keeping the last X files</h2>
+        <p><h2 id="exploring-git-from-the-inside-out">&hellip; exploring git from the inside out &hellip;</h2>
 
-<p>How would you remove all but the last 10 files in a directory?</p>
+<p>###Preface</p>
 
-<p>So let&rsquo;s create 15 files with one second between there
-creation time. Oldest one (first one) will be called
-1.file
-and the newest one (last one) will be called
-15.file</p>
+<p><p class=highcap>Apologies up front - this is long&hellip; very long, but there is food for the brain here.
+I will discuss git for personal use. Using it with many other contributors is
+an extension of the principle covered here. For simplicity, I am only going
+to discuss you working alone and only using a single &ldquo;branch&rdquo; of code for
+each project - again, for simplicity. Additionally we are going to examine
+the git &ldquo;database&rdquo; (stored as compressed SHA-1 named files/objects) as we go.
+We can gain a better understanding by reviewing the changes to the guts of
+your personal git repository. We will not cover branches, tags, or the git daemon
+in this discussion.</p>
 
-<p>Run this code to do that:</p>
-
-<pre><code>for i in `seq 1 15`; do
-  touch $i.fil
-  sleep 1
-done
-</code></pre>
-
-<p></p> <a class="read-more" href="/post/2015-04-26-post1/">&raquo;</a></p>
+<p>###Why git? (skip this if you are less than patient)</p> <a class="read-more" href="/post/2015-04-28-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -417,257 +413,21 @@ done
             Geoff McNamara
         
         
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
+        <time class="post-date" datetime="2015-04-28T00:00:00Z">
+            28 Apr 2015
         </time>
     </footer>
 </article>
 
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-26-post2/">MT7630e Wifi build and install</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="wifi-mt7630e">Wifi mt7630e</h1>
 
-<p>Today&rsquo;s hero is Jakub Kicinski. He rewrote the Mediatek MT7630e drivers
-to clean up the code <em>and</em> work with the new kernels. I have been waiting
-for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.</p>
 
-<p>Kudo&rsquo;s to Mr. Kicinski!</p>
-
-<p>Here is the link:
-<a href="https://github.com/kuba-moo/mt7630e.git">github kuba-moo/mt7630e</a></p>
-
-<p></p> <a class="read-more" href="/post/2015-04-26-post2/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-15-post1/">SSH basics</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="ssh">SSH</h1>
-
-<h2 id="debug-with-verbose-output">Debug with verbose output</h2>
-
-<p>$HOME/.ssh/config first and foremost - debug with -vvvv</p>
-
-<ul>
-<li>actually do it before you need to so you can see how it works</li>
-</ul>
-
-<hr />
-
-<h3 id="from-wikipedia-paraphrased">From Wikipedia (paraphrased):</h3>
-
-<blockquote>
-<p>Secure Shell, or SSH, is a cryptographic (encrypted) network
-protocol for initiating text-based shell sessions[clarification needed] on
-remote machines in a secure way.</p>
-</blockquote>
-
-<p>&hellip;</p>
-
-<blockquote>
-<p>In 1995, Tatu Ylönen, a researcher at Helsinki University of Technology,
-Finland, designed the first version of the protocol (now called SSH-1) prompted by a password-sniffing attack at his university network.</p>
-</blockquote>
-
-<p>&hellip;</p>
-
-<p></p> <a class="read-more" href="/post/2015-04-15-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-23-post1/">vagrant and ansible</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="vagrant-and-ansible">vagrant and ansible</h1>
-
-<h2 id="putting-vagrant-on-steroids">putting vagrant on steroids</h2>
-
-<p>First, set up vagrant to create a group of guest virtual machines (see previous posts).
-We will assume your Vagrantfile is configured to build/start 3 nodes (node1, node2, node3). If these are
-bare builds you will want to personalize or customize each of them.</p>
-
-<p>Chances are you will want to give each of them a common base of applications
-and configuration. As a significant example, downloaded images are set
-for universal time; not what you want. It is simple to just edit the
-/etc/timezone file or write a script to change it on multiple machines. But if
-you have lots of machines or tear these machines down and stand them back up
-frequently then exercises like this will get very tedious. Additionally
-there are and handful of packages you typically want one every machine.</p>
-
-<p></p> <a class="read-more" href="/post/2015-04-23-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-22-post1/">vagrant lxc nodes</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="using-vagrant-with-lxc">Using vagrant with lxc</h1>
-
-<h3 id="one-command-vagrant-up">One command; vagrant up</h3>
-
-<p>Now that I successfully managed to get vagrant-lxc plugin to
-work (see previous post),  I decided to migrate my virtualbox Vagrantfile to vagrant lxc.
-I have used vagrant and virtualbox to create and bring up
-3 vm guest nodes on my laptop and then use node1 as a dev
-machine, node2 as a staging machine, and node3 as a production
-machine. That way I can test easily with greater confidence
-with each promotion of new code.</p>
-
-<p>So why use lxc when virtualbox is working fine? The answer is
-obvious for anyone who is familiar with these platforms&hellip;
-lxc is much much faster to bring up, halt, tear down.. and
-you can do quich-n-dirty temporary testing with lxc-start-ephemeral.
-Just too many advantages for developing and testing code in a
-small network.</p>
-
-<p></p> <a class="read-more" href="/post/2015-04-22-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
-        </time>
-    </footer>
-</article>
-
-	
-	   
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-21-post1/">vagrant-lxc plugin</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="vagrant-lxc-plugin">vagrant-lxc plugin</h1>
-
-<p>OK today I finally had time to get vagrant-lxc to work.
-Up until now I have had vagrant virtualbox working just fine but
-when I looked into lxc containers with vagrant I ran into a
-little problem. First, I added vagrant-lxc plugin with this
-command</p>
-
-<pre><code>vagran plugin install vagrant-lxc
-</code></pre>
-
-<p>But this failed first asking for hostsupname plugin so I added that &hellip;
-Then it complained about not being able to find the vagrant-lxc plugin
-even though this command showed it listed:</p>
-
-<pre><code>vagrant plugin list
-</code></pre>
-
-<p></p> <a class="read-more" href="/post/2015-04-21-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="0001-01-01T00:00:00Z">
-            1 Jan 0001
-        </time>
-    </footer>
-</article>
-
-	
-
-	<nav class="pagination" role="navigation">
+<nav class="pagination" role="navigation">
 	
 	    <a class="newer-posts" href="/post/page/2/">&larr; Newer Posts</a>
 	
-	<span class="page-number">Page 3 of 3</span>
+	<span class="page-number">Page 3 of 6</span>
+	
+	    <a class="older-posts" href="/post/page/4/">Older Posts &rarr;</a>
 	
 </nav>
 
@@ -682,6 +442,8 @@ even though this command showed it listed:</p>
 <script type="text/javascript" src="https://www.companionway.net/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script>
 <script type="text/javascript" src="https://www.companionway.net/js/custom.js"></script>
+<script id="dsq-count-scr" src="//companionway-net.disqus.com/count.js" async></script>
+
 
 
 <footer class="site-footer clearfix">
@@ -702,3 +464,4 @@ All rights reserved - companionway - 2016
 </footer>
 </body>
 </html>
+

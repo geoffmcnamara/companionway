@@ -13,21 +13,21 @@
 
 
 
-<meta name="twitter:title" content="Awk"/>
+<meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content="Meeting challenges with success!"/>
 
 
 
-<meta property="og:title" content=" Awk &middot;  companionway" />
+<meta property="og:title" content=" Posts &middot;  companionway" />
 <meta property="og:site_name" content="companionway" />
-<meta property="og:url" content="https://www.companionway.net/tags/awk/" />
+<meta property="og:url" content="https://www.companionway.net/post/" />
 
 
 <meta property="og:type" content="website" />
 
 
 <title>
- Awk &middot;  companionway
+ Posts &middot;  companionway
 </title>
 
 <meta name="description" content="Meeting challenges with success!" />
@@ -51,12 +51,12 @@
 <link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
 
 
-<link href="https://www.companionway.net/tags/awk/index.xml" rel="alternate" type="application/rss+xml" title="Awk &middot; companionway" />
+<link href="https://www.companionway.net/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
 
 
 <meta name="generator" content="Hugo 0.30.2" />
 
-<link rel="canonical" href="https://www.companionway.net/tags/awk/" />
+<link rel="canonical" href="https://www.companionway.net/post/" />
 
 
 <link ref="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=EB+Garamond' >
@@ -126,7 +126,7 @@ ga('send', 'pageview');
     </ul>
     
     
-    <a class="subscribe-button icon-feed" href="https://www.companionway.net/tags/awk/index.xml">Subscribe</a>
+    <a class="subscribe-button icon-feed" href="https://www.companionway.net/post/index.xml">Subscribe</a>
     
 </div>
 <span class="nav-cover"></span>
@@ -151,7 +151,7 @@ ga('send', 'pageview');
 </nav>
 <div class="vertical">
 <div class="main-header-content inner">
-<h1 class="page-title">Awk</h1>
+<h1 class="page-title">Posts</h1>
 <h2 class="page-description">
 
 </h2>
@@ -165,7 +165,11 @@ ga('send', 'pageview');
 <div class="extra-pagination inner">
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 of 1</span>
+	    <a class="newer-posts" href="/post/page/3/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 4 of 6</span>
+	
+	    <a class="older-posts" href="/post/page/5/">Older Posts &rarr;</a>
 	
 </nav>
 
@@ -175,34 +179,78 @@ ga('send', 'pageview');
 
 <article class="post post">
     <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-05-02-post1/">How to print the remainder of a line using awk</a></h2>
+        <h2 class="post-title"><a href="/post/2015-04-04-post1/">LaTex and markdown</a></h2>
     </header>
     <section class="post-excerpt">
-        <p><p>#How to print remainder of line using awk</p>
+        <p><p>To get \(LaTex\) to work I had to add this to the _layout/footer.html</p>
 
-<h2 id="eliminate-the-first-x-columns">eliminate the first X columns&hellip;</h2>
-
-<p>Here is your challenge you have a list of cronjobs and you
-want to just execute the scheduled backup command with its
-arguments for a test run.</p>
-
-<p>Using one command line, how would you do it?</p>
-
-<p>Here is a sample root cronjob and I want to run the
-first entry with its arguments as a test run:</p>
-
-<pre><code># m h  dom mon dow   command
- 0 16  *   *   * /data/share/home/geoffm/dev/utils/bak-it.sh -i /usr/local/etc/include.lst -e /usr/local/etc/exclude.lst -t /data/bak/`hostname` -s 7 &gt;/dev/null 2&gt;&amp;1
-  5 0  *   *   * /data/share/motion/arch-files.sh &gt;/dev/null 2&gt;&amp;1
-*/15 *  *   *   * /data/share/home/geoffm/grab-pic.sh &gt;/dev/null 2&gt;&amp;1
-####### below are WIP or OLD ########
-# 16 6  *   *   * /usr/sbin/lynis -c --auditor &quot;automated&quot; --cronjob --quiet &gt;/dev/null 2&gt;&amp;1
-#*/5 *  *   *   * /usr/local/bin/watch-proc.sh -f /usr/local/etc/watch-proc.conf -n geoffm@localhost &gt;/dev/null 2&gt;&amp;1
-#*/5 * * * * /data/share/home/geoffm/ping-pong.sh &quot;ping -c2 192.168.1.55&quot; &quot;ssh 192.168.1.1 reboot&quot; &gt;/dev/null
-#  7 * * * /usr/local/sbin/postfix_report.sh &amp;&gt; /dev/null
+<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;
+    src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
 </code></pre>
 
-<p></p> <a class="read-more" href="/post/2015-05-02-post1/">&raquo;</a></p>
+<p>and change the _config to use redcarpet for markdown</p>
+
+<p>BTW - to get \(Latex\) in the same line use:</p>
+
+<pre><code>insert \\(LaTex\\) here
+</code></pre>
+
+<p></p> <a class="read-more" href="/post/2015-04-04-post1/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+        
+
+        
+            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+        
+        
+            Geoff McNamara
+        
+        
+        <time class="post-date" datetime="2015-04-04T00:00:00Z">
+            4 Apr 2015
+        </time>
+    </footer>
+</article>
+
+
+
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/2015-04-03-post1/">startbootstrap-clean theme contact form</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><p>Getting the contact form to work on godaddy hosting was a trip, an ugly
+trip.</p>
+
+<p>The contact form built into the jekyll startbootstrap-clean theme coding
+is a bit convoluted and needed tweaking to get it working.</p>
+
+<ul>
+<li>first you change the mail/contact_me.php to include to your email address
+(no problem there)</li>
+<li>but it failed so I used google chrome developer tool (Ctrl-Shft-I) to diagnose what was failing.
+It was looking for the php script at /contact/mail/contact_me.php instead of /mail/contact_me.php
+(easily fixed by moving it).</li>
+<li>by the way - this form does not pass the POST variables directly to the on script - it uses js/bootstrap-clean.js
+(which has been minified into js/bootstrap-clean-min.js) to validate the form entries and passes it on to contact_me.php
+as POST variables.</li>
+<li>however, on godaddy hosting they restrict things quite a bit and you need to use their tools
+to send email. They place into your basic web site gdform.php and webformmailer.php (which is a link). I tried
+replacing contact_me.php with each of these&hellip; only gdform.php worked. Their gdform.php script actually writes
+out your POSTED variables into a dated file (eg gform_8935621) into you $HOME/data/ directory. A cron job periodically
+mails out any gform_xxxxxxx file it finds to you.</li>
+<li>bottom line &hellip; I saved the original contact_me.php off and then on my godaddy site I copied gdform.php to /contact/mail/contact_me.php
+and all problems solved. Your contact email will eventually come when the cron runs to send it. You can check new conntact requests
+by looking for $HOME/data/gdform-xxxxxxx files.</li>
+</ul>
+
+<p></p> <a class="read-more" href="/post/2015-04-03-post1/">&raquo;</a></p>
     </section>
     <footer class="post-meta">
         
@@ -219,11 +267,11 @@ first entry with its arguments as a test run:</p>
         
         on
             
-                <a href="https://www.companionway.nettags/awk/">#awk</a>,
+                <a href="https://www.companionway.nettags/jekyll/">#jekyll</a>,
             
         
-        <time class="post-date" datetime="2015-05-02T00:00:00Z">
-            2 May 2015
+        <time class="post-date" datetime="2015-04-03T00:00:00Z">
+            3 Apr 2015
         </time>
     </footer>
 </article>
@@ -279,9 +327,116 @@ features of awk.</p> <a class="read-more" href="/post/2015-04-02-post1/">&raquo;
 
 
 
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/2015-04-01-post2/"></a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><h1 id="this-website">This website</h1>
+
+<p>&hellip; was created (and is maintained) using jekyll.</p>
+
+<p>But getting here was a bit of a struggle.<br />
+I started using Jekyll quite some time ago. I love ruby and when I<br />
+found Jekyll I thought my mutual love for ruby and website design
+had perfectly come together.</p>
+
+<p>Not so fast there buckeroo. I could not easily manage themes in a way<br />
+that satisfied me&hellip; so I went exploring. I tried dozens of flat CMS<br />
+generators. My journey lasted months. I was very impressed with gravCMS<br />
+but I still fought with theme manipulation.</p>
+
+<p></p> <a class="read-more" href="/post/2015-04-01-post2/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+        
+
+        
+            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+        
+        
+            Geoff McNamara
+        
+        on
+            
+                <a href="https://www.companionway.nettags/jekyll/">#jekyll</a>,
+            
+        
+        <time class="post-date" datetime="2015-04-01T00:00:00Z">
+            1 Apr 2015
+        </time>
+    </footer>
+</article>
+
+
+
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/2015-04-01-post1/">Learning markdown ...</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><h1 id="markdown-this-heading-uses-setext-style">Markdown - this heading uses Setext style</h1>
+
+<p>You can<br />
+break lines<br />
+by adding &gt;=2 spaces<br />
+to the end
+before starting the next line</p>
+
+<h1 id="this-heading-uses-atx-style">This heading uses atx style</h1>
+
+<p><p>I am learning that you have to name<br />
+ your post file with YYYY-MM-DD-whatever.markdown</p>
+
+<p>or</p>
+
+<p>the <strong>extension</strong> <em>can</em> be &ldquo;.md&rdquo;
+<p></p>
+
+<blockquote>
+<p>quoted text
+here</p>
+</blockquote>
+
+<p></p> <a class="read-more" href="/post/2015-04-01-post1/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+            
+            
+        
+
+        
+            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+        
+        
+            Geoff McNamara
+        
+        on
+            
+                <a href="https://www.companionway.nettags/markdown/">#markdown</a>,
+            
+        
+        <time class="post-date" datetime="2015-04-01T00:00:00Z">
+            1 Apr 2015
+        </time>
+    </footer>
+</article>
+
+
+
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 of 1</span>
+	    <a class="newer-posts" href="/post/page/3/">&larr; Newer Posts</a>
+	
+	<span class="page-number">Page 4 of 6</span>
+	
+	    <a class="older-posts" href="/post/page/5/">Older Posts &rarr;</a>
 	
 </nav>
 
