@@ -5,6 +5,7 @@
     <link>https://www.companionway.net/post/</link>
     <description>Recent content in Posts on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Fri, 03 Nov 2017 10:54:24 +0200</lastBuildDate>
     
@@ -54,16 +55,40 @@ pulled from ./archtypes/articles.md.&lt;/p&gt;
 
 &lt;h2 id=&#34;the-goal&#34;&gt;The goal&lt;/h2&gt;
 
-&lt;p&gt;This project is designed to provide a reliable MagicMirror2 on a Raspberry Pi fitted with a 5 inch touchscreen that doubles to provide browsing if needed. This comes from a desire to have a quick aide in the kitchen that reports standard information when needed or a browser for looking up and displaying recipes etc.
-&lt;/p&gt;</description>
+&lt;p&gt;This project is designed to provide a reliable MagicMirror2 on a Raspberry Pi fitted with a 5 inch touchscreen that doubles to provide browsing if needed. This comes from a desire to have a quick aide in the kitchen that reports standard information when needed or a browser for looking up and displaying recipes etc.&lt;/p&gt;
+
+&lt;p&gt;The result is a raspberry pi with one wire that stands on its edge without a case and has a 5 inch display. The display can show any of the modules provided for magicmirror2 on command to Alexa or stop magicmirror on command. The rasbian desktop along with an inboard keyboard pad and touch &amp;ldquo;pen&amp;rdquo; allows you to launch a browser (or any other program) and navigate to any url. When the desktop is idle a screensaver comes up with anynumber of pleasing animations - selectable and can be rotated with screen blanking possible as well. The backlight of the screen is enough to act as a soothing nightlight. All in all, I am very pleased (and so is my wife) with the final result of this project.&lt;/p&gt;
+
+&lt;p&gt;There is a LOT of information here and lots of steps but it is worth it and you will definately learn lots of useful tricks. I am sure there are many improvements that could be made.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg&#34; alt=&#34;alt text&#34; title=&#34;Kitchen Pi Image:1&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;materials&#34;&gt;Materials&lt;/h2&gt;
+
+&lt;p&gt;Hardware
+- rasberry pi (in my case a model 3) with powersuppy
+- 5 inch touchscreen with plastic pen
+- USB storage (optional but recommended)
+- you will need a temporary keyboard/mouse attached to set things up.&lt;/p&gt;
+
+&lt;p&gt;Software
+- berryboot (which will load rasbian)
+- apache2 and php
+- magicmirror2 and various modules
+- fauxmo (from Maker Musings)
+- software for the touchscreen including touch a calibration tool
+- matchbox-keyboard
+- xcreensaver&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Sorting IPs</title>
-      <link>https://www.companionway.net/post/post-title/</link>
+      <link>https://www.companionway.net/post/sorting_ips/</link>
       <pubDate>Sun, 01 Jan 2017 15:53:14 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/post-title/</guid>
+      <guid>https://www.companionway.net/post/sorting_ips/</guid>
       <description>&lt;p&gt;I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
 laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
 parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
@@ -179,7 +204,11 @@ or &amp;hellip; just git push it to hithub and use something like netlify.com to
 &lt;/ul&gt;
 
 &lt;p&gt;Reference:
-&lt;a href=&#34;https://gohugo.io/#intro&#34;&gt;gohugo.io&lt;/a&gt;&lt;/p&gt;</description>
+&lt;a href=&#34;https://gohugo.io/#intro&#34;&gt;gohugo.io&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Enjoy
+-g-
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -197,45 +226,20 @@ or &amp;hellip; just git push it to hithub and use something like netlify.com to
       <pubDate>Mon, 11 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://www.companionway.net/post/2015-05-11-post1/</guid>
-      <description>&lt;p&gt;To make a long story short&amp;hellip;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;#!/bin/bash
-PATTERN=$(echo $1 | tr [:lower:] [:upper:])
-# or
-PATTERN=$(echo $1 | tr [a-z] [A-Z])
-# or
-PATTERN=$(echo $1 | awk &#39;{print toupper($0)}&#39;)
-
-echo &amp;quot;Your \$1 argument is now uppercase: $1&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To make a short story long&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;Just to let you know a little more about me and reveal
-a few more shells tricks along the way.&lt;/p&gt;</description>
+      <description>To make a long story short&amp;hellip;
+#!/bin/bash PATTERN=$(echo $1 | tr [:lower:] [:upper:]) # or PATTERN=$(echo $1 | tr [a-z] [A-Z]) # or PATTERN=$(echo $1 | awk &#39;{print toupper($0)}&#39;) echo &amp;quot;Your \$1 argument is now uppercase: $1&amp;quot;  To make a short story long&amp;hellip;
+Just to let you know a little more about me and reveal a few more shells tricks along the way.
+ I am a very conservative investor - always have been but the low interest rates over the recent past has forced me to try a squeeze a little more out of the stock market also known as a &amp;ldquo;a gentleman&amp;rsquo;s gambling parlor of greedy people&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>The GrovePi kit</title>
       <link>https://www.companionway.net/post/grovepi/</link>
-      <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 09 May 2015 10:54:24 +0200</pubDate>
       
       <guid>https://www.companionway.net/post/grovepi/</guid>
-      <description>&lt;h1 id=&#34;check-out-grovepi&#34;&gt;Check out GrovePi&lt;/h1&gt;
-
-&lt;p&gt;These kits make working with the Raspberry Pi GPIO pins
-so simple and clean.  I just ordered one of these kits and
-I will try to write up a review after I work it over.&lt;/p&gt;
-
-&lt;p&gt;If you are interested in building a quick and easy raspberry pi
-for experimenting with the &amp;ldquo;Internet of Things&amp;rdquo; (aka IoT) platform - this board and kit
-looks like it will get you there in minutes. Approx: $89 -
-includes board, and &lt;em&gt;lots&lt;/em&gt; of sensors/accessories with wires
-and connectors.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/grovepi1.jpg&#34; alt=&#34;grovepi&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>Check out GrovePi These kits make working with the Raspberry Pi GPIO pins so simple and clean. I just ordered one of these kits and I will try to write up a review after I work it over.
+If you are interested in building a quick and easy raspberry pi for experimenting with the &amp;ldquo;Internet of Things&amp;rdquo; (aka IoT) platform - this board and kit looks like it will get you there in minutes.</description>
     </item>
     
     <item>

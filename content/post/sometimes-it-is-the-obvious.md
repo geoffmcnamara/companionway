@@ -4,7 +4,6 @@ comments = false
 date = "2016-12-15T16:36:42-05:00"
 draft = false
 image = "/img/owl.jpg"
-menu = ""
 share = true
 tags = ["scripting", "python"]
 title = "Sometimes It Is The Obvious"

@@ -1,13 +1,11 @@
 +++
-author = ""
+title    = "Sorting IPs"
+author   = ""
 comments = false
-date = "2017-01-01T15:53:14-05:00"
-draft = false
-image = "/img/sorting-hat.jpg"
-menu = ""
-share = true
-slug = "post-title"
-title = "Sorting IPs"
+date     = "2017-01-01T15:53:14-05:00"
+draft    = false
+image    = "/img/sorting-hat.jpg"
+share    = true
 
 +++
 

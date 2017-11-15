@@ -5,8 +5,9 @@
     <link>https://www.companionway.net/tags/grovepi/</link>
     <description>Recent content in Grovepi on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
+    <language>us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Sat, 09 May 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 May 2015 10:54:24 +0200</lastBuildDate>
     
 	<atom:link href="https://www.companionway.net/tags/grovepi/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,24 +15,11 @@
     <item>
       <title>The GrovePi kit</title>
       <link>https://www.companionway.net/post/grovepi/</link>
-      <pubDate>Sat, 09 May 2015 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 09 May 2015 10:54:24 +0200</pubDate>
       
       <guid>https://www.companionway.net/post/grovepi/</guid>
-      <description>&lt;h1 id=&#34;check-out-grovepi&#34;&gt;Check out GrovePi&lt;/h1&gt;
-
-&lt;p&gt;These kits make working with the Raspberry Pi GPIO pins
-so simple and clean.  I just ordered one of these kits and
-I will try to write up a review after I work it over.&lt;/p&gt;
-
-&lt;p&gt;If you are interested in building a quick and easy raspberry pi
-for experimenting with the &amp;ldquo;Internet of Things&amp;rdquo; (aka IoT) platform - this board and kit
-looks like it will get you there in minutes. Approx: $89 -
-includes board, and &lt;em&gt;lots&lt;/em&gt; of sensors/accessories with wires
-and connectors.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/grovepi1.jpg&#34; alt=&#34;grovepi&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>Check out GrovePi These kits make working with the Raspberry Pi GPIO pins so simple and clean. I just ordered one of these kits and I will try to write up a review after I work it over.
+If you are interested in building a quick and easy raspberry pi for experimenting with the &amp;ldquo;Internet of Things&amp;rdquo; (aka IoT) platform - this board and kit looks like it will get you there in minutes.</description>
     </item>
     
   </channel>

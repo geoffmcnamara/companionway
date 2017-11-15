@@ -1,13 +1,15 @@
----
-layout:     post
-title:      The GrovePi kit
-subtitle:   make the raspberry pi GPIO pins quick and easy to use
-date:       2015-05-09
-author:     geoffm
-image:     "/img/grovepi1.jpg"
-comments: true
-tags: ["grovepi"]
----
++++
+date       = "2015-05-09T10:54:24+02:00"
+title      = "The GrovePi kit"
+subtitle   = "Make the raspberry pi GPIO pins quick and easy to use"
+author     = "geoffm"
+image      = "/img/grovepi1.jpg"
+share      = true
+comments   = false
+tags       = ["grovepi"]
+draft      = false
+
++++
 
 # Check out GrovePi
 
@@ -23,7 +25,7 @@ and connectors.
 
 ![grovepi](/img/grovepi1.jpg)
 
-<!--more-->
+<!--xmore-->
 
 This company is doing cool things to make raspberry pi projects
 fun and easy - especially for students.

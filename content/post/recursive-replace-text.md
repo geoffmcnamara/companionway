@@ -4,7 +4,6 @@ comments = false
 date = "2016-12-10T20:38:12-05:00"
 draft = false
 image = "/img/chrome-frame-n-ball.jpg"
-menu = ""
 share = true
 tags = ["xargs", "sed"]
 title = "Recursively Replace Text"

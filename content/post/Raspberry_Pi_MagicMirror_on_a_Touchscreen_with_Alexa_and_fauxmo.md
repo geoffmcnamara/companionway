@@ -6,7 +6,6 @@ draft = false
 #image = "/img/raspberry.png"
 #image = "/img/k-pi1.jpg"
 image = "/img/mmirror.png"
-menu = ""
 share = true
 slug = "post-title"
 title = "Raspberry Pi MagicMirror on a Touchscreen with Alexa and fauxmo"
@@ -18,7 +17,6 @@ title = "Raspberry Pi MagicMirror on a Touchscreen with Alexa and fauxmo"
 ## The goal
 
 This project is designed to provide a reliable MagicMirror2 on a Raspberry Pi fitted with a 5 inch touchscreen that doubles to provide browsing if needed. This comes from a desire to have a quick aide in the kitchen that reports standard information when needed or a browser for looking up and displaying recipes etc.
-<!--more-->
 
 The result is a raspberry pi with one wire that stands on its edge without a case and has a 5 inch display. The display can show any of the modules provided for magicmirror2 on command to Alexa or stop magicmirror on command. The rasbian desktop along with an inboard keyboard pad and touch "pen" allows you to launch a browser (or any other program) and navigate to any url. When the desktop is idle a screensaver comes up with anynumber of pleasing animations - selectable and can be rotated with screen blanking possible as well. The backlight of the screen is enough to act as a soothing nightlight. All in all, I am very pleased (and so is my wife) with the final result of this project.
 

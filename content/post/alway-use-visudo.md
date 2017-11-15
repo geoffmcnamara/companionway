@@ -1,13 +1,12 @@
 +++
-author = ""
+title    = "Always Use Visudo"
+author   = "geoffm"
+date     = "2016-12-14T10:59:38-05:00"
+image    = "/img/visudo.jpg"
+share    = true
 comments = false
-date = "2016-12-14T10:59:38-05:00"
-draft = false
-image = "/img/visudo.jpg"
-menu = ""
-share = true
-tags = ["sudo"]
-title = "Always Use Visudo"
+tags     = ["sudo"]
+draft    = false
 
 +++
 

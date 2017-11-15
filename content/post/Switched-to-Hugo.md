@@ -4,7 +4,6 @@ comments = false
 date = "2016-12-09T10:57:45-05:00"
 draft = false
 image = "/img/hugo-logo.png"
-menu = ""
 share = true
 tags = ["hugo", "jekyll", "cms"]
 title = "Switched to Hugo"
@@ -33,6 +32,6 @@ Here is why:
 Reference:
 [gohugo.io](https://gohugo.io/#intro)
 
-<!--more-->
 Enjoy
 -g-
+<!--more-->
