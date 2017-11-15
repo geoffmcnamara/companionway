@@ -135,54 +135,91 @@ ga('send', 'pageview');
 <div class="site-wrapper">
 
 
+<style>
+* {
+	box-sizing: border-box;
+}
 
+<!--
+body {
+margin: 0;
+}
+-->
 
+ 
+.column {
+float: left;
+padding: 10px;
+height: 300px;  
+}
 
-<header class="main-header tag-head" style="background-image: url(https://www.companionway.net/img/obxwavefrompier.jpg)">
+.left {
+width: 25%;
+}
 
+.right {
+width: 75%;
+}
 
-<nav class="main-nav overlay clearfix">
+ 
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+</style>
 
-<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
+<h2>Classifications - Taxonomies - Terms</h2>
 
-
-<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-
-</nav>
-<div class="vertical">
-<div class="main-header-content inner">
-<h1 class="page-title">Categories</h1>
-<h2 class="page-description">
-
-</h2>
-</div>
-</div>
-</header>
-
-<main class="content" role="main">
-
-
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 0</span>
-	
-</nav>
-
-</div>
-
-<ul>
-
+<div class="row">
+<div class="column left" style="background-color:#aaa;">
+<h2>Categories</h2>
+<ul id="all-cats">
 
 </ul>
 
-<nav class="pagination" role="navigation">
-	
-	<span class="page-number">Page 1 of 0</span>
-	
-</nav>
+</div>
+<div class="column right" style="background-color:#bbb;">
+<h2>Tags</h2>
+<ul id="all-tags">
 
-</main>
+<li><a href="/tags/awk">awk</a></li>
+
+<li><a href="/tags/cms">cms</a></li>
+
+<li><a href="/tags/convert">convert</a></li>
+
+<li><a href="/tags/financial">financial</a></li>
+
+<li><a href="/tags/grovepi">grovepi</a></li>
+
+<li><a href="/tags/hugo">hugo</a></li>
+
+<li><a href="/tags/imagemagic">imagemagic</a></li>
+
+<li><a href="/tags/jekyll">jekyll</a></li>
+
+<li><a href="/tags/js">js</a></li>
+
+<li><a href="/tags/markdown">markdown</a></li>
+
+<li><a href="/tags/python">python</a></li>
+
+<li><a href="/tags/raspberry">raspberry</a></li>
+
+<li><a href="/tags/rdp">rdp</a></li>
+
+<li><a href="/tags/scripting">scripting</a></li>
+
+<li><a href="/tags/sed">sed</a></li>
+
+<li><a href="/tags/sudo">sudo</a></li>
+
+<li><a href="/tags/xargs">xargs</a></li>
+
+</ul>
+</div>
+</div>
 
 
 <script type="text/javascript" src="https://www.companionway.net/js/jquery.js"></script>

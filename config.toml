@@ -28,9 +28,10 @@ theme = "casper"
   githubName = "geoffmcnamara"
   twitterName = "geoffmcnamara"
   facebookName = "geoffmcnamara"
-  linkedinName = "geoffmcnamara"
+  linkedinName = "companionway"
+  googlePlusName = "GeoffMcNamara"
+  pinterestName = ""
   # set true if you are not proud of using Hugo (true will hide the footer note "Proudly published with HUGO.....")
-  googlePlusName = "geoff.mcnamara@gmail.com"
   hideHUGOSupport = false
 
 [[menu.main]]

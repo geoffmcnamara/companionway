@@ -1,62 +1,59 @@
 {{ partial "header.html" . }}
-{{ $baseurl := .Site.BaseURL }}
 
-{{if .Params.cover}}
-{{if or (eq (substr .Params.cover 0 7) "http://") (eq (substr .Params.cover 0 8) "https://")}}
-<header class="main-header tag-head" style="background-image: url({{.Params.cover}})">
-{{ else }}
-<header class="main-header tag-head" style="background-image: url({{ $baseurl }}{{.Params.cover}})">
-{{ end }}
-{{else if .Site.Params.cover}}
-{{if or (eq (substr .Site.Params.cover 0 7) "http://") (eq (substr .Site.Params.cover 0 8) "https://")}}
-<header class="main-header tag-head" style="background-image: url({{.Site.Params.cover}})">
-{{ else }}
-<header class="main-header tag-head" style="background-image: url({{ $baseurl }}{{.Site.Params.cover}})">
-{{ end }}
-{{else}}
-<header class="main-header tag-head no-cover">
-{{end}}
-<nav class="main-nav overlay clearfix">
-{{ if .Site.Params.logo }}
-<a class="blog-logo" href="{{.Site.BaseURL}}"><img src="{{.Site.BaseURL}}{{ .Site.Params.logo }}" alt="Home" /></a>
-{{end}}
-{{ if .Site.Menus.main }}
-<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-{{else}}
-{{ if .Site.Params.RSSLink}}
-<a class="menu-button icon-feed" href="{{.Site.Params.RSSLink }}"><i class="fa fa-rss"></i>&nbsp;&nbsp;Subscribe</a>
-{{else}}
-<a class="menu-button icon-feed" href="{{ .RSSLink }}"><i class="fa fa-rss"></i>&nbsp;&nbsp;Subscribe</a>
-{{end}}
-{{end}}
-</nav>
-<div class="vertical">
-<div class="main-header-content inner">
-<h1 class="page-title">{{.Title}}</h1>
-<h2 class="page-description">
-{{if .Params.description}}
-{{.Params.description}}
-{{end}}
-</h2>
-</div>
-</div>
-</header>
+<style>
+* {
+	box-sizing: border-box;
+}
 
-<main class="content" role="main">
-{{ $paginator := .Paginator }}
+<!--
+body {
+margin: 0;
+}
+-->
 
-<div class="extra-pagination inner">
-{{ partial "pagination.html" $paginator }}
-</div>
+/* Create two unequal columns that floats next to each other */
+.column {
+float: left;
+padding: 10px;
+height: 300px; /* Should be removed. Only for demonstration */
+}
 
-<ul>
-{{ $data := .Data }}
-{{ range $key, $value := .Data.Terms.ByCount }}
-<li><a href="{{ $.Site.LanguagePrefix }}/{{ $data.Plural }}/{{ $value.Name | urlize }}"> {{ $value.Name }} </a> {{ $value.Count }} </li>
+.left {
+width: 25%;
+}
+
+.right {
+width: 75%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+</style>
+
+<h2>Classifications - Taxonomies - Terms</h2>
+
+<div class="row">
+<div class="column left" style="background-color:#aaa;">
+<h2>Categories</h2>
+<ul id="all-cats">
+{{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+<li><a href="{{ "/categories/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></li>
 {{ end }}
 </ul>
 
-{{ partial "pagination.html" $paginator }}
-</main>
+</div>
+<div class="column right" style="background-color:#bbb;">
+<h2>Tags</h2>
+<ul id="all-tags">
+{{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+<li><a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a></li>
+{{ end }}
+</ul>
+</div>
+</div>
 
 {{ partial "footer.html" . }}
