@@ -158,7 +158,27 @@ Suspendisse a enim sit amet massa efficitur malesuada.</description>
 
 &lt;p&gt;There is a LOT of information here and lots of steps but it is worth it and you will definately learn lots of useful tricks. I am sure there are many improvements that could be made.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg#floatright&#34; alt=&#34;Kitchen Pi Image:1&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg#floatright&#34; alt=&#34;Kitchen Pi Image:1&#34; /&gt;
+&lt;!--
+
+&lt;figure &gt;
+    
+        &lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg&#34; alt=&#34;KitchenPi&#34; width=&#34;60%&#34; /&gt;
+    
+    
+    &lt;figcaption&gt;
+        &lt;h4&gt;KitchenPi Image:1&lt;/h4&gt;
+        &lt;p&gt;
+        KitchenPi
+        
+            
+        
+        &lt;/p&gt; 
+    &lt;/figcaption&gt;
+    
+&lt;/figure&gt;
+
+--&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;materials&#34;&gt;Materials&lt;/h2&gt;
 
