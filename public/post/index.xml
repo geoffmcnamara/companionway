@@ -7,10 +7,62 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>us</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Fri, 03 Nov 2017 10:54:24 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 10 Jul 2018 09:30:14 -0400</lastBuildDate>
     
 	<atom:link href="https://www.companionway.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fabric_vs_ansible</title>
+      <link>https://www.companionway.net/post/fabric_vs_ansible/</link>
+      <pubDate>Tue, 10 Jul 2018 09:30:14 -0400</pubDate>
+      
+      <guid>https://www.companionway.net/post/fabric_vs_ansible/</guid>
+      <description>&lt;h3 id=&#34;fabric-vs-ansible&#34;&gt;Fabric vs Ansible&lt;/h3&gt;
+
+&lt;p&gt;I have wrestled with ansible for too long. It is an awesome tool but you need to learn the syntax of three
+different languages (ansible, yaml, and maaybe some python) to hold it down and control it. Everytime I go
+to use it I have to learn how to do what I need to do. But the most frustrating aspect of ansible when learning
+to do something new is that your first attempt rarely succeeds - at least for me. So you resort to &amp;ldquo;force programming&amp;rdquo;
+to get through it. By &amp;ldquo;force programming&amp;rdquo; I mean you try this and that and then something else until it works&amp;hellip; and
+I end up with a hodgepodge of debug lines commented out.&lt;/p&gt;
+
+&lt;p&gt;Following the bunny trail to find an alternativei, I ran across python (&amp;ldquo;fabric&amp;rdquo;[200~&lt;a href=&#34;http://www.fabfile.org/]&#34;&gt;http://www.fabfile.org/]&lt;/a&gt;). I am a committed python code minion.
+So much so lately, that I have converted many of my bash scripts to python. But all that is a different topic for a rainy day.
+Put ansible away in a dark closet somewhere and start using fabric. If you are starting out with fabric or going to
+explore it now, don&amp;rsquo;t just type &amp;ldquo;how to use fabric&amp;rdquo; in your search engine becuase the obvious will happen. So preceed your mention
+of &amp;ldquo;fabric&amp;rdquo; with &amp;ldquo;python&amp;rdquo;&amp;hellip; so &amp;ldquo;how to use python fabric&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;Using pip you can install fabric. Python fabric is a module that comes along with a python tool called &amp;ldquo;fab&amp;rdquo;.  The &amp;ldquo;fab&amp;rdquo; tool will
+also be available. If you run &lt;code&gt;fab -h&lt;/code&gt; you will see a healthy list of options/arguments. Don&amp;rsquo;t let that put you off. A working
+knowledge of python is all you need to master fabric. The fabric module is designed to provide you with ssh tools out of the box. It allows running
+any process remotely or locally, without any headaches. If you have been using ansible, then this exercise will be a little like
+subjecting a Windows user to the linux command line (well maybe not quite that bad).&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s a quick one-liner:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fab -H rpi01,rpi02,192.168.1.40 -- df -h
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pretty obvious&amp;hellip; until it fails. If one of those hosts is down this process will break.
+The fab tool by default looks for a file called fabfile.py. So lets create a simple one to overcome the failure problem just mentioned.&lt;/p&gt;
+
+&lt;p&gt;Write a file called fabfile.py  You can use any filename but we are sticking with the default.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from fabric.api import run,settings
+
+def df_h():
+	with settings(warn_only=True):
+		run(&#39;df -h&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To run this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fab -H rpi01,rpi02 df_h
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>How this theme evolved</title>
@@ -64,7 +116,7 @@ pulled from ./archtypes/articles.md.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg#floatright&#34; alt=&#34;Kitchen Pi Image:1&#34; /&gt;
 &lt;!--
 
-&lt;figure &gt;
+&lt;figure&gt;
     
         &lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg&#34; alt=&#34;KitchenPi&#34; width=&#34;60%&#34; /&gt;
     

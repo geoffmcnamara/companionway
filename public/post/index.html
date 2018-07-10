@@ -54,7 +54,7 @@
 <link href="https://www.companionway.net/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
 
 
-<meta name="generator" content="Hugo 0.30.2" />
+<meta name="generator" content="Hugo 0.40.1" />
 
 <link rel="canonical" href="https://www.companionway.net/post/" />
 
@@ -165,13 +165,82 @@ ga('send', 'pageview');
 <div class="extra-pagination inner">
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 of 6</span>
+	<span class="page-number">Page 1 of 7</span>
 	
 	    <a class="older-posts" href="/post/page/2/">Older Posts &rarr;</a>
 	
 </nav>
 
 </div>
+
+
+
+<article class="post post">
+    <header class="post-header">
+        <h2 class="post-title"><a href="/post/fabric_vs_ansible/">Fabric_vs_ansible</a></h2>
+    </header>
+    <section class="post-excerpt">
+        <p><h3 id="fabric-vs-ansible">Fabric vs Ansible</h3>
+
+<p>I have wrestled with ansible for too long. It is an awesome tool but you need to learn the syntax of three
+different languages (ansible, yaml, and maaybe some python) to hold it down and control it. Everytime I go
+to use it I have to learn how to do what I need to do. But the most frustrating aspect of ansible when learning
+to do something new is that your first attempt rarely succeeds - at least for me. So you resort to &ldquo;force programming&rdquo;
+to get through it. By &ldquo;force programming&rdquo; I mean you try this and that and then something else until it works&hellip; and
+I end up with a hodgepodge of debug lines commented out.</p>
+
+<p>Following the bunny trail to find an alternativei, I ran across python (&ldquo;fabric&rdquo;[200~<a href="http://www.fabfile.org/]">http://www.fabfile.org/]</a>). I am a committed python code minion.
+So much so lately, that I have converted many of my bash scripts to python. But all that is a different topic for a rainy day.
+Put ansible away in a dark closet somewhere and start using fabric. If you are starting out with fabric or going to
+explore it now, don&rsquo;t just type &ldquo;how to use fabric&rdquo; in your search engine becuase the obvious will happen. So preceed your mention
+of &ldquo;fabric&rdquo; with &ldquo;python&rdquo;&hellip; so &ldquo;how to use python fabric&rdquo;.</p>
+
+<p>Using pip you can install fabric. Python fabric is a module that comes along with a python tool called &ldquo;fab&rdquo;.  The &ldquo;fab&rdquo; tool will
+also be available. If you run <code>fab -h</code> you will see a healthy list of options/arguments. Don&rsquo;t let that put you off. A working
+knowledge of python is all you need to master fabric. The fabric module is designed to provide you with ssh tools out of the box. It allows running
+any process remotely or locally, without any headaches. If you have been using ansible, then this exercise will be a little like
+subjecting a Windows user to the linux command line (well maybe not quite that bad).</p>
+
+<p>Here&rsquo;s a quick one-liner:</p>
+
+<pre><code>fab -H rpi01,rpi02,192.168.1.40 -- df -h
+</code></pre>
+
+<p>Pretty obvious&hellip; until it fails. If one of those hosts is down this process will break.
+The fab tool by default looks for a file called fabfile.py. So lets create a simple one to overcome the failure problem just mentioned.</p>
+
+<p>Write a file called fabfile.py  You can use any filename but we are sticking with the default.</p>
+
+<pre><code>from fabric.api import run,settings
+
+def df_h():
+	with settings(warn_only=True):
+		run('df -h')
+</code></pre>
+
+<p>To run this:</p>
+
+<pre><code>fab -H rpi01,rpi02 df_h
+</code></pre>
+
+<p></p> <a class="read-more" href="/post/fabric_vs_ansible/">&raquo;</a></p>
+    </section>
+    <footer class="post-meta">
+        
+        
+
+        
+            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+        
+        
+            Geoff McNamara
+        
+        
+        <time class="post-date" datetime="2018-07-10T09:30:14-04:00">
+            10 Jul 2018
+        </time>
+    </footer>
+</article>
 
 
 
@@ -246,7 +315,7 @@ pulled from ./archtypes/articles.md.</p>
 <p><img src="/img/k-pi1.jpg#floatright" alt="Kitchen Pi Image:1" />
 <!--
 
-<figure >
+<figure>
     
         <img src="/img/k-pi1.jpg" alt="KitchenPi" width="60%" />
     
@@ -362,48 +431,9 @@ Here is a simple debug function for python which could definitely be improved:</
 
 
 
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/raspberry-pi-and-xrdp/">Raspberry Pi and Xrdp</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
-any linux machine) can be done so many different ways - but the easiest from my perspective is xrdp. It is available
-really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
-xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
-Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
-almost any linux distro.</p>
-
-<p></p> <a class="read-more" href="/post/raspberry-pi-and-xrdp/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/raspberry/">#raspberry</a>,
-            
-                <a href="https://www.companionway.nettags/rdp/">#rdp</a>,
-            
-        
-        <time class="post-date" datetime="2016-12-16T12:27:36-05:00">
-            16 Dec 2016
-        </time>
-    </footer>
-</article>
-
-
-
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 of 6</span>
+	<span class="page-number">Page 1 of 7</span>
 	
 	    <a class="older-posts" href="/post/page/2/">Older Posts &rarr;</a>
 	
