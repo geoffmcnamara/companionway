@@ -21,7 +21,7 @@ to get through it. By "force programming" I mean you try this and that and then 
 I end up with a hodgepodge of debug lines commented out.
 
 
-Following the bunny trail to find an alternativei, I ran across python ("fabric"[200~http://www.fabfile.org/]). I am a committed python code minion.
+Following the bunny trail to find an alternativei, I ran across python [link:"fabric"](200~http://www.fabfile.org/). I am a committed python code minion.
 So much so lately, that I have converted many of my bash scripts to python. But all that is a different topic for a rainy day.
 Put ansible away in a dark closet somewhere and start using fabric. If you are starting out with fabric or going to
 explore it now, don't just type "how to use fabric" in your search engine becuase the obvious will happen. So preceed your mention 
@@ -245,3 +245,7 @@ def buildweb():
 ~~~
 
 I added just a few tasks so you can can see other simple examples.
+
+Enjoy
+
+-g-
