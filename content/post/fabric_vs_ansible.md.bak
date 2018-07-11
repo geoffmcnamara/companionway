@@ -14,17 +14,17 @@ author = ""
 ### Fabric vs Ansible
 
 I have wrestled with ansible for too long. It is an awesome tool but you need to learn the syntax of three
-different languages (ansible, yaml, and maybe some python) to hold it down and control it. Every time I go 
+ifferent languages (ansible, yaml, and maybe some python) to hold it down and control it. Everytime I go 
 to use it I have to learn how to do what I need to do. But the most frustrating aspect of ansible when learning
 to do something new is that your first attempt rarely succeeds - at least for me. So you resort to "force programming"
 to get through it. By "force programming" I mean you try this and that and then something else until it works... and
 I end up with a hodgepodge of debug lines commented out.
 
 
-Following the bunny trail to find an alternative, I ran across python ["fabric"](200~http://www.fabfile.org/). I am a committed python code minion.
+Following the bunny trail to find an alternativei, I ran across python ["fabric"](200~http://www.fabfile.org/). I am a committed python code minion.
 So much so lately, that I have converted many of my bash scripts to python. But all that is a different topic for a rainy day.
 Put ansible away in a dark closet somewhere and start using fabric. If you are starting out with fabric or going to
-explore it now, don't just type "how to use fabric" in your search engine because the obvious will happen. So precede your mention 
+explore it now, don't just type "how to use fabric" in your search engine becuase the obvious will happen. So preceed your mention 
 of "fabric" with "python"... so "how to use python fabric". 
 
 
@@ -62,10 +62,10 @@ fab -H rpi01,rpi02 df_h
 <!--more-->
 
 If one of the hosts is down  then the df_h "task" will still be run on the other hosts. We are still far from what ansible has to offer but we
-have only used python. No yaml, no ansible freak out without a trace-back stack dump. This is unadulterated python.
+have only used python. No yaml, no ansible freakout without a traceback stack dump. This is unadalterated python.
 On the command line you have to tell it what method/function to run. The fab tool calls this a "task". More on this later. 
 
-Given a great number of hosts you naturally want to declare groups of hosts and a list of tasks to perform. Fabric accommodates these desires
+Given a great number of hosts you naturally want to declare groups of hosts and a list of tasks to perform. Fabric accomodates these desires
 by using "roles" and, because this is python, one function can call other functions. The term "roles" might seem a bit off but it is more powerful than
 just name groups; I leave it to you to find out more about fab roles. Assume you want to run a set of tasks to give you an informed status
 of a group of hosts. Here is an example fabfile.py:
@@ -152,7 +152,7 @@ fab sethosts:"rpis" status # will run status on "rpis" hosts
 fab sethosts               # will run sethosts and list the roles defined.
 ~~~
 
-Now the power of fabric starts to emerge. That power is just python with a smart way of calling ssh using fabric. The fabric.api has lots of others useful calls
+Now the power of fsbric starts to emerge. That power is just python with a smart way of calling ssh using fabric. The fabric.api has lots of others useful calls
 like put("/source/filename","/target/", use_sudo=True), get(), sudo(), local(), run(), etc. 
 
 One other thing here. You will see that within the fabfile you can use decorators that come with fabric like "@roles('rpis')", @task and others. You can list all
@@ -241,7 +241,7 @@ def aptupdate():
 @task
 def buildweb():
 	sudo('apt -y install apache2 php')
-	put("/home/myself/dev/www/skel", "/var/www/html/", use_sudo=True)
+	put("/home/memyself/dev/www/skel", "/var/www/html/", use_sudo=True)
 ~~~
 
 I added just a few tasks so you can can see other simple examples.
