@@ -136,320 +136,313 @@ ga('send', 'pageview');
 
 
 
-<header class="main-header tag-head" style="background-image: url(https://www.companionway.net/img/obxwavefrompier.jpg)">
+	<header id='fadeInDown' class="main-header" style="background-image: url(https://www.companionway.net/img/obxwavefrompier.jpg)">
+		
+		
+
+			
+			<nav class="main-nav overlay clearfix">
+				
+				<a class="blog-logo" href="https://www.companionway.net/"><img src="https://www.companionway.net/img/sailboat.png" alt="Blog Logo" /></a>
+				
+				
+				<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+				
+			</nav>
+			<div class="vertical" >
+				<div class="main-header-content inner">
+
+					
+					<a class="bloglogo" href="https://www.linkedin.com/in/companionway" target="_blank">
+						<span class="xicon-linkedin" style="color:white;font-size:2em"></span>
+						<i class="fa fa-linkedin fa-1x" style="color:blue;"></i>
+					</a>
+					&nbsp;
+					
+
+					
+					<a class="bloglogo" href="https://github.com/geoffmcnamara" target="_blank">
+						<span class="xicon-github" style="color:white;font-size:2em"></span>
+						<i class="fa fa-github fa-1x" style="color:green;"></i>
+					</a>
+					&nbsp;
+					
+
+					
+					<a class="bloglogo" href="https://twitter.com/geoffmcnamara" target="_blank">
+						<span class="xicon-twitter" style="color:white;font-size:2em"></span>
+						<i class="fa fa-twitter fa-1x" style="color:yellow;"></i>
+					</a>
+					&nbsp;
+					
+
+					
+					<a class="bloglogo" href="https://www.facebook.com/geoffmcnamara" target="_blank">
+						<span class="xicon-facebook" style="color:white;font-size:2em"></span>
+						<i class="fa fa-facebook fa-1x" style="color:white;"></i>
+					</a>
+					&nbsp;
+					
+
+					
+
+					
+
+					
+					<a class="bloglogo" href="https://google.com/+GeoffMcNamara" target="_blank">
+						<span class="xicon-google-plus" style="color:white;font-size:2em"></span>
+						<i class="fa fa-google-plus fa-1x" style="color:red;"></i>
+					</a>
+					&nbsp;
+					
+
+					<h1 class="page-title">companionway</h1>
+					<h2 class="page-description">Meeting challenges with success!</h2>
+				</div> 
+			</div> 
+			
+			<a class="scroll-down" href="#content"><span><i class="fa fa-chevron-down fa-1x"></i></span></a>
+		</header>
+
+		<main id="content" class="content" role="main" >
+
+		
+		
 
 
-<nav class="main-nav overlay clearfix">
-
-<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
 
 
-<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+<hr>
 
-</nav>
-<div class="vertical">
-<div class="main-header-content inner">
-<h1 class="page-title">companionway</h1>
-<h2 class="page-description">
-
-</h2>
+<p><div id='gads'>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6986704271237340"
+     data-ad-slot="6884077067"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
-</div>
-</header>
-
-<main class="content" role="main">
-
-
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	    <a class="newer-posts" href="/page/5/">&larr; Newer Posts</a>
-	
-	<span class="page-number">Page 6 of 9</span>
-	
-	    <a class="older-posts" href="/page/7/">Older Posts &rarr;</a>
-	
-</nav>
-
-</div>
+<hr>
+<br></p>
 
 
 
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-03-post1/">startbootstrap-clean theme contact form</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>Getting the contact form to work on godaddy hosting was a trip, an ugly
-trip.</p>
-
-<p>The contact form built into the jekyll startbootstrap-clean theme coding
-is a bit convoluted and needed tweaking to get it working.</p>
-
-<ul>
-<li>first you change the mail/contact_me.php to include to your email address
-(no problem there)</li>
-<li>but it failed so I used google chrome developer tool (Ctrl-Shft-I) to diagnose what was failing.
-It was looking for the php script at /contact/mail/contact_me.php instead of /mail/contact_me.php
-(easily fixed by moving it).</li>
-<li>by the way - this form does not pass the POST variables directly to the on script - it uses js/bootstrap-clean.js
-(which has been minified into js/bootstrap-clean-min.js) to validate the form entries and passes it on to contact_me.php
-as POST variables.</li>
-<li>however, on godaddy hosting they restrict things quite a bit and you need to use their tools
-to send email. They place into your basic web site gdform.php and webformmailer.php (which is a link). I tried
-replacing contact_me.php with each of these&hellip; only gdform.php worked. Their gdform.php script actually writes
-out your POSTED variables into a dated file (eg gform_8935621) into you $HOME/data/ directory. A cron job periodically
-mails out any gform_xxxxxxx file it finds to you.</li>
-<li>bottom line &hellip; I saved the original contact_me.php off and then on my godaddy site I copied gdform.php to /contact/mail/contact_me.php
-and all problems solved. Your contact email will eventually come when the cron runs to send it. You can check new conntact requests
-by looking for $HOME/data/gdform-xxxxxxx files.</li>
-</ul>
-
-<p></p> <a class="read-more" href="/post/2015-04-03-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/jekyll/">#jekyll</a>,
-            
-        
-        <time class="post-date" datetime="2015-04-03T00:00:00Z">
-            3 Apr 2015
-        </time>
-    </footer>
-</article>
 
 
 
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-02-post1/">Centering a string</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="center-a-string-using-awk">Center a string using awk</h1>
+		
 
-<h2 id="awk-everyone-s-favorite-right">awk = everyone&rsquo;s favorite - right?</h2>
 
-<p>People who know me also know that I prefer simple
-universally available tools to get a job done. Awk is
-probably one of my favorites because it does pretty
-much anything I need for quick and simple jobs. It is
-far more powerful than most people realize including
-associative arrays and it will do anything grep and sed<br />
-can do.</p>
+		
+		
 
-<p>Recently I had the need to center a string of text. This
-is a easy problem that pretty much any freshman programmer
-can accomplish in a heartbeat but I decided to do it with
-awk. This sample gives you a chance to explore rudimentary
-features of awk.</p> <a class="read-more" href="/post/2015-04-02-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
+<section class="bar background-white no-mb">
+<div class="container">
 
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/awk/">#awk</a>,
-            
-        
-        <time class="post-date" datetime="2015-04-02T00:00:00Z">
-            2 Apr 2015
-        </time>
-    </footer>
-</article>
+<div class="col-md-12">
+<div class="heading text-center">
+<h2>Most Recent Posts</h2>
+</div> 
+
+
+<p class="lead">
+<center>
+
+<div id="quote" class="tshadow"></div> - <div id="author"></div>
+</center>
+</p>
 
 
 
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-01-post2/"></a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="this-website">This website</h1>
 
-<p>&hellip; was created (and is maintained) using jekyll.</p>
-
-<p>But getting here was a bit of a struggle.<br />
-I started using Jekyll quite some time ago. I love ruby and when I<br />
-found Jekyll I thought my mutual love for ruby and website design
-had perfectly come together.</p>
-
-<p>Not so fast there buckeroo. I could not easily manage themes in a way<br />
-that satisfied me&hellip; so I went exploring. I tried dozens of flat CMS<br />
-generators. My journey lasted months. I was very impressed with gravCMS<br />
-but I still fought with theme manipulation.</p>
-
-<p></p> <a class="read-more" href="/post/2015-04-01-post2/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/jekyll/">#jekyll</a>,
-            
-        
-        <time class="post-date" datetime="2015-04-01T00:00:00Z">
-            1 Apr 2015
-        </time>
-    </footer>
-</article>
+<div class="row">
 
 
+<div class="col-md-4 col-sm-6">
+<div class="box-image-text blog">
 
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-01-post1/">Learning markdown ...</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="markdown-this-heading-uses-setext-style">Markdown - this heading uses Setext style</h1>
+<div class="top">
+<div class="image" style="overflow:hidden">
 
-<p>You can<br />
-break lines<br />
-by adding &gt;=2 spaces<br />
-to the end
-before starting the next line</p>
+<img src="https://www.companionway.net/img/placeholder.png" class="img-responsive" alt="">
 
-<h1 id="this-heading-uses-atx-style">This heading uses atx style</h1>
+</div> 
+<div class="bg"></div>
+<div class="text">
+<p class="buttons">
+<a href="https://www.companionway.net/post/2015-04-26-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+</p>
+</div> 
+</div> 
 
-<p><p>I am learning that you have to name<br />
- your post file with YYYY-MM-DD-whatever.markdown</p>
+<div class="content">
+<h4><a href="https://www.companionway.net/post/2015-04-26-post1/">Delete the last X files using sed</a></h4>
+<p class="author-category">
 
-<p>or</p>
+By <a href="#">geoffm</a>
 
-<p>the <strong>extension</strong> <em>can</em> be &ldquo;.md&rdquo;
-<p></p>
+on January 1, 0001
+</p>
+<p class="intro"><h2 id="simple-sed-trick-keeping-the-last-x-files">Simple sed trick - keeping the last X files</h2>
 
-<blockquote>
-<p>quoted text
-here</p>
-</blockquote>
+<p>How would you remove all but the last 10 files in a directory?</p>
 
-<p></p> <a class="read-more" href="/post/2015-04-01-post1/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
+<p>So let&rsquo;s create 15 files with one second between there
+creation time. Oldest one (first one) will be called
+1.file
+and the newest one (last one) will be called
+15.file</p>
 
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/markdown/">#markdown</a>,
-            
-        
-        <time class="post-date" datetime="2015-04-01T00:00:00Z">
-            1 Apr 2015
-        </time>
-    </footer>
-</article>
+<p>Run this code to do that:</p>
 
-
-
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/2015-04-01-post3/">Let&#39;s change an image</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h1 id="changing-an-image">Changing an image</h1>
-
-<p>The magic tool is adapt images is <em>convert</em> from the imagemagick package.</p>
-
-<p>To convert type: <code>convert myimage.png myimage.jpg</code></p>
-
-<p>Here is a way to resize an image: <code>convert myimage.png -resize 200x100 myimage.png</code>
-&gt;Notice: the image will be converted right over the top of itself</p>
-
-<p>To darken (first argument to -modulate) an image and reduce<br />
-the color (second argument to -modulate):</p>
-
-<pre><code>convert -modulate 70,90 myimage.png myimage-darker.png
+<pre><code>for i in `seq 1 15`; do
+  touch $i.fil
+  sleep 1
+done
 </code></pre>
 
-<p></p> <a class="read-more" href="/post/2015-04-01-post3/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-            
-            
-        
+<p></p></p>
+<p class="read-more">
+<a href="https://www.companionway.net/post/2015-04-26-post1/" class="btn btn-template-main">Continue reading</a>
+</p>
+</div> 
 
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/imagemagic/">#imagemagic</a>,
-            
-                <a href="https://www.companionway.nettags/convert/">#convert</a>,
-            
-        
-        <time class="post-date" datetime="2015-04-01T00:00:00Z">
-            1 Apr 2015
-        </time>
-    </footer>
-</article>
+</div> 
+
+</div> 
+
+<div class="col-md-4 col-sm-6">
+<div class="box-image-text blog">
+
+<div class="top">
+<div class="image" style="overflow:hidden">
+
+<img src="https://www.companionway.net/img/placeholder.png" class="img-responsive" alt="">
+
+</div> 
+<div class="bg"></div>
+<div class="text">
+<p class="buttons">
+<a href="https://www.companionway.net/post/2015-04-26-post2/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+</p>
+</div> 
+</div> 
+
+<div class="content">
+<h4><a href="https://www.companionway.net/post/2015-04-26-post2/">MT7630e Wifi build and install</a></h4>
+<p class="author-category">
+
+By <a href="#">geoffm</a>
+
+on January 1, 0001
+</p>
+<p class="intro"><h1 id="wifi-mt7630e">Wifi mt7630e</h1>
+
+<p>Today&rsquo;s hero is Jakub Kicinski. He rewrote the Mediatek MT7630e drivers
+to clean up the code <em>and</em> work with the new kernels. I have been waiting
+for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.</p>
+
+<p>Kudo&rsquo;s to Mr. Kicinski!</p>
+
+<p>Here is the link:
+<a href="https://github.com/kuba-moo/mt7630e.git">github kuba-moo/mt7630e</a></p>
+
+<p></p></p>
+<p class="read-more">
+<a href="https://www.companionway.net/post/2015-04-26-post2/" class="btn btn-template-main">Continue reading</a>
+</p>
+</div> 
+
+</div> 
+
+</div> 
+
+<div class="col-md-4 col-sm-6">
+<div class="box-image-text blog">
+
+<div class="top">
+<div class="image" style="overflow:hidden">
+
+<img src="https://www.companionway.net/img/placeholder.png" class="img-responsive" alt="">
+
+</div> 
+<div class="bg"></div>
+<div class="text">
+<p class="buttons">
+<a href="https://www.companionway.net/post/2015-04-15-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+</p>
+</div> 
+</div> 
+
+<div class="content">
+<h4><a href="https://www.companionway.net/post/2015-04-15-post1/">SSH basics</a></h4>
+<p class="author-category">
+
+By <a href="#">geoffm</a>
+
+on January 1, 0001
+</p>
+<p class="intro"><h1 id="ssh">SSH</h1>
+
+<h2 id="debug-with-verbose-output">Debug with verbose output</h2>
+
+<p>$HOME/.ssh/config first and foremost - debug with -vvvv</p>
+
+<ul>
+<li>actually do it before you need to so you can see how it works</li>
+</ul>
+
+<hr />
+
+<h3 id="from-wikipedia-paraphrased">From Wikipedia (paraphrased):</h3>
+
+<blockquote>
+<p>Secure Shell, or SSH, is a cryptographic (encrypted) network
+protocol for initiating text-based shell sessions[clarification needed] on
+remote machines in a secure way.</p>
+</blockquote>
+
+<p>&hellip;</p>
+
+<blockquote>
+<p>In 1995, Tatu Ylönen, a researcher at Helsinki University of Technology,
+Finland, designed the first version of the protocol (now called SSH-1) prompted by a password-sniffing attack at his university network.</p>
+</blockquote>
+
+<p>&hellip;</p>
+
+<p></p></p>
+<p class="read-more">
+<a href="https://www.companionway.net/post/2015-04-15-post1/" class="btn btn-template-main">Continue reading</a>
+</p>
+</div> 
+
+</div> 
+
+</div> 
+
+
+</div> 
 
 
 
-<nav class="pagination" role="navigation">
-	
-	    <a class="newer-posts" href="/page/5/">&larr; Newer Posts</a>
-	
-	<span class="page-number">Page 6 of 9</span>
-	
-	    <a class="older-posts" href="/page/7/">Older Posts &rarr;</a>
-	
-</nav>
+<center><a class="btn btn-primary" href="/post/index.html">All Posts</a></center>
 
-</main>
+</div> 
+</div> 
+</section>
 
 
 
 
+		
+
+		</main>
+
+		
+		
 <script type="text/javascript" src="https://www.companionway.net/js/jquery.js"></script>
 <script type="text/javascript" src="https://www.companionway.net/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="https://www.companionway.net/js/index.js"></script>

@@ -136,274 +136,257 @@ ga('send', 'pageview');
 
 
 
-<header class="main-header tag-head" style="background-image: url(https://www.companionway.net/img/obxwavefrompier.jpg)">
+	<header id='fadeInDown' class="main-header" style="background-image: url(https://www.companionway.net/img/obxwavefrompier.jpg)">
+		
+		
+
+			
+			<nav class="main-nav overlay clearfix">
+				
+				<a class="blog-logo" href="https://www.companionway.net/"><img src="https://www.companionway.net/img/sailboat.png" alt="Blog Logo" /></a>
+				
+				
+				<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+				
+			</nav>
+			<div class="vertical" >
+				<div class="main-header-content inner">
+
+					
+					<a class="bloglogo" href="https://www.linkedin.com/in/companionway" target="_blank">
+						<span class="xicon-linkedin" style="color:white;font-size:2em"></span>
+						<i class="fa fa-linkedin fa-1x" style="color:blue;"></i>
+					</a>
+					&nbsp;
+					
+
+					
+					<a class="bloglogo" href="https://github.com/geoffmcnamara" target="_blank">
+						<span class="xicon-github" style="color:white;font-size:2em"></span>
+						<i class="fa fa-github fa-1x" style="color:green;"></i>
+					</a>
+					&nbsp;
+					
+
+					
+					<a class="bloglogo" href="https://twitter.com/geoffmcnamara" target="_blank">
+						<span class="xicon-twitter" style="color:white;font-size:2em"></span>
+						<i class="fa fa-twitter fa-1x" style="color:yellow;"></i>
+					</a>
+					&nbsp;
+					
+
+					
+					<a class="bloglogo" href="https://www.facebook.com/geoffmcnamara" target="_blank">
+						<span class="xicon-facebook" style="color:white;font-size:2em"></span>
+						<i class="fa fa-facebook fa-1x" style="color:white;"></i>
+					</a>
+					&nbsp;
+					
+
+					
+
+					
+
+					
+					<a class="bloglogo" href="https://google.com/+GeoffMcNamara" target="_blank">
+						<span class="xicon-google-plus" style="color:white;font-size:2em"></span>
+						<i class="fa fa-google-plus fa-1x" style="color:red;"></i>
+					</a>
+					&nbsp;
+					
+
+					<h1 class="page-title">companionway</h1>
+					<h2 class="page-description">Meeting challenges with success!</h2>
+				</div> 
+			</div> 
+			
+			<a class="scroll-down" href="#content"><span><i class="fa fa-chevron-down fa-1x"></i></span></a>
+		</header>
+
+		<main id="content" class="content" role="main" >
+
+		
+		
 
 
-<nav class="main-nav overlay clearfix">
-
-<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
 
 
-<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+<hr>
 
-</nav>
-<div class="vertical">
-<div class="main-header-content inner">
-<h1 class="page-title">companionway</h1>
-<h2 class="page-description">
-
-</h2>
+<p><div id='gads'>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6986704271237340"
+     data-ad-slot="6884077067"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 </div>
-</div>
-</header>
-
-<main class="content" role="main">
-
-
-<div class="extra-pagination inner">
-<nav class="pagination" role="navigation">
-	
-	    <a class="newer-posts" href="/page/2/">&larr; Newer Posts</a>
-	
-	<span class="page-number">Page 3 of 9</span>
-	
-	    <a class="older-posts" href="/page/4/">Older Posts &rarr;</a>
-	
-</nav>
-
-</div>
-
-
-
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/post-title/">Raspberry Pi MagicMirror on a Touchscreen with Alexa and fauxmo</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><h3 id="warning-what-follows-is-a-cascade-of-issues-and-lessons-learned-but-just-plain-fun">Warning: what follows is a cascade of issues and lessons learned&hellip; but just plain fun!</h3>
-
-<h2 id="the-goal">The goal</h2>
-
-<p>This project is designed to provide a reliable MagicMirror2 on a Raspberry Pi fitted with a 5 inch touchscreen that doubles to provide browsing if needed. This comes from a desire to have a quick aide in the kitchen that reports standard information when needed or a browser for looking up and displaying recipes etc.</p>
-
-<p>The result is a raspberry pi with one wire that stands on its edge without a case and has a 5 inch display. The display can show any of the modules provided for magicmirror2 on command to Alexa or stop magicmirror on command. The rasbian desktop along with an inboard keyboard pad and touch &ldquo;pen&rdquo; allows you to launch a browser (or any other program) and navigate to any url. When the desktop is idle a screensaver comes up with anynumber of pleasing animations - selectable and can be rotated with screen blanking possible as well. The backlight of the screen is enough to act as a soothing nightlight. All in all, I am very pleased (and so is my wife) with the final result of this project.</p>
-
-<p>There is a LOT of information here and lots of steps but it is worth it and you will definately learn lots of useful tricks. I am sure there are many improvements that could be made.</p>
-
-<p><img src="/img/k-pi1.jpg#floatright" alt="Kitchen Pi Image:1" />
-<!--
-
-<figure>
-    
-        <img src="/img/k-pi1.jpg" alt="KitchenPi" width="60%" />
-    
-    
-    <figcaption>
-        <h4>KitchenPi Image:1</h4>
-        <p>
-        KitchenPi
-        
-            
-        
-        </p> 
-    </figcaption>
-    
-</figure>
-
---></p>
-
-<h2 id="materials">Materials</h2>
-
-<p>Hardware
-- rasberry pi (in my case a model 3) with powersuppy
-- 5 inch touchscreen with plastic pen
-- USB storage (optional but recommended)
-- you will need a temporary keyboard/mouse attached to set things up.</p>
-
-<p>Software
-- berryboot (which will load rasbian)
-- apache2 and php
-- magicmirror2 and various modules
-- fauxmo (from Maker Musings)
-- software for the touchscreen including touch a calibration tool
-- matchbox-keyboard
-- xcreensaver</p>
-
-<p></p> <a class="read-more" href="/post/post-title/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="2017-01-11T14:27:35-05:00">
-            11 Jan 2017
-        </time>
-    </footer>
-</article>
-
-
-
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/sorting_ips/">Sorting IPs</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
-laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
-parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
-in most repositories). So output might look like this:
-</p> <a class="read-more" href="/post/sorting_ips/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="2017-01-01T15:53:14-05:00">
-            1 Jan 2017
-        </time>
-    </footer>
-</article>
-
-
-
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/quick-n-dirty-python-debug-function/">Quick N Dirty Python Debug Function</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>Pdb is a great debugger for python but I like to use my own simple debug functions.
-Here is a simple debug function for python which could definitely be improved:</p>
-
-<p></p> <a class="read-more" href="/post/quick-n-dirty-python-debug-function/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        
-        <time class="post-date" datetime="2016-12-22T14:08:05-05:00">
-            22 Dec 2016
-        </time>
-    </footer>
-</article>
-
-
-
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/raspberry-pi-and-xrdp/">Raspberry Pi and Xrdp</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
-any linux machine) can be done so many different ways - but the easiest from my perspective is xrdp. It is available
-really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
-xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
-Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
-almost any linux distro.</p>
-
-<p></p> <a class="read-more" href="/post/raspberry-pi-and-xrdp/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/raspberry/">#raspberry</a>,
-            
-                <a href="https://www.companionway.nettags/rdp/">#rdp</a>,
-            
-        
-        <time class="post-date" datetime="2016-12-16T12:27:36-05:00">
-            16 Dec 2016
-        </time>
-    </footer>
-</article>
-
-
-
-<article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="/post/sometimes-it-is-the-obvious/">Sometimes It Is The Obvious</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p><p>This was one of those &ldquo;problems&rdquo; that nagged me for many hours until the obvious dawned on me.
-I wrote a python script to grab the temperature and humidiy from a DHT22 sensor and then write the
-output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
-every 5 minutes and used a redirection to write out a file ie:</p>
-
-<pre><code>*/5 * * * * /usr/local/bin/temphum.sh &gt;/tmp/temphum.dat
-</code></pre>
-
-<p>The wrapper script grabs output and sends it to the server. Having this wrapper script lets me run the
-python script independantly for testing or for curiousity.</p> <a class="read-more" href="/post/sometimes-it-is-the-obvious/">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        
-        
-
-        
-            <img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-        
-        
-            Geoff McNamara
-        
-        on
-            
-                <a href="https://www.companionway.nettags/scripting/">#scripting</a>,
-            
-                <a href="https://www.companionway.nettags/python/">#python</a>,
-            
-        
-        <time class="post-date" datetime="2016-12-15T16:36:42-05:00">
-            15 Dec 2016
-        </time>
-    </footer>
-</article>
-
-
-
-<nav class="pagination" role="navigation">
-	
-	    <a class="newer-posts" href="/page/2/">&larr; Newer Posts</a>
-	
-	<span class="page-number">Page 3 of 9</span>
-	
-	    <a class="older-posts" href="/page/4/">Older Posts &rarr;</a>
-	
-</nav>
-
-</main>
+<hr>
+<br></p>
 
 
 
 
+
+
+		
+
+
+		
+		
+
+<section class="bar background-white no-mb">
+<div class="container">
+
+<div class="col-md-12">
+<div class="heading text-center">
+<h2>Most Recent Posts</h2>
+</div> 
+
+
+<p class="lead">
+<center>
+
+<div id="quote" class="tshadow"></div> - <div id="author"></div>
+</center>
+</p>
+
+
+
+
+<div class="row">
+
+
+<div class="col-md-4 col-sm-6">
+<div class="box-image-text blog">
+
+<div class="top">
+<div class="image" style="overflow:hidden">
+ 
+<img src="https://www.companionway.net/img/converseen-sshot.png" class="img-responsive" alt="" >
+
+</div> 
+<div class="bg"></div>
+<div class="text">
+<p class="buttons">
+<a href="https://www.companionway.net/post/converting-images/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+</p>
+</div> 
+</div> 
+
+<div class="content">
+<h4><a href="https://www.companionway.net/post/converting-images/">Converting Images</a></h4>
+<p class="author-category">
+
+on December 6, 2016
+</p>
+<p class="intro">I have fought with trying to remember the syntax for Imagemagik&rsquo;s convert command for years. I finaly caved in [from my normal position of &ldquo;if you can&rsquo;t do it from the commandline, then you are a wimp&rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &ldquo;converseen&rdquo;.</p>
+<p class="read-more">
+<a href="https://www.companionway.net/post/converting-images/" class="btn btn-template-main">Continue reading</a>
+</p>
+</div> 
+
+</div> 
+
+</div> 
+
+<div class="col-md-4 col-sm-6">
+<div class="box-image-text blog">
+
+<div class="top">
+<div class="image" style="overflow:hidden">
+ 
+<img src="https://www.companionway.net/img/thrutheseaoats-dark.jpg" class="img-responsive" alt="" >
+
+</div> 
+<div class="bg"></div>
+<div class="text">
+<p class="buttons">
+<a href="https://www.companionway.net/post/2015-05-11-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+</p>
+</div> 
+</div> 
+
+<div class="content">
+<h4><a href="https://www.companionway.net/post/2015-05-11-post1/">shell/bash uppercase arguments</a></h4>
+<p class="author-category">
+
+By <a href="#">geoffm</a>
+
+on May 11, 2015
+</p>
+<p class="intro">To make a long story short&hellip;
+#!/bin/bash PATTERN=$(echo $1 | tr [:lower:] [:upper:]) # or PATTERN=$(echo $1 | tr [a-z] [A-Z]) # or PATTERN=$(echo $1 | awk '{print toupper($0)}') echo &quot;Your \$1 argument is now uppercase: $1&quot;  To make a short story long&hellip;
+Just to let you know a little more about me and reveal a few more shells tricks along the way.
+ I am a very conservative investor - always have been but the low interest rates over the recent past has forced me to try a squeeze a little more out of the stock market also known as a &ldquo;a gentleman&rsquo;s gambling parlor of greedy people&rdquo;.</p>
+<p class="read-more">
+<a href="https://www.companionway.net/post/2015-05-11-post1/" class="btn btn-template-main">Continue reading</a>
+</p>
+</div> 
+
+</div> 
+
+</div> 
+
+<div class="col-md-4 col-sm-6">
+<div class="box-image-text blog">
+
+<div class="top">
+<div class="image" style="overflow:hidden">
+ 
+<img src="https://www.companionway.net/img/grovepi1.jpg" class="img-responsive" alt="" >
+
+</div> 
+<div class="bg"></div>
+<div class="text">
+<p class="buttons">
+<a href="https://www.companionway.net/post/grovepi/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+</p>
+</div> 
+</div> 
+
+<div class="content">
+<h4><a href="https://www.companionway.net/post/grovepi/">The GrovePi kit</a></h4>
+<p class="author-category">
+
+By <a href="#">geoffm</a>
+
+on May 9, 2015
+</p>
+<p class="intro">Check out GrovePi These kits make working with the Raspberry Pi GPIO pins so simple and clean. I just ordered one of these kits and I will try to write up a review after I work it over.
+If you are interested in building a quick and easy raspberry pi for experimenting with the &ldquo;Internet of Things&rdquo; (aka IoT) platform - this board and kit looks like it will get you there in minutes.</p>
+<p class="read-more">
+<a href="https://www.companionway.net/post/grovepi/" class="btn btn-template-main">Continue reading</a>
+</p>
+</div> 
+
+</div> 
+
+</div> 
+
+
+</div> 
+
+
+
+<center><a class="btn btn-primary" href="/post/index.html">All Posts</a></center>
+
+</div> 
+</div> 
+</section>
+
+
+
+
+		
+
+		</main>
+
+		
+		
 <script type="text/javascript" src="https://www.companionway.net/js/jquery.js"></script>
 <script type="text/javascript" src="https://www.companionway.net/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="https://www.companionway.net/js/index.js"></script>

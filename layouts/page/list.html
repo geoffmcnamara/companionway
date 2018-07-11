@@ -1,61 +1,112 @@
 {{ partial "header.html" . }}
-{{ $baseurl := .Site.BaseURL }}
+<!-- header.html includes partial "styles.html"  and partial "navigation.html" -->
 
-{{if .Params.cover}}
-{{if or (eq (substr .Params.cover 0 7) "http://") (eq (substr .Params.cover 0 8) "https://")}}
-<header class="main-header tag-head" style="background-image: url({{.Params.cover}})">
-{{ else }}
-<header class="main-header tag-head" style="background-image: url({{ $baseurl }}{{.Params.cover}})">
-{{ end }}
-{{else if .Site.Params.cover}}
+{{if .Site.Params.cover}}
 {{if or (eq (substr .Site.Params.cover 0 7) "http://") (eq (substr .Site.Params.cover 0 8) "https://")}}
-<header class="main-header tag-head" style="background-image: url({{.Site.Params.cover}})">
-{{ else }}
-<header class="main-header tag-head" style="background-image: url({{ $baseurl }}{{.Site.Params.cover}})">
-{{ end }}
-{{else}}
-<header class="main-header tag-head no-cover">
-{{end}}
-<nav class="main-nav overlay clearfix">
-{{ if .Site.Params.logo }}
-<a class="blog-logo" href="{{.Site.BaseURL}}"><img src="{{.Site.BaseURL}}{{ .Site.Params.logo }}" alt="Home" /></a>
-{{end}}
-{{ if .Site.Menus.main }}
-<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-{{else}}
-{{ if .Site.Params.RSSLink}}
-<a class="menu-button icon-feed" href="{{.Site.Params.RSSLink }}"><i class="fa fa-rss"></i>&nbsp;&nbsp;Subscribe</a>
-{{else}}
-<a class="menu-button icon-feed" href="{{ .RSSLink }}"><i class="fa fa-rss"></i>&nbsp;&nbsp;Subscribe</a>
-{{end}}
-{{end}}
-</nav>
-<div class="vertical">
-<div class="main-header-content inner">
-<h1 class="page-title">{{.Title}}</h1>
-<h2 class="page-description">
-{{if .Params.description}}
-{{.Params.description}}
-{{end}}
-</h2>
-</div>
-</div>
-</header>
+<header id='fadeInDown' class="main-header" style="background-image: url({{.Site.Params.cover}})">
+	{{ else }}
+	<header id='fadeInDown' class="main-header" style="background-image: url({{.Site.BaseURL}}{{.Site.Params.cover}})">
+		{{ end }}
+		{{else}}
+		<header class="main-header no-cover"> 
+			{{end}}
 
-<main class="content" role="main">
-{{ $paginator := .Paginator }}
+			<!-- This is the menu button - the navigation menu is included as a partial in the header -->
+			<nav class="main-nav overlay clearfix">
+				{{ if .Site.Params.logo }}
+				<a class="blog-logo" href="{{ .Permalink }}"><img src="{{.Site.BaseURL}}{{ .Site.Params.logo }}" alt="Blog Logo" /></a>
+				{{end}}
+				{{ if .Site.Menus.main }}
+				<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+				{{else}}
+				{{ if .Site.Params.RSSLink}}
+				<a class="menu-button icon-feed" href="{{.Site.Params.RSSLink }}"><i class="fa fa-rss"></i>&nbsp;&nbsp;Subscribe</a>
+				{{else}}
+				<a class="menu-button icon-feed" href="{{ .RSSLink }}"><i class="fa fa-rss"></i>&nbsp;&nbsp;Subscribe</a>
+				{{end}}
+				{{end}}
+			</nav>
+			<div class="vertical" >
+				<div class="main-header-content inner">
 
-<div class="extra-pagination inner">
-{{ partial "pagination.html" $paginator }}
-</div>
+					{{ if .Site.Params.linkedinName }}
+					<a class="bloglogo" href="https://www.linkedin.com/in/{{ .Site.Params.linkedinName }}" target="_blank">
+						<span class="xicon-linkedin" style="color:white;font-size:2em"></span>
+						<i class="fa fa-linkedin fa-1x" style="color:blue;"></i>
+					</a>
+					&nbsp;
+					{{end}}
 
-{{ range $index, $page := $paginator.Pages }}
-{{ partial "li.html" . }}
-{{ end }}
+					{{ if .Site.Params.githubName }}
+					<a class="bloglogo" href="https://github.com/{{ .Site.Params.githubName }}" target="_blank">
+						<span class="xicon-github" style="color:white;font-size:2em"></span>
+						<i class="fa fa-github fa-1x" style="color:green;"></i>
+					</a>
+					&nbsp;
+					{{end}}
 
-{{ partial "pagination.html" $paginator }}
-</main>
+					{{ if .Site.Params.twitterName }}
+					<a class="bloglogo" href="https://twitter.com/{{ .Site.Params.twitterName }}" target="_blank">
+						<span class="xicon-twitter" style="color:white;font-size:2em"></span>
+						<i class="fa fa-twitter fa-1x" style="color:yellow;"></i>
+					</a>
+					&nbsp;
+					{{end}}
+
+					{{ if .Site.Params.facebookName }}
+					<a class="bloglogo" href="https://www.facebook.com/{{ .Site.Params.facebookName }}" target="_blank">
+						<span class="xicon-facebook" style="color:white;font-size:2em"></span>
+						<i class="fa fa-facebook fa-1x" style="color:white;"></i>
+					</a>
+					&nbsp;
+					{{end}}
+
+					{{ if .Site.Params.instagramName }}
+					<a class="bloglogo" href="https://instagram.com/{{ .Site.Params.instagramName }}" target="_blank">
+						<span class="xicon-instagram" style="color:white;font-size:2em"></span>
+						<i class="fa fa-instagram fa-1x" style="color:orange;"></i>
+					</a>
+					&nbsp;
+					{{end}}
+
+					{{ if .Site.Params.pinterestName }}
+					<a class="bloglogo" href="https://www.pinterest.com/{{ .Site.Params.pinterestName }}" target="_blank">
+						<span class="xicon-pinterest" style="color:white;font-size:2em"></span>
+						<i class="fa fa-pinterest fa-1x" style="color:lightgrey;"></i>
+					</a>
+					&nbsp;
+					{{end}}
+
+					{{ if .Site.Params.googlePlusName }}
+					<a class="bloglogo" href="https://google.com/+{{ .Site.Params.googlePlusName }}" target="_blank">
+						<span class="xicon-google-plus" style="color:white;font-size:2em"></span>
+						<i class="fa fa-google-plus fa-1x" style="color:red;"></i>
+					</a>
+					&nbsp;
+					{{end}}
+
+					<h1 class="page-title">{{ .Site.Title }}</h1>
+					<h2 class="page-description">{{ .Site.Params.description }}</h2>
+				</div> <!-- /.main-header-content inner -->
+			</div> <!-- /.vertical [social links] -->
+			<!--
+		 <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+			-->
+			<a class="scroll-down" href="#content"><span><i class="fa fa-chevron-down fa-1x"></i></span></a>
+		</header>
+
+		<main id="content" class="content" role="main" >
+
+		<!-- SECTIONS -->
+		{{ partial "hmpg-blocks.html" . }}
+		<!-- /.SECTIONS -->
 
 
+		<!-- POSTS ... This is a WIP adapted from hugo-universal-theme - 3 column teaser -->
+		{{ partial "recent-posts.html" . }}
+		<!-- /. POSTS -->
 
-{{ partial "footer.html" . }}
+		</main>
+
+		<!-- footer.html includes partial "scripts.html" -->
+		{{ partial "footer.html" . }}

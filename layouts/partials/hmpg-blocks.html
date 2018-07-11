@@ -1,17 +1,23 @@
-<!-- hmpg-blocks -->
-<!-- home page blocks -->
-<!-- Build out any content/hmpg-blocks/[file-name].md - gwm addition - uses weight param to determine order -->
 <!--
-This is ugly but it works - it means you have to write all the html code in the file.md
-because there is no template
-I want to add contact/location info... etc here?
+	<br>	layouts/partial/hmpg-blocks <br>
 -->
-{{ range where .Data.Pages.ByWeight "Section" "hmpg-blocks"}}
-{{/* is eq .Type "index" */}}
-{{ if not .Params.draft }}
+<!-- 
+	Build out any content/hmpg-blocks/[file-name].md - gwm addition 
+	- uses weight param to determine order 
+-->
+<!--
+	This is ugly but it works - it means you have to write all the html code in the file.md
+	because there is no template
+	I want to add contact/location info... etc here?
+	(( range .Data.Pages }}
+-->
+{{ range where .Data.Pages.ByWeight "Section" "hmpg-blocks" }}
+{{/* if not .Params.draft */}}
 {{ .Content }}
-{{ end }}
 {{/* end */}}
-{{end}}
-<!-- EOF /.hmpg-blocks.html -->
+{{ end }}
+<!-- 
+	<br>end printing test<BR>
+	EOF /.hmpg-blocks.html 
+-->
 
