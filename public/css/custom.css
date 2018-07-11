@@ -33,32 +33,33 @@ blockquote p:last-of-type {
   box-shadow: 4px 4px 5px #888888;
 }
 
-/* added by gwm 2017-11-15 */
-img[src$='#center']
-{
-    display: block;
-    margin: 0.7rem auto; /* you can replace the vertical '0.7rem' by
-                            whatever floats your boat, but keep the
-                            horizontal 'auto' for this to work */
-    /* whatever else styles you fancy here */
-    width:40%;
+.darkcol {
+  background-color: #888888;
 }
 
-img[src$='#floatleft']
-{
-    float:left;
-    margin: 0.7rem;      /* this margin is totally up to you */
-    /* whatever else styles you fancy here */
-    width:40%;
+a {
+  // display: inline-block;
+  background-color: #fafafa;
+  color: #0f0f0f;
+  // font-size: 1.5em;
+  // font-family: Courier, sans-serif;
+  // padding: 1em 5em;
+  // text-decoration: none;
+  // text-transform: uppercase;
+  border-radius: 0.2em;
+  // border-bottom: 0.25em solid #0f5177;
+  -moz-transition: 0.1s;
+  -webkit-transition: 0.1s;
+  // transition: 0.1s;
+  box-shadow: 0 2px 3px #ccc;
+  // position: relative;
 }
 
-img[src$='#floatright']
-{
-    float:right;
-    margin: 0.7rem;      /* this margin is totally up to you */
-    /* whatever else styles you fancy here */
-    width:40%;
-    //height:50px;
+a:hover {
+  background-color: #1e9feb;
+  border-bottom-width: 0;
+  top: 0.2em;
 }
+/*
 */
 
