@@ -12,8 +12,8 @@ weight = 15
 
 +++
 
-<hr>
 <div id='gads'>
+<center>
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-6986704271237340"
@@ -23,5 +23,6 @@ weight = 15
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
 </div>
-<hr>
+</center>
 <br>
+
