@@ -37,7 +37,7 @@ blockquote p:last-of-type {
   background-color: #888888;
 }
 
-a {
+.content a {
   // display: inline-block;
   background-color: #fafafa;
   color: #0f0f0f;
@@ -55,7 +55,7 @@ a {
   // position: relative;
 }
 
-a:hover {
+.content a:hover {
   background-color: #1e9feb;
   border-bottom-width: 0;
   top: 0.2em;
