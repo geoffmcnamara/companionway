@@ -4,7 +4,7 @@ date = "2018-07-15 14:00:00"
 draft = false
 share = true
 title = "Vim Scriptable Templates"
-image = "img/vim-dynamic-templates.png"
+image = "/img/vim-dynamic-templates.png"
 +++
 
 ### Dynamic vim Templates
