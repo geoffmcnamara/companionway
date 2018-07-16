@@ -4,6 +4,7 @@ date = "2018-07-14T15:33:19-05:00"
 draft = false
 share = true
 title = "Hugo and Fabric"
+image = "/img/hugo-fabric.png"
 +++
 
 Python Fabric is a denatured version of ansible and, if you enjoy python, fabric makes a small scale devops strategy a whole lot less painful.
