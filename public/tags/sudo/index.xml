@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sudo on companionway</title>
+    <link>https://www.companionway.net/tags/sudo/</link>
+    <description>Recent content in Sudo on companionway</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>us</language>
+    <copyright>All rights reserved - companionway - 2016</copyright>
+    <lastBuildDate>Wed, 14 Dec 2016 10:59:38 -0500</lastBuildDate>
+    
+	<atom:link href="https://www.companionway.net/tags/sudo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Always Use Visudo</title>
+      <link>https://www.companionway.net/post/alway-use-visudo/</link>
+      <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
+      
+      <guid>https://www.companionway.net/post/alway-use-visudo/</guid>
+      <description>&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Familiarity breeds contempt&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I get very comfortable with using the vim editor (take cover&amp;hellip; flame way ensuing) so
+comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
+to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
+/etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
+simple monitoring program (xymon) to be able to run &amp;ldquo;sudo ufw status&amp;rdquo; without a password and report
+back to the monitor server.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

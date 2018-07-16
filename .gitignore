@@ -1,5 +1,5 @@
 # misc
-public/
+# public/
 
 *.flag
 *.sh

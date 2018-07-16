@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Imagemagic on companionway</title>
+    <link>https://www.companionway.net/tags/imagemagic/</link>
+    <description>Recent content in Imagemagic on companionway</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>us</language>
+    <copyright>All rights reserved - companionway - 2016</copyright>
+    <lastBuildDate>Wed, 01 Apr 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.companionway.net/tags/imagemagic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Let&#39;s change an image</title>
+      <link>https://www.companionway.net/post/2015-04-01-post3/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-01-post3/</guid>
+      <description>&lt;h1 id=&#34;changing-an-image&#34;&gt;Changing an image&lt;/h1&gt;
+
+&lt;p&gt;The magic tool is adapt images is &lt;em&gt;convert&lt;/em&gt; from the imagemagick package.&lt;/p&gt;
+
+&lt;p&gt;To convert type: &lt;code&gt;convert myimage.png myimage.jpg&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Here is a way to resize an image: &lt;code&gt;convert myimage.png -resize 200x100 myimage.png&lt;/code&gt;
+&amp;gt;Notice: the image will be converted right over the top of itself&lt;/p&gt;
+
+&lt;p&gt;To darken (first argument to -modulate) an image and reduce&lt;br /&gt;
+the color (second argument to -modulate):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;convert -modulate 70,90 myimage.png myimage-darker.png
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
