@@ -1,81 +1,88 @@
 {{ if isset .Site.Params "recent_posts" }}
 {{ if .Site.Params.recent_posts.enable }}
 <section class="bar background-white no-mb">
-<div class="container">
+	<div class="container">
 
-<div class="col-md-12">
-<div class="heading text-center">
-<h2>{{ .Site.Params.recent_posts.title }}</h2>
-</div> <!-- /.heading text-center -->
+		<div class="col-md-12">
+			<div class="heading text-center">
+				<h2>{{ .Site.Params.recent_posts.title }}</h2>
+			</div> <!-- /.heading text-center -->
 
-{{ if .Site.Params.recent_posts.randomlines }}
-<p class="lead">
-<center>
-<!--
-<div id="random-line"  class="tshadow"></div>
--->
-<div id="quote" class="tshadow"></div> - <div id="author"></div>
-</center>
-</p>
-{{ else }}
-<p class="lead">
-<center>
-{{ .Site.Params.recent_posts.subtitle }}
-</center>
-</p>
-{{ end }}
+			{{ if .Site.Params.recent_posts.randomlines }}
+			<p class="lead">
+			<center>
+				<!--
+			<div id="random-line"  class="tshadow"></div>
+				-->
+				<div id="quote" class="tshadow"></div> - <div id="author"></div>
+			</center>
+			</p>
+			{{ else }}
+			<p class="lead">
+			<center>
+				{{ .Site.Params.recent_posts.subtitle }}
+			</center>
+			</p>
+			{{ end }}
 
-<!-- *** BLOG HOMEPAGE *** -->
+			<!-- *** BLOG HOMEPAGE *** -->
 
-<div class="row">
-{{ $posts := .Paginate (where .Data.Pages "Type" "post") }}
-{{ range first 3 $posts.Pages }}
-<div class="col-md-4 col-sm-6">
-<div class="box-image-text blog">
+			<div class="row">
+				{{ $posts := .Paginate (where .Data.Pages "Type" "post") }}
+				{{ range first 3 $posts.Pages }}
+				<div class="col-md-4 col-sm-6">
+					<div class="box-image-text blog">
 
-<div class="top">
-<div class="image" style="overflow:hidden">
-{{ if .Params.image }} 
-<img src="{{ .Site.BaseURL}}{{ .Params.image }}" class="img-responsive" alt="" >
-{{ else }}
-<img src="{{ .Site.BaseURL}}/img/placeholder.png" class="img-responsive" alt="">
-{{ end }}
-</div> <!-- /.image -->
-<div class="bg"></div>
-<div class="text">
-<p class="buttons">
-<a href="{{ .Permalink }}" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
-</p>
-</div> <!-- /.text -->
-</div> <!-- /.top -->
+						<div class="top">
+							<div class="image" style="overflow:hidden">
+								{{ if .Params.image }} 
+								<img src="{{ .Site.BaseURL}}{{ .Params.image }}" class="img-responsive" alt="" >
+								{{ else }}
+								<img src="{{ .Site.BaseURL}}/img/placeholder.png" class="img-responsive" alt="">
+								{{ end }}
+							</div> <!-- /.image -->
+							<div class="bg"></div>
+							<div class="text">
+								<p class="buttons">
+								<a href="{{ .Permalink }}" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+								</p>
+							</div> <!-- /.text -->
+						</div> <!-- /.top -->
 
-<div class="content">
-<h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
-<p class="author-category">
-{{ with .Params.author }}
-By <a href="#">{{ . }}</a>
-{{ end }}
-on {{ .Date.Format "January 2, 2006" }}
-</p>
-<p class="intro">{{ .Summary }}</p>
-<p class="read-more">
-<a href="{{ .Permalink }}" class="btn btn-template-main">Continue reading</a>
-</p>
-</div> <!-- /.content -->
+						<div class="content">
+							<h4><a href="{{ .Permalink }}">
+									{{ if .Title }}
+									{{ .Title }}
+									{{ else }}
+									{{.File.TranslationBaseName}}
+									{{ end }}
+								</a></h4>
 
-</div> <!-- /.box-image-text -->
+								<p class="author-category">
+								{{ with .Params.author }}
+								By <a href="#">{{ . }}</a>
+								{{ end }}
+								on {{ .Date.Format "January 2, 2006" }}
+								</p>
+								<p class="intro">{{ .Summary }}</p>
+								<p class="read-more">
+								<a href="{{ .Permalink }}" class="btn btn-template-main">Continue reading</a>
+								</p>
+						</div> <!-- /.content -->
 
-</div> <!-- /.col-md-4 col-sm-6 -->
-{{ end }}
+					</div> <!-- /.box-image-text -->
 
-</div> <!-- /.row -->
+				</div> <!-- /.col-md-4 col-sm-6 -->
+				{{ end }}
 
-<!-- *** BLOG HOMEPAGE END *** -->
+			</div> <!-- /.row -->
 
-<center><a class="btn btn-primary" href="/post/index.html">All Posts</a></center>
+			<!-- *** BLOG HOMEPAGE END *** -->
 
-</div> <!-- /.col-md-12 -->
-</div> <!-- /.container -->
+			<center><a class="btn btn-primary" href="/post/index.html">All Posts</a></center>
+
+		</div> <!-- /.col-md-12 -->
+	</div> <!-- /.container -->
 </section>
 <!-- /.bar -->
 {{ end }}
