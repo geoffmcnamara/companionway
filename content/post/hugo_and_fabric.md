@@ -31,19 +31,19 @@ If I am working on code for a website it resides in development directory with t
 
 ```
 domain = "companionway.net"
-base_dir = $HOME/dev/www/{domain}
+base_dir = $HOME/dev/www/{domain}/
 ```
 This works cleanly for me. In hugo config.toml file you have to declare the url so I give it the full domain name ie:
 
 ```
-baseURL = "http://companionway.net"
+baseURL = "http://companionway.net/"
 ```
 
 The problem, of course, manifests with promoting code to another server at a level that is not the fully qualified domain (FQD) production url.
 That is where hugo allows the -b [your_base_url] option to save the day. To show an example, I have my development server document root as 
 `/var/www/html` and each website I am working on has its name off of that. My development server(s) and raspberry pi (cheap) so they have clever names
 like `rasp01`, `rasp02`, etc. So the code for "companionway.net" resides at `raspXX:/var/www/html/companionway.net`. The hugo build command of
-`hugo -d "https://raspXX/companionway.net` allows me to go to that url to test the code and all the links will work properly. When the code goes to the production
+`hugo -d "https://raspXX/companionway.net/` allows me to go to that url to test the code and all the links will work properly. When the code goes to the production
 level with a fully qualified domain name with a DNS A record the hugo build command simply is `hugo` and the default baseURL is used from the config.toml file.
 
 The fabric process I use has a lot of steps but might be worth something to someone out there... once gain it comes with my standard "it can be dome better' clause:

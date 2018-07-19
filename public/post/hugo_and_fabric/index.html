@@ -214,19 +214,19 @@ code it goes through this workflow process:</p>
 <p>If I am working on code for a website it resides in development directory with the website domain name for the base directory&hellip; for example:</p>
 
 <pre><code>domain = &quot;companionway.net&quot;
-base_dir = $HOME/dev/www/{domain}
+base_dir = $HOME/dev/www/{domain}/
 </code></pre>
 
 <p>This works cleanly for me. In hugo config.toml file you have to declare the url so I give it the full domain name ie:</p>
 
-<pre><code>baseURL = &quot;http://companionway.net&quot;
+<pre><code>baseURL = &quot;http://companionway.net/&quot;
 </code></pre>
 
 <p>The problem, of course, manifests with promoting code to another server at a level that is not the fully qualified domain (FQD) production url.
 That is where hugo allows the -b [your_base_url] option to save the day. To show an example, I have my development server document root as
 <code>/var/www/html</code> and each website I am working on has its name off of that. My development server(s) and raspberry pi (cheap) so they have clever names
 like <code>rasp01</code>, <code>rasp02</code>, etc. So the code for &ldquo;companionway.net&rdquo; resides at <code>raspXX:/var/www/html/companionway.net</code>. The hugo build command of
-<code>hugo -d &quot;https://raspXX/companionway.net</code> allows me to go to that url to test the code and all the links will work properly. When the code goes to the production
+<code>hugo -d &quot;https://raspXX/companionway.net/</code> allows me to go to that url to test the code and all the links will work properly. When the code goes to the production
 level with a fully qualified domain name with a DNS A record the hugo build command simply is <code>hugo</code> and the default baseURL is used from the config.toml file.</p>
 
 <p>The fabric process I use has a lot of steps but might be worth something to someone out there&hellip; once gain it comes with my standard &ldquo;it can be dome better&rsquo; clause:</p>
