@@ -5,7 +5,7 @@ body{
     background-color: #f9f7f1;
     //background-image: url("/img/old_wallpapers_012.jpg");
     background-size: 100% 100%;
-    background-image: url("/img/np.jpg");
+    background-image: url("{{.Site.BaseURL}}/img/np.jpg");
 }
 img,video{
   height: auto;
