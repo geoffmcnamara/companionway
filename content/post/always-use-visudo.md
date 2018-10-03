@@ -10,7 +10,7 @@ draft    = false
 
 +++
 
->>"Familiarity breeds contempt"
+## "familiarity breeds contempt"
 
 I get very comfortable with using the vim editor (take cover... flame way ensuing) so
 comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
@@ -19,10 +19,23 @@ to update sudoers. The best way to modify sudoers is to add a supplimental inclu
 simple monitoring program (xymon) to be able to run "sudo ufw status" without a password and report
 back to the monitor server.
 
-I fired up ```sudo vim /etc/sudoers.d/xymon``` and started to add the needed line:
-``` xymon ALL = NOPASSWD: /usr/sbin/ufw status``` but I got halfway through and could remember the exact location
+I fired up 
+
+```
+sudo vim /etc/sudoers.d/xymon
+```
+
+ and started to add the needed line:
+
+``` 
+xymon ALL = NOPASSWD: /usr/sbin/ufw status
+```
+
+but I got halfway through and could remember the exact location
+
 <!--more-->
-of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the phsical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplimental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.
+
+of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the physical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplemental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.
 
 Lesson: *Always use visudo*
 
@@ -30,9 +43,11 @@ By the way, to change the default editor from nano to vim for visudo (on unbuntu
 ```sudo update-alternatives --config editor```
 
 On my systems that exchange looks like this:
-```
+
+<pre>
 $ sudo update-alternatives --config editor
 There are 4 choices for the alternative editor (providing /usr/bin/editor).
+
 
   Selection    Path                Priority   Status
 ------------------------------------------------------------
@@ -41,10 +56,13 @@ There are 4 choices for the alternative editor (providing /usr/bin/editor).
   2            /bin/nano            40        manual mode
   3            /usr/bin/vim.basic   30        manual mode
   4            /usr/bin/vim.tiny    10        manual mode
+</pre>
 
-Press <enter> to keep the current choice[*], or type selection number: 3
+<pre>
+Press [enter] to keep the current choice(*), or type selection number: 3
 update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in manual mode
-```
+</pre>
    
 Enjoy
+
 -g-

@@ -5,7 +5,7 @@
     <link>https://www.companionway.net/tags/markdown/</link>
     <description>Recent content in Markdown on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>us</language>
+    <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Wed, 01 Apr 2015 00:00:00 +0000</lastBuildDate>
     
@@ -28,13 +28,15 @@ before starting the next line&lt;/p&gt;
 
 &lt;h1 id=&#34;this-heading-uses-atx-style&#34;&gt;This heading uses atx style&lt;/h1&gt;
 
-&lt;p&gt;&lt;p&gt;I am learning that you have to name&lt;br /&gt;
- your post file with YYYY-MM-DD-whatever.markdown&lt;/p&gt;
+&lt;p&gt;I am learning that you have to name     
+ your post file with YYYY-MM-DD-whatever.markdown
+&lt;/p&gt;
 
 &lt;p&gt;or&lt;/p&gt;
 
-&lt;p&gt;the &lt;strong&gt;extension&lt;/strong&gt; &lt;em&gt;can&lt;/em&gt; be &amp;ldquo;.md&amp;rdquo;
-&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;
+the **extension** _can_ be &#34;.md&#34;
+&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;quoted text

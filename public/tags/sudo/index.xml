@@ -5,7 +5,7 @@
     <link>https://www.companionway.net/tags/sudo/</link>
     <description>Recent content in Sudo on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>us</language>
+    <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Wed, 14 Dec 2016 10:59:38 -0500</lastBuildDate>
     
@@ -14,22 +14,32 @@
     
     <item>
       <title>Always Use Visudo</title>
-      <link>https://www.companionway.net/post/alway-use-visudo/</link>
+      <link>https://www.companionway.net/post/always-use-visudo/</link>
       <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/alway-use-visudo/</guid>
-      <description>&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;Familiarity breeds contempt&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
+      <guid>https://www.companionway.net/post/always-use-visudo/</guid>
+      <description>&lt;h2 id=&#34;familiarity-breeds-contempt&#34;&gt;&amp;ldquo;familiarity breeds contempt&amp;rdquo;&lt;/h2&gt;
 
 &lt;p&gt;I get very comfortable with using the vim editor (take cover&amp;hellip; flame way ensuing) so
 comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
 to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
 /etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
 simple monitoring program (xymon) to be able to run &amp;ldquo;sudo ufw status&amp;rdquo; without a password and report
-back to the monitor server.&lt;/p&gt;</description>
+back to the monitor server.&lt;/p&gt;
+
+&lt;p&gt;I fired up&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo vim /etc/sudoers.d/xymon
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and started to add the needed line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;xymon ALL = NOPASSWD: /usr/sbin/ufw status
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;but I got halfway through and could remember the exact location&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

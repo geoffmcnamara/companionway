@@ -5,7 +5,7 @@
     <link>https://www.companionway.net/</link>
     <description>Recent content on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>us</language>
+    <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Wed, 30 Nov 2016 12:58:32 -0500</lastBuildDate>
     
@@ -18,7 +18,21 @@
       <pubDate>Wed, 30 Nov 2016 12:58:32 -0500</pubDate>
       
       <guid>https://www.companionway.net/hmpg-blocks/gads/</guid>
-      <description>   (adsbygoogle = window.adsbygoogle || []).push({});    </description>
+      <description>(adsbygoogle = window.adsbygoogle || []).push({});</description>
+    </item>
+    
+    <item>
+      <title>Vim ALE</title>
+      <link>https://www.companionway.net/post/vim_ale/</link>
+      <pubDate>Wed, 08 Aug 2018 09:30:10 -0400</pubDate>
+      
+      <guid>https://www.companionway.net/post/vim_ale/</guid>
+      <description>&lt;p&gt;VIM is a standard for me. My UNIX career hung on my &amp;ldquo;vi&amp;rdquo; savvy which I learned appreciate from mentors who
+encouraged me to learn the tips and tricks of using vi. My learning curve with vi/vim has never leveled
+off, but rather, always gives me new features and tricks that energize me again. The latest vim &amp;ldquo;trick&amp;rdquo;
+is ALE (Asynchronous Lint Engine).&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -80,48 +94,14 @@ code it goes through this workflow process:&lt;/p&gt;
       <pubDate>Tue, 10 Jul 2018 09:30:14 -0400</pubDate>
       
       <guid>https://www.companionway.net/post/fabric_vs_ansible/</guid>
-      <description>&lt;h3 id=&#34;fabric-vs-ansible&#34;&gt;Fabric vs Ansible&lt;/h3&gt;
+      <description>&lt;h2 id=&#34;fabric-vs-ansible&#34;&gt;Fabric vs Ansible&lt;/h2&gt;
 
 &lt;p&gt;I have wrestled with ansible for too long. It is an awesome tool but you need to learn the syntax of three
 different languages (ansible, yaml, and maybe some python) to hold it down and control it. Every time I go
 to use it I have to learn how to do what I need to do. But the most frustrating aspect of ansible when learning
 to do something new is that your first attempt rarely succeeds - at least for me. So you resort to &amp;ldquo;force programming&amp;rdquo;
-to get through it. By &amp;ldquo;force programming&amp;rdquo; I mean you try this and that and then something else until it works&amp;hellip; and
+to get through it. By &amp;ldquo;force programming&amp;rdquo; I mean you try this and that and then something else until it works, and
 I end up with a hodgepodge of debug lines commented out.&lt;/p&gt;
-
-&lt;p&gt;Following the bunny trail to find an alternative, I ran across python &lt;a href=&#34;200~http://www.fabfile.org/&#34;&gt;&amp;ldquo;fabric&amp;rdquo;&lt;/a&gt;. I am a committed python code minion.
-So much so lately, that I have converted many of my bash scripts to python. But all that is a different topic for a rainy day.
-Put ansible away in a dark closet somewhere and start using fabric. If you are starting out with fabric or going to
-explore it now, don&amp;rsquo;t just type &amp;ldquo;how to use fabric&amp;rdquo; in your search engine because the obvious will happen. So precede your mention
-of &amp;ldquo;fabric&amp;rdquo; with &amp;ldquo;python&amp;rdquo;&amp;hellip; so &amp;ldquo;how to use python fabric&amp;rdquo;.&lt;/p&gt;
-
-&lt;p&gt;Using pip you can install fabric. Python fabric is a module that comes along with a python tool called &amp;ldquo;fab&amp;rdquo;.  The &amp;ldquo;fab&amp;rdquo; tool will
-also be available. If you run &lt;code&gt;fab -h&lt;/code&gt; you will see a healthy list of options/arguments. Don&amp;rsquo;t let that put you off. A working
-knowledge of python is all you need to master fabric. The fabric module is designed to provide you with ssh tools out of the box. It allows running
-any process remotely or locally, without any headaches. If you have been using ansible, then this exercise will be a little like
-subjecting a Windows user to the linux command line (well maybe not quite that bad).&lt;/p&gt;
-
-&lt;p&gt;Here&amp;rsquo;s a quick one-liner:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;fab -H rpi01,rpi02,192.168.1.40 -- df -h
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Pretty obvious&amp;hellip; until it fails. If one of those hosts is down this process will break.
-The fab tool by default looks for a file called fabfile.py. So lets create a simple one to overcome the failure problem just mentioned.&lt;/p&gt;
-
-&lt;p&gt;Write a file called fabfile.py  You can use any filename but we are sticking with the default.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;from fabric.api import run,settings
-
-def df_h():
-	with settings(warn_only=True):
-		run(&#39;df -h&#39;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To run this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;fab -H rpi01,rpi02 df_h
-&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -248,7 +228,7 @@ Suspendisse a enim sit amet massa efficitur malesuada.</description>
     </item>
     
     <item>
-      <title>Raspberry Pi MagicMirror on a Touchscreen with Alexa and fauxmo</title>
+      <title>MagicMirro2 and fauxmo</title>
       <link>https://www.companionway.net/post/post-title/</link>
       <pubDate>Wed, 11 Jan 2017 14:27:35 -0500</pubDate>
       
@@ -366,22 +346,32 @@ python script independantly for testing or for curiousity.&lt;/p&gt;</descriptio
     
     <item>
       <title>Always Use Visudo</title>
-      <link>https://www.companionway.net/post/alway-use-visudo/</link>
+      <link>https://www.companionway.net/post/always-use-visudo/</link>
       <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/alway-use-visudo/</guid>
-      <description>&lt;blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;ldquo;Familiarity breeds contempt&amp;rdquo;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
+      <guid>https://www.companionway.net/post/always-use-visudo/</guid>
+      <description>&lt;h2 id=&#34;familiarity-breeds-contempt&#34;&gt;&amp;ldquo;familiarity breeds contempt&amp;rdquo;&lt;/h2&gt;
 
 &lt;p&gt;I get very comfortable with using the vim editor (take cover&amp;hellip; flame way ensuing) so
 comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
 to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
 /etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
 simple monitoring program (xymon) to be able to run &amp;ldquo;sudo ufw status&amp;rdquo; without a password and report
-back to the monitor server.&lt;/p&gt;</description>
+back to the monitor server.&lt;/p&gt;
+
+&lt;p&gt;I fired up&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo vim /etc/sudoers.d/xymon
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and started to add the needed line:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;xymon ALL = NOPASSWD: /usr/sbin/ufw status
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;but I got halfway through and could remember the exact location&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -390,12 +380,14 @@ back to the monitor server.&lt;/p&gt;</description>
       <pubDate>Sat, 10 Dec 2016 20:38:12 -0500</pubDate>
       
       <guid>https://www.companionway.net/post/recursive-replace-text/</guid>
-      <description>&lt;p&gt;Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If I had to look it up, you have to suffer seeing it in my blog post&amp;hellip; &lt;smile&gt;&lt;/p&gt;
+      <description>&lt;p&gt;Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If I had to look it up, you have to suffer seeing it in my blog post&amp;hellip; [smile]&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;find ./ -name \*.md -print0 | xargs -0 sed -i &#39;s/header-img/img/&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.&lt;/p&gt;</description>
+&lt;p&gt;Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -515,7 +507,7 @@ that group. One feature I use quite a bit is what vim calls digraphs.&lt;/p&gt;
 &lt;p&gt;There are thousands of characters other than the standard keyboard character
 that can be displayed with vim. You may already know that you can use
 &lt;code&gt;CTRL-v &amp;lt;enter&amp;gt;&lt;/code&gt; to force a linefeed into even a DOS filetype. Actually
-`CTRL-v &lt;ascii###&gt; will force special characters from a long list of choices.&lt;/p&gt;
+`CTRL-v ascii### will force special characters from a long list of choices.&lt;/p&gt;
 
 &lt;p&gt;But I prefer using CTRL-K followed by two semi-meaningful (slightly resembles the
 intended special character) to create any one of literally thousands of special
@@ -534,17 +526,23 @@ characters.&lt;/p&gt;
 
 &lt;p&gt;###Preface&lt;/p&gt;
 
-&lt;p&gt;&lt;p class=highcap&gt;Apologies up front - this is long&amp;hellip; very long, but there is food for the brain here.
-I will discuss git for personal use. Using it with many other contributors is
+&lt;p class=&#34;highcap&#34;&gt;Apologies up front - this is long... very long, but there is food for the brain here.
+I will discuss git for personal use. Using it with many other contributors is 
 an extension of the principle covered here. For simplicity, I am only going
-to discuss you working alone and only using a single &amp;ldquo;branch&amp;rdquo; of code for
+to discuss you working alone and only using a single &#34;branch&#34; of code for
 each project - again, for simplicity. Additionally we are going to examine
-the git &amp;ldquo;database&amp;rdquo; (stored as compressed SHA-1 named files/objects) as we go.
+the git &#34;database&#34; (stored as compressed SHA-1 named files/objects) as we go.
 We can gain a better understanding by reviewing the changes to the guts of
 your personal git repository. We will not cover branches, tags, or the git daemon
-in this discussion.&lt;/p&gt;
+in this discussion.
+&lt;/p&gt;
 
-&lt;p&gt;###Why git? (skip this if you are less than patient)&lt;/p&gt;</description>
+&lt;p&gt;###Why git? (skip this if you are less than patient)&lt;/p&gt;
+
+&lt;p&gt;Many years ago I used backups of my projects or just documents, notes, etc.
+All worked well until it didn&amp;rsquo;t. If you make a mistake and back it up guess what,&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -668,13 +666,15 @@ before starting the next line&lt;/p&gt;
 
 &lt;h1 id=&#34;this-heading-uses-atx-style&#34;&gt;This heading uses atx style&lt;/h1&gt;
 
-&lt;p&gt;&lt;p&gt;I am learning that you have to name&lt;br /&gt;
- your post file with YYYY-MM-DD-whatever.markdown&lt;/p&gt;
+&lt;p&gt;I am learning that you have to name     
+ your post file with YYYY-MM-DD-whatever.markdown
+&lt;/p&gt;
 
 &lt;p&gt;or&lt;/p&gt;
 
-&lt;p&gt;the &lt;strong&gt;extension&lt;/strong&gt; &lt;em&gt;can&lt;/em&gt; be &amp;ldquo;.md&amp;rdquo;
-&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;
+the **extension** _can_ be &#34;.md&#34;
+&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;quoted text

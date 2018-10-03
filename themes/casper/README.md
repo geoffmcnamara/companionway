@@ -163,3 +163,15 @@ hugo new -t casper post/my-post.md
 :beetle: open an issue in github
 
 :bird: [https://twitter.com/vjeantet](https://twitter.com/vjeantet)
+
+------- README.md -------
+    
+Created on: 20181001-1617
+Created by: geoffm
+    
+----- Last Code Changes -----
+    
+Modified on: 20181002-1034
+Modified by: geoffm
+   
+------- README.md -------

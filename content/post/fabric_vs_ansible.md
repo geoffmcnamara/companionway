@@ -7,19 +7,19 @@ tags = []
 image = "/img/fabric_vector_logo.svg"
 comments = false	# set false to hide Disqus
 share = false	# set false to hide share buttons
-#menu= ""		# set "main" to add this content to the main menu
 author = ""
 +++
 
-### Fabric vs Ansible
+## Fabric vs Ansible
 
 I have wrestled with ansible for too long. It is an awesome tool but you need to learn the syntax of three
 different languages (ansible, yaml, and maybe some python) to hold it down and control it. Every time I go 
 to use it I have to learn how to do what I need to do. But the most frustrating aspect of ansible when learning
 to do something new is that your first attempt rarely succeeds - at least for me. So you resort to "force programming"
-to get through it. By "force programming" I mean you try this and that and then something else until it works... and
+to get through it. By "force programming" I mean you try this and that and then something else until it works, and
 I end up with a hodgepodge of debug lines commented out.
 
+<!--more-->
 
 Following the bunny trail to find an alternative, I ran across python ["fabric"](200~http://www.fabfile.org/). I am a committed python code minion.
 So much so lately, that I have converted many of my bash scripts to python. But all that is a different topic for a rainy day.
@@ -28,8 +28,8 @@ explore it now, don't just type "how to use fabric" in your search engine becaus
 of "fabric" with "python"... so "how to use python fabric". 
 
 
-Using pip you can install fabric. Python fabric is a module that comes along with a python tool called "fab".  The "fab" tool will
-also be available. If you run `fab -h` you will see a healthy list of options/arguments. Don't let that put you off. A working
+Using pip you can install fabric. Python fabric is a module that comes along with a python tool called "fab".
+If you run `fab -h` you will see a healthy list of options/arguments. Don't let that put you off. A working
 knowledge of python is all you need to master fabric. The fabric module is designed to provide you with ssh tools out of the box. It allows running
 any process remotely or locally, without any headaches. If you have been using ansible, then this exercise will be a little like 
 subjecting a Windows user to the linux command line (well maybe not quite that bad). 

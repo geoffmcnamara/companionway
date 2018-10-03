@@ -31,43 +31,34 @@
 
 
 
-			<article class="post {{ .Section }}">
+				<article class="{{ .Section }}">
 
-				<header class="post-header">
-					<h1 class="post-title">
-						{{ if .Title }}
-						{{ .Title }}
-						{{ else }}
-						{{.File.TranslationBaseName}}
-						{{ end }}
-					</h1>
-					<small>{{.Description}}</small>
+					<header class="post-header">
+						<h1 class="post-title">
+							{{ if .Title }}
+							{{ .Title }}
+							{{ else }}
+							{{.File.TranslationBaseName}}
+							{{ end }}
+						</h1>
+						<small>{{.Description}}</small>
 
-					<section class="post-meta">
-						{{ if eq .Section "post"}}
-						<time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
-							{{ .Date.Format "Jan 2, 2006" }}
-						</time>
-						{{end}}
-						{{ range .Params.tags }}
-						<span class="post-tag small"><a href="{{ $baseurl }}tags/{{ . | urlize }}/">#{{ . }}</a></span>
-						{{ end }}
+						<section class="post-meta">
+							{{ if eq .Section "post"}}
+							<time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
+								{{ .Date.Format "Jan 2, 2006" }}
+							</time>
+							{{end}}
+							{{ range .Params.tags }}
+							<span class="post-tag small"><a href="{{ $baseurl }}tags/{{ . | urlize }}/">#{{ . }}</a></span>
+							{{ end }}
+						</section>
+					</header>
+
+					<section class="post-content">
+						{{ .Content }}
 					</section>
-				</header>
 
-				<section class="post-content">
-					{{ .Content }}
-				</section>
-
-
-				<footer class="post-footer">
-
-
-					{{if .Site.Params.logo}}
-					<figure class="author-image">
-						<a class="img" href="{{.Site.BaseURL}}" style="background-image: url({{ $baseurl }}{{.Site.Params.logo}})"><span class="hidden">{{.Site.Params.author}}'s Picture</span></a>
-					</figure>
-					{{end}}
 
 					{{ partial "author.html" . }}
 
@@ -75,8 +66,7 @@
 
 					{{ partial "disqus.html" . }}
 
-				</footer>
-			</article>
+				</article>
 
 			</main>
 			{{ partial "footer.html" . }}

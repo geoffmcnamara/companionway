@@ -1,105 +1,115 @@
 <!DOCTYPE html>
-<html lang="us">
-<head>
+<html lang="en-US">
+	<head>
 
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-
-
-
-    
-        
-        <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:image" content="https://www.companionway.net/img/visudo.jpg"/>
-    
+		
 
 
 
-<meta name="twitter:title" content="Always Use Visudo"/>
-<meta name="twitter:description" content="
 
-&ldquo;Familiarity breeds contempt&rdquo;
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.companionway.net/img/visudo.jpg" />
 
 
+
+
+<meta name="twitter:title" content="Always Use Visudo" />
+<meta name="twitter:description" content="&ldquo;familiarity breeds contempt&rdquo;
 
 I get very comfortable with using the vim editor (take cover&hellip; flame way ensuing) so
 comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
 to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
 /etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
 simple monitoring program (xymon) to be able to run &ldquo;sudo ufw status&rdquo; without a password and report
-back to the monitor server."/>
+back to the monitor server.
+
+I fired up
+
+sudo vim /etc/sudoers.d/xymon
+
+
+and started to add the needed line:
+
+xymon ALL = NOPASSWD: /usr/sbin/ufw status
+
+
+but I got halfway through and could remember the exact location
+
+" />
 
 
 
-<meta property="og:title" content=" Always Use Visudo &middot;  companionway" />
-<meta property="og:site_name" content="companionway" />
-<meta property="og:url" content="https://www.companionway.net/post/alway-use-visudo/" />
+		<meta property="og:title" content=" Always Use Visudo &middot;  companionway" />
+		<meta property="og:site_name" content="companionway" />
+		<meta property="og:url" content="https://www.companionway.net/post/always-use-visudo/" />
 
+		
+		<meta property="og:type" content="article" />
+		<meta property="og:article:published_time" content="2016-12-14T10:59:38-05:00" />
+		
+		<meta property="og:article:tag" content="sudo" />
+		
+		
 
-<meta property="og:type" content="article" />
-<meta property="og:article:published_time" content="2016-12-14T10:59:38-05:00" />
+		<title>
+			 Always Use Visudo &middot;  companionway
+		</title>
 
-<meta property="og:article:tag" content="sudo" />
+		<meta name="description" content="Meeting challenges with success!" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="https://www.companionway.net/img/favicon.ico">
+		<link rel="apple-touch-icon" href="https://www.companionway.net/img/apple-touch-icon.png" />
 
-
-
-<title>
- Always Use Visudo &middot;  companionway
-</title>
-
-<meta name="description" content="Meeting challenges with success!" />
-<meta name="HandheldFriendly" content="True" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="https://www.companionway.net/img/favicon.ico">
-<link rel="apple-touch-icon" href="https://www.companionway.net/img/apple-touch-icon.png" />
-
-
+		
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/nav.css" />
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/screen.css" />
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/custom.css" />
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
+		
 
+		
+		
+		<link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
+		
+		
+		
+		<meta name="generator" content="Hugo 0.49" />
 
+		<link rel="canonical" href="https://www.companionway.net/post/always-use-visudo/" />
 
-
-<link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
-
-
-
-<meta name="generator" content="Hugo 0.40.1" />
-
-<link rel="canonical" href="https://www.companionway.net/post/alway-use-visudo/" />
-
-
-<link ref="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=EB+Garamond' >
+		
+<link ref="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=EB+Garamond" >
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Architects Daughter" >
-<link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300' >
-<link rel="stylesheet" type="text/css" href='http://fonts.googleapis.com/css?family=Philosopher'>
-<link rel="stylesheet" type="text/css" href='//fonts.googleapis.com/css?family=Merriweather' >
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300" >
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Philosopher">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather" >
 
 
 
-
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
- (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
- m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
- })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-6970218-1', 'auto');
 ga('send', 'pageview');
 
-</script>
+		</script>
+		
 
+		
+	</head>
+	<body class="nav-closed">
 
-
-</head>
-<body class="nav-closed">
-
-<div class="nav">
+		<div class="nav">
     <h3 class="nav-title">Menu</h3>
     <a href="#" class="nav-close">
         <span class="hidden">Close</span>
@@ -147,7 +157,7 @@ ga('send', 'pageview');
 <span class="nav-cover"></span>
 
 
-<div class="site-wrapper">
+		<div class="site-wrapper">
 
 
 
@@ -174,34 +184,30 @@ ga('send', 'pageview');
 
 
 
-			<article class="post post">
+				<article class="post">
 
-				<header class="post-header">
-					<h1 class="post-title">
-						
-						Always Use Visudo
-						
-					</h1>
-					<small></small>
+					<header class="post-header">
+						<h1 class="post-title">
+							
+							Always Use Visudo
+							
+						</h1>
+						<small></small>
 
-					<section class="post-meta">
-						
-						<time class="post-date" datetime="2016-12-14T10:59:38-05:00">
-							Dec 14, 2016
-						</time>
-						
-						
-						<span class="post-tag small"><a href="https://www.companionway.nettags/sudo/">#sudo</a></span>
-						
-					</section>
-				</header>
+						<section class="post-meta">
+							
+							<time class="post-date" datetime="2016-12-14T10:59:38-05:00">
+								Dec 14, 2016
+							</time>
+							
+							
+							<span class="post-tag small"><a href="https://www.companionway.nettags/sudo/">#sudo</a></span>
+							
+						</section>
+					</header>
 
-				<section class="post-content">
-					<blockquote>
-<blockquote>
-<p>&ldquo;Familiarity breeds contempt&rdquo;</p>
-</blockquote>
-</blockquote>
+					<section class="post-content">
+						<h2 id="familiarity-breeds-contempt">&ldquo;familiarity breeds contempt&rdquo;</h2>
 
 <p>I get very comfortable with using the vim editor (take cover&hellip; flame way ensuing) so
 comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
@@ -210,10 +216,21 @@ to update sudoers. The best way to modify sudoers is to add a supplimental inclu
 simple monitoring program (xymon) to be able to run &ldquo;sudo ufw status&rdquo; without a password and report
 back to the monitor server.</p>
 
-<p>I fired up <code>sudo vim /etc/sudoers.d/xymon</code> and started to add the needed line:
-<code>xymon ALL = NOPASSWD: /usr/sbin/ufw status</code> but I got halfway through and could remember the exact location
+<p>I fired up</p>
 
-of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the phsical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplimental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.</p>
+<pre><code>sudo vim /etc/sudoers.d/xymon
+</code></pre>
+
+<p>and started to add the needed line:</p>
+
+<pre><code>xymon ALL = NOPASSWD: /usr/sbin/ufw status
+</code></pre>
+
+<p>but I got halfway through and could remember the exact location</p>
+
+<p></p>
+
+<p>of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the physical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplemental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.</p>
 
 <p>Lesson: <em>Always use visudo</em></p>
 
@@ -222,8 +239,10 @@ of the ufw binary file.. so I saved got out and I just sawed off the limb I  was
 
 <p>On my systems that exchange looks like this:</p>
 
-<pre><code>$ sudo update-alternatives --config editor
+<pre>
+$ sudo update-alternatives --config editor
 There are 4 choices for the alternative editor (providing /usr/bin/editor).
+
 
   Selection    Path                Priority   Status
 ------------------------------------------------------------
@@ -232,24 +251,19 @@ There are 4 choices for the alternative editor (providing /usr/bin/editor).
   2            /bin/nano            40        manual mode
   3            /usr/bin/vim.basic   30        manual mode
   4            /usr/bin/vim.tiny    10        manual mode
+</pre>
 
-Press &lt;enter&gt; to keep the current choice[*], or type selection number: 3
+<pre>
+Press [enter] to keep the current choice(*), or type selection number: 3
 update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in manual mode
-</code></pre>
+</pre>
+   
 
-<p>Enjoy
--g-</p>
-				</section>
+<p>Enjoy</p>
 
+<p>-g-</p>
+					</section>
 
-				<footer class="post-footer">
-
-
-					
-					<figure class="author-image">
-						<a class="img" href="https://www.companionway.net" style="background-image: url(https://www.companionway.net/img/sailboat.png)"><span class="hidden">Geoff McNamara's Picture</span></a>
-					</figure>
-					
 
 					
 
@@ -283,13 +297,13 @@ blah
 <section class="share">
 
 <h4>Share this post</h4>
-<a class="Xicon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Always%20Use%20Visudo&nbsp;-&nbsp;companionway&amp;url=https%3a%2f%2fwww.companionway.net%2fpost%2falway-use-visudo%2f"
+<a class="Xicon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Always%20Use%20Visudo&nbsp;-&nbsp;companionway&amp;url=https%3a%2f%2fwww.companionway.net%2fpost%2falways-use-visudo%2f"
 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
 <span class="hidden">Twitter</span>
 <i class="fa fa-twitter fa-1x" style="color:yellow;"></i>
 </a>
 
-<a class="Xicon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.companionway.net%2fpost%2falway-use-visudo%2f"
+<a class="Xicon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.companionway.net%2fpost%2falways-use-visudo%2f"
 onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
 <span class="hidden">Facebook</span>
 <i class="fa fa-facebook fa-1x" style="color:green;"></i>
@@ -300,7 +314,7 @@ onclick="window.open(this.href, 'facebook-share','width=580,height=296');return 
 
 </a>
 
-<a class="Xicon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fwww.companionway.net%2fpost%2falway-use-visudo%2f"
+<a class="Xicon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fwww.companionway.net%2fpost%2falways-use-visudo%2f"
 onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
 <span class="hidden">Google+</span>
 <i class="fa fa-google-plus fa-1x" style="color:red;"></i>
@@ -313,8 +327,7 @@ onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');ret
 					
 
 
-				</footer>
-			</article>
+				</article>
 
 			</main>
 			
@@ -329,21 +342,22 @@ onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');ret
 
 
 <footer class="site-footer clearfix">
-<center>
-<div id="site-footer">
-<hr style="padding: 0px; margin: 0px;">
-<span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
-<span>
-
-All rights reserved - companionway - 2016
-
-</span>
-<hr style="padding: 0px; margin: 0px;">
-</div>
-</center>
-
+	<center>
+		<div id="site-footer">
+			<hr style="padding: 0px; margin: 0px;">
+			<span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+			<span>
+				
+				All rights reserved - companionway - 2016
+				
+			</span>
+			<hr style="padding: 0px; margin: 0px;">
+		</div>
+	</center>
+	
 
 </footer>
+</div> 
 </body>
 </html>
 
