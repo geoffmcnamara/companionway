@@ -53,7 +53,7 @@
 		<link href="https://www.companionway.net/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.49" />
+		<meta name="generator" content="Hugo 0.49.2" />
 
 		<link rel="canonical" href="https://www.companionway.net/post/" />
 
@@ -173,6 +173,44 @@ ga('send', 'pageview');
 </nav>
 
 </div>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/post/2015-05-11-post1/">shell/bash uppercase arguments</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>To make a long story short&hellip;
+#!/bin/bash PATTERN=$(echo $1 | tr [:lower:] [:upper:]) # or PATTERN=$(echo $1 | tr [a-z] [A-Z]) # or PATTERN=$(echo $1 | awk '{print toupper($0)}') echo &quot;Your \$1 argument is now uppercase: $1&quot;  To make a short story long&hellip;
+Just to let you know a little more about me and reveal a few more shells tricks along the way.
+ I am a very conservative investor - always have been but the low interest rates over the recent past has forced me to try a squeeze a little more out of the stock market also known as a &ldquo;a gentleman&rsquo;s gambling parlor of greedy people&rdquo;. <a class="read-more" href="/post/2015-05-11-post1/">&raquo;</a></p>
+	</section>
+	<footer class="post-meta">
+		
+		
+		
+		
+		
+
+		
+		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="https://www.companionway.nettags/scripting/">#scripting</a>,
+		
+		<a href="https://www.companionway.nettags/financial/">#financial</a>,
+		
+		
+		<time class="post-date" datetime="2015-05-11T00:00:00Z">
+			11 May 2015
+		</time>
+	</footer>
+</article>
 
 
 
@@ -357,49 +395,6 @@ All worked well until it didn&rsquo;t. If you make a mistake and back it up gues
 		
 		<time class="post-date" datetime="2015-04-28T00:00:00Z">
 			28 Apr 2015
-		</time>
-	</footer>
-</article>
-
-
-
-<article class="post">
-	<header class="post-header">
-		<h2 class="post-title"><a href="/post/2015-04-04-post1/">LaTex and markdown</a></h2>
-	</header>
-	<section class="post-excerpt">
-		<p><p>To get \(LaTex\) to work I had to add this to the _layout/footer.html</p>
-
-<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;
-    src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
-&lt;/script&gt;
-</code></pre>
-
-<p>and change the _config to use redcarpet for markdown</p>
-
-<p>BTW - to get \(Latex\) in the same line use:</p>
-
-<pre><code>insert \\(LaTex\\) here
-</code></pre>
-
-<p></p> <a class="read-more" href="/post/2015-04-04-post1/">&raquo;</a></p>
-	</section>
-	<footer class="post-meta">
-		
-		
-		
-		
-		
-
-		
-		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-		
-		
-		Geoff McNamara
-		
-		
-		<time class="post-date" datetime="2015-04-04T00:00:00Z">
-			4 Apr 2015
 		</time>
 	</footer>
 </article>

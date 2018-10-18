@@ -53,7 +53,7 @@
 		<link href="https://www.companionway.net/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.49" />
+		<meta name="generator" content="Hugo 0.49.2" />
 
 		<link rel="canonical" href="https://www.companionway.net/post/" />
 
@@ -173,6 +173,56 @@ ga('send', 'pageview');
 </nav>
 
 </div>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/post/2015-04-01-post3/">Let&#39;s change an image</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p><h1 id="changing-an-image">Changing an image</h1>
+
+<p>The magic tool is adapt images is <em>convert</em> from the imagemagick package.</p>
+
+<p>To convert type: <code>convert myimage.png myimage.jpg</code></p>
+
+<p>Here is a way to resize an image: <code>convert myimage.png -resize 200x100 myimage.png</code>
+&gt;Notice: the image will be converted right over the top of itself</p>
+
+<p>To darken (first argument to -modulate) an image and reduce<br />
+the color (second argument to -modulate):</p>
+
+<pre><code>convert -modulate 70,90 myimage.png myimage-darker.png
+</code></pre>
+
+<p></p> <a class="read-more" href="/post/2015-04-01-post3/">&raquo;</a></p>
+	</section>
+	<footer class="post-meta">
+		
+		
+		
+		
+		
+
+		
+		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="https://www.companionway.nettags/imagemagic/">#imagemagic</a>,
+		
+		<a href="https://www.companionway.nettags/convert/">#convert</a>,
+		
+		
+		<time class="post-date" datetime="2015-04-01T00:00:00Z">
+			1 Apr 2015
+		</time>
+	</footer>
+</article>
 
 
 
@@ -353,46 +403,6 @@ done
 </code></pre>
 
 <p></p> <a class="read-more" href="/post/2015-04-26-post1/">&raquo;</a></p>
-	</section>
-	<footer class="post-meta">
-		
-		
-		
-		
-		
-
-		
-		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-		
-		
-		Geoff McNamara
-		
-		
-		<time class="post-date" datetime="0001-01-01T00:00:00Z">
-			1 Jan 0001
-		</time>
-	</footer>
-</article>
-
-
-
-<article class="post">
-	<header class="post-header">
-		<h2 class="post-title"><a href="/post/2015-04-26-post2/">MT7630e Wifi build and install</a></h2>
-	</header>
-	<section class="post-excerpt">
-		<p><h1 id="wifi-mt7630e">Wifi mt7630e</h1>
-
-<p>Today&rsquo;s hero is Jakub Kicinski. He rewrote the Mediatek MT7630e drivers
-to clean up the code <em>and</em> work with the new kernels. I have been waiting
-for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.</p>
-
-<p>Kudo&rsquo;s to Mr. Kicinski!</p>
-
-<p>Here is the link:
-<a href="https://github.com/kuba-moo/mt7630e.git">github kuba-moo/mt7630e</a></p>
-
-<p></p> <a class="read-more" href="/post/2015-04-26-post2/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		

@@ -53,7 +53,7 @@
 		<link href="https://www.companionway.net/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.49" />
+		<meta name="generator" content="Hugo 0.49.2" />
 
 		<link rel="canonical" href="https://www.companionway.net/post/" />
 
@@ -171,6 +171,38 @@ ga('send', 'pageview');
 </nav>
 
 </div>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/post/git_pre-commit.sh/">Using a generic git pre-commit hook</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p><p>test_it &amp;&amp; commit || reject</p>
+
+<p>Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
+The goal is to have respectable code <em>before</em> it lands in a repository. Git makes this very easy through the use
+of &ldquo;hooks&rdquo;. If you look in any of your git project directories you will find these files in the <code>./.git/hooks/</code> directory:</p>
+
+<p></p> <a class="read-more" href="/post/git_pre-commit.sh/">&raquo;</a></p>
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		
+		<time class="post-date" datetime="2018-10-07T10:05:52-04:00">
+			7 Oct 2018
+		</time>
+	</footer>
+</article>
 
 
 
@@ -321,59 +353,6 @@ I end up with a hodgepodge of debug lines commented out.</p>
 		
 		<time class="post-date" datetime="2018-07-10T09:30:14-04:00">
 			10 Jul 2018
-		</time>
-	</footer>
-</article>
-
-
-
-<article class="post">
-	<header class="post-header">
-		<h2 class="post-title"><a href="/post/newspaper-hugo-subtheme/">How this theme evolved</a></h2>
-	</header>
-	<section class="post-excerpt">
-		<p><h3 id="announcing-a-new-project-newspaper-hugo-subtheme">Announcing a new project: newspaper-hugo-subtheme</h3>
-
-<p>First credit goes to Silke V at codepen.io name &ldquo;silkine&rdquo; [<a href="http://www.silkevoigts.de/">http://www.silkevoigts.de/</a>].
-Original source code can be found here: <a href="https://codepen.io/silkine/pen/jldif">https://codepen.io/silkine/pen/jldif</a></p>
-
-<p>I had a coworker who had a non-profit business blog that wanted to offer a newsletter to her clients.
-So I got interested in finding an HTML format that gave an old traditional newspaper style
-and Silke offered a solution that provided a strong simple css base. Currently (2017) I find
-the hugo cms system to be the easiest most portable static web building application freely available.
-The challenge was to create a full newsletter style theme as a subtheme within an existing theme
-structure. So I mocked up a ported version of Silke&rsquo;s newspaper css into a hugo &ldquo;section&rdquo;.</p>
-
-<p>An example of this subtheme can be seen here: <a href="/articles">[newspaper-hugo-subtheme]</a></p>
-
-<p>This project is a drop in offering to any existing hugo themed structure which will produce
-a newsletter format in an &ldquo;article(s)&rdquo; hugo section. A user only needs to change the title, city,
-and state varbiable that are stored as front matter in the ./content/articles/_index.md file.
-Hugo uses this file natively to discover section (in this case &ldquo;articles&rdquo;) specific data. All
-posts to the newsletter subtheme should be created in this ./content/articles/ directory as markdown
-files. Running hugo new articles/mynewarticle.md will create a new file with the default front matter
-pulled from ./archtypes/articles.md.</p>
-
-<p>This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.</p>
-
-<p></p> <a class="read-more" href="/post/newspaper-hugo-subtheme/">&raquo;</a></p>
-	</section>
-	<footer class="post-meta">
-		
-		
-		
-		
-		
-
-		
-		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-		
-		
-		Geoff McNamara
-		
-		
-		<time class="post-date" datetime="2017-11-03T10:54:24&#43;02:00">
-			3 Nov 2017
 		</time>
 	</footer>
 </article>

@@ -51,7 +51,7 @@
 		<link href="https://www.companionway.net/index.xml" rel="alternate" type="application/rss+xml" title="companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.49" />
+		<meta name="generator" content="Hugo 0.49.2" />
 
 		<link rel="canonical" href="https://www.companionway.net/" />
 
@@ -269,6 +269,53 @@ ga('send', 'pageview');
 						<div class="top">
 							<div class="image" style="overflow:hidden">
 								 
+								<img src="https://www.companionway.net/img/owl.jpg" class="img-responsive" alt="" >
+								
+							</div> 
+							<div class="bg"></div>
+							<div class="text">
+								<p class="buttons">
+								<a href="https://www.companionway.net/post/sometimes-it-is-the-obvious/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+								</p>
+							</div> 
+						</div> 
+
+						<div class="content">
+							<h4><a href="https://www.companionway.net/post/sometimes-it-is-the-obvious/">
+									
+									Sometimes It Is The Obvious
+									
+								</a></h4>
+
+								<p class="author-category">
+								
+								on December 15, 2016
+								</p>
+								<p class="intro"><p>This was one of those &ldquo;problems&rdquo; that nagged me for many hours until the obvious dawned on me.
+I wrote a python script to grab the temperature and humidiy from a DHT22 sensor and then write the
+output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
+every 5 minutes and used a redirection to write out a file ie:</p>
+
+<pre><code>*/5 * * * * /usr/local/bin/temphum.sh &gt;/tmp/temphum.dat
+</code></pre>
+
+<p>The wrapper script grabs output and sends it to the server. Having this wrapper script lets me run the
+python script independantly for testing or for curiousity.</p></p>
+								<p class="read-more">
+								<a href="https://www.companionway.net/post/sometimes-it-is-the-obvious/" class="btn btn-template-main">Continue reading</a>
+								</p>
+						</div> 
+
+					</div> 
+
+				</div> 
+				
+				<div class="col-md-4 col-sm-6">
+					<div class="box-image-text blog">
+
+						<div class="top">
+							<div class="image" style="overflow:hidden">
+								 
 								<img src="https://www.companionway.net/img/visudo.jpg" class="img-responsive" alt="" >
 								
 							</div> 
@@ -362,70 +409,6 @@ back to the monitor server.</p>
 <p></p></p>
 								<p class="read-more">
 								<a href="https://www.companionway.net/post/recursive-replace-text/" class="btn btn-template-main">Continue reading</a>
-								</p>
-						</div> 
-
-					</div> 
-
-				</div> 
-				
-				<div class="col-md-4 col-sm-6">
-					<div class="box-image-text blog">
-
-						<div class="top">
-							<div class="image" style="overflow:hidden">
-								 
-								<img src="https://www.companionway.net/img/hugo-logo.png" class="img-responsive" alt="" >
-								
-							</div> 
-							<div class="bg"></div>
-							<div class="text">
-								<p class="buttons">
-								<a href="https://www.companionway.net/post/switched-to-hugo/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
-								</p>
-							</div> 
-						</div> 
-
-						<div class="content">
-							<h4><a href="https://www.companionway.net/post/switched-to-hugo/">
-									
-									Switched to Hugo
-									
-								</a></h4>
-
-								<p class="author-category">
-								
-								on December 9, 2016
-								</p>
-								<p class="intro"><p>I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
-<a href="https://gohugo.io"><img src="/img/hugo-h.jpg" alt="alt text" title="goHugo.io" /></a></p>
-
-<p>Here is why:</p>
-
-<ul>
-<li>It comes as a binary file that runs on pretty much any platform. A single file&hellip; without a list of dependencies</li>
-<li>I could stop with the last reason and it would be enough&hellip; but I have to say that the file tree used in hugo is simple, and simple is beautiful. As Einstein once said:
-&gt;“Make things as simple as possible, but not simpler.”</li>
-<li>It is written in googles go language&hellip; so it is fast and portable.</li>
-<li>It is closely tied to git so it can easily be used on github and for version maintence.</li>
-<li>it builds a clean directory [./public/] for the full site deploy and this can be rsync&rsquo;d to where ever you like.
-or &hellip; just git push it to hithub and use something like netlify.com to host from your github!</li>
-<li><em>No frustrating</em> version incompatiblities (or at least very minimal) - unlike jekyll which seemed to break on me every few months.</li>
-<li>hugo is relatively mature and has a huge developer backing.</li>
-<li>configurable and changed without challenges</li>
-<li>lots of themes to choose from</li>
-<li>as the Hugo websites states - it makes the web fun again&hellip;</li>
-<li>Did I mention that it is a single executable file?</li>
-</ul>
-
-<p>Reference:
-<a href="https://gohugo.io/#intro">gohugo.io</a></p>
-
-<p>Enjoy
--g-
-</p></p>
-								<p class="read-more">
-								<a href="https://www.companionway.net/post/switched-to-hugo/" class="btn btn-template-main">Continue reading</a>
 								</p>
 						</div> 
 

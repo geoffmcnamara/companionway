@@ -7,10 +7,25 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Wed, 08 Aug 2018 09:30:10 -0400</lastBuildDate>
+    <lastBuildDate>Sun, 07 Oct 2018 10:05:52 -0400</lastBuildDate>
     
 	<atom:link href="https://www.companionway.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using a generic git pre-commit hook</title>
+      <link>https://www.companionway.net/post/git_pre-commit.sh/</link>
+      <pubDate>Sun, 07 Oct 2018 10:05:52 -0400</pubDate>
+      
+      <guid>https://www.companionway.net/post/git_pre-commit.sh/</guid>
+      <description>&lt;p&gt;test_it &amp;amp;&amp;amp; commit || reject&lt;/p&gt;
+
+&lt;p&gt;Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
+The goal is to have respectable code &lt;em&gt;before&lt;/em&gt; it lands in a repository. Git makes this very easy through the use
+of &amp;ldquo;hooks&amp;rdquo;. If you look in any of your git project directories you will find these files in the &lt;code&gt;./.git/hooks/&lt;/code&gt; directory:&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Vim ALE</title>
