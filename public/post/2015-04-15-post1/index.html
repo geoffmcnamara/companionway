@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		
+
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+
+<meta name="twitter:title" content="SSH basics" />
+<meta name="twitter:description" content="SSH
+
+Debug with verbose output
+
+$HOME/.ssh/config first and foremost - debug with -vvvv
+
+
+actually do it before you need to so you can see how it works
+
+
+
+
+From Wikipedia (paraphrased):
+
+
+Secure Shell, or SSH, is a cryptographic (encrypted) network
+protocol for initiating text-based shell sessions[clarification needed] on
+remote machines in a secure way.
+
+
+&hellip;
+
+
+In 1995, Tatu Ylönen, a researcher at Helsinki University of Technology,
+Finland, designed the first version of the protocol (now called SSH-1) prompted by a password-sniffing attack at his university network.
+
+
+&hellip;
+
+" />
+
+
+
+		<meta property="og:title" content=" SSH basics &middot;  companionway" />
+		<meta property="og:site_name" content="companionway" />
+		<meta property="og:url" content="https://www.companionway.net/post/2015-04-15-post1/" />
+
+		
+		<meta property="og:type" content="article" />
+		<meta property="og:article:published_time" content="0001-01-01T00:00:00Z" />
+		
+		
+
+		<title>
+			 SSH basics &middot;  companionway
+		</title>
+
+		<meta name="description" content="Meeting challenges with success!" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="https://www.companionway.net/img/favicon.ico">
+		<link rel="apple-touch-icon" href="https://www.companionway.net/img/apple-touch-icon.png" />
+
+		
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/nav.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/screen.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/custom.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+		
+
+		
+		
+		<link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
+		
+		
+		
+		<meta name="generator" content="Hugo 0.49.2" />
+
+		<link rel="canonical" href="https://www.companionway.net/post/2015-04-15-post1/" />
+
+		
+<link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Architects Daughter" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Philosopher">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather">
+
+
+
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-6970218-1', 'auto');
+ga('send', 'pageview');
+
+		</script>
+		
+
+		
+	</head>
+	<body class="nav-closed">
+
+		<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/">Home</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/post">Posts</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/page/about/">About</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/page/links/">Links</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/articles/">Newspaper</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="/page/projects/">Projects</a>
+            </li>
+        
+    </ul>
+    
+    
+    <a class="subscribe-button icon-feed" href="https://www.companionway.netindex.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+		<div class="site-wrapper">
+
+
+
+
+			<header class="main-header post-head no-cover">
+				<nav class="main-nav clearfix">
+					
+
+					
+					<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
+					
+					
+					<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+					
+				</nav>
+			</header>
+
+
+
+			<main class="content" role="main">
+
+
+
+
+				<article class="post">
+
+					<header class="post-header">
+						<h1 class="post-title">
+							
+							SSH basics
+							
+						</h1>
+						<small></small>
+
+						<section class="post-meta">
+							
+							<time class="post-date" datetime="0001-01-01T00:00:00Z">
+								Jan 1, 0001
+							</time>
+							
+							
+						</section>
+					</header>
+
+					<section class="post-content">
+						<h1 id="ssh">SSH</h1>
+
+<h2 id="debug-with-verbose-output">Debug with verbose output</h2>
+
+<p>$HOME/.ssh/config first and foremost - debug with -vvvv</p>
+
+<ul>
+<li>actually do it before you need to so you can see how it works</li>
+</ul>
+
+<hr />
+
+<h3 id="from-wikipedia-paraphrased">From Wikipedia (paraphrased):</h3>
+
+<blockquote>
+<p>Secure Shell, or SSH, is a cryptographic (encrypted) network
+protocol for initiating text-based shell sessions[clarification needed] on
+remote machines in a secure way.</p>
+</blockquote>
+
+<p>&hellip;</p>
+
+<blockquote>
+<p>In 1995, Tatu Ylönen, a researcher at Helsinki University of Technology,
+Finland, designed the first version of the protocol (now called SSH-1) prompted by a password-sniffing attack at his university network.</p>
+</blockquote>
+
+<p>&hellip;</p>
+
+<p></p>
+
+<blockquote>
+<p>OpenSSH and OSSH :  In 1999, developers wanting a free software version to be available went back to the older 1.2.12 release of the original SSH program  &hellip; Shortly thereafter, OpenBSD developers forked Grönvall&rsquo;s code and did extensive work on it, creating OpenSSH, which shipped with the 2.6 release of OpenBSD.</p>
+</blockquote>
+
+<p>&hellip;</p>
+
+<hr />
+
+<p>SSH gave an option for the insecure nature of telnet, rsh, ftp, http. They are all inherently insecure.</p>
+
+<h2 id="uses">Uses:</h2>
+
+<ul>
+<li>ssh - secure login and controlled secure execution (feature: with X
+forwarding possibility)</li>
+<li>scp - secure copy</li>
+<li>sftp - secure ftp substitute - needs configure permission</li>
+<li>sshfs - FUSE - filesystem user space - needs to be installed</li>
+<li>rsync uses ssh</li>
+<li>port forwarding - secure tunnelling</li>
+</ul>
+
+<h2 id="first-thing-everyone-wants-is-passwordless-login">First thing everyone wants is passwordless login</h2>
+
+<h3 id="convenience-vs-security">convenience vs security</h3>
+
+<p>This next command will ask for a passphrase
+- if you want simple - leave the passphrase blank
+- secure but inconvenient - then give a passphrase</p>
+
+<pre><code>ssh-keygen #defaults to creating .ssh/id_rsa  
+  creates 2 files .ssh/id_rsa and .ssh/id_rsa.pub
+or
+ssh-keygen -t dsa
+</code></pre>
+
+<pre><code>ssh-copy-id RHOST
+or the manual method
+cat $HOME/.ssh/id_rsa.pub | ssh $RUNAME@$RHOST 'cat &gt;&gt;.ssh/authorized_keys2'
+# permission on the .ssh directory and the files within are IMPORTANT
+ssh $RUNAME@$RHOST 'chmod 0600 .ssh/authorized_keys*'
+</code></pre>
+
+<pre><code>### The passphrase challenge
+ssh-agent bash
+ssh-add id_rsa
+# you need to enter the passphrase once (as long as this ssh-agent session is alive)
+</code></pre>
+
+<p>Know this: a users does not have a $HOME/.ssh directory by default
+It is only created when it is needed - eg when you ssh to another server
+ - because it creates an .ssh/known_hosts file</p>
+
+<h2 id="the-power-in-authorized-keys">The power in authorized_keys</h2>
+
+<pre><code>OPTIONS KEY_TYPE KEY COMMENT 
+...  
+OPTIONS KEY_TYPE KEY COMMENT
+</code></pre>
+
+<p>An example of a restricted authorized_key file:</p>
+
+<pre><code>command=&quot;/bin/ls -ltr&quot;,no-port-forwarding,no-X11-forwarding,no-agent-forwarding ssh-rsa KEY...ENDKEY user@FromHost
+</code></pre>
+
+<h2 id="restricting-shell-access">restricting shell access</h2>
+
+<p>scponly - once installed set up a new scponlyuser</p>
+
+<pre><code>usermod -s /usr/bin/scponly USERNAME
+</code></pre>
+
+<p>rssh - older and at one time had too many exploits</p>
+
+<p>Example of authorized_key entry:</p>
+
+<pre><code>no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty,command=&quot;scp -v -r -d -t ~/CONTENT&quot; ssh-rsa AAAAMYRSAKEY...
+</code></pre>
+
+<p>Create a link in ~backup_user/ that links to the directory where the content should be accessible.</p>
+
+<pre><code>ln -s /path/to/directory/with/accessible/content ~backup_user/CONTENT
+</code></pre>
+
+<p>Now, from client side, the following command should work :</p>
+
+<pre><code>scp -v  -r  -P 2222 -i .ssh/id_rsa_key_file path/to/data backup_user@SERVER:~/CONTENT
+</code></pre>
+
+<p>Another way:
+Here&rsquo;s the authorized_keys file:</p>
+
+<pre><code># authorized_keys
+command=&quot;/usr/local/bin/remote-cmd.sh&quot; ssh-rsa.....== user@pewpew
+</code></pre>
+
+<p>Here&rsquo;s the contents of remote-cmd.sh:</p>
+
+<pre><code class="language-bash">#!/bin/bash
+# /usr/local/bin/remote-cmd.sh
+case $SSH_ORIGINAL_COMMAND in
+ 'scp'*)
+    $SSH_ORIGINAL_COMMAND
+    ;;
+ 'rsync'*)
+    $SSH_ORIGINAL_COMMAND
+    ;;
+ *)
+    echo &quot;Access Denied&quot;
+    ;;
+esac
+</code></pre>
+
+<h2 id="sftp">sftp</h2>
+
+<p>Subsystem sftp internal-sftp
+Match group sftponly
+  ForceCommand internal-sftp</p>
+
+<p>add the chrootDirectory %h and AllowTcpForwarding no after the match section to force the sftponly users to chroot to their home. please note that the match should (must!) be the last section on the ssh config and options after that are options just for the matched users –  higuita May 28 &lsquo;13<br />
+ForceCommand internal-sftp -u 0077 -d /uploaddir can farther harden it, by forcing a umask on an upload directory. In conjunction with &lsquo;ChrootDirectory` it creates a very controlled, isolated upload environment. Bonus note: the default dir and the umask must be set in the ForceCommand, not in the Subsystem directive, if you want them to work. –  Marcin Jun 6 &lsquo;14</p>
+
+<h2 id="sshfs">sshfs</h2>
+
+<pre><code>sudo apt-get install sshfs
+# make sure permissions allow what you attempt
+mkdir $HOME/mnt/ssh sshfs hostname:/data/share $HOME/mnt/ssh df -h
+# to unmount
+fusermount -u $HOME/mnt/ssh df -h ```
+</code></pre>
+
+<h2 id="port-forwarding">Port Forwarding</h2>
+
+<p>==================
+Creates a secure connection between computers through which services can be relayed.</p>
+
+<p>Two types
+- Local port forwarding - most common - can be used
+  to bypass a firewall
+- Remote port forwarding - less common - can allow you to connect from outside to
+  a computer behind a firewall
+- Dynamic port forwarding - rarely used - can btpass a firewall - takes a lot of
+  work to set up. Easier to use local port forwarding.</p>
+
+<p>First - your server has to allow port forwarding.</p>
+
+<pre><code class="language-bash">  grep Forwarding /etc/sshd_config
+</code></pre>
+
+<p>Second - you need to determine the appropriate source and destination ports
+  and destination IP</p>
+
+<h3 id="local-port-forwarding">Local port forwarding</h3>
+
+<p>Example - local port forwarding:</p>
+
+<pre><code class="language-bash">  ssh -L 8080:www.ubuntuforums.org:80 localhost
+</code></pre>
+
+<p>Now point your browser to <a href="http://localhost:8080">http://localhost:8080</a> and you will goto ubuntuforums.org</p>
+
+<pre><code class="language-bash">  ssh -L 8080:www.ubuntuforums.org:80 -L 12345:www.ubuntu.com:80 localhost 
+</code></pre>
+
+<p>Now you have 2 port forward connection - one listening on 8080 the other on 12345.</p>
+
+<h3 id="remote-port-forwarding">Remote port forwarding</h3>
+
+<p>Example: you want to let a friend use your PC - assume you have vnc running on your
+pc.</p>
+
+<pre><code class="language-bash">ssh -R 5900:localhost:5900 friendname@friendPC
+</code></pre>
+
+<p>BTW: 5900 is typically used by VNC for the first/default instance set up.</p>
+
+<p>Your friend can no access your vnc desktop by connection a vnc client to
+5900 on HIS pc!</p>
+
+<h3 id="x-forwarding">X forwarding</h3>
+
+<p>Your ssh server will forward X apps natively if it is allowed in the sshd_config.</p>
+
+<p>A client can log into your PC with <code>ssh -X yourpc</code> and then run any X program
+(eg xclock) and it will be forwarded to your X display on your pc.
+ie:</p>
+
+<pre><code class="language-bash">ssh -X otherhost
+firefox &amp;
+# or
+ssh -f -T -X otherhost firefox
+</code></pre>
+
+<p>BTW - you will need xauth installed</p>
+
+<p>You can speed things up just a bit with compression</p>
+
+<pre><code class="language-bash">ssh -fTC remoteuser@otherhost firefox
+</code></pre>
+
+<hr />
+
+<p>Wednesday, 15. April 2015 02:13PM</p>
+
+<hr />
+					</section>
+
+
+					
+
+
+
+
+
+<section class="author">
+<h4><a href="https://www.companionway.net">Geoff McNamara</a></h4>
+
+<p>“Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien</p>
+
+<div class="author-meta">
+
+<i class="fa fa-map-marker"></i>
+blah
+
+<span class="author-location">Elizabeth City, NC
+</span>
+
+<i class="fa fa-link"></i>
+<span class="author-link"><a href="https://www.companionway.net">https://www.companionway.net</a></span>
+
+
+</div>
+</section>
+
+
+
+					
+<section class="share">
+
+	<h4>Share this post</h4>
+	<a class="Xicon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=SSH%20basics&nbsp;-&nbsp;companionway&amp;url=https%3a%2f%2fwww.companionway.net%2fpost%2f2015-04-15-post1%2f"
+																										onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+		<span class="hidden">Twitter</span>
+		<i class="fa fa-twitter fa-1x" style="color:yellow;"></i>
+	</a>
+
+	<a class="Xicon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.companionway.net%2fpost%2f2015-04-15-post1%2f"
+																										 onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+		<span class="hidden">Facebook</span>
+		<i class="fa fa-facebook fa-1x" style="color:green;"></i>
+	</a>
+
+	
+
+	
+	 </a>
+
+	 <a class="Xicon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fwww.companionway.net%2fpost%2f2015-04-15-post1%2f"
+																												 onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+		 <span class="hidden">Google+</span>
+		 <i class="fa fa-google-plus fa-1x" style="color:red;"></i>
+	 </a>
+
+</section>
+
+
+
+					
+
+<div id="disqus_thread"></div>
+<i class="fa fa-comment"></i>
+
+
+
+	<script type="text/javascript">
+		
+
+
+
+(function() { 
+	var d = document, s = d.createElement('script');
+	s.src = 'https://companionway-net.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+	
+	
+
+
+				</article>
+
+			</main>
+			
+<script type="text/javascript" src="https://www.companionway.net/js/jquery.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/index.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script>
+<script type="text/javascript" src="https://www.companionway.net/js/custom.js"></script>
+<script id="dsq-count-scr" src="//companionway-net.disqus.com/count.js" async></script>
+
+
+
+<footer class="site-footer clearfix">
+	<center>
+		<div id="site-footer">
+			<hr style="padding: 0px; margin: 0px;">
+			<span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+			<span>
+				
+				All rights reserved - companionway - 2016
+				
+			</span>
+			<hr style="padding: 0px; margin: 0px;">
+		</div>
+	</center>
+	
+
+</footer>
+</div> 
+</body>
+</html>
+

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Markdown on companionway</title>
+    <link>https://www.companionway.net/tags/markdown/</link>
+    <description>Recent content in Markdown on companionway</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>All rights reserved - companionway - 2016</copyright>
+    <lastBuildDate>Wed, 01 Apr 2015 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.companionway.net/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Learning markdown ...</title>
+      <link>https://www.companionway.net/post/2015-04-01-post1/</link>
+      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/post/2015-04-01-post1/</guid>
+      <description>&lt;h1 id=&#34;markdown-this-heading-uses-setext-style&#34;&gt;Markdown - this heading uses Setext style&lt;/h1&gt;
+
+&lt;p&gt;You can&lt;br /&gt;
+break lines&lt;br /&gt;
+by adding &amp;gt;=2 spaces&lt;br /&gt;
+to the end
+before starting the next line&lt;/p&gt;
+
+&lt;h1 id=&#34;this-heading-uses-atx-style&#34;&gt;This heading uses atx style&lt;/h1&gt;
+
+&lt;p&gt;I am learning that you have to name     
+ your post file with YYYY-MM-DD-whatever.markdown
+&lt;/p&gt;
+
+&lt;p&gt;or&lt;/p&gt;
+
+&lt;p&gt;
+the **extension** _can_ be &#34;.md&#34;
+&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;quoted text
+here&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

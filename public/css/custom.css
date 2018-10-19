@@ -1,0 +1,65 @@
+// css uses # for id and a dot for class
+
+blockquote p:first-of-type:before {
+    content: "\201C";
+}
+
+/* Selecting only the last paragraph for when there are multiple paragraphs */
+blockquote p:last-of-type:after {
+    content: "\201D";
+}
+
+blockquote p:last-of-type {
+    margin-bottom: 0;
+}
+
+.source {
+    display: block;
+}
+
+.tshadow {
+  font-family: "Philosopher" serif;
+  font-size: 30px;
+  font-style: normal;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.sboxit {
+  background: lightgrey;
+  margin: 10px 2px 10px 2px;
+  border: 2px;
+  padding: 4px;
+  box-shadow: 4px 4px 5px #888888;
+}
+
+.darkcol {
+  background-color: #888888;
+}
+
+.content a {
+  // display: inline-block;
+  background-color: #fafafa;
+  color: #0f0f0f;
+  // font-size: 1.5em;
+  // font-family: Courier, sans-serif;
+  // padding: 1em 5em;
+  // text-decoration: none;
+  // text-transform: uppercase;
+  border-radius: 0.2em;
+  // border-bottom: 0.25em solid #0f5177;
+  -moz-transition: 0.1s;
+  -webkit-transition: 0.1s;
+  // transition: 0.1s;
+  box-shadow: 0 2px 3px #ccc;
+  // position: relative;
+}
+
+.content a:hover {
+  background-color: #1e9feb;
+  border-bottom-width: 0;
+  top: 0.2em;
+}
+/*
+*/
+
