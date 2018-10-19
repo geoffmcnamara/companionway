@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jekyll on companionway</title>
-    <link>https://www.companionway.net/tags/jekyll/</link>
+    <link>http://rasp5/companionway.net/tags/jekyll/</link>
     <description>Recent content in Jekyll on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Fri, 09 Dec 2016 10:57:45 -0500</lastBuildDate>
     
-	<atom:link href="https://www.companionway.net/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rasp5/companionway.net/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Switched to Hugo</title>
-      <link>https://www.companionway.net/post/switched-to-hugo/</link>
+      <link>http://rasp5/companionway.net/post/switched-to-hugo/</link>
       <pubDate>Fri, 09 Dec 2016 10:57:45 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/switched-to-hugo/</guid>
+      <guid>http://rasp5/companionway.net/post/switched-to-hugo/</guid>
       <description>&lt;p&gt;I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
-&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;https://www.companionway.net/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;http://rasp5/companionway.net/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is why:&lt;/p&gt;
 
@@ -49,10 +49,10 @@ or &amp;hellip; just git push it to hithub and use something like netlify.com to
     
     <item>
       <title>startbootstrap-clean theme contact form</title>
-      <link>https://www.companionway.net/post/2015-04-03-post1/</link>
+      <link>http://rasp5/companionway.net/post/2015-04-03-post1/</link>
       <pubDate>Fri, 03 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-03-post1/</guid>
+      <guid>http://rasp5/companionway.net/post/2015-04-03-post1/</guid>
       <description>&lt;p&gt;Getting the contact form to work on godaddy hosting was a trip, an ugly
 trip.&lt;/p&gt;
 
@@ -83,10 +83,10 @@ by looking for $HOME/data/gdform-xxxxxxx files.&lt;/li&gt;
     
     <item>
       <title></title>
-      <link>https://www.companionway.net/post/2015-04-01-post2/</link>
+      <link>http://rasp5/companionway.net/post/2015-04-01-post2/</link>
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-01-post2/</guid>
+      <guid>http://rasp5/companionway.net/post/2015-04-01-post2/</guid>
       <description>&lt;h1 id=&#34;this-website&#34;&gt;This website&lt;/h1&gt;
 
 &lt;p&gt;&amp;hellip; was created (and is maintained) using jekyll.&lt;/p&gt;
