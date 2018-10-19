@@ -11,7 +11,7 @@ share = false	# set false to hide share buttons
 author = ""
 +++
 
-test_it && commit || reject
+test_it && commit_it || reject_it
 
 Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
 The goal is to have respectable code *before* it lands in a repository. Git makes this very easy through the use

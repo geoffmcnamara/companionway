@@ -18,7 +18,7 @@
       <pubDate>Sun, 07 Oct 2018 10:05:52 -0400</pubDate>
       
       <guid>https://www.companionway.net/post/git_pre-commit.sh/</guid>
-      <description>&lt;p&gt;test_it &amp;amp;&amp;amp; commit || reject&lt;/p&gt;
+      <description>&lt;p&gt;test_it &amp;amp;&amp;amp; commit_it || reject_it&lt;/p&gt;
 
 &lt;p&gt;Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
 The goal is to have respectable code &lt;em&gt;before&lt;/em&gt; it lands in a repository. Git makes this very easy through the use
