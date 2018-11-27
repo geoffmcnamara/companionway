@@ -1,5 +1,6 @@
 # Site settings (baseurl must end with a trailing slash!)
 baseURL = "https://www.companionway.net"
+conifyURLS = true
 #baseurl = "/"
 #baseurl = "/companionway.net/"
 #relativeURLs = true

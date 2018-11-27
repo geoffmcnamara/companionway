@@ -18,8 +18,7 @@ This post is a brief description of replacing PHP code with python using WSGI (W
 -------
 ## Contents: ##
 - [Screen shots](#screens)
-- [Requirements and why](#reqs)
-- [Intalling/Configuring](#install)
+  [Requirements and why](#reqs)
 - [Code](#code) - [because that's probably why you are here]
 - [Download](#download)
 - [Code Analysis](#analysis)
@@ -32,8 +31,6 @@ This post is a brief description of replacing PHP code with python using WSGI (W
 ### Screens ###
   <img src='/img/nodeinfo-screens.png' style="width: 90%">
 
-<a name="install"></a>
-### Install/Configure ###
 
 <a name="reqs"></a>
 ### Requirements ###
