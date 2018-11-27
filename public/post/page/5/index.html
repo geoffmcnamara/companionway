@@ -53,7 +53,7 @@
 		<link href="https://www.companionway.net/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.49.2" />
+		<meta name="generator" content="Hugo 0.51" />
 
 		<link rel="canonical" href="https://www.companionway.net/post/" />
 
@@ -178,24 +178,28 @@ ga('send', 'pageview');
 
 <article class="post">
 	<header class="post-header">
-		<h2 class="post-title"><a href="/post/2015-04-04-post1/">LaTex and markdown</a></h2>
+		<h2 class="post-title"><a href="/post/2015-04-28-post1/">git inside, git better, git stronger</a></h2>
 	</header>
 	<section class="post-excerpt">
-		<p><p>To get \(LaTex\) to work I had to add this to the _layout/footer.html</p>
+		<p><h2 id="exploring-git-from-the-inside-out">&hellip; exploring git from the inside out &hellip;</h2>
 
-<pre><code class="language-javascript">&lt;script type=&quot;text/javascript&quot;
-    src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
-&lt;/script&gt;
-</code></pre>
+<p>###Preface</p>
 
-<p>and change the _config to use redcarpet for markdown</p>
+<p class="highcap">Apologies up front - this is long... very long, but there is food for the brain here.
+I will discuss git for personal use. Using it with many other contributors is 
+an extension of the principle covered here. For simplicity, I am only going
+to discuss you working alone and only using a single "branch" of code for
+each project - again, for simplicity. Additionally we are going to examine
+the git "database" (stored as compressed SHA-1 named files/objects) as we go.
+We can gain a better understanding by reviewing the changes to the guts of
+your personal git repository. We will not cover branches, tags, or the git daemon
+in this discussion.
+</p>
 
-<p>BTW - to get \(Latex\) in the same line use:</p>
+<p>###Why git? (skip this if you are less than patient)</p>
 
-<pre><code>insert \\(LaTex\\) here
-</code></pre>
-
-<p></p> <a class="read-more" href="/post/2015-04-04-post1/">&raquo;</a></p>
+<p>Many years ago I used backups of my projects or just documents, notes, etc.
+All worked well until it didn&rsquo;t. If you make a mistake and back it up guess what,</p> <a class="read-more" href="/post/2015-04-28-post1/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		
@@ -211,66 +215,8 @@ ga('send', 'pageview');
 		Geoff McNamara
 		
 		
-		<time class="post-date" datetime="2015-04-04T00:00:00Z">
-			4 Apr 2015
-		</time>
-	</footer>
-</article>
-
-
-
-<article class="post">
-	<header class="post-header">
-		<h2 class="post-title"><a href="/post/2015-04-03-post1/">startbootstrap-clean theme contact form</a></h2>
-	</header>
-	<section class="post-excerpt">
-		<p><p>Getting the contact form to work on godaddy hosting was a trip, an ugly
-trip.</p>
-
-<p>The contact form built into the jekyll startbootstrap-clean theme coding
-is a bit convoluted and needed tweaking to get it working.</p>
-
-<ul>
-<li>first you change the mail/contact_me.php to include to your email address
-(no problem there)</li>
-<li>but it failed so I used google chrome developer tool (Ctrl-Shft-I) to diagnose what was failing.
-It was looking for the php script at /contact/mail/contact_me.php instead of /mail/contact_me.php
-(easily fixed by moving it).</li>
-<li>by the way - this form does not pass the POST variables directly to the on script - it uses js/bootstrap-clean.js
-(which has been minified into js/bootstrap-clean-min.js) to validate the form entries and passes it on to contact_me.php
-as POST variables.</li>
-<li>however, on godaddy hosting they restrict things quite a bit and you need to use their tools
-to send email. They place into your basic web site gdform.php and webformmailer.php (which is a link). I tried
-replacing contact_me.php with each of these&hellip; only gdform.php worked. Their gdform.php script actually writes
-out your POSTED variables into a dated file (eg gform_8935621) into you $HOME/data/ directory. A cron job periodically
-mails out any gform_xxxxxxx file it finds to you.</li>
-<li>bottom line &hellip; I saved the original contact_me.php off and then on my godaddy site I copied gdform.php to /contact/mail/contact_me.php
-and all problems solved. Your contact email will eventually come when the cron runs to send it. You can check new conntact requests
-by looking for $HOME/data/gdform-xxxxxxx files.</li>
-</ul>
-
-<p></p> <a class="read-more" href="/post/2015-04-03-post1/">&raquo;</a></p>
-	</section>
-	<footer class="post-meta">
-		
-		
-		
-		
-		
-
-		
-		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-		
-		
-		Geoff McNamara
-		
-		on
-		
-		<a href="https://www.companionway.nettags/jekyll/">#jekyll</a>,
-		
-		
-		<time class="post-date" datetime="2015-04-03T00:00:00Z">
-			3 Apr 2015
+		<time class="post-date" datetime="2015-04-28T00:00:00Z">
+			28 Apr 2015
 		</time>
 	</footer>
 </article>
@@ -328,24 +274,33 @@ features of awk.</p> <a class="read-more" href="/post/2015-04-02-post1/">&raquo;
 
 <article class="post">
 	<header class="post-header">
-		<h2 class="post-title"><a href="/post/2015-04-01-post2/"></a></h2>
+		<h2 class="post-title"><a href="/post/2015-04-05-post1/">Adding fade in and down javascript</a></h2>
 	</header>
 	<section class="post-excerpt">
-		<p><h1 id="this-website">This website</h1>
+		<p><h1 id="javascript-fade-in-and-down">Javascript fade in and down</h1>
 
-<p>&hellip; was created (and is maintained) using jekyll.</p>
+<p>I wanted to change the header on the theme for my web site
+to display a slide down and in header.</p>
 
-<p>But getting here was a bit of a struggle.<br />
-I started using Jekyll quite some time ago. I love ruby and when I<br />
-found Jekyll I thought my mutual love for ruby and website design
-had perfectly come together.</p>
+<p>The script needed to be a combination of two jquery animations.</p>
 
-<p>Not so fast there buckeroo. I could not easily manage themes in a way<br />
-that satisfied me&hellip; so I went exploring. I tried dozens of flat CMS<br />
-generators. My journey lasted months. I was very impressed with gravCMS<br />
-but I still fought with theme manipulation.</p>
+<pre><code class="language-javascript">&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+    $('#fadeInDown')
+    .css('display', &quot;none&quot;)
+    .slideDown(2000)
+    .animate(
+      { opacity: 1 },
+      { queue: false, duration: 2300 }
+      );
+    });
+&lt;/script&gt;
+</code></pre>
 
-<p></p> <a class="read-more" href="/post/2015-04-01-post2/">&raquo;</a></p>
+<p>First we load in the jquery code from google nut this a single point of failure.
+If there is network interruption jquery code is lost. But in my instance if the
+network is failing then my web site probably is too.</p> <a class="read-more" href="/post/2015-04-05-post1/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		
@@ -362,11 +317,11 @@ but I still fought with theme manipulation.</p>
 		
 		on
 		
-		<a href="https://www.companionway.nettags/jekyll/">#jekyll</a>,
+		<a href="https://www.companionway.nettags/js/">#js</a>,
 		
 		
-		<time class="post-date" datetime="2015-04-01T00:00:00Z">
-			1 Apr 2015
+		<time class="post-date" datetime="0001-01-01T00:00:00Z">
+			1 Jan 0001
 		</time>
 	</footer>
 </article>
@@ -375,35 +330,33 @@ but I still fought with theme manipulation.</p>
 
 <article class="post">
 	<header class="post-header">
-		<h2 class="post-title"><a href="/post/2015-04-01-post1/">Learning markdown ...</a></h2>
+		<h2 class="post-title"><a href="/post/2015-04-17-post1/">Ansible - modifying sudoers</a></h2>
 	</header>
 	<section class="post-excerpt">
-		<p><h1 id="markdown-this-heading-uses-setext-style">Markdown - this heading uses Setext style</h1>
+		<p><h1 id="ansible-modifying-etc-sudoers">Ansible - modifying /etc/sudoers</h1>
 
-<p>You can<br />
-break lines<br />
-by adding &gt;=2 spaces<br />
-to the end
-before starting the next line</p>
+<p>I have locked administrators out of using sudo with a simple typo.</p>
 
-<h1 id="this-heading-uses-atx-style">This heading uses atx style</h1>
+<p>With ansible you can lockup sudo on every machine with a single error. So
+I get pretty cautious with editing /etc/sudoers through any deployment application.</p>
 
-<p>I am learning that you have to name     
- your post file with YYYY-MM-DD-whatever.markdown
-</p>
+<p>Here is a quick example of going overboard to protect your sudoers file
+when using ansible. This is in my <code>$ANSIBLE_DIR/roles/common/tasks/main.yml</code> file</p>
 
-<p>or</p>
+<pre><code>- name: Copy sudoers for safety
+  command: cp /etc/sudoers /etc/sudoers.tmp
 
-<p>
-the **extension** _can_ be ".md"
-</p>
+- name: Create sudoers.bak
+  command: cp /etc/sudoers /etc/sudoers.bak
 
-<blockquote>
-<p>quoted text
-here</p>
-</blockquote>
+- name: Ensure admin group is in sudoers with NOPASSWD
+  lineinfile: &quot;dest=/etc/sudoers.tmp state=present regexp='^%admin ' line='%admin ALL=(ALL) NOPASSWD: ALL' validate='visudo -cf %s'&quot;
+  register: sudoers_tmp_ok
 
-<p></p> <a class="read-more" href="/post/2015-04-01-post1/">&raquo;</a></p>
+- name: Copy sudoers.tmp to sudoers
+  when: sudoers_tmp_ok|success
+  command: cp /etc/sudoers.tmp /etc/sudoers
+</code></pre> <a class="read-more" href="/post/2015-04-17-post1/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		
@@ -418,13 +371,48 @@ here</p>
 		
 		Geoff McNamara
 		
-		on
 		
-		<a href="https://www.companionway.nettags/markdown/">#markdown</a>,
+		<time class="post-date" datetime="0001-01-01T00:00:00Z">
+			1 Jan 0001
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/post/2015-04-27-post1/">Command line disk tree</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p><h1 id="command-line-disk-tree">Command line disk tree</h1>
+
+<p>I am writing another article on the basics of using git. It
+was going to be a short article however, given the subject it is
+turning out to be much longer than I expected. But in the process
+of writing it I had to frequently use a shell function I wrote years
+ago that  displays a disk tree structure (optionally with files).</p>
+
+<p>I needed a way to see the changes to the .git directory as git commands
+are executed against the repository. I thought I would share it
+with you today.</p> <a class="read-more" href="/post/2015-04-27-post1/">&raquo;</a></p>
+	</section>
+	<footer class="post-meta">
 		
 		
-		<time class="post-date" datetime="2015-04-01T00:00:00Z">
-			1 Apr 2015
+		
+		
+		
+
+		
+		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		
+		<time class="post-date" datetime="0001-01-01T00:00:00Z">
+			1 Jan 0001
 		</time>
 	</footer>
 </article>

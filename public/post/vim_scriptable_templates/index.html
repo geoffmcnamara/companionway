@@ -43,9 +43,7 @@ The challenge was to have vim write in the date for me in the needed format. And
 you may have found that it will silently ignore a new markdown file if the date is not formated correctly. It some testing to discover that
 but the bottom line is that I needed a way to script it for to avoid mistakes.
 
-Research to me to this tip source:  vim embedded scripts 
-
-" />
+Research to me to this tip source:  vim embedded scripts " />
 
 
 
@@ -84,7 +82,7 @@ Research to me to this tip source:  vim embedded scripts
 		
 		
 		
-		<meta name="generator" content="Hugo 0.49.2" />
+		<meta name="generator" content="Hugo 0.51" />
 
 		<link rel="canonical" href="https://www.companionway.net/post/vim_scriptable_templates/" />
 
@@ -237,8 +235,6 @@ you may have found that it will silently ignore a new markdown file if the date 
 but the bottom line is that I needed a way to script it for to avoid mistakes.</p>
 
 <p>Research to me to this tip source: <a href="http://vim.wikia.com/wiki/Use_eval_to_create_dynamic_templates"> vim embedded scripts </a></p>
-
-<p></p>
 
 <p>I use autocommands in vim to load templates. The strategy here is to have vim recognize and respond when I start to write a new
 markdown (.md) file and run vim scripts where needed to dynamically fill in needed data. I will start here with writing the

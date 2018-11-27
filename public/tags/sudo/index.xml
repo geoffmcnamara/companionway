@@ -37,9 +37,7 @@ back to the monitor server.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;xymon ALL = NOPASSWD: /usr/sbin/ufw status
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;but I got halfway through and could remember the exact location&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;but I got halfway through and could remember the exact location&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Replace PHP with WSGI python</title>
+      <link>https://www.companionway.net/post/replace_php_with_wsgi_python/</link>
+      <pubDate>Tue, 20 Nov 2018 10:54:24 +0200</pubDate>
+      
+      <guid>https://www.companionway.net/post/replace_php_with_wsgi_python/</guid>
+      <description>&lt;p&gt;This post is a brief description of replacing PHP code with python using WSGI (Web Server Gateway Interface). The journey here comes from how I monitor my servers (mostly raspberry pi&amp;rsquo;s). I used a PHP script on all my servers that delivered the hostname and basic server information and I use &lt;a href=&#34;http://xymon.sourceforge.net/&#34;&gt;xymon monitoring&lt;/a&gt; to poll that PHP script on all the servers and test to see if the hostname is contained in the returned page. My focus lately has been on python and my interest in PHP has waned. The goal was to replace my PHP script with a python script. The end result provides a simple means of delivering dynamic web pages. I will be using &lt;a href=&#34;http://bottlepy.org&#34;&gt;bottlepy&lt;/a&gt; as the wsgi web-framework. My development was done on an ubuntu 18.10 (&amp;ldquo;cosmic&amp;rdquo; release).&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Using a generic git pre-commit hook</title>
       <link>https://www.companionway.net/post/git_pre-commit.sh/</link>
       <pubDate>Sun, 07 Oct 2018 10:05:52 -0400</pubDate>
@@ -31,9 +40,7 @@
 
 &lt;p&gt;Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
 The goal is to have respectable code &lt;em&gt;before&lt;/em&gt; it lands in a repository. Git makes this very easy through the use
-of &amp;ldquo;hooks&amp;rdquo;. If you look in any of your git project directories you will find these files in the &lt;code&gt;./.git/hooks/&lt;/code&gt; directory:&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+of &amp;ldquo;hooks&amp;rdquo;. If you look in any of your git project directories you will find these files in the &lt;code&gt;./.git/hooks/&lt;/code&gt; directory:&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -45,9 +52,7 @@ of &amp;ldquo;hooks&amp;rdquo;. If you look in any of your git project directori
       <description>&lt;p&gt;VIM is a standard for me. My UNIX career hung on my &amp;ldquo;vi&amp;rdquo; savvy which I learned appreciate from mentors who
 encouraged me to learn the tips and tricks of using vi. My learning curve with vi/vim has never leveled
 off, but rather, always gives me new features and tricks that energize me again. The latest vim &amp;ldquo;trick&amp;rdquo;
-is ALE (Asynchronous Lint Engine).&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+is ALE (Asynchronous Lint Engine).&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -82,9 +87,7 @@ title = &amp;quot;vim_scriptable_templates&amp;quot;
 you may have found that it will silently ignore a new markdown file if the date is not formated correctly. It some testing to discover that
 but the bottom line is that I needed a way to script it for to avoid mistakes.&lt;/p&gt;
 
-&lt;p&gt;Research to me to this tip source: &lt;a href=&#34;http://vim.wikia.com/wiki/Use_eval_to_create_dynamic_templates&#34;&gt; vim embedded scripts &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Research to me to this tip source: &lt;a href=&#34;http://vim.wikia.com/wiki/Use_eval_to_create_dynamic_templates&#34;&gt; vim embedded scripts &lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -98,9 +101,7 @@ Combined with hugo static website generator, fabic makes testing and promoting a
 
 &lt;p&gt;I have struggled in the past with one challenge that made promoting website code from my workbench to dev, staging, and ultimately production tricky.
 The matter of URL always played havoc when I sent code up from one server to another for testing. Hugo offers a simple solution. When I promote website
-code it goes through this workflow process:&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+code it goes through this workflow process:&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -116,9 +117,7 @@ different languages (ansible, yaml, and maybe some python) to hold it down and c
 to use it I have to learn how to do what I need to do. But the most frustrating aspect of ansible when learning
 to do something new is that your first attempt rarely succeeds - at least for me. So you resort to &amp;ldquo;force programming&amp;rdquo;
 to get through it. By &amp;ldquo;force programming&amp;rdquo; I mean you try this and that and then something else until it works, and
-I end up with a hodgepodge of debug lines commented out.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+I end up with a hodgepodge of debug lines commented out.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -147,9 +146,7 @@ posts to the newsletter subtheme should be created in this ./content/articles/ d
 files. Running hugo new articles/mynewarticle.md will create a new file with the default front matter
 pulled from ./archtypes/articles.md.&lt;/p&gt;
 
-&lt;p&gt;This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -180,9 +177,7 @@ posts to the newsletter subtheme should be created in this ./content/articles/ d
 files. Running hugo new articles/mynewarticle.md will create a new file with the default front matter
 pulled from ./archtypes/articles.md.&lt;/p&gt;
 
-&lt;p&gt;This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -260,22 +255,11 @@ Suspendisse a enim sit amet massa efficitur malesuada.</description>
 
 &lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg#floatright&#34; alt=&#34;Kitchen Pi Image:1&#34; /&gt;
 &lt;!--
-
 &lt;figure&gt;
-    
-        &lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg&#34; alt=&#34;KitchenPi&#34; width=&#34;60%&#34; /&gt;
-    
-    
-    &lt;figcaption&gt;
-        &lt;h4&gt;KitchenPi Image:1&lt;/h4&gt;
-        &lt;p&gt;
-        KitchenPi
-        
-            
-        
-        &lt;/p&gt; 
-    &lt;/figcaption&gt;
-    
+    &lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg&#34;
+         alt=&#34;KitchenPi&#34; width=&#34;60%&#34;/&gt; &lt;figcaption&gt;
+            &lt;h4&gt;KitchenPi Image:1&lt;/h4&gt;&lt;p&gt;KitchenPi&lt;/p&gt;
+        &lt;/figcaption&gt;
 &lt;/figure&gt;
 
 --&gt;&lt;/p&gt;
@@ -295,9 +279,7 @@ Suspendisse a enim sit amet massa efficitur malesuada.</description>
 - fauxmo (from Maker Musings)
 - software for the touchscreen including touch a calibration tool
 - matchbox-keyboard
-- xcreensaver&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+- xcreensaver&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -309,8 +291,7 @@ Suspendisse a enim sit amet massa efficitur malesuada.</description>
       <description>&lt;p&gt;I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
 laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
 parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
-in most repositories). So output might look like this:
-&lt;/p&gt;</description>
+in most repositories). So output might look like this:&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -320,9 +301,7 @@ in most repositories). So output might look like this:
       
       <guid>https://www.companionway.net/post/quick-n-dirty-python-debug-function/</guid>
       <description>&lt;p&gt;Pdb is a great debugger for python but I like to use my own simple debug functions.
-Here is a simple debug function for python which could definitely be improved:&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+Here is a simple debug function for python which could definitely be improved:&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -336,9 +315,7 @@ any linux machine) can be done so many different ways - but the easiest from my 
 really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
 xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
 Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
-almost any linux distro.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+almost any linux distro.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -384,9 +361,7 @@ back to the monitor server.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;xymon ALL = NOPASSWD: /usr/sbin/ufw status
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;but I got halfway through and could remember the exact location&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;but I got halfway through and could remember the exact location&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -400,9 +375,7 @@ back to the monitor server.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;find ./ -name \*.md -print0 | xargs -0 sed -i &#39;s/header-img/img/&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -436,8 +409,7 @@ or &amp;hellip; just git push it to hithub and use something like netlify.com to
 &lt;a href=&#34;https://gohugo.io/#intro&#34;&gt;gohugo.io&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Enjoy
--g-
-&lt;/p&gt;</description>
+-g-&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -499,9 +471,7 @@ first entry with its arguments as a test run:&lt;/p&gt;
 #*/5 *  *   *   * /usr/local/bin/watch-proc.sh -f /usr/local/etc/watch-proc.conf -n geoffm@localhost &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
 #*/5 * * * * /data/share/home/geoffm/ping-pong.sh &amp;quot;ping -c2 192.168.1.55&amp;quot; &amp;quot;ssh 192.168.1.1 reboot&amp;quot; &amp;gt;/dev/null
 #  7 * * * /usr/local/sbin/postfix_report.sh &amp;amp;&amp;gt; /dev/null
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -526,9 +496,7 @@ that can be displayed with vim. You may already know that you can use
 
 &lt;p&gt;But I prefer using CTRL-K followed by two semi-meaningful (slightly resembles the
 intended special character) to create any one of literally thousands of special
-characters.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+characters.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -555,66 +523,7 @@ in this discussion.
 &lt;p&gt;###Why git? (skip this if you are less than patient)&lt;/p&gt;
 
 &lt;p&gt;Many years ago I used backups of my projects or just documents, notes, etc.
-All worked well until it didn&amp;rsquo;t. If you make a mistake and back it up guess what,&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>LaTex and markdown</title>
-      <link>https://www.companionway.net/post/2015-04-04-post1/</link>
-      <pubDate>Sat, 04 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.companionway.net/post/2015-04-04-post1/</guid>
-      <description>&lt;p&gt;To get \(LaTex\) to work I had to add this to the _layout/footer.html&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;script type=&amp;quot;text/javascript&amp;quot;
-    src=&amp;quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;quot;&amp;gt;
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and change the _config to use redcarpet for markdown&lt;/p&gt;
-
-&lt;p&gt;BTW - to get \(Latex\) in the same line use:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;insert \\(LaTex\\) here
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>startbootstrap-clean theme contact form</title>
-      <link>https://www.companionway.net/post/2015-04-03-post1/</link>
-      <pubDate>Fri, 03 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.companionway.net/post/2015-04-03-post1/</guid>
-      <description>&lt;p&gt;Getting the contact form to work on godaddy hosting was a trip, an ugly
-trip.&lt;/p&gt;
-
-&lt;p&gt;The contact form built into the jekyll startbootstrap-clean theme coding
-is a bit convoluted and needed tweaking to get it working.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;first you change the mail/contact_me.php to include to your email address
-(no problem there)&lt;/li&gt;
-&lt;li&gt;but it failed so I used google chrome developer tool (Ctrl-Shft-I) to diagnose what was failing.
-It was looking for the php script at /contact/mail/contact_me.php instead of /mail/contact_me.php
-(easily fixed by moving it).&lt;/li&gt;
-&lt;li&gt;by the way - this form does not pass the POST variables directly to the on script - it uses js/bootstrap-clean.js
-(which has been minified into js/bootstrap-clean-min.js) to validate the form entries and passes it on to contact_me.php
-as POST variables.&lt;/li&gt;
-&lt;li&gt;however, on godaddy hosting they restrict things quite a bit and you need to use their tools
-to send email. They place into your basic web site gdform.php and webformmailer.php (which is a link). I tried
-replacing contact_me.php with each of these&amp;hellip; only gdform.php worked. Their gdform.php script actually writes
-out your POSTED variables into a dated file (eg gform_8935621) into you $HOME/data/ directory. A cron job periodically
-mails out any gform_xxxxxxx file it finds to you.&lt;/li&gt;
-&lt;li&gt;bottom line &amp;hellip; I saved the original contact_me.php off and then on my godaddy site I copied gdform.php to /contact/mail/contact_me.php
-and all problems solved. Your contact email will eventually come when the cron runs to send it. You can check new conntact requests
-by looking for $HOME/data/gdform-xxxxxxx files.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+All worked well until it didn&amp;rsquo;t. If you make a mistake and back it up guess what,&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -640,87 +549,6 @@ is a easy problem that pretty much any freshman programmer
 can accomplish in a heartbeat but I decided to do it with
 awk. This sample gives you a chance to explore rudimentary
 features of awk.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.companionway.net/post/2015-04-01-post2/</link>
-      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.companionway.net/post/2015-04-01-post2/</guid>
-      <description>&lt;h1 id=&#34;this-website&#34;&gt;This website&lt;/h1&gt;
-
-&lt;p&gt;&amp;hellip; was created (and is maintained) using jekyll.&lt;/p&gt;
-
-&lt;p&gt;But getting here was a bit of a struggle.&lt;br /&gt;
-I started using Jekyll quite some time ago. I love ruby and when I&lt;br /&gt;
-found Jekyll I thought my mutual love for ruby and website design
-had perfectly come together.&lt;/p&gt;
-
-&lt;p&gt;Not so fast there buckeroo. I could not easily manage themes in a way&lt;br /&gt;
-that satisfied me&amp;hellip; so I went exploring. I tried dozens of flat CMS&lt;br /&gt;
-generators. My journey lasted months. I was very impressed with gravCMS&lt;br /&gt;
-but I still fought with theme manipulation.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Learning markdown ...</title>
-      <link>https://www.companionway.net/post/2015-04-01-post1/</link>
-      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.companionway.net/post/2015-04-01-post1/</guid>
-      <description>&lt;h1 id=&#34;markdown-this-heading-uses-setext-style&#34;&gt;Markdown - this heading uses Setext style&lt;/h1&gt;
-
-&lt;p&gt;You can&lt;br /&gt;
-break lines&lt;br /&gt;
-by adding &amp;gt;=2 spaces&lt;br /&gt;
-to the end
-before starting the next line&lt;/p&gt;
-
-&lt;h1 id=&#34;this-heading-uses-atx-style&#34;&gt;This heading uses atx style&lt;/h1&gt;
-
-&lt;p&gt;I am learning that you have to name     
- your post file with YYYY-MM-DD-whatever.markdown
-&lt;/p&gt;
-
-&lt;p&gt;or&lt;/p&gt;
-
-&lt;p&gt;
-the **extension** _can_ be &#34;.md&#34;
-&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;quoted text
-here&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Let&#39;s change an image</title>
-      <link>https://www.companionway.net/post/2015-04-01-post3/</link>
-      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.companionway.net/post/2015-04-01-post3/</guid>
-      <description>&lt;h1 id=&#34;changing-an-image&#34;&gt;Changing an image&lt;/h1&gt;
-
-&lt;p&gt;The magic tool is adapt images is &lt;em&gt;convert&lt;/em&gt; from the imagemagick package.&lt;/p&gt;
-
-&lt;p&gt;To convert type: &lt;code&gt;convert myimage.png myimage.jpg&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Here is a way to resize an image: &lt;code&gt;convert myimage.png -resize 200x100 myimage.png&lt;/code&gt;
-&amp;gt;Notice: the image will be converted right over the top of itself&lt;/p&gt;
-
-&lt;p&gt;To darken (first argument to -modulate) an image and reduce&lt;br /&gt;
-the color (second argument to -modulate):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;convert -modulate 70,90 myimage.png myimage-darker.png
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -762,9 +590,7 @@ $(document).ready(function(){
 
 &lt;p&gt;First we load in the jquery code from google nut this a single point of failure.
 If there is network interruption jquery code is lost. But in my instance if the
-network is failing then my web site probably is too.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+network is failing then my web site probably is too.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -796,9 +622,7 @@ when using ansible. This is in my &lt;code&gt;$ANSIBLE_DIR/roles/common/tasks/ma
 - name: Copy sudoers.tmp to sudoers
   when: sudoers_tmp_ok|success
   command: cp /etc/sudoers.tmp /etc/sudoers
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -817,9 +641,7 @@ ago that  displays a disk tree structure (optionally with files).&lt;/p&gt;
 
 &lt;p&gt;I needed a way to see the changes to the .git directory as git commands
 are executed against the repository. I thought I would share it
-with you today.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+with you today.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -844,9 +666,7 @@ and the newest one (last one) will be called
   touch $i.fil
   sleep 1
 done
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>
@@ -873,9 +693,7 @@ for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.&
 &lt;p&gt;Kudo&amp;rsquo;s to Mr. Kicinski!&lt;/p&gt;
 
 &lt;p&gt;Here is the link:
-&lt;a href=&#34;https://github.com/kuba-moo/mt7630e.git&#34;&gt;github kuba-moo/mt7630e&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;a href=&#34;https://github.com/kuba-moo/mt7630e.git&#34;&gt;github kuba-moo/mt7630e&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -920,9 +738,7 @@ remote machines in a secure way.&lt;/p&gt;
 Finland, designed the first version of the protocol (now called SSH-1) prompted by a password-sniffing attack at his university network.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;&amp;hellip;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -945,9 +761,7 @@ for universal time; not what you want. It is simple to just edit the
 /etc/timezone file or write a script to change it on multiple machines. But if
 you have lots of machines or tear these machines down and stand them back up
 frequently then exercises like this will get very tedious. Additionally
-there are and handful of packages you typically want one every machine.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+there are and handful of packages you typically want one every machine.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -973,9 +787,7 @@ obvious for anyone who is familiar with these platforms&amp;hellip;
 lxc is much much faster to bring up, halt, tear down.. and
 you can do quich-n-dirty temporary testing with lxc-start-ephemeral.
 Just too many advantages for developing and testing code in a
-small network.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+small network.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1000,9 +812,7 @@ Then it complained about not being able to find the vagrant-lxc plugin
 even though this command showed it listed:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;vagrant plugin list
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
   </channel>

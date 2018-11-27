@@ -40,9 +40,7 @@ $(document).ready(function(){
 
 &lt;p&gt;First we load in the jquery code from google nut this a single point of failure.
 If there is network interruption jquery code is lost. But in my instance if the
-network is failing then my web site probably is too.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+network is failing then my web site probably is too.&lt;/p&gt;</description>
     </item>
     
   </channel>

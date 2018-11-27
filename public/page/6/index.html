@@ -51,7 +51,7 @@
 		<link href="https://www.companionway.net/index.xml" rel="alternate" type="application/rss+xml" title="companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.49.2" />
+		<meta name="generator" content="Hugo 0.51" />
 
 		<link rel="canonical" href="https://www.companionway.net/" />
 
@@ -268,22 +268,22 @@ ga('send', 'pageview');
 
 						<div class="top">
 							<div class="image" style="overflow:hidden">
-								 
-								<img src="https://www.companionway.net/img/thrutheseaoats-dark.jpg" class="img-responsive" alt="" >
+								
+								<img src="https://www.companionway.net/img/placeholder.png" class="img-responsive" alt="">
 								
 							</div> 
 							<div class="bg"></div>
 							<div class="text">
 								<p class="buttons">
-								<a href="https://www.companionway.net/post/2015-04-01-post3/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+								<a href="https://www.companionway.net/post/2015-04-26-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
 								</p>
 							</div> 
 						</div> 
 
 						<div class="content">
-							<h4><a href="https://www.companionway.net/post/2015-04-01-post3/">
+							<h4><a href="https://www.companionway.net/post/2015-04-26-post1/">
 									
-									Let&#39;s change an image
+									Delete the last X files using sed
 									
 								</a></h4>
 
@@ -291,26 +291,27 @@ ga('send', 'pageview');
 								
 								By <a href="#">geoffm</a>
 								
-								on April 1, 2015
+								on January 1, 0001
 								</p>
-								<p class="intro"><h1 id="changing-an-image">Changing an image</h1>
+								<p class="intro"><h2 id="simple-sed-trick-keeping-the-last-x-files">Simple sed trick - keeping the last X files</h2>
 
-<p>The magic tool is adapt images is <em>convert</em> from the imagemagick package.</p>
+<p>How would you remove all but the last 10 files in a directory?</p>
 
-<p>To convert type: <code>convert myimage.png myimage.jpg</code></p>
+<p>So let&rsquo;s create 15 files with one second between there
+creation time. Oldest one (first one) will be called
+1.file
+and the newest one (last one) will be called
+15.file</p>
 
-<p>Here is a way to resize an image: <code>convert myimage.png -resize 200x100 myimage.png</code>
-&gt;Notice: the image will be converted right over the top of itself</p>
+<p>Run this code to do that:</p>
 
-<p>To darken (first argument to -modulate) an image and reduce<br />
-the color (second argument to -modulate):</p>
-
-<pre><code>convert -modulate 70,90 myimage.png myimage-darker.png
-</code></pre>
-
-<p></p></p>
+<pre><code>for i in `seq 1 15`; do
+  touch $i.fil
+  sleep 1
+done
+</code></pre></p>
 								<p class="read-more">
-								<a href="https://www.companionway.net/post/2015-04-01-post3/" class="btn btn-template-main">Continue reading</a>
+								<a href="https://www.companionway.net/post/2015-04-26-post1/" class="btn btn-template-main">Continue reading</a>
 								</p>
 						</div> 
 
@@ -330,15 +331,15 @@ the color (second argument to -modulate):</p>
 							<div class="bg"></div>
 							<div class="text">
 								<p class="buttons">
-								<a href="https://www.companionway.net/post/2015-04-05-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+								<a href="https://www.companionway.net/post/2015-04-26-post2/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
 								</p>
 							</div> 
 						</div> 
 
 						<div class="content">
-							<h4><a href="https://www.companionway.net/post/2015-04-05-post1/">
+							<h4><a href="https://www.companionway.net/post/2015-04-26-post2/">
 									
-									Adding fade in and down javascript
+									MT7630e Wifi build and install
 									
 								</a></h4>
 
@@ -348,34 +349,18 @@ the color (second argument to -modulate):</p>
 								
 								on January 1, 0001
 								</p>
-								<p class="intro"><h1 id="javascript-fade-in-and-down">Javascript fade in and down</h1>
+								<p class="intro"><h1 id="wifi-mt7630e">Wifi mt7630e</h1>
 
-<p>I wanted to change the header on the theme for my web site
-to display a slide down and in header.</p>
+<p>Today&rsquo;s hero is Jakub Kicinski. He rewrote the Mediatek MT7630e drivers
+to clean up the code <em>and</em> work with the new kernels. I have been waiting
+for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.</p>
 
-<p>The script needed to be a combination of two jquery animations.</p>
+<p>Kudo&rsquo;s to Mr. Kicinski!</p>
 
-<pre><code class="language-javascript">&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-$(document).ready(function(){
-    $('#fadeInDown')
-    .css('display', &quot;none&quot;)
-    .slideDown(2000)
-    .animate(
-      { opacity: 1 },
-      { queue: false, duration: 2300 }
-      );
-    });
-&lt;/script&gt;
-</code></pre>
-
-<p>First we load in the jquery code from google nut this a single point of failure.
-If there is network interruption jquery code is lost. But in my instance if the
-network is failing then my web site probably is too.</p>
-
-<p></p></p>
+<p>Here is the link:
+<a href="https://github.com/kuba-moo/mt7630e.git">github kuba-moo/mt7630e</a></p></p>
 								<p class="read-more">
-								<a href="https://www.companionway.net/post/2015-04-05-post1/" class="btn btn-template-main">Continue reading</a>
+								<a href="https://www.companionway.net/post/2015-04-26-post2/" class="btn btn-template-main">Continue reading</a>
 								</p>
 						</div> 
 
@@ -395,15 +380,15 @@ network is failing then my web site probably is too.</p>
 							<div class="bg"></div>
 							<div class="text">
 								<p class="buttons">
-								<a href="https://www.companionway.net/post/2015-04-17-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+								<a href="https://www.companionway.net/post/2015-04-15-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
 								</p>
 							</div> 
 						</div> 
 
 						<div class="content">
-							<h4><a href="https://www.companionway.net/post/2015-04-17-post1/">
+							<h4><a href="https://www.companionway.net/post/2015-04-15-post1/">
 									
-									Ansible - modifying sudoers
+									SSH basics
 									
 								</a></h4>
 
@@ -413,34 +398,36 @@ network is failing then my web site probably is too.</p>
 								
 								on January 1, 0001
 								</p>
-								<p class="intro"><h1 id="ansible-modifying-etc-sudoers">Ansible - modifying /etc/sudoers</h1>
+								<p class="intro"><h1 id="ssh">SSH</h1>
 
-<p>I have locked administrators out of using sudo with a simple typo.</p>
+<h2 id="debug-with-verbose-output">Debug with verbose output</h2>
 
-<p>With ansible you can lockup sudo on every machine with a single error. So
-I get pretty cautious with editing /etc/sudoers through any deployment application.</p>
+<p>$HOME/.ssh/config first and foremost - debug with -vvvv</p>
 
-<p>Here is a quick example of going overboard to protect your sudoers file
-when using ansible. This is in my <code>$ANSIBLE_DIR/roles/common/tasks/main.yml</code> file</p>
+<ul>
+<li>actually do it before you need to so you can see how it works</li>
+</ul>
 
-<pre><code>- name: Copy sudoers for safety
-  command: cp /etc/sudoers /etc/sudoers.tmp
+<hr />
 
-- name: Create sudoers.bak
-  command: cp /etc/sudoers /etc/sudoers.bak
+<h3 id="from-wikipedia-paraphrased">From Wikipedia (paraphrased):</h3>
 
-- name: Ensure admin group is in sudoers with NOPASSWD
-  lineinfile: &quot;dest=/etc/sudoers.tmp state=present regexp='^%admin ' line='%admin ALL=(ALL) NOPASSWD: ALL' validate='visudo -cf %s'&quot;
-  register: sudoers_tmp_ok
+<blockquote>
+<p>Secure Shell, or SSH, is a cryptographic (encrypted) network
+protocol for initiating text-based shell sessions[clarification needed] on
+remote machines in a secure way.</p>
+</blockquote>
 
-- name: Copy sudoers.tmp to sudoers
-  when: sudoers_tmp_ok|success
-  command: cp /etc/sudoers.tmp /etc/sudoers
-</code></pre>
+<p>&hellip;</p>
 
-<p></p></p>
+<blockquote>
+<p>In 1995, Tatu Ylönen, a researcher at Helsinki University of Technology,
+Finland, designed the first version of the protocol (now called SSH-1) prompted by a password-sniffing attack at his university network.</p>
+</blockquote>
+
+<p>&hellip;</p></p>
 								<p class="read-more">
-								<a href="https://www.companionway.net/post/2015-04-17-post1/" class="btn btn-template-main">Continue reading</a>
+								<a href="https://www.companionway.net/post/2015-04-15-post1/" class="btn btn-template-main">Continue reading</a>
 								</p>
 						</div> 
 

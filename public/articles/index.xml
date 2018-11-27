@@ -38,9 +38,7 @@ posts to the newsletter subtheme should be created in this ./content/articles/ d
 files. Running hugo new articles/mynewarticle.md will create a new file with the default front matter
 pulled from ./archtypes/articles.md.&lt;/p&gt;
 
-&lt;p&gt;This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.&lt;/p&gt;</description>
     </item>
     
     <item>

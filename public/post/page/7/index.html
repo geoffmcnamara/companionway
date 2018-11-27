@@ -53,7 +53,7 @@
 		<link href="https://www.companionway.net/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.49.2" />
+		<meta name="generator" content="Hugo 0.51" />
 
 		<link rel="canonical" href="https://www.companionway.net/post/" />
 
@@ -176,197 +176,6 @@ ga('send', 'pageview');
 
 <article class="post">
 	<header class="post-header">
-		<h2 class="post-title"><a href="/post/2015-04-26-post2/">MT7630e Wifi build and install</a></h2>
-	</header>
-	<section class="post-excerpt">
-		<p><h1 id="wifi-mt7630e">Wifi mt7630e</h1>
-
-<p>Today&rsquo;s hero is Jakub Kicinski. He rewrote the Mediatek MT7630e drivers
-to clean up the code <em>and</em> work with the new kernels. I have been waiting
-for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.</p>
-
-<p>Kudo&rsquo;s to Mr. Kicinski!</p>
-
-<p>Here is the link:
-<a href="https://github.com/kuba-moo/mt7630e.git">github kuba-moo/mt7630e</a></p>
-
-<p></p> <a class="read-more" href="/post/2015-04-26-post2/">&raquo;</a></p>
-	</section>
-	<footer class="post-meta">
-		
-		
-		
-		
-		
-
-		
-		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-		
-		
-		Geoff McNamara
-		
-		
-		<time class="post-date" datetime="0001-01-01T00:00:00Z">
-			1 Jan 0001
-		</time>
-	</footer>
-</article>
-
-
-
-<article class="post">
-	<header class="post-header">
-		<h2 class="post-title"><a href="/post/2015-04-15-post1/">SSH basics</a></h2>
-	</header>
-	<section class="post-excerpt">
-		<p><h1 id="ssh">SSH</h1>
-
-<h2 id="debug-with-verbose-output">Debug with verbose output</h2>
-
-<p>$HOME/.ssh/config first and foremost - debug with -vvvv</p>
-
-<ul>
-<li>actually do it before you need to so you can see how it works</li>
-</ul>
-
-<hr />
-
-<h3 id="from-wikipedia-paraphrased">From Wikipedia (paraphrased):</h3>
-
-<blockquote>
-<p>Secure Shell, or SSH, is a cryptographic (encrypted) network
-protocol for initiating text-based shell sessions[clarification needed] on
-remote machines in a secure way.</p>
-</blockquote>
-
-<p>&hellip;</p>
-
-<blockquote>
-<p>In 1995, Tatu Ylönen, a researcher at Helsinki University of Technology,
-Finland, designed the first version of the protocol (now called SSH-1) prompted by a password-sniffing attack at his university network.</p>
-</blockquote>
-
-<p>&hellip;</p>
-
-<p></p> <a class="read-more" href="/post/2015-04-15-post1/">&raquo;</a></p>
-	</section>
-	<footer class="post-meta">
-		
-		
-		
-		
-		
-
-		
-		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-		
-		
-		Geoff McNamara
-		
-		
-		<time class="post-date" datetime="0001-01-01T00:00:00Z">
-			1 Jan 0001
-		</time>
-	</footer>
-</article>
-
-
-
-<article class="post">
-	<header class="post-header">
-		<h2 class="post-title"><a href="/post/2015-04-23-post1/">vagrant and ansible</a></h2>
-	</header>
-	<section class="post-excerpt">
-		<p><h1 id="vagrant-and-ansible">vagrant and ansible</h1>
-
-<h2 id="putting-vagrant-on-steroids">putting vagrant on steroids</h2>
-
-<p>First, set up vagrant to create a group of guest virtual machines (see previous posts).
-We will assume your Vagrantfile is configured to build/start 3 nodes (node1, node2, node3). If these are
-bare builds you will want to personalize or customize each of them.</p>
-
-<p>Chances are you will want to give each of them a common base of applications
-and configuration. As a significant example, downloaded images are set
-for universal time; not what you want. It is simple to just edit the
-/etc/timezone file or write a script to change it on multiple machines. But if
-you have lots of machines or tear these machines down and stand them back up
-frequently then exercises like this will get very tedious. Additionally
-there are and handful of packages you typically want one every machine.</p>
-
-<p></p> <a class="read-more" href="/post/2015-04-23-post1/">&raquo;</a></p>
-	</section>
-	<footer class="post-meta">
-		
-		
-		
-		
-		
-
-		
-		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-		
-		
-		Geoff McNamara
-		
-		
-		<time class="post-date" datetime="0001-01-01T00:00:00Z">
-			1 Jan 0001
-		</time>
-	</footer>
-</article>
-
-
-
-<article class="post">
-	<header class="post-header">
-		<h2 class="post-title"><a href="/post/2015-04-22-post1/">vagrant lxc nodes</a></h2>
-	</header>
-	<section class="post-excerpt">
-		<p><h1 id="using-vagrant-with-lxc">Using vagrant with lxc</h1>
-
-<h3 id="one-command-vagrant-up">One command; vagrant up</h3>
-
-<p>Now that I successfully managed to get vagrant-lxc plugin to
-work (see previous post),  I decided to migrate my virtualbox Vagrantfile to vagrant lxc.
-I have used vagrant and virtualbox to create and bring up
-3 vm guest nodes on my laptop and then use node1 as a dev
-machine, node2 as a staging machine, and node3 as a production
-machine. That way I can test easily with greater confidence
-with each promotion of new code.</p>
-
-<p>So why use lxc when virtualbox is working fine? The answer is
-obvious for anyone who is familiar with these platforms&hellip;
-lxc is much much faster to bring up, halt, tear down.. and
-you can do quich-n-dirty temporary testing with lxc-start-ephemeral.
-Just too many advantages for developing and testing code in a
-small network.</p>
-
-<p></p> <a class="read-more" href="/post/2015-04-22-post1/">&raquo;</a></p>
-	</section>
-	<footer class="post-meta">
-		
-		
-		
-		
-		
-
-		
-		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-		
-		
-		Geoff McNamara
-		
-		
-		<time class="post-date" datetime="0001-01-01T00:00:00Z">
-			1 Jan 0001
-		</time>
-	</footer>
-</article>
-
-
-
-<article class="post">
-	<header class="post-header">
 		<h2 class="post-title"><a href="/post/2015-04-21-post1/">vagrant-lxc plugin</a></h2>
 	</header>
 	<section class="post-excerpt">
@@ -386,9 +195,7 @@ Then it complained about not being able to find the vagrant-lxc plugin
 even though this command showed it listed:</p>
 
 <pre><code>vagrant plugin list
-</code></pre>
-
-<p></p> <a class="read-more" href="/post/2015-04-21-post1/">&raquo;</a></p>
+</code></pre> <a class="read-more" href="/post/2015-04-21-post1/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		

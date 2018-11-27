@@ -23,9 +23,7 @@ any linux machine) can be done so many different ways - but the easiest from my 
 really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
 xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
 Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
-almost any linux distro.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+almost any linux distro.&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -51,7 +51,7 @@
 		<link href="https://www.companionway.net/index.xml" rel="alternate" type="application/rss+xml" title="companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.49.2" />
+		<meta name="generator" content="Hugo 0.51" />
 
 		<link rel="canonical" href="https://www.companionway.net/" />
 
@@ -275,15 +275,15 @@ ga('send', 'pageview');
 							<div class="bg"></div>
 							<div class="text">
 								<p class="buttons">
-								<a href="https://www.companionway.net/post/2015-04-26-post2/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+								<a href="https://www.companionway.net/post/2015-04-21-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
 								</p>
 							</div> 
 						</div> 
 
 						<div class="content">
-							<h4><a href="https://www.companionway.net/post/2015-04-26-post2/">
+							<h4><a href="https://www.companionway.net/post/2015-04-21-post1/">
 									
-									MT7630e Wifi build and install
+									vagrant-lxc plugin
 									
 								</a></h4>
 
@@ -293,145 +293,25 @@ ga('send', 'pageview');
 								
 								on January 1, 0001
 								</p>
-								<p class="intro"><h1 id="wifi-mt7630e">Wifi mt7630e</h1>
+								<p class="intro"><h1 id="vagrant-lxc-plugin">vagrant-lxc plugin</h1>
 
-<p>Today&rsquo;s hero is Jakub Kicinski. He rewrote the Mediatek MT7630e drivers
-to clean up the code <em>and</em> work with the new kernels. I have been waiting
-for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.</p>
+<p>OK today I finally had time to get vagrant-lxc to work.
+Up until now I have had vagrant virtualbox working just fine but
+when I looked into lxc containers with vagrant I ran into a
+little problem. First, I added vagrant-lxc plugin with this
+command</p>
 
-<p>Kudo&rsquo;s to Mr. Kicinski!</p>
+<pre><code>vagran plugin install vagrant-lxc
+</code></pre>
 
-<p>Here is the link:
-<a href="https://github.com/kuba-moo/mt7630e.git">github kuba-moo/mt7630e</a></p>
+<p>But this failed first asking for hostsupname plugin so I added that &hellip;
+Then it complained about not being able to find the vagrant-lxc plugin
+even though this command showed it listed:</p>
 
-<p></p></p>
+<pre><code>vagrant plugin list
+</code></pre></p>
 								<p class="read-more">
-								<a href="https://www.companionway.net/post/2015-04-26-post2/" class="btn btn-template-main">Continue reading</a>
-								</p>
-						</div> 
-
-					</div> 
-
-				</div> 
-				
-				<div class="col-md-4 col-sm-6">
-					<div class="box-image-text blog">
-
-						<div class="top">
-							<div class="image" style="overflow:hidden">
-								
-								<img src="https://www.companionway.net/img/placeholder.png" class="img-responsive" alt="">
-								
-							</div> 
-							<div class="bg"></div>
-							<div class="text">
-								<p class="buttons">
-								<a href="https://www.companionway.net/post/2015-04-15-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
-								</p>
-							</div> 
-						</div> 
-
-						<div class="content">
-							<h4><a href="https://www.companionway.net/post/2015-04-15-post1/">
-									
-									SSH basics
-									
-								</a></h4>
-
-								<p class="author-category">
-								
-								By <a href="#">geoffm</a>
-								
-								on January 1, 0001
-								</p>
-								<p class="intro"><h1 id="ssh">SSH</h1>
-
-<h2 id="debug-with-verbose-output">Debug with verbose output</h2>
-
-<p>$HOME/.ssh/config first and foremost - debug with -vvvv</p>
-
-<ul>
-<li>actually do it before you need to so you can see how it works</li>
-</ul>
-
-<hr />
-
-<h3 id="from-wikipedia-paraphrased">From Wikipedia (paraphrased):</h3>
-
-<blockquote>
-<p>Secure Shell, or SSH, is a cryptographic (encrypted) network
-protocol for initiating text-based shell sessions[clarification needed] on
-remote machines in a secure way.</p>
-</blockquote>
-
-<p>&hellip;</p>
-
-<blockquote>
-<p>In 1995, Tatu Ylönen, a researcher at Helsinki University of Technology,
-Finland, designed the first version of the protocol (now called SSH-1) prompted by a password-sniffing attack at his university network.</p>
-</blockquote>
-
-<p>&hellip;</p>
-
-<p></p></p>
-								<p class="read-more">
-								<a href="https://www.companionway.net/post/2015-04-15-post1/" class="btn btn-template-main">Continue reading</a>
-								</p>
-						</div> 
-
-					</div> 
-
-				</div> 
-				
-				<div class="col-md-4 col-sm-6">
-					<div class="box-image-text blog">
-
-						<div class="top">
-							<div class="image" style="overflow:hidden">
-								
-								<img src="https://www.companionway.net/img/placeholder.png" class="img-responsive" alt="">
-								
-							</div> 
-							<div class="bg"></div>
-							<div class="text">
-								<p class="buttons">
-								<a href="https://www.companionway.net/post/2015-04-23-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
-								</p>
-							</div> 
-						</div> 
-
-						<div class="content">
-							<h4><a href="https://www.companionway.net/post/2015-04-23-post1/">
-									
-									vagrant and ansible
-									
-								</a></h4>
-
-								<p class="author-category">
-								
-								By <a href="#">geoffm</a>
-								
-								on January 1, 0001
-								</p>
-								<p class="intro"><h1 id="vagrant-and-ansible">vagrant and ansible</h1>
-
-<h2 id="putting-vagrant-on-steroids">putting vagrant on steroids</h2>
-
-<p>First, set up vagrant to create a group of guest virtual machines (see previous posts).
-We will assume your Vagrantfile is configured to build/start 3 nodes (node1, node2, node3). If these are
-bare builds you will want to personalize or customize each of them.</p>
-
-<p>Chances are you will want to give each of them a common base of applications
-and configuration. As a significant example, downloaded images are set
-for universal time; not what you want. It is simple to just edit the
-/etc/timezone file or write a script to change it on multiple machines. But if
-you have lots of machines or tear these machines down and stand them back up
-frequently then exercises like this will get very tedious. Additionally
-there are and handful of packages you typically want one every machine.</p>
-
-<p></p></p>
-								<p class="read-more">
-								<a href="https://www.companionway.net/post/2015-04-23-post1/" class="btn btn-template-main">Continue reading</a>
+								<a href="https://www.companionway.net/post/2015-04-21-post1/" class="btn btn-template-main">Continue reading</a>
 								</p>
 						</div> 
 

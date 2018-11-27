@@ -43,65 +43,7 @@ or &amp;hellip; just git push it to hithub and use something like netlify.com to
 &lt;a href=&#34;https://gohugo.io/#intro&#34;&gt;gohugo.io&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Enjoy
--g-
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>startbootstrap-clean theme contact form</title>
-      <link>https://www.companionway.net/post/2015-04-03-post1/</link>
-      <pubDate>Fri, 03 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.companionway.net/post/2015-04-03-post1/</guid>
-      <description>&lt;p&gt;Getting the contact form to work on godaddy hosting was a trip, an ugly
-trip.&lt;/p&gt;
-
-&lt;p&gt;The contact form built into the jekyll startbootstrap-clean theme coding
-is a bit convoluted and needed tweaking to get it working.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;first you change the mail/contact_me.php to include to your email address
-(no problem there)&lt;/li&gt;
-&lt;li&gt;but it failed so I used google chrome developer tool (Ctrl-Shft-I) to diagnose what was failing.
-It was looking for the php script at /contact/mail/contact_me.php instead of /mail/contact_me.php
-(easily fixed by moving it).&lt;/li&gt;
-&lt;li&gt;by the way - this form does not pass the POST variables directly to the on script - it uses js/bootstrap-clean.js
-(which has been minified into js/bootstrap-clean-min.js) to validate the form entries and passes it on to contact_me.php
-as POST variables.&lt;/li&gt;
-&lt;li&gt;however, on godaddy hosting they restrict things quite a bit and you need to use their tools
-to send email. They place into your basic web site gdform.php and webformmailer.php (which is a link). I tried
-replacing contact_me.php with each of these&amp;hellip; only gdform.php worked. Their gdform.php script actually writes
-out your POSTED variables into a dated file (eg gform_8935621) into you $HOME/data/ directory. A cron job periodically
-mails out any gform_xxxxxxx file it finds to you.&lt;/li&gt;
-&lt;li&gt;bottom line &amp;hellip; I saved the original contact_me.php off and then on my godaddy site I copied gdform.php to /contact/mail/contact_me.php
-and all problems solved. Your contact email will eventually come when the cron runs to send it. You can check new conntact requests
-by looking for $HOME/data/gdform-xxxxxxx files.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.companionway.net/post/2015-04-01-post2/</link>
-      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.companionway.net/post/2015-04-01-post2/</guid>
-      <description>&lt;h1 id=&#34;this-website&#34;&gt;This website&lt;/h1&gt;
-
-&lt;p&gt;&amp;hellip; was created (and is maintained) using jekyll.&lt;/p&gt;
-
-&lt;p&gt;But getting here was a bit of a struggle.&lt;br /&gt;
-I started using Jekyll quite some time ago. I love ruby and when I&lt;br /&gt;
-found Jekyll I thought my mutual love for ruby and website design
-had perfectly come together.&lt;/p&gt;
-
-&lt;p&gt;Not so fast there buckeroo. I could not easily manage themes in a way&lt;br /&gt;
-that satisfied me&amp;hellip; so I went exploring. I tried dozens of flat CMS&lt;br /&gt;
-generators. My journey lasted months. I was very impressed with gravCMS&lt;br /&gt;
-but I still fought with theme manipulation.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+-g-&lt;/p&gt;</description>
     </item>
     
   </channel>

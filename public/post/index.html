@@ -53,7 +53,7 @@
 		<link href="https://www.companionway.net/post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; companionway" />
 		
 		
-		<meta name="generator" content="Hugo 0.49.2" />
+		<meta name="generator" content="Hugo 0.51" />
 
 		<link rel="canonical" href="https://www.companionway.net/post/" />
 
@@ -176,6 +176,44 @@ ga('send', 'pageview');
 
 <article class="post">
 	<header class="post-header">
+		<h2 class="post-title"><a href="/post/replace_php_with_wsgi_python/">Replace PHP with WSGI python</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p><p>This post is a brief description of replacing PHP code with python using WSGI (Web Server Gateway Interface). The journey here comes from how I monitor my servers (mostly raspberry pi&rsquo;s). I used a PHP script on all my servers that delivered the hostname and basic server information and I use <a href="http://xymon.sourceforge.net/">xymon monitoring</a> to poll that PHP script on all the servers and test to see if the hostname is contained in the returned page. My focus lately has been on python and my interest in PHP has waned. The goal was to replace my PHP script with a python script. The end result provides a simple means of delivering dynamic web pages. I will be using <a href="http://bottlepy.org">bottlepy</a> as the wsgi web-framework. My development was done on an ubuntu 18.10 (&ldquo;cosmic&rdquo; release).</p> <a class="read-more" href="/post/replace_php_with_wsgi_python/">&raquo;</a></p>
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="https://www.companionway.nettags/bottle/">#bottle</a>,
+		
+		<a href="https://www.companionway.nettags/wsgi/">#wsgi</a>,
+		
+		<a href="https://www.companionway.nettags/php/">#php</a>,
+		
+		<a href="https://www.companionway.nettags/devops/">#devops</a>,
+		
+		<a href="https://www.companionway.nettags/fabric/">#fabric</a>,
+		
+		
+		<time class="post-date" datetime="2018-11-20T10:54:24&#43;02:00">
+			20 Nov 2018
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
 		<h2 class="post-title"><a href="/post/git_pre-commit.sh/">Using a generic git pre-commit hook</a></h2>
 	</header>
 	<section class="post-excerpt">
@@ -183,9 +221,7 @@ ga('send', 'pageview');
 
 <p>Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
 The goal is to have respectable code <em>before</em> it lands in a repository. Git makes this very easy through the use
-of &ldquo;hooks&rdquo;. If you look in any of your git project directories you will find these files in the <code>./.git/hooks/</code> directory:</p>
-
-<p></p> <a class="read-more" href="/post/git_pre-commit.sh/">&raquo;</a></p>
+of &ldquo;hooks&rdquo;. If you look in any of your git project directories you will find these files in the <code>./.git/hooks/</code> directory:</p> <a class="read-more" href="/post/git_pre-commit.sh/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		
@@ -214,9 +250,7 @@ of &ldquo;hooks&rdquo;. If you look in any of your git project directories you w
 		<p><p>VIM is a standard for me. My UNIX career hung on my &ldquo;vi&rdquo; savvy which I learned appreciate from mentors who
 encouraged me to learn the tips and tricks of using vi. My learning curve with vi/vim has never leveled
 off, but rather, always gives me new features and tricks that energize me again. The latest vim &ldquo;trick&rdquo;
-is ALE (Asynchronous Lint Engine).</p>
-
-<p></p> <a class="read-more" href="/post/vim_ale/">&raquo;</a></p>
+is ALE (Asynchronous Lint Engine).</p> <a class="read-more" href="/post/vim_ale/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		
@@ -268,9 +302,7 @@ title = &quot;vim_scriptable_templates&quot;
 you may have found that it will silently ignore a new markdown file if the date is not formated correctly. It some testing to discover that
 but the bottom line is that I needed a way to script it for to avoid mistakes.</p>
 
-<p>Research to me to this tip source: <a href="http://vim.wikia.com/wiki/Use_eval_to_create_dynamic_templates"> vim embedded scripts </a></p>
-
-<p></p> <a class="read-more" href="/post/vim_scriptable_templates/">&raquo;</a></p>
+<p>Research to me to this tip source: <a href="http://vim.wikia.com/wiki/Use_eval_to_create_dynamic_templates"> vim embedded scripts </a></p> <a class="read-more" href="/post/vim_scriptable_templates/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		
@@ -301,9 +333,7 @@ Combined with hugo static website generator, fabic makes testing and promoting a
 
 <p>I have struggled in the past with one challenge that made promoting website code from my workbench to dev, staging, and ultimately production tricky.
 The matter of URL always played havoc when I sent code up from one server to another for testing. Hugo offers a simple solution. When I promote website
-code it goes through this workflow process:</p>
-
-<p></p> <a class="read-more" href="/post/hugo_and_fabric/">&raquo;</a></p>
+code it goes through this workflow process:</p> <a class="read-more" href="/post/hugo_and_fabric/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		
@@ -318,41 +348,6 @@ code it goes through this workflow process:</p>
 		
 		<time class="post-date" datetime="2018-07-14T15:33:19-05:00">
 			14 Jul 2018
-		</time>
-	</footer>
-</article>
-
-
-
-<article class="post">
-	<header class="post-header">
-		<h2 class="post-title"><a href="/post/fabric_vs_ansible/">Fabric_vs_ansible</a></h2>
-	</header>
-	<section class="post-excerpt">
-		<p><h2 id="fabric-vs-ansible">Fabric vs Ansible</h2>
-
-<p>I have wrestled with ansible for too long. It is an awesome tool but you need to learn the syntax of three
-different languages (ansible, yaml, and maybe some python) to hold it down and control it. Every time I go
-to use it I have to learn how to do what I need to do. But the most frustrating aspect of ansible when learning
-to do something new is that your first attempt rarely succeeds - at least for me. So you resort to &ldquo;force programming&rdquo;
-to get through it. By &ldquo;force programming&rdquo; I mean you try this and that and then something else until it works, and
-I end up with a hodgepodge of debug lines commented out.</p>
-
-<p></p> <a class="read-more" href="/post/fabric_vs_ansible/">&raquo;</a></p>
-	</section>
-	<footer class="post-meta">
-		
-		
-
-		
-		<img class="author-thumb" src="https://www.companionway.net/img/sailboat.png" alt="Author image" nopin="nopin" />
-		
-		
-		Geoff McNamara
-		
-		
-		<time class="post-date" datetime="2018-07-10T09:30:14-04:00">
-			10 Jul 2018
 		</time>
 	</footer>
 </article>

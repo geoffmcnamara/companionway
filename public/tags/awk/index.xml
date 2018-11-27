@@ -40,9 +40,7 @@ first entry with its arguments as a test run:&lt;/p&gt;
 #*/5 *  *   *   * /usr/local/bin/watch-proc.sh -f /usr/local/etc/watch-proc.conf -n geoffm@localhost &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
 #*/5 * * * * /data/share/home/geoffm/ping-pong.sh &amp;quot;ping -c2 192.168.1.55&amp;quot; &amp;quot;ssh 192.168.1.1 reboot&amp;quot; &amp;gt;/dev/null
 #  7 * * * /usr/local/sbin/postfix_report.sh &amp;amp;&amp;gt; /dev/null
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;</description>
     </item>
     
     <item>

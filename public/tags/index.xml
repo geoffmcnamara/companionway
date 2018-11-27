@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Bottle</title>
+      <link>https://www.companionway.net/tags/bottle/</link>
+      <pubDate>Tue, 20 Nov 2018 10:54:24 +0200</pubDate>
+      
+      <guid>https://www.companionway.net/tags/bottle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Cms</title>
       <link>https://www.companionway.net/tags/cms/</link>
       <pubDate>Fri, 09 Dec 2016 10:57:45 -0500</pubDate>
@@ -36,6 +45,24 @@
       <pubDate>Tue, 06 Dec 2016 11:58:20 -0500</pubDate>
       
       <guid>https://www.companionway.net/tags/convert/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Devops</title>
+      <link>https://www.companionway.net/tags/devops/</link>
+      <pubDate>Tue, 20 Nov 2018 10:54:24 +0200</pubDate>
+      
+      <guid>https://www.companionway.net/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fabric</title>
+      <link>https://www.companionway.net/tags/fabric/</link>
+      <pubDate>Tue, 20 Nov 2018 10:54:24 +0200</pubDate>
+      
+      <guid>https://www.companionway.net/tags/fabric/</guid>
       <description></description>
     </item>
     
@@ -67,15 +94,6 @@
     </item>
     
     <item>
-      <title>Imagemagic</title>
-      <link>https://www.companionway.net/tags/imagemagic/</link>
-      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.companionway.net/tags/imagemagic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Jekyll</title>
       <link>https://www.companionway.net/tags/jekyll/</link>
       <pubDate>Fri, 09 Dec 2016 10:57:45 -0500</pubDate>
@@ -94,11 +112,11 @@
     </item>
     
     <item>
-      <title>Markdown</title>
-      <link>https://www.companionway.net/tags/markdown/</link>
-      <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
+      <title>Php</title>
+      <link>https://www.companionway.net/tags/php/</link>
+      <pubDate>Tue, 20 Nov 2018 10:54:24 +0200</pubDate>
       
-      <guid>https://www.companionway.net/tags/markdown/</guid>
+      <guid>https://www.companionway.net/tags/php/</guid>
       <description></description>
     </item>
     
@@ -153,6 +171,15 @@
       <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
       
       <guid>https://www.companionway.net/tags/sudo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wsgi</title>
+      <link>https://www.companionway.net/tags/wsgi/</link>
+      <pubDate>Tue, 20 Nov 2018 10:54:24 +0200</pubDate>
+      
+      <guid>https://www.companionway.net/tags/wsgi/</guid>
       <description></description>
     </item>
     
