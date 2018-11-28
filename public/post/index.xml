@@ -129,7 +129,7 @@ the hugo cms system to be the easiest most portable static web building applicat
 The challenge was to create a full newsletter style theme as a subtheme within an existing theme
 structure. So I mocked up a ported version of Silke&amp;rsquo;s newspaper css into a hugo &amp;ldquo;section&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;An example of this subtheme can be seen here: &lt;a href=&#34;../articles&#34;&gt;[newspaper-hugo-subtheme]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;An example of this subtheme can be seen here: &lt;a href=&#34;https://www.companionway.net/articles&#34;&gt;[newspaper-hugo-subtheme]&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This project is a drop in offering to any existing hugo themed structure which will produce
 a newsletter format in an &amp;ldquo;article(s)&amp;rdquo; hugo section. A user only needs to change the title, city,
@@ -158,10 +158,10 @@ pulled from ./archtypes/articles.md.&lt;/p&gt;
 
 &lt;p&gt;There is a LOT of information here and lots of steps but it is worth it and you will definately learn lots of useful tricks. I am sure there are many improvements that could be made.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;../img/k-pi1.jpg#floatright&#34; alt=&#34;Kitchen Pi Image:1&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg#floatright&#34; alt=&#34;Kitchen Pi Image:1&#34; /&gt;
 &lt;!--
 &lt;figure&gt;
-    &lt;img src=&#34;../img/k-pi1.jpg&#34;
+    &lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg&#34;
          alt=&#34;KitchenPi&#34; width=&#34;60%&#34;/&gt; &lt;figcaption&gt;
             &lt;h4&gt;KitchenPi Image:1&lt;/h4&gt;&lt;p&gt;KitchenPi&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -290,7 +290,7 @@ back to the monitor server.&lt;/p&gt;
       
       <guid>https://www.companionway.net/post/switched-to-hugo/</guid>
       <description>&lt;p&gt;I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
-&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;../img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;https://www.companionway.net/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is why:&lt;/p&gt;
 

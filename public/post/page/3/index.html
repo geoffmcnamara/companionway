@@ -94,32 +94,32 @@ ga('send', 'pageview');
 		
 		
 		<li class="nav-opened" role="presentation">
-			<a href="../../../">Home</a>
+			<a href="/">Home</a>
 		</li>
 		
 		
 		<li class="nav-opened" role="presentation">
-			<a href="./post">Posts</a>
+			<a href="/post">Posts</a>
 		</li>
 		
 		
 		<li class="nav-opened" role="presentation">
-			<a href="../../../page/about/">About</a>
+			<a href="/page/about/">About</a>
 		</li>
 		
 		
 		<li class="nav-opened" role="presentation">
-			<a href="../../../page/links/">Links</a>
+			<a href="/page/links/">Links</a>
 		</li>
 		
 		
 		<li class="nav-opened" role="presentation">
-			<a href="../../../articles/">Newspaper</a>
+			<a href="/articles/">Newspaper</a>
 		</li>
 		
 		
 		<li class="nav-opened" role="presentation">
-			<a href="../../../page/projects/">Projects</a>
+			<a href="/page/projects/">Projects</a>
 		</li>
 		
 	</ul>
@@ -164,11 +164,11 @@ ga('send', 'pageview');
 <div class="extra-pagination inner">
 <nav class="pagination" role="navigation">
 	
-	    <a class="newer-posts" href="../../../post/page/2/">&larr; Newer Posts</a>
+	    <a class="newer-posts" href="/post/page/2/">&larr; Newer Posts</a>
 	
 	<span class="page-number">Page 3 of 7</span>
 	
-	    <a class="older-posts" href="../../../post/page/4/">Older Posts &rarr;</a>
+	    <a class="older-posts" href="/post/page/4/">Older Posts &rarr;</a>
 	
 </nav>
 
@@ -178,7 +178,7 @@ ga('send', 'pageview');
 
 <article class="post">
 	<header class="post-header">
-		<h2 class="post-title"><a href="../../../post/raspberry-pi-and-xrdp/">Raspberry Pi and Xrdp</a></h2>
+		<h2 class="post-title"><a href="/post/raspberry-pi-and-xrdp/">Raspberry Pi and Xrdp</a></h2>
 	</header>
 	<section class="post-excerpt">
 		<p><p>I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
@@ -186,7 +186,7 @@ any linux machine) can be done so many different ways - but the easiest from my 
 really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
 xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
 Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
-almost any linux distro.</p> <a class="read-more" href="../../../post/raspberry-pi-and-xrdp/">&raquo;</a></p>
+almost any linux distro.</p> <a class="read-more" href="/post/raspberry-pi-and-xrdp/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		
@@ -215,7 +215,7 @@ almost any linux distro.</p> <a class="read-more" href="../../../post/raspberry-
 
 <article class="post">
 	<header class="post-header">
-		<h2 class="post-title"><a href="../../../post/sometimes-it-is-the-obvious/">Sometimes It Is The Obvious</a></h2>
+		<h2 class="post-title"><a href="/post/sometimes-it-is-the-obvious/">Sometimes It Is The Obvious</a></h2>
 	</header>
 	<section class="post-excerpt">
 		<p><p>This was one of those &ldquo;problems&rdquo; that nagged me for many hours until the obvious dawned on me.
@@ -227,7 +227,7 @@ every 5 minutes and used a redirection to write out a file ie:</p>
 </code></pre>
 
 <p>The wrapper script grabs output and sends it to the server. Having this wrapper script lets me run the
-python script independantly for testing or for curiousity.</p> <a class="read-more" href="../../../post/sometimes-it-is-the-obvious/">&raquo;</a></p>
+python script independantly for testing or for curiousity.</p> <a class="read-more" href="/post/sometimes-it-is-the-obvious/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		
@@ -256,7 +256,7 @@ python script independantly for testing or for curiousity.</p> <a class="read-mo
 
 <article class="post">
 	<header class="post-header">
-		<h2 class="post-title"><a href="../../../post/always-use-visudo/">Always Use Visudo</a></h2>
+		<h2 class="post-title"><a href="/post/always-use-visudo/">Always Use Visudo</a></h2>
 	</header>
 	<section class="post-excerpt">
 		<p><h2 id="familiarity-breeds-contempt">&ldquo;familiarity breeds contempt&rdquo;</h2>
@@ -278,7 +278,7 @@ back to the monitor server.</p>
 <pre><code>xymon ALL = NOPASSWD: /usr/sbin/ufw status
 </code></pre>
 
-<p>but I got halfway through and could remember the exact location</p> <a class="read-more" href="../../../post/always-use-visudo/">&raquo;</a></p>
+<p>but I got halfway through and could remember the exact location</p> <a class="read-more" href="/post/always-use-visudo/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		
@@ -308,7 +308,7 @@ back to the monitor server.</p>
 
 <article class="post">
 	<header class="post-header">
-		<h2 class="post-title"><a href="../../../post/recursive-replace-text/">Recursively Replace Text</a></h2>
+		<h2 class="post-title"><a href="/post/recursive-replace-text/">Recursively Replace Text</a></h2>
 	</header>
 	<section class="post-excerpt">
 		<p><p>Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If I had to look it up, you have to suffer seeing it in my blog post&hellip; [smile]</p>
@@ -316,7 +316,7 @@ back to the monitor server.</p>
 <pre><code>find ./ -name \*.md -print0 | xargs -0 sed -i 's/header-img/img/'
 </code></pre>
 
-<p>Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.</p> <a class="read-more" href="../../../post/recursive-replace-text/">&raquo;</a></p>
+<p>Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.</p> <a class="read-more" href="/post/recursive-replace-text/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		
@@ -345,11 +345,11 @@ back to the monitor server.</p>
 
 <article class="post">
 	<header class="post-header">
-		<h2 class="post-title"><a href="../../../post/switched-to-hugo/">Switched to Hugo</a></h2>
+		<h2 class="post-title"><a href="/post/switched-to-hugo/">Switched to Hugo</a></h2>
 	</header>
 	<section class="post-excerpt">
 		<p><p>I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
-<a href="https://gohugo.io"><img src="../../../img/hugo-h.jpg" alt="alt text" title="goHugo.io" /></a></p>
+<a href="https://gohugo.io"><img src="/img/hugo-h.jpg" alt="alt text" title="goHugo.io" /></a></p>
 
 <p>Here is why:</p>
 
@@ -373,7 +373,7 @@ or &hellip; just git push it to hithub and use something like netlify.com to hos
 <a href="https://gohugo.io/#intro">gohugo.io</a></p>
 
 <p>Enjoy
--g-</p> <a class="read-more" href="../../../post/switched-to-hugo/">&raquo;</a></p>
+-g-</p> <a class="read-more" href="/post/switched-to-hugo/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		
@@ -404,11 +404,11 @@ or &hellip; just git push it to hithub and use something like netlify.com to hos
 
 <nav class="pagination" role="navigation">
 	
-	    <a class="newer-posts" href="../../../post/page/2/">&larr; Newer Posts</a>
+	    <a class="newer-posts" href="/post/page/2/">&larr; Newer Posts</a>
 	
 	<span class="page-number">Page 3 of 7</span>
 	
-	    <a class="older-posts" href="../../../post/page/4/">Older Posts &rarr;</a>
+	    <a class="older-posts" href="/post/page/4/">Older Posts &rarr;</a>
 	
 </nav>
 

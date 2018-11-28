@@ -1,12 +1,9 @@
 # Site settings (baseurl must end with a trailing slash!)
 baseURL = "https://www.companionway.net"
-relativeURLs = true
-conifyURLS = true
-#baseurl = "/"
-#baseurl = "/companionway.net/"
-#relativeURLs = true
-#uglyURLs = true
-#canonifyURLs = false
+# relativeURLs = true
+# conifyURLS = true
+# baseurl = "/"
+# uglyURLs = true
 defultContentLanguage = "en-US"
 languageCode = "en-US"
 Title= "companionway"
@@ -46,7 +43,7 @@ theme = "casper"
   name = "Posts"
   weight = -120
   identifier = "posts"
-  url = "./post"
+  url = "/post"
 
 [params.recent_posts]
     enable = true
