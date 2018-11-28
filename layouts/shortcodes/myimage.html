@@ -14,7 +14,7 @@
 */}}
 
 {{ if .IsNamedParams }}
-	<img src="{{ .Get "src"}}" 
+	<img src="{{ .Site.BaseURL }}/{{ .Get "src"}}" 
 	{{ if isset .Params "style" }}
 		style="{{ .Get "style" }}"
 	{{ end }}
