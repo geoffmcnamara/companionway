@@ -23,10 +23,10 @@
     
     <item>
       <title>Using a generic git pre-commit hook</title>
-      <link>https://www.companionway.net/post/git_pre-commit.sh/</link>
+      <link>https://www.companionway.net/post/git_pre-commit/</link>
       <pubDate>Sun, 07 Oct 2018 10:05:52 -0400</pubDate>
       
-      <guid>https://www.companionway.net/post/git_pre-commit.sh/</guid>
+      <guid>https://www.companionway.net/post/git_pre-commit/</guid>
       <description>&lt;p&gt;test_it &amp;amp;&amp;amp; commit_it || reject_it&lt;/p&gt;
 
 &lt;p&gt;Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
