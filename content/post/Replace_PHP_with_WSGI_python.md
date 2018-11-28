@@ -31,6 +31,10 @@ This post is a brief description of replacing PHP code with python using WSGI (W
 ### Screens ###
   <img src='/img/nodeinfo-screens.png' style="width: 90%">
 
+  {{< image src="/img/nodeinfo-screens.png" >}}
+  {{< myimage src="/img/nodeinfo-screens.png" style="width: 90%" >}}
+
+
 
 <a name="reqs"></a>
 ### Requirements ###

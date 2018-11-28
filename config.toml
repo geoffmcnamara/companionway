@@ -1,8 +1,8 @@
 # Site settings (baseurl must end with a trailing slash!)
+# vim: nospell
 baseURL = "https://www.companionway.net"
 # relativeURLs = true
 # conifyURLS = true
-# baseurl = "/"
 # uglyURLs = true
 defultContentLanguage = "en-US"
 languageCode = "en-US"

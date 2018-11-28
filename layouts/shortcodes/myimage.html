@@ -1,0 +1,25 @@
+{{/* myimage
+	vim: set nospell
+	vim: set filetype=none
+	vim: set syntax=none
+	vim: set noautoindent
+	vim: set nosmarttab
+	vim: set expandtab
+	vim: noshiftwidth
+	vim: set formatoptions=none
+	vim: set indent_style=space
+	((% myimage src="./img/myimage/pmg" %))
+	or
+	((% myimage ./img/myimage/pmg %))
+*/}}
+
+{{ if .IsNamedParams }}
+	<img src="{{ .Get "src"}}" 
+	{{ if isset .Params "style" }}
+		style="{{ .Get "style" }}"
+	{{ end }}
+	alt="" >
+
+{{ else }}
+	<img src="{{ .Get 0}}" alt="">
+{{ end }}
