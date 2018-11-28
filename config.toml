@@ -46,7 +46,7 @@ theme = "casper"
   name = "Posts"
   weight = -120
   identifier = "posts"
-  url = "/post"
+  url = "./post"
 
 [params.recent_posts]
     enable = true
