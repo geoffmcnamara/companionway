@@ -29,7 +29,9 @@ This post is a brief description of replacing PHP code with python using WSGI (W
 
 <a name="screens"></a>
 ### Screens ###
-  <img src='./img/nodeinfo-screens.png' style="width: 90%">
+  <img src='/img/nodeinfo-screens.png' style="width: 90%">
+
+  <img src='./nodeinfo-screens.png' style="width: 90%">
 
   ![my image](/img/nodeinfo-screens.png)
 	
