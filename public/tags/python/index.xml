@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on companionway</title>
-    <link>https://www.companionway.net/tags/python/</link>
+    <link>http://rasp5/companionway.net/tags/python/</link>
     <description>Recent content in Python on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Thu, 15 Dec 2016 16:36:42 -0500</lastBuildDate>
     
-	<atom:link href="https://www.companionway.net/tags/python/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rasp5/companionway.net/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sometimes It Is The Obvious</title>
-      <link>https://www.companionway.net/post/sometimes-it-is-the-obvious/</link>
+      <link>http://rasp5/companionway.net/post/sometimes-it-is-the-obvious/</link>
       <pubDate>Thu, 15 Dec 2016 16:36:42 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/sometimes-it-is-the-obvious/</guid>
+      <guid>http://rasp5/companionway.net/post/sometimes-it-is-the-obvious/</guid>
       <description>&lt;p&gt;This was one of those &amp;ldquo;problems&amp;rdquo; that nagged me for many hours until the obvious dawned on me.
 I wrote a python script to grab the temperature and humidiy from a DHT22 sensor and then write the
 output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran

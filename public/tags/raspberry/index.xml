@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Raspberry on companionway</title>
-    <link>https://www.companionway.net/tags/raspberry/</link>
+    <link>http://rasp5/companionway.net/tags/raspberry/</link>
     <description>Recent content in Raspberry on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Fri, 16 Dec 2016 12:27:36 -0500</lastBuildDate>
     
-	<atom:link href="https://www.companionway.net/tags/raspberry/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rasp5/companionway.net/tags/raspberry/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Raspberry Pi and Xrdp</title>
-      <link>https://www.companionway.net/post/raspberry-pi-and-xrdp/</link>
+      <link>http://rasp5/companionway.net/post/raspberry-pi-and-xrdp/</link>
       <pubDate>Fri, 16 Dec 2016 12:27:36 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/raspberry-pi-and-xrdp/</guid>
+      <guid>http://rasp5/companionway.net/post/raspberry-pi-and-xrdp/</guid>
       <description>&lt;p&gt;I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
 any linux machine) can be done so many different ways - but the easiest from my perspective is xrdp. It is available
 really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install

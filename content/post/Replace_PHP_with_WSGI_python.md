@@ -25,13 +25,11 @@ This post is a brief description of replacing PHP code with python using WSGI (W
 - [Troubleshooting](#debug)
 - [Going forward from here](#postface)
 
-<hr>
 
 <a name="screens"></a>
-### Screens ###
-  <img src='/img/nodeinfo-screens.png' style="width: 90%">
-
-  {{< image src="/img/nodeinfo-screens.png" >}}
+### Screen Shot ###
+This displays three differnt browser images. One for each of the 3 routes (pages) that can be rendered by **nodeinfo.py**.
+ 
   {{< myimage src="/img/nodeinfo-screens.png" style="width: 90%" >}}
 
 
