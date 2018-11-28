@@ -5,7 +5,7 @@ date     = "2016-12-14T10:59:38-05:00"
 image    = "/img/visudo.jpg"
 share    = true
 comments = false
-tags     = ["sudo"]
+tags     = ["sudo","visudo"]
 draft    = false
 
 +++
@@ -31,11 +31,11 @@ sudo vim /etc/sudoers.d/xymon
 xymon ALL = NOPASSWD: /usr/sbin/ufw status
 ```
 
-but I got halfway through and could remember the exact location
+but I got halfway through and could not remember the exact location
 
 <!--more-->
 
-of the ufw binary file.. so I saved got out and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the physical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplemental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.
+of the ufw binary file.. so I savedi, got out, and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the physical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplemental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.
 
 Lesson: *Always use visudo*
 

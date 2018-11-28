@@ -5,6 +5,7 @@ draft = false
 share = true
 title = "Vim Scriptable Templates"
 image = "/img/vim-dynamic-templates.png"
+tags = ["vim","templates","scripts"]
 +++
 
 ### Dynamic vim Templates

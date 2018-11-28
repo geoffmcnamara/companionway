@@ -1,9 +1,10 @@
+<!-- post/single.html -->
 {{ partial "header.html" . }}
 {{ $baseurl := .Site.BaseURL }}
 
 {{if .Params.image}}
 {{if or (eq (substr .Params.image 0 7) "http://") (eq (substr .Params.image 0 8) "https://")}}
-<header class="main-header post-head" style="background-image: url({{.Params.image}})">
+<header class="main-header post-head" style="background-image: url({{.Params.image}}); width: '800'; height: '400'">
 	{{ else }}
 	<header class="main-header post-head" style="background-image: url({{ $baseurl }}{{.Params.image}})">
 		{{ end }}
@@ -25,9 +26,7 @@
 			</header>
 
 
-
 			<main class="content" role="main">
-
 
 
 

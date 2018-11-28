@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Sat, 02 May 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Aug 2018 09:30:10 -0400</lastBuildDate>
     
 	<atom:link href="https://www.companionway.net/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ale</title>
+      <link>https://www.companionway.net/tags/ale/</link>
+      <pubDate>Wed, 08 Aug 2018 09:30:10 -0400</pubDate>
+      
+      <guid>https://www.companionway.net/tags/ale/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Awk</title>
@@ -45,6 +54,15 @@
       <pubDate>Tue, 06 Dec 2016 11:58:20 -0500</pubDate>
       
       <guid>https://www.companionway.net/tags/convert/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Debug</title>
+      <link>https://www.companionway.net/tags/debug/</link>
+      <pubDate>Thu, 22 Dec 2016 14:08:05 -0500</pubDate>
+      
+      <guid>https://www.companionway.net/tags/debug/</guid>
       <description></description>
     </item>
     
@@ -112,6 +130,24 @@
     </item>
     
     <item>
+      <title>Linters</title>
+      <link>https://www.companionway.net/tags/linters/</link>
+      <pubDate>Wed, 08 Aug 2018 09:30:10 -0400</pubDate>
+      
+      <guid>https://www.companionway.net/tags/linters/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://www.companionway.net/tags/markdown/</link>
+      <pubDate>Wed, 08 Aug 2018 09:30:10 -0400</pubDate>
+      
+      <guid>https://www.companionway.net/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Php</title>
       <link>https://www.companionway.net/tags/php/</link>
       <pubDate>Tue, 20 Nov 2018 10:54:24 +0200</pubDate>
@@ -123,7 +159,7 @@
     <item>
       <title>Python</title>
       <link>https://www.companionway.net/tags/python/</link>
-      <pubDate>Thu, 15 Dec 2016 16:36:42 -0500</pubDate>
+      <pubDate>Thu, 22 Dec 2016 14:08:05 -0500</pubDate>
       
       <guid>https://www.companionway.net/tags/python/</guid>
       <description></description>
@@ -157,6 +193,15 @@
     </item>
     
     <item>
+      <title>Scripts</title>
+      <link>https://www.companionway.net/tags/scripts/</link>
+      <pubDate>Sun, 15 Jul 2018 14:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/tags/scripts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Sed</title>
       <link>https://www.companionway.net/tags/sed/</link>
       <pubDate>Sat, 10 Dec 2016 20:38:12 -0500</pubDate>
@@ -171,6 +216,33 @@
       <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
       
       <guid>https://www.companionway.net/tags/sudo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Templates</title>
+      <link>https://www.companionway.net/tags/templates/</link>
+      <pubDate>Sun, 15 Jul 2018 14:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/tags/templates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vim</title>
+      <link>https://www.companionway.net/tags/vim/</link>
+      <pubDate>Wed, 08 Aug 2018 09:30:10 -0400</pubDate>
+      
+      <guid>https://www.companionway.net/tags/vim/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visudo</title>
+      <link>https://www.companionway.net/tags/visudo/</link>
+      <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
+      
+      <guid>https://www.companionway.net/tags/visudo/</guid>
       <description></description>
     </item>
     

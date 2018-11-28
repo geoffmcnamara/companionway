@@ -19,7 +19,7 @@
       
       <guid>https://www.companionway.net/post/sometimes-it-is-the-obvious/</guid>
       <description>&lt;p&gt;This was one of those &amp;ldquo;problems&amp;rdquo; that nagged me for many hours until the obvious dawned on me.
-I wrote a python script to grab the temperature and humidiy from a DHT22 sensor and then write the
+I wrote a python script to grab the temperature and humidity from a DHT22 sensor and then write the
 output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
 every 5 minutes and used a redirection to write out a file ie:&lt;/p&gt;
 
@@ -27,7 +27,7 @@ every 5 minutes and used a redirection to write out a file ie:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The wrapper script grabs output and sends it to the server. Having this wrapper script lets me run the
-python script independantly for testing or for curiousity.&lt;/p&gt;</description>
+python script independently for testing or for curiosity.&lt;/p&gt;</description>
     </item>
     
     <item>

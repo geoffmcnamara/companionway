@@ -6,7 +6,7 @@ draft = false
 image = "/img/python-logo.png"
 share = true
 title = "Quick N Dirty Python Debug Function"
-
+tags = ["python","debug"]
 +++
 
 
