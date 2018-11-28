@@ -226,10 +226,6 @@ ga('send', 'pageview');
 
 <p><img src='../../img/nodeinfo-screens.png' style="width: 90%"></p>
 
-<p><img src='./nodeinfo-screens.png' style="width: 90%"></p>
-
-<p><img src="../../img/nodeinfo-screens.png" alt="my image" /></p>
-
 <p><a name="reqs"></a></p>
 
 <h3 id="requirements">Requirements</h3>
@@ -247,13 +243,16 @@ ga('send', 'pageview');
 
 <h3 id="python-script-and-apache2-config-file">Python script and apache2 config file</h3>
 
+<p>Needed steps&hellip;</p>
+
 <ul>
-<li>sudo mkdir -p /usr/local/www/wsgi-scripts</li>
-<li>cp nodeinfo.py /usr/local/www/wsgi-scripts/</li>
-<li>cp wsgi.conf /etc/apache2/conf-available/</li>
-<li>sudo a2enconf wsgi</li>
+<li><code>sudo mkdir -p /usr/local/www/wsgi-scripts</code></li>
+<li><code>cp nodeinfo.py /usr/local/www/wsgi-scripts/</code></li>
+<li><code>cp wsgi.conf /etc/apache2/conf-available/</code></li>
+<li><code>sudo a2enconf wsgi</code></li>
+<li><code>sudo systemctl restart apache2</code></li>
 <li>browser to <a href="http://localhost/chkit/nodeinfo">http://localhost/chkit/nodeinfo</a>  # this is the WSGI Alias name used in wsgi.conf to invoke the script</li>
-<li>you can also browse to: &hellip;/chkit/nodeinfo/inxi or &hellip;/chkit/inxi/full</li>
+<li>you can also browse to: &hellip;/chkit/nodeinfo/inxi or &hellip;/chkit/inxifull</li>
 </ul>
 
 <p>I elected to use python bottle  micro web framework because it is small, fexible, launches a built-in web server, and self contained in one file. The syntax used by bottle is very easy to learn. The built-in web server allows quick testing of code. The apache WSGI module provides the ability to run python scripts within apache.</p>

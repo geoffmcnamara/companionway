@@ -31,11 +31,6 @@ This post is a brief description of replacing PHP code with python using WSGI (W
 ### Screens ###
   <img src='/img/nodeinfo-screens.png' style="width: 90%">
 
-  <img src='./nodeinfo-screens.png' style="width: 90%">
-
-  ![my image](/img/nodeinfo-screens.png)
-	
-
 
 <a name="reqs"></a>
 ### Requirements ###
@@ -51,12 +46,15 @@ This post is a brief description of replacing PHP code with python using WSGI (W
 
 ### Python script and apache2 config file ###
 
-- sudo mkdir -p /usr/local/www/wsgi-scripts
-- cp nodeinfo.py /usr/local/www/wsgi-scripts/
-- cp wsgi.conf /etc/apache2/conf-available/
-- sudo a2enconf wsgi
+Needed steps...
+
+- `sudo mkdir -p /usr/local/www/wsgi-scripts`
+- `cp nodeinfo.py /usr/local/www/wsgi-scripts/`
+- `cp wsgi.conf /etc/apache2/conf-available/`
+- `sudo a2enconf wsgi`
+- `sudo systemctl restart apache2`
 - browser to http://localhost/chkit/nodeinfo  # this is the WSGI Alias name used in wsgi.conf to invoke the script
-- you can also browse to: .../chkit/nodeinfo/inxi or .../chkit/inxi/full
+- you can also browse to: .../chkit/nodeinfo/inxi or .../chkit/inxifull
 
 
 I elected to use python bottle  micro web framework because it is small, fexible, launches a built-in web server, and self contained in one file. The syntax used by bottle is very easy to learn. The built-in web server allows quick testing of code. The apache WSGI module provides the ability to run python scripts within apache.
