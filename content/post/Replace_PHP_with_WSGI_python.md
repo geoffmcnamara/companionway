@@ -73,12 +73,12 @@ Here is the **nodeinfo.py** script:
 ```
 
 #!/usr/bin/env python2
+# vim: set nospell syntax=none :
 # ########################
 # nodeinfo.py 
 # bootle app for cli or wsgi
 # companionway.net 
 # 
-# vim: nospell
 ####
 # This script can be run from the commandline as is or through WSGI
 # ########################
