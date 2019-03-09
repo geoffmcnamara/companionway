@@ -41,7 +41,7 @@ blog source : https://github.com/vjeantet/vjeantet.fr
 **config.toml**
 
 ``` toml
-BaseUrl= "http://example.com/"
+BaseUrl= "http://myexample.com/"
 LanguageCode= "fr-FR"
 Title= "My blog is awesome"
 paginate = 5
@@ -88,7 +88,7 @@ Example author definition file:
 name: John Doe
 bio: The most uninteresting man in the world.
 location: Normal, IL
-website: http://example.com
+website: http://myexample.com
 thumbnail: images/john.png
 
 ```

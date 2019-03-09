@@ -126,8 +126,9 @@ I end up with a hodgepodge of debug lines commented out.&lt;/p&gt;</description>
       <pubDate>Fri, 03 Nov 2017 10:54:24 +0200</pubDate>
       
       <guid>https://www.companionway.net/articles/newspaper-hugo-subtheme/</guid>
-      <description>&lt;p&gt;First credit goes to Silke V at codepen.io name &amp;ldquo;silkine&amp;rdquo; [&lt;a href=&#34;http://www.silkevoigts.de/&#34;&gt;http://www.silkevoigts.de/&lt;/a&gt;].
-Original source code can be found here: &lt;a href=&#34;https://codepen.io/silkine/pen/jldif&#34;&gt;https://codepen.io/silkine/pen/jldif&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;First credit goes to Silke V at codepen.io name &amp;ldquo;silkine&amp;rdquo; [&lt;a href=&#34;http://www.silkevoigts.de/&#34;&gt;http://www.silkevoigts.de/&lt;/a&gt;].&lt;/p&gt;
+
+&lt;p&gt;Original source code can be found here: &lt;a href=&#34;https://codepen.io/silkine/pen/jldif&#34;&gt;https://codepen.io/silkine/pen/jldif&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/newspaper-hugo-subtheme.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
@@ -702,7 +703,7 @@ for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.&
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.companionway.net/page/projects/</guid>
-      <description>gomenu - [link to gomenu]  This is a bash shell script that builds and allows editing of menus on the commandline newspaper-hugo-subtheme - [link to newspaper-hugo-subtheme]  This project allows you to add a newspaper look and feel theme to an existing hugo website. myfiles: [discontinued] this is an older php project which allows html control of direcotries for file upload or download - not available publically myphile: [discontinued] this is an old php project that I wrote years ago to manage mysql flat file databases - I use adminer now  More to share &amp;hellip;</description>
+      <description>gomenu - [link to gomenu]  This is a bash shell script that builds and allows editing of menus on the command-line newspaper-hugo-subtheme - [link to newspaper-hugo-subtheme]  This project allows you to add a newspaper look and feel theme to an existing hugo website. myfiles: [discontinued] this is an older php project which allows html control of directories for file upload or download - not available publicly pyfiles: [link to pyfiles])https://github.</description>
     </item>
     
     <item>

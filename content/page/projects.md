@@ -6,11 +6,15 @@ menu: "main"
 ---
 
 
-* gomenu - [ [link to gomenu] ](https://github.com:geoffmcnamara/gomenu.git) This is a bash shell script that builds and allows editing of menus on the commandline
-* newspaper-hugo-subtheme - [ [link to newspaper-hugo-subtheme] ](https://github.com/geoffmcnamara/newspaper-hugo-subtheme) This project allows you 
+* gomenu - [ [link to gomenu] ](https://github.com:geoffmcnamara/gomenu.git) This is a bash shell script that builds and allows editing of menus on the command-line
+* newspaper-hugo-subtheme - [ [link to newspaper-hugo-subtheme] ](https://github.com/geoffmcnamara/newspaper-hugo-subthem`e) This project allows you 
   to add a newspaper look and feel theme to an existing hugo website.
-* myfiles: [discontinued] this is an older php project which allows html control of direcotries for file upload or download - not available publically
-* myphile: [discontinued] this is an old php project that I wrote years ago to manage mysql flat file databases - I use [adminer](https://www.adminer.org/) now
+* myfiles: [discontinued] this is an older php project which allows html control of directories for file upload or download - not available publicly
+* pyfiles: [link to pyfiles])https://github.com/geoffmcnamara/pyfiles.git) this is a python project which allows html control of directories for file upload or download - not available publicly
+* myphile: [discontinued - this was a PHP project that I replaced with myphyle which is python based] this is an old php project that I wrote years ago to manage mysql flat file databases - I use [adminer](https://www.adminer.org/) now
+* myphyle: [ [link to myphyle] ](https://github.com/geoffmcnamara/myphyle.git) This project allows you to browse/edit/add/delete to sqlite database tables - replaces older "myphile" project.
+* quizit: [ [link to quizit] ](https://github.com/geoffmcnamara/quizit.git) Quick-n-dirty python app to present a text based quiz to a user using easy to write text data files for questions and answers.
+
 
 More to share ... 
 
