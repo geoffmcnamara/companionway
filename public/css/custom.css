@@ -37,6 +37,11 @@ blockquote p:last-of-type {
   background-color: #888888;
 }
 
+.pad_lr {
+	padding-left: 30px;
+	padding-right: 30px
+}
+
 .content a {
   // display: inline-block;
   background-color: #fafafa;
