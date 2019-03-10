@@ -50,5 +50,18 @@ menu: "main"
 
 * [learn python fundamentals](https://linuxconfig.org/learn-python-fundamentals)
 * [canonical ubuntu tutorials](https://tutorials.ubuntu.com)
+* [realpython great-tutorials and tips](https://realpython.com)
+
+--------------
+
+## financial  ##
+
+* [barchart](https://www.barchart.com/)
+* [iextrading signup and use their api to pull down stock info](https://iextrading.com)
+	I have a python script that I use almost every day to pull data for analyzing stock data
+* [investing](https://www.investing.com/)
+* [seekingalpha](https://seekingalpha.com/)
+* [finviz](https://finviz.com/)
 
 
+<!-- vim: set syntax=none nospell: -->
