@@ -1,6 +1,10 @@
 # companionway
 master branch
 public = website www.companionway.net
+
+Use something like this to make images usable:
+convert static/img/fab_discover_sar.jpg -resize 750x375 static/img/fab_discover_sar-resized.jpg
+
 Enjoy!
 
 ------- README.md -------
