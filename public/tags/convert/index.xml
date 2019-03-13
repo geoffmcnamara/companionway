@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Convert on companionway</title>
-    <link>http://rasp5/companionway.net/tags/convert/</link>
+    <link>http://rasp2/companionway.net/tags/convert/</link>
     <description>Recent content in Convert on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Tue, 06 Dec 2016 11:58:20 -0500</lastBuildDate>
     
-	<atom:link href="http://rasp5/companionway.net/tags/convert/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rasp2/companionway.net/tags/convert/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Converting Images</title>
-      <link>http://rasp5/companionway.net/post/converting-images/</link>
+      <link>http://rasp2/companionway.net/post/converting-images/</link>
       <pubDate>Tue, 06 Dec 2016 11:58:20 -0500</pubDate>
       
-      <guid>http://rasp5/companionway.net/post/converting-images/</guid>
+      <guid>http://rasp2/companionway.net/post/converting-images/</guid>
       <description>I have fought with trying to remember the syntax for Imagemagik&amp;rsquo;s convert command for years. I finaly caved in [from my normal position of &amp;ldquo;if you can&amp;rsquo;t do it from the commandline, then you are a wimp&amp;rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &amp;ldquo;converseen&amp;rdquo;.</description>
     </item>
     
