@@ -29,6 +29,8 @@ Here is how I created my virtual environment. I have used almost all of python's
 And there has been a steady progression of improvements in those tools. My current goto for a python virtual environment is pipenv.
 It is simple, clean, and almost fool proof which is essential for me. 
 
+<!--more-->
+
 I don't remember exactly but I think I initially installed pipenv using apt. For my fabric use I created my fabric development project
 directory with `mkdir -p ~/dev/python/fabric`. Here are the easy steps to establish your virtual environment:
 ```
@@ -103,4 +105,3 @@ print(f"My name is {name:>30}. You can print python directly like this {3 + 4} f
 So it was a must for me to have fabric work in python3. Because fabric is an indispensable tool in my life I need to make sure it is safe
 from outside changes. That requires placing it in a virtual environment, isolated away from version and module changes made elsewhere.
 
-<!--more-->

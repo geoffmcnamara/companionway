@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Php on companionway</title>
-    <link>http://rasp2/companionway.net/tags/php/</link>
+    <link>https://www.companionway.net/tags/php/</link>
     <description>Recent content in Php on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Tue, 20 Nov 2018 10:54:24 +0200</lastBuildDate>
     
-	<atom:link href="http://rasp2/companionway.net/tags/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.companionway.net/tags/php/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Replace PHP with WSGI python</title>
-      <link>http://rasp2/companionway.net/post/replace_php_with_wsgi_python/</link>
+      <link>https://www.companionway.net/post/replace_php_with_wsgi_python/</link>
       <pubDate>Tue, 20 Nov 2018 10:54:24 +0200</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/replace_php_with_wsgi_python/</guid>
+      <guid>https://www.companionway.net/post/replace_php_with_wsgi_python/</guid>
       <description>&lt;p&gt;This post is a brief description of replacing PHP code with python using WSGI (Web Server Gateway Interface). The journey here comes from how I monitor my servers (mostly raspberry pi&amp;rsquo;s). I used a PHP script on all my servers that delivered the hostname and basic server information and I use &lt;a href=&#34;http://xymon.sourceforge.net/&#34;&gt;xymon monitoring&lt;/a&gt; to poll that PHP script on all the servers and test to see if the hostname is contained in the returned page. My focus lately has been on python and my interest in PHP has waned. The goal was to replace my PHP script with a python script. The end result provides a simple means of delivering dynamic web pages. I will be using &lt;a href=&#34;http://bottlepy.org&#34;&gt;bottlepy&lt;/a&gt; as the wsgi web-framework. My development was done on an ubuntu 18.10 (&amp;ldquo;cosmic&amp;rdquo; release).&lt;/p&gt;</description>
     </item>
     

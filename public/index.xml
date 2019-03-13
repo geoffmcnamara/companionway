@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>companionway</title>
-    <link>http://rasp2/companionway.net/</link>
+    <link>https://www.companionway.net/</link>
     <description>Recent content on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Wed, 30 Nov 2016 12:58:32 -0500</lastBuildDate>
     
-	<atom:link href="http://rasp2/companionway.net/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.companionway.net/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title></title>
-      <link>http://rasp2/companionway.net/hmpg-blocks/gads/</link>
+      <link>https://www.companionway.net/hmpg-blocks/gads/</link>
       <pubDate>Wed, 30 Nov 2016 12:58:32 -0500</pubDate>
       
-      <guid>http://rasp2/companionway.net/hmpg-blocks/gads/</guid>
+      <guid>https://www.companionway.net/hmpg-blocks/gads/</guid>
       <description>(adsbygoogle = window.adsbygoogle || []).push({});</description>
     </item>
     
     <item>
       <title>Quick_Note_about_fabric_and_pipenv</title>
-      <link>http://rasp2/companionway.net/post/quick_note_about_fabric_and_pipenv/</link>
+      <link>https://www.companionway.net/post/quick_note_about_fabric_and_pipenv/</link>
       <pubDate>Wed, 13 Mar 2019 10:56:05 -0400</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/quick_note_about_fabric_and_pipenv/</guid>
+      <guid>https://www.companionway.net/post/quick_note_about_fabric_and_pipenv/</guid>
       <description>&lt;p&gt;I have posted several articles about python fabric and yet I failed to warn you about the dangers of
 version chaos.&lt;/p&gt;
 
@@ -41,91 +41,15 @@ Paramiko 2.4.2
 
 &lt;p&gt;Here is how I created my virtual environment. I have used almost all of python&amp;rsquo;s virtual environment tools (and there a quite a few).
 And there has been a steady progression of improvements in those tools. My current goto for a python virtual environment is pipenv.
-It is simple, clean, and almost fool proof which is essential for me.&lt;/p&gt;
-
-&lt;p&gt;I don&amp;rsquo;t remember exactly but I think I initially installed pipenv using apt. For my fabric use I created my fabric development project
-directory with &lt;code&gt;mkdir -p ~/dev/python/fabric&lt;/code&gt;. Here are the easy steps to establish your virtual environment:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd ~/dev/python/fabric
-pipenv --three install # do this once. It establishes everything needed for the virtual environment. The --three option makes it python3
-pipenv shell
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now you should be in your virtual environment using python3. When you are in the pipenv shell there is an addition to your prompt to let you
-know. ie: [fabric3]&lt;/p&gt;
-
-&lt;p&gt;Make sure you have pip installed for python3 and use it while your are in the pipenv shell to install fabric&amp;hellip;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pip install fabric3
- # or
-pip3 install fabric3  # pip3 is not necessary as pipenv shell is already using pip3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The virtual (pipenv) environment is using python3 (not the default on ubuntu 2019-03-13) here is your proof:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;python --version
-Python 3.7.2rc1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;From within my pipenv shell for my fabric project these are the modules that pip list shows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pip list
-Package      Version   
------------- ----------
-asn1crypto   0.24.0    
-bcrypt       3.1.6     
-cffi         1.11.5    
-colorama     0.4.1     
-cryptography 2.4.2     
-docopt       0.6.2     
-Fabric3      1.14.post1
-idna         2.8       
-paramiko     2.4.2     
-pip          18.1      
-pyasn1       0.4.5     
-pycparser    2.19      
-PyNaCl       1.3.0     
-setuptools   40.6.3    
-six          1.12.0    
-wheel        0.32.3    
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Notice fabric is listed as Fabric3&lt;/p&gt;
-
-&lt;p&gt;To make things really easy for me to get going on a fabric task I have an alias set up in my ~.bashrc that looks like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;alias pyfab=&amp;quot;cd ~/dev/python/pipenv/fabric3; pipenv shell&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;All that is needed is to type &amp;ldquo;pyfab&amp;rdquo; and I am in the pipenv shell in the fabric directory and all is good in the world.&lt;/p&gt;
-
-&lt;p&gt;Then main file in this directory is my fabfile.py which is the default fabric task declaration file.
-To launch fabric of course you just type &lt;code&gt;fab -l&lt;/code&gt; while in the pipenv shell. This command will list all the tasks you have written in
-your fabfile.py If you don&amp;rsquo;t have a fabfile.py set up yet you will get this error:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;fab -l
-Fatal error: Couldn&#39;t find any fabfiles!
-Remember that -f can be used to specify fabfile path, and use -h for help.
-Aborting.
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I code everything I can in python3 vs python2 because python3 is so much better. I made it my default platform when f-strings
-became available in python3.6? This allows something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;name = &amp;quot;geoff&amp;quot;
-print(f&amp;quot;My name is {name:&amp;gt;30}. You can print python directly like this {3 + 4} from within function {__name__}&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So it was a must for me to have fabric work in python3. Because fabric is an indispensable tool in my life I need to make sure it is safe
-from outside changes. That requires placing it in a virtual environment, isolated away from version and module changes made elsewhere.&lt;/p&gt;</description>
+It is simple, clean, and almost fool proof which is essential for me.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Python fabric - Dynamically Discover Hosts</title>
-      <link>http://rasp2/companionway.net/post/using_fabric_to_dynamically_discover_hosts/</link>
+      <link>https://www.companionway.net/post/using_fabric_to_dynamically_discover_hosts/</link>
       <pubDate>Tue, 12 Mar 2019 09:18:43 -0400</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/using_fabric_to_dynamically_discover_hosts/</guid>
+      <guid>https://www.companionway.net/post/using_fabric_to_dynamically_discover_hosts/</guid>
       <description>&lt;p&gt;Python fabric is a library tool for executing ssh commands remotely and responding as you desire.
 I use python fabric for promoting code and web content. Essentially it is my devops tool to satisfy the
 single most important devops rule: never log into a server! I use this over ansible or some of the other
@@ -139,19 +63,19 @@ Using the option &amp;ndash;skip_bad_hosts with fabric is one way to do this but
     
     <item>
       <title>Replace PHP with WSGI python</title>
-      <link>http://rasp2/companionway.net/post/replace_php_with_wsgi_python/</link>
+      <link>https://www.companionway.net/post/replace_php_with_wsgi_python/</link>
       <pubDate>Tue, 20 Nov 2018 10:54:24 +0200</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/replace_php_with_wsgi_python/</guid>
+      <guid>https://www.companionway.net/post/replace_php_with_wsgi_python/</guid>
       <description>&lt;p&gt;This post is a brief description of replacing PHP code with python using WSGI (Web Server Gateway Interface). The journey here comes from how I monitor my servers (mostly raspberry pi&amp;rsquo;s). I used a PHP script on all my servers that delivered the hostname and basic server information and I use &lt;a href=&#34;http://xymon.sourceforge.net/&#34;&gt;xymon monitoring&lt;/a&gt; to poll that PHP script on all the servers and test to see if the hostname is contained in the returned page. My focus lately has been on python and my interest in PHP has waned. The goal was to replace my PHP script with a python script. The end result provides a simple means of delivering dynamic web pages. I will be using &lt;a href=&#34;http://bottlepy.org&#34;&gt;bottlepy&lt;/a&gt; as the wsgi web-framework. My development was done on an ubuntu 18.10 (&amp;ldquo;cosmic&amp;rdquo; release).&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Using a generic git pre-commit hook</title>
-      <link>http://rasp2/companionway.net/post/git_pre-commit/</link>
+      <link>https://www.companionway.net/post/git_pre-commit/</link>
       <pubDate>Sun, 07 Oct 2018 10:05:52 -0400</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/git_pre-commit/</guid>
+      <guid>https://www.companionway.net/post/git_pre-commit/</guid>
       <description>&lt;h4 id=&#34;test-it-commit-it-reject-it&#34;&gt;test_it &amp;amp;&amp;amp; commit_it || reject_it&lt;/h4&gt;
 
 &lt;p&gt;Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
@@ -161,10 +85,10 @@ of &amp;ldquo;hooks&amp;rdquo;. If you look in any of your git project directori
     
     <item>
       <title>Vim ALE</title>
-      <link>http://rasp2/companionway.net/post/vim_ale/</link>
+      <link>https://www.companionway.net/post/vim_ale/</link>
       <pubDate>Wed, 08 Aug 2018 09:30:10 -0400</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/vim_ale/</guid>
+      <guid>https://www.companionway.net/post/vim_ale/</guid>
       <description>&lt;p&gt;VIM is a standard for me. My UNIX career hung on my &amp;ldquo;vi&amp;rdquo; savvy which I learned appreciate from mentors who
 encouraged me to learn the tips and tricks of using vi. My learning curve with vi/vim has never leveled
 off, but rather, always gives me new features and tricks that energize me again. The latest vim &amp;ldquo;trick&amp;rdquo;
@@ -173,10 +97,10 @@ is ALE (Asynchronous Lint Engine).&lt;/p&gt;</description>
     
     <item>
       <title>Vim Scriptable Templates</title>
-      <link>http://rasp2/companionway.net/post/vim_scriptable_templates/</link>
+      <link>https://www.companionway.net/post/vim_scriptable_templates/</link>
       <pubDate>Sun, 15 Jul 2018 14:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/vim_scriptable_templates/</guid>
+      <guid>https://www.companionway.net/post/vim_scriptable_templates/</guid>
       <description>&lt;h3 id=&#34;dynamic-vim-templates&#34;&gt;Dynamic vim Templates&lt;/h3&gt;
 
 &lt;p&gt;Vim (or vi in the anceint past) has been my partner in getting things done. Like an rich tool it
@@ -208,10 +132,10 @@ but the bottom line is that I needed a way to script it for to avoid mistakes.&l
     
     <item>
       <title>Hugo and Fabric</title>
-      <link>http://rasp2/companionway.net/post/hugo_and_fabric/</link>
+      <link>https://www.companionway.net/post/hugo_and_fabric/</link>
       <pubDate>Sat, 14 Jul 2018 15:33:19 -0500</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/hugo_and_fabric/</guid>
+      <guid>https://www.companionway.net/post/hugo_and_fabric/</guid>
       <description>&lt;p&gt;Python Fabric is a denatured version of ansible and, if you enjoy python, fabric makes a small scale devops strategy a whole lot less painful.
 Combined with hugo static website generator, fabic makes testing and promoting a website a whole lot easier.&lt;/p&gt;
 
@@ -222,10 +146,10 @@ code it goes through this workflow process:&lt;/p&gt;</description>
     
     <item>
       <title>Fabric_vs_ansible</title>
-      <link>http://rasp2/companionway.net/post/fabric_vs_ansible/</link>
+      <link>https://www.companionway.net/post/fabric_vs_ansible/</link>
       <pubDate>Tue, 10 Jul 2018 09:30:14 -0400</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/fabric_vs_ansible/</guid>
+      <guid>https://www.companionway.net/post/fabric_vs_ansible/</guid>
       <description>&lt;h2 id=&#34;fabric-vs-ansible&#34;&gt;Fabric vs Ansible&lt;/h2&gt;
 
 &lt;p&gt;I have wrestled with ansible for too long. It is an awesome tool but you need to learn the syntax of three
@@ -238,15 +162,15 @@ I end up with a hodgepodge of debug lines commented out.&lt;/p&gt;</description>
     
     <item>
       <title>How this theme evolved</title>
-      <link>http://rasp2/companionway.net/articles/newspaper-hugo-subtheme/</link>
+      <link>https://www.companionway.net/articles/newspaper-hugo-subtheme/</link>
       <pubDate>Fri, 03 Nov 2017 10:54:24 +0200</pubDate>
       
-      <guid>http://rasp2/companionway.net/articles/newspaper-hugo-subtheme/</guid>
+      <guid>https://www.companionway.net/articles/newspaper-hugo-subtheme/</guid>
       <description>&lt;p&gt;First credit goes to Silke V at codepen.io name &amp;ldquo;silkine&amp;rdquo; [&lt;a href=&#34;http://www.silkevoigts.de/&#34;&gt;http://www.silkevoigts.de/&lt;/a&gt;].&lt;/p&gt;
 
 &lt;p&gt;Original source code can be found here: &lt;a href=&#34;https://codepen.io/silkine/pen/jldif&#34;&gt;https://codepen.io/silkine/pen/jldif&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://rasp2/companionway.net/img/newspaper-hugo-subtheme.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/newspaper-hugo-subtheme.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;I had a coworker who had a non-profit business blog that wanted to offer a newsletter to her clients.
 So I got interested in finding an HTML format that gave an old traditional newspaper style.
@@ -268,10 +192,10 @@ pulled from ./archtypes/articles.md.&lt;/p&gt;
     
     <item>
       <title>How this theme evolved</title>
-      <link>http://rasp2/companionway.net/post/newspaper-hugo-subtheme/</link>
+      <link>https://www.companionway.net/post/newspaper-hugo-subtheme/</link>
       <pubDate>Fri, 03 Nov 2017 10:54:24 +0200</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/newspaper-hugo-subtheme/</guid>
+      <guid>https://www.companionway.net/post/newspaper-hugo-subtheme/</guid>
       <description>&lt;h3 id=&#34;announcing-a-new-project-newspaper-hugo-subtheme&#34;&gt;Announcing a new project: newspaper-hugo-subtheme&lt;/h3&gt;
 
 &lt;p&gt;First credit goes to Silke V at codepen.io name &amp;ldquo;silkine&amp;rdquo; [&lt;a href=&#34;http://www.silkevoigts.de/&#34;&gt;http://www.silkevoigts.de/&lt;/a&gt;].
@@ -284,7 +208,7 @@ the hugo cms system to be the easiest most portable static web building applicat
 The challenge was to create a full newsletter style theme as a subtheme within an existing theme
 structure. So I mocked up a ported version of Silke&amp;rsquo;s newspaper css into a hugo &amp;ldquo;section&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;An example of this subtheme can be seen here: &lt;a href=&#34;http://rasp2/companionway.net/articles&#34;&gt;[newspaper-hugo-subtheme]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;An example of this subtheme can be seen here: &lt;a href=&#34;https://www.companionway.net/articles&#34;&gt;[newspaper-hugo-subtheme]&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This project is a drop in offering to any existing hugo themed structure which will produce
 a newsletter format in an &amp;ldquo;article(s)&amp;rdquo; hugo section. A user only needs to change the title, city,
@@ -299,67 +223,67 @@ pulled from ./archtypes/articles.md.&lt;/p&gt;
     
     <item>
       <title>Lorem Ipsum</title>
-      <link>http://rasp2/companionway.net/articles/article1/</link>
+      <link>https://www.companionway.net/articles/article1/</link>
       <pubDate>Fri, 27 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/articles/article1/</guid>
+      <guid>https://www.companionway.net/articles/article1/</guid>
       <description>Lorem Ipsum &amp;ldquo;Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit&amp;hellip;&amp;rdquo; &amp;ldquo;There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain&amp;hellip;&amp;rdquo;
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus tortor nec urna dapibus, ac sagittis mauris varius. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam pretium sit amet nulla at consectetur.</description>
     </item>
     
     <item>
       <title>Persiciatis unde omnis</title>
-      <link>http://rasp2/companionway.net/articles/article2/</link>
+      <link>https://www.companionway.net/articles/article2/</link>
       <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/articles/article2/</guid>
+      <guid>https://www.companionway.net/articles/article2/</guid>
       <description>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</description>
     </item>
     
     <item>
       <title>More fun with Latin</title>
-      <link>http://rasp2/companionway.net/articles/article3/</link>
+      <link>https://www.companionway.net/articles/article3/</link>
       <pubDate>Wed, 25 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/articles/article3/</guid>
+      <guid>https://www.companionway.net/articles/article3/</guid>
       <description>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</description>
     </item>
     
     <item>
       <title>Extremes of Good and Evil</title>
-      <link>http://rasp2/companionway.net/articles/article4/</link>
+      <link>https://www.companionway.net/articles/article4/</link>
       <pubDate>Tue, 24 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/articles/article4/</guid>
+      <guid>https://www.companionway.net/articles/article4/</guid>
       <description>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &amp;ldquo;de Finibus Bonorum et Malorum&amp;rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &amp;ldquo;Lorem ipsum dolor sit amet..&amp;rdquo;, comes from a line in section 1.10.32.
 &amp;ldquo;Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit&amp;hellip;&amp;rdquo;</description>
     </item>
     
     <item>
       <title>Translation is unnecessary</title>
-      <link>http://rasp2/companionway.net/articles/article5/</link>
+      <link>https://www.companionway.net/articles/article5/</link>
       <pubDate>Mon, 23 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/articles/article5/</guid>
+      <guid>https://www.companionway.net/articles/article5/</guid>
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus tortor nec urna dapibus, ac sagittis mauris varius. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam pretium sit amet nulla at consectetur. Curabitur vestibulum non odio dignissim posuere. Aliquam at maximus augue, at posuere mi. Quisque rhoncus ultricies pulvinar. Suspendisse viverra arcu lacus, ut ornare elit pharetra sit amet.
 Suspendisse a enim sit amet massa efficitur malesuada.</description>
     </item>
     
     <item>
       <title>Laudantium</title>
-      <link>http://rasp2/companionway.net/articles/article6/</link>
+      <link>https://www.companionway.net/articles/article6/</link>
       <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/articles/article6/</guid>
+      <guid>https://www.companionway.net/articles/article6/</guid>
       <description>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</description>
     </item>
     
     <item>
       <title>MagicMirro2 and fauxmo</title>
-      <link>http://rasp2/companionway.net/post/post-title/</link>
+      <link>https://www.companionway.net/post/post-title/</link>
       <pubDate>Wed, 11 Jan 2017 14:27:35 -0500</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/post-title/</guid>
+      <guid>https://www.companionway.net/post/post-title/</guid>
       <description>&lt;h3 id=&#34;warning-what-follows-is-a-cascade-of-issues-and-lessons-learned-but-just-plain-fun&#34;&gt;Warning: what follows is a cascade of issues and lessons learned&amp;hellip; but just plain fun!&lt;/h3&gt;
 
 &lt;h2 id=&#34;the-goal&#34;&gt;The goal&lt;/h2&gt;
@@ -370,10 +294,10 @@ Suspendisse a enim sit amet massa efficitur malesuada.</description>
 
 &lt;p&gt;There is a LOT of information here and lots of steps but it is worth it and you will definately learn lots of useful tricks. I am sure there are many improvements that could be made.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://rasp2/companionway.net/img/k-pi1.jpg#floatright&#34; alt=&#34;Kitchen Pi Image:1&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg#floatright&#34; alt=&#34;Kitchen Pi Image:1&#34; /&gt;
 &lt;!--
 &lt;figure&gt;
-    &lt;img src=&#34;http://rasp2/companionway.net/img/k-pi1.jpg&#34;
+    &lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg&#34;
          alt=&#34;KitchenPi&#34; width=&#34;60%&#34;/&gt; &lt;figcaption&gt;
             &lt;h4&gt;KitchenPi Image:1&lt;/h4&gt;&lt;p&gt;KitchenPi&lt;/p&gt;
         &lt;/figcaption&gt;
@@ -401,10 +325,10 @@ Suspendisse a enim sit amet massa efficitur malesuada.</description>
     
     <item>
       <title>Sorting IPs</title>
-      <link>http://rasp2/companionway.net/post/sorting_ips/</link>
+      <link>https://www.companionway.net/post/sorting_ips/</link>
       <pubDate>Sun, 01 Jan 2017 15:53:14 -0500</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/sorting_ips/</guid>
+      <guid>https://www.companionway.net/post/sorting_ips/</guid>
       <description>&lt;p&gt;I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
 laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
 parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
@@ -413,20 +337,20 @@ in most repositories). So output might look like this:&lt;/p&gt;</description>
     
     <item>
       <title>Quick N Dirty Python Debug Function</title>
-      <link>http://rasp2/companionway.net/post/quick-n-dirty-python-debug-function/</link>
+      <link>https://www.companionway.net/post/quick-n-dirty-python-debug-function/</link>
       <pubDate>Thu, 22 Dec 2016 14:08:05 -0500</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/quick-n-dirty-python-debug-function/</guid>
+      <guid>https://www.companionway.net/post/quick-n-dirty-python-debug-function/</guid>
       <description>&lt;p&gt;Pdb is a great debugger for python but I like to use my own simple debug functions.
 Here is a simple debug function for python which could definitely be improved:&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Raspberry Pi and Xrdp</title>
-      <link>http://rasp2/companionway.net/post/raspberry-pi-and-xrdp/</link>
+      <link>https://www.companionway.net/post/raspberry-pi-and-xrdp/</link>
       <pubDate>Fri, 16 Dec 2016 12:27:36 -0500</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/raspberry-pi-and-xrdp/</guid>
+      <guid>https://www.companionway.net/post/raspberry-pi-and-xrdp/</guid>
       <description>&lt;p&gt;I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
 any linux machine) can be done so many different ways - but the easiest from my perspective is xrdp. It is available
 really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
@@ -437,10 +361,10 @@ almost any linux distro.&lt;/p&gt;</description>
     
     <item>
       <title>Sometimes It Is The Obvious</title>
-      <link>http://rasp2/companionway.net/post/sometimes-it-is-the-obvious/</link>
+      <link>https://www.companionway.net/post/sometimes-it-is-the-obvious/</link>
       <pubDate>Thu, 15 Dec 2016 16:36:42 -0500</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/sometimes-it-is-the-obvious/</guid>
+      <guid>https://www.companionway.net/post/sometimes-it-is-the-obvious/</guid>
       <description>&lt;p&gt;This was one of those &amp;ldquo;problems&amp;rdquo; that nagged me for many hours until the obvious dawned on me.
 I wrote a python script to grab the temperature and humidity from a DHT22 sensor and then write the
 output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
@@ -455,10 +379,10 @@ python script independently for testing or for curiosity.&lt;/p&gt;</description
     
     <item>
       <title>Always Use Visudo</title>
-      <link>http://rasp2/companionway.net/post/always-use-visudo/</link>
+      <link>https://www.companionway.net/post/always-use-visudo/</link>
       <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/always-use-visudo/</guid>
+      <guid>https://www.companionway.net/post/always-use-visudo/</guid>
       <description>&lt;h2 id=&#34;familiarity-breeds-contempt&#34;&gt;&amp;ldquo;familiarity breeds contempt&amp;rdquo;&lt;/h2&gt;
 
 &lt;p&gt;I get very comfortable with using the vim editor (take cover&amp;hellip; flame way ensuing) so
@@ -483,10 +407,10 @@ back to the monitor server.&lt;/p&gt;
     
     <item>
       <title>Recursively Replace Text</title>
-      <link>http://rasp2/companionway.net/post/recursive-replace-text/</link>
+      <link>https://www.companionway.net/post/recursive-replace-text/</link>
       <pubDate>Sat, 10 Dec 2016 20:38:12 -0500</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/recursive-replace-text/</guid>
+      <guid>https://www.companionway.net/post/recursive-replace-text/</guid>
       <description>&lt;p&gt;Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If I had to look it up, you have to suffer seeing it in my blog post&amp;hellip; [smile]&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;find ./ -name \*.md -print0 | xargs -0 sed -i &#39;s/header-img/img/&#39;
@@ -497,12 +421,12 @@ back to the monitor server.&lt;/p&gt;
     
     <item>
       <title>Switched to Hugo</title>
-      <link>http://rasp2/companionway.net/post/switched-to-hugo/</link>
+      <link>https://www.companionway.net/post/switched-to-hugo/</link>
       <pubDate>Fri, 09 Dec 2016 10:57:45 -0500</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/switched-to-hugo/</guid>
+      <guid>https://www.companionway.net/post/switched-to-hugo/</guid>
       <description>&lt;p&gt;I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
-&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;http://rasp2/companionway.net/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;https://www.companionway.net/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Here is why:&lt;/p&gt;
 
@@ -531,19 +455,19 @@ or &amp;hellip; just git push it to hithub and use something like netlify.com to
     
     <item>
       <title>Converting Images</title>
-      <link>http://rasp2/companionway.net/post/converting-images/</link>
+      <link>https://www.companionway.net/post/converting-images/</link>
       <pubDate>Tue, 06 Dec 2016 11:58:20 -0500</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/converting-images/</guid>
+      <guid>https://www.companionway.net/post/converting-images/</guid>
       <description>I have fought with trying to remember the syntax for Imagemagik&amp;rsquo;s convert command for years. I finaly caved in [from my normal position of &amp;ldquo;if you can&amp;rsquo;t do it from the commandline, then you are a wimp&amp;rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &amp;ldquo;converseen&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>shell/bash uppercase arguments</title>
-      <link>http://rasp2/companionway.net/post/2015-05-11-post1/</link>
+      <link>https://www.companionway.net/post/2015-05-11-post1/</link>
       <pubDate>Mon, 11 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-05-11-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-05-11-post1/</guid>
       <description>To make a long story short&amp;hellip;
 #!/bin/bash PATTERN=$(echo $1 | tr [:lower:] [:upper:]) # or PATTERN=$(echo $1 | tr [a-z] [A-Z]) # or PATTERN=$(echo $1 | awk &#39;{print toupper($0)}&#39;) echo &amp;quot;Your \$1 argument is now uppercase: $1&amp;quot;  To make a short story long&amp;hellip;
 Just to let you know a little more about me and reveal a few more shells tricks along the way.
@@ -552,20 +476,20 @@ Just to let you know a little more about me and reveal a few more shells tricks 
     
     <item>
       <title>The GrovePi kit</title>
-      <link>http://rasp2/companionway.net/post/grovepi/</link>
+      <link>https://www.companionway.net/post/grovepi/</link>
       <pubDate>Sat, 09 May 2015 10:54:24 +0200</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/grovepi/</guid>
+      <guid>https://www.companionway.net/post/grovepi/</guid>
       <description>Check out GrovePi These kits make working with the Raspberry Pi GPIO pins so simple and clean. I just ordered one of these kits and I will try to write up a review after I work it over.
 If you are interested in building a quick and easy raspberry pi for experimenting with the &amp;ldquo;Internet of Things&amp;rdquo; (aka IoT) platform - this board and kit looks like it will get you there in minutes.</description>
     </item>
     
     <item>
       <title>How to print the remainder of a line using awk</title>
-      <link>http://rasp2/companionway.net/post/2015-05-02-post1/</link>
+      <link>https://www.companionway.net/post/2015-05-02-post1/</link>
       <pubDate>Sat, 02 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-05-02-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-05-02-post1/</guid>
       <description>&lt;p&gt;#How to print remainder of line using awk&lt;/p&gt;
 
 &lt;h2 id=&#34;eliminate-the-first-x-columns&#34;&gt;eliminate the first X columns&amp;hellip;&lt;/h2&gt;
@@ -593,10 +517,10 @@ first entry with its arguments as a test run:&lt;/p&gt;
     
     <item>
       <title>Creating that special character in vim</title>
-      <link>http://rasp2/companionway.net/post/2015-04-30-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-30-post1/</link>
       <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-30-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-30-post1/</guid>
       <description>&lt;h1 id=&#34;entering-special-characters-into-vim&#34;&gt;Entering special characters into vim&lt;/h1&gt;
 
 &lt;p&gt;I use vim as my editor. Despite this first sentence, this is not a
@@ -618,10 +542,10 @@ characters.&lt;/p&gt;</description>
     
     <item>
       <title>git inside, git better, git stronger</title>
-      <link>http://rasp2/companionway.net/post/2015-04-28-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-28-post1/</link>
       <pubDate>Tue, 28 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-28-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-28-post1/</guid>
       <description>&lt;h2 id=&#34;exploring-git-from-the-inside-out&#34;&gt;&amp;hellip; exploring git from the inside out &amp;hellip;&lt;/h2&gt;
 
 &lt;p&gt;###Preface&lt;/p&gt;
@@ -645,10 +569,10 @@ All worked well until it didn&amp;rsquo;t. If you make a mistake and back it up 
     
     <item>
       <title>Centering a string</title>
-      <link>http://rasp2/companionway.net/post/2015-04-02-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-02-post1/</link>
       <pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-02-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-02-post1/</guid>
       <description>&lt;h1 id=&#34;center-a-string-using-awk&#34;&gt;Center a string using awk&lt;/h1&gt;
 
 &lt;h2 id=&#34;awk-everyone-s-favorite-right&#34;&gt;awk = everyone&amp;rsquo;s favorite - right?&lt;/h2&gt;
@@ -670,20 +594,20 @@ features of awk.&lt;/p&gt;</description>
     
     <item>
       <title>About</title>
-      <link>http://rasp2/companionway.net/page/about/</link>
+      <link>https://www.companionway.net/page/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/page/about/</guid>
+      <guid>https://www.companionway.net/page/about/</guid>
       <description>I am a native of Northern Virginia, grew up there, and worked most of my life there. I had all advantages that come with the area including a good school system and a relatively resilient economy.
 After attending George Mason University and facing a recession, I maneuvred my way into the Fairfax County Fire Department. I had a wonderful 25 year career with the Fire Service and built strong friendships with many good people.</description>
     </item>
     
     <item>
       <title>Adding fade in and down javascript</title>
-      <link>http://rasp2/companionway.net/post/2015-04-05-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-05-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-05-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-05-post1/</guid>
       <description>&lt;h1 id=&#34;javascript-fade-in-and-down&#34;&gt;Javascript fade in and down&lt;/h1&gt;
 
 &lt;p&gt;I wanted to change the header on the theme for my web site
@@ -712,10 +636,10 @@ network is failing then my web site probably is too.&lt;/p&gt;</description>
     
     <item>
       <title>Ansible - modifying sudoers</title>
-      <link>http://rasp2/companionway.net/post/2015-04-17-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-17-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-17-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-17-post1/</guid>
       <description>&lt;h1 id=&#34;ansible-modifying-etc-sudoers&#34;&gt;Ansible - modifying /etc/sudoers&lt;/h1&gt;
 
 &lt;p&gt;I have locked administrators out of using sudo with a simple typo.&lt;/p&gt;
@@ -744,10 +668,10 @@ when using ansible. This is in my &lt;code&gt;$ANSIBLE_DIR/roles/common/tasks/ma
     
     <item>
       <title>Command line disk tree</title>
-      <link>http://rasp2/companionway.net/post/2015-04-27-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-27-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-27-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-27-post1/</guid>
       <description>&lt;h1 id=&#34;command-line-disk-tree&#34;&gt;Command line disk tree&lt;/h1&gt;
 
 &lt;p&gt;I am writing another article on the basics of using git. It
@@ -763,10 +687,10 @@ with you today.&lt;/p&gt;</description>
     
     <item>
       <title>Delete the last X files using sed</title>
-      <link>http://rasp2/companionway.net/post/2015-04-26-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-26-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-26-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-26-post1/</guid>
       <description>&lt;h2 id=&#34;simple-sed-trick-keeping-the-last-x-files&#34;&gt;Simple sed trick - keeping the last X files&lt;/h2&gt;
 
 &lt;p&gt;How would you remove all but the last 10 files in a directory?&lt;/p&gt;
@@ -788,19 +712,19 @@ done
     
     <item>
       <title>Links</title>
-      <link>http://rasp2/companionway.net/page/links/</link>
+      <link>https://www.companionway.net/page/links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/page/links/</guid>
+      <guid>https://www.companionway.net/page/links/</guid>
       <description> sysadmin or web dev tools  Link for gihub Ling for git-scm Link for ansible Link for vagrant Link for lxc Link for formspree.io Link for adminer  Quick tech headline news  Link for LinuxToday Link for DailyRotation  dynamic content management systems [dynamic CMS]  hugo Wordpress Drupal Joomla  static content managment systems [static CMS]  jekyll hugo gravCMS picoCMS statamic kirby FrogCMS CushyCMS  learning  learn python fundamentals canonical ubuntu tutorials realpython great-tutorials and tips  financial  barchart iextrading signup and use their api to pull down stock info I have a python script that I use almost every day to pull data for analyzing stock data investing seekingalpha finviz  </description>
     </item>
     
     <item>
       <title>MT7630e Wifi build and install</title>
-      <link>http://rasp2/companionway.net/post/2015-04-26-post2/</link>
+      <link>https://www.companionway.net/post/2015-04-26-post2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-26-post2/</guid>
+      <guid>https://www.companionway.net/post/2015-04-26-post2/</guid>
       <description>&lt;h1 id=&#34;wifi-mt7630e&#34;&gt;Wifi mt7630e&lt;/h1&gt;
 
 &lt;p&gt;Today&amp;rsquo;s hero is Jakub Kicinski. He rewrote the Mediatek MT7630e drivers
@@ -815,19 +739,19 @@ for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.&
     
     <item>
       <title>Projects</title>
-      <link>http://rasp2/companionway.net/page/projects/</link>
+      <link>https://www.companionway.net/page/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/page/projects/</guid>
+      <guid>https://www.companionway.net/page/projects/</guid>
       <description>gomenu - [link to gomenu]  This is a bash shell script that builds and allows editing of menus on the command-line newspaper-hugo-subtheme - [link to newspaper-hugo-subtheme]  This project allows you to add a newspaper look and feel theme to an existing hugo website. myfiles: [discontinued] this is an older php project which allows html control of directories for file upload or download - not available publicly pyfiles: [link to pyfiles])https://github.</description>
     </item>
     
     <item>
       <title>SSH basics</title>
-      <link>http://rasp2/companionway.net/post/2015-04-15-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-15-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-15-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-15-post1/</guid>
       <description>&lt;h1 id=&#34;ssh&#34;&gt;SSH&lt;/h1&gt;
 
 &lt;h2 id=&#34;debug-with-verbose-output&#34;&gt;Debug with verbose output&lt;/h2&gt;
@@ -860,10 +784,10 @@ Finland, designed the first version of the protocol (now called SSH-1) prompted 
     
     <item>
       <title>vagrant and ansible</title>
-      <link>http://rasp2/companionway.net/post/2015-04-23-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-23-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-23-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-23-post1/</guid>
       <description>&lt;h1 id=&#34;vagrant-and-ansible&#34;&gt;vagrant and ansible&lt;/h1&gt;
 
 &lt;h2 id=&#34;putting-vagrant-on-steroids&#34;&gt;putting vagrant on steroids&lt;/h2&gt;
@@ -883,10 +807,10 @@ there are and handful of packages you typically want one every machine.&lt;/p&gt
     
     <item>
       <title>vagrant lxc nodes</title>
-      <link>http://rasp2/companionway.net/post/2015-04-22-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-22-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-22-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-22-post1/</guid>
       <description>&lt;h1 id=&#34;using-vagrant-with-lxc&#34;&gt;Using vagrant with lxc&lt;/h1&gt;
 
 &lt;h3 id=&#34;one-command-vagrant-up&#34;&gt;One command; vagrant up&lt;/h3&gt;
@@ -909,10 +833,10 @@ small network.&lt;/p&gt;</description>
     
     <item>
       <title>vagrant-lxc plugin</title>
-      <link>http://rasp2/companionway.net/post/2015-04-21-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-21-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-21-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-21-post1/</guid>
       <description>&lt;h1 id=&#34;vagrant-lxc-plugin&#34;&gt;vagrant-lxc plugin&lt;/h1&gt;
 
 &lt;p&gt;OK today I finally had time to get vagrant-lxc to work.
