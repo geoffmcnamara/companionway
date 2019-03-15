@@ -38,7 +38,7 @@ Now tweak your shinny new ~/.vimrc file.
 First I want vim to remember where I left off in a file and put the cursor there when I return to that file.  Add this to the end of ~/.vimrc.
 
 ```
-" ======= remember settings ================
+" ======= remember cursor position and viminfo settings  ========
 " Tell vim to remember certain things when we exit using set viminfo=
 "  '10  :  marks will be remembered for up to 10 previously edited files
 "  \"100 :  will save up to 100 lines for each register
