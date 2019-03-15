@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Visudo on companionway</title>
-    <link>https://www.companionway.net/tags/visudo/</link>
+    <link>http://rasp5/companionway.net/tags/visudo/</link>
     <description>Recent content in Visudo on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Wed, 14 Dec 2016 10:59:38 -0500</lastBuildDate>
     
-	<atom:link href="https://www.companionway.net/tags/visudo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rasp5/companionway.net/tags/visudo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Always Use Visudo</title>
-      <link>https://www.companionway.net/post/always-use-visudo/</link>
+      <link>http://rasp5/companionway.net/post/always-use-visudo/</link>
       <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/always-use-visudo/</guid>
+      <guid>http://rasp5/companionway.net/post/always-use-visudo/</guid>
       <description>&lt;h2 id=&#34;familiarity-breeds-contempt&#34;&gt;&amp;ldquo;familiarity breeds contempt&amp;rdquo;&lt;/h2&gt;
 
 &lt;p&gt;I get very comfortable with using the vim editor (take cover&amp;hellip; flame way ensuing) so

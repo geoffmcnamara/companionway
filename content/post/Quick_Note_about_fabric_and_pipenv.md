@@ -7,13 +7,12 @@ tags = []
 image = "/img/posted-keep-out.jpg"
 comments = false	# set false to hide Disqus
 share = false	# set false to hide share buttons
-#menu= ""		# set "main" to add this content to the main menu
 author = ""
 +++
 
 
 I have posted several articles about python fabric and yet I failed to warn you about the dangers of
-version chaos.
+version and module chaos.
 
 Initially, fabric came as a python2 only application. They added support for python3 later. Here is the version
 I am using in a virtual environment (more about that in a minute). From within my pipenv project directory with pipenv shell loaded
@@ -24,7 +23,6 @@ fab --version
 Fabric3 1.14.post1
 Paramiko 2.4.2
 ```
-
 Here is how I created my virtual environment. I have used almost all of python's virtual environment tools (and there a quite a few).
 And there has been a steady progression of improvements in those tools. My current goto for a python virtual environment is pipenv.
 It is simple, clean, and almost fool proof which is essential for me. 
