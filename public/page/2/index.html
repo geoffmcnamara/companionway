@@ -270,99 +270,57 @@ ga('send', 'pageview');
 
 						<div class="top">
 							<div class="image" style="overflow:hidden">
-								 
-								<img src="http://rasp2/companionway.net//img/ale-logo.jpg" class="img-responsive" alt="" >
+								
+								<img src="http://rasp2/companionway.net//img/placeholder.png" class="img-responsive" alt="">
 								
 							</div> 
 							<div class="bg"></div>
 							<div class="text">
 								<p class="buttons">
-								<a href="http://rasp2/companionway.net/post/vim_ale/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+								<a href="http://rasp2/companionway.net/post/2015-04-05-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
 								</p>
 							</div> 
 						</div> 
 
 						<div class="content">
-							<h4><a href="http://rasp2/companionway.net/post/vim_ale/">
+							<h4><a href="http://rasp2/companionway.net/post/2015-04-05-post1/">
 									
-									Vim ALE
-									
-								</a></h4>
-
-								<p class="author-category">
-								
-								on August 8, 2018
-								</p>
-								<p class="intro"><p>VIM is a standard for me. My UNIX career hung on my &ldquo;vi&rdquo; savvy which I learned appreciate from mentors who
-encouraged me to learn the tips and tricks of using vi. My learning curve with vi/vim has never leveled
-off, but rather, always gives me new features and tricks that energize me again. The latest vim &ldquo;trick&rdquo;
-is ALE (Asynchronous Lint Engine).</p></p>
-								<p class="read-more">
-								<a href="http://rasp2/companionway.net/post/vim_ale/" class="btn btn-template-main">Continue reading</a>
-								</p>
-						</div> 
-
-					</div> 
-
-				</div> 
-				
-				<div class="col-md-4 col-sm-6">
-					<div class="box-image-text blog">
-
-						<div class="top">
-							<div class="image" style="overflow:hidden">
-								 
-								<img src="http://rasp2/companionway.net//img/vim-dynamic-templates.png" class="img-responsive" alt="" >
-								
-							</div> 
-							<div class="bg"></div>
-							<div class="text">
-								<p class="buttons">
-								<a href="http://rasp2/companionway.net/post/vim_scriptable_templates/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
-								</p>
-							</div> 
-						</div> 
-
-						<div class="content">
-							<h4><a href="http://rasp2/companionway.net/post/vim_scriptable_templates/">
-									
-									Vim Scriptable Templates
+									Adding fade in and down javascript
 									
 								</a></h4>
 
 								<p class="author-category">
 								
-								on July 15, 2018
+								By <a href="#">geoffm</a>
+								
+								on January 1, 0001
 								</p>
-								<p class="intro"><h3 id="dynamic-vim-templates">Dynamic vim Templates</h3>
+								<p class="intro"><h1 id="javascript-fade-in-and-down">Javascript fade in and down</h1>
 
-<p>Vim (or vi in the anceint past) has been my partner in getting things done. Like an rich tool it
-has lots of features that go untapped or undiscovered. A few days ago I decided I wanted a script within
-a tempate to help build the &ldquo;front matter&rdquo; to my markdown (.md) files.</p>
+<p>I wanted to change the header on the theme for my web site
+to display a slide down and in header.</p>
 
-<p>The front matter looks like this:</p>
+<p>The script needed to be a combination of two jquery animations.</p>
 
-<pre><code>+++
-author = &quot;&quot;
-comments = true
-date = &quot;2018-07-15 14:45:19&quot;
-draft = false
-image = &quot;&quot;
-share = true
-# slug = 
-# tags = [ &quot;tag1&quot;, &quot;tag2&quot; ]
-title = &quot;vim_scriptable_templates&quot;
-
-+++
+<pre><code class="language-javascript">&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+$(document).ready(function(){
+    $('#fadeInDown')
+    .css('display', &quot;none&quot;)
+    .slideDown(2000)
+    .animate(
+      { opacity: 1 },
+      { queue: false, duration: 2300 }
+      );
+    });
+&lt;/script&gt;
 </code></pre>
 
-<p>The challenge was to have vim write in the date for me in the needed format. And if you use hugo as your static web site generator as I do
-you may have found that it will silently ignore a new markdown file if the date is not formated correctly. It some testing to discover that
-but the bottom line is that I needed a way to script it for to avoid mistakes.</p>
-
-<p>Research to me to this tip source: <a href="http://vim.wikia.com/wiki/Use_eval_to_create_dynamic_templates"> vim embedded scripts </a></p></p>
+<p>First we load in the jquery code from google nut this a single point of failure.
+If there is network interruption jquery code is lost. But in my instance if the
+network is failing then my web site probably is too.</p></p>
 								<p class="read-more">
-								<a href="http://rasp2/companionway.net/post/vim_scriptable_templates/" class="btn btn-template-main">Continue reading</a>
+								<a href="http://rasp2/companionway.net/post/2015-04-05-post1/" class="btn btn-template-main">Continue reading</a>
 								</p>
 						</div> 
 
@@ -375,37 +333,107 @@ but the bottom line is that I needed a way to script it for to avoid mistakes.</
 
 						<div class="top">
 							<div class="image" style="overflow:hidden">
-								 
-								<img src="http://rasp2/companionway.net//img/hugo-fabric.png" class="img-responsive" alt="" >
+								
+								<img src="http://rasp2/companionway.net//img/placeholder.png" class="img-responsive" alt="">
 								
 							</div> 
 							<div class="bg"></div>
 							<div class="text">
 								<p class="buttons">
-								<a href="http://rasp2/companionway.net/post/hugo_and_fabric/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+								<a href="http://rasp2/companionway.net/post/2015-04-17-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
 								</p>
 							</div> 
 						</div> 
 
 						<div class="content">
-							<h4><a href="http://rasp2/companionway.net/post/hugo_and_fabric/">
+							<h4><a href="http://rasp2/companionway.net/post/2015-04-17-post1/">
 									
-									Hugo and Fabric
+									Ansible - modifying sudoers
 									
 								</a></h4>
 
 								<p class="author-category">
 								
-								on July 14, 2018
+								By <a href="#">geoffm</a>
+								
+								on January 1, 0001
 								</p>
-								<p class="intro"><p>Python Fabric is a denatured version of ansible and, if you enjoy python, fabric makes a small scale devops strategy a whole lot less painful.
-Combined with hugo static website generator, fabic makes testing and promoting a website a whole lot easier.</p>
+								<p class="intro"><h1 id="ansible-modifying-etc-sudoers">Ansible - modifying /etc/sudoers</h1>
 
-<p>I have struggled in the past with one challenge that made promoting website code from my workbench to dev, staging, and ultimately production tricky.
-The matter of URL always played havoc when I sent code up from one server to another for testing. Hugo offers a simple solution. When I promote website
-code it goes through this workflow process:</p></p>
+<p>I have locked administrators out of using sudo with a simple typo.</p>
+
+<p>With ansible you can lockup sudo on every machine with a single error. So
+I get pretty cautious with editing /etc/sudoers through any deployment application.</p>
+
+<p>Here is a quick example of going overboard to protect your sudoers file
+when using ansible. This is in my <code>$ANSIBLE_DIR/roles/common/tasks/main.yml</code> file</p>
+
+<pre><code>- name: Copy sudoers for safety
+  command: cp /etc/sudoers /etc/sudoers.tmp
+
+- name: Create sudoers.bak
+  command: cp /etc/sudoers /etc/sudoers.bak
+
+- name: Ensure admin group is in sudoers with NOPASSWD
+  lineinfile: &quot;dest=/etc/sudoers.tmp state=present regexp='^%admin ' line='%admin ALL=(ALL) NOPASSWD: ALL' validate='visudo -cf %s'&quot;
+  register: sudoers_tmp_ok
+
+- name: Copy sudoers.tmp to sudoers
+  when: sudoers_tmp_ok|success
+  command: cp /etc/sudoers.tmp /etc/sudoers
+</code></pre></p>
 								<p class="read-more">
-								<a href="http://rasp2/companionway.net/post/hugo_and_fabric/" class="btn btn-template-main">Continue reading</a>
+								<a href="http://rasp2/companionway.net/post/2015-04-17-post1/" class="btn btn-template-main">Continue reading</a>
+								</p>
+						</div> 
+
+					</div> 
+
+				</div> 
+				
+				<div class="col-md-4 col-sm-6">
+					<div class="box-image-text blog">
+
+						<div class="top">
+							<div class="image" style="overflow:hidden">
+								
+								<img src="http://rasp2/companionway.net//img/placeholder.png" class="img-responsive" alt="">
+								
+							</div> 
+							<div class="bg"></div>
+							<div class="text">
+								<p class="buttons">
+								<a href="http://rasp2/companionway.net/post/2015-04-27-post1/" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+								</p>
+							</div> 
+						</div> 
+
+						<div class="content">
+							<h4><a href="http://rasp2/companionway.net/post/2015-04-27-post1/">
+									
+									Command line disk tree
+									
+								</a></h4>
+
+								<p class="author-category">
+								
+								By <a href="#">geoffm</a>
+								
+								on January 1, 0001
+								</p>
+								<p class="intro"><h1 id="command-line-disk-tree">Command line disk tree</h1>
+
+<p>I am writing another article on the basics of using git. It
+was going to be a short article however, given the subject it is
+turning out to be much longer than I expected. But in the process
+of writing it I had to frequently use a shell function I wrote years
+ago that  displays a disk tree structure (optionally with files).</p>
+
+<p>I needed a way to see the changes to the .git directory as git commands
+are executed against the repository. I thought I would share it
+with you today.</p></p>
+								<p class="read-more">
+								<a href="http://rasp2/companionway.net/post/2015-04-27-post1/" class="btn btn-template-main">Continue reading</a>
 								</p>
 						</div> 
 

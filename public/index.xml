@@ -165,9 +165,7 @@ code it goes through this workflow process:&lt;/p&gt;</description>
       <pubDate>Tue, 10 Jul 2018 09:30:14 -0400</pubDate>
       
       <guid>http://rasp2/companionway.net/post/fabric_vs_ansible/</guid>
-      <description>&lt;h2 id=&#34;fabric-vs-ansible&#34;&gt;Fabric vs Ansible&lt;/h2&gt;
-
-&lt;p&gt;I have wrestled with ansible for too long. It is an awesome tool but you need to learn the syntax of three
+      <description>&lt;p&gt;I have wrestled with ansible for too long. It is an awesome tool but you need to learn the syntax of three
 different languages (ansible, yaml, and maybe some python) to hold it down and control it. Every time I go
 to use it I have to learn how to do what I need to do. But the most frustrating aspect of ansible when learning
 to do something new is that your first attempt rarely succeeds - at least for me. So you resort to &amp;ldquo;force programming&amp;rdquo;

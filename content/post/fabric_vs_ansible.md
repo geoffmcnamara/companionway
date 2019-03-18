@@ -10,8 +10,6 @@ share = false	# set false to hide share buttons
 author = ""
 +++
 
-## Fabric vs Ansible
-
 I have wrestled with ansible for too long. It is an awesome tool but you need to learn the syntax of three
 different languages (ansible, yaml, and maybe some python) to hold it down and control it. Every time I go 
 to use it I have to learn how to do what I need to do. But the most frustrating aspect of ansible when learning

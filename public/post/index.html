@@ -164,7 +164,7 @@ ga('send', 'pageview');
 <div class="extra-pagination inner">
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 of 7</span>
+	<span class="page-number">Page 1 of 2</span>
 	
 	    <a class="older-posts" href="/companionway.net/post/page/2/">Older Posts &rarr;</a>
 	
@@ -179,13 +179,9 @@ ga('send', 'pageview');
 		<h2 class="post-title"><a href="/companionway.net/post/vim-plug_quick_setup/">Vim-Plug Quick Setup</a></h2>
 	</header>
 	<section class="post-excerpt">
-		<p><p>I want you to try this .vimrc setup.</p>
-
-<p>I have had my own .vimrc for years. I recently came across <a href="http://fisadev.github.io/fisa-vim-config/">fisa-vim-config</a>
-and ended up dropping my extensive .vimrc, adopting the one above and adding a few tweaks to make it friendly to me. I
-was actually looking for more ALE-fixers when I found this gem.</p>
-
-<p>It is simple, self installing and very powerful due to the vim Plugins that are installed and loaded.</p> <a class="read-more" href="/companionway.net/post/vim-plug_quick_setup/">&raquo;</a></p>
+		<p>I want you to try this .vimrc setup.
+I have had my own .vimrc for years. I recently came across  ... <a class="read-more" href="/companionway.net/post/vim-plug_quick_setup/">&raquo;</a></p>
+        
 	</section>
 	<footer class="post-meta">
 		
@@ -211,21 +207,9 @@ was actually looking for more ALE-fixers when I found this gem.</p>
 		<h2 class="post-title"><a href="/companionway.net/post/quick_note_about_fabric_and_pipenv/">Quick_Note_about_fabric_and_pipenv</a></h2>
 	</header>
 	<section class="post-excerpt">
-		<p><p>I have posted several articles about python fabric and yet I failed to warn you about the dangers of
-version and module chaos.</p>
-
-<p>Initially, fabric came as a python2 only application. They added support for python3 later. Here is the version
-I am using in a virtual environment (more about that in a minute). From within my pipenv project directory with pipenv shell loaded
-this is what I get running fab &ndash;version</p>
-
-<pre><code>fab --version
-Fabric3 1.14.post1
-Paramiko 2.4.2
-</code></pre>
-
-<p>Here is how I created my virtual environment. I have used almost all of python&rsquo;s virtual environment tools (and there a quite a few).
-And there has been a steady progression of improvements in those tools. My current goto for a python virtual environment is pipenv.
-It is simple, clean, and almost fool proof which is essential for me.</p> <a class="read-more" href="/companionway.net/post/quick_note_about_fabric_and_pipenv/">&raquo;</a></p>
+		<p>I have posted several articles about python fabric and yet I failed to warn you about the dangers of version and module chaos.
+Initially, f ... <a class="read-more" href="/companionway.net/post/quick_note_about_fabric_and_pipenv/">&raquo;</a></p>
+        
 	</section>
 	<footer class="post-meta">
 		
@@ -251,15 +235,8 @@ It is simple, clean, and almost fool proof which is essential for me.</p> <a cla
 		<h2 class="post-title"><a href="/companionway.net/post/using_fabric_to_dynamically_discover_hosts/">Python fabric - Dynamically Discover Hosts</a></h2>
 	</header>
 	<section class="post-excerpt">
-		<p><p>Python fabric is a library tool for executing ssh commands remotely and responding as you desire.
-I use python fabric for promoting code and web content. Essentially it is my devops tool to satisfy the
-single most important devops rule: never log into a server! I use this over ansible or some of the other
-devop tools because fabric only requires knowning one langauge and that is python.</p>
-
-<p>My network changes a lot as I take servers down or stand them up frequently. Normally that would require changing
-the environment roles (host lists) in my fabfile.py with all my changes. In the past I set aside certain IPs in my
-network for each role. For example all my raspberry pies get named before I ever introduce them to the network.
-Using the option &ndash;skip_bad_hosts with fabric is one way to do this but I really want more control.</p> <a class="read-more" href="/companionway.net/post/using_fabric_to_dynamically_discover_hosts/">&raquo;</a></p>
+		<p>Python fabric is a library tool for executing ssh commands remotely and responding as you desire. I use python fabric for promoting code and web co ... <a class="read-more" href="/companionway.net/post/using_fabric_to_dynamically_discover_hosts/">&raquo;</a></p>
+        
 	</section>
 	<footer class="post-meta">
 		
@@ -285,7 +262,8 @@ Using the option &ndash;skip_bad_hosts with fabric is one way to do this but I r
 		<h2 class="post-title"><a href="/companionway.net/post/replace_php_with_wsgi_python/">Replace PHP with WSGI python</a></h2>
 	</header>
 	<section class="post-excerpt">
-		<p><p>This post is a brief description of replacing PHP code with python using WSGI (Web Server Gateway Interface). The journey here comes from how I monitor my servers (mostly raspberry pi&rsquo;s). I used a PHP script on all my servers that delivered the hostname and basic server information and I use <a href="http://xymon.sourceforge.net/">xymon monitoring</a> to poll that PHP script on all the servers and test to see if the hostname is contained in the returned page. My focus lately has been on python and my interest in PHP has waned. The goal was to replace my PHP script with a python script. The end result provides a simple means of delivering dynamic web pages. I will be using <a href="http://bottlepy.org">bottlepy</a> as the wsgi web-framework. My development was done on an ubuntu 18.10 (&ldquo;cosmic&rdquo; release).</p> <a class="read-more" href="/companionway.net/post/replace_php_with_wsgi_python/">&raquo;</a></p>
+		<p>This post is a brief description of replacing PHP code with python using WSGI (Web Server Gateway Interface). The journey here comes from how I mon ... <a class="read-more" href="/companionway.net/post/replace_php_with_wsgi_python/">&raquo;</a></p>
+        
 	</section>
 	<footer class="post-meta">
 		
@@ -323,11 +301,8 @@ Using the option &ndash;skip_bad_hosts with fabric is one way to do this but I r
 		<h2 class="post-title"><a href="/companionway.net/post/git_pre-commit/">Using a generic git pre-commit hook</a></h2>
 	</header>
 	<section class="post-excerpt">
-		<p><h4 id="test-it-commit-it-reject-it">test_it &amp;&amp; commit_it || reject_it</h4>
-
-<p>Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
-The goal is to have respectable code <em>before</em> it lands in a repository. Git makes this very easy through the use
-of &ldquo;hooks&rdquo;. If you look in any of your git project directories you will find these files in the <code>./.git/hooks/</code> directory:</p> <a class="read-more" href="/companionway.net/post/git_pre-commit/">&raquo;</a></p>
+		<p>test_it &amp;amp;&amp;amp; commit_it || reject_it Using a pre-commit script when committing code makes sense and ... <a class="read-more" href="/companionway.net/post/git_pre-commit/">&raquo;</a></p>
+        
 	</section>
 	<footer class="post-meta">
 		
@@ -348,9 +323,654 @@ of &ldquo;hooks&rdquo;. If you look in any of your git project directories you w
 
 
 
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/vim_ale/">Vim ALE</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>VIM is a standard for me. My UNIX career hung on my &amp;ldquo;vi&amp;rdquo; savvy which I learned appreciate from mentors who encouraged me to learn the t ... <a class="read-more" href="/companionway.net/post/vim_ale/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/vim/">#vim</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/ale/">#ale</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/linters/">#linters</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/markdown/">#markdown</a>,
+		
+		
+		<time class="post-date" datetime="2018-08-08T09:30:10-04:00">
+			8 Aug 2018
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/vim_scriptable_templates/">Vim Scriptable Templates</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>Dynamic vim Templates Vim (or vi in the anceint past) has been my partner in getting things done. Like an rich ... <a class="read-more" href="/companionway.net/post/vim_scriptable_templates/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/vim/">#vim</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/templates/">#templates</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/scripts/">#scripts</a>,
+		
+		
+		<time class="post-date" datetime="2018-07-15T14:00:00Z">
+			15 Jul 2018
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/hugo_and_fabric/">Hugo and Fabric</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>Python Fabric is a denatured version of ansible and, if you enjoy python, fabric makes a small scale devops strategy a whole lot less painful. Comb ... <a class="read-more" href="/companionway.net/post/hugo_and_fabric/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		
+		<time class="post-date" datetime="2018-07-14T15:33:19-05:00">
+			14 Jul 2018
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/fabric_vs_ansible/">Fabric_vs_ansible</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>I have wrestled with ansible for too long. It is an awesome tool but you need to learn the syntax of three different languages (ansible, yaml, and  ... <a class="read-more" href="/companionway.net/post/fabric_vs_ansible/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		
+		<time class="post-date" datetime="2018-07-10T09:30:14-04:00">
+			10 Jul 2018
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/newspaper-hugo-subtheme/">How this theme evolved</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>Announcing a new project: newspaper-hugo-subtheme First credit goes to Silke V at c ... <a class="read-more" href="/companionway.net/post/newspaper-hugo-subtheme/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+		
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		
+		<time class="post-date" datetime="2017-11-03T10:54:24&#43;02:00">
+			3 Nov 2017
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/post-title/">MagicMirro2 and fauxmo</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>Warning: what follows is a cascade of issues and lessons l ... <a class="read-more" href="/companionway.net/post/post-title/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		
+		<time class="post-date" datetime="2017-01-11T14:27:35-05:00">
+			11 Jan 2017
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/sorting_ips/">Sorting IPs</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones, laptops, PCs etc. Using nmap to quickly sc ... <a class="read-more" href="/companionway.net/post/sorting_ips/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		
+		<time class="post-date" datetime="2017-01-01T15:53:14-05:00">
+			1 Jan 2017
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/quick-n-dirty-python-debug-function/">Quick N Dirty Python Debug Function</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>Pdb is a great debugger for python but I like to use my own simple debug functions. Here is a simple debug function for python which could definite ... <a class="read-more" href="/companionway.net/post/quick-n-dirty-python-debug-function/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/python/">#python</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/debug/">#debug</a>,
+		
+		
+		<time class="post-date" datetime="2016-12-22T14:08:05-05:00">
+			22 Dec 2016
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/raspberry-pi-and-xrdp/">Raspberry Pi and Xrdp</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or any linux machine) can be done so  ... <a class="read-more" href="/companionway.net/post/raspberry-pi-and-xrdp/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/raspberry/">#raspberry</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/rdp/">#rdp</a>,
+		
+		
+		<time class="post-date" datetime="2016-12-16T12:27:36-05:00">
+			16 Dec 2016
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/sometimes-it-is-the-obvious/">Sometimes It Is The Obvious</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>This was one of those &amp;ldquo;problems&amp;rdquo; that nagged me for many hours until the obvious dawned on me. I wrote a python script to grab the temp ... <a class="read-more" href="/companionway.net/post/sometimes-it-is-the-obvious/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/scripting/">#scripting</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/python/">#python</a>,
+		
+		
+		<time class="post-date" datetime="2016-12-15T16:36:42-05:00">
+			15 Dec 2016
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/always-use-visudo/">Always Use Visudo</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>&amp;ldquo;familiarity breeds contempt&amp;rdquo; I get very comfortable with using the vim editor (take cover&amp;h ... <a class="read-more" href="/companionway.net/post/always-use-visudo/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+		
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/sudo/">#sudo</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/visudo/">#visudo</a>,
+		
+		
+		<time class="post-date" datetime="2016-12-14T10:59:38-05:00">
+			14 Dec 2016
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/recursive-replace-text/">Recursively Replace Text</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If  ... <a class="read-more" href="/companionway.net/post/recursive-replace-text/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/xargs/">#xargs</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/sed/">#sed</a>,
+		
+		
+		<time class="post-date" datetime="2016-12-10T20:38:12-05:00">
+			10 Dec 2016
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/switched-to-hugo/">Switched to Hugo</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).  ... <a class="read-more" href="/companionway.net/post/switched-to-hugo/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/hugo/">#hugo</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/jekyll/">#jekyll</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/cms/">#cms</a>,
+		
+		
+		<time class="post-date" datetime="2016-12-09T10:57:45-05:00">
+			9 Dec 2016
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/converting-images/">Converting Images</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>I have fought with trying to remember the syntax for Imagemagik&amp;rsquo;s convert command for years. I finaly caved in [from my normal position of &amp;ldqu ... <a class="read-more" href="/companionway.net/post/converting-images/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/convert/">#convert</a>,
+		
+		
+		<time class="post-date" datetime="2016-12-06T11:58:20-05:00">
+			6 Dec 2016
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/2015-05-11-post1/">shell/bash uppercase arguments</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>To make a long story short&amp;hellip;
+#!/bin/bash PATTERN=$(echo $1 | tr [:lower:] [:upper:]) # or PATTERN=$(echo $1 | tr [a-z] [A-Z]) # or PATTERN=$(ech ... <a class="read-more" href="/companionway.net/post/2015-05-11-post1/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+		
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/scripting/">#scripting</a>,
+		
+		<a href="http://rasp2/companionway.net/tags/financial/">#financial</a>,
+		
+		
+		<time class="post-date" datetime="2015-05-11T00:00:00Z">
+			11 May 2015
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/grovepi/">The GrovePi kit</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>Check out GrovePi These kits make working with the Raspberry Pi GPIO pins so simple and clean. I just ordered one of these kits and I will try to writ ... <a class="read-more" href="/companionway.net/post/grovepi/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+		
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/grovepi/">#grovepi</a>,
+		
+		
+		<time class="post-date" datetime="2015-05-09T10:54:24&#43;02:00">
+			9 May 2015
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/2015-05-02-post1/">How to print the remainder of a line using awk</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>#How to print remainder of line using awk
+eliminate the first X columns&amp;hellip; Here is your c ... <a class="read-more" href="/companionway.net/post/2015-05-02-post1/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+		
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/awk/">#awk</a>,
+		
+		
+		<time class="post-date" datetime="2015-05-02T00:00:00Z">
+			2 May 2015
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/2015-04-30-post1/">Creating that special character in vim</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>Entering special characters into vim I use vim as my editor. Despite this first sentence, this  ... <a class="read-more" href="/companionway.net/post/2015-04-30-post1/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+		
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		
+		<time class="post-date" datetime="2015-04-30T00:00:00Z">
+			30 Apr 2015
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/2015-04-28-post1/">git inside, git better, git stronger</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>&amp;hellip; exploring git from the inside out &amp;hellip; ###Preface
+Apologies u ... <a class="read-more" href="/companionway.net/post/2015-04-28-post1/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+		
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		
+		<time class="post-date" datetime="2015-04-28T00:00:00Z">
+			28 Apr 2015
+		</time>
+	</footer>
+</article>
+
+
+
+<article class="post">
+	<header class="post-header">
+		<h2 class="post-title"><a href="/companionway.net/post/2015-04-02-post1/">Centering a string</a></h2>
+	</header>
+	<section class="post-excerpt">
+		<p>Center a string using awk awk = everyone&amp;rsquo;s favorite - right? ... <a class="read-more" href="/companionway.net/post/2015-04-02-post1/">&raquo;</a></p>
+        
+	</section>
+	<footer class="post-meta">
+		
+		
+		
+		
+		
+
+		
+		<img class="author-thumb" src="http://rasp2/companionway.net//img/sailboat.png" alt="Author image" nopin="nopin" />
+		
+		
+		Geoff McNamara
+		
+		on
+		
+		<a href="http://rasp2/companionway.net/tags/awk/">#awk</a>,
+		
+		
+		<time class="post-date" datetime="2015-04-02T00:00:00Z">
+			2 Apr 2015
+		</time>
+	</footer>
+</article>
+
+
+
 <nav class="pagination" role="navigation">
 	
-	<span class="page-number">Page 1 of 7</span>
+	<span class="page-number">Page 1 of 2</span>
 	
 	    <a class="older-posts" href="/companionway.net/post/page/2/">Older Posts &rarr;</a>
 	
