@@ -29,6 +29,9 @@ Here are the steps I want you to try... trust me here.
 
 Much credit to the author of fisa-vim-config: Juan Pedro Fisanotti! 
 
+![Just a small sample of what can be done](/img/vim-plug-sized.gif)
+
+
 There is more to do here but if you do those steps you will see lots of new Vim Plugins get loaded automagically.
 
 You can actually remove the ~/.vim (it has root owned .git subdirectories so you will have to force remove the directory).  
@@ -69,10 +72,11 @@ You have to add this between the start [`call plug#begin('~/.vim/plugged')`] and
 Plug 'https://github.com/w0rp/ale.git'
 ```
 
-I didn't care for the color scheme so I commented out all the references to it using .vimrc comment character which is the double quote.
-I also commented out the `set nu` to stop the line numbering.
-
-And I commented out some of the backup and swp file settings.
+I didn't care for the color schemes and some other annoying or problematic Plugs so...
+- commented out all the references to it using .vimrc comment character which is the double quote.
+- commented out the `set nu` to stop the line numbering.
+- commented out the Plug ... syntastic ... line as it caused conflicts on large code files
+- commented out some of the backup and swp file settings.
 
 Then I added a few of my own tweaks:
 ```
@@ -80,13 +84,16 @@ Then I added a few of my own tweaks:
 nnoremap <Leader>nn :set nonumber<CR>
 nnoremap <Leader>sn :set number<CR>
 
+" toggle neocomplcache pop up boxes
+nnoremap <Leader>nt :NeoComplCacheToggle<CR>
+
 " ALEToggle
 nnoremap <Leader>at :ALEToggle<CR>
 
 ```
 
-Oh, and one more huge change. For python editing I added this ftplugin file:
-```
+Oh, and one more significant change. For python editing I added this ftplugin file:
+```bash
 mkdir ~/.vim/ftplugin
 ```
 
@@ -103,7 +110,7 @@ let b:ale_fixers = [
 " be careful with this - it can get wonky and you may have to :q! to avoid writing out errors
 nnoremap <buffer> <silent> <LocalLeader>= :ALEFix<CR>
 ```
-That last line allows me to just run the `vim <leader>=` (ie \=) and automagically lots of fixes occur to my python code.
+That last line allows me to run the `vim <leader>=` (ie \= ) and automagically lots of fixes occur to my python code.
 
 Within vim you can run `:ALEInfo` and get LOTS of useful information and suggestions.
 I loaded all the suggestions and oneof the most useful for python is 'yapf'.
@@ -113,10 +120,63 @@ I don;t remeber exatcly how I installed it but my guess is somthing like this:
 sudo -H pip3 install yapf
 ```
 
+
+I might have change Airline status line a bit too, but you do what you want:
+```
+" Airline ------------------------------
+" apt.sh -i powerline fonts-powerline # to get what you will need here
+"let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
+"let g:airline_theme = 'bubblegum'
+"let g:airline_theme = 'base16'
+let g:airline_theme = 'papercolor'
+let g:airline#extensions#whitespace#enabled = 0
+
+" to use fancy symbols for airline, uncomment the following lines and use a
+" patched font (more info on the README.rst)
+if !exists('g:airline_symbols')
+   let g:airline_symbols = {}
+endif
+"let g:airline_left_sep = '⮀'
+"let g:airline_left_alt_sep = '⮁'
+"let g:airline_right_sep = '⮂'
+"let g:airline_right_alt_sep = '⮃'
+"let g:airline_symbols.branch = '⭠'
+"let g:airline_symbols.readonly = '⭤'
+"let g:airline_symbols.linenr = '⭡'
+```
+And make sure you still have 256 colors:
+```
+" use 256 colors when possible
+if (&term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
+    let &t_Co = 256
+"    colorscheme fisa
+"else
+"    colorscheme delek
+endif
+```
+
+Add this line to the Tagbar section to have navigation a little less intrusive:
+```
+let g:tagbar_autoclose = 1
+```
 Oh, at this point there is one thing you may want to do and that is make a backup copy of your ~./vim/ftplug dir.
 The reason is, you can still forcefully remove .vim directory and it will get rebuilt by your .vimrc BUT it won;t
 rebuild your.vim/ftplugin directory. 
 
+Take time to appreciate some of the plugins:
+- Airline is giving you the status lines Try `:help Airline`
+- TagBar is another useful tool for large code files. While editing some code try `:TagBar` and use it to navigate
+  through your code.
+
+If you want to see the power you now hold in your knapsack...
+`:map` 
+
+Here is some quick fun vim... from the command line:
+```
+vim -O ~/.vimrc ~/.vim/ftplugin/python.py ./.bashrc
+```
+Then hit '-', yes, just hit '-'. Very slick!
 
 BTW You can update all these Plugins while in vim with `:PlugUdate`
 And you can upgrade vim-plug itself with `:PlugUpgrade`.
@@ -124,6 +184,7 @@ You can get help for any of the ALE* commands eg. `:help ALEFixSuggest`
 
 Let me know if I forgot something or should make changes.
 
-Enjoy!
+-* Enjoy! *-
+
 -g- 
-geoff.mcnamara@gmail.com
+geoff.mcnamara@gmail.com:
