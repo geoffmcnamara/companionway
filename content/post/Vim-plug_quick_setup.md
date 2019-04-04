@@ -164,6 +164,12 @@ Oh, at this point there is one thing you may want to do and that is make a backu
 The reason is, you can still forcefully remove .vim directory and it will get rebuilt by your .vimrc BUT it won;t
 rebuild your.vim/ftplugin directory. 
 
+Ummm, one other item I finaly had to change. I turned neocomlcache off by default because it just got to obnoxious:
+If you are the same way, do this change:
+```
+let g:neocomplcache_enable_at_startup = 0
+```
+`
 Take time to appreciate some of the plugins:
 - Airline is giving you the status lines Try `:help Airline`
 - TagBar is another useful tool for large code files. While editing some code try `:TagBar` and use it to navigate
@@ -176,7 +182,7 @@ Here is some quick fun vim... from the command line:
 ```
 vim -O ~/.vimrc ~/.vim/ftplugin/python.py ./.bashrc
 ```
-Then hit '-', yes, just hit '-'. Very slick!
+Then hit '-', yes, just hit '-'. Slick!
 
 BTW You can update all these Plugins while in vim with `:PlugUdate`
 And you can upgrade vim-plug itself with `:PlugUpgrade`.
@@ -184,7 +190,7 @@ You can get help for any of the ALE* commands eg. `:help ALEFixSuggest`
 
 Let me know if I forgot something or should make changes.
 
--* Enjoy! *-
+-=* Enjoy! *=-
 
 -g- 
 geoff.mcnamara@gmail.com:

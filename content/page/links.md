@@ -63,5 +63,15 @@ menu: "main"
 * [seekingalpha](https://seekingalpha.com/)
 * [finviz](https://finviz.com/)
 
+--------------
+
+## science / educational ##
+* [Best YouTube Science Channels](https://www.geekwrapped.com/posts/youtube-science-rockstars-shows)
+* [Vsauce](https://www.youtube.com/user/Vsauce)
+* [Ted Talks](https://www.youtube.com/user/TEDtalksDirector)
+* [Google Talks](https://www.youtube.com/user/AtGoogleTalks)
+* [Khan Academy](https://www.youtube.com/user/khanacademy)
+* [Science Channel](https://www.youtube.com/channel/UCm4ZAOy6QTnN47cGI8PTnRQ)
+* [Sixty Symbols](https://www.youtube.com/user/sixtysymbols/)
 
 <!-- vim: set syntax=none nospell: -->

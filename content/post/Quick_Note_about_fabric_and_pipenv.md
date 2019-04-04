@@ -1,7 +1,7 @@
 +++
 date = "2019-03-13T10:56:05-04:00"
 draft = false
-title = "Quick_Note_about_fabric_and_pipenv"
+title = "Quick Note about fabric and pipenv"
 slug = ""
 tags = []
 image = "/img/posted-keep-out.jpg"
