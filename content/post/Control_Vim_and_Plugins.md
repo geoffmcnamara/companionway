@@ -6,7 +6,7 @@ slug = ""
 tags = []
 image = "/img/plugstrip.jpg"
 comments = false    # set false to hide Disqus
-share = false   # set false to hide share buttons
+share = true   # set false to hide share buttons
 author = ""
 +++
 

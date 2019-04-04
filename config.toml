@@ -28,7 +28,7 @@ theme = "casper"
   twitterName = "geoffmcnamara"
   facebookName = "geoffmcnamara"
   linkedinName = "companionway"
-  googlePlusName = "GeoffMcNamara"
+#  googlePlusName = "GeoffMcNamara"
   pinterestName = ""
   # set true if you are not proud of using Hugo (true will hide the footer note "Proudly published with HUGO.....")
   hideHUGOSupport = false

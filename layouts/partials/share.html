@@ -2,38 +2,35 @@
 <section class="share">
 
 	<h4>Share this {{ if .Type }}{{.Type}}{{else}}post{{end}}</h4>
-	<a class="Xicon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text={{ .Title | safeHTML}}&nbsp;-&nbsp;{{ .Site.Title }}&amp;url={{ .Permalink }}"
-																										onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-		<span class="hidden">Twitter</span>
-		<i class="fa fa-twitter fa-1x" style="color:yellow;"></i>
-	</a>
+    {{ if .Site.Params.twitterName }}
+    <a class="bloglogo" href="https://twitter.com/{{ .Site.Params.twitterName }}" target="_blank">
+        <i class="fab fa-twitter fa-1x" style="color:green;"></i>
+    </a>
+    &nbsp;
+    {{end}}
 
-	<a class="Xicon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}"
-																										 onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-		<span class="hidden">Facebook</span>
-		<i class="fa fa-facebook fa-1x" style="color:green;"></i>
+    {{ if .Site.Params.facebookName }}
+	 <a class="bloglogo" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}">
+		<i class="fab fa-facebook fa-1x" style="color:blue;"></i>
 	</a>
+    &nbsp;
+    {{end}}
 
-	<!--
+    {{ if .Site.Params.linkedinName }}
 	 <a class="bloglogo" href="https://www.linkedin.com/in/{{ .Site.Params.linkedinName }}" target="_blank">
-	 <span class="icon-linkedin" style="color:white;font-size:2em"></span>
-	 <i class="fa fa-linkedin fa-1x" style="color:blue;"></i>
-	 </a>
-	-->
+        <i class="fab fa-linkedin fa-1x" style="color:red;"></i>
+    </a>
+    &nbsp;
+    {{end}}
 
-	<!--
-	 <a class="icon-pinterest" style="font-size: 1.4em" href="https://pinterest.com/pin/create/button/?url={{ .Permalink }}{{ if .Params.pinterestmedia }}&amp;media={{ .Site.BaseURL }}{{ .Params.pinterestmedia }}{{ end }}&amp;description={{ .Title | safeHTML}}"
-	 onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
-	 <span class="hidden">Pinterest</span>
-	 <i class="fa fa-pinterest"></i>
-	-->
-	 </a>
 
-	 <a class="Xicon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url={{ .Permalink }}"
-																												 onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-		 <span class="hidden">Google+</span>
-		 <i class="fa fa-google-plus fa-1x" style="color:red;"></i>
-	 </a>
+    {{ if .Site.Params.githubName }}
+    <a class="bloglogo" href="https://github.com/{{ .Site.Params.githubName }}" target="_blank">
+        <i class="fab fa-github fa-1x" style="color:orange;"></i>
+    </a>
+    &nbsp;
+    {{end}}
+
 
 </section>
 {{end}}
