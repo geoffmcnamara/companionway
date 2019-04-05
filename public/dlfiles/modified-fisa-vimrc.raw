@@ -126,6 +126,9 @@ Plug 'https://github.com/itchyny/calendar.vim'
 " TaskWarrior
 Plug 'blindFS/vim-taskwarrior'
 
+" Build a Table of Contents in markdown
+Plug 'mzlogin/vim-markdown-toc'
+
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
 
@@ -460,7 +463,7 @@ augroup resCur
 augroup END
 "======= EOB remember cursor and viminfo settings ========
 
-" edit this file
+" to quickly edit this file
 " I use "-E" or a similar argument to edit the file itself; that is why
 " I used a capital "E" here. You may want to change this.
 nnoremap <Leader>E :vsplit ~/.vimrc<CR>
@@ -507,7 +510,7 @@ nnoremap <Leader>lsb <Esc>:ls<CR>:b
 " to expand the current window 10 places to the right
 nnoremap <Leader>> <Esc><C-W>10>
 " to shrink the current window 10 places to the left
-nnoremap <Leader>< <Esc><C-W>10
+nnoremap <Leader>< <Esc><C-W>10<
 " to make all the windows equal in size
 nnoremap <Leader>= <Esc><C-W>10=
 " this will make the current buffer full if all the others have saved changes
@@ -541,6 +544,8 @@ nmap <Leader>ss ysiW'
 " s(= surround with () no space added
 nmap <Leader>s( ys$)
 
+" YankRing 
+nnoremap <Leader>yr :YRShow<CR>
 
 " Some other magic
 " fixes my typo - changes a mistyped :Wq to :wq
@@ -558,3 +563,4 @@ autocmd BufRead,BufNewFile *.nts set filetype=text
 " Calendar settings
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
+nnoremap <Leader>cal :Calendar<CR>

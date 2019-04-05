@@ -7,7 +7,7 @@ tags = []
 image = "/img/plugstrip.jpg"
 comments = false    # set false to hide Disqus
 share = true   # set false to hide share buttons
-author = ""
+author = "-geoff-"
 +++
 
 Our last post discussed using fisa-vimrc and appreciating the simple installation and ease of use. This post will explore, briefly, some tweaks and a short "how to" for each of the loaded plugins. This exercise will be worth your time if you have not explored these tools before.
@@ -52,6 +52,7 @@ There are a lot of tips in this post. Many are associated with the reference Plu
 * [NERDCommenter](#nerdcommenter)
 * [CtrlP](#ctrlp)
 * [TaskList](#tasklist)
+* [Vim-Ack](#vim-ack)
 * [Dir-Configs-Override](#dir-configs-override)
 * [Git-Vim](#git-vim)
 * [Vim-Colorizer](#vim-colorizer)
@@ -603,6 +604,15 @@ ls -- -TaskList_1-  # to confirm
 rm -- -TaskList_1-
 ```
 
+## Vim-Ack
+This Plug-in is an incredibly fast recursive grep. It will search all the file in your file tree starting at the current directory by default finding any occurrance of the string you provide.
+
+To use it:
+`:Ack 'what ever string you want to look for'`
+After entering that a list of every file with this string will *immediately* appear. Did I mention that it is fast?
+
+
+
 ## Dir-Configs-Override
 This Plug-in allows you to write a custom `.vimrc` and place it in a folder which will then will override the `~/.vimrc` settings.
 This plug-in (`dir-configs-override`) does not give me much personally but it can have usefulness in special circumstances.
@@ -697,6 +707,7 @@ I use this plug-in to build (or update) a table of contents for large markdown p
 
 [https://github.com/mzlogin/vim-markdown-toc](https://github.com/mzlogin/vim-markdown-toc)
 
+To use this go to the location where you want the TOC then type: `:GenTocGFM`. It will use all the headings going forward in the document to build a simple TOC.
 
 
 -------------------------
@@ -704,6 +715,10 @@ I use this plug-in to build (or update) a table of contents for large markdown p
 I hope you have gained an appreciation for the power vim offers. Managing the available plugins to make your workflow more efficient and productive is the goal. Let me know if any of this served to that end (or not).
 
 Enjoy,
--geoff-
 
-geoff.mcnamara@gmail.com
+Send mail to:
+<a class="bloglogo" href="mailto:geoff.mcnamara@gmail.com?Subject:Blog%20Post:" target="_blank">
+  <i class="fas fa-envelope-open-text"></i>
+  geoff.mcnamara@gmail.com
+  <i class="fas fa-envelope-open-text"></i>
+</a>

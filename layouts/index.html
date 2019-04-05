@@ -31,7 +31,6 @@
 
 					{{ if .Site.Params.linkedinName }}
 					<a class="bloglogo" href="https://www.linkedin.com/in/{{ .Site.Params.linkedinName }}" target="_blank">
-						<!--<span class="xicon-linkedin" style="color:white;font-size:2em"></span>-->
 						<i class="fa fa-linkedin fa-1x" style="color:blue;"></i>
 					</a>
 					&nbsp;
@@ -39,7 +38,6 @@
 
 					{{ if .Site.Params.githubName }}
 					<a class="bloglogo" href="https://github.com/{{ .Site.Params.githubName }}" target="_blank">
-						<!--<span class="xicon-github" style="color:white;font-size:2em"></span>-->
 						<i class="fa fa-github fa-1x" style="color:green;"></i>
 					</a>
 					&nbsp;
@@ -47,7 +45,6 @@
 
 					{{ if .Site.Params.twitterName }}
 					<a class="bloglogo" href="https://twitter.com/{{ .Site.Params.twitterName }}" target="_blank">
-						<!--<span class="xicon-twitter" style="color:white;font-size:2em"></span>-->
 						<i class="fa fa-twitter fa-1x" style="color:yellow;"></i>
 					</a>
 					&nbsp;
@@ -55,7 +52,6 @@
 
 					{{ if .Site.Params.facebookName }}
 					<a class="bloglogo" href="https://www.facebook.com/{{ .Site.Params.facebookName }}" target="_blank">
-						<!--<span class="xicon-facebook" style="color:white;font-size:2em"></span>-->
 						<i class="fa fa-facebook fa-1x" style="color:white;"></i>
 					</a>
 					&nbsp;
@@ -63,7 +59,6 @@
 
 					{{ if .Site.Params.instagramName }}
 					<a class="bloglogo" href="https://instagram.com/{{ .Site.Params.instagramName }}" target="_blank">
-						<!--<span class="xicon-instagram" style="color:white;font-size:2em"></span>-->
 						<i class="fa fa-instagram fa-1x" style="color:orange;"></i>
 					</a>
 					&nbsp;
@@ -71,7 +66,6 @@
 
 					{{ if .Site.Params.pinterestName }}
 					<a class="bloglogo" href="https://www.pinterest.com/{{ .Site.Params.pinterestName }}" target="_blank">
-						<!--<span class="xicon-pinterest" style="color:white;font-size:2em"></span>-->
 						<i class="fa fa-pinterest fa-1x" style="color:lightgrey;"></i>
 					</a>
 					&nbsp;
@@ -79,7 +73,6 @@
 
 					{{ if .Site.Params.googlePlusName }}
 					<a class="bloglogo" href="https://google.com/+{{ .Site.Params.googlePlusName }}" target="_blank">
-						<!--<span class="xicon-google-plus" style="color:white;font-size:2em"></span>-->
 						<i class="fa fa-google-plus fa-1x" style="color:red;"></i>
 					</a>
 					&nbsp;
@@ -89,23 +82,22 @@
 					<h2 class="page-description">{{ .Site.Params.description }}</h2>
 				</div> <!-- /.main-header-content inner -->
 			</div> <!-- /.vertical [social links] -->
-			<!--
-		 <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
-			-->
-			<a class="scroll-down" href="#content"><span><i class="fa fa-chevron-down fa-1x"></i></span></a>
+
+			<a class="scroll-down" href="#content">
+                <span><i class="fab fa-chevron-down fa-1x"></i></span>
+            </a>
 		</header>
 
 		<main id="content" class="content" role="main" >
-
 			<!-- SECTIONS -->
-			{{ partial "hmpg-blocks.html" . }}
-			<!-- /.SECTIONS -->
 
-
-			<!-- POSTS ... This is a WIP adapted from hugo-universal-theme - 3 column teaser -->
+			<!-- Recent Posts -->
 			{{ partial "recent-posts.html" . }}
-			<!-- /. POSTS -->
 
+            <!-- Home Page Blocks -->
+            {{ partial "hmpg-blocks.html" . }}
+
+			<!-- /.SECTIONS -->
 		</main>
 
 		<!-- footer.html includes partial "scripts.html" -->

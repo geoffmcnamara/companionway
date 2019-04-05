@@ -86,16 +86,17 @@
 		</header>
 
 		<main id="content" class="content" role="main" >
-
 			<!-- SECTIONS -->
-			{{ partial "hmpg-blocks.html" . }}
+                <!-- gads -->
+                {{ partial "gads.html" . }}
+                
+                <!-- Recent Posts -->
+                {{ partial "recent-posts.html" . }}
+
+                <!--Home Page Blocks -->
+                {{ partial "hmpg-blocks.html" . }}
+
 			<!-- /.SECTIONS -->
-
-
-			<!-- POSTS ... This is a WIP adapted from hugo-universal-theme - 3 column teaser -->
-			{{ partial "recent-posts.html" . }}
-			<!-- /. POSTS -->
-
 		</main>
 
 		<!-- footer.html includes partial "scripts.html" -->

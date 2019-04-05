@@ -7,14 +7,15 @@ image = ""
 share = false
 slug = ""
 tags = []
-title = "Posts I have Recently Enjoyed"
-weight = 10
+title = "Ready, Set, Code"
+weight = 20
 
 +++
 
 <!-- <div style="background: lightslategray;"> -->
+<HR>
 <div>
-<center><h1 style="background: lightslategray; text-shadow: 5px 2px #ff5500;">Get Ready, Get Set, Go Code!</center>
+<center><h1 style="background: lightslategray; text-shadow: 5px 2px #ff5500;">Ready, Set, Code!</center>
 </div>
 <div class="container" style="background: gainsboro;">
   <section class="call-to-action">
