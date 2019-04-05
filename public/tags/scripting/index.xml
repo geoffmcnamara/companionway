@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scripting on companionway</title>
-    <link>https://www.companionway.net/tags/scripting/</link>
+    <link>http://rasp2/companionway.net/tags/scripting/</link>
     <description>Recent content in Scripting on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Thu, 15 Dec 2016 16:36:42 -0500</lastBuildDate>
     
-	<atom:link href="https://www.companionway.net/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rasp2/companionway.net/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Sometimes It Is The Obvious</title>
-      <link>https://www.companionway.net/post/sometimes-it-is-the-obvious/</link>
+      <link>http://rasp2/companionway.net/post/sometimes-it-is-the-obvious/</link>
       <pubDate>Thu, 15 Dec 2016 16:36:42 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/sometimes-it-is-the-obvious/</guid>
+      <guid>http://rasp2/companionway.net/post/sometimes-it-is-the-obvious/</guid>
       <description>&lt;p&gt;This was one of those &amp;ldquo;problems&amp;rdquo; that nagged me for many hours until the obvious dawned on me.
 I wrote a python script to grab the temperature and humidity from a DHT22 sensor and then write the
 output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
@@ -32,10 +32,10 @@ python script independently for testing or for curiosity.&lt;/p&gt;</description
     
     <item>
       <title>shell/bash uppercase arguments</title>
-      <link>https://www.companionway.net/post/2015-05-11-post1/</link>
+      <link>http://rasp2/companionway.net/post/2015-05-11-post1/</link>
       <pubDate>Mon, 11 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-05-11-post1/</guid>
+      <guid>http://rasp2/companionway.net/post/2015-05-11-post1/</guid>
       <description>To make a long story short&amp;hellip;
 #!/bin/bash PATTERN=$(echo $1 | tr [:lower:] [:upper:]) # or PATTERN=$(echo $1 | tr [a-z] [A-Z]) # or PATTERN=$(echo $1 | awk &#39;{print toupper($0)}&#39;) echo &amp;quot;Your \$1 argument is now uppercase: $1&amp;quot;  To make a short story long&amp;hellip;
 Just to let you know a little more about me and reveal a few more shells tricks along the way.

@@ -605,7 +605,13 @@ rm -- -TaskList_1-
 ```
 
 ## Vim-Ack
+
 This Plug-in is an incredibly fast recursive grep. It will search all the file in your file tree starting at the current directory by default finding any occurrance of the string you provide.
+
+The Ack plug-in uses the commandline tool called `ack`. You may have to install it on your system.
+```
+sudo apt install ack
+```
 
 To use it:
 `:Ack 'what ever string you want to look for'`

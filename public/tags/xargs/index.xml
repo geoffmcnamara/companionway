@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xargs on companionway</title>
-    <link>https://www.companionway.net/tags/xargs/</link>
+    <link>http://rasp2/companionway.net/tags/xargs/</link>
     <description>Recent content in Xargs on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Sat, 10 Dec 2016 20:38:12 -0500</lastBuildDate>
     
-	<atom:link href="https://www.companionway.net/tags/xargs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://rasp2/companionway.net/tags/xargs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Recursively Replace Text</title>
-      <link>https://www.companionway.net/post/recursive-replace-text/</link>
+      <link>http://rasp2/companionway.net/post/recursive-replace-text/</link>
       <pubDate>Sat, 10 Dec 2016 20:38:12 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/recursive-replace-text/</guid>
+      <guid>http://rasp2/companionway.net/post/recursive-replace-text/</guid>
       <description>&lt;p&gt;Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If I had to look it up, you have to suffer seeing it in my blog post&amp;hellip; [smile]&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;find ./ -name \*.md -print0 | xargs -0 sed -i &#39;s/header-img/img/&#39;
