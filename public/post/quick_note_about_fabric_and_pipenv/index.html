@@ -1,0 +1,388 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		
+
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.companionway.net/img/posted-keep-out.jpg" />
+
+
+
+
+<meta name="twitter:title" content="Quick Note about fabric and pipenv" />
+<meta name="twitter:description" content="I have posted several articles about python fabric and yet I failed to warn you about the dangers of
+version and module chaos.
+
+Initially, fabric came as a python2 only application. They added support for python3 later. Here is the version
+I am using in a virtual environment (more about that in a minute). From within my pipenv project directory with pipenv shell loaded
+this is what I get running fab &ndash;version
+
+fab --version
+Fabric3 1.14.post1
+Paramiko 2.4.2
+
+
+Here is how I created my virtual environment. I have used almost all of python&rsquo;s virtual environment tools (and there a quite a few).
+And there has been a steady progression of improvements in those tools. My current goto for a python virtual environment is pipenv.
+It is simple, clean, and almost fool proof which is essential for me." />
+
+
+
+		<meta property="og:title" content=" Quick Note about fabric and pipenv &middot;  companionway" />
+		<meta property="og:site_name" content="companionway" />
+		<meta property="og:url" content="https://www.companionway.net/post/quick_note_about_fabric_and_pipenv/" />
+
+		
+		<meta property="og:type" content="article" />
+		<meta property="og:article:published_time" content="2019-03-13T10:56:05-04:00" />
+		
+		
+
+		<title>
+			 Quick Note about fabric and pipenv &middot;  companionway
+		</title>
+
+		<meta name="description" content="Meeting challenges with success!" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="https://www.companionway.net/img/favicon.ico">
+		<link rel="apple-touch-icon" href="https://www.companionway.net/img/apple-touch-icon.png" />
+
+		
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/nav.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/screen.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/custom.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+		
+
+		
+		
+		<link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
+		
+		
+		
+		<meta name="generator" content="Hugo 0.54.0" />
+
+		<link rel="canonical" href="https://www.companionway.net/post/quick_note_about_fabric_and_pipenv/" />
+
+		
+<link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Architects Daughter" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Philosopher">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+
+
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-6970218-1', 'auto');
+ga('send', 'pageview');
+
+		</script>
+		
+
+		
+	</head>
+	<body class="nav-closed">
+
+		<div class="nav">
+	<h3 class="nav-title">Menu</h3>
+	<a href="#" class="nav-close">
+		<span class="hidden">Close</span>
+	</a>
+	<ul>
+		
+
+		
+		
+		<li class="nav-opened" role="presentation">
+			<a href="/">Home</a>
+		</li>
+		
+		
+		<li class="nav-opened" role="presentation">
+			<a href="/post">Posts</a>
+		</li>
+		
+		
+		<li class="nav-opened" role="presentation">
+			<a href="/page/about/">About</a>
+		</li>
+		
+		
+		<li class="nav-opened" role="presentation">
+			<a href="/page/links/">Links</a>
+		</li>
+		
+		
+		<li class="nav-opened" role="presentation">
+			<a href="/articles/">Newspaper</a>
+		</li>
+		
+		
+		<li class="nav-opened" role="presentation">
+			<a href="/page/projects/">Projects</a>
+		</li>
+		
+	</ul>
+
+	
+    <a class="subscribe-button icon-feed" href="https://www.companionway.netindex.xml">Subscribe</a>
+
+</div>
+<span class="nav-cover"></span>
+
+
+		<div class="site-wrapper">
+
+
+
+
+
+	<header class="main-header post-head" style="background-image: url(https://www.companionway.net/img/posted-keep-out.jpg)">
+		
+		<nav class="main-nav overlay clearfix">
+			
+
+					
+					<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
+					
+					
+					<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+					
+				</nav>
+			</header>
+
+
+			<main class="content" role="main">
+
+
+
+				<article class="post">
+
+					<header class="post-header">
+						<h1 class="post-title">
+							
+							Quick Note about fabric and pipenv
+							
+						</h1>
+						<small></small>
+
+						<section class="post-meta">
+							
+							<time class="post-date" datetime="2019-03-13T10:56:05-04:00">
+								Mar 13, 2019
+							</time>
+							
+							
+						</section>
+					</header>
+
+					<section class="post-content">
+						<p>I have posted several articles about python fabric and yet I failed to warn you about the dangers of
+version and module chaos.</p>
+
+<p>Initially, fabric came as a python2 only application. They added support for python3 later. Here is the version
+I am using in a virtual environment (more about that in a minute). From within my pipenv project directory with pipenv shell loaded
+this is what I get running fab &ndash;version</p>
+
+<pre><code>fab --version
+Fabric3 1.14.post1
+Paramiko 2.4.2
+</code></pre>
+
+<p>Here is how I created my virtual environment. I have used almost all of python&rsquo;s virtual environment tools (and there a quite a few).
+And there has been a steady progression of improvements in those tools. My current goto for a python virtual environment is pipenv.
+It is simple, clean, and almost fool proof which is essential for me.</p>
+
+<p>I don&rsquo;t remember exactly but I think I initially installed pipenv using apt. For my fabric use I created my fabric development project
+directory with <code>mkdir -p ~/dev/python/fabric</code>. Here are the easy steps to establish your virtual environment:</p>
+
+<pre><code>cd ~/dev/python/fabric
+pipenv --three install # do this once. It establishes everything needed for the virtual environment. The --three option makes it python3
+pipenv shell
+</code></pre>
+
+<p>Now you should be in your virtual environment using python3. When you are in the pipenv shell there is an addition to your prompt to let you
+know. ie: [fabric3]</p>
+
+<p>Make sure you have pip installed for python3 and use it while your are in the pipenv shell to install fabric&hellip;</p>
+
+<pre><code>pip install fabric3
+ # or
+pip3 install fabric3  # pip3 is not necessary as pipenv shell is already using pip3
+</code></pre>
+
+<p>The virtual (pipenv) environment is using python3 (not the default on ubuntu 2019-03-13) here is your proof:</p>
+
+<pre><code>python --version
+Python 3.7.2rc1
+</code></pre>
+
+<p>From within my pipenv shell for my fabric project these are the modules that pip list shows:</p>
+
+<pre><code>pip list
+Package      Version   
+------------ ----------
+asn1crypto   0.24.0    
+bcrypt       3.1.6     
+cffi         1.11.5    
+colorama     0.4.1     
+cryptography 2.4.2     
+docopt       0.6.2     
+Fabric3      1.14.post1
+idna         2.8       
+paramiko     2.4.2     
+pip          18.1      
+pyasn1       0.4.5     
+pycparser    2.19      
+PyNaCl       1.3.0     
+setuptools   40.6.3    
+six          1.12.0    
+wheel        0.32.3    
+</code></pre>
+
+<p>Notice fabric is listed as Fabric3</p>
+
+<p>To make things really easy for me to get going on a fabric task I have an alias set up in my ~.bashrc that looks like this:</p>
+
+<pre><code>alias pyfab=&quot;cd ~/dev/python/pipenv/fabric3; pipenv shell&quot;
+</code></pre>
+
+<p>All that is needed is to type &ldquo;pyfab&rdquo; and I am in the pipenv shell in the fabric directory and all is good in the world.</p>
+
+<p>Then main file in this directory is my fabfile.py which is the default fabric task declaration file.
+To launch fabric of course you just type <code>fab -l</code> while in the pipenv shell. This command will list all the tasks you have written in
+your fabfile.py If you don&rsquo;t have a fabfile.py set up yet you will get this error:</p>
+
+<pre><code>fab -l
+Fatal error: Couldn't find any fabfiles!
+Remember that -f can be used to specify fabfile path, and use -h for help.
+Aborting.
+</code></pre>
+
+<p>I code everything I can in python3 vs python2 because python3 is so much better. I made it my default platform when f-strings
+became available in python3.6? This allows something like this:</p>
+
+<pre><code>name = &quot;geoff&quot;
+print(f&quot;My name is {name:&gt;30}. You can print python directly like this {3 + 4} from within function {__name__}&quot;)
+</code></pre>
+
+<p>So it was a must for me to have fabric work in python3. Because fabric is an indispensable tool in my life I need to make sure it is safe
+from outside changes. That requires placing it in a virtual environment, isolated away from version and module changes made elsewhere.</p>
+					</section>
+
+
+					
+
+
+
+
+
+<section class="author">
+<h4><a href="https://www.companionway.net">Geoff McNamara</a></h4>
+
+<p>“Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien</p>
+
+<div class="author-meta">
+
+<i class="fa fa-map-marker"></i>
+
+<span class="author-location">Elizabeth City, NC
+</span>
+
+
+<i class="fa fa-link"></i>
+<span class="author-link"><a href="https://www.companionway.net">https://www.companionway.net</a></span>
+
+
+</div>
+</section>
+
+
+
+					
+
+
+					
+
+
+				</article>
+
+			</main>
+            
+
+
+       
+       
+<div class="row" id="partial_gads_html">
+    <center>
+    
+    <div class="col-md-11 col-md-offset-1 card">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-6986704271237340"
+            data-ad-slot="6884077067"
+            data-ad-format="auto">
+        </ins>
+    </div>
+
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    </center>
+</div>
+<hr>
+
+			
+<script type="text/javascript" src="https://www.companionway.net/js/jquery.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/index.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script>
+<script type="text/javascript" src="https://www.companionway.net/js/custom.js"></script>
+<script id="dsq-count-scr" src="//companionway-net.disqus.com/count.js" async></script>
+
+
+
+
+
+
+<footer class="site-footer clearfix">
+	<center>
+		<div id="site-footer">
+			<hr style="padding: 0px; margin: 0px;">
+			<span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+			<span>
+				
+				All rights reserved - companionway - 2016
+				
+			</span>
+			<hr style="padding: 0px; margin: 0px;">
+		</div>
+	</center>
+	
+
+</footer>
+</div> 
+</body>
+</html>
+

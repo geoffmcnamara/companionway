@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
@@ -11,28 +10,39 @@
 
 
 
-<meta name="twitter:card" content="summary" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.companionway.net/img/raspberry-pi-card.jpg" />
 
 
 
 
-<meta name="twitter:title" content="" />
-<meta name="twitter:description" content="(adsbygoogle = window.adsbygoogle || []).push({});" />
+<meta name="twitter:title" content="Raspberry Pi and Xrdp" />
+<meta name="twitter:description" content="I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
+any linux machine) can be done so many different ways - but the easiest from my perspective is xrdp. It is available
+really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
+xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
+Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
+almost any linux distro." />
 
 
 
-		<meta property="og:title" content="  &middot;  companionway" />
+		<meta property="og:title" content=" Raspberry Pi and Xrdp &middot;  companionway" />
 		<meta property="og:site_name" content="companionway" />
-		<meta property="og:url" content="https://www.companionway.net/hmpg-blocks/gads/" />
+		<meta property="og:url" content="https://www.companionway.net/post/raspberry-pi-and-xrdp/" />
 
 		
 		<meta property="og:type" content="article" />
-		<meta property="og:article:published_time" content="2016-11-30T12:58:32-05:00" />
+		<meta property="og:article:published_time" content="2016-12-16T12:27:36-05:00" />
+		
+		<meta property="og:article:tag" content="raspberry" />
+		
+		<meta property="og:article:tag" content="rdp" />
 		
 		
 
 		<title>
-			  &middot;  companionway
+			 Raspberry Pi and Xrdp &middot;  companionway
 		</title>
 
 		<meta name="description" content="Meeting challenges with success!" />
@@ -58,7 +68,7 @@
 		
 		<meta name="generator" content="Hugo 0.54.0" />
 
-		<link rel="canonical" href="https://www.companionway.net/hmpg-blocks/gads/" />
+		<link rel="canonical" href="https://www.companionway.net/post/raspberry-pi-and-xrdp/" />
 
 		
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -141,9 +151,11 @@ ga('send', 'pageview');
 
 
 
-			<header class="main-header post-head no-cover">
-				<nav class="main-nav clearfix">
-					
+
+	<header class="main-header post-head" style="background-image: url(https://www.companionway.net/img/raspberry-pi-card.jpg)">
+		
+		<nav class="main-nav overlay clearfix">
+			
 
 					
 					<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
@@ -155,54 +167,81 @@ ga('send', 'pageview');
 			</header>
 
 
-
 			<main class="content" role="main">
 
 
 
-
-				<article class="hmpg-blocks">
+				<article class="post">
 
 					<header class="post-header">
-						<h1 class="post-title"></h1>
+						<h1 class="post-title">
+							
+							Raspberry Pi and Xrdp
+							
+						</h1>
 						<small></small>
 
 						<section class="post-meta">
 							
+							<time class="post-date" datetime="2016-12-16T12:27:36-05:00">
+								Dec 16, 2016
+							</time>
+							
+							
+							<span class="post-tag small"><a href="https://www.companionway.nettags/raspberry/">#raspberry</a></span>
+							
+							<span class="post-tag small"><a href="https://www.companionway.nettags/rdp/">#rdp</a></span>
 							
 						</section>
 					</header>
 
 					<section class="post-content">
-						<p><div id="gads_md">
-  <center>
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-6986704271237340"
-       data-ad-slot="6884077067"
-       data-ad-format="auto">
-  </ins></p>
+						<p>I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
+any linux machine) can be done so many different ways - but the easiest from my perspective is xrdp. It is available
+really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
+xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
+Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
+almost any linux distro.</p>
 
-<p><script>
-  (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  </center>
-</div>
-<hr></p>
+<p>When you launch remmina it will ask for a username and password for a connection onto the IP machine you declare in the setup.
+If the xrdp service is properly running on the remote machine it will server up a personal desktop for the user login
+independant of any other desktop sessions that might be running.
+But - I am a fan of enlightment desktop e17 for a whole lot of reasons, many of which are personal history. Enlightenment desktop
+is lightweight so it works well on a raspberry pi. My task was to install e17 onto the raspberry pi and it becomes an
+alternet desktop and then make it available to me over xrdp. My quick searches on the internet turned up a good deal of bogus
+dead ends but I looked over the startup scripts for xsession and noticed it by default looks for and will launch</p>
 
+<pre><code class="language-$HOME/.xsession```.">
+I am using Raspbian 8.0 debian jessie on my raspberry pi. Well, no, actually, I am using berryboot to launch Rasbian 8.0 but that
+has no bearing on this discussion. Rasbian now comes with the pixel desktop which includes the lxterminal program by default
+so I call that up in my ```$HOME/.xsession``` script before launching the enlightnement destop. Here is my script
+
+</code></pre>
+
+<p>#!/usr/bin/env bash
+lxterminal &amp;
+enlightenment_start</p>
+
+<pre><code>
+Then restart the xrdp service with:
+</code></pre>
+
+<p>sudo systemctl restart xrdp.service
+```</p>
+
+<p>If it is your first launch of enightenment you will have to go through the brief setup - for the most part, pick the defaults and happy days are here again.</p>
+
+<p>Oh but then you will run into this rather serious problem - half of your keys won&rsquo;t work! I have a solution but it probably
+isn&rsquo;t the best solution - it just happens to be the  only one I came across that worked for me.
+Use the mouse in enlightenment and navigate through <code>Settings-&gt;All-&gt;Input-&gt;Key Bindings ... click on Delete All</code>
+This works and you lose keybindings that you probably wouldn&rsquo;t use through vnc anyway.</p>
+
+<p>Enjoy
+-g-</p>
 					</section>
 
 
-					<footer class="post-footer">
-
-
-						
-						<figure class="author-image">
-							<a class="img" href="https://www.companionway.net" style="background-image: url(https://www.companionway.net/img/sailboat.png)"><span class="hidden">Geoff McNamara's Picture</span></a>
-						</figure>
-						
-
-						
+					
 
 
 
@@ -230,10 +269,10 @@ ga('send', 'pageview');
 
 
 
-						
+					
 <section class="share">
 
-	<h4>Share this hmpg-blocks</h4>
+	<h4>Share this post</h4>
     
     <a class="bloglogo" href="https://twitter.com/geoffmcnamara" target="_blank">
         <i class="fab fa-twitter fa-1x" style="color:green;"></i>
@@ -242,7 +281,7 @@ ga('send', 'pageview');
     
 
     
-	 <a class="bloglogo" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.companionway.net%2fhmpg-blocks%2fgads%2f">
+	 <a class="bloglogo" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.companionway.net%2fpost%2fraspberry-pi-and-xrdp%2f">
 		<i class="fab fa-facebook fa-1x" style="color:blue;"></i>
 	</a>
     &nbsp;
@@ -268,13 +307,36 @@ ga('send', 'pageview');
 
 
 
-						
+					
 
 
-					</footer>
 				</article>
 
 			</main>
+            
+
+
+       
+       
+<div class="row" id="partial_gads_html">
+    <center>
+    
+    <div class="col-md-11 col-md-offset-1 card">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-6986704271237340"
+            data-ad-slot="6884077067"
+            data-ad-format="auto">
+        </ins>
+    </div>
+
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    </center>
+</div>
+<hr>
+
 			
 <script type="text/javascript" src="https://www.companionway.net/js/jquery.js"></script>
 <script type="text/javascript" src="https://www.companionway.net/js/jquery.fitvids.js"></script>

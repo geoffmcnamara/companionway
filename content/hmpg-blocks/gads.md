@@ -2,7 +2,7 @@
 author = ""
 comments = false
 date = "2016-11-30T12:58:32-05:00"
-draft = false
+draft = true
 image = ""
 menu = ""
 share = true

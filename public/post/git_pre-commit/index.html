@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+		
+
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://www.companionway.net/img/hanging-hook-sized.jpg" />
+
+
+
+
+<meta name="twitter:title" content="Using a generic git pre-commit hook" />
+<meta name="twitter:description" content="test_it &amp;&amp; commit_it || reject_it
+
+Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
+The goal is to have respectable code before it lands in a repository. Git makes this very easy through the use
+of &ldquo;hooks&rdquo;. If you look in any of your git project directories you will find these files in the ./.git/hooks/ directory:" />
+
+
+
+		<meta property="og:title" content=" Using a generic git pre-commit hook &middot;  companionway" />
+		<meta property="og:site_name" content="companionway" />
+		<meta property="og:url" content="https://www.companionway.net/post/git_pre-commit/" />
+
+		
+		<meta property="og:type" content="article" />
+		<meta property="og:article:published_time" content="2018-10-07T10:05:52-04:00" />
+		
+		
+
+		<title>
+			 Using a generic git pre-commit hook &middot;  companionway
+		</title>
+
+		<meta name="description" content="Meeting challenges with success!" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="https://www.companionway.net/img/favicon.ico">
+		<link rel="apple-touch-icon" href="https://www.companionway.net/img/apple-touch-icon.png" />
+
+		
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/nav.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/screen.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/custom.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+		
+
+		
+		
+		<link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
+		
+		
+		
+		<meta name="generator" content="Hugo 0.54.0" />
+
+		<link rel="canonical" href="https://www.companionway.net/post/git_pre-commit/" />
+
+		
+<link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Architects Daughter" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Philosopher">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+
+
+		
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-6970218-1', 'auto');
+ga('send', 'pageview');
+
+		</script>
+		
+
+		
+	</head>
+	<body class="nav-closed">
+
+		<div class="nav">
+	<h3 class="nav-title">Menu</h3>
+	<a href="#" class="nav-close">
+		<span class="hidden">Close</span>
+	</a>
+	<ul>
+		
+
+		
+		
+		<li class="nav-opened" role="presentation">
+			<a href="/">Home</a>
+		</li>
+		
+		
+		<li class="nav-opened" role="presentation">
+			<a href="/post">Posts</a>
+		</li>
+		
+		
+		<li class="nav-opened" role="presentation">
+			<a href="/page/about/">About</a>
+		</li>
+		
+		
+		<li class="nav-opened" role="presentation">
+			<a href="/page/links/">Links</a>
+		</li>
+		
+		
+		<li class="nav-opened" role="presentation">
+			<a href="/articles/">Newspaper</a>
+		</li>
+		
+		
+		<li class="nav-opened" role="presentation">
+			<a href="/page/projects/">Projects</a>
+		</li>
+		
+	</ul>
+
+	
+    <a class="subscribe-button icon-feed" href="https://www.companionway.netindex.xml">Subscribe</a>
+
+</div>
+<span class="nav-cover"></span>
+
+
+		<div class="site-wrapper">
+
+
+
+
+
+	<header class="main-header post-head" style="background-image: url(https://www.companionway.net/img/hanging-hook-sized.jpg)">
+		
+		<nav class="main-nav overlay clearfix">
+			
+
+					
+					<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
+					
+					
+					<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+					
+				</nav>
+			</header>
+
+
+			<main class="content" role="main">
+
+
+
+				<article class="post">
+
+					<header class="post-header">
+						<h1 class="post-title">
+							
+							Using a generic git pre-commit hook
+							
+						</h1>
+						<small></small>
+
+						<section class="post-meta">
+							
+							<time class="post-date" datetime="2018-10-07T10:05:52-04:00">
+								Oct 7, 2018
+							</time>
+							
+							
+						</section>
+					</header>
+
+					<section class="post-content">
+						<h4 id="test-it-commit-it-reject-it">test_it &amp;&amp; commit_it || reject_it</h4>
+
+<p>Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
+The goal is to have respectable code <em>before</em> it lands in a repository. Git makes this very easy through the use
+of &ldquo;hooks&rdquo;. If you look in any of your git project directories you will find these files in the <code>./.git/hooks/</code> directory:</p>
+
+<pre><code>pplypatch-msg.sample
+commit-msg.sample
+post-update.sample
+pre-applypatch.sample
+pre-commit.sample
+prepare-commit-msg.sample
+pre-push.sample
+pre-rebase.sample
+pre-receive.sample
+update.sample
+</code></pre>
+
+<p>These are all obvious sample files. One of the most important steps you can take with your .git project is to force
+good practices on your code by creating a pre-commit hook script. Using a pre-commit script will encourage
+you to write consistently good code from the very start.</p>
+
+<p>A pre-commit script will be invoked as soon as you create an executable file with this name:</p>
+
+<pre><code class="language-bash">./.git/hooks/pre-commit
+</code></pre>
+
+<p>Now that file will run before your git commits and if the return code is not 0 your commit will fail.</p>
+
+<p>Here is a very simple example. You have a clever project called hello.py. Your intent is to have good code before
+commit so you write a ./.git/hooks/pre-commit bash script that looks like this:</p>
+
+<pre><code class="language-bash">#!/bin/bash
+flake8 *.py
+</code></pre>
+
+<p>The file hello.py contains:</p>
+
+<pre><code class="language-python">#! /usr/bin/env python3
+
+if __name__ == '__main__':
+    # the above line allows this code to run independently or as a module
+    &quot;&quot;&quot;
+    Use: hello.py
+    Input: The user will be asked his/her name.
+    Output: Hello World, may name is {name}
+    &quot;&quot;&quot;
+
+    myname = input(&quot;What, pray tell, is your name: &quot;)
+    print(f&quot;Hello World!, my name is {myname}&quot;)
+</code></pre>
+
+<p>Now, if you run git add -A, followed by git commit will cause the ./.git/hooks/pre-commit to run against the hello.py
+and it will return an result code of 0 so all will be good and the commit will be successful.</p>
+
+<p>You can test this yourself by running:</p>
+
+<pre><code class="language-bash">./git/hooks/pre-commit
+echo $?
+</code></pre>
+
+<p>But what if you change line 8 to this:</p>
+
+<pre><code class="language-python">      myname=input(&quot;What, pray tell, is your name: &quot;)
+</code></pre>
+
+<p>Now if you run the pre-commit script it will return something like:</p>
+
+<pre><code class="language-bash">hello.py:11:11: E225 missing whitespace around operator
+</code></pre>
+
+<p>This will return a non-zero return code. Any attempts to do a git commit will fail as a result. That is a good thing
+as you want to learn good coding practices and submitting this code would not be consistent with that goal.</p>
+
+<p>Just a word about using flake8 as a linter. It will drive you crazy. Failing on long lines (over 80 characters)
+really drives me nuts, but flake8 and forcing you to play well in the pep8 standards realm. You can control that
+through the $HOME/.config/flake8 file with entires like this:</p>
+
+<pre><code class="language-bash">[flake8]
+max-line-length = 120
+</code></pre>
+
+<p>When I first started using linters to check my coding it was painful. But once you get all your code cleaned up
+you find yourself writing better code from the very start. The pain subsides and life is good again.</p>
+
+<p>I use linters on lots of different kinds of files now:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">File ending [type]</th>
+<th align="center">linter(s)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">*.py</td>
+<td align="center">autopep8, flake8, python -m doctest</td>
+</tr>
+
+<tr>
+<td align="center">*.html</td>
+<td align="center">htmllint</td>
+</tr>
+
+<tr>
+<td align="center">*sh</td>
+<td align="center">shellcheck</td>
+</tr>
+
+<tr>
+<td align="center">*.nts or *.txt</td>
+<td align="center">write-good</td>
+</tr>
+
+<tr>
+<td align="center">*.css</td>
+<td align="center">stylelint</td>
+</tr>
+</tbody>
+</table>
+
+<p>A linter exists for dozens of code or writing formats. It is your adventure to find them and wrestle them into submission for your aspirations.</p>
+
+<p>I try to make is easy on myself so I use a <strong>single</strong> script in every git project directory. The script is a simple bash executable that runs various linters against code before it is committed (hence: pre-commit). Every time I run <code>git init</code> on a new project directory I also
+copy my standard .gitignore file from my ~/dev/dotfiles directory and I copy this script over</p>
+
+<pre><code>cp $HOME/dev/dotfiles/scripts/pre-commit.sh {new project directory}/scripts/pre-commit.sh
+</code></pre>
+
+<p>Actually, I just <code>cp -r $HOME/dev/dotfiles/scripts {project directory}/</code>. Now I can
+just run <code>./scripts/pre-commit.sh</code> and it will check any *.py files and *.sh file and any
+*.html files etc using the linters above. That one script can be used in any project to
+help establish a minimal code quality baseline.</p>
+
+<p>Here is a quick redacted example:</p>
+
+<pre><code>#!/bin/bash
+
+function check_sh_files()
+{
+  LINTER=shellcheck
+  LINTER_OPS=&quot;&quot;
+  find ./ -name \*.sh -print0 |\
+    while read -r -d '' file; doere 
+      echo Running: shellcheck &quot;$file&quot;
+      shellcheck &quot;$file&quot; || exit $?
+    done
+}
+
+# Note that this function does a &quot;fast-fail&quot; with a non-zero exit
+# other functions for check_py_files, check_html_files... etc - even one to
+# make sure there is a README with minimal info.
+
+# Main Code #
+check_sh_files
+check_py_files
+check_html_files
+check_css_files
+# etc...
+# EOF #
+</code></pre>
+
+<p>The script is not invoked by git commit yet. Above we directly created an executable file called <code>./.git/hooks/pre-connect</code>.
+We need to remove the original simple script that only checkec *.py files and instead soft link this new file in its place.
+To do that run:</p>
+
+<pre><code>function do_install()
+{
+	# run this from the project basedir 
+  # here is a protection test
+	if ! [ -d ./.git ] || ! [ -d ./scripts ] ; then
+    echo &quot;Please run this script from the project base directory... exiting...&quot;
+    exit 5
+  fi
+
+	# changing to the .git/hooks directory first is *important*
+	# it allows you to create a &quot;relative&quot; link that git will respect.
+	cd ./.git/hooks
+	if ! [ -h ./pre-commit ]; then
+		# a link does not already exist for this file so we now create one
+		ln -s ../../scripts/&quot;$BASENAME&quot;  ./pre-commit
+	else
+		echo It appears .git/hooks/pre-commit exists ...
+	fi
+	cd ../..  # return to the project basedir.
+}
+</code></pre>
+
+<p>Add this line now just below the <code># Main Code #</code> line:</p>
+
+<pre><code>do_install
+</code></pre>
+
+<p>So the fists time you run this script it will install as a link named ./.git/hooks/pre-connect.</p>
+
+<p>My script has much more than I have shown here. It checks README files and it updates itself
+if it finds any differences from the master copy:  <code>~/dev/dotfiles/script/preconnect.sh</code>.</p>
+
+<p>This gives you an idea of how to use a <code>./.git/hook/pre-connect</code> script to improve your coding practices.</p>
+
+<p>Enjoy,</p>
+
+<p>-geoffm-</p>
+					</section>
+
+
+					
+
+
+
+
+
+<section class="author">
+<h4><a href="https://www.companionway.net">Geoff McNamara</a></h4>
+
+<p>“Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien</p>
+
+<div class="author-meta">
+
+<i class="fa fa-map-marker"></i>
+
+<span class="author-location">Elizabeth City, NC
+</span>
+
+
+<i class="fa fa-link"></i>
+<span class="author-link"><a href="https://www.companionway.net">https://www.companionway.net</a></span>
+
+
+</div>
+</section>
+
+
+
+					
+
+
+					
+
+
+				</article>
+
+			</main>
+            
+
+
+       
+       
+<div class="row" id="partial_gads_html">
+    <center>
+    
+    <div class="col-md-11 col-md-offset-1 card">
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-6986704271237340"
+            data-ad-slot="6884077067"
+            data-ad-format="auto">
+        </ins>
+    </div>
+
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    </center>
+</div>
+<hr>
+
+			
+<script type="text/javascript" src="https://www.companionway.net/js/jquery.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/index.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script>
+<script type="text/javascript" src="https://www.companionway.net/js/custom.js"></script>
+<script id="dsq-count-scr" src="//companionway-net.disqus.com/count.js" async></script>
+
+
+
+
+
+
+<footer class="site-footer clearfix">
+	<center>
+		<div id="site-footer">
+			<hr style="padding: 0px; margin: 0px;">
+			<span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+			<span>
+				
+				All rights reserved - companionway - 2016
+				
+			</span>
+			<hr style="padding: 0px; margin: 0px;">
+		</div>
+	</center>
+	
+
+</footer>
+</div> 
+</body>
+</html>
+
