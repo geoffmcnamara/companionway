@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Awk on companionway</title>
-    <link>http://rasp2/companionway.net/tags/awk/</link>
+    <link>https://www.companionway.net/tags/awk/</link>
     <description>Recent content in Awk on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
     <lastBuildDate>Sat, 02 May 2015 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://rasp2/companionway.net/tags/awk/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.companionway.net/tags/awk/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to print the remainder of a line using awk</title>
-      <link>http://rasp2/companionway.net/post/2015-05-02-post1/</link>
+      <link>https://www.companionway.net/post/2015-05-02-post1/</link>
       <pubDate>Sat, 02 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-05-02-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-05-02-post1/</guid>
       <description>&lt;p&gt;#How to print remainder of line using awk&lt;/p&gt;
 
 &lt;h2 id=&#34;eliminate-the-first-x-columns&#34;&gt;eliminate the first X columns&amp;hellip;&lt;/h2&gt;
@@ -45,10 +45,10 @@ first entry with its arguments as a test run:&lt;/p&gt;
     
     <item>
       <title>Centering a string</title>
-      <link>http://rasp2/companionway.net/post/2015-04-02-post1/</link>
+      <link>https://www.companionway.net/post/2015-04-02-post1/</link>
       <pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://rasp2/companionway.net/post/2015-04-02-post1/</guid>
+      <guid>https://www.companionway.net/post/2015-04-02-post1/</guid>
       <description>&lt;h1 id=&#34;center-a-string-using-awk&#34;&gt;Center a string using awk&lt;/h1&gt;
 
 &lt;h2 id=&#34;awk-everyone-s-favorite-right&#34;&gt;awk = everyone&amp;rsquo;s favorite - right?&lt;/h2&gt;
