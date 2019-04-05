@@ -5,7 +5,7 @@ title = "Managing Vim and essential Plugins"
 slug = ""
 tags = []
 image = "/img/plugstrip.jpg"
-comments = false    # set false to hide Disqus
+comments = true    # set false to hide Disqus
 share = true   # set false to hide share buttons
 author = "-geoff-"
 +++
@@ -24,7 +24,7 @@ There are a lot of tips in this post. Many are associated with the reference Plu
 ![So many plugs; such little time](/img/vim-plugs-screen.jpg)
 
 
-=================
+---------
 
 # Table of Contents
 
@@ -62,6 +62,7 @@ There are a lot of tips in this post. Many are associated with the reference Plu
   * [Vim-Calendar](#vim-calendar)
   * [Vim-TaskWarrior](#vim-taskwarrior)
   * [Vim-Markdown-Toc](#vim-markdown-toc)
+  * [Honorable Mentions](#honorable-mentions)
 
 <!-- vim-markdown-toc -->
 
@@ -715,6 +716,15 @@ I use this plug-in to build (or update) a table of contents for large markdown p
 
 To use this go to the location where you want the TOC then type: `:GenTocGFM`. It will use all the headings going forward in the document to build a simple TOC.
 
+
+### Honorable Mentions
+
+I haven't tried these yet but they look worthy of exploring
+
+- vim-eunich
+- vim-multiple-cursors
+
+see: [i10 Essential Vim Pluggins](https://medium.com/@huntie/10-essential-vim-plugins-for 2018-39957190b7a9)
 
 -------------------------
 
