@@ -6,7 +6,7 @@ menu = "main"
 comments = false
 +++
 
-- [modified-fisa-vimrc.raw](modified-fisa-vimrc.raw)`
-- [nodeinfo.zip](nodeinfo.zip)
+- [modified-fisa-vimrc.raw](/dlfiles/modified-fisa-vimrc.raw)`
+- [nodeinfo.zip](/dlfiles/nodeinfo.zip)
 
 
