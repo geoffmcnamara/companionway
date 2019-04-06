@@ -24,7 +24,8 @@ There are a lot of tips in this post. Many are associated with the reference Plu
 ![So many plugs; such little time](/img/vim-plugs-screen.jpg)
 
 
----------
+
+{{%shadowbox%}}
 
 # Table of Contents
 
@@ -66,7 +67,8 @@ There are a lot of tips in this post. Many are associated with the reference Plu
 
 <!-- vim-markdown-toc -->
 
-=================
+{{%/shadowbox%}}
+
 
 
 ## Preparation 
@@ -574,7 +576,7 @@ Start your exploration with
 ```
 ,m
 ```
-This will bring up any recent files you have edited and allow you to hit enter on it and bring it up in edit mode as another buffer. I find this very useful. If you type while in the list letters that might be in the filename you want, CtrlP will start to filter the list to match your typing - it does a **fuzzy** search on the past file load list. I use this all the time.
+This will bring up any recent files you have edited and allow you to hit enter on it and bring up the file in edit mode as another buffer. I find this very useful. If you type while in the list letters that might be in the filename you want, CtrlP will start to filter the list to match your typing - it does a **fuzzy** search on the past file load list. I use this all the time.
 
 The fisa-vimrc has changed the default activate trigger to `,e` with this line:
 ```
