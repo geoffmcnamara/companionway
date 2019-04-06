@@ -5,8 +5,8 @@ title = "Replace PHP with WSGI python"
 slug = ""
 tags = ["bottle","wsgi","php","devops","fabric"]
 image = "/img/bottle.png"
-comments = false	# set false to hide Disqus
-share = false	# set false to hide share buttons
+comments = true	# set false to hide Disqus
+share = true	# set false to hide share buttons
 author = ""
 +++
 

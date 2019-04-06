@@ -1,6 +1,6 @@
 +++
 author = ""
-comments = false
+comments = true
 date = "2016-12-09T10:57:45-05:00"
 draft = false
 image = "/img/hugo-logo.png"

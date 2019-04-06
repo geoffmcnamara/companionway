@@ -5,8 +5,8 @@ title = "Fabric_vs_ansible"
 slug = ""
 tags = []
 image = "/img/fabric_vector_logo.svg"
-comments = false	# set false to hide Disqus
-share = false	# set false to hide share buttons
+comments = true	# set false to hide Disqus
+share = true	# set false to hide share buttons
 author = ""
 +++
 

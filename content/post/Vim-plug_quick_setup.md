@@ -5,8 +5,8 @@ title = "Vim-Plug Quick Setup"
 slug = ""
 tags = []
 image = "/img/fisa-vimrc.jpg"
-comments = false	# set false to hide Disqus
-share = false	# set false to hide share buttons
+comments = true	# set false to hide Disqus
+share = true	# set false to hide share buttons
 #menu= ""		# set "main" to add this content to the main menu
 author = ""
 +++

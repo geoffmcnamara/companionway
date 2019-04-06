@@ -6,6 +6,7 @@ subtitle = "Newspaper Look and Feel"
 image = "/img/royal101.jpg"
 author = "geoffm"
 comments = true
+share = true
 
 +++
 

@@ -1,6 +1,6 @@
 +++
 author = ""
-comments = false
+comments = true
 date = "2016-12-22T14:08:05-05:00"
 draft = false
 image = "/img/python-logo.png"

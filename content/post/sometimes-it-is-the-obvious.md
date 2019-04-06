@@ -1,6 +1,6 @@
 +++
 author = ""
-comments = false
+comments = true
 date = "2016-12-15T16:36:42-05:00"
 draft = false
 image = "/img/owl.jpg"

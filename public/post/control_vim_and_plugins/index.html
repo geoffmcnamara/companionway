@@ -131,6 +131,11 @@ Do not be concerned about finishing this post in one sitting. Take a section at 
 		
 		
 		<li class="nav-opened" role="presentation">
+			<a href="/page/dlfiles/">Download Files</a>
+		</li>
+		
+		
+		<li class="nav-opened" role="presentation">
 			<a href="/page/links/">Links</a>
 		</li>
 		
@@ -210,7 +215,7 @@ Do not be concerned about finishing this post in one sitting. Take a section at 
 
 <p><img src="/img/vim-plugs-screen.jpg" alt="So many plugs; such little time" /></p>
 
-<div class="sboxit">
+<div class="lsboxit">
     <h1 id="table-of-contents">Table of Contents</h1>
 
 <!-- vim-markdown-toc GFM -->
@@ -945,6 +950,22 @@ Once installed, just type <code>:TW</code> and it brings up your taskwarrior lis
 
 <h3 id="honorable-mentions">Honorable Mentions</h3>
 
+<p>If you play with databases then you might consider loading up vim-dbext. I use it with an SQLITE3 database that I keep around that has tables for my contacts, recipes, notes, devices, etc.</p>
+
+<p>Load this plug-in with this line (in the appropriate section) in your <code>/.vimrc</code>:</p>
+
+<pre><code>Plug 'vim-scripts/dbext.vim'
+</code></pre>
+
+<p>Then add your sqlite db info into your <code>~/.vimrc</code> eith something like this:</p>
+
+<pre><code>let g:dbext_default_profile_myphile='type=SQLITE:dbname=/data/share/db_dir/myphile.db'
+</code></pre>
+
+<p>Use <code>&lt;Leader&gt;sbp</code> to select your connection profile.
+Type a line like this:
+<code>select * from recipes limit 3;</code> and while on this line hit <code>&lt;Leader&gt;sel</code>.</p>
+
 <p>I haven&rsquo;t tried these yet but they look worthy of exploring</p>
 
 <ul>
@@ -952,7 +973,7 @@ Once installed, just type <code>:TW</code> and it brings up your taskwarrior lis
 <li>vim-multiple-cursors</li>
 </ul>
 
-<p>see: <a href="https://medium.com/@huntie/10-essential-vim-plugins-for 2018-39957190b7a9">i10 Essential Vim Pluggins</a></p>
+<p>see: <a href="https://medium.com/@huntie/10-essential-vim-plugins-for 2018-39957190b7a9">10 Essential Vim Pluggins</a></p>
 
 <hr />
 

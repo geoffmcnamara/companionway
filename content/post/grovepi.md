@@ -5,7 +5,7 @@ subtitle   = "Make the raspberry pi GPIO pins quick and easy to use"
 author     = "geoffm"
 image      = "/img/grovepi1.jpg"
 share      = true
-comments   = false
+comments   = true
 tags       = ["grovepi"]
 draft      = false
 

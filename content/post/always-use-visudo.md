@@ -4,7 +4,7 @@ author   = "geoffm"
 date     = "2016-12-14T10:59:38-05:00"
 image    = "/img/visudo.jpg"
 share    = true
-comments = false
+comments = true
 tags     = ["sudo","visudo"]
 draft    = false
 

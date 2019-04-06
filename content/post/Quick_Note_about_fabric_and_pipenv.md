@@ -5,8 +5,8 @@ title = "Quick Note about fabric and pipenv"
 slug = ""
 tags = []
 image = "/img/posted-keep-out.jpg"
-comments = false	# set false to hide Disqus
-share = false	# set false to hide share buttons
+comments = true	# set false to hide Disqus
+share = true	# set false to hide share buttons
 author = ""
 +++
 

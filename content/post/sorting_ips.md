@@ -1,7 +1,7 @@
 +++
 title    = "Sorting IPs"
 author   = ""
-comments = false
+comments = true
 date     = "2017-01-01T15:53:14-05:00"
 draft    = false
 image    = "/img/sorting-hat.jpg"

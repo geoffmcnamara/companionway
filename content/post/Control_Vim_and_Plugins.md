@@ -25,7 +25,7 @@ There are a lot of tips in this post. Many are associated with the reference Plu
 
 
 
-{{%shadowbox%}}
+{{%lshadowbox%}}
 
 # Table of Contents
 
@@ -67,7 +67,7 @@ There are a lot of tips in this post. Many are associated with the reference Plu
 
 <!-- vim-markdown-toc -->
 
-{{%/shadowbox%}}
+{{%/lshadowbox%}}
 
 
 
@@ -721,12 +721,26 @@ To use this go to the location where you want the TOC then type: `:GenTocGFM`. I
 
 ### Honorable Mentions
 
+If you play with databases then you might consider loading up vim-dbext. I use it with an SQLITE3 database that I keep around that has tables for my contacts, recipes, notes, devices, etc.
+
+Load this plug-in with this line (in the appropriate section) in your `/.vimrc`:
+```
+Plug 'vim-scripts/dbext.vim'
+```
+Then add your sqlite db info into your `~/.vimrc` eith something like this:
+``` 
+let g:dbext_default_profile_myphile='type=SQLITE:dbname=/data/share/db_dir/myphile.db'
+```
+Use `<Leader>sbp` to select your connection profile.
+Type a line like this:
+`select * from recipes limit 3;` and while on this line hit `<Leader>sel`.
+
 I haven't tried these yet but they look worthy of exploring
 
 - vim-eunich
 - vim-multiple-cursors
 
-see: [i10 Essential Vim Pluggins](https://medium.com/@huntie/10-essential-vim-plugins-for 2018-39957190b7a9)
+see: [10 Essential Vim Pluggins](https://medium.com/@huntie/10-essential-vim-plugins-for 2018-39957190b7a9)
 
 -------------------------
 
