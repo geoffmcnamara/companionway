@@ -14,9 +14,10 @@ Our last post discussed using fisa-vimrc and appreciating the simple installatio
 
 Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready. A lot of information is here but that is because you have lot available to you under the hood. The sections below minimumly scratch the surface. Go play with each plug-in to at least find out what features it offers.
 
+<!--more-->
+
 <aside class="pullquote dropfirst">Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready.</aside>
 
-<!--more-->
 A copy of my current modified fisa-vimrc is here:
 [modified fisa-vimrc.raw ](/dlfiles/modified-fisa-vimrc.raw)
 
@@ -82,7 +83,7 @@ There are a lot of tips in this post. Many are associated with the reference Plu
 #### Notes:
 I commented out the plugin for syntastic as I ran into problems with it on large code files.
 
-For those of you who may not know, use `:q` (eg `:help ALE`) to get out of a help screen in vim. Some Plug-ins below bring up a quick window that can be exited with `q` (eg `:TW`) or sometimes <Esc> (eg `,m`), it depends on the plug-in.
+For those of you who may not know, use `:q` (eg `:help ALE`) to get out of a help screen in vim. Some Plug-ins below bring up a quick window that can be exited with `q` (eg `:ALEInfo`) or sometimes `<Esc>` (eg `,m`), it depends on the plug-in.
 
 Another quick tip that has nothing to do with plug-ins but may save you some headache using vim on privileged files where you forgot to use sudo. Add this code to you `~/.vimrc` and then you can use `:SW` to sudo write your buffer back to the privileged file.
 ```
