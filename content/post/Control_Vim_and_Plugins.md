@@ -85,8 +85,11 @@ For those of you who may not know, use `:q` (eg `:help ALE`) to get out of a hel
 
 Another quick tip that has nothing to do with plug-ins but may save you some headache using vim on privileged files where you forgot to use sudo. Add this code to you `~/.vimrc` and then you can use `:SW` to sudo write your buffer back to the privileged file.
 ```
-" Sudo Write - :silent is needed to suppress warning
-command SW :execute ':silent :w !sudo tee % > /dev/null' | :edit!
+" Sudo Write 
+" The '!' after command to allow reload of this command
+" and 'silent' to suppress warnings, 
+" final ':edit!'' gets rid of [O]k, [L]oad prompt
+command! SW :execute ':silent :w !sudo tee % > /dev/null' | :edit!
 ```
 
 

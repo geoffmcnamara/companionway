@@ -48,8 +48,9 @@ Do not be concerned about finishing this post in one sitting. Take a section at 
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/nav.css" />
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/screen.css" />
-<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/custom.css" />
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/custom.css" />
 
 		
 
@@ -292,8 +293,11 @@ Do not be concerned about finishing this post in one sitting. Take a section at 
 
 <p>Another quick tip that has nothing to do with plug-ins but may save you some headache using vim on privileged files where you forgot to use sudo. Add this code to you <code>~/.vimrc</code> and then you can use <code>:SW</code> to sudo write your buffer back to the privileged file.</p>
 
-<pre><code>&quot; Sudo Write - :silent is needed to suppress warning
-command SW :execute ':silent :w !sudo tee % &gt; /dev/null' | :edit!
+<pre><code>&quot; Sudo Write 
+&quot; The '!' after command to allow reload of this command
+&quot; and 'silent' to suppress warnings, 
+&quot; final ':edit!'' gets rid of [O]k, [L]oad prompt
+command! SW :execute ':silent :w !sudo tee % &gt; /dev/null' | :edit!
 </code></pre>
 
 <h6 id="key-mappings">Key Mappings</h6>
