@@ -41,6 +41,31 @@ blockquote p:last-of-type {
   box-shadow: 2px 0 15px -1px rgba(31, 73, 125, 0.8), -2px 0 8px -1px rgba(31, 73, 125, 0.8);
 }
 
+.pullquote {
+  float: right;
+  width: 30%;
+  background: url(images/openquote.gif) top left no-repeat;
+  color: #030;
+  background: #ddf;
+  font-weight: bold;
+  padding: 10px;
+  margin: 0 13px 13px 0;
+  line-height: 0.9;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.dropfirst::first-letter {
+  float: left;
+  font-size: 45px;
+  line-height: 1;
+  font-weight: bold;
+  margin-right: 9px;
+  color: #9c0;
+  font-family: "Times New Roman", Times, serif;
+  text-shadow: #690 .05em .05em;
+}
+
 .darkcol {
   background-color: #888888;
 }

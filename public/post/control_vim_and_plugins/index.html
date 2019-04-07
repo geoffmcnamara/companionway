@@ -20,7 +20,9 @@
 <meta name="twitter:title" content="Managing Vim and essential Plugins" />
 <meta name="twitter:description" content="Our last post discussed using fisa-vimrc and appreciating the simple installation and ease of use. This post will explore, briefly, some tweaks and a short &ldquo;how to&rdquo; for each of the loaded plugins. This exercise will be worth your time if you have not explored these tools before.
 
-Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready. A lot of information is here but that is because you have lot available to you under the hood. The sections below minimumly scratch the surface. Go play with each plug-in to at least find out what features it offers." />
+Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready. A lot of information is here but that is because you have lot available to you under the hood. The sections below minimumly scratch the surface. Go play with each plug-in to at least find out what features it offers.
+
+Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready." />
 
 
 
@@ -31,6 +33,12 @@ Do not be concerned about finishing this post in one sitting. Take a section at 
 		
 		<meta property="og:type" content="article" />
 		<meta property="og:article:published_time" content="2019-03-20T08:54:58-04:00" />
+		
+		<meta property="og:article:tag" content="vim" />
+		
+		<meta property="og:article:tag" content="plugins" />
+		
+		<meta property="og:article:tag" content="productivity" />
 		
 		
 
@@ -201,6 +209,12 @@ Do not be concerned about finishing this post in one sitting. Take a section at 
 							</time>
 							
 							
+							<span class="post-tag small"><a href="https://www.companionway.nettags/vim/">#vim</a></span>
+							
+							<span class="post-tag small"><a href="https://www.companionway.nettags/plugins/">#plugins</a></span>
+							
+							<span class="post-tag small"><a href="https://www.companionway.nettags/productivity/">#productivity</a></span>
+							
 						</section>
 					</header>
 
@@ -208,6 +222,8 @@ Do not be concerned about finishing this post in one sitting. Take a section at 
 						<p>Our last post discussed using fisa-vimrc and appreciating the simple installation and ease of use. This post will explore, briefly, some tweaks and a short &ldquo;how to&rdquo; for each of the loaded plugins. This exercise will be worth your time if you have not explored these tools before.</p>
 
 <p>Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready. A lot of information is here but that is because you have lot available to you under the hood. The sections below minimumly scratch the surface. Go play with each plug-in to at least find out what features it offers.</p>
+
+<aside class="pullquote dropfirst">Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready.</aside>
 
 <p>A copy of my current modified fisa-vimrc is here:
 <a href="/dlfiles/modified-fisa-vimrc.raw">modified fisa-vimrc.raw </a></p>
@@ -599,13 +615,23 @@ Then go (P|p)aste it somewhere including another buffer</p>
 
 <h2 id="ale">ALE</h2>
 
-<p>I love the ALE plugin so I added this inside to the Plug start/end lines
-call plug#begin(&rsquo;~/.vim/plugged&rsquo;)
-&hellip;
-&ldquo; ALE
-Plug &lsquo;<a href="https://github.com/w0rp/ale.git'">https://github.com/w0rp/ale.git'</a>
-&hellip;
-call plug#end()</p>
+<p>ALE (Asyncronous Lint Engine) is a plug-in that offers live syntax checking and the added ability to fix problems with code while you edit. ALE is a game changer. How you code and even your writing can improve with this plug-in.</p>
+
+<aside class="pullquote dropfirst"> ALE is a game changer. How you code and even your writing can improve with this plug-in.</aside>
+
+<p>I love the ALE plugin so I added this inside to the Plug start/end lines</p>
+
+<p><code>call plug#begin('~/.vim/plugged')</code></p>
+
+<p>&hellip;</p>
+
+<pre><code>&quot; ALE
+Plug 'https://github.com/w0rp/ale.git'
+</code></pre>
+
+<p>&hellip;</p>
+
+<p><code>call plug#end()</code></p>
 
 <p>Lets play with ALE
 - load any python script and puposefully have pep8 errors
@@ -636,7 +662,7 @@ I am a python 3 user and my preference for loading python3 modules is the follow
 <code>sudo -H pip3 install black</code> &lt;&ndash; installs python3 black module - the sudo -H avoids it scrambling your home directory permission and makes the module available globally (to all users) <a href="https://opensource.com/article/19/4/managing-python-packages">see here for info on python package management </a></p>
 
 <p>With ALE loaded and editing a python file if you have pep8 errors then a &ldquo;gutter&rdquo; column will be seen on the left edge of your window. If you find and red &ldquo;&gt;&gt;&rdquo; flags then you know you have significant pep8 errors on those lines. If you move the cursor to those lines the status line at the bottom will tell you what the error might be.
-The python.vim file above has a shortcut in it to laucnch ALEFix&hellip; If you hit <Leader>= (your vim <Leader> key is probably the backslash key &lsquo;\&lsquo;)
+The python.vim file above has a shortcut in it to launch ALEFix&hellip; If you hit <Leader>= (your vim <Leader> key is probably the backslash key &lsquo;\&lsquo;)
 Try it - if you don&rsquo;t like the changes it made to your code then undo it with <code>:u</code>
 Also note that the Airline status line shows your the number of errors and warnings at the bottom right (if you have any)</p>
 

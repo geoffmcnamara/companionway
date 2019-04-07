@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Wed, 08 Aug 2018 09:30:10 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 20 Mar 2019 08:54:58 -0400</lastBuildDate>
     
 	<atom:link href="https://www.companionway.net/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Managing Vim and essential Plugins</title>
+      <link>https://www.companionway.net/post/control_vim_and_plugins/</link>
+      <pubDate>Wed, 20 Mar 2019 08:54:58 -0400</pubDate>
+      
+      <guid>https://www.companionway.net/post/control_vim_and_plugins/</guid>
+      <description>&lt;p&gt;Our last post discussed using fisa-vimrc and appreciating the simple installation and ease of use. This post will explore, briefly, some tweaks and a short &amp;ldquo;how to&amp;rdquo; for each of the loaded plugins. This exercise will be worth your time if you have not explored these tools before.&lt;/p&gt;
+
+&lt;p&gt;Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready. A lot of information is here but that is because you have lot available to you under the hood. The sections below minimumly scratch the surface. Go play with each plug-in to at least find out what features it offers.&lt;/p&gt;
+
+&lt;aside class=&#34;pullquote dropfirst&#34;&gt;Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready.&lt;/aside&gt;</description>
+    </item>
     
     <item>
       <title>Vim ALE</title>

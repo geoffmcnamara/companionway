@@ -3,7 +3,7 @@ date = 2019-03-20T08:54:58-04:00
 draft = false
 title = "Managing Vim and essential Plugins"
 slug = ""
-tags = []
+tags = ["vim","plugins","productivity"]
 image = "/img/plugstrip.jpg"
 comments = true    # set false to hide Disqus
 share = true   # set false to hide share buttons
@@ -14,6 +14,8 @@ Our last post discussed using fisa-vimrc and appreciating the simple installatio
 
 Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready. A lot of information is here but that is because you have lot available to you under the hood. The sections below minimumly scratch the surface. Go play with each plug-in to at least find out what features it offers.
 
+<aside class="pullquote dropfirst">Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready.</aside>
+
 <!--more-->
 A copy of my current modified fisa-vimrc is here:
 [modified fisa-vimrc.raw ](/dlfiles/modified-fisa-vimrc.raw)
@@ -22,7 +24,6 @@ There are a lot of tips in this post. Many are associated with the reference Plu
 
 
 ![So many plugs; such little time](/img/vim-plugs-screen.jpg)
-
 
 
 {{%lshadowbox%}}
@@ -385,13 +386,24 @@ Relative numbering can be useful when you want to yank the next x lines eg:
 Then go (P|p)aste it somewhere including another buffer
 
 ## ALE
+ALE (Asyncronous Lint Engine) is a plug-in that offers live syntax checking and the added ability to fix problems with code while you edit. ALE is a game changer. How you code and even your writing can improve with this plug-in.
+
+
+<aside class="pullquote dropfirst"> ALE is a game changer. How you code and even your writing can improve with this plug-in.</aside>
+
 I love the ALE plugin so I added this inside to the Plug start/end lines
-call plug#begin('~/.vim/plugged')
+
+`call plug#begin('~/.vim/plugged')`
+
 ...
+
+```
 " ALE
 Plug 'https://github.com/w0rp/ale.git'
+```
 ...
-call plug#end()
+
+`call plug#end()`
 
 Lets play with ALE 
 - load any python script and puposefully have pep8 errors
@@ -423,7 +435,7 @@ I am a python 3 user and my preference for loading python3 modules is the follow
 `sudo -H pip3 install black` <-- installs python3 black module - the sudo -H avoids it scrambling your home directory permission and makes the module available globally (to all users) [see here for info on python package management ](https://opensource.com/article/19/4/managing-python-packages)
 
 With ALE loaded and editing a python file if you have pep8 errors then a "gutter" column will be seen on the left edge of your window. If you find and red ">>" flags then you know you have significant pep8 errors on those lines. If you move the cursor to those lines the status line at the bottom will tell you what the error might be. 
-The python.vim file above has a shortcut in it to laucnch ALEFix... If you hit <Leader>= (your vim <Leader> key is probably the backslash key '\')
+The python.vim file above has a shortcut in it to launch ALEFix... If you hit <Leader>= (your vim <Leader> key is probably the backslash key '\')
 Try it - if you don't like the changes it made to your code then undo it with `:u`
 Also note that the Airline status line shows your the number of errors and warnings at the bottom right (if you have any) 
 
