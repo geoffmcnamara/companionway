@@ -83,6 +83,12 @@ I commented out the plugin for syntastic as I ran into problems with it on large
 
 For those of you who may not know, use `:q` (eg `:help ALE`) to get out of a help screen in vim. Some Plug-ins below bring up a quick window that can be exited with `q` (eg `:TW`) or sometimes <Esc> (eg `,m`), it depends on the plug-in.
 
+Another quick tip that has nothing to do with plug-ins but may save you some headache using vim on privileged files where you forgot to use sudo. Add this code to you `~/.vimrc` and then you can use `:SW` to sudo write your buffer back to the privileged file.
+```
+" Sudo Write - :silent is needed to suppress warning
+command SW :execute ':silent :w !sudo tee % > /dev/null' | :edit!
+```
+
 
 ###### Key Mappings
 Once you have fisa-vimrc loaded and the plug-ins installed you now have a slew of key mappings that you may not be aware of.
