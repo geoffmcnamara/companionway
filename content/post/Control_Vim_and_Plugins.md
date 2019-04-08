@@ -492,6 +492,15 @@ results in:
 print ( this and that )
 ```
 
+Vim-surround doesn't do multiple charcter which can be anooying. In cases where you need to surround text with multiple characters you will probably need to write your own mappings. Here is a example of how to surround a paragraph of markdown code with three backticks ie (```).
+
+```
+" markdown for a block of code for a paragraph
+" vim-surround is great but it doesn't do this...
+nnoremap <Leader>mdc {O<DOWN>```<DOWN><ESC>}i```<ESC><DOWN>O<ESC>
+```
+
+
 ## Vim-Matchit
 :help matchit
 This will show what pairs are matched in your current filetype `:set mps`

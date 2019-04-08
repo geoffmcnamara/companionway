@@ -721,6 +721,13 @@ Assume your cursor is under the &ldquo;t&rdquo; in the word &ldquo;this&rdquo;</
 <pre><code>print ( this and that )
 </code></pre>
 
+<p>Vim-surround doesn&rsquo;t do multiple charcter which can be anooying. In cases where you need to surround text with multiple characters you will probably need to write your own mappings. Here is a example of how to surround a paragraph of markdown code with three backticks ie (```).</p>
+
+<pre><code>&quot; markdown for a block of code for a paragraph
+&quot; vim-surround is great but it doesn't do this...
+nnoremap &lt;Leader&gt;mdc {O&lt;DOWN&gt;```&lt;DOWN&gt;&lt;ESC&gt;}i```&lt;ESC&gt;&lt;DOWN&gt;O&lt;ESC&gt;
+</code></pre>
+
 <h2 id="vim-matchit">Vim-Matchit</h2>
 
 <p>:help matchit
