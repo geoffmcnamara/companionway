@@ -1,221 +1,184 @@
-
+ 
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
-
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
 		
 
 
-
-<meta name="twitter:card" content="summary" />
-
-
+    
+        <meta name="twitter:card" content="summary" />
+    
 
 
 <meta name="twitter:title" content="vagrant-lxc plugin" />
-<meta name="twitter:description" content="vagrant-lxc plugin
-
-OK today I finally had time to get vagrant-lxc to work.
-Up until now I have had vagrant virtualbox working just fine but
-when I looked into lxc containers with vagrant I ran into a
-little problem. First, I added vagrant-lxc plugin with this
-command
-
-vagran plugin install vagrant-lxc
-
-
-But this failed first asking for hostsupname plugin so I added that &hellip;
-Then it complained about not being able to find the vagrant-lxc plugin
-even though this command showed it listed:
-
-vagrant plugin list
-" />
 
 
 
-		<meta property="og:title" content=" vagrant-lxc plugin &middot;  companionway" />
+		<meta property="og:title" content="
+             
+                vagrant-lxc plugin 
+                &middot; 
+             
+            companionway" />
 		<meta property="og:site_name" content="companionway" />
 		<meta property="og:url" content="https://www.companionway.net/post/2015-04-21-post1/" />
-
 		
-		<meta property="og:type" content="article" />
-		<meta property="og:article:published_time" content="0001-01-01T00:00:00Z" />
+            <meta property="og:type" content="article" />
+            <meta property="og:article:published_time" content="0001-01-01T00:00:00Z" />
+            
 		
-		
-
 		<title>
-			 vagrant-lxc plugin &middot;  companionway
-		</title>
-
+             
+                vagrant-lxc plugin 
+                &middot; 
+            
+            companionway
+        </title>
 		<meta name="description" content="Meeting challenges with success!" />
 		<meta name="HandheldFriendly" content="True" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="https://www.companionway.net/img/favicon.ico">
 		<link rel="apple-touch-icon" href="https://www.companionway.net/img/apple-touch-icon.png" />
-
 		
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/nav.css" />
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/screen.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/nav.css" />
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/custom.css" />
 
 		
-
+		
+            <link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
 		
 		
-		<link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
-		
-		
-		
-		<meta name="generator" content="Hugo 0.54.0" />
-
-		<link rel="canonical" href="https://www.companionway.net/post/2015-04-21-post1/" />
-
-		
+    
+    <meta name="generator" content="Hugo 0.55.0" />
+    <link rel="canonical" href="https://www.companionway.net/post/2015-04-21-post1/" />
+    
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Architects Daughter" >
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300" >
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Philosopher">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-
-
-		
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-6970218-1', 'auto');
-            ga('send', 'pageview');
-		</script>
 
         
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-6970218-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-6970218-1');
-          gtag('set', {'user_id': 'USER_ID'}); 
-        </script>
+            
+            
+                <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                ga('create', 'UA-6970218-1', 'auto');
+                ga('send', 'pageview');
+                </script>
+                
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-6970218-1"></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'UA-6970218-1');
+                  gtag('set', {'user_id': 'USER_ID'}); 
+                </script>
+            
         
-
 		
 	</head>
 	<body class="nav-closed">
-        
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXQDJQV"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        
-
-		<div class="nav">
+		
+<div class="nav">
 	<h3 class="nav-title">Menu</h3>
 	<a href="#" class="nav-close">
 		<span class="hidden">Close</span>
 	</a>
 	<ul>
 		
-
 		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/">Home</a>
+            </li>
 		
-		<li class="nav-opened" role="presentation">
-			<a href="/">Home</a>
-		</li>
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/about">About</a>
+            </li>
 		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/post">Posts</a>
+            </li>
 		
-		<li class="nav-opened" role="presentation">
-			<a href="/post">Posts</a>
-		</li>
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/links">Links</a>
+            </li>
 		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/articles">NewsPaper</a>
+            </li>
 		
-		<li class="nav-opened" role="presentation">
-			<a href="/page/about/">About</a>
-		</li>
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/dlfiles">Download Files</a>
+            </li>
 		
-		
-		<li class="nav-opened" role="presentation">
-			<a href="/page/dlfiles/">Download Files</a>
-		</li>
-		
-		
-		<li class="nav-opened" role="presentation">
-			<a href="/page/links/">Links</a>
-		</li>
-		
-		
-		<li class="nav-opened" role="presentation">
-			<a href="/articles/">Newspaper</a>
-		</li>
-		
-		
-		<li class="nav-opened" role="presentation">
-			<a href="/page/projects/">Projects</a>
-		</li>
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/projects">Projects</a>
+            </li>
 		
 	</ul>
-
 	
-    <a class="subscribe-button icon-feed" href="https://www.companionway.netindex.xml">Subscribe</a>
-
+        <a class="subscribe-button icon-feed" href="https://www.companionway.netindex.xml">Subscribe</a>
+    
 </div>
 <span class="nav-cover"></span>
 
-
+        
 		<div class="site-wrapper">
 
 
 
 
-			<header class="main-header post-head no-cover">
-				<nav class="main-nav clearfix">
-					
-
-					
-					<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
-					
-					
-					<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-					
-				</nav>
-			</header>
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav clearfix">
 
 
-			<main class="content" role="main">
+    <a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
 
+    
+    <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
 
-
-				<article class="post">
-
-					<header class="post-header">
-						<h1 class="post-title">
-							
-							vagrant-lxc plugin
-							
-						</h1>
-						<small></small>
-
-						<section class="post-meta">
-							
-							<time class="post-date" datetime="0001-01-01T00:00:00Z">
-								Jan 1, 0001
-							</time>
-							
-							
-						</section>
-					</header>
-
-					<section class="post-content">
-						<h1 id="vagrant-lxc-plugin">vagrant-lxc plugin</h1>
+</nav>
+</header>
+<main class="content" role="main">
+    <article class="post">
+        <header class="post-header">
+        <h1 class="post-title">
+        
+            vagrant-lxc plugin
+        
+        </h1>
+        <small></small>
+        <section class="post-meta">
+        
+            <time class="post-date" datetime="0001-01-01T00:00:00Z">
+            Jan 1, 0001
+            </time>
+        
+        
+        </section>
+        </header>
+        <section class="post-content">
+            <h1 id="vagrant-lxc-plugin">vagrant-lxc plugin</h1>
 
 <p>OK today I finally had time to get vagrant-lxc to work.
 Up until now I have had vagrant virtualbox working just fine but
@@ -270,10 +233,8 @@ for fixing the older version.</p>
 <p>It downloaded and built out the lxc container and all is good.
 Now I need to start tweaking lxc containers to give me a virtual lab to
 deploy development, staging, and production deployments for testing.</p>
-					</section>
-
-
-					
+        </section>
+        
 
 
 
@@ -282,7 +243,7 @@ deploy development, staging, and production deployments for testing.</p>
 <section class="author">
 <h4><a href="https://www.companionway.net">Geoff McNamara</a></h4>
 
-<p>“Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien</p>
+<p>&#34;Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien</p>
 
 <div class="author-meta">
 
@@ -300,10 +261,9 @@ deploy development, staging, and production deployments for testing.</p>
 </section>
 
 
+        
 
-					
 <section class="share">
-
 	<h4>Share this post</h4>
     
     <a class="bloglogo" href="https://twitter.com/geoffmcnamara" target="_blank">
@@ -311,35 +271,28 @@ deploy development, staging, and production deployments for testing.</p>
     </a>
     &nbsp;
     
-
     
 	 <a class="bloglogo" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.companionway.net%2fpost%2f2015-04-21-post1%2f">
 		<i class="fab fa-facebook fa-1x" style="color:blue;"></i>
 	</a>
     &nbsp;
     
-
     
 	 <a class="bloglogo" href="https://www.linkedin.com/in/companionway" target="_blank">
         <i class="fab fa-linkedin fa-1x" style="color:red;"></i>
     </a>
     &nbsp;
     
-
-
     
     <a class="bloglogo" href="https://github.com/geoffmcnamara" target="_blank">
         <i class="fab fa-github fa-1x" style="color:orange;"></i>
     </a>
     &nbsp;
     
-
-
 </section>
 
 
-
-					
+        
 
 <div id="disqus_thread"></div>
 <i class="fa fa-comment"></i>
@@ -363,11 +316,9 @@ deploy development, staging, and production deployments for testing.</p>
 	
 	
 
+    </article>
+</main>
 
-				</article>
-
-			</main>
-            
 
 
 <hr>
@@ -381,15 +332,14 @@ deploy development, staging, and production deployments for testing.</p>
             data-ad-format="auto">
         </ins>
     
-
     <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   </center>
 </div>
 <hr>
 
-			
+
 <script type="text/javascript" src="https://www.companionway.net/js/jquery.js"></script>
 <script type="text/javascript" src="https://www.companionway.net/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="https://www.companionway.net/js/index.js"></script>
@@ -457,7 +407,7 @@ deploy development, staging, and production deployments for testing.</p>
 			<span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
 			<span>
 				
-				All rights reserved - companionway - 2016
+				All rights reserved - companionway - 2019
 				
 			</span>
 			<hr style="padding: 0px; margin: 0px;">

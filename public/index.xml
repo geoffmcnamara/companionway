@@ -6,8 +6,8 @@
     <description>Recent content on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <copyright>All rights reserved - companionway - 2016</copyright>
-    <lastBuildDate>Wed, 30 Nov 2016 11:20:35 -0500</lastBuildDate>
+    <copyright>All rights reserved - companionway - 2019</copyright>
+    <lastBuildDate>Wed, 20 Mar 2019 08:54:58 -0400</lastBuildDate>
     
 	<atom:link href="https://www.companionway.net/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,7 +23,7 @@ Find it here   Curio - A Tutorial Introduction Curio is a library for performing
     </item>
     
     <item>
-      <title>Managing Vim and essential Plugins</title>
+      <title>Managing Vim and Essential Plugins</title>
       <link>https://www.companionway.net/post/control_vim_and_plugins/</link>
       <pubDate>Wed, 20 Mar 2019 08:54:58 -0400</pubDate>
       

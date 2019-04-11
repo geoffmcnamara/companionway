@@ -13,6 +13,42 @@
   </url>
   
   <url>
+    <loc>https://www.companionway.net/post/</loc>
+    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/</loc>
+    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/</loc>
+    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/plugins/</loc>
+    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/productivity/</loc>
+    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/vim/</loc>
+    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.companionway.net/post/vim-plug_quick_setup/</loc>
     <lastmod>2019-03-15T15:07:41-04:00</lastmod>
   </url>
@@ -33,6 +69,36 @@
   </url>
   
   <url>
+    <loc>https://www.companionway.net/tags/bottle/</loc>
+    <lastmod>2018-11-20T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/devops/</loc>
+    <lastmod>2018-11-20T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/fabric/</loc>
+    <lastmod>2018-11-20T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/php/</loc>
+    <lastmod>2018-11-20T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/wsgi/</loc>
+    <lastmod>2018-11-20T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.companionway.net/post/git_pre-commit/</loc>
     <lastmod>2018-10-07T10:05:52-04:00</lastmod>
   </url>
@@ -43,8 +109,38 @@
   </url>
   
   <url>
+    <loc>https://www.companionway.net/tags/ale/</loc>
+    <lastmod>2018-08-08T09:30:10-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/linters/</loc>
+    <lastmod>2018-08-08T09:30:10-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/markdown/</loc>
+    <lastmod>2018-08-08T09:30:10-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.companionway.net/post/vim_scriptable_templates/</loc>
     <lastmod>2018-07-15T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/scripts/</loc>
+    <lastmod>2018-07-15T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/templates/</loc>
+    <lastmod>2018-07-15T14:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -64,6 +160,11 @@
   
   <url>
     <loc>https://www.companionway.net/post/newspaper-hugo-subtheme/</loc>
+    <lastmod>2017-11-03T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/articles/</loc>
     <lastmod>2017-11-03T10:54:24+02:00</lastmod>
   </url>
   
@@ -113,8 +214,32 @@
   </url>
   
   <url>
+    <loc>https://www.companionway.net/tags/debug/</loc>
+    <lastmod>2016-12-22T14:08:05-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/python/</loc>
+    <lastmod>2016-12-22T14:08:05-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.companionway.net/post/raspberry-pi-and-xrdp/</loc>
     <lastmod>2016-12-16T12:27:36-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/raspberry/</loc>
+    <lastmod>2016-12-16T12:27:36-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/rdp/</loc>
+    <lastmod>2016-12-16T12:27:36-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -123,8 +248,26 @@
   </url>
   
   <url>
+    <loc>https://www.companionway.net/tags/scripting/</loc>
+    <lastmod>2016-12-15T16:36:42-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.companionway.net/post/always-use-visudo/</loc>
     <lastmod>2016-12-14T10:59:38-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/sudo/</loc>
+    <lastmod>2016-12-14T10:59:38-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/visudo/</loc>
+    <lastmod>2016-12-14T10:59:38-05:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -133,13 +276,60 @@
   </url>
   
   <url>
+    <loc>https://www.companionway.net/tags/sed/</loc>
+    <lastmod>2016-12-10T20:38:12-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/xargs/</loc>
+    <lastmod>2016-12-10T20:38:12-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.companionway.net/post/switched-to-hugo/</loc>
     <lastmod>2016-12-09T10:57:45-05:00</lastmod>
   </url>
   
   <url>
+    <loc>https://www.companionway.net/tags/cms/</loc>
+    <lastmod>2016-12-09T10:57:45-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/hugo/</loc>
+    <lastmod>2016-12-09T10:57:45-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/jekyll/</loc>
+    <lastmod>2016-12-09T10:57:45-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.companionway.net/post/converting-images/</loc>
     <lastmod>2016-12-06T11:58:20-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/convert/</loc>
+    <lastmod>2016-12-06T11:58:20-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/hmpg-blocks/</loc>
+    <lastmod>2016-11-30T11:20:35-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/financial/</loc>
+    <lastmod>2015-05-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -153,8 +343,20 @@
   </url>
   
   <url>
+    <loc>https://www.companionway.net/tags/grovepi/</loc>
+    <lastmod>2015-05-09T10:54:24+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.companionway.net/post/2015-05-02-post1/</loc>
     <lastmod>2015-05-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/awk/</loc>
+    <lastmod>2015-05-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -181,25 +383,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/tags/ale/</loc>
-    <lastmod>2018-08-08T09:30:10-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.companionway.net/post/2015-04-17-post1/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/awk/</loc>
-    <lastmod>2015-05-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/bottle/</loc>
-    <lastmod>2018-11-20T10:54:24+02:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -208,25 +392,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/tags/cms/</loc>
-    <lastmod>2016-12-09T10:57:45-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.companionway.net/post/2015-04-27-post1/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/convert/</loc>
-    <lastmod>2016-12-06T11:58:20-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/debug/</loc>
-    <lastmod>2016-12-22T14:08:05-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -234,48 +400,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/tags/devops/</loc>
-    <lastmod>2018-11-20T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.companionway.net/page/dlfiles/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/fabric/</loc>
-    <lastmod>2018-11-20T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/financial/</loc>
-    <lastmod>2015-05-11T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/grovepi/</loc>
-    <lastmod>2015-05-09T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/hugo/</loc>
-    <lastmod>2016-12-09T10:57:45-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/jekyll/</loc>
-    <lastmod>2016-12-09T10:57:45-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/js/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -283,24 +408,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/tags/linters/</loc>
-    <lastmod>2018-08-08T09:30:10-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.companionway.net/post/2015-04-26-post2/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/markdown/</loc>
-    <lastmod>2018-08-08T09:30:10-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/articles/</loc>
-    <lastmod>2017-11-03T10:54:24+02:00</lastmod>
   </url>
   
   <url>
@@ -309,49 +417,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/tags/php/</loc>
-    <lastmod>2018-11-20T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/plugins/</loc>
-    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/post/</loc>
-    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/productivity/</loc>
-    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.companionway.net/page/projects/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/python/</loc>
-    <lastmod>2016-12-22T14:08:05-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/raspberry/</loc>
-    <lastmod>2016-12-16T12:27:36-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/rdp/</loc>
-    <lastmod>2016-12-16T12:27:36-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -359,74 +425,8 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/tags/scripting/</loc>
-    <lastmod>2016-12-15T16:36:42-05:00</lastmod>
+    <loc>https://www.companionway.net/tags/js/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/scripts/</loc>
-    <lastmod>2018-07-15T14:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/sed/</loc>
-    <lastmod>2016-12-10T20:38:12-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/sudo/</loc>
-    <lastmod>2016-12-14T10:59:38-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/</loc>
-    <lastmod>2018-08-08T09:30:10-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/templates/</loc>
-    <lastmod>2018-07-15T14:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/vim/</loc>
-    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/visudo/</loc>
-    <lastmod>2016-12-14T10:59:38-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/wsgi/</loc>
-    <lastmod>2018-11-20T10:54:24+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/tags/xargs/</loc>
-    <lastmod>2016-12-10T20:38:12-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/</loc>
-    <lastmod>2016-11-30T11:20:35-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/hmpg-blocks/</loc>
-    <lastmod>2016-11-30T11:20:35-05:00</lastmod>
   </url>
   
   <url>

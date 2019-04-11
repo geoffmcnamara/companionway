@@ -1,223 +1,200 @@
-
+ 
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
-
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
 		
 
 
+    
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.companionway.net/img/plugstrip.jpg" />
+    
 
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://www.companionway.net/img/plugstrip.jpg" />
-
-
-
-
-<meta name="twitter:title" content="Managing Vim and essential Plugins" />
-<meta name="twitter:description" content="Our last post discussed using fisa-vimrc and appreciating the simple installation and ease of use. This post will explore, briefly, some tweaks and a short &ldquo;how to&rdquo; for each of the loaded plugins. This exercise will be worth your time if you have not explored these tools before.
-
-Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready. A lot of information is here but that is because you have lot available to you under the hood. The sections below minimumly scratch the surface. Go play with each plug-in to at least find out what features it offers." />
+<meta name="twitter:title" content="Managing Vim and Essential Plugins" />
 
 
 
-		<meta property="og:title" content=" Managing Vim and essential Plugins &middot;  companionway" />
+		<meta property="og:title" content="
+             
+                Managing Vim and Essential Plugins 
+                &middot; 
+             
+            companionway" />
 		<meta property="og:site_name" content="companionway" />
 		<meta property="og:url" content="https://www.companionway.net/post/control_vim_and_plugins/" />
-
 		
-		<meta property="og:type" content="article" />
-		<meta property="og:article:published_time" content="2019-03-20T08:54:58-04:00" />
+            <meta property="og:type" content="article" />
+            <meta property="og:article:published_time" content="2019-03-20T08:54:58-04:00" />
+            
+                <meta property="og:article:tag" content="vim" />
+            
+                <meta property="og:article:tag" content="plugins" />
+            
+                <meta property="og:article:tag" content="productivity" />
+            
 		
-		<meta property="og:article:tag" content="vim" />
-		
-		<meta property="og:article:tag" content="plugins" />
-		
-		<meta property="og:article:tag" content="productivity" />
-		
-		
-
 		<title>
-			 Managing Vim and essential Plugins &middot;  companionway
-		</title>
-
+             
+                Managing Vim and Essential Plugins 
+                &middot; 
+            
+            companionway
+        </title>
 		<meta name="description" content="Meeting challenges with success!" />
 		<meta name="HandheldFriendly" content="True" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="https://www.companionway.net/img/favicon.ico">
 		<link rel="apple-touch-icon" href="https://www.companionway.net/img/apple-touch-icon.png" />
-
 		
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/nav.css" />
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/screen.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/nav.css" />
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
 <link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/custom.css" />
 
 		
-
+		
+            <link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
 		
 		
-		<link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
-		
-		
-		
-		<meta name="generator" content="Hugo 0.54.0" />
-
-		<link rel="canonical" href="https://www.companionway.net/post/control_vim_and_plugins/" />
-
-		
+    
+    <meta name="generator" content="Hugo 0.55.0" />
+    <link rel="canonical" href="https://www.companionway.net/post/control_vim_and_plugins/" />
+    
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Architects Daughter" >
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300" >
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Philosopher">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-
-
-		
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-            ga('create', 'UA-6970218-1', 'auto');
-            ga('send', 'pageview');
-		</script>
 
         
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-6970218-1"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'UA-6970218-1');
-          gtag('set', {'user_id': 'USER_ID'}); 
-        </script>
+            
+            
+                <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                ga('create', 'UA-6970218-1', 'auto');
+                ga('send', 'pageview');
+                </script>
+                
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-6970218-1"></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'UA-6970218-1');
+                  gtag('set', {'user_id': 'USER_ID'}); 
+                </script>
+            
         
-
 		
 	</head>
 	<body class="nav-closed">
-        
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WXQDJQV"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        
-
-		<div class="nav">
+		
+<div class="nav">
 	<h3 class="nav-title">Menu</h3>
 	<a href="#" class="nav-close">
 		<span class="hidden">Close</span>
 	</a>
 	<ul>
 		
-
 		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/">Home</a>
+            </li>
 		
-		<li class="nav-opened" role="presentation">
-			<a href="/">Home</a>
-		</li>
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/about">About</a>
+            </li>
 		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/post">Posts</a>
+            </li>
 		
-		<li class="nav-opened" role="presentation">
-			<a href="/post">Posts</a>
-		</li>
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/links">Links</a>
+            </li>
 		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/articles">NewsPaper</a>
+            </li>
 		
-		<li class="nav-opened" role="presentation">
-			<a href="/page/about/">About</a>
-		</li>
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/dlfiles">Download Files</a>
+            </li>
 		
-		
-		<li class="nav-opened" role="presentation">
-			<a href="/page/dlfiles/">Download Files</a>
-		</li>
-		
-		
-		<li class="nav-opened" role="presentation">
-			<a href="/page/links/">Links</a>
-		</li>
-		
-		
-		<li class="nav-opened" role="presentation">
-			<a href="/articles/">Newspaper</a>
-		</li>
-		
-		
-		<li class="nav-opened" role="presentation">
-			<a href="/page/projects/">Projects</a>
-		</li>
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/projects">Projects</a>
+            </li>
 		
 	</ul>
-
 	
-    <a class="subscribe-button icon-feed" href="https://www.companionway.netindex.xml">Subscribe</a>
-
+        <a class="subscribe-button icon-feed" href="https://www.companionway.netindex.xml">Subscribe</a>
+    
 </div>
 <span class="nav-cover"></span>
 
-
+        
 		<div class="site-wrapper">
 
 
 
 
-
-	<header class="main-header post-head" style="background-image: url(https://www.companionway.net/img/plugstrip.jpg)">
-		
-		<nav class="main-nav overlay clearfix">
-			
-
-					
-					<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
-					
-					
-					<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
-					
-				</nav>
-			</header>
+    
+        <header class="main-header post-head" style="background-image: url(https://www.companionway.net/img/plugstrip.jpg)">
+    
+    <nav class="main-nav overlay clearfix">
 
 
-			<main class="content" role="main">
+    <a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
 
+    
+    <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
 
-
-				<article class="post">
-
-					<header class="post-header">
-						<h1 class="post-title">
-							
-							Managing Vim and essential Plugins
-							
-						</h1>
-						<small></small>
-
-						<section class="post-meta">
-							
-							<time class="post-date" datetime="2019-03-20T08:54:58-04:00">
-								Mar 20, 2019
-							</time>
-							
-							
-							<span class="post-tag small"><a href="https://www.companionway.nettags/vim/">#vim</a></span>
-							
-							<span class="post-tag small"><a href="https://www.companionway.nettags/plugins/">#plugins</a></span>
-							
-							<span class="post-tag small"><a href="https://www.companionway.nettags/productivity/">#productivity</a></span>
-							
-						</section>
-					</header>
-
-					<section class="post-content">
-						<p>Our last post discussed using fisa-vimrc and appreciating the simple installation and ease of use. This post will explore, briefly, some tweaks and a short &ldquo;how to&rdquo; for each of the loaded plugins. This exercise will be worth your time if you have not explored these tools before.</p>
+</nav>
+</header>
+<main class="content" role="main">
+    <article class="post">
+        <header class="post-header">
+        <h1 class="post-title">
+        
+            Managing Vim and Essential Plugins
+        
+        </h1>
+        <small></small>
+        <section class="post-meta">
+        
+            <time class="post-date" datetime="2019-03-20T08:54:58-04:00">
+            Mar 20, 2019
+            </time>
+        
+        
+            <span class="post-tag small"><a href="https://www.companionway.nettags/vim/">#vim</a></span>
+        
+            <span class="post-tag small"><a href="https://www.companionway.nettags/plugins/">#plugins</a></span>
+        
+            <span class="post-tag small"><a href="https://www.companionway.nettags/productivity/">#productivity</a></span>
+        
+        </section>
+        </header>
+        <section class="post-content">
+            <p>Our last post discussed using fisa-vimrc and appreciating the simple installation and ease of use. This post will explore, briefly, some tweaks and a short &ldquo;how to&rdquo; for each of the loaded plugins. This exercise will be worth your time if you have not explored these tools before.</p>
 
 <p>Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready. A lot of information is here but that is because you have lot available to you under the hood. The sections below minimumly scratch the surface. Go play with each plug-in to at least find out what features it offers.</p>
 
@@ -230,8 +207,9 @@ Do not be concerned about finishing this post in one sitting. Take a section at 
 
 <p><img src="/img/vim-plugs-screen.jpg" alt="So many plugs; such little time" /></p>
 
+<p><clear/>
 <div class="lsboxit">
-    <h1 id="table-of-contents">Table of Contents</h1>
+    <h1 id="table-of-contents">Table of Contents</h1></p>
 
 <!-- vim-markdown-toc GFM -->
 
@@ -260,6 +238,7 @@ Do not be concerned about finishing this post in one sitting. Take a section at 
 <li><a href="#vim-matchit">Vim-Matchit</a></li>
 <li><a href="#vim_autoclose">Vim_AutoClose</a></li>
 <li><a href="#yankring">YankRing</a></li>
+<li><a href="#vim-neocomplcache">Vim-NeoComplCache</a></li>
 <li><a href="#nerdtree">NERDTree</a></li>
 <li><a href="#nerdcommenter">NERDCommenter</a></li>
 <li><a href="#ctrlp">CtrlP</a></li>
@@ -285,9 +264,7 @@ Do not be concerned about finishing this post in one sitting. Take a section at 
 
 <!-- vim-markdown-toc -->
 
-</div>
-
-
+<p></div></p>
 
 <h2 id="preparation">Preparation</h2>
 
@@ -431,7 +408,7 @@ You will want to keep <em>tabs</em> before all your template lines:</p>
 	title = &quot;${1:Title}&quot;
 	slug = &quot;&quot;
 	tags = []
-	image = &quot;/img/${2:img_ext}&quot;
+	image = &quot;/img/${2:img}&quot;
 	comments = false    # set false to hide Disqus
 	share = false       # set false to hide share buttons
 	# menu= &quot;&quot;          # set &quot;main&quot; to add this content to the main menu
@@ -693,15 +670,18 @@ let g:airline_powerline_fonts = 1</p>
 &ldquo; use: ys$<chr> to surround from here to end of line
 &ldquo; ys3w( &lt;&ndash;yank,surround 3 words with ()
 &ldquo; ys &lt;&ndash;for add cs &lt;&ndash; for change ds &lt;&ndash; for delete
-&ldquo; <Leader>sd = means surround with double quote
-&ldquo; <Leader>ss = means surround with single s(= surround with ()
-nmap <Leader>sd ysiW&rdquo;
-nmap <Leader>ss ysiW&rsquo;
-nmap <Leader>s( ys$)
+&ldquo; <Leader>sw&rdquo; = means surround with double quote
+&ldquo; <Leader>sw&rsquo; = means surround with single quote
+&ldquo; <Leader>sw<code>= means surround with backtick
+nmap &lt;Leader&gt;sw&quot; ysiW&quot;
+nmap &lt;Leader&gt;sw' ysiW'
+nmap &lt;Leader&gt;sw</code> ysiW&rsquo;
+&ldquo; sl( means surround (rest of) line with ()
+nmap <Leader>sl( ys$)
 There is a  difference between &ldquo;(&rdquo; vs &ldquo;)&rdquo; is spaces eg:
 Assume your cursor is under the &ldquo;t&rdquo; in the word &ldquo;this&rdquo;</p>
 
-<pre><code>print this and that
+<pre><code>print these words
 &lt;Esc&gt;ys3w)
 </code></pre>
 
@@ -721,7 +701,7 @@ Assume your cursor is under the &ldquo;t&rdquo; in the word &ldquo;this&rdquo;</
 <pre><code>print ( this and that )
 </code></pre>
 
-<p>Vim-surround doesn&rsquo;t do multiple charcter which can be anooying. In cases where you need to surround text with multiple characters you will probably need to write your own mappings. Here is a example of how to surround a paragraph of markdown code with three backticks ie (```).</p>
+<p>Vim-surround doesn&rsquo;t do multiple character which can be annooying. In cases where you need to surround text with multiple characters you will probably need to write your own mappings. Here is a example of how to surround a paragraph of markdown code with three backticks ie (```).</p>
 
 <pre><code>&quot; markdown for a block of code for a paragraph
 &quot; vim-surround is great but it doesn't do this...
@@ -730,45 +710,39 @@ nnoremap &lt;Leader&gt;mdc {O&lt;DOWN&gt;```&lt;DOWN&gt;&lt;ESC&gt;}i```&lt;ESC&
 
 <h2 id="vim-matchit">Vim-Matchit</h2>
 
-<p>:help matchit
-This will show what pairs are matched in your current filetype <code>:set mps</code>
-<a href="https://catonmat.net/vim-plugins-matchit-vim">Post: Vim Plugins Matchit</a></p>
+<p>Use this to get initial help <code>:help matchit</code>.</p>
 
-<p>Given this buffer you can have the cursor on <body> and hit % to go to </body>
-Be aware that if your cursor is on the &ldquo;&lt;&rdquo; or the &ldquo;&gt;&rdquo; then the obvious will happen - the opposing bracket will be the target.</p>
+<p>This plugin allows quick navigation to common code block tags. It is an enhancement of vim&rsquo;s capability to go from matched perens tags (for example) using the <code>%</code> key.</p>
 
-<pre><code>&lt;body&gt;
-    &lt;div&gt;
-        my div
-    &lt;/div&gt;
-    &lt;table&gt;
-        &lt;tr&gt;
-            &lt;th&gt;&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/table&gt;
-    &lt;a href=&quot;#&quot;&gt;#&lt;/a&gt;
-    
-    http://google.com
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
+<p>To see what matching pairs are currently set type: <code>:set mps</code></p>
 
-<p>It doesn&rsquo;t work in python but there is another plug-in for python cleverly called python_match.vim</p>
+<p>See this post for additional tips using matchit: <a href="https://catonmat.net/vim-plugins-matchit-vim">Post: Vim Plugins Matchit</a></p>
+
+<p>Given this buffer you can have the cursor on the tag <code>&lt;body&gt;</code>, if you hit <code>%</code> it will to corresponding close tag <code>&lt;/body&gt;</code>. Be aware that if your cursor is on the &ldquo;&lt;&rdquo; or the &ldquo;&gt;&rdquo; then the obvious will happen - the opposing bracket will be the target.</p>
 
 <h2 id="vim-autoclose">Vim_AutoClose</h2>
 
-<p>:help AutoClose
-<delete>v$\a( if cursor is on &ldquo;_&rdquo;</p>
+<p>Again, to get help: <code>:help AutoClose</code></p>
+
+<p>Type the begining of a &ldquo;pair&rdquo; and AutoClose will add the closing mark. AutoClose will do replacements for you as well.</p>
+
+<p>Assuming the cursor is on <pre>&ldquo;_&rdquo;</pre> in the example below&hellip;</p>
+
+<p>If you use <code>x</code> to delete the <code>_</code> and then hit <code>v</code> for visual mode&hellip; then type <code>$</code> to go to the end of the line&hellip; now you can use <code>&lt;Leader&gt;a(</code> and &hellip;</p>
 
 <pre><code> print_&quot;this or that&quot;
 </code></pre>
 
 <p>results in:</p>
 
-<pre><code>print(&quot;So sorry&quot;)
+<pre><code>print(&quot;this or that&quot;)
 </code></pre>
 
-<p>Maybe you bright souls can enlighten me on why this works (in ~/.vimrc):</p>
+<p>Use <code>:let g:AutoClosePairs&lt;tab&gt;</code> to see what is currently paired.</p>
+
+<p>One problem I ran up against was in markdown files hitting three backticks (```) would end up doubling them. To fix that I had to reset the pairings so the backtick would not be part of the AutoClose feature.  I noticed that this next line works &hellip;</p>
+
+<p>Note: As the help files suggest you need to use the autocmd here to have this load after the vimrc commands.</p>
 
 <pre><code>autocmd filetype markdown let g:AutoClosePairs = {'&quot;': '&quot;', '{': '}', '''': '''', '(': ')'}
 </code></pre>
@@ -810,6 +784,24 @@ nnoremap &lt;Leader&gt;yr :YRShow&lt;CR&gt;
 <p>If you are accustomed to using registers in vim then I applaud you. But if you are like me, you just haven&rsquo;t taken the time to develop the muscle memory for using them. YankRing kind of does registers for you.</p>
 
 <p>Please, read the yankring-tutorial to learn more.</p>
+
+<h2 id="vim-neocomplcache">Vim-NeoComplCache</h2>
+
+<p>To see an introduction on this plug-in: <code>:help neocomplcache</code>.</p>
+
+<p>Initially, I had a love-hate feeling about this plug-in. It pops up a selection window of possible completion words from a cache. The was fisa-vimrc configures the plugin, hitting Enter at the end of a line often ended up selecting a word that I had not wanted but fortunately there is a way to suppress that. Make this one change and life with neocompcache will be a little less intrusive.</p>
+
+<pre><code>&quot;let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_auto_select = 0
+</code></pre>
+
+<p>I also set up a toggle to turn this on or off as I desired with this entry into my <code>~/.vimrc</code>:</p>
+
+<pre><code>&quot; NeoComplCache
+nnoremap &lt;Leader&gt;neo :NeoComplCacheToggle&lt;CR&gt;
+</code></pre>
+
+<p>Now using <code>&lt;Leader&gt;neo</code>, neocomplcache gets toggled.</p>
 
 <h2 id="nerdtree">NERDTree</h2>
 
@@ -878,7 +870,7 @@ rm -- -TaskList_1-
 
 <h2 id="vim-ack">Vim-Ack</h2>
 
-<p>This Plug-in is an incredibly fast recursive grep. It will search all the file in your file tree starting at the current directory by default finding any occurrance of the string you provide.</p>
+<p>This Plug-in is an incredibly fast recursive grep. It will search all the files in your file tree starting at the current directory by default finding any occurrance of the string you provide.</p>
 
 <p>The Ack plug-in uses the commandline tool called <code>ack</code>. You may have to install it on your system.</p>
 
@@ -888,6 +880,15 @@ rm -- -TaskList_1-
 <p>To use it:
 <code>:Ack 'what ever string you want to look for'</code>
 After entering that a list of every file with this string will <em>immediately</em> appear. Did I mention that it is fast?</p>
+
+<p>Here is a fact you can bring to your next party&hellip; ack is a perl (perl5 I believe) app. Here is how you can prove it from the command line:</p>
+
+<pre><code>file $(which ack)
+</code></pre>
+
+<p>And yet&hellip;. it is fast!</p>
+
+<p>More information on how to use <code>ack</code> <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-ack-a-grep-replacement-for-developers-on-ubuntu-14-04">ack command line use</a></p>
 
 <h2 id="dir-configs-override">Dir-Configs-Override</h2>
 
@@ -1028,10 +1029,8 @@ Type a line like this:
   geoff.mcnamara@gmail.com
   <i class="fas fa-envelope-open-text"></i>
 </a></p>
-					</section>
-
-
-					
+        </section>
+        
 
 
 
@@ -1040,7 +1039,7 @@ Type a line like this:
 <section class="author">
 <h4><a href="https://www.companionway.net">Geoff McNamara</a></h4>
 
-<p>“Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien</p>
+<p>&#34;Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien</p>
 
 <div class="author-meta">
 
@@ -1058,10 +1057,9 @@ Type a line like this:
 </section>
 
 
+        
 
-					
 <section class="share">
-
 	<h4>Share this post</h4>
     
     <a class="bloglogo" href="https://twitter.com/geoffmcnamara" target="_blank">
@@ -1069,35 +1067,28 @@ Type a line like this:
     </a>
     &nbsp;
     
-
     
 	 <a class="bloglogo" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.companionway.net%2fpost%2fcontrol_vim_and_plugins%2f">
 		<i class="fab fa-facebook fa-1x" style="color:blue;"></i>
 	</a>
     &nbsp;
     
-
     
 	 <a class="bloglogo" href="https://www.linkedin.com/in/companionway" target="_blank">
         <i class="fab fa-linkedin fa-1x" style="color:red;"></i>
     </a>
     &nbsp;
     
-
-
     
     <a class="bloglogo" href="https://github.com/geoffmcnamara" target="_blank">
         <i class="fab fa-github fa-1x" style="color:orange;"></i>
     </a>
     &nbsp;
     
-
-
 </section>
 
 
-
-					
+        
 
 <div id="disqus_thread"></div>
 <i class="fa fa-comment"></i>
@@ -1121,11 +1112,9 @@ Type a line like this:
 	
 	
 
+    </article>
+</main>
 
-				</article>
-
-			</main>
-            
 
 
 <hr>
@@ -1139,15 +1128,14 @@ Type a line like this:
             data-ad-format="auto">
         </ins>
     
-
     <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   </center>
 </div>
 <hr>
 
-			
+
 <script type="text/javascript" src="https://www.companionway.net/js/jquery.js"></script>
 <script type="text/javascript" src="https://www.companionway.net/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="https://www.companionway.net/js/index.js"></script>
@@ -1215,7 +1203,7 @@ Type a line like this:
 			<span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
 			<span>
 				
-				All rights reserved - companionway - 2016
+				All rights reserved - companionway - 2019
 				
 			</span>
 			<hr style="padding: 0px; margin: 0px;">

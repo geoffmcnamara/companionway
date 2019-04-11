@@ -13,43 +13,56 @@
 			{{ if .Site.Menus.main }}
 			<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
 			{{else}}
-			{{ if .Site.Params.RSSLink}}
-			<a class="menu-button icon-feed" href="{{.Site.Params.RSSLink }}"><i class="fa fa-rss"></i>&nbsp;&nbsp;Subscribe</a>
-			{{else}}
-			<a class="menu-button icon-feed" href="{{ .RSSLink }}"><i class="fa fa-rss"></i>&nbsp;&nbsp;Subscribe</a>
-			{{end}}
+            <!--{ { if .Site.Params.RSSLink}}-->
+            <!--<a class="menu-button icon-feed" href="{ {.Site.Params.RSSLink }}"><i class="fa fa-rss"></i>&nbsp;&nbsp;Subscribe</a>-->
+            <!--{ {else}}-->
+            <!--<a class="menu-button icon-feed" href="{ { .RSSLink }}"><i class="fa fa-rss"></i>&nbsp;&nbsp;Subscribe</a>-->
+            <!--{ {end}}-->
+            <hr>
+            {{ with .OutputFormats.Get "RSS" }}
+                Start RSS Link
+                {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+                End RSS Link
+            {{ end }}
 			{{end}}
 		</nav>
 		<div class="vertical">
 			<div class="main-header-content inner">
 				{{ if .Site.Params.linkedinName }}
 				<a class="bloglogo" href="https://www.linkedin.com/in/{{ .Site.Params.linkedinName }}">
-					<span class="icon-linkedin" style="color:white;font-size:2em"></span>
-					<i class="fa fa-linkedin"></i>
+					<!--<span class="icon-linkedin" style="color:white;font-size:2em"></span>-->
+                    <i class="fab fa-linkedin fa-1x" style="color:red;"></i>
 				</a>
 				&nbsp;
 				{{end}}
 				{{ if .Site.Params.githubName }}
 				<a  href="https://github.com/{{ .Site.Params.githubName }}">
-					<span class="icon-github" style="color:white;font-size:2em"></span>
-					<i class="fa fa-github"></i>
+					<!--<span class="icon-github" style="color:white;font-size:2em"></span>-->
+                    <i class="fab fa-github fa-1x" style="color:orange;"></i>
 				</a>
 				&nbsp;
 				{{end}}
 				{{ if .Site.Params.twitterName }}
 				<a class="bloglogo" href="https://twitter.com/{{ .Site.Params.twitterName }}">
-					<span class="icon-twitter" style="color:white;font-size:2em"></span>
-					<i class="fa fa-twitter"></i>
+					<!--<span class="icon-twitter" style="color:white;font-size:2em"></span>-->
+                    <i class="fab fa-twitter fa-1x" style="color:green;"></i>
 				</a>
 				&nbsp;
 				{{end}}
+
+                {{ if .Site.Params.facebookName }}
+                <a class="bloglogo" href="https://www.facebook.com/{{ .Site.Params.facebookName }}" target="_blank">
+                    <i class="fab fa-facebook-square fa-1x" style="color:blue;"></i>
+                </a>
+                &nbsp;
+                {{end}}
 
 				<h1 class="page-title">{{ .Site.Title }}</h1>
 				<h2 class="page-description">{{ .Site.Params.description }}</h2>
 			</div>
 		</div>
-		<a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
-		<i class="fa fa-chevron-down"></i>
+		<!--<a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>-->
+			<a class="scroll-down" href="#content"><span><i class="fa fa-chevron-down fa-1x"></i></span></a>
 	</header>
 
 

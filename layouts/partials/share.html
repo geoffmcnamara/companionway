@@ -1,6 +1,6 @@
+<!--DEBUG: layouts/partials/share.html-->
 {{ if ne .Params.share false}}
 <section class="share">
-
 	<h4>Share this {{ if .Type }}{{.Type}}{{else}}post{{end}}</h4>
     {{ if .Site.Params.twitterName }}
     <a class="bloglogo" href="https://twitter.com/{{ .Site.Params.twitterName }}" target="_blank">
@@ -8,29 +8,23 @@
     </a>
     &nbsp;
     {{end}}
-
     {{ if .Site.Params.facebookName }}
 	 <a class="bloglogo" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}">
 		<i class="fab fa-facebook fa-1x" style="color:blue;"></i>
 	</a>
     &nbsp;
     {{end}}
-
     {{ if .Site.Params.linkedinName }}
 	 <a class="bloglogo" href="https://www.linkedin.com/in/{{ .Site.Params.linkedinName }}" target="_blank">
         <i class="fab fa-linkedin fa-1x" style="color:red;"></i>
     </a>
     &nbsp;
     {{end}}
-
-
     {{ if .Site.Params.githubName }}
     <a class="bloglogo" href="https://github.com/{{ .Site.Params.githubName }}" target="_blank">
         <i class="fab fa-github fa-1x" style="color:orange;"></i>
     </a>
     &nbsp;
     {{end}}
-
-
 </section>
 {{end}}

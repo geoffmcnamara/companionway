@@ -1,12 +1,11 @@
 +++
 date = 2019-03-20T08:54:58-04:00
 draft = false
-title = "Managing Vim and essential Plugins"
-slug = ""
+title = "Managing Vim and Essential Plugins"
 tags = ["vim","plugins","productivity"]
 image = "/img/plugstrip.jpg"
 comments = true    # set false to hide Disqus
-share = true   # set false to hide share buttons
+share = true       # set false to hide share buttons
 author = "-geoff-"
 +++
 
@@ -27,7 +26,7 @@ There are a lot of tips in this post. Many are associated with the reference Plu
 ![So many plugs; such little time](/img/vim-plugs-screen.jpg)
 
 
-{{%lshadowbox%}}
+{{% lshadowbox %}}
 
 # Table of Contents
 
@@ -51,6 +50,7 @@ There are a lot of tips in this post. Many are associated with the reference Plu
 * [Vim-Matchit](#vim-matchit)
 * [Vim_AutoClose](#vim_autoclose)
 * [YankRing](#yankring)
+* [Vim-NeoComplCache](#vim-neocomplcache)
 * [NERDTree](#nerdtree)
 * [NERDCommenter](#nerdcommenter)
 * [CtrlP](#ctrlp)
@@ -69,8 +69,7 @@ There are a lot of tips in this post. Many are associated with the reference Plu
 
 <!-- vim-markdown-toc -->
 
-{{%/lshadowbox%}}
-
+{{% /lshadowbox %}}
 
 
 ## Preparation 
@@ -210,7 +209,7 @@ snippet front
 	title = "${1:Title}"
 	slug = ""
 	tags = []
-	image = "/img/${2:img_ext}"
+	image = "/img/${2:img}"
 	comments = false    # set false to hide Disqus
 	share = false       # set false to hide share buttons
 	# menu= ""          # set "main" to add this content to the main menu
@@ -467,15 +466,18 @@ let g:airline_powerline_fonts = 1
 " use: ys$<chr> to surround from here to end of line
 " ys3w( <--yank,surround 3 words with ()
 " ys <--for add cs <-- for change ds <-- for delete
-" <Leader>sd = means surround with double quote 
-" <Leader>ss = means surround with single s(= surround with ()
-nmap <Leader>sd ysiW"
-nmap <Leader>ss ysiW'
-nmap <Leader>s( ys$)
+" <Leader>sw" = means surround with double quote 
+" <Leader>sw' = means surround with single quote
+" <Leader>sw` = means surround with backtick
+nmap <Leader>sw" ysiW"
+nmap <Leader>sw' ysiW'
+nmap <Leader>sw` ysiW'
+" sl( means surround (rest of) line with ()
+nmap <Leader>sl( ys$)
 There is a  difference between "(" vs ")" is spaces eg:
 Assume your cursor is under the "t" in the word "this"
 ```
-print this and that
+print these words
 <Esc>ys3w)
 ```
 results in:
@@ -492,7 +494,7 @@ results in:
 print ( this and that )
 ```
 
-Vim-surround doesn't do multiple charcter which can be anooying. In cases where you need to surround text with multiple characters you will probably need to write your own mappings. Here is a example of how to surround a paragraph of markdown code with three backticks ie (```).
+Vim-surround doesn't do multiple character which can be annooying. In cases where you need to surround text with multiple characters you will probably need to write your own mappings. Here is a example of how to surround a paragraph of markdown code with three backticks ie (```).
 
 ```
 " markdown for a block of code for a paragraph
@@ -502,42 +504,38 @@ nnoremap <Leader>mdc {O<DOWN>```<DOWN><ESC>}i```<ESC><DOWN>O<ESC>
 
 
 ## Vim-Matchit
-:help matchit
-This will show what pairs are matched in your current filetype `:set mps`
-[Post: Vim Plugins Matchit](https://catonmat.net/vim-plugins-matchit-vim)
+Use this to get initial help `:help matchit`.
 
-Given this buffer you can have the cursor on <body> and hit % to go to </body>
-Be aware that if your cursor is on the "<" or the ">" then the obvious will happen - the opposing bracket will be the target.
-```
-<body>
-    <div>
-        my div
-    </div>
-    <table>
-        <tr>
-            <th></th>
-        </tr>
-    </table>
-    <a href="#">#</a>
-    
-    http://google.com
-</body>
-</html>
-```
-It doesn't work in python but there is another plug-in for python cleverly called python_match.vim
+This plugin allows quick navigation to common code block tags. It is an enhancement of vim's capability to go from matched perens tags (for example) using the `%` key.
+
+To see what matching pairs are currently set type: `:set mps`
+
+See this post for additional tips using matchit: [Post: Vim Plugins Matchit](https://catonmat.net/vim-plugins-matchit-vim)
+
+Given this buffer you can have the cursor on the tag `<body>`, if you hit `%` it will to corresponding close tag `</body>`. Be aware that if your cursor is on the "<" or the ">" then the obvious will happen - the opposing bracket will be the target.
+
 
 ## Vim_AutoClose
-:help AutoClose
-<delete>v$\a( if cursor is on "_"
+Again, to get help: `:help AutoClose`
+
+Type the begining of a "pair" and AutoClose will add the closing mark. AutoClose will do replacements for you as well. 
+
+Assuming the cursor is on <pre>"_"</pre> in the example below...
+
+If you use `x` to delete the `_` and then hit `v` for visual mode... then type `$` to go to the end of the line... now you can use `<Leader>a(` and ...
 ```
  print_"this or that"
 ```
 results in:
 ```
-print("So sorry")
+print("this or that")
 ```
 
-Maybe you bright souls can enlighten me on why this works (in ~/.vimrc):
+Use `:let g:AutoClosePairs<tab>` to see what is currently paired.
+
+One problem I ran up against was in markdown files hitting three backticks (```) would end up doubling them. To fix that I had to reset the pairings so the backtick would not be part of the AutoClose feature.  I noticed that this next line works ...
+
+Note: As the help files suggest you need to use the autocmd here to have this load after the vimrc commands.
 ```
 autocmd filetype markdown let g:AutoClosePairs = {'"': '"', '{': '}', '''': '''', '(': ')'}
 ```
@@ -576,6 +574,25 @@ I want to yank just what is in the parens. Move the cursor to the `(` and then h
 If you are accustomed to using registers in vim then I applaud you. But if you are like me, you just haven't taken the time to develop the muscle memory for using them. YankRing kind of does registers for you.
 
 Please, read the yankring-tutorial to learn more. 
+
+## Vim-NeoComplCache
+
+To see an introduction on this plug-in: `:help neocomplcache`.
+
+Initially, I had a love-hate feeling about this plug-in. It pops up a selection window of possible completion words from a cache. The was fisa-vimrc configures the plugin, hitting Enter at the end of a line often ended up selecting a word that I had not wanted but fortunately there is a way to suppress that. Make this one change and life with neocompcache will be a little less intrusive.
+
+```
+"let g:neocomplcache_enable_auto_select = 1
+let g:neocomplcache_enable_auto_select = 0
+```
+I also set up a toggle to turn this on or off as I desired with this entry into my `~/.vimrc`:
+
+```
+" NeoComplCache
+nnoremap <Leader>neo :NeoComplCacheToggle<CR>
+```
+
+Now using `<Leader>neo`, neocomplcache gets toggled. 
 
 ## NERDTree
 nerdtree https://github.com/scrooloose/nerdtree 
@@ -640,7 +657,7 @@ rm -- -TaskList_1-
 
 ## Vim-Ack
 
-This Plug-in is an incredibly fast recursive grep. It will search all the file in your file tree starting at the current directory by default finding any occurrance of the string you provide.
+This Plug-in is an incredibly fast recursive grep. It will search all the files in your file tree starting at the current directory by default finding any occurrance of the string you provide.
 
 The Ack plug-in uses the commandline tool called `ack`. You may have to install it on your system.
 ```
@@ -651,6 +668,13 @@ To use it:
 `:Ack 'what ever string you want to look for'`
 After entering that a list of every file with this string will *immediately* appear. Did I mention that it is fast?
 
+Here is a fact you can bring to your next party... ack is a perl (perl5 I believe) app. Here is how you can prove it from the command line:
+```
+file $(which ack)
+```
+And yet.... it is fast!
+
+More information on how to use `ack` [ack command line use](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-ack-a-grep-replacement-for-developers-on-ubuntu-14-04)
 
 
 ## Dir-Configs-Override

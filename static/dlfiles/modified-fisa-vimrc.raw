@@ -129,6 +129,9 @@ Plug 'blindFS/vim-taskwarrior'
 " Build a Table of Contents in markdown
 Plug 'mzlogin/vim-markdown-toc'
 
+" This is fun but I just don't use it enough so it is commented
+" Plug 'vim-scripts/dbext.vim'
+
 " Tell vim-plug we finished declaring plugins, so it can load them
 call plug#end()
 
@@ -564,3 +567,22 @@ autocmd BufRead,BufNewFile *.nts set filetype=text
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 nnoremap <Leader>cal :Calendar<CR>
+
+" dbext SQLite
+let g:dbext_default_profile_myphile='type=SQLITE:dbname=/data/share/db_dir/myphile.db'
+
+" make a word all caps
+nnoremap <Leader>acap gUiw
+
+" Sudo Write 
+command! SW :execute ':silent :w !sudo tee % > /dev/null' | :edit!
+
+"" modeline settings
+"set modeline
+"set modelines=5
+nnoremap <Leader>mlt  <ESC>gg o# vim: set syntax=none nospell:<ESC>
+nnoremap <Leader>mlb  <ESC>G<Esc>o# vim: set syntax=none nospell:<ESC>
+
+" markdown a block of code for a paragraph
+" vim-surround is great but it doesn't do this...
+nnoremap <Leader>mdc {O<DOWN>```<DOWN><ESC>}i```<ESC><DOWN>O<ESC>

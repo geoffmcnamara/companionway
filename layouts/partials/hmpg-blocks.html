@@ -1,16 +1,13 @@
+<!--DEBUG: parials/hmpg-blocks.html-->
 <!--
 	This is ugly but it works - it means you have to write all the html code in the file.md
 	because there is no template
-	I want to add contact/location info... etc here?
-	(( range .Data.Pages }}
+	WIP: I want to add contact/location info... etc here?
 -->
 {{ range where .Data.Pages.ByWeight "Section" "hmpg-blocks" }}
-    {{/* if not .Params.draft */}}
-        {{ .Content }}
+    {{/* is eq .Type "index" */}}
+        {{ if not .Params.draft }}
+          {{ .Content }}
+        {{ end }}
     {{/* end */}}
 {{ end }}
-<!-- 
-	<br>end printing test<br>
-	EOF /.hmpg-blocks.html 
--->
-

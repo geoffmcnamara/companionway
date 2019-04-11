@@ -5,6 +5,7 @@ blockquote p:first-of-type:before {
 }
 
 /* Selecting only the last paragraph for when there are multiple paragraphs */
+
 blockquote p:last-of-type:after {
   content: "\201D";
 }
@@ -44,7 +45,7 @@ blockquote p:last-of-type {
 .pullquote {
   float: right;
   width: 30%;
-  background: url(images/openquote.gif) top left no-repeat;
+  //background: url(images/openquote.gif) top left no-repeat;
   color: #030;
   background: #ddf;
   font-weight: bold;
@@ -72,25 +73,25 @@ blockquote p:last-of-type {
 
 .pad_lr {
   padding-left: 30px;
-  padding-right: 30px
+  padding-right: 30px;
 }
 
 .content a {
-  // display: inline-block;
+  //display: inline-block; 
   background-color: #fafafa;
   color: #0f0f0f;
-  // font-size: 1.5em;
-  // font-family: Courier, sans-serif;
-  // padding: 1em 5em;
-  // text-decoration: none;
-  // text-transform: uppercase;
+  //font-size: 1.5em;
+  //font-family: Courier, sans-serif;
+  //padding: 1em 5em;
+  //text-decoration: none;
+  //text-transform: uppercase;
   border-radius: 0.2em;
-  // border-bottom: 0.25em solid #0f5177;
+  //border-bottom: 0.25em solid #0f5177;
   -moz-transition: 0.1s;
   -webkit-transition: 0.1s;
-  // transition: 0.1s;
+  //transition: 0.1s;
   box-shadow: 0 2px 3px #ccc;
-  // position: relative;
+  //position: relative;
 }
 
 .content a:hover {
@@ -101,6 +102,7 @@ blockquote p:last-of-type {
 
 
 /* snatched from codepen */
+
 .footer-brand-logos {
   margin: 0 auto;
   width: 960px; 
@@ -129,5 +131,3 @@ blockquote p:last-of-type {
   display: inline-block;
   padding: 0 20px;
 }
-
-/* EOF */

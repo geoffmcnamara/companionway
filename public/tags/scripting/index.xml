@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Scripting on companionway</title>
+    <title>scripting on companionway</title>
     <link>https://www.companionway.net/tags/scripting/</link>
-    <description>Recent content in Scripting on companionway</description>
+    <description>Recent content in scripting on companionway</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <copyright>All rights reserved - companionway - 2016</copyright>
+    <copyright>All rights reserved - companionway - 2019</copyright>
     <lastBuildDate>Thu, 15 Dec 2016 16:36:42 -0500</lastBuildDate>
     
 	<atom:link href="https://www.companionway.net/tags/scripting/index.xml" rel="self" type="application/rss+xml" />
