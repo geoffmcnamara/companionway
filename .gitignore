@@ -28,7 +28,6 @@ CVS*
 *.swp
 .#*
 
-
 # git control files
 git-daemon-export-ok
 .gitignore
@@ -99,6 +98,9 @@ coverage.xml
 *.log
 local_settings.py
 
+# hugo 
+themes/
+
 # Flask stuff:
 instance/
 .webassets-cache
@@ -115,14 +117,15 @@ target/
 # IPython Notebook
 .ipynb_checkpoints
 
-# pyenv
-.python-version
 
 # celery beat schedule file
 celerybeat-schedule
 
 # dotenv
 .env
+
+# pyenv
+.python-version
 
 # virtualenv
 .venv/
