@@ -4,6 +4,9 @@
 <hr>
 <div class="row" id="partial_gads_html">
   <center>
+    {{ if in (print "%v" $.Site.BaseURL) "localhost" }}
+        This is localhost - layouts/partial/gads.html<br>
+    {{end}}
     <!--<div class="col-md-11 col-md-offset-1 card">-->
         <ins class="adsbygoogle"
             style="display:block"

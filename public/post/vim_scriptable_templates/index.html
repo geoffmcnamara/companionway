@@ -63,7 +63,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.0" />
+    <meta name="generator" content="Hugo 0.55.1" />
     <link rel="canonical" href="https://www.companionway.net/post/vim_scriptable_templates/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -141,6 +141,31 @@
             
             <li class="nav-opened" role="presentation">
                 <a href="/page/projects">Projects</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/about/">About</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/dlfiles/">Download Files</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/links/">Links</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/articles/">Newspaper</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/projects/">Projects</a>
             </li>
 		
 	</ul>
@@ -244,7 +269,7 @@ title = &quot;[:VIM_EVAL:]expand(&quot;%:t:r&quot;)[:END_EVAL:]&quot;
 
 </code></pre>
 
-<p>For what it is worth, the inclusion of <code>&lt;!--more--&gt;</code> is hugo&rsquo;s trigger for cutting of a summary block.</p>
+<p>For what it is worth, the inclusion of <code>&lt;!--more--&gt;</code> is hugo&rsquo;s trigger for cutting off a summary block.</p>
 
 <p>Two embedded scripts are here and I will leave it to you to research cypher their workings.</p>
 
@@ -363,6 +388,7 @@ autocmd BufNewFile * %substitute#\[:VIM_EVAL:\]\(.\{-\}\)\[:END_EVAL:\]#\=eval(s
 <hr>
 <div class="row" id="partial_gads_html">
   <center>
+    
     
         <ins class="adsbygoogle"
             style="display:block"

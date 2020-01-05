@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Musings on companionway</title>
+    <link>https://www.companionway.net/musing/</link>
+    <description>Recent content in Musings on companionway</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>All rights reserved - companionway - 2019</copyright>
+    <lastBuildDate>Mon, 15 Apr 2019 20:47:06 -0400</lastBuildDate>
+    
+	<atom:link href="https://www.companionway.net/musing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Nother</title>
+      <link>https://www.companionway.net/musing/nother/</link>
+      <pubDate>Mon, 15 Apr 2019 20:47:06 -0400</pubDate>
+      
+      <guid>https://www.companionway.net/musing/nother/</guid>
+      <description>&lt;h4 id=&#34;just-nother-post&#34;&gt;Just &amp;lsquo;nother post&lt;/h4&gt;</description>
+    </item>
+    
+    <item>
+      <title>20190415</title>
+      <link>https://www.companionway.net/musing/20190415/</link>
+      <pubDate>Mon, 15 Apr 2019 13:09:01 -0400</pubDate>
+      
+      <guid>https://www.companionway.net/musing/20190415/</guid>
+      <description>&lt;h2 id=&#34;time-will-tell&#34;&gt;time will tell&lt;/h2&gt;
+
+&lt;p&gt;date = &amp;ldquo;2019-04-15T13:09:01-04:00&amp;rdquo;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

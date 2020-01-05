@@ -2,43 +2,38 @@
 {{ if .Site.Params.recent_posts.enable }}
 <section class="bar background-white no-mb">
 	<div class="container">
-
 		<div class="col-md-12">
 			<div class="heading text-center">
 				<h2>{{ .Site.Params.recent_posts.title }}</h2>
 			</div> <!-- /.heading text-center -->
 
 			{{ if .Site.Params.recent_posts.randomlines }}
-			<p class="lead">
-			<center>
-				<!--
-			<div id="random-line"  class="tshadow"></div>
-				-->
-				<div id="quote" class="tshadow"></div> - <div id="author"></div>
-			</center>
-			</p>
+                <p class="lead">
+                <center>
+                    <!-- <div id="random-line"  class="tshadow"></div> -->
+                    <div id="linequote" class="tshadow"></div> - <div id="lineauthor"></div>
+                </center>
+                </p>
 			{{ else }}
-			<p class="lead">
-			<center>
-				{{ .Site.Params.recent_posts.subtitle }}
-			</center>
-			</p>
+                <p class="lead">
+                <center>
+                    {{ .Site.Params.recent_posts.subtitle }}
+                </center>
+                </p>
 			{{ end }}
 
 			<!-- *** BLOG HOMEPAGE *** -->
-
 			<div class="row">
 				{{ $posts := .Paginate (where .Data.Pages "Type" "post") }}
 				{{ range first 3 $posts.Pages }}
 				<div class="col-md-4 col-sm-6">
 					<div class="box-image-text blog">
-
 						<div class="top">
 							<div class="image" style="overflow:hidden">
 								{{ if .Params.image }} 
-								<img src="{{ .Site.BaseURL}}{{ .Params.image }}" class="img-responsive" alt="" >
+                                    <img src="{{ .Site.BaseURL}}{{ .Params.image }}" class="img-responsive" alt="" >
 								{{ else }}
-								<img src="{{ .Site.BaseURL}}/img/placeholder.png" class="img-responsive" alt="">
+                                    <img src="{{ .Site.BaseURL}}/img/placeholder.png" class="img-responsive" alt="">
 								{{ end }}
 							</div> <!-- /.image -->
 							<div class="bg"></div>
@@ -48,19 +43,17 @@
 								</p>
 							</div> <!-- /.text -->
 						</div> <!-- /.top -->
-
 						<div class="content">
 							<h4><a href="{{ .Permalink }}">
 									{{ if .Title }}
-									{{ .Title }}
+                                        {{ .Title }}
 									{{ else }}
-									{{.File.TranslationBaseName}}
+                                        {{.File.TranslationBaseName}}
 									{{ end }}
 								</a></h4>
-
 								<p class="author-category">
 								{{ with .Params.author }}
-								By <a href="#">{{ . }}</a>
+                                    By <a href="#">{{ . }}</a>
 								{{ end }}
 								on {{ .Date.Format "January 2, 2006" }}
 								</p>
@@ -69,18 +62,13 @@
 								<a href="{{ .Permalink }}" class="btn btn-template-main">Continue reading</a>
 								</p>
 						</div> <!-- /.content -->
-
 					</div> <!-- /.box-image-text -->
-
 				</div> <!-- /.col-md-4 col-sm-6 -->
 				{{ end }}
-
 			</div> <!-- /.row -->
-
 			<!-- *** BLOG HOMEPAGE END *** -->
 
 			<center><a class="btn btn-primary" href="/post/index.html">All Posts</a></center>
-
 		</div> <!-- /.col-md-12 -->
 	</div> <!-- /.container -->
 </section>

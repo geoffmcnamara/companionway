@@ -1,5 +1,5 @@
 +++
-date = 2019-03-20T08:54:58-04:00
+date = 2019-04-12T08:09:20-04:00
 draft = false
 title = "Managing Vim and Essential Plugins"
 tags = ["vim","plugins","productivity"]
@@ -92,6 +92,7 @@ Another quick tip that has nothing to do with plug-ins but may save you some hea
 " final ':edit!'' gets rid of [O]k, [L]oad prompt
 command! SW :execute ':silent :w !sudo tee % > /dev/null' | :edit!
 ```
+You will be thankful for this keymap the next time you labor over editing an HTML file and you forgot to put sudo on the commandline.
 
 
 ###### Key Mappings
@@ -293,7 +294,7 @@ nnoremap -- <C-W><C-W>
 ```
 
 If you want to remove a buffer from your buffer list do this:
-`:bdelete` <-- close window and remove buffer - it will ask you to save it first if there are any changes.
+`:bdelete` <-- close window and remove buffer - it will ask you to save it first if there are any changes. You can use `:wa` to write all buffers.
 
 Use `:vertical sba` to open all the buffers up again.
  or use a shortcut for this 
@@ -315,6 +316,7 @@ nnoremap <Leader>< <Esc><C-W>10<
 " to make all the windows equal in size
 nnoremap <Leader>= <Esc><C-W>10=
 " this will make the current focus window full if all the others have saved changes
+" you can use :wa to write all buffers
 nnoremap <Leader>ful <Esc>:only<CR>
 ```
 
@@ -585,6 +587,7 @@ Initially, I had a love-hate feeling about this plug-in. It pops up a selection 
 "let g:neocomplcache_enable_auto_select = 1
 let g:neocomplcache_enable_auto_select = 0
 ```
+
 I also set up a toggle to turn this on or off as I desired with this entry into my `~/.vimrc`:
 
 ```
@@ -797,7 +800,16 @@ I haven't tried these yet but they look worthy of exploring
 
 see: [10 Essential Vim Pluggins](https://medium.com/@huntie/10-essential-vim-plugins-for 2018-39957190b7a9)
 
+You might also be interested in vim-vmail located here [](https://github.com/danchoi/vmail.git)]
+
+To install width vim-plug
+
+
 -------------------------
+
+This link provides a good basic overview of using vi... great for anyone new to vi, also good to review even by a crusty old salt. [vi12.shtml](http://www.eng.buffalo.edu/~yearke/unix/vi12.shtml)
+
+--------------------
 
 I hope you have gained an appreciation for the power vim offers. Managing the available plugins to make your workflow more efficient and productive is the goal. Let me know if any of this served to that end (or not).
 
@@ -809,3 +821,8 @@ Send mail to:
   geoff.mcnamara@gmail.com
   <i class="fas fa-envelope-open-text"></i>
 </a>
+
+This post is ever evolving and may change, hopefully for the better.
+
+Please share your suggestions, reactions, or thoughts.
+

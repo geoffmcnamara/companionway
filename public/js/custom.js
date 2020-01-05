@@ -29,8 +29,8 @@ request.onload = function() {
     
     var splitLine=randomLine.split("-")
     // add the random line in a div
-    document.getElementById('quote').innerHTML = splitLine[0];
-    document.getElementById('author').innerHTML = splitLine[1];
+    document.getElementById('linequote').innerHTML = splitLine[0];
+    document.getElementById('lineauthor').innerHTML = splitLine[1];
     document.getElementById('random-line').innerHTML = randomLine;
 };
 //request.open( 'GET', 'http://localhost:1313/lines.dat', true );

@@ -1,5 +1,5 @@
 +++
-date = 2019-04-07T17:28:29-04:00
+date = 2019-04-15T13:39:23-04:00
 draft = true
 title = "Markdown-n-Such Testing"
 slug = ""
@@ -11,10 +11,10 @@ share = true        # set false to hide share buttons
 author = "Name"
 +++
 
-{{% lshadowbox-nomd %}}
-This is _%lshadowbox-nomd%_ shortcode
-This specific test should show _markdown_ **correctly**.
-{{% /lshadowbox-nomd %}}
+
+{{% lshadowbox %}}
+{{<lastmod>}}
+{{% /lshadowbox %}}
 
 -------
 
@@ -27,6 +27,8 @@ Or
 ```
 a code block
 ```
+
+<!--more-->
 
 ## Emphasis
 Emphasis, aka italics, with *asterisks* or _underscores_.
@@ -162,10 +164,11 @@ Belongs to you...
 
 ------------
 
-{{< lshadowbox-nomd >}}
-This is `[lt]lshadowbox-nomd[gt]` shortcode
+
+{{< lshadowbox >}}
+This is `[lt]lshadowbox[gt]` shortcode
 This should _ignore_ markdown
-{{< /lshadowbox-nomd >}}
+{{< /lshadowbox >}}
 
 ------------
 

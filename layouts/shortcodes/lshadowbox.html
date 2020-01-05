@@ -1,5 +1,9 @@
 <!--I have no idea why but this close tag gets markdown to work-->
 <clear/>
+{{ if .Get "width" }}
+<div class="lsboxit" style="width: {{ .Get `width`}};">
+{{ else }}
 <div class="lsboxit">
-    {{ .Inner | markdownify }}
+{{ end }}
+{{ .Inner | markdownify }}
 </div>

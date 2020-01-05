@@ -1,0 +1,16 @@
+<!--DEBUG: layouts/shortcode/otherposts.html-->
+<!--{ { if not .Params.draft }}-->
+<!--<div class="container" style="background: gainsboro;">-->
+<div class="grid-container content_margin;">
+    {{ range first 4 (where .Site.Pages "Section" "otherposts") }}
+        {{ if .Params.title  }}
+            <div class="grid-item content_margin;">
+              <!--<div class="content_margin">-->
+                <h3>{{ .Title }}</h3>
+                {{ .Content }}
+              <!--</div>-->
+            </div>
+            {{end}}
+    {{end}}
+    <!-- /.rows and .columns -->
+</div>

@@ -2,7 +2,7 @@
 author = ""
 comments = false
 date = "2016-11-30T11:20:35-05:00"
-draft = false
+draft = true
 image = ""
 share = false
 slug = ""
@@ -12,11 +12,13 @@ weight = 20
 
 +++
 
+<!--DEBUG content/hmpg-blocks/posts-I-have-enjoyed.md-->
 <!-- <div style="background: lightslategray;"> -->
 <HR>
 <div>
 <center><h1 style="background: lightslategray; text-shadow: 5px 2px #ff5500;">Ready, Set, Code!</center>
 </div>
+
 <div class="container" style="background: gainsboro;">
   <section class="call-to-action">
     <!-- .rows and .columns -->

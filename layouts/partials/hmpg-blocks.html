@@ -5,9 +5,9 @@
 	WIP: I want to add contact/location info... etc here?
 -->
 {{ range where .Data.Pages.ByWeight "Section" "hmpg-blocks" }}
-    {{/* is eq .Type "index" */}}
-        {{ if not .Params.draft }}
-          {{ .Content }}
-        {{ end }}
-    {{/* end */}}
+    <!--{ { if eq .Type "index" }}-->
+     <!--{ { if not .Params.draft }}-->
+       {{ .Content }}
+     <!--{ { end }}-->
+    <!--{ { end }}-->
 {{ end }}

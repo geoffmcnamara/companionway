@@ -51,33 +51,33 @@ theme = "casper"
   identifier = "posts"
   url = "/post"
 
-[[menu.main]]
-  name = "About"
-  weight = 11
-  identifier = "about"
-  url = "//page/about"
+# [[menu.main]]
+#   name = "About"
+#   weight = 11
+#   identifier = "about"
+#   url = "//page/about"
 
-[[menu.main]]
-  name = "Links"
-  weight = 100
-  identifier = "links"
-  url = "//page/links"
+# [[menu.main]]
+#   name = "Links"
+#   weight = 100
+#   identifier = "links"
+#   url = "//page/links"
 
-[[menu.main]]
-  name = "NewsPaper"
-  weight = 160
-  identifier = "newspaper"
-  url = "//articles"
+# [[menu.main]]
+#   name = "NewsPaper"
+#   weight = 160
+#   identifier = "newspaper"
+#   url = "//articles"
 
-[[menu.main]]
-  name = "Download Files"
-  weight = 165
-  identifier = "dlfiles"
-  url = "//page/dlfiles"
+# [[menu.main]]
+#   name = "Download Files"
+#   weight = 165
+#   identifier = "dlfiles"
+#   url = "//page/dlfiles"
 
-[[menu.main]]
-  name = "Projects"
-  weight = 170
-  identifier = "projects"
-  url = "//page/projects"
+#[[menu.main]]
+#  name = "Projects"
+#  weight = 170
+#  identifier = "projects"
+#  url = "//page/projects"
 

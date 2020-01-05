@@ -28,7 +28,7 @@
 		<meta property="og:url" content="https://www.companionway.net/post/control_vim_and_plugins/" />
 		
             <meta property="og:type" content="article" />
-            <meta property="og:article:published_time" content="2019-03-20T08:54:58-04:00" />
+            <meta property="og:article:published_time" content="2019-04-12T08:09:20-04:00" />
             
                 <meta property="og:article:tag" content="vim" />
             
@@ -63,7 +63,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.0" />
+    <meta name="generator" content="Hugo 0.55.1" />
     <link rel="canonical" href="https://www.companionway.net/post/control_vim_and_plugins/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -143,6 +143,31 @@
                 <a href="/page/projects">Projects</a>
             </li>
 		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/about/">About</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/dlfiles/">Download Files</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/links/">Links</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/articles/">Newspaper</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="/page/projects/">Projects</a>
+            </li>
+		
 	</ul>
 	
         <a class="subscribe-button icon-feed" href="https://www.companionway.netindex.xml">Subscribe</a>
@@ -180,8 +205,8 @@
         <small></small>
         <section class="post-meta">
         
-            <time class="post-date" datetime="2019-03-20T08:54:58-04:00">
-            Mar 20, 2019
+            <time class="post-date" datetime="2019-04-12T08:09:20-04:00">
+            Apr 12, 2019
             </time>
         
         
@@ -207,9 +232,11 @@
 
 <p><img src="/img/vim-plugs-screen.jpg" alt="So many plugs; such little time" /></p>
 
-<p><clear/>
+<p><clear/></p>
+
 <div class="lsboxit">
-    <h1 id="table-of-contents">Table of Contents</h1></p>
+
+<h1 id="table-of-contents">Table of Contents</h1>
 
 <!-- vim-markdown-toc GFM -->
 
@@ -263,8 +290,7 @@
 </ul>
 
 <!-- vim-markdown-toc -->
-
-<p></div></p>
+</div>
 
 <h2 id="preparation">Preparation</h2>
 
@@ -290,6 +316,8 @@
 &quot; final ':edit!'' gets rid of [O]k, [L]oad prompt
 command! SW :execute ':silent :w !sudo tee % &gt; /dev/null' | :edit!
 </code></pre>
+
+<p>You will be thankful for this keymap the next time you labor over editing an HTML file and you forgot to put sudo on the commandline.</p>
 
 <h6 id="key-mappings">Key Mappings</h6>
 
@@ -492,7 +520,7 @@ nnoremap -- &lt;C-W&gt;&lt;C-W&gt;
 </code></pre>
 
 <p>If you want to remove a buffer from your buffer list do this:
-<code>:bdelete</code> &lt;&ndash; close window and remove buffer - it will ask you to save it first if there are any changes.</p>
+<code>:bdelete</code> &lt;&ndash; close window and remove buffer - it will ask you to save it first if there are any changes. You can use <code>:wa</code> to write all buffers.</p>
 
 <p>Use <code>:vertical sba</code> to open all the buffers up again.
  or use a shortcut for this</p>
@@ -513,6 +541,7 @@ nnoremap &lt;Leader&gt;&lt; &lt;Esc&gt;&lt;C-W&gt;10&lt;
 &quot; to make all the windows equal in size
 nnoremap &lt;Leader&gt;= &lt;Esc&gt;&lt;C-W&gt;10=
 &quot; this will make the current focus window full if all the others have saved changes
+&quot; you can use :wa to write all buffers
 nnoremap &lt;Leader&gt;ful &lt;Esc&gt;:only&lt;CR&gt;
 </code></pre>
 
@@ -1019,6 +1048,10 @@ Type a line like this:
 
 <hr />
 
+<p>This link provides a good basic overview of using vi&hellip; great for anyone new to vi, also good to review even by a crusty old salt. <a href="http://www.eng.buffalo.edu/~yearke/unix/vi12.shtml">vi12.shtml</a></p>
+
+<hr />
+
 <p>I hope you have gained an appreciation for the power vim offers. Managing the available plugins to make your workflow more efficient and productive is the goal. Let me know if any of this served to that end (or not).</p>
 
 <p>Enjoy,</p>
@@ -1029,6 +1062,10 @@ Type a line like this:
   geoff.mcnamara@gmail.com
   <i class="fas fa-envelope-open-text"></i>
 </a></p>
+
+<p>This post is ever evolving and may change, hopefully for the better.</p>
+
+<p>Please share your suggestions, reactions, or thoughts.</p>
         </section>
         
 
@@ -1120,6 +1157,7 @@ Type a line like this:
 <hr>
 <div class="row" id="partial_gads_html">
   <center>
+    
     
         <ins class="adsbygoogle"
             style="display:block"

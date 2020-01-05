@@ -73,23 +73,23 @@
             </time>
         {{end}}
             {{ range .Params.tags }}
-            <span class="post-tag small"><a href="{{ $baseurl }}tags/{{ . | urlize }}/">#{{ . }}</a></span>
+                <span class="post-tag small"><a href="{{ $baseurl }}tags/{{ . | urlize }}/">#{{ . }}</a></span>
             {{ end }}
         </section>
     </header>
     <section class="post-content">
         {{ .Content }}
-            {{if ne .Params.index true}}
+        {{if ne .Params.index true}}
             {{if .Menus.main.HasChildren }}
-            <nav class="navchildren">
-                <ul>
-                <!-- Children contents -->
-                {{ range .Menus.main.Children }}
-                <li><a href="{{.URL}}" >{{ .Name }}</a></li>
-                {{ end }}
-                </ul>
-        </nav>
-        {{ end }}
+                <nav class="navchildren">
+                    <ul>
+                    <!-- Children contents -->
+                    {{ range .Menus.main.Children }}
+                        <li><a href="{{.URL}}" >{{ .Name }}</a></li>
+                    {{ end }}
+                    </ul>
+                </nav>
+            {{ end }}
         {{ end }}
         {{if eq .Params.index true}}
             <nav class="navpage">

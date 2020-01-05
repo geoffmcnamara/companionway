@@ -8,43 +8,59 @@
   </url>
   
   <url>
+    <loc>https://www.companionway.net/musing/</loc>
+    <lastmod>2019-04-15T20:47:06-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/musing/nother/</loc>
+    <lastmod>2019-04-15T20:47:06-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/</loc>
+    <lastmod>2019-04-15T20:47:06-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/musing/20190415/</loc>
+    <lastmod>2019-04-15T13:09:01-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.companionway.net/post/control_vim_and_plugins/</loc>
-    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
+    <lastmod>2019-04-12T08:09:20-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.companionway.net/post/</loc>
-    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
+    <lastmod>2019-04-12T08:09:20-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.companionway.net/tags/</loc>
-    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/</loc>
-    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
+    <lastmod>2019-04-12T08:09:20-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.companionway.net/tags/plugins/</loc>
-    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
+    <lastmod>2019-04-12T08:09:20-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.companionway.net/tags/productivity/</loc>
-    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
+    <lastmod>2019-04-12T08:09:20-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.companionway.net/tags/vim/</loc>
-    <lastmod>2019-03-20T08:54:58-04:00</lastmod>
+    <lastmod>2019-04-12T08:09:20-04:00</lastmod>
     <priority>0</priority>
   </url>
   

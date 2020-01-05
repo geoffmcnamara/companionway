@@ -1,0 +1,37 @@
+<!--DEBUG layouts/shortcode/readysetcode.html-->
+
+<!--<div class="container" style="background: gainsboro;">-->
+<div class="container">
+    <section class="call-to-action">
+       <div class="row">
+       <!-- .rows and .columns -->
+       {{ range first 4 (where .Site.Pages.ByDate.Reverse "Type" "readysetcode") }}
+        {{ if .Params.title }}
+       <div class="col-md-4">
+              <div class="content">
+                  <center>
+                <h4><a href="{{.Permalink}}">
+                  {{if .Title }}
+                    {{.Title}}
+                  {{else}}
+                    {{.File.TranslationBaseName}}
+                  {{end}}
+                </a></h4>
+                Posted: {{ .Date.Format "January 2, 2006" }}
+                  </center>
+              </div>
+              <div class="sboxit">
+           {{ .Content }}
+              </div>
+         </div>
+         {{end}}
+       {{end}}
+      </div>
+    </section>
+</div>
+
+<center>
+    <div class="lsboxit" style="width: 25%">
+        <a href="{{.Site.BaseURL}}/readysetcode/">All: "Ready Set Code" Posts</a>
+    </div>
+</center>

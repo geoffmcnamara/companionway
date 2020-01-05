@@ -62,7 +62,7 @@ title = "[:VIM_EVAL:]expand("%:t:r")[:END_EVAL:]"
 
 ```
 
-For what it is worth, the inclusion of `<!--more-->` is hugo's trigger for cutting of a summary block.
+For what it is worth, the inclusion of `<!--more-->` is hugo's trigger for cutting off a summary block.
 
 Two embedded scripts are here and I will leave it to you to research cypher their workings.
 
