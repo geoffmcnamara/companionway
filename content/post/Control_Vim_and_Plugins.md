@@ -16,11 +16,10 @@ Do not be concerned about finishing this post in one sitting. Take a section at 
 <!--more-->
 
 <aside class="pullquote dropfirst">Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready.</aside>
-
 A copy of my current modified fisa-vimrc is here:
 [modified fisa-vimrc.raw ](/dlfiles/modified-fisa-vimrc.raw)
 
-There are a lot of tips in this post. Many are associated with the reference Plug-in but a good number of them are vim tips. Always keep in mind that these plug-in provide power but with power comes responisibility. The responsibility here is to understand how these plug-ins are manipulationg the real power - the power of vim.
+There are a lot of tips in this post. Many are associated with the reference Plug-ins but a good number of them are vim tips. Always keep in mind that these plug-ins provide power but with power comes responsibility. The responsibility here is to understand how these plug-ins are manipulating the real power - the power of vim.
 
 
 ![So many plugs; such little time](/img/vim-plugs-screen.jpg)
@@ -182,7 +181,7 @@ Now type:
      
 ```
     object<tab>
-``` 
+```
  or
 
 ```
@@ -392,7 +391,6 @@ ALE (Asyncronous Lint Engine) is a plug-in that offers live syntax checking and 
 
 
 <aside class="pullquote dropfirst"> ALE is a game changer. How you code and even your writing can improve with this plug-in.</aside>
-
 I love the ALE plugin so I added this inside to the Plug start/end lines
 
 `call plug#begin('~/.vim/plugged')`
@@ -618,7 +616,7 @@ This can be used to comment a line
 To add a comment at the end of a line 
 ```
 <Leader>cA
-``` 
+```
 
 
 
@@ -803,7 +801,6 @@ see: [10 Essential Vim Pluggins](https://medium.com/@huntie/10-essential-vim-plu
 You might also be interested in vim-vmail located here [](https://github.com/danchoi/vmail.git)]
 
 To install width vim-plug
-
 
 -------------------------
 
