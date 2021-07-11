@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>home page blocks on companionway</title>
@@ -7,19 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2019</copyright>
-    <lastBuildDate>Wed, 30 Nov 2016 11:20:35 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 10 Apr 2019 14:00:26 -0400</lastBuildDate>
     
 	<atom:link href="https://www.companionway.net/hmpg-blocks/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ready, Set, Code</title>
-      <link>https://www.companionway.net/hmpg-blocks/posts-i-have-enjoyed/</link>
+      <link>https://www.companionway.net/hmpg-blocks/readysetcode/</link>
       <pubDate>Wed, 30 Nov 2016 11:20:35 -0500</pubDate>
       
-      <guid>https://www.companionway.net/hmpg-blocks/posts-i-have-enjoyed/</guid>
-      <description>--   Ready, Set, Code!   How the heck does async/await work in Python 3.5? This is a great in-depth article/essay on asyncio/await/coroutines in python. Strap on your seat belt and brew a fresh pot.
-Find it here   Curio - A Tutorial Introduction Curio is a library for performing concurrent I/O using Python coroutines and the async/await syntax introduced in Python 3.5. Its programming model is based on existing system programming abstractions such as threads, sockets, files, locks, and queues.</description>
+      <guid>https://www.companionway.net/hmpg-blocks/readysetcode/</guid>
+      <description> 36 Amazing Python Open Source Projects (v.2019)  Posted: April 22, 2019      How the heck does async/await work in Python 3.5?  Posted: April 22, 2019      Curio - A Tutorial Introduction  Posted: April 21, 2019         All: &#34;Ready Set Code&#34; Posts   </description>
+    </item>
+    
+    <item>
+      <title>musings</title>
+      <link>https://www.companionway.net/hmpg-blocks/musings/</link>
+      <pubDate>Wed, 10 Apr 2019 14:00:26 -0400</pubDate>
+      
+      <guid>https://www.companionway.net/hmpg-blocks/musings/</guid>
+      <description>Read more   Social Trust Game  By wocos on May 16, 2019 This is a very interesting game dealing with social trust, benfits of cooperation, damge of miscommunication, cheating etc. This helps us to understand why in the middle of WWI soldiers from both side stopped fighting on Christmas day… Try this game. If you are like me, you will get sucked in just to find out what the final conclusions are… only takes a few minutes of your valuable time: https://ncase.</description>
     </item>
     
   </channel>

@@ -67,7 +67,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/replace_php_with_wsgi_python/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -119,32 +119,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -228,11 +203,8 @@
         </header>
         <section class="post-content">
             <p>This post is a brief description of replacing PHP code with python using WSGI (Web Server Gateway Interface). The journey here comes from how I monitor my servers (mostly raspberry pi&rsquo;s). I used a PHP script on all my servers that delivered the hostname and basic server information and I use <a href="http://xymon.sourceforge.net/">xymon monitoring</a> to poll that PHP script on all the servers and test to see if the hostname is contained in the returned page. My focus lately has been on python and my interest in PHP has waned. The goal was to replace my PHP script with a python script. The end result provides a simple means of delivering dynamic web pages. I will be using <a href="http://bottlepy.org">bottlepy</a> as the wsgi web-framework. My development was done on an ubuntu 18.10 (&ldquo;cosmic&rdquo; release).</p>
-
-<hr />
-
-<h2 id="contents">Contents:</h2>
-
+<hr>
+<h2 id="contents-">Contents:</h2>
 <ul>
 <li><a href="#screens">Screen shots</a>
 <a href="#reqs">Requirements and why</a></li>
@@ -242,13 +214,9 @@
 <li><a href="#debug">Troubleshooting</a></li>
 <li><a href="#postface">Going forward from here</a></li>
 </ul>
-
-<p><a name="screens"></a></p>
-
-<h3 id="screen-shot">Screen Shot</h3>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="screen-shot-">Screen Shot</h3>
 <p>This displays three differnt browser images. One for each of the 3 routes (pages) that can be rendered by <strong>nodeinfo.py</strong>.</p>
-
 
 
 
@@ -259,48 +227,33 @@
 	alt="" >
 
 
-
-<p><a name="reqs"></a></p>
-
-<h3 id="requirements">Requirements</h3>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="requirements-">Requirements</h3>
 <ul>
 <li>pip install bottle</li>
-
-<li><p>apt install apache2 liibapache2-mod-wsgi<br />
-<div class="sboxit">
-<b>Note:</b> This will expect all your python code to be python2 (as for Ubuntu repositories moving libapache2-mod-wsgi to python 3&hellip; well, not yet - so this leaves us somewhere back in the middle-ages)
-</div></p></li>
-
-<li><p>[optionally] python fabric (because you will want to promote your new code seamlessly and repeatedly (aka devops)</p></li>
+<li>apt install apache2 liibapache2-mod-wsgi</li>
 </ul>
-
-<h3 id="python-script-and-apache2-config-file">Python script and apache2 config file</h3>
-
+<!-- raw HTML omitted -->
+<ul>
+<li>[optionally] python fabric (because you will want to promote your new code seamlessly and repeatedly (aka devops)</li>
+</ul>
+<h3 id="python-script-and-apache2-config-file-">Python script and apache2 config file</h3>
 <p>Needed steps&hellip;</p>
-
 <ul>
 <li><code>sudo mkdir -p /usr/local/www/wsgi-scripts</code></li>
 <li><code>cp nodeinfo.py /usr/local/www/wsgi-scripts/</code></li>
 <li><code>cp wsgi.conf /etc/apache2/conf-available/</code></li>
 <li><code>sudo a2enconf wsgi</code></li>
 <li><code>sudo systemctl restart apache2</code></li>
-<li>browser to <a href="http://localhost/chkit/nodeinfo">http://localhost/chkit/nodeinfo</a>  # this is the WSGI Alias name used in wsgi.conf to invoke the script</li>
+<li>browser to http://localhost/chkit/nodeinfo  # this is the WSGI Alias name used in wsgi.conf to invoke the script</li>
 <li>you can also browse to: &hellip;/chkit/nodeinfo/inxi or &hellip;/chkit/inxifull</li>
 </ul>
-
 <p>I elected to use python bottle  micro web framework because it is small, fexible, launches a built-in web server, and self contained in one file. The syntax used by bottle is very easy to learn. The built-in web server allows quick testing of code. The apache WSGI module provides the ability to run python scripts within apache.</p>
-
-<p><a name="code"></a></p>
-
-<h3 id="code">Code</h3>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="code-">Code</h3>
 <p>The following script has lots of documentation in it so it looks long.</p>
-
 <p>Also, I have included templates with css style code and a class called HtmlWrap all of which could be separated out into other files. They are all here to allow ease of deployment and to allow single file search and troubleshooting.</p>
-
 <p>Here is the <strong>nodeinfo.py</strong> script:</p>
-
 <pre><code>
 #!/usr/bin/env python2
 # vim: set nospell syntax=none :
@@ -682,16 +635,10 @@ def new_route(new_route):
 if __name__ == '__main__':
     run(port=8080, debug=True, reloader=True)
 # End of code #
-</code></pre>
-
-<p>You need to place this out of the Docroot to add some degree of security to this deployment.</p>
-
-<h2 id="apache-configuration">Apache Configuration</h2>
-
+</code></pre><p>You need to place this out of the Docroot to add some degree of security to this deployment.</p>
+<h2 id="apache-configuration-">Apache Configuration</h2>
 <p>The second (and last) file needed is required to configure WSGI (in this case, for apache2).</p>
-
 <p>Here is the file <strong>wsgi.conf</strong>:</p>
-
 <pre><code>
 ##############
 # vim: nospell
@@ -709,91 +656,70 @@ WSGIScriptAlias /chkit/nodeinfo  /usr/local/www/wsgi-scripts/nodeinfo.py
 		Require all granted
 	&lt;/IfVersion&gt;
 &lt;/Directory&gt;
-</code></pre>
-
-<div class="sboxit">
-This config file is configured establishes an alias as /chkit/nodeinfo - change as you desire.
-</div>
-
+</code></pre><!-- raw HTML omitted -->
 <p>Copy this file to /etc/apache2/confs-available (or similarly on other platforms).</p>
-
 <p>Then run:</p>
-
 <p><code>sudo a2enconf wsgi</code></p>
-
 <p>and finally run:</p>
-
 <p><code>sudo systemctl restart apache2</code></p>
-
-<p><a name="download"></a></p>
-
-<h2 id="download">Download</h2>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h2 id="download-">Download</h2>
 <p>Here you can find these files with a tar.gz compressed archive file.</p>
-
 <ul>
-<li>nodeinfo.zip <a href="/dlfiles/nodeinfo.zip" download>[download here]</a></li>
+<li>nodeinfo.zip <!-- raw HTML omitted -->[download here]<!-- raw HTML omitted --></li>
 </ul>
-
-<p><a name="analysis"></a></p>
-
-<h3 id="code-analysis">Code Analysis</h3>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="code-analysis-">Code Analysis</h3>
 <ul>
-<li><p>description of python nodeinfo.py script</p>
-
+<li>
+<p>description of python nodeinfo.py script</p>
 <ul>
 <li>The goal is to dynamically build a system info page.</li>
 <li>I need to get one thing off the table right away. There is a problem with this script that, for the life of me, I can not seem to resolve.
 It calls through python&rsquo;s subprocess routine &ldquo;inxi -Fc0&rdquo;. The -c0 is needed to prevent ansi color codes bleeding through into the html page.
 But the more serious issue is that when the run through WSGI on your server it drops errors that are ENVIRONMENT related. I tried lots of WSGI options (see below) to try to work around this issue but to no avail. So this code does a work-around&hellip; it filters out warnings and erros leaving cleaner output for html display. All working suggestions welcomed.</li>
 <li>I am also offering another disclaimer: I like simple so everything needed for this script is all in one file. This is not ideal. One servers I actually wrote a separate python script module to hold a class that wraps the html and template code around the content built by the main script. It is all in one file here for simplicity.</li>
-</ul></li>
-
-<li><p>description of apache wsgi configuration</p>
-
+</ul>
+</li>
+<li>
+<p>description of apache wsgi configuration</p>
 <ul>
 <li>The wsgi.conf Establish an WSGIAlias to the nodeinfo.py script</li>
 <li>It also sets the directory accessability for the script execution.</li>
 <li>There are many options that can be configured using a WSGIDaemon directive <a href="https://modwsgi.readthedocs.io/en/develop/configuration-directives/WSGIDaemonProcess.html">WSGIDaemon process</a></li>
-</ul></li>
 </ul>
-
-<p><a name="debug"></a></p>
-
-<h3 id="troubleshooting">Troubleshooting</h3>
-
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="troubleshooting-">Troubleshooting</h3>
 <ul>
 <li>troubleshooting
-
 <ul>
 <li>run the code from the command-line and view with a browser
-
 <ul>
 <li>set bottle debug to get tracebacks</li>
 <li>I use tilix for my terminal and it allows you to Ctrl-[Click] on the link and open the browser to that link. Your terminal probably has a similar shortcut capability</li>
-</ul></li>
+</ul>
+</li>
 <li>afer configuring apache2 and restarting (or reloading) the apache server view the apache error log to see any errors and tracebacks.</li>
 <li>I also use linters (in this case pylint or similar) within vim that alerts you are you code to potential issues&hellip; <a href="https://www.companionway.net/post/vim_ale/">post: Vim ALE</a></li>
-</ul></li>
 </ul>
-
-<p><a name="postface"></a></p>
-
-<h3 id="going-further">Going further</h3>
-
+</li>
+</ul>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="going-further-">Going further</h3>
 <ul>
 <li>bottle - simply and amazing&hellip; simply amazing for small web based projects. Plugins are available to enhance bootle with many additional features or to ease adding new dimensions. Examples include authentication modules, session management, sqlalchemy, logging etc <a href="http://bottlepy.org/docs/dev/plugins/index.html">bottle plugins</a>.</li>
 <li>sqlite can easily be incorporated into a web application using bottle</li>
 <li>more info on WSGIDaemon</li>
 <li>separation of codei, templates, css files, etc</li>
 <li>one file vs many - the never ending debate that I constantly wrestle with.
-
 <ul>
 <li>one time use vs sharing amongst many</li>
 <li>looking in one place or following the rabbit</li>
 <li>sometimes small is beautiful</li>
-</ul></li>
+</ul>
+</li>
 <li>launch another application and return sqlbrowser -&gt; redirect&hellip; see app.py</li>
 <li>I am a &ldquo;force&rdquo; developer - I &ldquo;refactor it&rdquo; until it works - I force it to work. Sometimes I go back and &ldquo;refactor it&rdquo; to be pretty, or efficient, or, most often, to look cleaner (simple). Sometimes.</li>
 </ul>

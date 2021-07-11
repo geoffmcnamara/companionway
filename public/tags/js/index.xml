@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>js on companionway</title>
@@ -18,27 +18,22 @@
       
       <guid>https://www.companionway.net/post/2015-04-05-post1/</guid>
       <description>&lt;h1 id=&#34;javascript-fade-in-and-down&#34;&gt;Javascript fade in and down&lt;/h1&gt;
-
 &lt;p&gt;I wanted to change the header on the theme for my web site
 to display a slide down and in header.&lt;/p&gt;
-
 &lt;p&gt;The script needed to be a combination of two jquery animations.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;&amp;lt;script src=&amp;quot;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;
-&amp;lt;script type=&amp;quot;text/javascript&amp;quot;&amp;gt;
-$(document).ready(function(){
-    $(&#39;#fadeInDown&#39;)
-    .css(&#39;display&#39;, &amp;quot;none&amp;quot;)
-    .slideDown(2000)
-    .animate(
-      { opacity: 1 },
-      { queue: false, duration: 2300 }
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;src&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/script&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;script&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;type&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;text/javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(document).&lt;span style=&#34;color:#a6e22e&#34;&gt;ready&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt;(){
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#fadeInDown&amp;#39;&lt;/span&gt;)
+    .&lt;span style=&#34;color:#a6e22e&#34;&gt;css&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;display&amp;#39;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;none&amp;#34;&lt;/span&gt;)
+    .&lt;span style=&#34;color:#a6e22e&#34;&gt;slideDown&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;2000&lt;/span&gt;)
+    .&lt;span style=&#34;color:#a6e22e&#34;&gt;animate&lt;/span&gt;(
+      { &lt;span style=&#34;color:#a6e22e&#34;&gt;opacity&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; },
+      { &lt;span style=&#34;color:#a6e22e&#34;&gt;queue&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;duration&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;2300&lt;/span&gt; }
       );
     });
-&amp;lt;/script&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;First we load in the jquery code from google nut this a single point of failure.
+&lt;span style=&#34;color:#f92672&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;First we load in the jquery code from google nut this a single point of failure.
 If there is network interruption jquery code is lost. But in my instance if the
 network is failing then my web site probably is too.&lt;/p&gt;</description>
     </item>

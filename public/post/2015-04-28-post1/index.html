@@ -57,7 +57,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/2015-04-28-post1/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -109,32 +109,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -207,26 +182,12 @@
         </section>
         </header>
         <section class="post-content">
-            <h2 id="exploring-git-from-the-inside-out">&hellip; exploring git from the inside out &hellip;</h2>
-
+            <h2 id="-exploring-git-from-the-inside-out-">&hellip; exploring git from the inside out &hellip;</h2>
 <p>###Preface</p>
-
-<p class="highcap">Apologies up front - this is long... very long, but there is food for the brain here.
-I will discuss git for personal use. Using it with many other contributors is 
-an extension of the principle covered here. For simplicity, I am only going
-to discuss you working alone and only using a single "branch" of code for
-each project - again, for simplicity. Additionally we are going to examine
-the git "database" (stored as compressed SHA-1 named files/objects) as we go.
-We can gain a better understanding by reviewing the changes to the guts of
-your personal git repository. We will not cover branches, tags, or the git daemon
-in this discussion.
-</p>
-
+<!-- raw HTML omitted -->
 <p>###Why git? (skip this if you are less than patient)</p>
-
 <p>Many years ago I used backups of my projects or just documents, notes, etc.
 All worked well until it didn&rsquo;t. If you make a mistake and back it up guess what,</p>
-
 <p>now you have two broken copies. Then I used cvs - awesome. It worked for me
 for years. Never lost code (as long as I put it under cvs). Really, maintained my
 work and previous versions with only very minor issues but kept my data useful and
@@ -245,35 +206,24 @@ definitely be rewarding. When you extend git into a world with multiple (even ma
 multiples) of contributors git really shines. All your files are stored in the
 .git/objects/pack/ directory with weird long name and as <em>read only</em> protecting
 you from accidental deletion.</p>
-
 <p>###Getting Started with git</p>
-
 <p>I have, over the years, always had a &ldquo;$HOME/dev/&rdquo; directory where I keep all my code
 or even document files, graphics, etc. Really anything I want to preserve, especially
 if versions are involved. So this discussion will be using $HOME/dev to place our
 projects; each project with its own directory.</p>
-
 <h4 id="exercise">EXERCISE</h4>
-
 <pre><code>mkdir -p $HOME/dev/mypjct
 cd $HOME/dev/myprjct
 ls -ltra
-</code></pre>
-
-<p>Nothing exists in this directory.</p>
-
+</code></pre><p>Nothing exists in this directory.</p>
 <p>We can initialize (start) a git repository any time you desire.
 Because you want to be very careful, you are going to initialize
 your project before creating any files. This will also allow us
 to see the changes to the git database (really the .git directory)
 as we work with git.</p>
-
 <pre><code>git init
 ls -ltra
-</code></pre>
-
-<p>Here is what your project directory looks like now.</p>
-
+</code></pre><p>Here is what your project directory looks like now.</p>
 <pre><code>+-----.git
 |     +-----branches
 |     +-----config
@@ -297,26 +247,15 @@ ls -ltra
 |     +-----refs
 |     |     +-----heads
 |     |     +-----tags
-</code></pre>
-
-<p>Please note the objects directory becuase that is where all your files changes will get recorded
+</code></pre><p>Please note the objects directory becuase that is where all your files changes will get recorded
 as you work with git.</p>
-
 <p>We are going to create a test file called t.f and add the text &ldquo;ver 1&rdquo;.</p>
-
 <pre><code>echo &quot;ver 1&quot; &gt;&gt; t.f
-</code></pre>
-
-<p>No changes have occurred to git at this point. You now have one &ldquo;working&rdquo; file
+</code></pre><p>No changes have occurred to git at this point. You now have one &ldquo;working&rdquo; file
 in your project directory.</p>
-
 <p>Now &ldquo;stage&rdquo; the new file [t.f] into git with this command.</p>
-
 <pre><code>git add -a * # or we can use a shortcut command: git add -A (which we use going forward)
-</code></pre>
-
-<p>Now lets look at your project directory again and note the changes from above.</p>
-
+</code></pre><p>Now lets look at your project directory again and note the changes from above.</p>
 <pre><code>+-----.git
 |     +-----branches
 |     +-----config
@@ -344,9 +283,7 @@ in your project directory.</p>
 |     |     +-----heads
 |     |     +-----tags
 +-----t.f
-</code></pre>
-
-<p>Now we can see our new file listed last [t.f] and also a new
+</code></pre><p>Now we can see our new file listed last [t.f] and also a new
 directory [5b] under .git/objects and a file under that
 [d657f7b8fcd822d6e44202bc33e808cdd01ee7]. Here is where it gets a
 little complicated just stick with me. This is one git &ldquo;object&rdquo; which
@@ -360,36 +297,25 @@ that the git &ldquo;object name&rdquo; is really the subdirectory+filename hence
 [5bd657f7b8fcd822d6e44202bc33e808cdd01ee7] and the git way to print the
 contents out is a bit strange. You do not need to remember this command; it is
 just so we can monitor things as we go.</p>
-
 <pre><code>git cat-file -p 5bd657f7b8fcd822d6e44202bc33e808cdd01ee7
-</code></pre>
-
-<p>This shows the content of the file only [ver 1].</p>
-
+</code></pre><p>This shows the content of the file only [ver 1].</p>
 <p>Now just so you can see what can be done at this point let&rsquo;s delete
 your working file and then list the directory to see that it is gone
 then use git to restore it!</p>
-
 <pre><code>rm t.f
 ls -ltra
 # your t.f file is gone!
 git checkout t.f
 ls -ltra
 # your t.f file is back!
-</code></pre>
-
-<p>If you examine the .git directory tree at this point you will that there are
+</code></pre><p>If you examine the .git directory tree at this point you will that there are
 no changes. Now lets &ldquo;commit&rdquo; what we &ldquo;staged&rdquo; earlier and then examine the
 .git directory tree again to see what has occurred (we will only list
 the .git/objects tree for brevity.</p>
-
 <pre><code>git commit -m &quot;commit of ver 1&quot; # -m just means add this message - without it 
                                 # you would be forced into an editor and required
                                 # to add a message - a good/required habbit to get into.
-</code></pre>
-
-<p>Now the .git/objects tree:</p>
-
+</code></pre><p>Now the .git/objects tree:</p>
 <pre><code>objects
 +-----03
 |     +-----f1148542c5dbf6347c7e8e6a62863258c1c3b0
@@ -399,11 +325,8 @@ the .git/objects tree for brevity.</p>
 |     +-----fa0104ec53e1614f556472b6ec9e355e297d7f
 +-----info
 +-----pack
-</code></pre>
-
-<p>Our original object which was &ldquo;staged&rdquo; is still here under [5b] and two
+</code></pre><p>Our original object which was &ldquo;staged&rdquo; is still here under [5b] and two
 new ones appear. Let&rsquo;s look at the contents of each.</p>
-
 <pre><code>$ git cat-file -p 03f1148542c5dbf6347c7e8e6a62863258c1c3b0
 tree f0fa0104ec53e1614f556472b6ec9e355e297d7f
 author Geoff McNamara &lt;geoff.mcnamara@gmail.com&gt; 1430154082 -0400
@@ -417,10 +340,7 @@ ver 1
 $ git cat-file -p f0fa0104ec53e1614f556472b6ec9e355e297d7f
 100644 blob 5bd657f7b8fcd822d6e44202bc33e808cdd01ee7    t.f
 
-</code></pre>
-
-<p>Let&rsquo;s also look at the git log</p>
-
+</code></pre><p>Let&rsquo;s also look at the git log</p>
 <pre><code>$ git log
 commit 03f1148542c5dbf6347c7e8e6a62863258c1c3b0
 Author: Geoff McNamara &lt;geoff.mcnamara@gmail.com&gt;
@@ -432,14 +352,10 @@ $ git status
 On branch master
 nothing to commit, working directory clean
 
-</code></pre>
-
-<p>The git log refers to the object which has the contents of the first file we examined above.</p>
-
+</code></pre><p>The git log refers to the object which has the contents of the first file we examined above.</p>
 <p>So how are these files/objects/versions connected? They are chained as parent/child.
 Lets examine a later (more recent) object and note it has a parent which is the object
 above. First we will modify the t.f file, git add it, and commit it.</p>
-
 <pre><code>$ echo &quot;updating to ver 2&quot; &gt;&gt; t.g
 $ git add -A
 $ git commit -m &quot;committing ver 2&quot;
@@ -451,35 +367,24 @@ committer Geoff McNamara &lt;geoff.mcnamara@gmail.com&gt; 1430157487 -0400
 
 updating to ver 2
 
-</code></pre>
-
-<p>This is enough for you to start to appreciate how git stores data. Obviously
+</code></pre><p>This is enough for you to start to appreciate how git stores data. Obviously
 we only scratched the surface here.</p>
-
 <p>Repositories for git exists as either a working repository or a &ldquo;shared&rdquo;
 repository - created as &ldquo;bare&rdquo; with &ldquo;git init &ndash;bare&rdquo; - more on this later.</p>
-
 <p>Before we move on please take a look at your .git/config file.</p>
-
 <pre><code>cat .git/config
 [core]
         repositoryformatversion = 0
         filemode = true
         bare = false
         logallrefupdates = true
-</code></pre>
-
-<p>Note the &ldquo;bare = false&rdquo; so by default this is not a &ldquo;shared&rdquo;
+</code></pre><p>Note the &ldquo;bare = false&rdquo; so by default this is not a &ldquo;shared&rdquo;
 repository. It is a &ldquo;working&rdquo; project directory.</p>
-
-<h3 id="setting-up-a-remote-shared-git-server">Setting up a remote <em><em>shared</em></em> git server</h3>
-
+<h3 id="setting-up-a-remote-_shared_-git-server">Setting up a remote <em><em>shared</em></em> git server</h3>
 <p>#############################################</p>
-
 <p>A remote shared server can be used as a personal storage/backup of your
 important code and files. It becomes especially useful if it is
 universally available from anywhere by ssh or http (read: internet accessible).</p>
-
 <p>A <em>shared</em> git repo is just a bit different from your self-standing git project
 &ldquo;working&rdquo; directory. It will only contain the git structure found in your .git directory
 and by convention it will have an extension on the name of [.git].
@@ -489,33 +394,24 @@ also has your working files. A remote shared directory has no working file - it
 acts only as a git repository so it has all the git files or subdirectories
 but no working files. It is created differently [<code>git init --bare</code>] and used
 only remotely for checking files in (pushes) and checking them out (pulls).</p>
-
 <p>Create a git user and a .ssh directory for that user on the remote server.
 <em>Or</em> you can use any user on the remote server&hellip; just understand the permission
 for the files are influenced by the user who tries to access them. We suggest
 a generic user name like &ldquo;git&rdquo; because this repository will be shared - it will
 not be a &ldquo;working&rdquo; project directory.</p>
-
 <pre><code> sudo adduser git
  su git
  cd
  mkdir .ssh &amp;&amp; chmod 700 .ssh 
  touch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys
-</code></pre>
-
-<h3 id="to-make-logins-easier-passwordless">To make logins easier (passwordless)</h3>
-
+</code></pre><h3 id="to-make-logins-easier-passwordless">To make logins easier (passwordless)</h3>
 <p>You need to add your SSH public keys to the remote authorized_keys
 file for the git user.
 You should take a look at it just to be familar with it.</p>
-
 <pre><code>$ cat myhome/.ssh/id_rsa.pub
 ssh-rsa AAAAB3NADAQABAAABAQCB007n/ww+ouN4gSLKssMxXnBOvf9LGt4L...dAv8JggJICUvax2T9va5... user@host
-</code></pre>
-
-<p>Keep in mind that the content of this file is all one line.
+</code></pre><p>Keep in mind that the content of this file is all one line.
 Now append that into to the git user’s authorized_keys &hellip;</p>
-
 <pre><code>ssh-copy-id git@remote_server  # we use the tool provided by ssh 
 # This will do the same as this below
 # except it offers the advantage of making sure 
@@ -526,21 +422,19 @@ cat /tmp/id_rsa.pub &gt;&gt; git@remote_server:.ssh/authorized_keys
 # remote user .ssh directory already exists. 
 # Best to use ssh-copy-id provided for this purpose
 # but know you know what it is doing for you.
-</code></pre>
-
-<h3 id="lock-down-the-git-user-shell">Lock down the git user shell</h3>
-
+</code></pre><h3 id="lock-down-the-git-user-shell">Lock down the git user shell</h3>
 <p>Change the git user shell to: <code>/usr/bin/git-shell</code> on the remote server.
-Make sure that git-shell exists in the <code>/etc/shells</code> file
-&gt;&gt;Note: you will not be able to ssh into the server as the
+Make sure that git-shell exists in the <code>/etc/shells</code> file</p>
+<blockquote>
+<blockquote>
+<p>Note: you will not be able to ssh into the server as the
 git user&hellip; but it will allow git commands to work against it.</p>
-
-<h3 id="build-an-empty-git-initialized-prepared-directory-for-every-project">Build an empty git initialized/prepared directory for every project</h3>
-
+</blockquote>
+</blockquote>
+<h3 id="build-an-empty-git-initializedprepared-directory-for-every-project">Build an empty git initialized/prepared directory for every project</h3>
 <p>On the remote server you need to build out a project.git directory
 and initialize if with <code>git init --bare</code> to allow a new project
 to be pushed to the remote server.</p>
-
 <blockquote>
 <blockquote>
 <p>NOTE: <code>git init --bare</code> is <em>VERY DIFFERENT</em> from <code>git init bare</code>.
@@ -550,10 +444,8 @@ complete with its own .git directory. The &ldquo;bare&rdquo; project directory
 is ready to receive and git manage any new working files.</p>
 </blockquote>
 </blockquote>
-
 <p>Create an empty shared git directory (remote repository) on the remote
 server for the project (same process for any new shared project).</p>
-
 <pre><code> cd /opt/gitroot # I used /data/gitroot - you can name this 
                  # git repo dir anything you want
  mkdir project.git # yes, add the git extension - trust me here - it is convention
@@ -562,13 +454,9 @@ server for the project (same process for any new shared project).</p>
                  # not create .git - instead all the directories are not hidden
                  # and at the project directory level. Do an `ls -l` to see the
                  # difference
-</code></pre>
-
-<p><code>git init --bare</code> builds out the bare .git/ directory with all the
+</code></pre><p><code>git init --bare</code> builds out the bare .git/ directory with all the
 needed structure and files for controlling git but no .git subdirectory.</p>
-
 <p>It will look like this before any pushes are done.</p>
-
 <pre><code>+-----branches
 +-----config
 +-----description
@@ -591,13 +479,9 @@ needed structure and files for controlling git but no .git subdirectory.</p>
 +-----refs
 |     +-----heads
 |     +-----tags
-</code></pre>
-
-<p>Note: no objects yet and no .git subdirectory (and no working files
+</code></pre><p>Note: no objects yet and no .git subdirectory (and no working files
 will be stored here).</p>
-
-<h3 id="prepare-your-project-directory-on-the-local-computer-if-you-haven-t-already">Prepare your project directory on the local computer if you haven&rsquo;t already</h3>
-
+<h3 id="prepare-your-project-directory-on-the-local-computer-if-you-havent-already">Prepare your project directory on the local computer if you haven&rsquo;t already</h3>
 <pre><code> cd myproject # even when files already exist
  git init # to build out the .git/ directory structure and files
  git add . # stages files in the cache (staging area)
@@ -613,10 +497,7 @@ will be stored here).</p>
                         # which has the alias name &quot;origin&quot;
  # git status # note the output on this will say you are &quot;on branch master&quot;
  # that is the default working area.
-</code></pre>
-
-<p>Now the remote <em>shared</em> prj.git repository might look something like this:</p>
-
+</code></pre><p>Now the remote <em>shared</em> prj.git repository might look something like this:</p>
 <pre><code>+-----branches
 +-----config
 +-----description
@@ -658,10 +539,7 @@ will be stored here).</p>
 |     +-----heads
 |     |     +-----master
 |     +-----tags
-</code></pre>
-
-<p>Note the additional objects and NO WORKING FILES.</p>
-
+</code></pre><p>Note the additional objects and NO WORKING FILES.</p>
 <blockquote>
 <blockquote>
 <p>Ok, lets have just a small aside on how git is different
@@ -683,9 +561,7 @@ onto any other PC &hellip; and another and another - all existing as a full
 self-sufficient repository.</p>
 </blockquote>
 </blockquote>
-
 <p>Anyone can now clone it and push changes back up just as easily:</p>
-
 <pre><code># from another remote machine
  git clone git@remoteserver:/opt/gitroot/project.git # clone the whole
                                                      #  enchilada - notice
@@ -697,13 +573,9 @@ self-sufficient repository.</p>
  git commit -am 'Small modification to README' # commits it locally
  git push origin master # pushes it to the server it was claned from above
  # go look at .git/config to gain a little better understanding
-</code></pre>
-
-<p>There you have it - one fully functional personal repository and one shared
+</code></pre><p>There you have it - one fully functional personal repository and one shared
 repository..</p>
-
 <p>Enjoy,</p>
-
 <p>-g-</p>
         </section>
         

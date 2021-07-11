@@ -55,7 +55,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/2015-04-21-post1/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -107,32 +107,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -204,26 +179,18 @@
         </header>
         <section class="post-content">
             <h1 id="vagrant-lxc-plugin">vagrant-lxc plugin</h1>
-
 <p>OK today I finally had time to get vagrant-lxc to work.
 Up until now I have had vagrant virtualbox working just fine but
 when I looked into lxc containers with vagrant I ran into a
 little problem. First, I added vagrant-lxc plugin with this
 command</p>
-
 <pre><code>vagran plugin install vagrant-lxc
-</code></pre>
-
-<p>But this failed first asking for hostsupname plugin so I added that &hellip;
+</code></pre><p>But this failed first asking for hostsupname plugin so I added that &hellip;
 Then it complained about not being able to find the vagrant-lxc plugin
 even though this command showed it listed:</p>
-
 <pre><code>vagrant plugin list
-</code></pre>
-
-<p>Looking at the git repo for vagrant-lxc it said I needed vagrant version 1.5
+</code></pre><p>Looking at the git repo for vagrant-lxc it said I needed vagrant version 1.5
 or better but apt-get install vagrant gave me an older version&hellip;</p>
-
 <p>Now I love everything about ruby until you hit ruby version conflicts -
 yes there is rvm but sometimes it is just easier to move on and have a
 nice day&hellip; so I did, until this morning. I figured I would download the
@@ -231,30 +198,19 @@ newest version of vagrant, build it, and see what happens with the
 plugin vagrant-lxc. To my pleasant surpise the vagrant website offers
 a debian package for the newest version - sweet. I downloaded it, installed it,
 and all went well. Then when I tried running</p>
-
 <pre><code>vagrant init fgrehm/precise64-lxc
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <blockquote>
 <p>NOTE: Normally vagrant will create its own Vagrantfile based on the init info you entered above.</p>
 </blockquote>
 </blockquote>
-
 <p>This failed for me. It couldn&rsquo;t find the plugin again but but it suggested this:</p>
-
 <pre><code>rm $HOME/.vagrant.d/plugins.json
-</code></pre>
-
-<p>So I removed that file and then I ran this again:</p>
-
+</code></pre><p>So I removed that file and then I ran this again:</p>
 <pre><code>vagrant init fgrehm/precise64-lxc
 vagrant up
-</code></pre>
-
-<p>Bada-bing that fixed the issues (makes me wonder it that might have worked
+</code></pre><p>Bada-bing that fixed the issues (makes me wonder it that might have worked
 for fixing the older version.</p>
-
 <p>It downloaded and built out the lxc container and all is good.
 Now I need to start tweaking lxc containers to give me a virtual lab to
 deploy development, staging, and production deployments for testing.</p>

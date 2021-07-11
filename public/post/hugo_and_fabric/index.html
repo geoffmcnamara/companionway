@@ -57,7 +57,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/hugo_and_fabric/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -109,32 +109,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -209,11 +184,9 @@
         <section class="post-content">
             <p>Python Fabric is a denatured version of ansible and, if you enjoy python, fabric makes a small scale devops strategy a whole lot less painful.
 Combined with hugo static website generator, fabic makes testing and promoting a website a whole lot easier.</p>
-
 <p>I have struggled in the past with one challenge that made promoting website code from my workbench to dev, staging, and ultimately production tricky.
 The matter of URL always played havoc when I sent code up from one server to another for testing. Hugo offers a simple solution. When I promote website
 code it goes through this workflow process:</p>
-
 <ul>
 <li>requirements and design</li>
 <li>code development</li>
@@ -226,424 +199,420 @@ code it goes through this workflow process:</p>
 <li>promote to production server(s)</li>
 <li>test production website</li>
 </ul>
-
 <p>If I am working on code for a website it resides in development directory with the website domain name for the base directory&hellip; for example:</p>
-
 <pre><code>domain = &quot;companionway.net&quot;
 base_dir = $HOME/dev/www/{domain}/
-</code></pre>
-
-<p>This works cleanly for me. In hugo config.toml file you have to declare the url so I give it the full domain name ie:</p>
-
+</code></pre><p>This works cleanly for me. In hugo config.toml file you have to declare the url so I give it the full domain name ie:</p>
 <pre><code>baseURL = &quot;http://companionway.net/&quot;
-</code></pre>
-
-<p>The problem, of course, manifests with promoting code to another server at a level that is not the fully qualified domain (FQD) production url.
+</code></pre><p>The problem, of course, manifests with promoting code to another server at a level that is not the fully qualified domain (FQD) production url.
 That is where hugo allows the -b [your_base_url] option to save the day. To show an example, I have my development server document root as
 <code>/var/www/html</code> and each website I am working on has its name off of that. My development server(s) and raspberry pi (cheap) so they have clever names
 like <code>rasp01</code>, <code>rasp02</code>, etc. So the code for &ldquo;companionway.net&rdquo; resides at <code>raspXX:/var/www/html/companionway.net</code>. The hugo build command of
 <code>hugo -d &quot;https://raspXX/companionway.net/</code> allows me to go to that url to test the code and all the links will work properly. When the code goes to the production
 level with a fully qualified domain name with a DNS A record the hugo build command simply is <code>hugo</code> and the default baseURL is used from the config.toml file.</p>
-
 <p>The fabric process I use has a lot of steps but might be worth something to someone out there&hellip; once gain it comes with my standard &ldquo;it can be dome better&rsquo; clause:</p>
-
 <p>Here is my fabfile.py that allows promoting &hellip; read&rsquo;em and weap &hellip;</p>
-
-<p>```
-from fabric.api import env,run,local,lcd,cd,sudo,put,get,prompt,reboot,roles,settings,task,warn_only,abort,hide
+<pre><code>from fabric.api import env,run,local,lcd,cd,sudo,put,get,prompt,reboot,roles,settings,task,warn_only,abort,hide
 from fabric.colors import *
 from fabric.contrib.files import exists
 import subprocess
 import sys
-sys.path.append(&ldquo;/home/geoffm/dev/python/gmodules/&rdquo;)
+sys.path.append(&quot;/home/geoffm/dev/python/gmodules/&quot;)
 from dbug import dbug, trace  # my own dbug tools
 import functools
-from datetime import datetime</p>
+from datetime import datetime
 
-<p>dtime = datetime.now().strftime(&ldquo;%Y%m%d-%H%M&rdquo;)</p>
 
-<p>env.user = &ldquo;geoffm&rdquo;</p>
+dtime = datetime.now().strftime(&quot;%Y%m%d-%H%M&quot;) 
 
-<p>env.roledefs = {
-    &lsquo;rpis&rsquo;:[&lsquo;rasp1&rsquo;,&lsquo;rasp2&rsquo;,&lsquo;rasp3&rsquo;,&lsquo;rasp4&rsquo;,&lsquo;rasp5&rsquo;,&lsquo;rasp6&rsquo;,&lsquo;rasp7&rsquo;],
-    &lsquo;ubuntus&rsquo;:[&lsquo;192.168.1.72&rsquo;],
-    &lsquo;prsnl&rsquo;:[&lsquo;artemis&rsquo;],
-    &lsquo;rhat&rsquo;:[&lsquo;f-node01&rsquo;],
-    &lsquo;containers&rsquo;:[&lsquo;u-node01&rsquo;,&lsquo;u-node02&rsquo;,&lsquo;f-node01&rsquo;],
-    &lsquo;tst&rsquo;:[&lsquo;rasp2&rsquo;,&lsquo;rasp7&rsquo;],
-    &lsquo;websites&rsquo;:[&lsquo;cos.tst&rsquo;,&lsquo;hype.companionway.net&rsquo;,&lsquo;companionway.net&rsquo;],
-    &lsquo;dev&rsquo;:&lsquo;rasp5&rsquo;,
-    &lsquo;stage&rsquo;:&lsquo;rasp2&rsquo;,
-    &lsquo;prod&rsquo;:&lsquo;rasp1&rsquo;
+env.user = &quot;geoffm&quot;
+
+# ####################
+env.roledefs = {
+    'rpis':['rasp1','rasp2','rasp3','rasp4','rasp5','rasp6','rasp7'],
+    'ubuntus':['192.168.1.72'],
+    'prsnl':['artemis'],
+    'rhat':['f-node01'],
+    'containers':['u-node01','u-node02','f-node01'],
+    'tst':['rasp2','rasp7'],
+    'websites':['cos.tst','hype.companionway.net','companionway.net'],
+    'dev':'rasp5',
+    'stage':'rasp2',
+    'prod':'rasp1'
 }
-all=env.roledefs[&lsquo;rpis&rsquo;]+env.roledefs[&lsquo;containers&rsquo;]+env.roledefs[&lsquo;prsnl&rsquo;]</p>
+all=env.roledefs['rpis']+env.roledefs['containers']+env.roledefs['prsnl']
+# ####################
 
-<h1 id="note-task-is-just-a-decorator-that-adds-some-features-to-the-wrapped-function-ie-adds-it-to-fab-l">Note: @task is just a decorator that adds some features to the wrapped function - ie adds it to &ldquo;fab -l&rdquo;</h1>
 
-<h1 id="this-allows-use-of-namespacing">this allows use of namespacing</h1>
+# Note: @task is just a decorator that adds some features to the wrapped function - ie adds it to &quot;fab -l&quot;
+#   this allows use of namespacing
+# env.hosts = 'rasp1','rasp2','rasp3','rasp4','rasp5','rasp6','rasp7'
 
-<h1 id="env-hosts-rasp1-rasp2-rasp3-rasp4-rasp5-rasp6-rasp7">env.hosts = &lsquo;rasp1&rsquo;,&lsquo;rasp2&rsquo;,&lsquo;rasp3&rsquo;,&lsquo;rasp4&rsquo;,&lsquo;rasp5&rsquo;,&lsquo;rasp6&rsquo;,&lsquo;rasp7&rsquo;</h1>
-
-<p>def help():
+# ###########
+def help():
     # #######
-    msg = &ldquo;&rdquo;&rdquo;
-    fab sethost:&ldquo;rpis&rdquo; udug  # will select the host group &ldquo;rpis&rdquo; and run the task udug (update-&gt;upgrade dist)
-    &ldquo;&rdquo;&rdquo;
+    msg = &quot;&quot;&quot;
+    fab sethost:&quot;rpis&quot; udug  # will select the host group &quot;rpis&quot; and run the task udug (update-&gt;upgrade dist)
+    &quot;&quot;&quot;
     print(msg)
-    dbug(f&rdquo;task:{task.<strong>doc</strong>}&ldquo;)
-    exit</p>
+    dbug(f&quot;task:{task.__doc__}&quot;)
+    exit
 
-<p>def test_site(site):
+
+# ##################
+def test_site(site):
     # ##############
-    &ldquo;&rdquo;&rdquo;
+    &quot;&quot;&quot;
     test_site(site) # promts the user to run all tests on the site and respond to verifiy question
-    &ldquo;&rdquo;&rdquo;
+    &quot;&quot;&quot;
     try:
-        local(&lsquo;hugo server -v -b &ldquo;<a href="http://localhost&quot;'">http://localhost&quot;'</a>)  # forces the baseURL to be at this location
+        local('hugo server -v -b &quot;http://localhost&quot;')  # forces the baseURL to be at this location
     except KeyboardInterrupt:
-        print(f&rdquo;\n\n\nInterrupted site test for: {site}.\n\n\n&rdquo;)
-        r = prompt(&ldquo;Were the results of your testing complete and satisfactory?&rdquo;, default=&ldquo;n&rdquo;)
-        # if r == &ldquo;y&rdquo; or r == &ldquo;Y&rdquo;:
+        print(f&quot;\n\n\nInterrupted site test for: {site}.\n\n\n&quot;)
+        r = prompt(&quot;Were the results of your testing complete and satisfactory?&quot;, default=&quot;n&quot;)
+        # if r == &quot;y&quot; or r == &quot;Y&quot;:
         if r:
             proceed = True
         else:
             proceed = False
-    return proceed</p>
+    return proceed
 
-<p>def do_title(s,llen=50):
-    # ###########<br />
-    &ldquo;&rdquo;&rdquo;
+
+# ################
+def do_title(s,llen=50):
+    # ###########    
+    &quot;&quot;&quot; 
     prints a title block of length llen with supplied string s
-    &ldquo;&rdquo;&rdquo;
+    &quot;&quot;&quot;
     slen = len(s)
-    margin = &ldquo;=&rdquo; * (int((llen-slen)/2) - 1)
-    title = (f&rdquo;{margin}[    {s }    ]{margin}&ldquo;)
+    margin = &quot;=&quot; * (int((llen-slen)/2) - 1)
+    title = (f&quot;{margin}[    {s }    ]{margin}&quot;)
     title_len = len(title)
-    print(&rdquo;\n&rdquo;*3)
-    print(&ldquo;=&rdquo; * title_len)
+    print(&quot;\n&quot;*3)
+    print(&quot;=&quot; * title_len)
     print(title)
-    print(&ldquo;=&rdquo; * title_len)
-    print(&rdquo;\n&rdquo;*1)</p>
+    print(&quot;=&quot; * title_len)
+    print(&quot;\n&quot;*1)
 
-<p>@task</p>
 
-<p>def promote(to_level=&ldquo;where&rdquo;,stack=&ldquo;websites&rdquo;):
+@task
+# #########################################
+def promote(to_level=&quot;where&quot;,stack=&quot;websites&quot;):
     # #####################################
-    &ldquo;&rdquo;&rdquo;
-    def promote(to_level=&ldquo;where&rdquo;,stack=&ldquo;what&rdquo;) default: stack=&ldquo;websites&rdquo;
-    eg. def promote(&ldquo;staging&rdquo;,&ldquo;websites&rdquo;)
+    &quot;&quot;&quot;
+    def promote(to_level=&quot;where&quot;,stack=&quot;what&quot;) default: stack=&quot;websites&quot;
+    eg. def promote(&quot;staging&quot;,&quot;websites&quot;)
     fab promote:stage,websites  # promotes websites to stage platform
-    &ldquo;&rdquo;&rdquo;
-    user=env.user</p>
+    &quot;&quot;&quot;
+    user=env.user
 
-<pre><code># user can deploy just one site eg: fab promote:dev,companionway.net
-sites_dir = f&quot;/home/{user}/dev/www/&quot;
-if stack == &quot;websites&quot;:
-    sites=env.roledefs['websites']
-else:
-    sites = [ stack ]
+    # user can deploy just one site eg: fab promote:dev,companionway.net
+    sites_dir = f&quot;/home/{user}/dev/www/&quot;
+    if stack == &quot;websites&quot;:
+        sites=env.roledefs['websites']
+    else:
+        sites = [ stack ]
 
-# build the test_approved.flag filename, with basename and extention name for use later
-taff_base = &quot;test_approved&quot; # needed for moving the file after a push
-taff_ext = &quot;flag&quot;
-taff = f&quot;{taff_base}.{taff_ext}&quot;  # alias test_approved.flag file
-
-# loop through site(s)
-for site in sites:
-    dbug(f&quot;site:{site} user:{user} sites_dir:{sites_dir}&quot;)
-    do_title(site)
-    site_dir = f&quot;{sites_dir}/{site}/&quot;
-    with lcd(site_dir):  # change dir to the site to work on
-        r = local('pwd')
-        cmd = f&quot;test -f {taff}&quot;  # there is a way to do this with a fabric exists call BTW
-        # ### turn errors off so script continues through the loop od sites
-        with settings(warn_only=True):
-            # ### test for existing test-approved.flag file (taff)
-            r = local(cmd)
-            # dbug(f&quot;r:{r}&quot;)
-            if r == 0:
-                dbug(f&quot;\nFound the file: {taff}\n&quot;)
-                proceed=True
-            else:
-                # dbug(f&quot;Failed to find file: {taff}&quot;)
-                # dbug(f&quot;need to run a site test&quot;)
-                proceed = test_site(site)
-                # ### create test_approved.flag file ### #
-            if proceed:
-                # ### create a new test_approved.flag file (taff)
-                msg = f&quot;\n\n\n{dtime} Test successful. Approved by: {user}&quot;
-                cmd = f&quot;echo {msg} &gt; {taff}&quot;
-                local(cmd)
-
-                # ### rm public ### #
-                local('rm -r ./public')  # remove the /public tree recursively to avoid any left over extraneous files
-
-                # ### run git commands (after /public removed although /public is in .gitignore as well)
-                local('git add -A')
-                local('git commit')
-
-                # ### hugo set vars then create public ###
-                if to_level == 'dev': 
-                    trgt = env.roledefs['dev']  
-                elif to_level == 'stage': 
-                    trgt = env.roledefs['stage']  
-                elif to_level == 'prod': 
-                    trgt = env.roledefs['prod']  
-                else:
-                    # trgt = &quot;unknown&quot;:
-                    print(red(f&quot;Unsure of to_level [{to_level}]... exiting&quot;))
-                    exit()
-
-                # hugo build (/public) with specified root/baseURL (domain) name
-                # there is a better way to do this ... by declaring the a key:value pair for each to_level:site... this is an easy cop-out
-                if to_level == 'dev' or to_level == 'stage':
-                    cmd = f'hugo -b &quot;http://{trgt}/{site}/&quot;'  # overides the baseURL setting in config.toml
-                elif to_level == 'prod':
-                    cmd = 'hugo -v'  # This allows the declared baseURL in config.toml to take effect
-
-                else:  # this should be dealt with above in creat /public block ... but just in case
-                    cmd = &quot;&quot;  # clearing cmd just in case
-                    print(red(f&quot;Unsure of to_level [{to_level}]... exiting&quot;))
-                    exit()
-                local(cmd)  # run whatever cmd has been set
-
-                # ### xfer files to promote lvl ### #
-                if to_level == 'dev' or to_level == 'stage':
-                    # r = exists('/var/www/html/{site}')
-                    # dbug(f&quot;r:{r}&quot;); exit()
-                    cmd = f'rsync -av ./public/* {trgt}:/var/www/html/{site}/'  
-                elif to_level == 'prod':
-                    if site == &quot;companionway.net&quot;:
-                        cmd = f&quot;git push origin master&quot;
-                    else:
-                        cmd = f'rsync -av ./public/* {trgt}:/var/www/html/{site}/'  
-                else:
-                    print(red(f&quot;Unsure of to_level [{to_level}]... exiting&quot;));exit()
-                    r = True
-                    exit()
-
+    # build the test_approved.flag filename, with basename and extention name for use later
+    taff_base = &quot;test_approved&quot; # needed for moving the file after a push
+    taff_ext = &quot;flag&quot;
+    taff = f&quot;{taff_base}.{taff_ext}&quot;  # alias test_approved.flag file
+    
+    # loop through site(s)
+    for site in sites:
+        dbug(f&quot;site:{site} user:{user} sites_dir:{sites_dir}&quot;)
+        do_title(site)
+        site_dir = f&quot;{sites_dir}/{site}/&quot;
+        with lcd(site_dir):  # change dir to the site to work on
+            r = local('pwd')
+            cmd = f&quot;test -f {taff}&quot;  # there is a way to do this with a fabric exists call BTW
+            # ### turn errors off so script continues through the loop od sites
+            with settings(warn_only=True):
+                # ### test for existing test-approved.flag file (taff)
                 r = local(cmd)
+                # dbug(f&quot;r:{r}&quot;)
+                if r == 0:
+                    dbug(f&quot;\nFound the file: {taff}\n&quot;)
+                    proceed=True
+                else:
+                    # dbug(f&quot;Failed to find file: {taff}&quot;)
+                    # dbug(f&quot;need to run a site test&quot;)
+                    proceed = test_site(site)
+                    # ### create test_approved.flag file ### #
+                if proceed:
+                    # ### create a new test_approved.flag file (taff)
+                    msg = f&quot;\n\n\n{dtime} Test successful. Approved by: {user}&quot;
+                    cmd = f&quot;echo {msg} &gt; {taff}&quot;
+                    local(cmd)
 
-                if r.failed:
+                    # ### rm public ### #
+                    local('rm -r ./public')  # remove the /public tree recursively to avoid any left over extraneous files
+
+                    # ### run git commands (after /public removed although /public is in .gitignore as well)
+                    local('git add -A')
+                    local('git commit')
+
+                    # ### hugo set vars then create public ###
+                    if to_level == 'dev': 
+                        trgt = env.roledefs['dev']  
+                    elif to_level == 'stage': 
+                        trgt = env.roledefs['stage']  
+                    elif to_level == 'prod': 
+                        trgt = env.roledefs['prod']  
+                    else:
+                        # trgt = &quot;unknown&quot;:
+                        print(red(f&quot;Unsure of to_level [{to_level}]... exiting&quot;))
+                        exit()
+                            
+                    # hugo build (/public) with specified root/baseURL (domain) name
+                    # there is a better way to do this ... by declaring the a key:value pair for each to_level:site... this is an easy cop-out
+                    if to_level == 'dev' or to_level == 'stage':
+                        cmd = f'hugo -b &quot;http://{trgt}/{site}/&quot;'  # overides the baseURL setting in config.toml
+                    elif to_level == 'prod':
+                        cmd = 'hugo -v'  # This allows the declared baseURL in config.toml to take effect
+                            
+                    else:  # this should be dealt with above in creat /public block ... but just in case
+                        cmd = &quot;&quot;  # clearing cmd just in case
+                        print(red(f&quot;Unsure of to_level [{to_level}]... exiting&quot;))
+                        exit()
+                    local(cmd)  # run whatever cmd has been set
+
+                    # ### xfer files to promote lvl ### #
+                    if to_level == 'dev' or to_level == 'stage':
+                        # r = exists('/var/www/html/{site}')
+                        # dbug(f&quot;r:{r}&quot;); exit()
+                        cmd = f'rsync -av ./public/* {trgt}:/var/www/html/{site}/'  
+                    elif to_level == 'prod':
+                        if site == &quot;companionway.net&quot;:
+                            cmd = f&quot;git push origin master&quot;
+                        else:
+                            cmd = f'rsync -av ./public/* {trgt}:/var/www/html/{site}/'  
+                    else:
+                        print(red(f&quot;Unsure of to_level [{to_level}]... exiting&quot;));exit()
+                        r = True
+                        exit()
+
+                    r = local(cmd)
+
+                    if r.failed:
+                        print(&quot;\n&quot;*3)
+                        print(red(f&quot;Houston, there was a problem with: {cmd} result:{r}&quot;))
+                        print(f&quot;output:{r.stdout}&quot;)
+                        print(red(f&quot;Please investigate... removing {taff}&quot;))
+                        local(f'rm ./{taff}')
+                        print(red(&quot;Exiting...&quot;))
+                        exit()
+
+                    # ### add msg to test_approved.flag file of msg=f&quot;{site} promoted to {to_level} {dtime}&quot;
+                    msg = f&quot;{site} promoted to {to_level} {dtime}&quot;
+                    do_title(green(msg))
+                    cmd = f&quot;echo {msg} &gt;&gt; ./{taff}&quot;
+                    local(cmd)
+
+                    # ### move test_approved.flag file (taff) to {taff}.{dtime}
+                    cmd = f'mv {taff} {taff_base}-{dtime}.{taff_ext}'
+                    local(cmd) 
+                    
+                    # ### tell user to go test site on to_level
                     print(&quot;\n&quot;*3)
-                    print(red(f&quot;Houston, there was a problem with: {cmd} result:{r}&quot;))
-                    print(f&quot;output:{r.stdout}&quot;)
-                    print(red(f&quot;Please investigate... removing {taff}&quot;))
-                    local(f'rm ./{taff}')
-                    print(red(&quot;Exiting...&quot;))
-                    exit()
+                    print('----------------------------------------------------------')
+                    print(f&quot;Please test [{to_level}]: http://{trgt}/{site}  # in tilix: highlight the link and hit Ctrl-click&quot;)
+                    print('----------------------------------------------------------')
+                    print(&quot;\n&quot;*1)
+                    prompt(&quot;Continue? [Y]&quot;)
 
-                # ### add msg to test_approved.flag file of msg=f&quot;{site} promoted to {to_level} {dtime}&quot;
-                msg = f&quot;{site} promoted to {to_level} {dtime}&quot;
-                do_title(green(msg))
-                cmd = f&quot;echo {msg} &gt;&gt; ./{taff}&quot;
-                local(cmd)
+                else:
+                    print(&quot;\n&quot;*3)
+                    print('----------------------------------------------------------')
+                    print(f&quot;You need to research and re-test site: {site}.&quot;)
+                    print('----------------------------------------------------------')
+                # end of: if proceed is true or false
+            # end of with warn_only=True [encounterred error within script has exit() turned off] so that the loop continues
+        # EOLoop
+    return
 
-                # ### move test_approved.flag file (taff) to {taff}.{dtime}
-                cmd = f'mv {taff} {taff_base}-{dtime}.{taff_ext}'
-                local(cmd) 
-
-                # ### tell user to go test site on to_level
-                print(&quot;\n&quot;*3)
-                print('----------------------------------------------------------')
-                print(f&quot;Please test [{to_level}]: http://{trgt}/{site}  # in tilix: highlight the link and hit Ctrl-click&quot;)
-                print('----------------------------------------------------------')
-                print(&quot;\n&quot;*1)
-                prompt(&quot;Continue? [Y]&quot;)
-
-            else:
-                print(&quot;\n&quot;*3)
-                print('----------------------------------------------------------')
-                print(f&quot;You need to research and re-test site: {site}.&quot;)
-                print('----------------------------------------------------------')
-            # end of: if proceed is true or false
-        # end of with warn_only=True [encounterred error within script has exit() turned off] so that the loop continues
-    # EOLoop
-return
-</code></pre>
-
-<p>@task
-def sethosts(group=&ldquo;list&rdquo;):
-    &ldquo;&rdquo;&rdquo;
+@task
+def sethosts(group=&quot;list&quot;):
+    &quot;&quot;&quot;
     sethosts(group=list)
-    use: fab sethosts:\&ldquo;rpis\&rdquo; udug
-    &ldquo;&rdquo;&rdquo;
-    if group == &ldquo;all&rdquo;:
+    use: fab sethosts:\&quot;rpis\&quot; udug
+    &quot;&quot;&quot;
+    if group == &quot;all&quot;:
         env.hosts = all
-        dbug(f&rdquo;hosts all:{env.hosts}&ldquo;)
+        dbug(f&quot;hosts all:{env.hosts}&quot;)
         return
-    if group == &ldquo;list&rdquo;:
+    if group == &quot;list&quot;:
         for k,v in env.roledefs.items():
-            print(f&rdquo;{k}={v}&ldquo;)
+            print(f&quot;{k}={v}&quot;)
     else:
         try:
             env.hosts=env.roledefs[group]
-            print(f&rdquo;Selected group:{env.hosts}&ldquo;)
+            print(f&quot;Selected group:{env.hosts}&quot;)
         except:
-            dbug(f&rdquo;Unrecognized group[{group}]&hellip;&ldquo;)</p>
+            dbug(f&quot;Unrecognized group[{group}]...&quot;)
 
-<p>@task
+@task
 def getos():
-   with settings( hide(&lsquo;warnings&rsquo;, &lsquo;running&rsquo;, &lsquo;stdout&rsquo;, &lsquo;stderr&rsquo;),
+   with settings( hide('warnings', 'running', 'stdout', 'stderr'),
         warn_only=True):
-        if run(&lsquo;ls /etc/lsb-release&rsquo;):
-            os = &lsquo;ubuntu&rsquo;
-        elif run(&lsquo;ls /etc/redhat-release&rsquo;):
-            os = &lsquo;redhat&rsquo;
+        if run('ls /etc/lsb-release'):
+            os = 'ubuntu'
+        elif run('ls /etc/redhat-release'):
+            os = 'redhat'
         print(os)
-        return os</p>
+        return os
 
-<p>@task
+@task
 def lxclist():
-    local(&lsquo;lxc list&rsquo;)</p>
+    local('lxc list')
 
-<p>@task
+@task
 def lxcstartall():
     env.warn_only=True
-    local(&lsquo;lxc start &ndash;all&rsquo;)
-    lxclist()</p>
+    local('lxc start --all')
+    lxclist()
 
-<p>@task
+@task
 def lxcstopall():
     env.warn_only=True
-    local(&lsquo;lxc stop &ndash;all&rsquo;)
-    lxclist()</p>
+    local('lxc stop --all')
+    lxclist()
 
-<p>@task
+@task
 def lxcrestartall():
     env.warn_only=True
-    local(&lsquo;lxc restart &ndash;all&rsquo;)</p>
+    local('lxc restart --all')
 
-<p>@task
+@task
 def createlxcnode(name):
-    &ldquo;&rdquo;&rdquo;
-    Use fab createlxcnode:myname
-    &ldquo;&rdquo;&rdquo;
-    cmd=&ldquo;lsb_release -r | awk &lsquo;{print $2}&rsquo;&rdquo;
+    &quot;&quot;&quot; 
+    Use fab createlxcnode:myname 
+    &quot;&quot;&quot;
+    cmd=&quot;lsb_release -r | awk '{print $2}'&quot;
     rel = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
     print(rel.stdout.read())
     # rel = subprocess.check_output(cmd.split(),stderr=subprocess.STDOUT)
-    cmd=f&rdquo;echo lxc launch ubuntu:{rel} {name}&rdquo;
-    local(cmd)</p>
-
-<p>@task
+    cmd=f&quot;echo lxc launch ubuntu:{rel} {name}&quot;
+    local(cmd)
+    
+@task
 def updatehosts():
     # use hand writtend script in this dir (for now) WIP
-    local(&lsquo;./update-hosts.sh&rsquo;)</p>
+    local('./update-hosts.sh')
 
-<p>def uname_a():
-    &ldquo;&rdquo;&rdquo;
-    runs: uname -a
-    &ldquo;&rdquo;&rdquo;
+def uname_a():
+    &quot;&quot;&quot;
+    runs: uname -a 
+    &quot;&quot;&quot;
     with settings(warn_only=True):
-        run(&lsquo;uname -a&rsquo;)</p>
+        run('uname -a')
 
-<p>def top():
-    run(&lsquo;top -b -n 1 | head&rsquo;)</p>
+def top():
+    run('top -b -n 1 | head')
 
-<p>def df():
-    run(&lsquo;df -H | grep &ldquo;dev&rdquo;&rsquo;)</p>
+def df():
+    run('df -H | grep &quot;dev&quot;')
 
-<p>def uptime():
-    run(&lsquo;uptime&rsquo;)</p>
+def uptime():
+    run('uptime')
 
-<p>@task
+@task
 def status():
     with settings(warn_only=True):
         uname_a()
         uptime()
         df()
-        top()</p>
+        top()
 
-<p>@task
+@task
 def apt_update():
-    sudo(&lsquo;apt update&rsquo;)</p>
+    sudo('apt update')
 
-<p>@task
+@task
 def aptfullupgrade():
     apt_update()
-    sudo(&lsquo;apt -y full-upgrade&rsquo;)</p>
+    sudo('apt -y full-upgrade')
 
-<p>@task
+@task
 def udug():
     apt_update()
-    aptfullupgrade()</p>
+    aptfullupgrade()
 
-<p>@task
+@task
 def instbasics():
     with settings(warn_only=True):
-        r = sudo(&lsquo;apt -y install vim git alpine inxi screen lynx xymon-client&rsquo;)
+        r = sudo('apt -y install vim git alpine inxi screen lynx xymon-client')
     if r.failed:
-        r = sudo(&lsquo;dnf install vim git alpine inxi screen &lsquo;)</p>
+        r = sudo('dnf install vim git alpine inxi screen ') 
 
-<h1 id="if-you-run-fab-tst-then-this-next-block-fires-off-for-all-the-hosts-listed-in-containers">if you run &ldquo;fab tst&rdquo; then this next block fires off for all the hosts listed in containers</h1>
-
-<h1 id="this-just-an-example">this just an example</h1>
-
-<p>@task
-@roles(&lsquo;containers&rsquo;)
+# if you run &quot;fab tst&quot; then this next block fires off for all the hosts listed in containers
+# this just an example
+@task
+@roles('containers')
 def tst():
-    with cd(&lsquo;/tmp&rsquo;):
-        print(&ldquo;Gathering file names from /tmp&rdquo;)
-        sudo(&lsquo;ls -l&rsquo;)</p>
+    with cd('/tmp'):
+        print(&quot;Gathering file names from /tmp&quot;)
+        sudo('ls -l')
 
-<p>@roles(&lsquo;rhat&rsquo;)
+@roles('rhat')
 def dnfupgrade():
-    sudo(&lsquo;dnf upgrade&rsquo;)</p>
+    sudo('dnf upgrade')
 
-<p>@task
-def adduser(node, user=&ldquo;&rdquo;):
-    &ldquo;&rdquo;&rdquo; use: fab adduser(nodename,username) WARNING: assumes (defaults) username is your username
+@task
+def adduser(node, user=&quot;&quot;):
+    &quot;&quot;&quot; use: fab adduser(nodename,username) WARNING: assumes (defaults) username is your username 
         your pub key will be copied over to this account
         gives sudo privileges to the user
         adds ssh passwordless login with your puplic key
-    &ldquo;&rdquo;&rdquo;
+    &quot;&quot;&quot;
     import getpass
-    if user == &ldquo;&rdquo;:
+    if user == &quot;&quot;:
         user=getpass.getuser()  # sets user to current user
-    cmd=f&rsquo;lxc exec {node} &ndash; bash -c &ldquo;adduser {user}&rdquo;&rsquo;
+    cmd=f'lxc exec {node} -- bash -c &quot;adduser {user}&quot;'
     from fabric.contrib.console import confirm
-    print(f&rdquo;\n\n\nPlease confirm: node:{node} user:{user} &ldquo;)
-    if not confirm(&ldquo;Continue? &ldquo;):
-        abort(&ldquo;Aborting as requested&hellip;&rdquo;)
+    print(f&quot;\n\n\nPlease confirm: node:{node} user:{user} &quot;)
+    if not confirm(&quot;Continue? &quot;):
+        abort(&quot;Aborting as requested...&quot;)
     with warn_only():
         local(cmd)
-    cmd=f&rsquo;echo &ldquo;{user} ALL=(ALL) NOPASSWD: ALL&rdquo; &gt; ./{user}&rsquo;
+    cmd=f'echo &quot;{user} ALL=(ALL) NOPASSWD: ALL&quot; &gt; ./{user}'
     local(cmd)
-    local(&ldquo;chown root ./{user}&rdquo;)
-    cmd=f&rdquo;lxc file push ./{user} {node}/etc/sudoers.d/{user}&rdquo;
+    local(&quot;chown root ./{user}&quot;)
+    cmd=f&quot;lxc file push ./{user} {node}/etc/sudoers.d/{user}&quot;
     local(cmd)
-    cmd=f&rdquo;cat /home/{user}/.ssh/id_rsa.pub &gt;&gt; ./{user}-key.pub&rdquo;
+    cmd=f&quot;cat /home/{user}/.ssh/id_rsa.pub &gt;&gt; ./{user}-key.pub&quot;
     local(cmd)
-    cmd=f&rdquo;lxc file push {user}-key.pub {node}/root/{user}-key.pub&rdquo;
+    cmd=f&quot;lxc file push {user}-key.pub {node}/root/{user}-key.pub&quot;
     local(cmd)
-    cmd=f&rsquo;lxc exec {node} &ndash; bash -c &ldquo;mkdir /home/{user}/.ssh&rdquo;&rsquo;
+    cmd=f'lxc exec {node} -- bash -c &quot;mkdir /home/{user}/.ssh&quot;'
     local(cmd)
-    cmd=f&rsquo;lxc exec {node} &ndash; bash -c &ldquo;cat /root/{user}-key.pub &gt;&gt; /home/{user}/.ssh/authorized_keys&rdquo;&rsquo;
-    local(cmd)</p>
+    cmd=f'lxc exec {node} -- bash -c &quot;cat /root/{user}-key.pub &gt;&gt; /home/{user}/.ssh/authorized_keys&quot;'
+    local(cmd)
 
-<p>@task
+@task
 def rpibasics():
-    &ldquo;&rdquo;&rdquo;
+    &quot;&quot;&quot;
     install basic apps specific to the needs of rpi like xrdp
-    &ldquo;&rdquo;&rdquo;
-    sudo(&lsquo;apt install xrdp&rsquo;)</p>
+    &quot;&quot;&quot;
+    sudo('apt install xrdp')
 
-<p>@task
+@task
 def webit():
-    &ldquo;&rdquo;&rdquo;
+    &quot;&quot;&quot;
     get apache up and running with skel structure
-    &ldquo;&rdquo;&rdquo;
-    sudo(&lsquo;apt -y install apache2 libapache2-mod-php &lsquo;)
-    # sudo(&lsquo;apt install php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql php-mbstring php-xml libapache2-mod-php&rsquo;)  # if you want to rule the world
-    # sudo(&lsquo;mkdir /var/www/html/chkit&rsquo;)
-    put(&lsquo;/home/geoffm/dev/www/skel/chkit&rsquo;,&lsquo;/var/www/html/&rsquo;,use_sudo=True)
-&ldquo;&rsquo;</p>
+    &quot;&quot;&quot;
+    sudo('apt -y install apache2 libapache2-mod-php ')
+    # sudo('apt install php-pear php-fpm php-dev php-zip php-curl php-xmlrpc php-gd php-mysql php-mbstring php-xml libapache2-mod-php')  # if you want to rule the world
+    # sudo('mkdir /var/www/html/chkit')
+    put('/home/geoffm/dev/www/skel/chkit','/var/www/html/',use_sudo=True) 
+'''
 
-<p>This seems long and ugly but it works for me solidly.</p>
+This seems long and ugly but it works for me solidly.
 
-<p>Enjoy,
--g-</p>
+Enjoy,
+-g-
+
+</code></pre>
         </section>
         
 

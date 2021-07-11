@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>cms on companionway</title>
@@ -19,14 +19,16 @@
       
       <guid>https://www.companionway.net/post/switched-to-hugo/</guid>
       <description>&lt;p&gt;I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
-&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;https://www.companionway.net/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
+&lt;!-- raw HTML omitted --&gt;&lt;img src=&#34;https://www.companionway.net/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
 &lt;p&gt;Here is why:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;It comes as a binary file that runs on pretty much any platform. A single file&amp;hellip; without a list of dependencies&lt;/li&gt;
-&lt;li&gt;I could stop with the last reason and it would be enough&amp;hellip; but I have to say that the file tree used in hugo is simple, and simple is beautiful. As Einstein once said:
-&amp;gt;“Make things as simple as possible, but not simpler.”&lt;/li&gt;
+&lt;li&gt;I could stop with the last reason and it would be enough&amp;hellip; but I have to say that the file tree used in hugo is simple, and simple is beautiful. As Einstein once said:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“Make things as simple as possible, but not simpler.”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
 &lt;li&gt;It is written in googles go language&amp;hellip; so it is fast and portable.&lt;/li&gt;
 &lt;li&gt;It is closely tied to git so it can easily be used on github and for version maintence.&lt;/li&gt;
 &lt;li&gt;it builds a clean directory [./public/] for the full site deploy and this can be rsync&amp;rsquo;d to where ever you like.
@@ -38,10 +40,8 @@ or &amp;hellip; just git push it to hithub and use something like netlify.com to
 &lt;li&gt;as the Hugo websites states - it makes the web fun again&amp;hellip;&lt;/li&gt;
 &lt;li&gt;Did I mention that it is a single executable file?&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Reference:
 &lt;a href=&#34;https://gohugo.io/#intro&#34;&gt;gohugo.io&lt;/a&gt;&lt;/p&gt;
-
 &lt;p&gt;Enjoy
 -g-&lt;/p&gt;</description>
     </item>

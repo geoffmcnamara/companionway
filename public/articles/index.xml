@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Newspaper on companionway</title>
@@ -18,19 +18,15 @@
       <pubDate>Fri, 03 Nov 2017 10:54:24 +0200</pubDate>
       
       <guid>https://www.companionway.net/articles/newspaper-hugo-subtheme/</guid>
-      <description>&lt;p&gt;First credit goes to Silke V at codepen.io name &amp;ldquo;silkine&amp;rdquo; [&lt;a href=&#34;http://www.silkevoigts.de/&#34;&gt;http://www.silkevoigts.de/&lt;/a&gt;].&lt;/p&gt;
-
+      <description>&lt;p&gt;First credit goes to Silke V at codepen.io name &amp;ldquo;silkine&amp;rdquo; [http://www.silkevoigts.de/].&lt;/p&gt;
 &lt;p&gt;Original source code can be found here: &lt;a href=&#34;https://codepen.io/silkine/pen/jldif&#34;&gt;https://codepen.io/silkine/pen/jldif&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/newspaper-hugo-subtheme.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
+&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/newspaper-hugo-subtheme.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;I had a coworker who had a non-profit business blog that wanted to offer a newsletter to her clients.
 So I got interested in finding an HTML format that gave an old traditional newspaper style.
 Silke offered a solution that provided a strong simple css base. Currently (2017) I find
 the hugo cms system to be the easiest most portable static web building application freely available.
 The challenge was to create a full newsletter style theme as a subtheme within an existing theme
 structure. So I mocked up a ported version of Silke&amp;rsquo;s newspaper css into a hugo &amp;ldquo;section&amp;rdquo;.&lt;/p&gt;
-
 &lt;p&gt;This project is a drop in offering to any existing hugo themed structure which will produce
 a newsletter format in an &amp;ldquo;article(s)&amp;rdquo; hugo section. A user only needs to change the title, city,
 and state varbiable that are stored as front matter in the ./content/articles/_index.md file.
@@ -38,7 +34,6 @@ Hugo uses this file natively to discover section (in this case &amp;ldquo;articl
 posts to the newsletter subtheme should be created in this ./content/articles/ directory as markdown
 files. Running hugo new articles/mynewarticle.md will create a new file with the default front matter
 pulled from ./archtypes/articles.md.&lt;/p&gt;
-
 &lt;p&gt;This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.&lt;/p&gt;</description>
     </item>
     
@@ -76,7 +71,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus tortor 
       <pubDate>Tue, 24 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.companionway.net/articles/article4/</guid>
-      <description>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &amp;ldquo;de Finibus Bonorum et Malorum&amp;rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &amp;ldquo;Lorem ipsum dolor sit amet..&amp;rdquo;, comes from a line in section 1.10.32.
+      <description>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &amp;ldquo;de Finibus Bonorum et Malorum&amp;rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &amp;ldquo;Lorem ipsum dolor sit amet..&amp;quot;, comes from a line in section 1.10.32.
 &amp;ldquo;Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit&amp;hellip;&amp;rdquo;</description>
     </item>
     

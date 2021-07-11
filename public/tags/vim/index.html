@@ -59,7 +59,7 @@
                 companionway" />
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/tags/vim/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -111,32 +111,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -220,7 +195,6 @@
 	</header>
 	<section class="post-excerpt">
 		<p><p>Our last post discussed using fisa-vimrc and appreciating the simple installation and ease of use. This post will explore, briefly, some tweaks and a short &ldquo;how to&rdquo; for each of the loaded plugins. This exercise will be worth your time if you have not explored these tools before.</p>
-
 <p>Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready. A lot of information is here but that is because you have lot available to you under the hood. The sections below minimumly scratch the surface. Go play with each plug-in to at least find out what features it offers.</p> <a class="read-more" href="/post/control_vim_and_plugins/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
@@ -298,13 +272,10 @@ is ALE (Asynchronous Lint Engine).</p> <a class="read-more" href="/post/vim_ale/
 	</header>
 	<section class="post-excerpt">
 		<p><h3 id="dynamic-vim-templates">Dynamic vim Templates</h3>
-
 <p>Vim (or vi in the anceint past) has been my partner in getting things done. Like an rich tool it
 has lots of features that go untapped or undiscovered. A few days ago I decided I wanted a script within
 a tempate to help build the &ldquo;front matter&rdquo; to my markdown (.md) files.</p>
-
 <p>The front matter looks like this:</p>
-
 <pre><code>+++
 author = &quot;&quot;
 comments = true
@@ -317,12 +288,9 @@ share = true
 title = &quot;vim_scriptable_templates&quot;
 
 +++
-</code></pre>
-
-<p>The challenge was to have vim write in the date for me in the needed format. And if you use hugo as your static web site generator as I do
+</code></pre><p>The challenge was to have vim write in the date for me in the needed format. And if you use hugo as your static web site generator as I do
 you may have found that it will silently ignore a new markdown file if the date is not formated correctly. It some testing to discover that
 but the bottom line is that I needed a way to script it for to avoid mistakes.</p>
-
 <p>Research to me to this tip source: <a href="http://vim.wikia.com/wiki/Use_eval_to_create_dynamic_templates"> vim embedded scripts </a></p> <a class="read-more" href="/post/vim_scriptable_templates/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">

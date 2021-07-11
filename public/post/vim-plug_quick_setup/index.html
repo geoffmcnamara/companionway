@@ -57,7 +57,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/vim-plug_quick_setup/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -109,32 +109,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -208,31 +183,24 @@
         </header>
         <section class="post-content">
             <p>I want you to try this .vimrc setup.</p>
-
 <p>I have had my own .vimrc for years. I recently came across <a href="http://fisadev.github.io/fisa-vim-config/">fisa-vim-config</a>
 and ended up dropping my extensive .vimrc, adopting the one above and adding a few tweaks to make it friendly to me. I
 was actually looking for more ALE-fixers when I found this gem.</p>
-
 <p>It is simple, self installing and very powerful due to the vim Plugins that are installed and loaded.</p>
-
-<p>Here are the steps I want you to try&hellip; trust me here.
-* mv ~/.vimrc MyOld.vimrc # or whatever your favorite backup scheme is I actually name mine with a date eg 20190315.vimrc
-* mv ~/.vim MyOld.vim
-* download fisa-vim-config and replace your old ~/.vimrc
-* run vim on any file you want</p>
-
+<p>Here are the steps I want you to try&hellip; trust me here.</p>
+<ul>
+<li>mv ~/.vimrc MyOld.vimrc # or whatever your favorite backup scheme is I actually name mine with a date eg 20190315.vimrc</li>
+<li>mv ~/.vim MyOld.vim</li>
+<li>download fisa-vim-config and replace your old ~/.vimrc</li>
+<li>run vim on any file you want</li>
+</ul>
 <p>Much credit to the author of fisa-vim-config: Juan Pedro Fisanotti!</p>
-
-<p><img src="/img/vim-plug-sized.gif" alt="Just a small sample of what can be done" /></p>
-
+<p><img src="/img/vim-plug-sized.gif" alt="Just a small sample of what can be done"></p>
 <p>There is more to do here but if you do those steps you will see lots of new Vim Plugins get loaded automagically.</p>
-
-<p>You can actually remove the ~/.vim (it has root owned .git subdirectories so you will have to force remove the directory).<br />
+<p>You can actually remove the ~/.vim (it has root owned .git subdirectories so you will have to force remove the directory).<br>
 Run vim again and your ~/.vim directoy will automagically get built out again.</p>
-
 <p>Now tweak your shinny new ~/.vimrc file.
 First I want vim to remember where I left off in a file and put the cursor there when I return to that file.  Add this to the end of ~/.vimrc.</p>
-
 <pre><code>&quot; ======= remember cursor position and viminfo settings  ========
 &quot; Tell vim to remember certain things when we exit using set viminfo=
 &quot;  '10  :  marks will be remembered for up to 10 previously edited files
@@ -253,26 +221,20 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 &quot; ======= EOB remember settings ================
-</code></pre>
-
-<p>Note: the file viminfo line is supplanting the viminfo line already in fisa-vim-config vimrc.</p>
-
+</code></pre><p>Note: the file viminfo line is supplanting the viminfo line already in fisa-vim-config vimrc.</p>
 <p>You good folks probably know that I am a huge fan of vim ale so lets add that plugin&hellip; this so easy!
 #end()
 You have to add this between the start [<code>call plug#begin('~/.vim/plugged')</code>] and the end [<code>call plug#end()</code>] of the Vim plugins section.</p>
-
 <pre><code>&quot; ALE for vim
 Plug 'https://github.com/w0rp/ale.git'
-</code></pre>
-
-<p>I didn&rsquo;t care for the color schemes and some other annoying or problematic Plugs so&hellip;
-- commented out all the references to it using .vimrc comment character which is the double quote.
-- commented out the <code>set nu</code> to stop the line numbering.
-- commented out the Plug &hellip; syntastic &hellip; line as it caused conflicts on large code files
-- commented out some of the backup and swp file settings.</p>
-
+</code></pre><p>I didn&rsquo;t care for the color schemes and some other annoying or problematic Plugs so&hellip;</p>
+<ul>
+<li>commented out all the references to it using .vimrc comment character which is the double quote.</li>
+<li>commented out the <code>set nu</code> to stop the line numbering.</li>
+<li>commented out the Plug &hellip; syntastic &hellip; line as it caused conflicts on large code files</li>
+<li>commented out some of the backup and swp file settings.</li>
+</ul>
 <p>Then I added a few of my own tweaks:</p>
-
 <pre><code>&quot; numbers on or off
 nnoremap &lt;Leader&gt;nn :set nonumber&lt;CR&gt;
 nnoremap &lt;Leader&gt;sn :set number&lt;CR&gt;
@@ -283,15 +245,9 @@ nnoremap &lt;Leader&gt;nt :NeoComplCacheToggle&lt;CR&gt;
 &quot; ALEToggle
 nnoremap &lt;Leader&gt;at :ALEToggle&lt;CR&gt;
 
-</code></pre>
-
-<p>Oh, and one more significant change. For python editing I added this ftplugin file:</p>
-
-<pre><code class="language-bash">mkdir ~/.vim/ftplugin
-</code></pre>
-
-<p>Then <code>vim ~/.vim/ftplugin/python.vim</code> and add:</p>
-
+</code></pre><p>Oh, and one more significant change. For python editing I added this ftplugin file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/.vim/ftplugin
+</code></pre></div><p>Then <code>vim ~/.vim/ftplugin/python.vim</code> and add:</p>
 <pre><code>let b:ale_linters = ['flake8']
 let b:ale_fixers = [
 \   'remove_trailing_lines',
@@ -301,19 +257,12 @@ let b:ale_fixers = [
 \]
 &quot; be careful with this - it can get wonky and you may have to :q! to avoid writing out errors
 nnoremap &lt;buffer&gt; &lt;silent&gt; &lt;LocalLeader&gt;= :ALEFix&lt;CR&gt;
-</code></pre>
-
-<p>That last line allows me to run the <code>vim &lt;leader&gt;=</code> (ie \= ) and automagically lots of fixes occur to my python code.</p>
-
+</code></pre><p>That last line allows me to run the <code>vim &lt;leader&gt;=</code> (ie = ) and automagically lots of fixes occur to my python code.</p>
 <p>Within vim you can run <code>:ALEInfo</code> and get LOTS of useful information and suggestions.
 I loaded all the suggestions and oneof the most useful for python is &lsquo;yapf&rsquo;.
 I don;t remeber exatcly how I installed it but my guess is somthing like this:</p>
-
 <pre><code>sudo -H pip3 install yapf
-</code></pre>
-
-<p>I might have change Airline status line a bit too, but you do what you want:</p>
-
+</code></pre><p>I might have change Airline status line a bit too, but you do what you want:</p>
 <pre><code>&quot; Airline ------------------------------
 &quot; apt.sh -i powerline fonts-powerline # to get what you will need here
 &quot;let g:airline_powerline_fonts = 0
@@ -335,10 +284,7 @@ endif
 &quot;let g:airline_symbols.branch = '⭠'
 &quot;let g:airline_symbols.readonly = '⭤'
 &quot;let g:airline_symbols.linenr = '⭡'
-</code></pre>
-
-<p>And make sure you still have 256 colors:</p>
-
+</code></pre><p>And make sure you still have 256 colors:</p>
 <pre><code>&quot; use 256 colors when possible
 if (&amp;term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
     let &amp;t_Co = 256
@@ -346,49 +292,33 @@ if (&amp;term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
 &quot;else
 &quot;    colorscheme delek
 endif
-</code></pre>
-
-<p>Add this line to the Tagbar section to have navigation a little less intrusive:</p>
-
+</code></pre><p>Add this line to the Tagbar section to have navigation a little less intrusive:</p>
 <pre><code>let g:tagbar_autoclose = 1
-</code></pre>
-
-<p>Oh, at this point there is one thing you may want to do and that is make a backup copy of your ~./vim/ftplug dir.
+</code></pre><p>Oh, at this point there is one thing you may want to do and that is make a backup copy of your ~./vim/ftplug dir.
 The reason is, you can still forcefully remove .vim directory and it will get rebuilt by your .vimrc BUT it won;t
 rebuild your.vim/ftplugin directory.</p>
-
 <p>Ummm, one other item I finaly had to change. I turned neocomlcache off by default because it just got to obnoxious:
 If you are the same way, do this change:</p>
-
 <pre><code>let g:neocomplcache_enable_at_startup = 0
-</code></pre>
-
-<p><code>
-Take time to appreciate some of the plugins:
-- Airline is giving you the status lines Try</code>:help Airline<code>
-- TagBar is another useful tool for large code files. While editing some code try</code>:TagBar` and use it to navigate
-  through your code.</p>
-
+</code></pre><p>`
+Take time to appreciate some of the plugins:</p>
+<ul>
+<li>Airline is giving you the status lines Try <code>:help Airline</code></li>
+<li>TagBar is another useful tool for large code files. While editing some code try <code>:TagBar</code> and use it to navigate
+through your code.</li>
+</ul>
 <p>If you want to see the power you now hold in your knapsack&hellip;
 <code>:map</code></p>
-
 <p>Here is some quick fun vim&hellip; from the command line:</p>
-
 <pre><code>vim -O ~/.vimrc ~/.vim/ftplugin/python.py ./.bashrc
-</code></pre>
-
-<p>Then hit &lsquo;-&rsquo;, yes, just hit &lsquo;-&rsquo;. Slick!</p>
-
+</code></pre><p>Then hit &lsquo;-', yes, just hit &lsquo;-'. Slick!</p>
 <p>BTW You can update all these Plugins while in vim with <code>:PlugUdate</code>
 And you can upgrade vim-plug itself with <code>:PlugUpgrade</code>.
 You can get help for any of the ALE* commands eg. <code>:help ALEFixSuggest</code></p>
-
 <p>Let me know if I forgot something or should make changes.</p>
-
 <p>-=* Enjoy! *=-</p>
-
 <p>-g-
-geoff.mcnamara@gmail.com:</p>
+<a href="mailto:geoff.mcnamara@gmail.com">geoff.mcnamara@gmail.com</a>:</p>
         </section>
         
 

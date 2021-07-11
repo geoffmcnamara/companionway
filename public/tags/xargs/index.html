@@ -59,7 +59,7 @@
                 companionway" />
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/tags/xargs/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -111,32 +111,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -220,11 +195,8 @@
 	</header>
 	<section class="post-excerpt">
 		<p><p>Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If I had to look it up, you have to suffer seeing it in my blog post&hellip; [smile]</p>
-
 <pre><code>find ./ -name \*.md -print0 | xargs -0 sed -i 's/header-img/img/'
-</code></pre>
-
-<p>Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.</p> <a class="read-more" href="/post/recursive-replace-text/">&raquo;</a></p>
+</code></pre><p>Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.</p> <a class="read-more" href="/post/recursive-replace-text/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		

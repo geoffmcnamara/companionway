@@ -1,43 +1,271 @@
-A room without books is like a body without a soul.” - Cicero
-"Education is learning the rules, experience is learning the exceptions." - annonymous
-"They stumble often who run fast." - Shakespeare
-"Without humor, life is just a four letter word" - gwm
-"The struggle ends when gratitude begins" - Neale Donald Walsch
-"Forever is composed of nows" - Emily Dickenson
-"Storms make trees take deeper roots" - Dolly Parton
-"You may delay but time will not" - Benjamin Franklin
-"Love all, trust a few, do wrong to none" - Shakespeare
-"If music be the food of love, play on." - Shakespeare
-"No legacy is so rich as honesty" - Shakespeare
-"Brevity is the soul of wit" - Shakespeare
-"Don't let schooling intefere with your education" - Mark Twain
-"It is better to keep your mouth closed and let people think you are a fool than to open it and remove all doubt." - Mark Twain 
-"Honesty is the first chapter in the book of wisdom" - Thomas Jefferson
-"The journey of a thousand miles begins with one step" - Lao Tzu
-"Tell me and I forget. Teach me and I remember. Involve me and I learn" Benjamin Franklin
-"The secret of getting ahead is getting started" - Mark Twain
-"Wise men speak because they have something to say. Fools speak because they have to say something" - Plato
-"It is not what you look like that matters. It is what you see" - Henry David Thoreau
-"The only true wisdom is knowing that you know nothing" - Socrates
-"Everything has beauty but not everyone can see it" - Confusius
-"Happiness resides not in possessions, and not in gold. Happiness dwells in the soul" - Democritus
-"Believe and you are halfway there" - Theodore Roosevelt
-"Education is the most powerful weapon that can be used to change the world" - Nelson Mandela
-"The only thing necessary for the triumph of evil is for good men to do nothing" - Edmund Burke
-"The happiest people don't have the best of everything, they make the best of everything" - Attributed to Oprah Winfrey
-“Silence is one of the great arts of conversation.” - Cicero
-"Truth is stranger than fiction, but it is because Fiction is obliged to stick to possibilities; Truth isn't." - Mark Twain
-"An Investment In Knowledge Pays The Best Interest" - Benjamin Franklin
-“A room without books is like a body without a soul.” - Marcus Tullius Cicero
-“I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.”  - Maya Angelou
-“Without music, life would be a mistake.” - Friedrich Nietzsche
-“The fool doth think he is wise, but the wise man knows himself to be a fool.” - William Shakespeare
-“The man who does not read has no advantage over the man who cannot read.” - Mark Twain
-“Love all, trust a few, do wrong to none.” - William Shakespeare
-“For every minute you are angry you lose sixty seconds of happiness.” - Ralph Waldo Emerson
-“Give me six hours to chop down a tree and I will spend the first four sharpening the axe.” - Abraham Lincoln
-"A grateful heart sees a glimpse of heaven in everything." - Mimi Novic
-"Is not prosperity robbed of half its value if you have no one to share your joy!" - Cicero
- “Never go to excess but let moderation be your guide.” - Cicero
-“Gratitude is not only the greatest of virtues but the parent of all others.” - Cicero
-“No plague has cost the human race more dear. [On Anger]” - Seneca 
+# quotes.nts aka lines.dat #
+"The roots of education are bitter, but the fruit is sweet." - Aristotle  
+"The misfortune of the wise is better than the prosperity of the fool." - Epicurus  
+"Everything existing in the universe is the fruit of chance or necessity" - Democritus  
+"A room without books is like a body without a soul.” - Cicero  
+"Education is learning the rules, experience is learning the exceptions." - annonymous  
+"They stumble often who run fast." - Shakespeare  
+"Without humor, life is just a four letter word" - gwm  
+"The struggle ends when gratitude begins" - Neale Donald Walsch  
+"Forever is composed of nows" - Emily Dickenson  
+"Storms make trees take deeper roots" - Dolly Parton  
+"You may delay but time will not" - Benjamin Franklin  
+"Love all, trust a few, do wrong to none" - Shakespeare  
+"If music be the food of love, play on." - Shakespeare  
+"No legacy is so rich as honesty" - Shakespeare  
+"Brevity is the soul of wit" - Shakespeare  
+"Don't let schooling intefere with your education" - Mark Twain  
+"It is better to keep your mouth closed and let people think you are a fool than to open it and remove all doubt." - Mark Twain   
+"Honesty is the first chapter in the book of wisdom" - Thomas Jefferson  
+"The journey of a thousand miles begins with one step" - Lao Tzu  
+"Tell me and I forget. Teach me and I remember. Involve me and I learn" Benjamin Franklin  
+"The secret of getting ahead is getting started" - Mark Twain  
+"Wise men speak because they have something to say. Fools speak because they have to say something" - Plato  
+"It is not what you look like that matters. It is what you see" - Henry David Thoreau  
+"The only true wisdom is knowing that you know nothing" - Socrates  
+"Everything has beauty but not everyone can see it" - Confusius  
+"Happiness resides not in possessions, and not in gold. Happiness dwells in the soul" - Democritus  
+"Believe and you are halfway there" - Theodore Roosevelt  
+"Education is the most powerful weapon that can be used to change the world" - Nelson Mandela  
+“As I walked out the door toward the gate that would lead to my freedom, I knew if I didn't leave my bitterness and hatred behind, I'd still be in prison.” - Nelson Mandela
+"Hate is a merciless jailer." - gwm
+"The only thing necessary for the triumph of evil is for good men to do nothing" - Edmund Burke  
+"The happiest people don't have the best of everything, they make the best of everything" - Attributed to Oprah Winfrey  
+“Silence is one of the great arts of conversation.” - Cicero  
+"Truth is stranger than fiction, but it is because Fiction is obliged to stick to possibilities; Truth isn't." - Mark Twain  
+"An Investment In Knowledge Pays The Best Interest" - Benjamin Franklin  
+“A room without books is like a body without a soul.” - Marcus Tullius Cicero  
+“I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.”  - Maya Angelou  
+“Without music, life would be a mistake.” - Friedrich Nietzsche  
+“The fool doth think he is wise, but the wise man knows himself to be a fool.” - William Shakespeare  
+“The man who does not read has no advantage over the man who cannot read.” - Mark Twain  
+“Love all, trust a few, do wrong to none.” - William Shakespeare  
+“For every minute you are angry you lose sixty seconds of happiness.” - Ralph Waldo Emerson  
+“Give me six hours to chop down a tree and I will spend the first four sharpening the axe.” - Abraham Lincoln  
+"A grateful heart sees a glimpse of heaven in everything." - Mimi Novic  
+"Is not prosperity robbed of half its value if you have no one to share your joy!" - Cicero  
+ “Never go to excess but let moderation be your guide.” - Cicero  
+“Gratitude is not only the greatest of virtues but the parent of all others.” - Cicero  
+“No plague has cost the human race more dear. [On Anger]” - Seneca   
+"Comparison is the thief of joy" - Theodore Roosevelt  
+"Disaster is Virtue's opportunity." - Seneca  
+"There must always remain something that is antagonistic to good." - Plato  
+"The smaller the mind, the greater the conceit" - Aesop  
+"The pen is mightier than the sword" - Edward Bulwer-Lyttonx  
+"I count among him braver who overcomes his desires than him who conquers his enemies; for the hardest victory is over self." - Aristotle  
+"Truth is one, but the wise speak of it in many different ways" - Regveda  
+"Haste, encourages failure" - gwm  
+"Wealth consists not in having great possessions, but in have few wants" - Epictetus  
+"A good decision is based on knowledge, not numbers" - Plato  
+"The begining of work is the most important; the end, the most difficult" - gwm  
+"He who is not a good servant will not be a good master" - Plato  
+"To see things in the seed, that is genius" - Lao Tzu  
+"There are emotions, and there are destructive emotions; avoid the latter" - gwm  
+"Fast is fine, but accuracy is everything" - Xenophon  
+"What lies behind us and what lies before us are tiny matters compared to what lies within us" - Ralph Waldo Emerson  
+"Virtue wears no shame" - wocos  
+"Haste shares no path with virtue" - gwm  
+"Music gives the soul to the universe, wings to the mind, flight to the imagination, and life to everything" - Plato  
+"Haste has an aversarial relationship with quality, accuracy, and virtue" - gwm  
+"As our circle of knowledge expands so does the circumference of darkness surrounding it" - Einstein   
+"Those who educate their children well are more to be honored than they who produce them; for these only gave them life, those the art of living well" - Aristotle  
+"I rufuse to belong to any club that have me as a member" - Groucho Marx  
+"Nothing endures but change." - Heraclitus  
+"The strength of a nation depends on its integrity of the home" - Confucius  
+"We secure our friens dnot by accepting favors but by doing them" - Thucydides  
+"What can you do to promote world peace? Go home and love your family." - Mother Teresa  
+"To do the right thing is hard; to live with it is easy" - wocos  
+"There is a road from the eye to the heart that does not pass through the intellect." - G. K. Chesterton  
+"Those who are too smart to engage in politics are punished by those who are dumber" - Plato  
+"There are more things in heaven and Earth, Horatio, Than are dreamt of in your philosophy" - Shakespeare  
+"Comparison is the thief of joy" -  Theodore Roosevelt  
+"You must be equiped with a grateful heart to find contentment" - wocos  
+"Suffering injustice has pain; greater is the lingering pain of he who inflicts the injustice." - wocos  
+"Integrity carries the greatest wealth, earned through vitruous conduct" - wocos  
+"Virtuous conduct courses clear of pleasure which may harm" - wocos  
+"Virtue can not exist without an understanding of love." - wocos  
+"It is rectitude of character, that is courage,  that stands as the last defence for victims against injustice" - wocos  
+"For beautiful eyes, look for the good in others; for beautiful lips, speak only words of kindness; and for poise, walk with the knowledge that you are never alone." - Audrey Hepburn  
+"A great city is not to be confounded with a populous one" - Aristotle  
+"Illness strikes men when they are exposed to change" - Herodotus  
+"Courage stands halfway between cowardice and rashness, one of which is lack and the other an excess of courage" - Plutarch  
+"A lie gets halfway around the world before the truth gets a chance to get its pants on." - Winston Churchill  
+"Honor without courage, is a valued medicine not used." - wocos  
+"The courage to do what is right carries the greatest honor." - wocos  
+"It often takes courage to listen" - wocos  
+"Cowardice asks the question: is it safe? Expediency asks the question: is it politic? Vanity asks the question: is it popular? But conscience asks the question: is it right? And there comes a time when one must take a position that is neither safe, nor politic, nor popular- but one must take it simply because it is right." - Martin Luther King Jr  
+"Absent moral leadership, community values degrade to the lowest common denominator." - wocos  
+"Real courage is doing the right thing when nobody is looking" - Justine Cronin  
+"Education is kindling a flame not filling a vessel" - Socrates  
+"Smart people learn from everything and everyone, average people from their experiences, stupid people already know all the anwers" - Socrates  
+"Better be wise by misfortune of others than by your own" - Aesop  
+"The mind is not a vessel to be filled but a fire to be kindled" - Plutarch  
+"Nothing is to be preferred before justice" - Socrates  
+# Is God willing to prevent evil, but not able? Then he is not omnipotent. Is he able, but not willing? Then he is malevolent. Is he both able and willing? Then whence cometh evil? Is he neither able nor willing? Then why call him God - Epicurus  
+"Poverty is the parent of revolution and crime" - Arsitotle  
+"Methinks, the guilty do voice the loudest disdain for the prosecution." - gwm  
+"If I had time, I would have written a shorter letter." - Mark Twain  
+"The most fertile fields do the tallest weeds grow.\nOnly toil and till will empty baskets fill." - gwm  
+"Beyond all things is the sea" - Seneca  
+"The comic and the tragic lie inseparably close, like light and shadow" - Socrates
+"If God listened to the prayers of men, all men would quickly have perished: for they are forever praying for evil against one another." - Epicurus
+"Nessessity, who is the mother of invention" - Plato
+"A few vices are enough to darken many virtues." - Plutarch
+"Genius without education is like silver in a mine" - Bejamin Franklin
+"So teach us to number our days, that we may apply our hearts unto wisdom" - Psalms 90:12
+"Nothing is harder to direct than a man in prosperity; nothing more easily managed than one in adversity." - Plutarch
+“History doesn't repeat itself but it often rhymes,” - Mark Twain (maybe) 
+"Much learning does not teach understanding" - Heraclitus
+"Close alliances with despots are never safe for free states" - Demosthenes
+"No amount of evidence will ever convince an idiot" - Mark Twain
+"Don't count the days. Make the days count." - Muhammad Ali
+"Enjoy yourself -- it is later than you think" - Socrates
+"Great deeds are usually wrought at great risk" - Herodotus
+"An imbalance between rich and poor is the oldest and most fatal ailment od all republics" - Plutarch
+"Freedom is secured not by fullfilling of men's desire, but by the removal of desire" - Epictetus
+# "Beauty is a short lived tyranny." - Socrates
+"Reason is immortal, all else mortal" - Pathagoras
+"If you're lonely when you're alone, you're in bad company." - Jean-Paul Sartre
+"Writing, at it's best, is a lonely life" - Earnest Hemingway
+"Compound interest is the most powerful force in the universe." - Einstein
+"Change alone is unchanging" - Heraclitus
+"Hope springs eternal in the human breast" - Alexander Pope
+"If you speak the truth, have one foot in the stirrup" - Turkish Proverb
+"If we were to measure what is good by how much pleasure it brings, nothing would be better than self-control. If we were to measure what is to be avoided by its pain, nothing would be more painful than lack of self-control" --- Gaius Musonius Rufus
+"Replace fear with courage; change what you can and endure what you must" - gwm
+"Without hope, there can be no courage. Without courage there is only fear and anxiety." - gwm
+"Without hope there is no courage. Without courage there is only fear. And with fear nothing changes" - gwm
+"Forbearance invites pleasure; it's lack embraces pain" - gwm
+"The prize sought exceeds the prize won" - gwm
+"The omission of good is no less reprehensible than the commission of evil" - Plutarch
+"Every storm runs out of rain" - Maya Angelou
+"Do not be misled: Bad company corrupts good character." - Cor 15:33
+"The bravest are surely those who have the clearest vision of what is before them, glory and danger alike, and yet notwithstanding go out to meet it" - Pericles
+"All learning is in the learner, not the teacher" - Plato
+"An investment in knowledge pays the best interest." - Benjamin Franklin
+"No man is free who is not a master of himself." - Epictetus
+"It is easy to be brave from a safe distance." - Aesop
+"Silence is safer than speech." - Epictetus
+"It is far better to be alone than to be in bad company." - George Washington
+"Unthinking respect for authority is the greatest enemy of truth."  - Albert Einstein
+"That which is not good for the bee-hive cannot be good for the bees." - Marcus Aurelius
+"There are two kinds of disease of the soul, vice and ignorance" - Socrates
+"Vision without action is a daydream. Action without vision is a nightmare." - Japanese proverb
+"The size of reason cannot be measured by length or height, but rather by the value of judgements" - Epictetus
+“Culture eats strategy for breakfast” - Peter Drucker.
+"A wise man gets more from his enimies than a fool gets from his friends" - Sanjay Adelaja
+"Whatever deceives men, seems to produce a magical enchantment" - Plato
+"In wisdom, patience is power" - gwm
+"Wealth is well known to be a great comforter" - Plato
+"As patience expands, so also wisdom" - gwm
+"The madness of love is the greatest of heaven's blessings" - Plato
+"Self-control assuages the agony of pain and augments the exilaration of pleasure" - wocos
+"Silence at the proper season is wisdom, and better than any speech" - Plutarch
+"Knowledge becomes evil if the aim is not virtuous" - Plato
+"To change culture, you must change accountability" - wocos
+"Our remedies oft in ourselves do lie" - Shakespeare
+"Luck is what happens when preparation meets opportunity." - Seneca
+"Justice hungers for courage; injustice feeds off of fear." - wocos
+"He is richest who is content with the least, for contentment is the wealth of nature." - Socrates
+"Truth is it's own reward." - Plato
+"Never let the truth get in the way of a good story." - Mark Twain
+“Compound interest is the eighth wonder of the world. He who understands it, earns it; he who doesn't, pays it.” - Einstein
+"Slow and steady wins the race" - Aesop?
+#"Wisdom preserves your fitness to enjoy life and protects you from yourself" - wocos
+"Before you embark on a journey of revenge, dig two graves." ― Confucius
+"We are what we do repeatedly. Excellence, then, is not an act, but a habit." - Aristotle  # tags: practice
+"Practice does not make perfect. Only perfect practice makes perfect." - Vince Lombardi
+"I fear not the man who has practiced 10,000 kicks once, but I fear the man who has practiced one kick 10,000 times."  – Bruce Lee
+"The only good is knowledge, and the only evil is ignorance" - Herodotus
+"Remember upon the conduct of each depends the fate of all" - Alexander the Great
+"Love is composed of a single soul inhabitating two bodies." - Aristotle 
+"God, grant me the serenity to accept the things I cannot change, courage to change the things I can, and wisdom to know the difference" - Serenity Prayer
+"Democracy arose from men's thinking that if they are equal in any respect, they are equal absolutely" - Aristotle
+"Never esteem anything as of an advantage to you that will make you break your word or lose your self-respect" - Marcus Aurelius
+"Knowledge of the real good is the only curative for the wanton and evil soul." - wocos
+"If we fail to exercise our right to vote we will will lose our right to vote." - inspired by John Lewis
+"There is a place and time for diversions and amusements, but you should never allow them to override your true purposes" - Epictetus
+"Friends are the family you choose" - Edna Buchanan
+# "Philosopy and happiness share a common ancester" - wocos
+# "An evening of wine exposes the true depth of one's intellect." - wocos
+# "Too indign to indite" - wocos
+"It's not the destination, it's the journey" - Ralph Waldo Emerson
+"Push aside anxiety along the path to embarce your dreams" - wocos
+"If thou wilt make a man happy add not unto his riches but take away from his desires" - Epictetus
+“Education is an ornament in prosperity and a refuge in adversity.” — Aristotle
+"Nature abhors a vacuum" - possibly Aristotle
+# Seven sages below
+"Time is the wisest of things for it finds out everything" - Thales
+"Let not your tongue outrun your thought" - Chilon
+"Know thyself" - Chilon
+"Prefer a loss to a dishonest gain" - Chilon
+"Do not desire the impossible" - Chilon
+"Restrain anger" - Chilon
+"The older I become the more I learn" - Solon
+"Power shows the man" - Pittacus
+"Gain your point by persuasion, not by force" - Bias
+"Temperance in all things." - Cleobulus
+"Be moderate in prosperity, prudent in adversity." - Periander
+"Attention is everything" - Periander
+"Brashness is perilous" - Periander
+"Pleasures are mortal; honors immortal." - Periander
+"Keep your promisses" - Periander
+"Do nothing for the sake of money" - Periander
+"Betray no secrete" - Periander
+"Employ your time in improving yourself by other mens writing so that you shall come easily by what others have labored hard for." - Socrates
+"Wisdom is knowledge on a prudent journey for good." - wocos
+"Knowledge applied to the common good bears the banner of wisdom" - wocos
+# Knowledge feels no pain and enjoys no joy, wisdom does both with practical application and insight (seeing the unseen). gwm
+"Understanding the question is half the answer" - Socrates
+"The beginning of wisdom is a definition of terms." - Socrates
+"Now is the winter of our discontent" - Shakespeare (Richard III)
+"Reason is immortal; all else is mortal." - Pythagoras
+"We can disagree without being disagreeable" - Ruth Bader Ginsberg
+"The greatest virtues are those which are the most useful to other persons." - Aristotle
+"The greter the difficulty, the more the glory in surmounting it" - Epicurus
+"No great mind has ever existed without a touch of madness" - attributed to Aristotle
+"Empty is the argument of the philosopher which does not relieve human suffering." - Epicurus
+"Strong minds discuss ideas, average minds discuss events, weak minds discuss people" - Socrates
+"Ignorance is bold and knowledge is reserved" - Thucydides
+"At his best, man is the noblest of all animals; separated from law and justice he is the worst." - Aristotle
+"Virtue may be defined as a habit of mind (animi) in harmony with reason and the order of nature. It has four parts: wisdom (prudentiam), justice, courage, temperance.” - Cicero
+"Personal liberty should never threaten our freedom" - wocos
+"The penalty people pay for indifference is to be ruled by evil men." - Plato
+"Heat not the furnace for your foe that it do singe yourself." - Shakespeare Henry III
+"A kingdom founded on injustice never lasts" - Seneca the Younger
+"Whereever you go, go with all of your heart" - Confucius
+"Facing daunting obstacles with audacious courage and sails well on a gracious and humble sea" - wocos # Wisdom results - see: Proverbs 11:2
+"Education is the best provision for old age" - Aristotle
+"The wildest colts make the best horses" - Plutarch
+"There are 5 treasures in life: Time, Choice, The Capacity to Love, The Capacity to Grow, and The Container you live in" - wocos # take care of these and they will take care of you.
+"My advice is to first take none of my advice. However, 5 principals to live by: Forge knowledge into wisdom. Display good courage. Seek excellence in virtue (arete'),.Love as a servant. Keep humor as your companion." - wocos # knowledge used for good=wisdom Good courage is the strength to do right; to quell a harmful spirit.
+"Happiness enjoys a wise soul and a gracious heart." - wocos  # It requires saturation of the mind and the sacrafice of all harmful pride. It demands humility of the soul.
+"Conscience doth make cowards of us all" - Shakespeare
+"If the facts are against you, argue the law. If the law is against you, argue the facts. If the law and the facts are against you, pound the table and yell like hell" - Carl Sandburg
+"Lord, what fools these mortals be! " - Shakespeare
+"A foolish faith in authority is the enemy of truth" - Einstein
+"He who lives in harmony with himself lives in harmony with the world." - Marcus Aurelius 
+i"It is not in the stars to hold our destiny but in ourselves." -  William Shakespeare
+"Hell itself breathes out contagion to this world" - Shakespeare (Hamlet Act 3 Scene 2)
+"Those who can make you believe absurdities, can make you commit atrocities" - Voltaire
+"We need leaders not in love with money but in love with justice. Not in love with publicity but in love with humanity" - Martin Luther King
+"Too often we enjoy the comfort of opinion without the discomfort of thought" - JFK
+"Meritless opinions come easy in the absence of an arduous progression of logical reasoning." - wocos
+"For the time has found us" - Thomas Paine
+"Lies are like matches. Alone they can start a fire. Togther they assure a fire." - wocos
+"Only when it is dark enough can you see the stars" - Martin Luther King
+"A man is known by the books he reads, by the company he keeps, by the praise he gives, by his dress, by his tastes, by his distastes, by the stories he tells, by his gait, by the motion of his eye,..." - Ralph Waldo Emerson
+"No problem can be solved from the same level of consciousness that created it." - Albert Einstein
+"Far better it is to dare mighty things, to win glorious triumphs, even checkered by failure, tan to take rank with those poor spirits who neither enjoy much nor suffer much, because they live lives of gray twilight that knows no victory nor defeat." - Theodore Roosevelt
+"To be happy one must first imagine, then, continue that thought" - wocos
+# "A table shared gives wings to happiness" - wocos
+# "Discourse and her companion, language, are the hosts where happiness finds character and attitude." - wocos
+"Well manged expectationsi, makes for a happy life." - Charlie Munger
+"Do not forget to entertain strangers, for by so doing some have unwittingly entertained angels." — Hebrews 13:2
+"Perfect is the enemy of good" - Voltaire
+"Perhaps God loves a mystery" - wocos
+"Ok, let us comprimise... start with... cut your proposal in half" - wocos
+"He that is content hath enough. He that complains hath too much" - Benjamin Franklin
+"When you are good to others, you are best to yourself." - Benjamin Franklin
+"Thos who would give up essential liberty to purchase a little temporary saftey, deserve neither liberty or safety" - Benjamin Franklin
+"He that lies down with dogs shall rise up with fleas." - Benjamin Franklin

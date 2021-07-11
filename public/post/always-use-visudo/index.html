@@ -61,7 +61,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/always-use-visudo/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -113,32 +113,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -216,57 +191,27 @@
         </header>
         <section class="post-content">
             <h2 id="familiarity-breeds-contempt">&ldquo;familiarity breeds contempt&rdquo;</h2>
-
 <p>I get very comfortable with using the vim editor (take cover&hellip; flame way ensuing) so
 comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
 to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
 /etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
 simple monitoring program (xymon) to be able to run &ldquo;sudo ufw status&rdquo; without a password and report
 back to the monitor server.</p>
-
 <p>I fired up</p>
-
 <pre><code>sudo vim /etc/sudoers.d/xymon
-</code></pre>
-
-<p>and started to add the needed line:</p>
-
+</code></pre><p>and started to add the needed line:</p>
 <pre><code>xymon ALL = NOPASSWD: /usr/sbin/ufw status
-</code></pre>
-
-<p>but I got halfway through and could not remember the exact location</p>
-
+</code></pre><p>but I got halfway through and could not remember the exact location</p>
 <p>of the ufw binary file.. so I savedi, got out, and I just sawed off the limb I  was standing on. Sudo is not totally broken so I had togo to the physical machine (which happened to be a raspberry pi) hook up a monitor and keyboard and fix it by logging in as root and finish editing the sudoers supplemental file correctly. I did it the proper way this time; I used visudo which protects you from yourself.</p>
-
 <p>Lesson: <em>Always use visudo</em></p>
-
 <p>By the way, to change the default editor from nano to vim for visudo (on unbuntu at least) you can run:
 <code>sudo update-alternatives --config editor</code></p>
-
 <p>On my systems that exchange looks like this:</p>
-
-<pre>
-$ sudo update-alternatives --config editor
-There are 4 choices for the alternative editor (providing /usr/bin/editor).
-
-
-  Selection    Path                Priority   Status
-------------------------------------------------------------
-* 0            /bin/nano            40        auto mode
-  1            /bin/ed             -100       manual mode
-  2            /bin/nano            40        manual mode
-  3            /usr/bin/vim.basic   30        manual mode
-  4            /usr/bin/vim.tiny    10        manual mode
-</pre>
-
-<pre>
-Press [enter] to keep the current choice(*), or type selection number: 3
-update-alternatives: using /usr/bin/vim.basic to provide /usr/bin/editor (editor) in manual mode
-</pre>
-   
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Enjoy</p>
-
 <p>-g-</p>
         </section>
         

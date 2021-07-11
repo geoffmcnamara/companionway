@@ -59,7 +59,7 @@
                 companionway" />
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/tags/visudo/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -111,32 +111,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -220,25 +195,17 @@
 	</header>
 	<section class="post-excerpt">
 		<p><h2 id="familiarity-breeds-contempt">&ldquo;familiarity breeds contempt&rdquo;</h2>
-
 <p>I get very comfortable with using the vim editor (take cover&hellip; flame way ensuing) so
 comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
 to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
 /etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
 simple monitoring program (xymon) to be able to run &ldquo;sudo ufw status&rdquo; without a password and report
 back to the monitor server.</p>
-
 <p>I fired up</p>
-
 <pre><code>sudo vim /etc/sudoers.d/xymon
-</code></pre>
-
-<p>and started to add the needed line:</p>
-
+</code></pre><p>and started to add the needed line:</p>
 <pre><code>xymon ALL = NOPASSWD: /usr/sbin/ufw status
-</code></pre>
-
-<p>but I got halfway through and could not remember the exact location</p> <a class="read-more" href="/post/always-use-visudo/">&raquo;</a></p>
+</code></pre><p>but I got halfway through and could not remember the exact location</p> <a class="read-more" href="/post/always-use-visudo/">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		

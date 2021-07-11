@@ -59,7 +59,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/2015-05-02-post1/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -111,32 +111,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -212,18 +187,13 @@
         </header>
         <section class="post-content">
             <p>#How to print remainder of line using awk</p>
-
 <h2 id="eliminate-the-first-x-columns">eliminate the first X columns&hellip;</h2>
-
 <p>Here is your challenge you have a list of cronjobs and you
 want to just execute the scheduled backup command with its
 arguments for a test run.</p>
-
 <p>Using one command line, how would you do it?</p>
-
 <p>Here is a sample root cronjob and I want to run the
 first entry with its arguments as a test run:</p>
-
 <pre><code># m h  dom mon dow   command
  0 16  *   *   * /data/share/home/geoffm/dev/utils/bak-it.sh -i /usr/local/etc/include.lst -e /usr/local/etc/exclude.lst -t /data/bak/`hostname` -s 7 &gt;/dev/null 2&gt;&amp;1
   5 0  *   *   * /data/share/motion/arch-files.sh &gt;/dev/null 2&gt;&amp;1
@@ -233,30 +203,23 @@ first entry with its arguments as a test run:</p>
 #*/5 *  *   *   * /usr/local/bin/watch-proc.sh -f /usr/local/etc/watch-proc.conf -n geoffm@localhost &gt;/dev/null 2&gt;&amp;1
 #*/5 * * * * /data/share/home/geoffm/ping-pong.sh &quot;ping -c2 192.168.1.55&quot; &quot;ssh 192.168.1.1 reboot&quot; &gt;/dev/null
 #  7 * * * /usr/local/sbin/postfix_report.sh &amp;&gt; /dev/null
-</code></pre>
-
-<p>Here is how I would do it:</p>
-
+</code></pre><p>Here is how I would do it:</p>
 <pre><code>sudo $(sudo crontab -l | awk '/bak-it/{$1=$2=$3=$4=$5=&quot;&quot;;print $0}')
-</code></pre>
-
-<p>Examining this we first see this <code>$(...)</code> structure which tells
+</code></pre><p>Examining this we first see this <code>$(...)</code> structure which tells
 the shell to run whatever exists between the parens and replace the
 output right there. So first we call sudo crontab -l in order to
 make sure we get root&rsquo;s crontab listed. The output is piped into
 awk where we give it a regex to search for in each string (ie /bak-it/).
 The trick here is we tell awk to make the first variable in the string
-equal to the second&hellip; equal to the 3rd, 4th and 5th, and finally = &ldquo;&rdquo;.
+equal to the second&hellip; equal to the 3rd, 4th and 5th, and finally = &ldquo;&quot;.
 This effectively substitutes and empty string for the first 5 variables
 leaving the remained of the line which then gets printed with the
 <code>print $0</code>. Actually you can leave off the <code>$0</code> because awk will default
 to that if you just use <code>print</code> alone.</p>
-
 <p>Now there may be one more problem. If you run that command above it
 will execute the intended command along with the arguments BUT it will
 do it as the user who ran it. Obviously, if the commands come from the
 root crontab it may not run properly for another user.</p>
-
 <p>I will leave it as an exercise for the reader to solve that problem.</p>
         </section>
         

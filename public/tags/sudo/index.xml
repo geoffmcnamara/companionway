@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sudo on companionway</title>
@@ -19,25 +19,17 @@
       
       <guid>https://www.companionway.net/post/always-use-visudo/</guid>
       <description>&lt;h2 id=&#34;familiarity-breeds-contempt&#34;&gt;&amp;ldquo;familiarity breeds contempt&amp;rdquo;&lt;/h2&gt;
-
 &lt;p&gt;I get very comfortable with using the vim editor (take cover&amp;hellip; flame way ensuing) so
 comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
 to update sudoers. The best way to modify sudoers is to add a supplimental inclusion file under
 /etc/sudoers.d/whatevername - so the other day I needed to add an entry to allow the user for my
 simple monitoring program (xymon) to be able to run &amp;ldquo;sudo ufw status&amp;rdquo; without a password and report
 back to the monitor server.&lt;/p&gt;
-
 &lt;p&gt;I fired up&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;sudo vim /etc/sudoers.d/xymon
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and started to add the needed line:&lt;/p&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and started to add the needed line:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;xymon ALL = NOPASSWD: /usr/sbin/ufw status
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;but I got halfway through and could not remember the exact location&lt;/p&gt;</description>
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;but I got halfway through and could not remember the exact location&lt;/p&gt;</description>
     </item>
     
   </channel>

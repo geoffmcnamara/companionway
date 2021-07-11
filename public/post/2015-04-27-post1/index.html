@@ -55,7 +55,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/2015-04-27-post1/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -107,32 +107,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -204,19 +179,15 @@
         </header>
         <section class="post-content">
             <h1 id="command-line-disk-tree">Command line disk tree</h1>
-
 <p>I am writing another article on the basics of using git. It
 was going to be a short article however, given the subject it is
 turning out to be much longer than I expected. But in the process
 of writing it I had to frequently use a shell function I wrote years
 ago that  displays a disk tree structure (optionally with files).</p>
-
 <p>I needed a way to see the changes to the .git directory as git commands
 are executed against the repository. I thought I would share it
 with you today.</p>
-
 <p>Here is a sample of its output:</p>
-
 <pre><code>$ dt -f
 ============================================================
              gwmlaptop2014 : /home/geoffm/tmp/work/.
@@ -252,10 +223,7 @@ with you today.</p>
 ============================================================
     Note: use &quot;dt -f&quot; to add files to the tree listing
 Enjoy!
-</code></pre>
-
-<p>Here is the code writen as a function (which is in my ~/.bashrc script).</p>
-
+</code></pre><p>Here is the code writen as a function (which is in my ~/.bashrc script).</p>
 <pre><code>###########################################################
 dt () # Print a crude dir-tree
 ###########################################################
@@ -281,10 +249,7 @@ dt () # Print a crude dir-tree
   echo &quot;    Note: use \&quot;dt -f\&quot; to add files to the tree listing&quot;;
   echo &quot;Enjoy!&quot;
 }
-</code></pre>
-
-<p>Have a nice day!</p>
-
+</code></pre><p>Have a nice day!</p>
 <p>-g-</p>
         </section>
         

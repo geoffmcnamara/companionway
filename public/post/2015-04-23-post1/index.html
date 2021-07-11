@@ -55,7 +55,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/2015-04-23-post1/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -107,32 +107,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -204,13 +179,10 @@
         </header>
         <section class="post-content">
             <h1 id="vagrant-and-ansible">vagrant and ansible</h1>
-
 <h2 id="putting-vagrant-on-steroids">putting vagrant on steroids</h2>
-
 <p>First, set up vagrant to create a group of guest virtual machines (see previous posts).
 We will assume your Vagrantfile is configured to build/start 3 nodes (node1, node2, node3). If these are
 bare builds you will want to personalize or customize each of them.</p>
-
 <p>Chances are you will want to give each of them a common base of applications
 and configuration. As a significant example, downloaded images are set
 for universal time; not what you want. It is simple to just edit the
@@ -218,34 +190,24 @@ for universal time; not what you want. It is simple to just edit the
 you have lots of machines or tear these machines down and stand them back up
 frequently then exercises like this will get very tedious. Additionally
 there are and handful of packages you typically want one every machine.</p>
-
 <p>The provision tool named ansible was designed by the author to be &ldquo;a tool that
 I could not use for 6 months, come back later, and still remember how it worked&rdquo;.
 The advantage for me is that it leverages ssh and sudo, tools you use everyday. It
 uses YAML files for configuration <a href="http://en.wikipedia.org/wiki/YAML">Wikipedia YAML</a>
 which, once you understand the syntax, is easy to read and manage.</p>
-
 <p>Using vagrant is a great way to consistently build virtual nodes. Add ansible to the
 mix and you have a great way to build and maintain many <em>usable</em> nodes. The vagrant tool
 uses ansible without any additional work other than properly calling it within your
 default config file (<code>Vagrantfile</code>). Throw a few lines in to have the ansible-playbook tool
 call a playbook.yml file and the fun begins.</p>
-
 <p>eg: Within your Vagrantfile (see earlier post on vagrant-lxc)</p>
-
 <pre><code>  config.vm.provision :ansible do |ansible|
     ansible.playbook = &quot;playbook.yml&quot;
   end
-</code></pre>
-
-<p>The other half of the story is ansible and the playbook.yml config file.
+</code></pre><p>The other half of the story is ansible and the playbook.yml config file.
 Install ansible (a python based tool) with this (assumes a Debian family OS):</p>
-
 <pre><code>sudo apt-get install ansible
-</code></pre>
-
-<p>Now lets write the playbook.yml file and put it right where your Vagrantfile is.</p>
-
+</code></pre><p>Now lets write the playbook.yml file and put it right where your Vagrantfile is.</p>
 <blockquote>
 <blockquote>
 <p>A quick word about ansible. DevOps is the buzzword of recent IT deployment trend.
@@ -254,8 +216,7 @@ underlying theory is that any weaknesses in your deployment strategy is exposed 
 and it keeps human hands off the controls. Here, we will take advantage of that
 perspective. The ansible suite comes with half dozen tools which might throw you
 off initially. The only one you concern yourself with (early in the relatively smooth
-learning curve) is ansible-playbook - forget about the others for now (ie <code>ansible, 
-ansible-doc, ansible-galaxy, ansible-pull, ansible-tools, ansible-vault</code>).
+learning curve) is ansible-playbook - forget about the others for now (ie <code>ansible,  ansible-doc, ansible-galaxy, ansible-pull, ansible-tools, ansible-vault</code>).
 The tool <code>ansible-playbook</code> is designed to read a YAML (with the <code>yml</code> extension)
 playbook file (it can be called anything as long as it is a .yml file). It
 absorbs and executes the <code>tasks</code> and plays out these commands against specified
@@ -264,10 +225,8 @@ depth and feature rich possibilities of ansible playbooks. That is for another
 time perhaps.</p>
 </blockquote>
 </blockquote>
-
 <p>Here is a quick-n-dirty playbook.yml to call from a Vagrantfile:
 There are a lot of commented lines of code ready for you to explore on your own.</p>
-
 <blockquote>
 <blockquote>
 <p>Note: ansible YAML (xxx.yml) playbook files start with three dashes - hence <code>---</code> at the beginning.
@@ -275,7 +234,6 @@ One critical syntax element to know is that left alignment is essential for YAML
 know the subordinate level for processing.</p>
 </blockquote>
 </blockquote>
-
 <pre><code>---
 ################
 # NOTE: assumes:
@@ -418,20 +376,13 @@ know the subordinate level for processing.</p>
 #    - name: Reload apache
 #      service: name=apache2 state=reloaded
 ######## EOF ##########
-</code></pre>
-
-<p>Call this from within your Vagrantfile as noted above (please see previous post on vagrant-lxc).
+</code></pre><p>Call this from within your Vagrantfile as noted above (please see previous post on vagrant-lxc).
 Then (assuming the ansible playbook call within Vagrantfile is uncommented and active) run</p>
-
 <pre><code>vagrant up
-</code></pre>
-
-<p>It will take a bit longer because you have asked it to do much more&hellip;
+</code></pre><p>It will take a bit longer because you have asked it to do much more&hellip;
 so get a cup of coffee&hellip; but when you are finished your vagrant/lxc nodes
 will be much more usable.</p>
-
 <p>Now, take a risk, destroy one of the nodes and then run <code>vagrant up</code> again.</p>
-
 <pre><code>vagrant status # hopefully you see your nodes running (eg node1, node2, node3)
 # or sudo lxc-ls --fancy
 vagrant destroy node3
@@ -440,10 +391,7 @@ vagrant status # just to see that node3 has disappeared
 vangrant up # yes, even though some are running and one is destroyed...
 # this last command should rebuild *and provision with ansible* your lost node3
 vagrant status
-</code></pre>
-
-<p>Have a nice day, enjoy,</p>
-
+</code></pre><p>Have a nice day, enjoy,</p>
 <p>-g-</p>
         </section>
         

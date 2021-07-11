@@ -57,7 +57,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/2015-04-05-post1/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -109,32 +109,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -208,36 +183,28 @@
         </header>
         <section class="post-content">
             <h1 id="javascript-fade-in-and-down">Javascript fade in and down</h1>
-
 <p>I wanted to change the header on the theme for my web site
 to display a slide down and in header.</p>
-
 <p>The script needed to be a combination of two jquery animations.</p>
-
-<pre><code class="language-javascript">&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-$(document).ready(function(){
-    $('#fadeInDown')
-    .css('display', &quot;none&quot;)
-    .slideDown(2000)
-    .animate(
-      { opacity: 1 },
-      { queue: false, duration: 2300 }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span><span style="color:#f92672">&gt;</span>
+<span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span>(){
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#fadeInDown&#39;</span>)
+    .<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;display&#39;</span>, <span style="color:#e6db74">&#34;none&#34;</span>)
+    .<span style="color:#a6e22e">slideDown</span>(<span style="color:#ae81ff">2000</span>)
+    .<span style="color:#a6e22e">animate</span>(
+      { <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> },
+      { <span style="color:#a6e22e">queue</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2300</span> }
       );
     });
-&lt;/script&gt;
-</code></pre>
-
-<p>First we load in the jquery code from google nut this a single point of failure.
+<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</code></pre></div><p>First we load in the jquery code from google nut this a single point of failure.
 If there is network interruption jquery code is lost. But in my instance if the
 network is failing then my web site probably is too.</p>
-
 <p>Now in my html I just need to put an <code>id=fadeInDown</code> at the appropriate
 place - that will invoke the code.</p>
-
 <p>Note below how I changed the <code>&lt;div id=fadeInDown class=&quot;site-heading&quot;&gt;</code> line here in my themes
 <code>_layout/page.html file</code>.</p>
-
 <pre><code>...
 &lt;header class=&quot;intro-header&quot; style=&quot;background-image: url('{{ site.baseurl }}/{% if page.image %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')&quot;&gt;
     &lt;div  class=&quot;container&quot;&gt;
@@ -254,38 +221,27 @@ place - that will invoke the code.</p>
 &lt;/header&gt;
 ...
 
-</code></pre>
-
-<p>This code works but I needed to make it as a part of the theme I use so first I wrote
+</code></pre><p>This code works but I needed to make it as a part of the theme I use so first I wrote
 my own javascript <code>.js</code> file called <code>js/custom.js</code>.</p>
+<p>I also added an <code>&lt;script&gt;...&lt;/script&gt; wrapped include line to the footer of my pages by adding this to </code>_include/footer`.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ &#34;</span><span style="color:#f92672">/</span><span style="color:#a6e22e">js</span><span style="color:#f92672">/</span><span style="color:#a6e22e">custom</span>.<span style="color:#a6e22e">js</span> <span style="color:#e6db74">&#34; | prepend: site.baseurl }}&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
 
-<p>I also added an <code>&lt;script&gt;...&lt;/script&gt; wrapped include line to the footer of my
-pages by adding this to</code>_include/footer`.</p>
+</code></pre></div><p>Now I can write the file <code>custom.js</code> with this content:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// jquery scripting
+</span><span style="color:#75715e"></span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&#34;</span>
 
-<pre><code class="language-javascript">&lt;script src=&quot;{{ &quot;/js/custom.js &quot; | prepend: site.baseurl }}&quot;&gt;&lt;/script&gt;
-
-</code></pre>
-
-<p>Now I can write the file <code>custom.js</code> with this content:</p>
-
-<pre><code class="language-javascript">// jquery scripting
- src=&quot;//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js&quot;
-
-// quick n dirty fade down code - needs jquery
-  $(document).ready(function(){
-    $('#fadeInDown')
-    .css('display', &quot;none&quot;)
-    .slideDown(1000)
-    .animate(
-      { opacity: 1 },
-      { queue: false, duration: 1000 }
+<span style="color:#75715e">// quick n dirty fade down code - needs jquery
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span>(){
+    <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;#fadeInDown&#39;</span>)
+    .<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;display&#39;</span>, <span style="color:#e6db74">&#34;none&#34;</span>)
+    .<span style="color:#a6e22e">slideDown</span>(<span style="color:#ae81ff">1000</span>)
+    .<span style="color:#a6e22e">animate</span>(
+      { <span style="color:#a6e22e">opacity</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> },
+      { <span style="color:#a6e22e">queue</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>, <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1000</span> }
     );
   });
-</code></pre>
-
-<p>It does what I wanted&hellip; thought I would share it with you.</p>
-
-<p>Enjoy,<br />
+</code></pre></div><p>It does what I wanted&hellip; thought I would share it with you.</p>
+<p>Enjoy, <br>
 -geoff-</p>
         </section>
         

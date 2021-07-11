@@ -57,7 +57,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/fabric_vs_ansible/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -109,32 +109,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -213,52 +188,36 @@ to use it I have to learn how to do what I need to do. But the most frustrating 
 to do something new is that your first attempt rarely succeeds - at least for me. So you resort to &ldquo;force programming&rdquo;
 to get through it. By &ldquo;force programming&rdquo; I mean you try this and that and then something else until it works, and
 I end up with a hodgepodge of debug lines commented out.</p>
-
 <p>Following the bunny trail to find an alternative, I ran across python <a href="200~http://www.fabfile.org/">&ldquo;fabric&rdquo;</a>. I am a committed python code minion.
 So much so lately, that I have converted many of my bash scripts to python. But all that is a different topic for a rainy day.
 Put ansible away in a dark closet somewhere and start using fabric. If you are starting out with fabric or going to
 explore it now, don&rsquo;t just type &ldquo;how to use fabric&rdquo; in your search engine because the obvious will happen. So precede your mention
 of &ldquo;fabric&rdquo; with &ldquo;python&rdquo;&hellip; so &ldquo;how to use python fabric&rdquo;.</p>
-
 <p>Using pip you can install fabric. Python fabric is a module that comes along with a python tool called &ldquo;fab&rdquo;.
 If you run <code>fab -h</code> you will see a healthy list of options/arguments. Don&rsquo;t let that put you off. A working
 knowledge of python is all you need to master fabric. The fabric module is designed to provide you with ssh tools out of the box. It allows running
 any process remotely or locally, without any headaches. If you have been using ansible, then this exercise will be a little like
 subjecting a Windows user to the linux command line (well maybe not quite that bad).</p>
-
 <p>Here&rsquo;s a quick one-liner:</p>
-
 <pre><code>fab -H rpi01,rpi02,192.168.1.40 -- df -h
-</code></pre>
-
-<p>Pretty obvious&hellip; until it fails. If one of those hosts is down this process will break.
+</code></pre><p>Pretty obvious&hellip; until it fails. If one of those hosts is down this process will break.
 The fab tool by default looks for a file called fabfile.py. So lets create a simple one to overcome the failure problem just mentioned.</p>
-
 <p>Write a file called fabfile.py  You can use any filename but we are sticking with the default.</p>
-
 <pre><code>from fabric.api import run,settings
 
 def df_h():
 	with settings(warn_only=True):
 		run('df -h')
-</code></pre>
-
-<p>To run this:</p>
-
+</code></pre><p>To run this:</p>
 <pre><code>fab -H rpi01,rpi02 df_h
-</code></pre>
-
-<!--more-->
-
+</code></pre><!-- raw HTML omitted -->
 <p>If one of the hosts is down  then the df_h &ldquo;task&rdquo; will still be run on the other hosts. We are still far from what ansible has to offer but we
 have only used python. No yaml, no ansible freak out without a trace-back stack dump. This is unadulterated python.
 On the command line you have to tell it what method/function to run. The fab tool calls this a &ldquo;task&rdquo;. More on this later.</p>
-
 <p>Given a great number of hosts you naturally want to declare groups of hosts and a list of tasks to perform. Fabric accommodates these desires
 by using &ldquo;roles&rdquo; and, because this is python, one function can call other functions. The term &ldquo;roles&rdquo; might seem a bit off but it is more powerful than
 just name groups; I leave it to you to find out more about fab roles. Assume you want to run a set of tasks to give you an informed status
 of a group of hosts. Here is an example fabfile.py:</p>
-
 <pre><code>from fabric.api import run,settings,env
 
 env.roledefs={
@@ -277,11 +236,8 @@ def status():
 	with settings(warn_only=True):
 		uname()
 		df()
-</code></pre>
-
-<p>Call <code>fab -R &quot;rpis&quot; status</code> to get the status of the servers in the &lsquo;rpis&rsquo; role (hence the `-R &ldquo;rpis&rdquo;). You could list several roles comma delimited.
+</code></pre><p>Call <code>fab -R &quot;rpis&quot; status</code> to get the status of the servers in the &lsquo;rpis&rsquo; role (hence the `-R &ldquo;rpis&rdquo;). You could list several roles comma delimited.
 Here is a way to declare a set of hosts like &ldquo;all&rdquo; which demonstrates how you can leverage python within a fabfile. Note that &ldquo;env&rdquo; was added to the import list.</p>
-
 <pre><code>from fabric.api import run,settings,env
 
 env.roledefs={
@@ -326,23 +282,16 @@ def status():
 	with settings(warn_only=True):
 		uname()
 		df()
-</code></pre>
-
-<p>Surely other coders out there can improve on this. Here are some of the highlights regarding changes made. I added some additional &ldquo;roles&rdquo; for future use. I also
+</code></pre><p>Surely other coders out there can improve on this. Here are some of the highlights regarding changes made. I added some additional &ldquo;roles&rdquo; for future use. I also
 added a variable called &ldquo;all&rdquo; that pulls in selected role groups for use with the sethosts function/task. The command line for fab allows passing arguments with
-the function name followed by a &ldquo;:&ldquo;. Here are some examples of using the sethosts function/task.</p>
-
+the function name followed by a &ldquo;:&quot;. Here are some examples of using the sethosts function/task.</p>
 <pre><code>fab sethosts:&quot;all&quot; status  # will run status on &quot;all&quot; hosts
 fab sethosts:&quot;rpis&quot; status # will run status on &quot;rpis&quot; hosts
 fab sethosts               # will run sethosts and list the roles defined.
-</code></pre>
-
-<p>Now the power of fabric starts to emerge. That power is just python with a smart way of calling ssh using fabric. The fabric.api has lots of others useful calls
-like put(&ldquo;/source/filename&rdquo;,&ldquo;/target/&rdquo;, use_sudo=True), get(), sudo(), local(), run(), etc.</p>
-
-<p>One other thing here. You will see that within the fabfile you can use decorators that come with fabric like &ldquo;@roles(&lsquo;rpis&rsquo;)&rdquo;, @task and others. You can list all
+</code></pre><p>Now the power of fabric starts to emerge. That power is just python with a smart way of calling ssh using fabric. The fabric.api has lots of others useful calls
+like put(&quot;/source/filename&rdquo;,&quot;/target/&quot;, use_sudo=True), get(), sudo(), local(), run(), etc.</p>
+<p>One other thing here. You will see that within the fabfile you can use decorators that come with fabric like &ldquo;@roles(&lsquo;rpis&rsquo;)&quot;, @task and others. You can list all
 the available &ldquo;task&rdquo; in the fabfile by using <code>fab -l</code>. Running that on the above file lists all the tasks as shown here:</p>
-
 <pre><code>fab -l
 Available commands:
 
@@ -350,11 +299,8 @@ Available commands:
     sethosts  sethosts(group=list)
     status
     uname
-</code></pre>
-
-<p>Perhaps you only want to have listed the status and sethosts tasks - use the @tasks wrapper. The @task decorator can also be used to create namespaces, see the docs.
+</code></pre><p>Perhaps you only want to have listed the status and sethosts tasks - use the @tasks wrapper. The @task decorator can also be used to create namespaces, see the docs.
 Here is a modified fabfile.py:</p>
-
 <pre><code>from fabric.api import run,settings,env
 
 env.roledefs={
@@ -425,12 +371,8 @@ def aptupdate():
 def buildweb():
 	sudo('apt -y install apache2 php')
 	put(&quot;/home/myself/dev/www/skel&quot;, &quot;/var/www/html/&quot;, use_sudo=True)
-</code></pre>
-
-<p>I added just a few tasks so you can can see other simple examples.</p>
-
+</code></pre><p>I added just a few tasks so you can can see other simple examples.</p>
 <p>Enjoy</p>
-
 <p>-g-</p>
         </section>
         

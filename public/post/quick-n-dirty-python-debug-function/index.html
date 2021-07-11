@@ -61,7 +61,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/quick-n-dirty-python-debug-function/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -113,32 +113,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -217,107 +192,107 @@
         <section class="post-content">
             <p>Pdb is a great debugger for python but I like to use my own simple debug functions.
 Here is a simple debug function for python which could definitely be improved:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#!/usr/bin/env python</span>
 
-<pre><code class="language-python">#!/usr/bin/env python
-
-import os
-import sys
-from inspect import (getframeinfo, currentframe, getouterframes)
+<span style="color:#f92672">import</span> os
+<span style="color:#f92672">import</span> sys
+<span style="color:#f92672">from</span> inspect <span style="color:#f92672">import</span> (getframeinfo, currentframe, getouterframes)
 
 
-DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
-#DLOG=os.path.basename(sys.argv[0])+&quot;.log&quot; # will append to log to file if this is not commented out
+DBUG<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span> <span style="color:#75715e"># will print to stdout if set to 1 -- use 2 to add funcname and funcdocs</span>
+<span style="color:#75715e">#DLOG=os.path.basename(sys.argv[0])+&#34;.log&#34; # will append to log to file if this is not commented out</span>
 
-def dbug(msg):
-  &quot;&quot;&quot;
-   At the top of your script set these global values:
-    from inspect import (getframeinfo, currentframe, getouterframes)
-    DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
-    #DLOG=os.path.basename(sys.argv[0])+&quot;.log&quot; # will append to log to file if this is not commented out
-   Function: dbug() will print (or log) DEBUG: (datetime) [lineno] msg
-   print this function doc with CLI help(dbug) or CODE dbug.__doc__
-   needs: from inspect import currentframe.
-   Simple to use... dbug(&quot;my message here&quot;)
-   &quot;&quot;&quot;
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">dbug</span>(msg):
+  <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">   At the top of your script set these global values:
+</span><span style="color:#e6db74">    from inspect import (getframeinfo, currentframe, getouterframes)
+</span><span style="color:#e6db74">    DBUG=2 # will print to stdout if set to 1 -- use 2 to add funcname and funcdocs
+</span><span style="color:#e6db74">    #DLOG=os.path.basename(sys.argv[0])+&#34;.log&#34; # will append to log to file if this is not commented out
+</span><span style="color:#e6db74">   Function: dbug() will print (or log) DEBUG: (datetime) [lineno] msg
+</span><span style="color:#e6db74">   print this function doc with CLI help(dbug) or CODE dbug.__doc__
+</span><span style="color:#e6db74">   needs: from inspect import currentframe.
+</span><span style="color:#e6db74">   Simple to use... dbug(&#34;my message here&#34;)
+</span><span style="color:#e6db74">   &#34;&#34;&#34;</span>
 
-  cf = currentframe()
-  msg=&quot;DEBUG: [&quot;+str(cf.f_back.f_lineno)+&quot;] &quot;+msg
+  cf <span style="color:#f92672">=</span> currentframe()
+  msg<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;DEBUG: [&#34;</span><span style="color:#f92672">+</span>str(cf<span style="color:#f92672">.</span>f_back<span style="color:#f92672">.</span>f_lineno)<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;] &#34;</span><span style="color:#f92672">+</span>msg
 
-  try:
-    if DBUG==2:
-      fname=str(getframeinfo(currentframe().f_back).function)
-      fdoc=eval(fname+.__doc__
-      fdoc=fdoc if fdoc else 'undocumented'
-      msg=msg+&quot; Func: &quot;+fname+&quot; Doc: &quot;+fdoc
-  except:
-    pass
+  <span style="color:#66d9ef">try</span>:
+    <span style="color:#66d9ef">if</span> DBUG<span style="color:#f92672">==</span><span style="color:#ae81ff">2</span>:
+      fname<span style="color:#f92672">=</span>str(getframeinfo(currentframe()<span style="color:#f92672">.</span>f_back)<span style="color:#f92672">.</span>function)
+      fdoc<span style="color:#f92672">=</span>eval(fname<span style="color:#f92672">+.</span>__doc__
+      fdoc<span style="color:#f92672">=</span>fdoc <span style="color:#66d9ef">if</span> fdoc <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#39;undocumented&#39;</span>
+      msg<span style="color:#f92672">=</span>msg<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; Func: &#34;</span><span style="color:#f92672">+</span>fname<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; Doc: &#34;</span><span style="color:#f92672">+</span>fdoc
+  <span style="color:#66d9ef">except</span>:
+    <span style="color:#66d9ef">pass</span>
 
-  try:
-    if DLOG != &quot;&quot;:
-      fh_dbug=open(DLOG,&quot;a&quot;)
-      fh_dbug.write(dtime+&quot; &quot;+msg+&quot;\n&quot;)
-      fh_dbug.close
-  except:
-    pass
+  <span style="color:#66d9ef">try</span>:
+    <span style="color:#66d9ef">if</span> DLOG <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;&#34;</span>:
+      fh_dbug<span style="color:#f92672">=</span>open(DLOG,<span style="color:#e6db74">&#34;a&#34;</span>)
+      fh_dbug<span style="color:#f92672">.</span>write(dtime<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">+</span>msg<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>)
+      fh_dbug<span style="color:#f92672">.</span>close
+  <span style="color:#66d9ef">except</span>:
+    <span style="color:#66d9ef">pass</span>
 
-  try:
-    if DBUG&gt;=0:
-      print msg
-  except:
-    pass
+  <span style="color:#66d9ef">try</span>:
+    <span style="color:#66d9ef">if</span> DBUG<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>:
+      <span style="color:#66d9ef">print</span> msg
+  <span style="color:#66d9ef">except</span>:
+    <span style="color:#66d9ef">pass</span>
 
-def myFunc(myvar=&quot;eulav&quot;):
-  &quot;&quot;&quot;
-   myFunc(&quot;something&quot;) -requires one string
-   prints out the string backwards - it uses the extended slice operator
-   ie [begin:end:step]
-   The default here prints &quot;value&quot;
-  &quot;&quot;&quot;
-  dbug(&quot;how does it work&quot;)
-  print myvar[::-1]
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">myFunc</span>(myvar<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;eulav&#34;</span>):
+  <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">   myFunc(&#34;something&#34;) -requires one string
+</span><span style="color:#e6db74">   prints out the string backwards - it uses the extended slice operator
+</span><span style="color:#e6db74">   ie [begin:end:step]
+</span><span style="color:#e6db74">   The default here prints &#34;value&#34;
+</span><span style="color:#e6db74">  &#34;&#34;&#34;</span>
+  dbug(<span style="color:#e6db74">&#34;how does it work&#34;</span>)
+  <span style="color:#66d9ef">print</span> myvar[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
 
-### Main Code ###
-if __name__ == '__main__':
-  dbug(&quot;Please note that the name of this function is dbug -- not debug just to avoid conflicts elsewhere&quot;)
+<span style="color:#75715e">### Main Code ###</span>
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+  dbug(<span style="color:#e6db74">&#34;Please note that the name of this function is dbug -- not debug just to avoid conflicts elsewhere&#34;</span>)
 
-  dbug(&quot;How does this work?&quot;)
-  myFunc(&quot;this is my string&quot;)
+  dbug(<span style="color:#e6db74">&#34;How does this work?&#34;</span>)
+  myFunc(<span style="color:#e6db74">&#34;this is my string&#34;</span>)
 
-  DBUG=1
-  dbug(&quot;And now the reverse&quot;)
-  myFunc(&quot;gnirts ym si siht&quot;)
+  DBUG<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+  dbug(<span style="color:#e6db74">&#34;And now the reverse&#34;</span>)
+  myFunc(<span style="color:#e6db74">&#34;gnirts ym si siht&#34;</span>)
 
-  dbug(&quot;Let see what the default is...&quot;)
-  myFunc() # reverses the default
-### EOF ####
-'''
-
-Output from this should look something like this:
-</code></pre>
-
-<p>DEBUG: [97] Please note that the name of this function is dbug &ndash; not debug just to avoid conflicts elsewhere
+  dbug(<span style="color:#e6db74">&#34;Let see what the default is...&#34;</span>)
+  myFunc() <span style="color:#75715e"># reverses the default</span>
+<span style="color:#75715e">### EOF ####</span>
+<span style="color:#e6db74">&#39;&#39;&#39;
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">Output from this should look something like this:
+</span></code></pre></div><p>DEBUG: [97] Please note that the name of this function is dbug &ndash; not debug just to avoid conflicts elsewhere
 DEBUG: [98] How does this work?
 DEBUG: [92] how does it work Func: myFunc Doc:
-   myFunc(&ldquo;something&rdquo;) -requires one string
-   prints out the string backwards - it uses the extended slice operator
-   ie [begin:end:step]
-   The default here print &ldquo;value&rdquo;</p>
-
+myFunc(&ldquo;something&rdquo;) -requires one string
+prints out the string backwards - it uses the extended slice operator
+ie [begin:end:step]
+The default here print &ldquo;value&rdquo;</p>
 <p>gnirts ym si siht
 DEBUG: [102] And now the reverse
 DEBUG: [92] how does it work
 this is my string
 DEBUG: [105] Let see what the default is&hellip;
 DEBUG: [92] how does it work
-value
-```</p>
+value</p>
+<pre><code>
+Enjoy!
+-g-
 
-<p>Enjoy!
--g-</p>
 
-<p>###
+
+
+
+###
 Enjoy
--g-</p>
+-g-
+</code></pre>
         </section>
         
 

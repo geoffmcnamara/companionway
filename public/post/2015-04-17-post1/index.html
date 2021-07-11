@@ -55,7 +55,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/2015-04-17-post1/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -107,32 +107,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -203,16 +178,12 @@
         </section>
         </header>
         <section class="post-content">
-            <h1 id="ansible-modifying-etc-sudoers">Ansible - modifying /etc/sudoers</h1>
-
+            <h1 id="ansible---modifying-etcsudoers">Ansible - modifying /etc/sudoers</h1>
 <p>I have locked administrators out of using sudo with a simple typo.</p>
-
 <p>With ansible you can lockup sudo on every machine with a single error. So
 I get pretty cautious with editing /etc/sudoers through any deployment application.</p>
-
 <p>Here is a quick example of going overboard to protect your sudoers file
 when using ansible. This is in my <code>$ANSIBLE_DIR/roles/common/tasks/main.yml</code> file</p>
-
 <pre><code>- name: Copy sudoers for safety
   command: cp /etc/sudoers /etc/sudoers.tmp
 
@@ -226,10 +197,7 @@ when using ansible. This is in my <code>$ANSIBLE_DIR/roles/common/tasks/main.yml
 - name: Copy sudoers.tmp to sudoers
   when: sudoers_tmp_ok|success
   command: cp /etc/sudoers.tmp /etc/sudoers
-</code></pre>
-
-<p>Enjoy</p>
-
+</code></pre><p>Enjoy</p>
 <p>-geoff-</p>
         </section>
         

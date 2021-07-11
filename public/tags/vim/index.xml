@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>vim on companionway</title>
@@ -19,7 +19,6 @@
       
       <guid>https://www.companionway.net/post/control_vim_and_plugins/</guid>
       <description>&lt;p&gt;Our last post discussed using fisa-vimrc and appreciating the simple installation and ease of use. This post will explore, briefly, some tweaks and a short &amp;ldquo;how to&amp;rdquo; for each of the loaded plugins. This exercise will be worth your time if you have not explored these tools before.&lt;/p&gt;
-
 &lt;p&gt;Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready. A lot of information is here but that is because you have lot available to you under the hood. The sections below minimumly scratch the surface. Go play with each plug-in to at least find out what features it offers.&lt;/p&gt;</description>
     </item>
     
@@ -42,13 +41,10 @@ is ALE (Asynchronous Lint Engine).&lt;/p&gt;</description>
       
       <guid>https://www.companionway.net/post/vim_scriptable_templates/</guid>
       <description>&lt;h3 id=&#34;dynamic-vim-templates&#34;&gt;Dynamic vim Templates&lt;/h3&gt;
-
 &lt;p&gt;Vim (or vi in the anceint past) has been my partner in getting things done. Like an rich tool it
 has lots of features that go untapped or undiscovered. A few days ago I decided I wanted a script within
 a tempate to help build the &amp;ldquo;front matter&amp;rdquo; to my markdown (.md) files.&lt;/p&gt;
-
 &lt;p&gt;The front matter looks like this:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;+++
 author = &amp;quot;&amp;quot;
 comments = true
@@ -61,12 +57,9 @@ share = true
 title = &amp;quot;vim_scriptable_templates&amp;quot;
 
 +++
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The challenge was to have vim write in the date for me in the needed format. And if you use hugo as your static web site generator as I do
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The challenge was to have vim write in the date for me in the needed format. And if you use hugo as your static web site generator as I do
 you may have found that it will silently ignore a new markdown file if the date is not formated correctly. It some testing to discover that
 but the bottom line is that I needed a way to script it for to avoid mistakes.&lt;/p&gt;
-
 &lt;p&gt;Research to me to this tip source: &lt;a href=&#34;http://vim.wikia.com/wiki/Use_eval_to_create_dynamic_templates&#34;&gt; vim embedded scripts &lt;/a&gt;&lt;/p&gt;</description>
     </item>
     

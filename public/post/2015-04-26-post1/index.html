@@ -55,7 +55,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/2015-04-26-post1/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -107,32 +107,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -203,75 +178,52 @@
         </section>
         </header>
         <section class="post-content">
-            <h2 id="simple-sed-trick-keeping-the-last-x-files">Simple sed trick - keeping the last X files</h2>
-
+            <h2 id="simple-sed-trick---keeping-the-last-x-files">Simple sed trick - keeping the last X files</h2>
 <p>How would you remove all but the last 10 files in a directory?</p>
-
 <p>So let&rsquo;s create 15 files with one second between there
 creation time. Oldest one (first one) will be called
 1.file
 and the newest one (last one) will be called
 15.file</p>
-
 <p>Run this code to do that:</p>
-
 <pre><code>for i in `seq 1 15`; do
   touch $i.fil
   sleep 1
 done
-</code></pre>
-
-<p>What this does is runs <code>seq 1 15</code> in a shell first and substitutes
+</code></pre><p>What this does is runs <code>seq 1 15</code> in a shell first and substitutes
 its output into a list which the variable &ldquo;i&rdquo; will iterate through.
 The <code>touch $i.file</code> command will create an empty file from the list
 of numbers giving us 15 different empty files from 1.file to 15.file.</p>
-
 <p>Now the trick - to save the latest 5 files we really want to remove
 every file other than the last five (ie 1.file, 2.file &hellip;, 10.file)
 thus leaving 11.file - 15.file alone.</p>
-
 <p>ls -lt # shows all the files in time order - most recent is at the top.
-       # BUT BE AWARE there is total number of listed files printed first</p>
-
+# BUT BE AWARE there is total number of listed files printed first</p>
 <p>So we want a list of file not including the top 5 and not the printed total
 number of files. What&rsquo;s more is we ONLY want the file name not the entire
 long listing (with permissions, ownership, size, date, and name).</p>
-
 <p>ls -t # gives all the files in time order with only the file names</p>
-
 <p>Now lets delete the top 5 + the total line from this list
 ls -t | sed &ldquo;1,6d&rdquo;</p>
-
 <p>We are almost there&hellip;
 To use that list and remove the files &hellip;.. wait&hellip;. lets be safe
 and double check what we are about to do. Rather than running the
 rm command, let&rsquo;s echo the rm command. Here is the test run code</p>
-
 <pre><code>echo rm $(ls -t | sed &quot;1,6d&quot;)
-</code></pre>
-
-<blockquote>
+</code></pre><blockquote>
 <blockquote>
 <p>What is within the <code>$(....)</code> will get executed by the
 shell first placing its output into the full command before running it.
 I could have used backticks instead of the $(&hellip;.).</p>
 </blockquote>
 </blockquote>
-
 <p>Hopefully you will see the following echoed to your screen:</p>
-
 <pre><code>rm 9.file 8.file 7.file 6.file 5.file 4.file 3.file 2.file 1.file
-</code></pre>
-
-<p>That looks like the command we want so now you can run it without the
+</code></pre><p>That looks like the command we want so now you can run it without the
 echo :</p>
-
 <pre><code>rm $(ls -t | sed &quot;1,6d&quot;) # this one will actually remove all but the latest 5 files
 
-</code></pre>
-
-<p>Enjoy</p>
-
+</code></pre><p>Enjoy</p>
 <p>-g-</p>
         </section>
         

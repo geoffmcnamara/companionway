@@ -55,7 +55,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/2015-04-15-post1/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -107,32 +107,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -204,46 +179,31 @@
         </header>
         <section class="post-content">
             <h1 id="ssh">SSH</h1>
-
 <h2 id="debug-with-verbose-output">Debug with verbose output</h2>
-
 <p>$HOME/.ssh/config first and foremost - debug with -vvvv</p>
-
 <ul>
 <li>actually do it before you need to so you can see how it works</li>
 </ul>
-
-<hr />
-
+<hr>
 <h3 id="from-wikipedia-paraphrased">From Wikipedia (paraphrased):</h3>
-
 <blockquote>
 <p>Secure Shell, or SSH, is a cryptographic (encrypted) network
 protocol for initiating text-based shell sessions[clarification needed] on
 remote machines in a secure way.</p>
 </blockquote>
-
 <p>&hellip;</p>
-
 <blockquote>
 <p>In 1995, Tatu Ylönen, a researcher at Helsinki University of Technology,
 Finland, designed the first version of the protocol (now called SSH-1) prompted by a password-sniffing attack at his university network.</p>
 </blockquote>
-
 <p>&hellip;</p>
-
 <blockquote>
 <p>OpenSSH and OSSH :  In 1999, developers wanting a free software version to be available went back to the older 1.2.12 release of the original SSH program  &hellip; Shortly thereafter, OpenBSD developers forked Grönvall&rsquo;s code and did extensive work on it, creating OpenSSH, which shipped with the 2.6 release of OpenBSD.</p>
 </blockquote>
-
 <p>&hellip;</p>
-
-<hr />
-
+<hr>
 <p>SSH gave an option for the insecure nature of telnet, rsh, ftp, http. They are all inherently insecure.</p>
-
 <h2 id="uses">Uses:</h2>
-
 <ul>
 <li>ssh - secure login and controlled secure execution (feature: with X
 forwarding possibility)</li>
@@ -253,190 +213,121 @@ forwarding possibility)</li>
 <li>rsync uses ssh</li>
 <li>port forwarding - secure tunnelling</li>
 </ul>
-
 <h2 id="first-thing-everyone-wants-is-passwordless-login">First thing everyone wants is passwordless login</h2>
-
 <h3 id="convenience-vs-security">convenience vs security</h3>
-
-<p>This next command will ask for a passphrase
-- if you want simple - leave the passphrase blank
-- secure but inconvenient - then give a passphrase</p>
-
+<p>This next command will ask for a passphrase</p>
+<ul>
+<li>if you want simple - leave the passphrase blank</li>
+<li>secure but inconvenient - then give a passphrase</li>
+</ul>
 <pre><code>ssh-keygen #defaults to creating .ssh/id_rsa  
   creates 2 files .ssh/id_rsa and .ssh/id_rsa.pub
 or
 ssh-keygen -t dsa
-</code></pre>
-
-<pre><code>ssh-copy-id RHOST
+</code></pre><pre><code>ssh-copy-id RHOST
 or the manual method
 cat $HOME/.ssh/id_rsa.pub | ssh $RUNAME@$RHOST 'cat &gt;&gt;.ssh/authorized_keys2'
 # permission on the .ssh directory and the files within are IMPORTANT
 ssh $RUNAME@$RHOST 'chmod 0600 .ssh/authorized_keys*'
-</code></pre>
-
-<pre><code>### The passphrase challenge
+</code></pre><pre><code>### The passphrase challenge
 ssh-agent bash
 ssh-add id_rsa
 # you need to enter the passphrase once (as long as this ssh-agent session is alive)
-</code></pre>
-
-<p>Know this: a users does not have a $HOME/.ssh directory by default
-It is only created when it is needed - eg when you ssh to another server
- - because it creates an .ssh/known_hosts file</p>
-
-<h2 id="the-power-in-authorized-keys">The power in authorized_keys</h2>
-
+</code></pre><p>Know this: a users does not have a $HOME/.ssh directory by default
+It is only created when it is needed - eg when you ssh to another server</p>
+<ul>
+<li>because it creates an .ssh/known_hosts file</li>
+</ul>
+<h2 id="the-power-in-authorized_keys">The power in authorized_keys</h2>
 <pre><code>OPTIONS KEY_TYPE KEY COMMENT 
 ...  
 OPTIONS KEY_TYPE KEY COMMENT
-</code></pre>
-
-<p>An example of a restricted authorized_key file:</p>
-
+</code></pre><p>An example of a restricted authorized_key file:</p>
 <pre><code>command=&quot;/bin/ls -ltr&quot;,no-port-forwarding,no-X11-forwarding,no-agent-forwarding ssh-rsa KEY...ENDKEY user@FromHost
-</code></pre>
-
-<h2 id="restricting-shell-access">restricting shell access</h2>
-
+</code></pre><h2 id="restricting-shell-access">restricting shell access</h2>
 <p>scponly - once installed set up a new scponlyuser</p>
-
 <pre><code>usermod -s /usr/bin/scponly USERNAME
-</code></pre>
-
-<p>rssh - older and at one time had too many exploits</p>
-
+</code></pre><p>rssh - older and at one time had too many exploits</p>
 <p>Example of authorized_key entry:</p>
-
 <pre><code>no-port-forwarding,no-X11-forwarding,no-agent-forwarding,no-pty,command=&quot;scp -v -r -d -t ~/CONTENT&quot; ssh-rsa AAAAMYRSAKEY...
-</code></pre>
-
-<p>Create a link in ~backup_user/ that links to the directory where the content should be accessible.</p>
-
+</code></pre><p>Create a link in ~backup_user/ that links to the directory where the content should be accessible.</p>
 <pre><code>ln -s /path/to/directory/with/accessible/content ~backup_user/CONTENT
-</code></pre>
-
-<p>Now, from client side, the following command should work :</p>
-
+</code></pre><p>Now, from client side, the following command should work :</p>
 <pre><code>scp -v  -r  -P 2222 -i .ssh/id_rsa_key_file path/to/data backup_user@SERVER:~/CONTENT
-</code></pre>
-
-<p>Another way:
+</code></pre><p>Another way:
 Here&rsquo;s the authorized_keys file:</p>
-
 <pre><code># authorized_keys
 command=&quot;/usr/local/bin/remote-cmd.sh&quot; ssh-rsa.....== user@pewpew
-</code></pre>
-
-<p>Here&rsquo;s the contents of remote-cmd.sh:</p>
-
-<pre><code class="language-bash">#!/bin/bash
-# /usr/local/bin/remote-cmd.sh
-case $SSH_ORIGINAL_COMMAND in
- 'scp'*)
+</code></pre><p>Here&rsquo;s the contents of remote-cmd.sh:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e"># /usr/local/bin/remote-cmd.sh</span>
+<span style="color:#66d9ef">case</span> $SSH_ORIGINAL_COMMAND in
+ <span style="color:#e6db74">&#39;scp&#39;</span>*<span style="color:#f92672">)</span>
     $SSH_ORIGINAL_COMMAND
     ;;
- 'rsync'*)
+ <span style="color:#e6db74">&#39;rsync&#39;</span>*<span style="color:#f92672">)</span>
     $SSH_ORIGINAL_COMMAND
     ;;
- *)
-    echo &quot;Access Denied&quot;
+ *<span style="color:#f92672">)</span>
+    echo <span style="color:#e6db74">&#34;Access Denied&#34;</span>
     ;;
-esac
-</code></pre>
-
-<h2 id="sftp">sftp</h2>
-
+<span style="color:#66d9ef">esac</span>
+</code></pre></div><h2 id="sftp">sftp</h2>
 <p>Subsystem sftp internal-sftp
 Match group sftponly
-  ForceCommand internal-sftp</p>
-
-<p>add the chrootDirectory %h and AllowTcpForwarding no after the match section to force the sftponly users to chroot to their home. please note that the match should (must!) be the last section on the ssh config and options after that are options just for the matched users –  higuita May 28 &lsquo;13<br />
+ForceCommand internal-sftp</p>
+<p>add the chrootDirectory %h and AllowTcpForwarding no after the match section to force the sftponly users to chroot to their home. please note that the match should (must!) be the last section on the ssh config and options after that are options just for the matched users –  higuita May 28 &lsquo;13 	 
 ForceCommand internal-sftp -u 0077 -d /uploaddir can farther harden it, by forcing a umask on an upload directory. In conjunction with &lsquo;ChrootDirectory` it creates a very controlled, isolated upload environment. Bonus note: the default dir and the umask must be set in the ForceCommand, not in the Subsystem directive, if you want them to work. –  Marcin Jun 6 &lsquo;14</p>
-
 <h2 id="sshfs">sshfs</h2>
-
 <pre><code>sudo apt-get install sshfs
 # make sure permissions allow what you attempt
 mkdir $HOME/mnt/ssh sshfs hostname:/data/share $HOME/mnt/ssh df -h
 # to unmount
 fusermount -u $HOME/mnt/ssh df -h ```
-</code></pre>
-
-<h2 id="port-forwarding">Port Forwarding</h2>
-
+</code></pre><h2 id="port-forwarding">Port Forwarding</h2>
 <p>==================
 Creates a secure connection between computers through which services can be relayed.</p>
-
-<p>Two types
-- Local port forwarding - most common - can be used
-  to bypass a firewall
-- Remote port forwarding - less common - can allow you to connect from outside to
-  a computer behind a firewall
-- Dynamic port forwarding - rarely used - can btpass a firewall - takes a lot of
-  work to set up. Easier to use local port forwarding.</p>
-
+<p>Two types</p>
+<ul>
+<li>Local port forwarding - most common - can be used
+to bypass a firewall</li>
+<li>Remote port forwarding - less common - can allow you to connect from outside to
+a computer behind a firewall</li>
+<li>Dynamic port forwarding - rarely used - can btpass a firewall - takes a lot of
+work to set up. Easier to use local port forwarding.</li>
+</ul>
 <p>First - your server has to allow port forwarding.</p>
-
-<pre><code class="language-bash">  grep Forwarding /etc/sshd_config
-</code></pre>
-
-<p>Second - you need to determine the appropriate source and destination ports
-  and destination IP</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  grep Forwarding /etc/sshd_config
+</code></pre></div><p>Second - you need to determine the appropriate source and destination ports
+and destination IP</p>
 <h3 id="local-port-forwarding">Local port forwarding</h3>
-
 <p>Example - local port forwarding:</p>
-
-<pre><code class="language-bash">  ssh -L 8080:www.ubuntuforums.org:80 localhost
-</code></pre>
-
-<p>Now point your browser to <a href="http://localhost:8080">http://localhost:8080</a> and you will goto ubuntuforums.org</p>
-
-<pre><code class="language-bash">  ssh -L 8080:www.ubuntuforums.org:80 -L 12345:www.ubuntu.com:80 localhost 
-</code></pre>
-
-<p>Now you have 2 port forward connection - one listening on 8080 the other on 12345.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  ssh -L 8080:www.ubuntuforums.org:80 localhost
+</code></pre></div><p>Now point your browser to http://localhost:8080 and you will goto ubuntuforums.org</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  ssh -L 8080:www.ubuntuforums.org:80 -L 12345:www.ubuntu.com:80 localhost 
+</code></pre></div><p>Now you have 2 port forward connection - one listening on 8080 the other on 12345.</p>
 <h3 id="remote-port-forwarding">Remote port forwarding</h3>
-
 <p>Example: you want to let a friend use your PC - assume you have vnc running on your
 pc.</p>
-
-<pre><code class="language-bash">ssh -R 5900:localhost:5900 friendname@friendPC
-</code></pre>
-
-<p>BTW: 5900 is typically used by VNC for the first/default instance set up.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -R 5900:localhost:5900 friendname@friendPC
+</code></pre></div><p>BTW: 5900 is typically used by VNC for the first/default instance set up.</p>
 <p>Your friend can no access your vnc desktop by connection a vnc client to
 5900 on HIS pc!</p>
-
 <h3 id="x-forwarding">X forwarding</h3>
-
 <p>Your ssh server will forward X apps natively if it is allowed in the sshd_config.</p>
-
 <p>A client can log into your PC with <code>ssh -X yourpc</code> and then run any X program
 (eg xclock) and it will be forwarded to your X display on your pc.
 ie:</p>
-
-<pre><code class="language-bash">ssh -X otherhost
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -X otherhost
 firefox &amp;
-# or
+<span style="color:#75715e"># or</span>
 ssh -f -T -X otherhost firefox
-</code></pre>
-
-<p>BTW - you will need xauth installed</p>
-
+</code></pre></div><p>BTW - you will need xauth installed</p>
 <p>You can speed things up just a bit with compression</p>
-
-<pre><code class="language-bash">ssh -fTC remoteuser@otherhost firefox
-</code></pre>
-
-<hr />
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh -fTC remoteuser@otherhost firefox
+</code></pre></div><hr>
 <p>Wednesday, 15. April 2015 02:13PM</p>
-
-<hr />
+<hr>
         </section>
         
 

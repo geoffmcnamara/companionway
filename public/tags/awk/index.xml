@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>awk on companionway</title>
@@ -19,18 +19,13 @@
       
       <guid>https://www.companionway.net/post/2015-05-02-post1/</guid>
       <description>&lt;p&gt;#How to print remainder of line using awk&lt;/p&gt;
-
 &lt;h2 id=&#34;eliminate-the-first-x-columns&#34;&gt;eliminate the first X columns&amp;hellip;&lt;/h2&gt;
-
 &lt;p&gt;Here is your challenge you have a list of cronjobs and you
 want to just execute the scheduled backup command with its
 arguments for a test run.&lt;/p&gt;
-
 &lt;p&gt;Using one command line, how would you do it?&lt;/p&gt;
-
 &lt;p&gt;Here is a sample root cronjob and I want to run the
 first entry with its arguments as a test run:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;# m h  dom mon dow   command
  0 16  *   *   * /data/share/home/geoffm/dev/utils/bak-it.sh -i /usr/local/etc/include.lst -e /usr/local/etc/exclude.lst -t /data/bak/`hostname` -s 7 &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
   5 0  *   *   * /data/share/motion/arch-files.sh &amp;gt;/dev/null 2&amp;gt;&amp;amp;1
@@ -50,17 +45,14 @@ first entry with its arguments as a test run:&lt;/p&gt;
       
       <guid>https://www.companionway.net/post/2015-04-02-post1/</guid>
       <description>&lt;h1 id=&#34;center-a-string-using-awk&#34;&gt;Center a string using awk&lt;/h1&gt;
-
-&lt;h2 id=&#34;awk-everyone-s-favorite-right&#34;&gt;awk = everyone&amp;rsquo;s favorite - right?&lt;/h2&gt;
-
+&lt;h2 id=&#34;awk--everyones-favorite---right&#34;&gt;awk = everyone&amp;rsquo;s favorite - right?&lt;/h2&gt;
 &lt;p&gt;People who know me also know that I prefer simple
 universally available tools to get a job done. Awk is
 probably one of my favorites because it does pretty
 much anything I need for quick and simple jobs. It is
 far more powerful than most people realize including
-associative arrays and it will do anything grep and sed&lt;br /&gt;
+associative arrays and it will do anything grep and sed&lt;br&gt;
 can do.&lt;/p&gt;
-
 &lt;p&gt;Recently I had the need to center a string of text. This
 is a easy problem that pretty much any freshman programmer
 can accomplish in a heartbeat but I decided to do it with

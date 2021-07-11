@@ -57,7 +57,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/sorting_ips/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -109,32 +109,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -211,7 +186,6 @@
 laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
 parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
 in most repositories). So output might look like this:</p>
-
 <pre><code>$ sudo arp-scan -I wlo1 192.168.1.0/24
 Interface: wlo1, datalink type: EN10MB (Ethernet)
 Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-scan/)
@@ -244,12 +218,9 @@ Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-sca
 23 packets received by filter, 0 packets dropped by kernel
 Ending arp-scan 1.8.1: 256 hosts scanned in 1.576 seconds (162.44 hosts/sec). 23 responded
 
-</code></pre>
-
-<p>But this listing is unsorted; I need it in ascending IP order. The solution is to creatively
+</code></pre><p>But this listing is unsorted; I need it in ascending IP order. The solution is to creatively
 use the unix sort command declaring the field &ldquo;termination&rdquo; character as &ldquo;.&rdquo; and then declaring
 the key fields to sort on. Here is the final run:</p>
-
 <pre><code>$ sudo arp-scan -I wlo1 192.168.1.0/24|sort -t . -k3,3n -k4,4n
 
 24 packets received by filter, 0 packets dropped by kernel
@@ -280,9 +251,7 @@ Starting arp-scan 1.8.1 with 256 hosts (http://www.nta-monitor.com/tools/arp-sca
 192.168.1.90    54:42:49:a4:d7:b0       Sony Corporation
 192.168.1.131   50:c7:bf:13:44:73       (Unknown)
 Ending arp-scan 1.8.1: 256 hosts scanned in 1.520 seconds (168.42 hosts/sec). 24 responded
-</code></pre>
-
-<p>Enjoy
+</code></pre><p>Enjoy
 -g-</p>
         </section>
         

@@ -61,7 +61,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/raspberry-pi-and-xrdp/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -113,32 +113,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -221,7 +196,6 @@ really on any linux distro and works with Windows remote desktop protocol (kinda
 xrdp and tightvncserver (under the covers it uses a vnc server - thightvncserver is probably the best choice here).
 Then as a client on my laptop I use the very good remote desktop client called remmina; again it is availalbe on
 almost any linux distro.</p>
-
 <p>When you launch remmina it will ask for a username and password for a connection onto the IP machine you declare in the setup.
 If the xrdp service is properly running on the remote machine it will server up a personal desktop for the user login
 independant of any other desktop sessions that might be running.
@@ -229,32 +203,20 @@ But - I am a fan of enlightment desktop e17 for a whole lot of reasons, many of 
 is lightweight so it works well on a raspberry pi. My task was to install e17 onto the raspberry pi and it becomes an
 alternet desktop and then make it available to me over xrdp. My quick searches on the internet turned up a good deal of bogus
 dead ends but I looked over the startup scripts for xsession and noticed it by default looks for and will launch</p>
-
-<pre><code class="language-$HOME/.xsession```.">
-I am using Raspbian 8.0 debian jessie on my raspberry pi. Well, no, actually, I am using berryboot to launch Rasbian 8.0 but that
+<p><code> $HOME/.xsession</code>.</p>
+<p>I am using Raspbian 8.0 debian jessie on my raspberry pi. Well, no, actually, I am using berryboot to launch Rasbian 8.0 but that
 has no bearing on this discussion. Rasbian now comes with the pixel desktop which includes the lxterminal program by default
-so I call that up in my ```$HOME/.xsession``` script before launching the enlightnement destop. Here is my script
-
-</code></pre>
-
-<p>#!/usr/bin/env bash
+so I call that up in my <code>$HOME/.xsession</code> script before launching the enlightnement destop. Here is my script</p>
+<pre><code>#!/usr/bin/env bash
 lxterminal &amp;
-enlightenment_start</p>
-
-<pre><code>
-Then restart the xrdp service with:
-</code></pre>
-
-<p>sudo systemctl restart xrdp.service
-```</p>
-
-<p>If it is your first launch of enightenment you will have to go through the brief setup - for the most part, pick the defaults and happy days are here again.</p>
-
+enlightenment_start
+</code></pre><p>Then restart the xrdp service with:</p>
+<pre><code>sudo systemctl restart xrdp.service
+</code></pre><p>If it is your first launch of enightenment you will have to go through the brief setup - for the most part, pick the defaults and happy days are here again.</p>
 <p>Oh but then you will run into this rather serious problem - half of your keys won&rsquo;t work! I have a solution but it probably
 isn&rsquo;t the best solution - it just happens to be the  only one I came across that worked for me.
 Use the mouse in enlightenment and navigate through <code>Settings-&gt;All-&gt;Input-&gt;Key Bindings ... click on Delete All</code>
 This works and you lose keybindings that you probably wouldn&rsquo;t use through vnc anyway.</p>
-
 <p>Enjoy
 -g-</p>
         </section>

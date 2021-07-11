@@ -57,7 +57,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/2015-04-30-post1/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -109,32 +109,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -208,51 +183,36 @@
         </header>
         <section class="post-content">
             <h1 id="entering-special-characters-into-vim">Entering special characters into vim</h1>
-
 <p>I use vim as my editor. Despite this first sentence, this is not a
 beginning volley to an editor flame war. I will save that for another
 day.</p>
-
 <p>Ever editor has its own unique features and vim definitely no stranger to
 that group. One feature I use quite a bit is what vim calls digraphs.</p>
-
 <p>There are thousands of characters other than the standard keyboard character
 that can be displayed with vim. You may already know that you can use
 <code>CTRL-v &lt;enter&gt;</code> to force a linefeed into even a DOS filetype. Actually
 `CTRL-v ascii### will force special characters from a long list of choices.</p>
-
 <p>But I prefer using CTRL-K followed by two semi-meaningful (slightly resembles the
 intended special character) to create any one of literally thousands of special
 characters.</p>
-
 <p>If you are in vim and you are not in INSERT mode (hit ESC a couple of times to
 make sure) you can type <code>:digraphs</code> and see the first page of possible choices.
 This list is extensive and daunting when first viewed. It is really sets of 3 columns.
 The first column is the digraph CTRL-k combo to create what is seen in the second
 column. And the 3rd column is the <code>CTRL-v ###</code> number to be used to create that same
 character.</p>
-
 <p>Let&rsquo;s look at an example - the first column 11 rows down you should see the way to create
 the one cent character:</p>
-
 <pre><code>Ct ¢ 196 
-</code></pre>
-
-<p>What this tells you is that if you are in the INSERT mode (Esc Esc i)
+</code></pre><p>What this tells you is that if you are in the INSERT mode (Esc Esc i)
 Then you can type either of these two commands to create a one cent symbol</p>
-
 <pre><code>CTRL-k Ct
 # or
 CTRV-v 196
-</code></pre>
-
-<p>If your scroll down the <code>:digraph</code> list you will find just about any special
+</code></pre><p>If your scroll down the <code>:digraph</code> list you will find just about any special
 character you can imagine.</p>
-
 <p>BTW - to see what values correspond to a char - cursor to it and hit :as[cii]</p>
-
 <p>Here are a few examples:</p>
-
 <pre><code>CTRL-k 34 = ¾
 CTRL-k 12 = ½
 CTRL-k -&lt; = ←
@@ -271,12 +231,7 @@ CTRL-k Ml = ♂
 CTRL-k *1 = ☆ 
 CTRL-k *2 = ★
 CTRL-k D* = Δ
-</code></pre>
-
-<p><br>
-Enjoy
-<br>
--g-</p>
+</code></pre><!-- raw HTML omitted -->
         </section>
         
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on companionway</title>
@@ -17,8 +17,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.companionway.net/page/about/</guid>
-      <description>I am a native of Northern Virginia, grew up there, and worked most of my life there. I had all advantages that come with the area including a good school system and a relatively resilient economy.
-After attending George Mason University and facing a recession, I maneuvered my way into the Fairfax County Fire Department. I had a wonderful 25 year career with the Fire Service and built strong friendships with many good people.</description>
+      <description>After attending George Mason University and facing a recession, I maneuvered my way into the Fairfax County Fire Department. I had a wonderful 25 year career with the Fire Service and built strong friendships with many good people. I had the opportunity to serve in many capacities while with the Fire Department. I continued attending college, studying a variety of subjects, one of which turned out to be my second career and passion - computers.</description>
     </item>
     
     <item>
@@ -36,7 +35,7 @@ After attending George Mason University and facing a recession, I maneuvered my 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.companionway.net/page/links/</guid>
-      <description> sysadmin or web dev tools  Link for gihub Ling for git-scm Link for ansible Link for vagrant Link for lxc Link for formspree.io Link for adminer  Quick tech headline news  Link for LinuxToday Link for DailyRotation  dynamic content management systems [dynamic CMS]  hugo Wordpress Drupal Joomla  static content managment systems [static CMS]  jekyll hugo gravCMS picoCMS statamic kirby FrogCMS CushyCMS  learning  learn python fundamentals canonical ubuntu tutorials realpython great-tutorials and tips  financial  barchart iextrading signup and use their api to pull down stock info I have a python script that I use almost every day to pull data for analyzing stock data investing seekingalpha finviz  science / educational  Best YouTube Science Channels Vsauce Ted Talks Google Talks Khan Academy Science Channel Sixty Symbols  </description>
+      <description>sysadmin or web dev tools  Link for gihub Ling for git-scm Link for ansible Link for vagrant Link for lxc Link for formspree.io Link for adminer   Quick tech headline news  Link for LinuxToday Link for DailyRotation   dynamic content management systems [dynamic CMS]  hugo Wordpress Drupal Joomla   static content managment systems [static CMS]  jekyll hugo gravCMS picoCMS statamic kirby FrogCMS CushyCMS   learning   learn python fundamentals canonical ubuntu tutorials realpython great-tutorials and tips   financial   barchart iextrading signup and use their api to pull down stock info I have a python script that I use almost every day to pull data for analyzing stock data investing seekingalpha finviz   science / educational  Best YouTube Science Channels Vsauce Ted Talks Google Talks Khan Academy Science Channel Sixty Symbols  </description>
     </item>
     
     <item>

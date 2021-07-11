@@ -57,7 +57,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/using_fabric_to_dynamically_discover_hosts/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -109,32 +109,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -211,14 +186,11 @@
 I use python fabric for promoting code and web content. Essentially it is my devops tool to satisfy the
 single most important devops rule: never log into a server! I use this over ansible or some of the other
 devop tools because fabric only requires knowning one langauge and that is python.</p>
-
 <p>My network changes a lot as I take servers down or stand them up frequently. Normally that would require changing
 the environment roles (host lists) in my fabfile.py with all my changes. In the past I set aside certain IPs in my
 network for each role. For example all my raspberry pies get named before I ever introduce them to the network.
 Using the option &ndash;skip_bad_hosts with fabric is one way to do this but I really want more control.</p>
-
 <p>So my fabfilei.py would has something like this in it:</p>
-
 <pre><code>env.roledefs = {
       'rpis': ['rasp1', 'rasp2', 'rasp3', 'rasp4', 'rasp5', 'rasp6', 'rasp7'],
       'ubuntus': ['192.168.1.72'],
@@ -231,19 +203,13 @@ Using the option &ndash;skip_bad_hosts with fabric is one way to do this but I r
   }
   env.roledefs['all'] = env.roledefs['rpis'] + env.roledefs['containers'] + env.roledefs['prsnl'] + env.roledefs['ubuntus']  # noqa
   env.roledefs['debs'] = env.roledefs['rpis'] + env.roledefs['containers'] + env.roledefs['prsnl'] + env.roledefs['ubuntus']  # noqa
-</code></pre>
-
-<p>Looks complicated but the point is that I have pre-listed servers whether they exist yet or not. In my /etc/hosts file all the hostname
+</code></pre><p>Looks complicated but the point is that I have pre-listed servers whether they exist yet or not. In my /etc/hosts file all the hostname
 have an IP assigned.</p>
-
 <p>But what I really need is a way to build a list of servers that are up and have an ssh port open within a range of IPs on the network.
 Specifically, I want fabric to scan 192.168.1.60 - 192.168.1.99 for live hosts with an open ssh port and then run a task against each.
 That way a server can go up or be down and it has no bearing on fabric executing a selected task.</p>
-
 <p>So here is my crude solution. If nothing else, it does demonstrate the flexibility of fabric.</p>
-
 <p>This function is not declared as a task with the @task decorator. The purpose is just to test the socket on an IP</p>
-
 <pre><code># ###########################
 def check_socket(host, port, timeout=2, silent=False):
     # #######################
@@ -271,10 +237,7 @@ def check_socket(host, port, timeout=2, silent=False):
                   print(&quot;=&quot;*60)
                   print()
               return False
-</code></pre>
-
-<p>I also wrote a function to poll a range of IPs on a network segment.</p>
-
+</code></pre><p>I also wrote a function to poll a range of IPs on a network segment.</p>
 <pre><code># ########################################
 def poll_netseg(netseg,start_ip,end_ip, silent=False):
    # ###################################
@@ -296,11 +259,8 @@ def poll_netseg(netseg,start_ip,end_ip, silent=False):
            hosts_open.append(host_ip)
    print()
    return hosts_open
-</code></pre>
-
-<p>So here is the meat in this sandwich. This function allows you to execute the task that you want on the hosts that were
+</code></pre><p>So here is the meat in this sandwich. This function allows you to execute the task that you want on the hosts that were
 discovered to be alive.</p>
-
 <pre><code># ############################
 @task
 def discover(func=hname, start_ip=60,end_ip=99):
@@ -315,11 +275,8 @@ def discover(func=hname, start_ip=60,end_ip=99):
     &quot;&quot;&quot;
     live_hosts = poll_netseg(env.netseg, start_ip, end_ip)
     execute(func, hosts=live_hosts)
-</code></pre>
-
-<p>It defaults to running a task called hname which gets the hostname but that can be overridden on the command line.
+</code></pre><p>It defaults to running a task called hname which gets the hostname but that can be overridden on the command line.
 First lets look at the task called hname just so you can see how this works.</p>
-
 <pre><code># ###################
 @task
 def hname():
@@ -330,11 +287,8 @@ def hname():
     with hide('output'), settings(warn_only=True):
         out = run(&quot;hostname -f&quot;)
         print(out)
-</code></pre>
-
-<p>The sweet nectar in the discover task is that you can tell fabric to run any task that you have written.
+</code></pre><p>The sweet nectar in the discover task is that you can tell fabric to run any task that you have written.
 Here is how I call a task called sar which runs sar (system activity report from the sysstat package)</p>
-
 <pre><code># ######################
 @task
 def sar():
@@ -357,16 +311,11 @@ def sar():
         if l.strip() == &quot;&quot;:
 					# skips blank lines
           print(l.rstrip())
-</code></pre>
-
-<p>To run that on all the live hosts:</p>
-
+</code></pre><p>To run that on all the live hosts:</p>
 <pre><code>fab discover:func=sar
  # or
 fab discover:sar
-</code></pre>
-
-<p>Done - Enjoy
+</code></pre><p>Done - Enjoy
 -g-</p>
         </section>
         

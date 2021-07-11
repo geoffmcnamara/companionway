@@ -55,7 +55,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/2015-04-22-post1/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -107,32 +107,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -204,9 +179,7 @@
         </header>
         <section class="post-content">
             <h1 id="using-vagrant-with-lxc">Using vagrant with lxc</h1>
-
 <h3 id="one-command-vagrant-up">One command; vagrant up</h3>
-
 <p>Now that I successfully managed to get vagrant-lxc plugin to
 work (see previous post),  I decided to migrate my virtualbox Vagrantfile to vagrant lxc.
 I have used vagrant and virtualbox to create and bring up
@@ -214,22 +187,17 @@ I have used vagrant and virtualbox to create and bring up
 machine, node2 as a staging machine, and node3 as a production
 machine. That way I can test easily with greater confidence
 with each promotion of new code.</p>
-
 <p>So why use lxc when virtualbox is working fine? The answer is
 obvious for anyone who is familiar with these platforms&hellip;
 lxc is much much faster to bring up, halt, tear down.. and
 you can do quich-n-dirty temporary testing with lxc-start-ephemeral.
 Just too many advantages for developing and testing code in a
 small network.</p>
-
 <p>The drawback is that vagrant-lxc is not as mature as vagrant with
 virtualbox. But the lxc tools easily get you around all this. I&rsquo;ll
 discuss some tips on this too.</p>
-
 <h2 id="getting-started-with-lxc">Getting started with lxc</h2>
-
 <p>This all assume ubuntu (translation for using another Linux platform is an exercise for the reader)</p>
-
 <pre><code>sudo apt-get install lxc
 mkdir -p $HOME/tmp/vagrant-lxc
 cd $HOME/tmp/vagrant-lxc
@@ -242,36 +210,26 @@ sudo lxc-ls --fancy # Note the IP is assigned by dhcp here (10.0.3.xxx)
 sudo lxc-console -n node1 # login with vagrant/vagrant
 # To EXIT use CTRL-a q ... if you are using screen then CTRL-a a q
 sudo lxc-stop -n node1
-</code></pre>
-
-<p>This gives just enough info to play with a single container. By the way, while this
+</code></pre><p>This gives just enough info to play with a single container. By the way, while this
 container is running, it is NAT&rsquo;ed to the outside world and therefore you can reach
 the internet from within the guest container vm.</p>
-
 <p>But I want 3 containers minimum. For this next exercise we will use vagrant  along
 with vagrant-lxc plugin to build three nodes. However vagrant requires each of its
 nodes to have a user named vagrant with sudo priviledges. The node build above
 does not have that&hellip; so we will destroy the one above and build 3 nodes from the
 ground up with vagrant. Beside this exposes us to new commands and features along
 the way.</p>
-
 <p>To destroy the container already built we run lxc-destroy. Before we do, it is worth
 taking a look at what lies just under the covers and controls lxc containers. Run this
 to view some of the improtant files created for the node1 container built previously.</p>
-
 <pre><code>sudo ls -l /var/lib/lxc/
 sudo ls -l /var/lib/lxc/node1
 sudo cat /var/lib/lxc/node1/config
-</code></pre>
-
-<p>There is much you can do by editing the config file but save that research for later.
+</code></pre><p>There is much you can do by editing the config file but save that research for later.
 To destroy this container run</p>
-
 <pre><code>sudo lxc-destroy -n node1
 sudo ls -l /var/lib/lxc # just to see what happened
-</code></pre>
-
-<p>We are going to use vagrant now to build and start three nodes with one command and one
+</code></pre><p>We are going to use vagrant now to build and start three nodes with one command and one
 config file. But you need to install vagrant and vagrant-lxc. The vagrant application
 is available in you standard ubuntu repo but it maybe a slightly older version and the
 plugin we are going to install (vagrant-lxc) relies on a newer version of vagrant. Go to
@@ -280,17 +238,13 @@ this link and download the deb pkg:
 Install it with <code>sudo dpkg -i vagrant-xxxx.deb</code>
 If you previously had vagrant installed you may have to rm $HOME/.vagrant.d/plugins.json
 Now install the needed lxc plugin:</p>
-
 <pre><code>vagrant plugin install vagrant-lxc
-</code></pre>
-
-<p>That may seem like a lot to do to get 3 simple lxc container nodes up and running but trust
+</code></pre><p>That may seem like a lot to do to get 3 simple lxc container nodes up and running but trust
 me, this will save a lot of time and steps in the future. One more thing is needed here.
 The vagrant app requires a file to control it and it by default is called Vagrantfile.
 I am going to provide a simple one here. It has some comments within; understanding the
 rest is again for later. By the way vagrant is a wrapper bash script for setting up and
 running ruby commands so you will need ruby installed.</p>
-
 <blockquote>
 <blockquote>
 <p>Sideline: I respect and demand ruby on my development systems. It has incredible power
@@ -302,13 +256,10 @@ and therefor has strong object oriented syntax.
 In the end - learning ruby is <em>well worth</em> and discomfort along the way.</p>
 </blockquote>
 </blockquote>
-
 <pre><code>cd $HOME/tmp/vagrant-lxc # created earlier above
 vi Vagrantfile
 # enter these lines 
-</code></pre>
-
-<pre><code># -*- mode: ruby -*-
+</code></pre><pre><code># -*- mode: ruby -*-
 # vi: set ft=ruby :
 
 VAGRANTFILE_API_VERSION = &quot;2&quot;
@@ -344,23 +295,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 end
-</code></pre>
-
-<p>To run this:</p>
-
+</code></pre><p>To run this:</p>
 <pre><code>vagrant up --provider=lxc
-</code></pre>
-
-<p>The <code>--provider=lxc</code> argument is to force vagrant to loadup the virtual machines using
+</code></pre><p>The <code>--provider=lxc</code> argument is to force vagrant to loadup the virtual machines using
 lxc containers as opposed virtualbox or other &ldquo;providers&rdquo;. That is one of the nice
 features of vagrant, it is virtual machine guest provider agnostic. You might be
 able to get away with dropping the argument and just run:</p>
-
 <pre><code>vagrant up
-</code></pre>
-
-<p>Here a few quick-n-easy commands using vagrant:</p>
-
+</code></pre><p>Here a few quick-n-easy commands using vagrant:</p>
 <pre><code>vagrant halt node1 # obvious
 vagrant halt       # shuts down all the nodes listed in Vagrantfile
 vagrant status
@@ -368,17 +310,12 @@ vagrant connect node1
 vagrant ssh node1
 vagrant destroy node1 
 vagrant help
-</code></pre>
-
-<p>Simple &hellip; but wait, there&rsquo;s more. Lots of things can be configured through vagrant
+</code></pre><p>Simple &hellip; but wait, there&rsquo;s more. Lots of things can be configured through vagrant
 <a href="http://docs.vagrantup.com/v2/vagrantfile/">Vagrantfile</a>
 and one of them is the provisioning tool called ansible.</p>
-
 <p>You will see a block of code in this <code>Vagrantfile</code> that calls ansible to run
 a playbook.yml file&hellip;. I will save that for an upcoming post.</p>
-
 <p>Enjoy</p>
-
 <p>-g-</p>
         </section>
         

@@ -57,7 +57,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/git_pre-commit/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -109,32 +109,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -207,12 +182,10 @@
         </section>
         </header>
         <section class="post-content">
-            <h4 id="test-it-commit-it-reject-it">test_it &amp;&amp; commit_it || reject_it</h4>
-
+            <h4 id="test_it--commit_it--reject_it">test_it &amp;&amp; commit_it || reject_it</h4>
 <p>Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
 The goal is to have respectable code <em>before</em> it lands in a repository. Git makes this very easy through the use
 of &ldquo;hooks&rdquo;. If you look in any of your git project directories you will find these files in the <code>./.git/hooks/</code> directory:</p>
-
 <pre><code>pplypatch-msg.sample
 commit-msg.sample
 post-update.sample
@@ -223,77 +196,48 @@ pre-push.sample
 pre-rebase.sample
 pre-receive.sample
 update.sample
-</code></pre>
-
-<p>These are all obvious sample files. One of the most important steps you can take with your .git project is to force
+</code></pre><p>These are all obvious sample files. One of the most important steps you can take with your .git project is to force
 good practices on your code by creating a pre-commit hook script. Using a pre-commit script will encourage
 you to write consistently good code from the very start.</p>
-
 <p>A pre-commit script will be invoked as soon as you create an executable file with this name:</p>
-
-<pre><code class="language-bash">./.git/hooks/pre-commit
-</code></pre>
-
-<p>Now that file will run before your git commits and if the return code is not 0 your commit will fail.</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./.git/hooks/pre-commit
+</code></pre></div><p>Now that file will run before your git commits and if the return code is not 0 your commit will fail.</p>
 <p>Here is a very simple example. You have a clever project called hello.py. Your intent is to have good code before
 commit so you write a ./.git/hooks/pre-commit bash script that looks like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span>flake8 *.py
+</code></pre></div><p>The file hello.py contains:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#! /usr/bin/env python3</span>
 
-<pre><code class="language-bash">#!/bin/bash
-flake8 *.py
-</code></pre>
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    <span style="color:#75715e"># the above line allows this code to run independently or as a module</span>
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Use: hello.py
+</span><span style="color:#e6db74">    Input: The user will be asked his/her name.
+</span><span style="color:#e6db74">    Output: Hello World, may name is {name}
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
 
-<p>The file hello.py contains:</p>
-
-<pre><code class="language-python">#! /usr/bin/env python3
-
-if __name__ == '__main__':
-    # the above line allows this code to run independently or as a module
-    &quot;&quot;&quot;
-    Use: hello.py
-    Input: The user will be asked his/her name.
-    Output: Hello World, may name is {name}
-    &quot;&quot;&quot;
-
-    myname = input(&quot;What, pray tell, is your name: &quot;)
-    print(f&quot;Hello World!, my name is {myname}&quot;)
-</code></pre>
-
-<p>Now, if you run git add -A, followed by git commit will cause the ./.git/hooks/pre-commit to run against the hello.py
+    myname <span style="color:#f92672">=</span> input(<span style="color:#e6db74">&#34;What, pray tell, is your name: &#34;</span>)
+    <span style="color:#66d9ef">print</span>(f<span style="color:#e6db74">&#34;Hello World!, my name is {myname}&#34;</span>)
+</code></pre></div><p>Now, if you run git add -A, followed by git commit will cause the ./.git/hooks/pre-commit to run against the hello.py
 and it will return an result code of 0 so all will be good and the commit will be successful.</p>
-
 <p>You can test this yourself by running:</p>
-
-<pre><code class="language-bash">./git/hooks/pre-commit
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./git/hooks/pre-commit
 echo $?
-</code></pre>
-
-<p>But what if you change line 8 to this:</p>
-
-<pre><code class="language-python">      myname=input(&quot;What, pray tell, is your name: &quot;)
-</code></pre>
-
-<p>Now if you run the pre-commit script it will return something like:</p>
-
-<pre><code class="language-bash">hello.py:11:11: E225 missing whitespace around operator
-</code></pre>
-
-<p>This will return a non-zero return code. Any attempts to do a git commit will fail as a result. That is a good thing
+</code></pre></div><p>But what if you change line 8 to this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">      myname<span style="color:#f92672">=</span>input(<span style="color:#e6db74">&#34;What, pray tell, is your name: &#34;</span>)
+</code></pre></div><p>Now if you run the pre-commit script it will return something like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hello.py:11:11: E225 missing whitespace around operator
+</code></pre></div><p>This will return a non-zero return code. Any attempts to do a git commit will fail as a result. That is a good thing
 as you want to learn good coding practices and submitting this code would not be consistent with that goal.</p>
-
 <p>Just a word about using flake8 as a linter. It will drive you crazy. Failing on long lines (over 80 characters)
 really drives me nuts, but flake8 and forcing you to play well in the pep8 standards realm. You can control that
 through the $HOME/.config/flake8 file with entires like this:</p>
-
-<pre><code class="language-bash">[flake8]
-max-line-length = 120
-</code></pre>
-
-<p>When I first started using linters to check my coding it was painful. But once you get all your code cleaned up
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">[</span>flake8<span style="color:#f92672">]</span>
+max-line-length <span style="color:#f92672">=</span> <span style="color:#ae81ff">120</span>
+</code></pre></div><p>When I first started using linters to check my coding it was painful. But once you get all your code cleaned up
 you find yourself writing better code from the very start. The pain subsides and life is good again.</p>
-
 <p>I use linters on lots of different kinds of files now:</p>
-
 <table>
 <thead>
 <tr>
@@ -301,50 +245,38 @@ you find yourself writing better code from the very start. The pain subsides and
 <th align="center">linter(s)</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td align="center">*.py</td>
 <td align="center">autopep8, flake8, python -m doctest</td>
 </tr>
-
 <tr>
 <td align="center">*.html</td>
 <td align="center">htmllint</td>
 </tr>
-
 <tr>
 <td align="center">*sh</td>
 <td align="center">shellcheck</td>
 </tr>
-
 <tr>
 <td align="center">*.nts or *.txt</td>
 <td align="center">write-good</td>
 </tr>
-
 <tr>
 <td align="center">*.css</td>
 <td align="center">stylelint</td>
 </tr>
 </tbody>
 </table>
-
 <p>A linter exists for dozens of code or writing formats. It is your adventure to find them and wrestle them into submission for your aspirations.</p>
-
 <p>I try to make is easy on myself so I use a <strong>single</strong> script in every git project directory. The script is a simple bash executable that runs various linters against code before it is committed (hence: pre-commit). Every time I run <code>git init</code> on a new project directory I also
 copy my standard .gitignore file from my ~/dev/dotfiles directory and I copy this script over</p>
-
 <pre><code>cp $HOME/dev/dotfiles/scripts/pre-commit.sh {new project directory}/scripts/pre-commit.sh
-</code></pre>
-
-<p>Actually, I just <code>cp -r $HOME/dev/dotfiles/scripts {project directory}/</code>. Now I can
+</code></pre><p>Actually, I just <code>cp -r $HOME/dev/dotfiles/scripts {project directory}/</code>. Now I can
 just run <code>./scripts/pre-commit.sh</code> and it will check any *.py files and *.sh file and any
 *.html files etc using the linters above. That one script can be used in any project to
 help establish a minimal code quality baseline.</p>
-
 <p>Here is a quick redacted example:</p>
-
 <pre><code>#!/bin/bash
 
 function check_sh_files()
@@ -369,12 +301,9 @@ check_html_files
 check_css_files
 # etc...
 # EOF #
-</code></pre>
-
-<p>The script is not invoked by git commit yet. Above we directly created an executable file called <code>./.git/hooks/pre-connect</code>.
+</code></pre><p>The script is not invoked by git commit yet. Above we directly created an executable file called <code>./.git/hooks/pre-connect</code>.
 We need to remove the original simple script that only checkec *.py files and instead soft link this new file in its place.
 To do that run:</p>
-
 <pre><code>function do_install()
 {
 	# run this from the project basedir 
@@ -395,22 +324,13 @@ To do that run:</p>
 	fi
 	cd ../..  # return to the project basedir.
 }
-</code></pre>
-
-<p>Add this line now just below the <code># Main Code #</code> line:</p>
-
+</code></pre><p>Add this line now just below the <code># Main Code #</code> line:</p>
 <pre><code>do_install
-</code></pre>
-
-<p>So the fists time you run this script it will install as a link named ./.git/hooks/pre-connect.</p>
-
+</code></pre><p>So the fists time you run this script it will install as a link named ./.git/hooks/pre-connect.</p>
 <p>My script has much more than I have shown here. It checks README files and it updates itself
 if it finds any differences from the master copy:  <code>~/dev/dotfiles/script/preconnect.sh</code>.</p>
-
 <p>This gives you an idea of how to use a <code>./.git/hook/pre-connect</code> script to improve your coding practices.</p>
-
 <p>Enjoy,</p>
-
 <p>-geoffm-</p>
         </section>
         

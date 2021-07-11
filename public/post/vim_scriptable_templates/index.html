@@ -63,7 +63,7 @@
 		
 		
     
-    <meta name="generator" content="Hugo 0.55.1" />
+    <meta name="generator" content="Hugo 0.68.3" />
     <link rel="canonical" href="https://www.companionway.net/post/vim_scriptable_templates/" />
     
 <link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
@@ -115,32 +115,7 @@
 		
             
             <li class="nav-opened" role="presentation">
-                <a href="/page/about">About</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
                 <a href="/post">Posts</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/links">Links</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/articles">NewsPaper</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/dlfiles">Download Files</a>
-            </li>
-		
-            
-            <li class="nav-opened" role="presentation">
-                <a href="/page/projects">Projects</a>
             </li>
 		
             
@@ -220,13 +195,10 @@
         </header>
         <section class="post-content">
             <h3 id="dynamic-vim-templates">Dynamic vim Templates</h3>
-
 <p>Vim (or vi in the anceint past) has been my partner in getting things done. Like an rich tool it
 has lots of features that go untapped or undiscovered. A few days ago I decided I wanted a script within
 a tempate to help build the &ldquo;front matter&rdquo; to my markdown (.md) files.</p>
-
 <p>The front matter looks like this:</p>
-
 <pre><code>+++
 author = &quot;&quot;
 comments = true
@@ -239,19 +211,14 @@ share = true
 title = &quot;vim_scriptable_templates&quot;
 
 +++
-</code></pre>
-
-<p>The challenge was to have vim write in the date for me in the needed format. And if you use hugo as your static web site generator as I do
+</code></pre><p>The challenge was to have vim write in the date for me in the needed format. And if you use hugo as your static web site generator as I do
 you may have found that it will silently ignore a new markdown file if the date is not formated correctly. It some testing to discover that
 but the bottom line is that I needed a way to script it for to avoid mistakes.</p>
-
 <p>Research to me to this tip source: <a href="http://vim.wikia.com/wiki/Use_eval_to_create_dynamic_templates"> vim embedded scripts </a></p>
-
 <p>I use autocommands in vim to load templates. The strategy here is to have vim recognize and respond when I start to write a new
 markdown (.md) file and run vim scripts where needed to dynamically fill in needed data. I will start here with writing the
 template. All my templates are in a directory I call <code>~/vinrc-files/</code>.  Here is the contents of my .md file template named
 <code>~/vimrc-files/vimrc-md.tem</code>:</p>
-
 <pre><code>+++
 # author = &quot;-g-&quot;
 comments = true
@@ -267,36 +234,24 @@ title = &quot;[:VIM_EVAL:]expand(&quot;%:t:r&quot;)[:END_EVAL:]&quot;
 +++
 
 
-</code></pre>
-
-<p>For what it is worth, the inclusion of <code>&lt;!--more--&gt;</code> is hugo&rsquo;s trigger for cutting off a summary block.</p>
-
+</code></pre><p>For what it is worth, the inclusion of <code>&lt;!--more--&gt;</code> is hugo&rsquo;s trigger for cutting off a summary block.</p>
 <p>Two embedded scripts are here and I will leave it to you to research cypher their workings.</p>
-
 <p>Now within the <code>~/.vimrc</code> file I need two things.</p>
-
 <ul>
-<li><p>auto load the template into any .md file that I start to write. The added code looks like this:</p>
-
+<li>auto load the template into any .md file that I start to write. The added code looks like this:</li>
+</ul>
 <pre><code>autocmd BufNewFile *.md 0r~/vimrc-files/vimrc-md.tem
-</code></pre></li>
-
-<li><p>run a process to substiture the embedded vim evaluation code with processed data.</p>
-
+</code></pre><ul>
+<li>run a process to substiture the embedded vim evaluation code with processed data.</li>
+</ul>
 <pre><code>&quot; parse special text in the templates after the read - this MUST be after the autocmd to load the template
 autocmd BufNewFile * %substitute#\[:VIM_EVAL:\]\(.\{-\}\)\[:END_EVAL:\]#\=eval(submatch(1))#ge
-</code></pre></li>
-</ul>
-
-<p>Hope this offers help to someone.</p>
-
+</code></pre><p>Hope this offers help to someone.</p>
 <p>Enjoy
 -g-</p>
-
-<p>&rdquo; parse special text in the templates after the read
-  autocmd BufNewFile * %substitute#[:VIM_EVAL:](.{-})[:END_EVAL:]#\=eval(submatch(1))#ge</p>
-
-<!--more-->
+<p>&quot; parse special text in the templates after the read
+autocmd BufNewFile * %substitute#[:VIM_EVAL:](.{-})[:END_EVAL:]#=eval(submatch(1))#ge</p>
+<!-- raw HTML omitted -->
         </section>
         
 
