@@ -25,6 +25,8 @@ There are a lot of tips in this post. Many are associated with the reference Plu
 ![So many plugs; such little time](/img/vim-plugs-screen.jpg)
 
 
+
+
 {{% lshadowbox %}}
 
 # Table of Contents

@@ -45,7 +45,7 @@ blockquote p:last-of-type {
 .pullquote {
   float: right;
   width: 30%;
-  //background: url(images/openquote.gif) top left no-repeat;
+  /* background: url(images/openquote.gif) top left no-repeat; */
   color: #030;
   background: #ddf;
   font-weight: bold;
@@ -76,22 +76,26 @@ blockquote p:last-of-type {
   padding-right: 30px;
 }
 
+.content {
+  margin: 5px 100px 100px 5px
+}
+
 .content a {
-  //display: inline-block; 
+  /*display: inline-block; */
   background-color: #fafafa;
   color: #0f0f0f;
-  //font-size: 1.5em;
-  //font-family: Courier, sans-serif;
-  //padding: 1em 5em;
-  //text-decoration: none;
-  //text-transform: uppercase;
+  /*font-size: 1.5em;*/
+  /*font-family: Courier, sans-serif;*/
+  /*padding: 1em 5em;*/
+  /*text-decoration: none;*/
+  /*text-transform: uppercase;*/
   border-radius: 0.2em;
-  //border-bottom: 0.25em solid #0f5177;
+  /*border-bottom: 0.25em solid #0f5177;*/
   -moz-transition: 0.1s;
   -webkit-transition: 0.1s;
-  //transition: 0.1s;
+  /*transition: 0.1s;*/
   box-shadow: 0 2px 3px #ccc;
-  //position: relative;
+  /*position: relative;*/
 }
 
 .content a:hover {
@@ -101,7 +105,7 @@ blockquote p:last-of-type {
 }
 
 .content_margin {
-  margin: 20px;
+  margin: 20px 10px 10px 5px;
 }
 
 /* snatched from codepen */
@@ -129,6 +133,10 @@ blockquote p:last-of-type {
   height: 56px;        
 }
 
+img {
+  image-orientation: from-image;
+}
+
 .footer-brand-logos a {
   text-decoration: none;
   display: inline-block;
@@ -150,3 +158,4 @@ blockquote p:last-of-type {
   /*font-size: 30px;*/
   /*text-align: center;*/
 }
+

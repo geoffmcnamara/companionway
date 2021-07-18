@@ -7,10 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2019</copyright>
-    <lastBuildDate>Fri, 12 Apr 2019 08:09:20 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 17 Jul 2021 19:46:42 -0400</lastBuildDate>
     
 	<atom:link href="https://www.companionway.net/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Fixing_web_images</title>
+      <link>https://www.companionway.net/post/fixing_web_images/</link>
+      <pubDate>Sat, 17 Jul 2021 19:46:42 -0400</pubDate>
+      
+      <guid>https://www.companionway.net/post/fixing_web_images/</guid>
+      <description>&lt;h1 id=&#34;quick-fix-for-web-images&#34;&gt;Quick Fix for Web images&lt;/h1&gt;
+&lt;p&gt;The tool of choice is mogrify which come from the imagemagic package on your linux platform.&lt;/p&gt;
+&lt;p&gt;I had one image that looked fine when I displayed it using display tools in linux but when placed into a webpage the image would be reversed.&lt;/p&gt;
+&lt;p&gt;I tried using css style transform: auto-orient; but all attempts failed. My css files are complicated to the point where even I get lost. So  I needed to find another external solution.&lt;/p&gt;
+&lt;p&gt;It seems that the jpg image file had an internal orientation that refused to be respected by any web server.&lt;/p&gt;
+&lt;p&gt;The solution was to transform the file using:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mogrify -rotate &lt;span style=&#34;color:#ae81ff&#34;&gt;180&lt;/span&gt; path/to/file.jpg
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This reversed the image externally and now both bash display command and any web server displays the file correctly. Problem solved.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Managing Vim and Essential Plugins</title>

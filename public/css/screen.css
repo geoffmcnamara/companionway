@@ -65,7 +65,9 @@ sub, sup {
 }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
-img { border: 0; }
+img { border: 0;
+    image-orientation: from-image;
+  }
 svg:not(:root) { overflow: hidden; }
 figure { margin: 0; }
 fieldset {
@@ -1182,9 +1184,13 @@ body:not(.post-template) .post-title {
        Works for images that are larger than their containers. */
     position: relative;
     left: 50%;
-    -webkit-transform: translateX(-50%); /* for Safari and iOS */
-    -ms-transform: translateX(-50%); /* for IE9 */
-    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%); /* [>for Safari and iOS <] */
+    -ms-transform: translateX(-50%); /* [>  for IE9 <] */
+    transform: translateX(-50%); /* [> <] */
+  }
+
+.rotate {
+    transform: rotate(180deg);
 }
 
 /* The author credit area after the post */
@@ -1839,9 +1845,9 @@ body:not(.post-template) .post-title {
 
     .post-content img {
         padding: 0;
-        width: calc(100% + 32px); /* expand with to image + margins */
+        width: calc(100% + 32px); /* [> expand with to image + margins <] */
         min-width: 0;
-        max-width: 112%; /* fallback when calc doesn't work */
+        max-width: 112%; /* [> fallback when calc doesn't work < ] */
     }
 
     .post-meta {
