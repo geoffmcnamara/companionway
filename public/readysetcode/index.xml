@@ -7,18 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2019</copyright>
-    <lastBuildDate>Mon, 22 Apr 2019 10:25:53 -0400</lastBuildDate>
-    
-	<atom:link href="https://www.companionway.net/readysetcode/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 22 Apr 2019 10:25:53 -0400</lastBuildDate><atom:link href="https://www.companionway.net/readysetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How the heck does async/await work in Python 3.5?</title>
       <link>https://www.companionway.net/readysetcode/1/</link>
       <pubDate>Mon, 22 Apr 2019 10:24:00 -0400</pubDate>
       
       <guid>https://www.companionway.net/readysetcode/1/</guid>
-      <description></description>
+      <description>
+This is a great in-depth article/essay on asyncio/await/coroutines in python. Strap on your seat belt and brew a fresh pot.
+Find it here </description>
     </item>
     
     <item>
@@ -27,7 +25,9 @@
       <pubDate>Mon, 22 Apr 2019 10:25:53 -0400</pubDate>
       
       <guid>https://www.companionway.net/readysetcode/20190422/</guid>
-      <description></description>
+      <description>
+This link has a brief summary of apps or projects written in python that are fun, useful, or interesting.
+Find it here </description>
     </item>
     
     <item>
@@ -36,7 +36,9 @@
       <pubDate>Sun, 21 Apr 2019 10:26:17 -0400</pubDate>
       
       <guid>https://www.companionway.net/readysetcode/2/</guid>
-      <description></description>
+      <description>
+Curio is a library for performing concurrent I/O using Python coroutines and the async/await syntax introduced in Python 3.5. Its programming model is based on existing system programming abstractions such as threads, sockets, files, locks, and queues.
+Find it here </description>
     </item>
     
     <item>
@@ -45,7 +47,10 @@
       <pubDate>Sat, 20 Apr 2019 10:27:08 -0400</pubDate>
       
       <guid>https://www.companionway.net/readysetcode/3/</guid>
-      <description></description>
+      <description> This is intended as a quick reference and showcase. Quick-n-simple.
+Find it here  
+This is intended as a quick reference and showcase. Quick-n-simple.
+Find it here </description>
     </item>
     
   </channel>

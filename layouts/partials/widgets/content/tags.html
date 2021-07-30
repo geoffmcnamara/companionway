@@ -1,3 +1,4 @@
+{{ printf "<!-- **widgets/content/tags** -->"  | safeHTML }}
 {{ if eq .Type "post" }}
     <ul class="list-inline tags" style="margin-top: 15px; margin-left: 0px">
         {{ range .Params.tags }}
@@ -5,3 +6,4 @@
         {{ end }}
     </ul>
 {{ end }}
+{{ printf "<!-- **EOB widgets/content/tags** -->"  | safeHTML }}

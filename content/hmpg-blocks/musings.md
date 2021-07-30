@@ -9,13 +9,13 @@ weight = 60
 author = "wocos"
 comments = false
 share = false
-
+# this "section" block uses shortcode
+# see content/musings/*.md for content
 +++
 
-<hr>
-<!-- <div style="background: lightslategray;"> -->
-<div class="content_margin">
-<center><h1 style="background: #FFAA55; font-family: Philosopher;">"Musings"</center>
+<hr class="green5">
+<div style="background: lightslategray;" class="content_margin">
+<center><h2 style="background: #FFAA55; font-family: Philosopher;">"Musings"</center>
 </div>
 
 {{< musings >}}

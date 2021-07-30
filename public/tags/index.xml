@@ -7,10 +7,51 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2019</copyright>
-    <lastBuildDate>Fri, 12 Apr 2019 08:09:20 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jul 2021 12:16:00 +0000</lastBuildDate><atom:link href="https://www.companionway.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>history</title>
+      <link>https://www.companionway.net/tags/history/</link>
+      <pubDate>Wed, 21 Jul 2021 12:16:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/tags/history/</guid>
+      <description></description>
+    </item>
     
-	<atom:link href="https://www.companionway.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>musings</title>
+      <link>https://www.companionway.net/tags/musings/</link>
+      <pubDate>Sun, 18 Jul 2021 21:14:04 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/tags/musings/</guid>
+      <description></description>
+    </item>
     
+    <item>
+      <title>vaccination</title>
+      <link>https://www.companionway.net/tags/vaccination/</link>
+      <pubDate>Sun, 18 Jul 2021 21:14:04 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/tags/vaccination/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>financial</title>
+      <link>https://www.companionway.net/tags/financial/</link>
+      <pubDate>Mon, 28 Jun 2021 14:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/tags/financial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>python</title>
+      <link>https://www.companionway.net/tags/python/</link>
+      <pubDate>Mon, 28 Jun 2021 14:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/tags/python/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>plugins</title>
@@ -139,15 +180,6 @@
     </item>
     
     <item>
-      <title>python</title>
-      <link>https://www.companionway.net/tags/python/</link>
-      <pubDate>Thu, 22 Dec 2016 14:08:05 -0500</pubDate>
-      
-      <guid>https://www.companionway.net/tags/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>raspberry</title>
       <link>https://www.companionway.net/tags/raspberry/</link>
       <pubDate>Fri, 16 Dec 2016 12:27:36 -0500</pubDate>
@@ -247,15 +279,6 @@
     </item>
     
     <item>
-      <title>financial</title>
-      <link>https://www.companionway.net/tags/financial/</link>
-      <pubDate>Mon, 11 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.companionway.net/tags/financial/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>grovepi</title>
       <link>https://www.companionway.net/tags/grovepi/</link>
       <pubDate>Sat, 09 May 2015 10:54:24 +0200</pubDate>
@@ -270,6 +293,33 @@
       <pubDate>Sat, 02 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://www.companionway.net/tags/awk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>diversification</title>
+      <link>https://www.companionway.net/tags/diversification/</link>
+      <pubDate>Fri, 11 Jul 2014 10:54:24 +0200</pubDate>
+      
+      <guid>https://www.companionway.net/tags/diversification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>financial general</title>
+      <link>https://www.companionway.net/tags/financial-general/</link>
+      <pubDate>Fri, 11 Jul 2014 10:54:24 +0200</pubDate>
+      
+      <guid>https://www.companionway.net/tags/financial-general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>protect your principal</title>
+      <link>https://www.companionway.net/tags/protect-your-principal/</link>
+      <pubDate>Fri, 11 Jul 2014 10:54:24 +0200</pubDate>
+      
+      <guid>https://www.companionway.net/tags/protect-your-principal/</guid>
       <description></description>
     </item>
     

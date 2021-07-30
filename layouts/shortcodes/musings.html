@@ -1,30 +1,29 @@
-<!-- DEBUG layouts/shortcode/musing.html -->
-<!--<div class class="container content_margin">-->
-  <section >
-    <!-- .rows and .columns -->
-    <div class="row content_margin">
+{{ printf "<!--**scode:musing**-->" | safeHTML }}
+<div class class="container">
+  <section class="call-to-action"> <!-- .rows and .columns -->
+    <div class="row">
     <!--{ { $posts := .Paginate (where .Data.Pages "Type" "post") }}-->
-    {{ range first 4 (where .Site.Pages.ByDate.Reverse "Type" "musing") }}
+    {{ range first 4 (where .Site.Pages.ByDate.Reverse "Type" "musings") }}
         {{ if .Params.title }}
-        <div class="col-md-4 col-sm-6">
+        <div class="col-md-4">
             <div class="box-image0text blog">
                 <div class="top">
                     <div class="image" style="overflow:hidden">
                         {{ if .Params.image }}
-                            <img src="{{ .Site.BaseURL}}{{ .Params.image }}" style="height: 300px; width: 450px;" class="img-responsive" alt="">
+                            <img src="{{ .Params.image }}" style="height: 300px; width: 450px;" class="img-responsive" alt="">
                         {{ else }}
-                            <img src="{{ .Site.BaseURL}}/img/placeholder.png" class="img-responsive" alt="">
+                            <img src="/img/placeholder.png" class="img-responsive" alt="">
                         {{ end }}
                     </div> <!-- /.image -->
                     <div class="bg"></div>
                     <div class="text">
                         <p class="buttons">
-                            <a href="{{ .Permalink }}" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
+                            <a href="{{ .RelPermalink }}" class="btn btn-template-transparent-primary"><i class="fa fa-link"></i> Read more</a>
                         </p>
                     </div> <!--/.text/-->
                 </div> <!--/.top/-->
                 <div class="content">
-                    <h4><a href="{{.Permalink}}">
+                    <h4><a href="{{.RelPermalink}}">
                         {{ if .Title }}
                             {{ .Title }}
                         {{else}}
@@ -39,7 +38,7 @@
                     </p>
                     <p class="intro">{{ .Summary | markdownify }}</p>
                     <p class="read-more">
-                    <a href="{{ .Permalink }}" class="btn btn-template-main">Continue reading</a>
+                    <a href="{{ .RelPermalink }}" class="btn btn-template-main">Continue reading</a>
                     </p>
                 </div> <!--/.content/-->
             </div> <!--/.box-image-text blog/ -->
@@ -48,11 +47,9 @@
     {{ end }}
   </div>
 </section>
-
 <center>
     <div class="lsboxit" style="width: 25%">
-        <a href="{{.Site.BaseURL}}/musing/">All: "Musing" Posts</a>
+        <a href="/musings/">All: "Musing" Posts</a>
     </div>
 </center>
-
-<!--</div>-->
+</div>

@@ -1,11 +1,12 @@
-<!--DEBUG: layouts/partials/li.html-->
+{{ printf "<!-- **li** -->" | safeHTML }}
 {{ $baseurl := .Site.BaseURL }}
 <article class="{{ .Section }} content_margin">
 	<header class="post-header">
 		<h2 class="post-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
 	</header>
 	<section class="post-excerpt">
-		<p>{{ .Summary }} <a class="read-more" href="{{.RelPermalink}}">&raquo;</a></p>
+        <!-- I don't know why but this Summary seems to fail markdownify -->
+		<p>{{ .Summary | markdownify }} <a class="read-more" href="{{.RelPermalink}}">&raquo;</a></p>
 	</section>
 	<footer class="post-meta">
 		{{$author:= .Site.Params.author}}
@@ -35,3 +36,4 @@
 		</time>
 	</footer>
 </article>
+{{ printf "<!-- **EOB li** -->" | safeHTML }}

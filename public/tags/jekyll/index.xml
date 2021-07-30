@@ -7,19 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2019</copyright>
-    <lastBuildDate>Fri, 09 Dec 2016 10:57:45 -0500</lastBuildDate>
-    
-	<atom:link href="https://www.companionway.net/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 09 Dec 2016 10:57:45 -0500</lastBuildDate><atom:link href="https://www.companionway.net/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Switched to Hugo</title>
-      <link>https://www.companionway.net/post/switched-to-hugo/</link>
+      <link>https://www.companionway.net/posts/switched-to-hugo/</link>
       <pubDate>Fri, 09 Dec 2016 10:57:45 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/switched-to-hugo/</guid>
+      <guid>https://www.companionway.net/posts/switched-to-hugo/</guid>
       <description>&lt;p&gt;I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
-&lt;!-- raw HTML omitted --&gt;&lt;img src=&#34;https://www.companionway.net/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;../../img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Here is why:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;It comes as a binary file that runs on pretty much any platform. A single file&amp;hellip; without a list of dependencies&lt;/li&gt;

@@ -1,4 +1,4 @@
-DEBUG: layouts/readysetcode/lists.html
+{{ printf "<!-- **readysetcode/list** -->"  | safeHTML }}
 {{ partial "header.html" . }}
 {{ $baseurl := .Site.BaseURL }}
 
@@ -34,6 +34,7 @@ DEBUG: layouts/readysetcode/lists.html
 <div class="vertical">
     <div class="main-header-content inner">
         <h1 class="page-title">Ready, Set, Code... Posts</h1>
+        {{ printf "<!-- layouts/readysetcode/list.html -->" | safeHTML }}
         <h2 class="page-description">
         {{if .Params.description}}
             {{.Params.description}}
@@ -58,3 +59,4 @@ DEBUG: layouts/readysetcode/lists.html
 </main>
 
 {{ partial "footer.html" . }}
+{{ printf "<!-- **EOB readysetcode/list** -->"  | safeHTML }}

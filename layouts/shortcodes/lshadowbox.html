@@ -5,5 +5,10 @@
 {{ else }}
 <div class="lsboxit">
 {{ end }}
+{{ if gt (len .Inner) 5 }}
 {{ .Inner | markdownify }}
+{{ end }}
+{{ if .Get "link" }}
+<center><a href="{{ .Get `link` }}">Find it here</a></center>
+{{ end }}
 </div>

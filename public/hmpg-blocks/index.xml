@@ -7,18 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2019</copyright>
-    <lastBuildDate>Wed, 10 Apr 2019 14:00:26 -0400</lastBuildDate>
-    
-	<atom:link href="https://www.companionway.net/hmpg-blocks/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 10 Apr 2019 14:00:26 -0400</lastBuildDate><atom:link href="https://www.companionway.net/hmpg-blocks/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ready, Set, Code</title>
       <link>https://www.companionway.net/hmpg-blocks/readysetcode/</link>
       <pubDate>Wed, 30 Nov 2016 11:20:35 -0500</pubDate>
       
       <guid>https://www.companionway.net/hmpg-blocks/readysetcode/</guid>
-      <description> 36 Amazing Python Open Source Projects (v.2019)  Posted: April 22, 2019      How the heck does async/await work in Python 3.5?  Posted: April 22, 2019      Curio - A Tutorial Introduction  Posted: April 21, 2019         All: &#34;Ready Set Code&#34; Posts   </description>
+      <description>Ready, Set, Code! Recent code related posts on other website that piqued my interest    36 Amazing Python Open Source Projects (v.2019)  Posted: April 22, 2019   
+This link has a brief summary of apps or projects written in python that are fun, useful, or interesting.
+Find it here    How the heck does async/await work in Python 3.5?  Posted: April 22, 2019</description>
     </item>
     
     <item>
@@ -27,7 +25,7 @@
       <pubDate>Wed, 10 Apr 2019 14:00:26 -0400</pubDate>
       
       <guid>https://www.companionway.net/hmpg-blocks/musings/</guid>
-      <description>Read more   Social Trust Game  By wocos on May 16, 2019 This is a very interesting game dealing with social trust, benfits of cooperation, damge of miscommunication, cheating etc. This helps us to understand why in the middle of WWI soldiers from both side stopped fighting on Christmas day… Try this game. If you are like me, you will get sucked in just to find out what the final conclusions are… only takes a few minutes of your valuable time: https://ncase.</description>
+      <description>&#34;Musings&#34;      Read more   Bronze Age Collapse  on July 21, 2021 Where did the cities go? What happen to written language? Is there any other time in history where such a dramatic change in civilization took place? Writing disappeared for centuries (approx 1200 BCE - 800 BCE) so we are unable to know for sure why pervasive devastation around the Mediterranean Sea took place.</description>
     </item>
     
   </channel>

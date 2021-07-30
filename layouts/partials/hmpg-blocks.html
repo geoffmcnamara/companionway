@@ -1,13 +1,17 @@
-<!--DEBUG: parials/hmpg-blocks.html-->
+<!-- DEBUG: parials/hmpg-blocks.html -->
+{{ printf "<!-- **hmpg-blocks** -->" | safeHTML }}
 <!--
 	This is ugly but it works - it means you have to write all the html code in the file.md
 	because there is no template
 	WIP: I want to add contact/location info... etc here?
+    The oreder of thehmpg "section" blocks is by the param weight
 -->
-{{ range where .Data.Pages.ByWeight "Section" "hmpg-blocks" }}
+{{/* hmpg-blocks.html */}}
+{{ range where .Site.Pages.ByWeight "Section" "hmpg-blocks" }}
     <!--{ { if eq .Type "index" }}-->
-     <!--{ { if not .Params.draft }}-->
+     {{ if not .Params.draft }}
        {{ .Content }}
-     <!--{ { end }}-->
+     {{ end }}
     <!--{ { end }}-->
 {{ end }}
+{{ printf "<!-- **EOB hmpg-blocks** -->" | safeHTML }}

@@ -18,37 +18,92 @@
   </url>
   
   <url>
+    <loc>https://www.companionway.net/financial/opening-remarks/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/musings/bronze-age-collapse/</loc>
+    <lastmod>2021-07-21T12:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.companionway.net/</loc>
+    <lastmod>2021-07-21T12:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/history/</loc>
+    <lastmod>2021-07-21T12:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/musings/</loc>
+    <lastmod>2021-07-21T12:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/</loc>
+    <lastmod>2021-07-21T12:16:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/musings/persuasion/</loc>
+    <lastmod>2021-07-19T12:56:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/musings/george_washington_valley_forge_smallpx/</loc>
+    <lastmod>2021-07-18T21:14:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/musings/</loc>
+    <lastmod>2021-07-18T21:14:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/vaccination/</loc>
+    <lastmod>2021-07-18T21:14:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/posts/fixing_web_images/</loc>
     <lastmod>2021-07-17T19:46:42-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/fixing_web_images/</loc>
+    <loc>https://www.companionway.net/posts/</loc>
     <lastmod>2021-07-17T19:46:42-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/</loc>
-    <lastmod>2021-07-17T19:46:42-04:00</lastmod>
+    <loc>https://www.companionway.net/tags/financial/</loc>
+    <lastmod>2021-06-28T14:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/musing/</loc>
-    <lastmod>2019-05-16T08:25:04-04:00</lastmod>
+    <loc>https://www.companionway.net/tags/python/</loc>
+    <lastmod>2021-06-28T14:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/musing/socialgametheory/</loc>
-    <lastmod>2019-05-16T08:25:04-04:00</lastmod>
+    <loc>https://www.companionway.net/posts/python_all_function/</loc>
+    <lastmod>2021-06-28T14:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/musing/20190423/</loc>
+    <loc>https://www.companionway.net/musings/socialgametheory/</loc>
+    <lastmod>2019-05-16T08:25:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/musings/20190423/</loc>
     <lastmod>2019-04-23T20:13:55-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/musing/20190422-1036/</loc>
+    <loc>https://www.companionway.net/musings/20190422-1036/</loc>
     <lastmod>2019-04-22T10:38:31-04:00</lastmod>
   </url>
   
@@ -68,7 +123,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/musing/20190420-1139/</loc>
+    <loc>https://www.companionway.net/musings/20190420-1139/</loc>
     <lastmod>2019-04-20T11:39:57-04:00</lastmod>
   </url>
   
@@ -78,7 +133,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/musing/20190419-1946/</loc>
+    <loc>https://www.companionway.net/musings/20190419-1946/</loc>
     <lastmod>2019-04-19T20:09:05-04:00</lastmod>
   </url>
   
@@ -93,7 +148,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/control_vim_and_plugins/</loc>
+    <loc>https://www.companionway.net/posts/control_vim_and_plugins/</loc>
     <lastmod>2019-04-12T08:09:20-04:00</lastmod>
   </url>
   
@@ -108,11 +163,6 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/tags/</loc>
-    <lastmod>2019-04-12T08:09:20-04:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.companionway.net/tags/vim/</loc>
     <lastmod>2019-04-12T08:09:20-04:00</lastmod>
   </url>
@@ -123,28 +173,23 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/musing/20190409/</loc>
+    <loc>https://www.companionway.net/musings/20190409/</loc>
     <lastmod>2019-04-09T15:21:03-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/vim-plug_quick_setup/</loc>
+    <loc>https://www.companionway.net/posts/vim-plug_quick_setup/</loc>
     <lastmod>2019-03-15T15:07:41-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/quick_note_about_fabric_and_pipenv/</loc>
+    <loc>https://www.companionway.net/posts/quick_note_about_fabric_and_pipenv/</loc>
     <lastmod>2019-03-13T10:56:05-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/using_fabric_to_dynamically_discover_hosts/</loc>
+    <loc>https://www.companionway.net/posts/using_fabric_to_dynamically_discover_hosts/</loc>
     <lastmod>2019-03-12T09:18:43-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/musing/nother/</loc>
-    <lastmod>2019-03-09T14:57:22-04:00</lastmod>
   </url>
   
   <url>
@@ -168,7 +213,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/replace_php_with_wsgi_python/</loc>
+    <loc>https://www.companionway.net/posts/replace_php_with_wsgi_python/</loc>
     <lastmod>2018-11-20T10:54:24+02:00</lastmod>
   </url>
   
@@ -178,7 +223,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/git_pre-commit/</loc>
+    <loc>https://www.companionway.net/posts/git_pre-commit/</loc>
     <lastmod>2018-10-07T10:05:52-04:00</lastmod>
   </url>
   
@@ -198,7 +243,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/vim_ale/</loc>
+    <loc>https://www.companionway.net/posts/vim_ale/</loc>
     <lastmod>2018-08-08T09:30:10-04:00</lastmod>
   </url>
   
@@ -213,17 +258,17 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/vim_scriptable_templates/</loc>
+    <loc>https://www.companionway.net/posts/vim_scriptable_templates/</loc>
     <lastmod>2018-07-15T14:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/hugo_and_fabric/</loc>
+    <loc>https://www.companionway.net/posts/hugo_and_fabric/</loc>
     <lastmod>2018-07-14T15:33:19-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/fabric_vs_ansible/</loc>
+    <loc>https://www.companionway.net/posts/fabric_vs_ansible/</loc>
     <lastmod>2018-07-10T09:30:14-04:00</lastmod>
   </url>
   
@@ -233,7 +278,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/newspaper-hugo-subtheme/</loc>
+    <loc>https://www.companionway.net/posts/newspaper-hugo-subtheme/</loc>
     <lastmod>2017-11-03T10:54:24+02:00</lastmod>
   </url>
   
@@ -273,12 +318,12 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/post-title/</loc>
+    <loc>https://www.companionway.net/posts/post-title/</loc>
     <lastmod>2017-01-11T14:27:35-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/sorting_ips/</loc>
+    <loc>https://www.companionway.net/posts/sorting_ips/</loc>
     <lastmod>2017-01-01T15:53:14-05:00</lastmod>
   </url>
   
@@ -288,12 +333,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/tags/python/</loc>
-    <lastmod>2016-12-22T14:08:05-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/post/quick-n-dirty-python-debug-function/</loc>
+    <loc>https://www.companionway.net/posts/quick-n-dirty-python-debug-function/</loc>
     <lastmod>2016-12-22T14:08:05-05:00</lastmod>
   </url>
   
@@ -303,7 +343,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/raspberry-pi-and-xrdp/</loc>
+    <loc>https://www.companionway.net/posts/raspberry-pi-and-xrdp/</loc>
     <lastmod>2016-12-16T12:27:36-05:00</lastmod>
   </url>
   
@@ -318,12 +358,12 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/sometimes-it-is-the-obvious/</loc>
+    <loc>https://www.companionway.net/posts/sometimes-it-is-the-obvious/</loc>
     <lastmod>2016-12-15T16:36:42-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/always-use-visudo/</loc>
+    <loc>https://www.companionway.net/posts/always-use-visudo/</loc>
     <lastmod>2016-12-14T10:59:38-05:00</lastmod>
   </url>
   
@@ -338,7 +378,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/recursive-replace-text/</loc>
+    <loc>https://www.companionway.net/posts/recursive-replace-text/</loc>
     <lastmod>2016-12-10T20:38:12-05:00</lastmod>
   </url>
   
@@ -368,7 +408,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/switched-to-hugo/</loc>
+    <loc>https://www.companionway.net/posts/switched-to-hugo/</loc>
     <lastmod>2016-12-09T10:57:45-05:00</lastmod>
   </url>
   
@@ -378,17 +418,12 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/converting-images/</loc>
+    <loc>https://www.companionway.net/posts/converting-images/</loc>
     <lastmod>2016-12-06T11:58:20-05:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/tags/financial/</loc>
-    <lastmod>2015-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/post/2015-05-11-post1/</loc>
+    <loc>https://www.companionway.net/posts/2015-05-11-post1/</loc>
     <lastmod>2015-05-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -398,7 +433,7 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/grovepi/</loc>
+    <loc>https://www.companionway.net/posts/grovepi/</loc>
     <lastmod>2015-05-09T10:54:24+02:00</lastmod>
   </url>
   
@@ -408,51 +443,87 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/2015-05-02-post1/</loc>
+    <loc>https://www.companionway.net/posts/2015-05-02-post1/</loc>
     <lastmod>2015-05-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/2015-04-30-post1/</loc>
+    <loc>https://www.companionway.net/posts/2015-04-30-post1/</loc>
     <lastmod>2015-04-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/2015-04-28-post1/</loc>
+    <loc>https://www.companionway.net/posts/2015-04-28-post1/</loc>
     <lastmod>2015-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/2015-04-02-post1/</loc>
+    <loc>https://www.companionway.net/posts/2015-04-02-post1/</loc>
     <lastmod>2015-04-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/page/about/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/post/2015-04-05-post1/</loc>
-  </url>
-  
-  <url>
-    <loc>https://www.companionway.net/post/2015-04-17-post1/</loc>
-  </url>
-  
-  <url>
     <loc>https://www.companionway.net/categories/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/2015-04-27-post1/</loc>
+    <loc>https://www.companionway.net/tags/diversification/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/2015-04-26-post1/</loc>
+    <loc>https://www.companionway.net/financial/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/page/dlfiles/</loc>
+    <loc>https://www.companionway.net/categories/financial/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/financial-general/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/financial/buffett/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/financial/minimize_risk/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/tags/protect-your-principal/</loc>
+    <lastmod>2014-07-11T10:54:24+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/pages/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/posts/2015-04-05-post1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/posts/2015-04-17-post1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/posts/2015-04-27-post1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/posts/2015-04-26-post1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.companionway.net/pages/dlfiles/</loc>
   </url>
   
   <url>
@@ -460,35 +531,35 @@
   </url>
   
   <url>
-    <loc>https://www.companionway.net/page/links/</loc>
+    <loc>https://www.companionway.net/pages/links/</loc>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/2015-04-26-post2/</loc>
+    <loc>https://www.companionway.net/posts/2015-04-26-post2/</loc>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/page/</loc>
+    <loc>https://www.companionway.net/pages/</loc>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/page/projects/</loc>
+    <loc>https://www.companionway.net/pages/projects/</loc>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/2015-04-15-post1/</loc>
+    <loc>https://www.companionway.net/posts/2015-04-15-post1/</loc>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/2015-04-23-post1/</loc>
+    <loc>https://www.companionway.net/posts/2015-04-23-post1/</loc>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/2015-04-22-post1/</loc>
+    <loc>https://www.companionway.net/posts/2015-04-22-post1/</loc>
   </url>
   
   <url>
-    <loc>https://www.companionway.net/post/2015-04-21-post1/</loc>
+    <loc>https://www.companionway.net/posts/2015-04-21-post1/</loc>
   </url>
   
 </urlset>

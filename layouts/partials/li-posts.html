@@ -1,4 +1,4 @@
-<!--DEBUG: layouts/partials/li-posts.html-->
+{{ printf "<!-- **li-posts** -->" | safeHTML }}
 {{ $baseurl := .Site.BaseURL }}
 <article class="{{ .Section }}">
 	<header class="post-header">
@@ -39,3 +39,4 @@
 		</time>
 	</footer>
 </article>
+{{ printf "<!-- **EOB li-posts** -->" | safeHTML }}

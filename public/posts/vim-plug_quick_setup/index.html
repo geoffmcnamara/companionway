@@ -1,0 +1,506 @@
+<!-- **_default/single** -->
+<!DOCTYPE html>
+<!-- **header** -->
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		
+
+
+    
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.companionway.net/img/fisa-vimrc.jpg" />
+    
+
+
+<meta name="twitter:title" content="Vim-Plug Quick Setup" />
+
+
+
+		<meta property="og:title" content="
+             
+                Vim-Plug Quick Setup 
+                &middot; 
+             
+            companionway" />
+		<meta property="og:site_name" content="companionway" />
+		<meta property="og:url" content="https://www.companionway.net/posts/vim-plug_quick_setup/" />
+		
+            <meta property="og:type" content="article" />
+            <meta property="og:article:published_time" content="2019-03-15T15:07:41-04:00" />
+            
+		
+		<title>
+             
+                Vim-Plug Quick Setup 
+                &middot; 
+            
+            companionway
+        </title>
+		<meta name="description" content="Meeting challenges with success!" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="https://www.companionway.net/img/favicon.ico">
+		<link rel="apple-touch-icon" href="https://www.companionway.net/img/apple-touch-icon.png" />
+		<!-- **styles** --> 
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/screen.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/nav.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="../../css/custom.css" /> 
+<!-- **EOB styles** -->
+
+		
+		
+            <link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
+		
+		
+    
+    <meta name="generator" content="Hugo 0.80.0" />
+    <link rel="canonical" href="https://www.companionway.net/posts/vim-plug_quick_setup/" />
+    <!-- **fonts** --> 
+<link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Architects Daughter" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Philosopher">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<!-- **EOB fonts** -->
+
+
+        
+            
+            
+                <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                ga('create', 'UA-6970218-1', 'auto');
+                ga('send', 'pageview');
+                </script>
+                
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-6970218-1"></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'UA-6970218-1');
+                  gtag('set', {'user_id': 'USER_ID'}); 
+                </script>
+            
+        
+		
+	</head>
+	<body class="nav-closed">
+        
+		
+<!-- **navigation** -->
+<div class="nav">
+	<h3 class="nav-title">Menu</h3>
+	<a href="#" class="nav-close">
+		<span class="hidden">Close</span>
+	</a>
+	<ul>
+		
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../">Home</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../posts">Posts</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../pages/about/">About</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../pages/dlfiles/">Download Files</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../financial/">Financial</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../pages/links/">Links</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../articles/">Newspaper</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../posts/">Posts</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../pages/projects/">Projects</a>
+            </li>
+		
+	</ul>
+	
+        <a class="subscribe-button icon-feed" href="https://www.companionway.netindex.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+<!-- **EOB navigation** -->
+
+		<div class="site-wrapper">
+<!-- **EOB header** -->
+
+
+
+
+	<header class="main-header post-head" style="background-image: url(https://www.companionway.net/img/fisa-vimrc.jpg)">
+		
+		<nav class="main-nav overlay clearfix">
+			
+					
+					<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
+					
+					
+					<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+					
+                </nav>
+            </header>
+            <div class="content_margin">
+			<main class="content" role="main">
+				<article class="posts">
+					<header class="post-header">
+						<h1 class="post-title">Vim-Plug Quick Setup</h1>
+						<small></small>
+						<section class="post-meta">
+							
+							
+						</section>
+					</header>
+					<section class="post-content">
+						<p>I want you to try this .vimrc setup.</p>
+<p>I have had my own .vimrc for years. I recently came across <a href="http://fisadev.github.io/fisa-vim-config/">fisa-vim-config</a>
+and ended up dropping my extensive .vimrc, adopting the one above and adding a few tweaks to make it friendly to me. I
+was actually looking for more ALE-fixers when I found this gem.</p>
+<p>It is simple, self installing and very powerful due to the vim Plugins that are installed and loaded.</p>
+<p>Here are the steps I want you to try&hellip; trust me here.</p>
+<ul>
+<li>mv ~/.vimrc MyOld.vimrc # or whatever your favorite backup scheme is I actually name mine with a date eg 20190315.vimrc</li>
+<li>mv ~/.vim MyOld.vim</li>
+<li>download fisa-vim-config and replace your old ~/.vimrc</li>
+<li>run vim on any file you want</li>
+</ul>
+<p>Much credit to the author of fisa-vim-config: Juan Pedro Fisanotti!</p>
+<p><img src="../../img/vim-plug-sized.gif" alt="Just a small sample of what can be done"></p>
+<p>There is more to do here but if you do those steps you will see lots of new Vim Plugins get loaded automagically.</p>
+<p>You can actually remove the ~/.vim (it has root owned .git subdirectories so you will have to force remove the directory).<br>
+Run vim again and your ~/.vim directoy will automagically get built out again.</p>
+<p>Now tweak your shinny new ~/.vimrc file.
+First I want vim to remember where I left off in a file and put the cursor there when I return to that file.  Add this to the end of ~/.vimrc.</p>
+<pre><code>&quot; ======= remember cursor position and viminfo settings  ========
+&quot; Tell vim to remember certain things when we exit using set viminfo=
+&quot;  '10  :  marks will be remembered for up to 10 previously edited files
+&quot;  \&quot;100 :  will save up to 100 lines for each register
+&quot;  :20  :  up to 20 lines of command-line history will be remembered
+&quot;  %    :  saves and restores the buffer list
+&quot;  n... :  where to save the viminfo files
+set viminfo='10,\&quot;100,:20,%,n~/.vim/dirs/viminfo
+&quot; now function that restores the cursor position and its autocmd so that it gets triggered:
+function! ResCur()
+if line(&quot;'\&quot;&quot;) &lt;= line(&quot;$&quot;)
+  normal! g`&quot;
+  return 1
+  endif
+endfunction
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
+&quot; ======= EOB remember settings ================
+</code></pre><p>Note: the file viminfo line is supplanting the viminfo line already in fisa-vim-config vimrc.</p>
+<p>You good folks probably know that I am a huge fan of vim ale so lets add that plugin&hellip; this so easy!
+#end()
+You have to add this between the start [<code>call plug#begin('~/.vim/plugged')</code>] and the end [<code>call plug#end()</code>] of the Vim plugins section.</p>
+<pre><code>&quot; ALE for vim
+Plug 'https://github.com/w0rp/ale.git'
+</code></pre><p>I didn&rsquo;t care for the color schemes and some other annoying or problematic Plugs so&hellip;</p>
+<ul>
+<li>commented out all the references to it using .vimrc comment character which is the double quote.</li>
+<li>commented out the <code>set nu</code> to stop the line numbering.</li>
+<li>commented out the Plug &hellip; syntastic &hellip; line as it caused conflicts on large code files</li>
+<li>commented out some of the backup and swp file settings.</li>
+</ul>
+<p>Then I added a few of my own tweaks:</p>
+<pre><code>&quot; numbers on or off
+nnoremap &lt;Leader&gt;nn :set nonumber&lt;CR&gt;
+nnoremap &lt;Leader&gt;sn :set number&lt;CR&gt;
+
+&quot; toggle neocomplcache pop up boxes
+nnoremap &lt;Leader&gt;nt :NeoComplCacheToggle&lt;CR&gt;
+
+&quot; ALEToggle
+nnoremap &lt;Leader&gt;at :ALEToggle&lt;CR&gt;
+
+</code></pre><p>Oh, and one more significant change. For python editing I added this ftplugin file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/.vim/ftplugin
+</code></pre></div><p>Then <code>vim ~/.vim/ftplugin/python.vim</code> and add:</p>
+<pre><code>let b:ale_linters = ['flake8']
+let b:ale_fixers = [
+\   'remove_trailing_lines',
+\   'isort',
+\   'ale#fixers#generic_python#BreakUpLongLines',
+\   'yapf',
+\]
+&quot; be careful with this - it can get wonky and you may have to :q! to avoid writing out errors
+nnoremap &lt;buffer&gt; &lt;silent&gt; &lt;LocalLeader&gt;= :ALEFix&lt;CR&gt;
+</code></pre><p>That last line allows me to run the <code>vim &lt;leader&gt;=</code> (ie = ) and automagically lots of fixes occur to my python code.</p>
+<p>Within vim you can run <code>:ALEInfo</code> and get LOTS of useful information and suggestions.
+I loaded all the suggestions and oneof the most useful for python is &lsquo;yapf&rsquo;.
+I don;t remeber exatcly how I installed it but my guess is somthing like this:</p>
+<pre><code>sudo -H pip3 install yapf
+</code></pre><p>I might have change Airline status line a bit too, but you do what you want:</p>
+<pre><code>&quot; Airline ------------------------------
+&quot; apt.sh -i powerline fonts-powerline # to get what you will need here
+&quot;let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
+&quot;let g:airline_theme = 'bubblegum'
+&quot;let g:airline_theme = 'base16'
+let g:airline_theme = 'papercolor'
+let g:airline#extensions#whitespace#enabled = 0
+
+&quot; to use fancy symbols for airline, uncomment the following lines and use a
+&quot; patched font (more info on the README.rst)
+if !exists('g:airline_symbols')
+   let g:airline_symbols = {}
+endif
+&quot;let g:airline_left_sep = '⮀'
+&quot;let g:airline_left_alt_sep = '⮁'
+&quot;let g:airline_right_sep = '⮂'
+&quot;let g:airline_right_alt_sep = '⮃'
+&quot;let g:airline_symbols.branch = '⭠'
+&quot;let g:airline_symbols.readonly = '⭤'
+&quot;let g:airline_symbols.linenr = '⭡'
+</code></pre><p>And make sure you still have 256 colors:</p>
+<pre><code>&quot; use 256 colors when possible
+if (&amp;term =~? 'mlterm\|xterm\|xterm-256\|screen-256') || has('nvim')
+    let &amp;t_Co = 256
+&quot;    colorscheme fisa
+&quot;else
+&quot;    colorscheme delek
+endif
+</code></pre><p>Add this line to the Tagbar section to have navigation a little less intrusive:</p>
+<pre><code>let g:tagbar_autoclose = 1
+</code></pre><p>Oh, at this point there is one thing you may want to do and that is make a backup copy of your ~./vim/ftplug dir.
+The reason is, you can still forcefully remove .vim directory and it will get rebuilt by your .vimrc BUT it won;t
+rebuild your.vim/ftplugin directory.</p>
+<p>Ummm, one other item I finaly had to change. I turned neocomlcache off by default because it just got to obnoxious:
+If you are the same way, do this change:</p>
+<pre><code>let g:neocomplcache_enable_at_startup = 0
+</code></pre><p>`
+Take time to appreciate some of the plugins:</p>
+<ul>
+<li>Airline is giving you the status lines Try <code>:help Airline</code></li>
+<li>TagBar is another useful tool for large code files. While editing some code try <code>:TagBar</code> and use it to navigate
+through your code.</li>
+</ul>
+<p>If you want to see the power you now hold in your knapsack&hellip;
+<code>:map</code></p>
+<p>Here is some quick fun vim&hellip; from the command line:</p>
+<pre><code>vim -O ~/.vimrc ~/.vim/ftplugin/python.py ./.bashrc
+</code></pre><p>Then hit &lsquo;-&rsquo;, yes, just hit &lsquo;-&rsquo;. Slick!</p>
+<p>BTW You can update all these Plugins while in vim with <code>:PlugUdate</code>
+And you can upgrade vim-plug itself with <code>:PlugUpgrade</code>.
+You can get help for any of the ALE* commands eg. <code>:help ALEFixSuggest</code></p>
+<p>Let me know if I forgot something or should make changes.</p>
+<p>-=* Enjoy! *=-</p>
+<p>-g-
+<a href="mailto:geoff.mcnamara@gmail.com">geoff.mcnamara@gmail.com</a>:</p>
+					</section>
+					<footer class="post-footer">
+						
+						<figure class="author-image">
+							<a class="img" href="https://www.companionway.net" style="background-image: url(https://www.companionway.net/img/sailboat.png)"><span class="hidden">Geoff McNamara's Picture</span></a>
+						</figure>
+						
+						
+
+
+
+
+
+<section class="author">
+<h4><a href="https://www.companionway.net">Geoff McNamara</a></h4>
+
+<p>&#34;Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien</p>
+
+<div class="author-meta">
+
+<i class="fa fa-map-marker"></i>
+
+<span class="author-location">Elizabeth City, NC
+</span>
+
+
+<i class="fa fa-link"></i>
+<span class="author-link"><a href="https://www.companionway.net">https://www.companionway.net</a></span>
+
+
+</div>
+</section>
+
+
+						
+
+<section class="share">
+	<h4>Share this posts</h4>
+    
+    <a class="bloglogo" href="https://twitter.com/geoffmcnamara" target="_blank">
+        <i class="fab fa-twitter fa-1x" style="color:green;"></i>
+    </a>
+    &nbsp;
+    
+    
+	 <a class="bloglogo" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.companionway.net%2fposts%2fvim-plug_quick_setup%2f">
+		<i class="fab fa-facebook fa-1x" style="color:blue;"></i>
+	</a>
+    &nbsp;
+    
+    
+	 <a class="bloglogo" href="https://www.linkedin.com/in/companionway" target="_blank">
+        <i class="fab fa-linkedin fa-1x" style="color:red;"></i>
+    </a>
+    &nbsp;
+    
+    
+    <a class="bloglogo" href="https://github.com/geoffmcnamara" target="_blank">
+        <i class="fab fa-github fa-1x" style="color:orange;"></i>
+    </a>
+    &nbsp;
+    
+</section>
+
+
+						
+
+<div id="disqus_thread"></div>
+<i class="fa fa-comment"></i>
+
+
+
+	<script type="text/javascript">
+		
+
+
+
+(function() { 
+	var d = document, s = d.createElement('script');
+	s.src = 'https://companionway-net.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+	
+	
+
+					</footer>
+				</article>
+			</main>
+        </div>
+			<!-- **footer** -->
+<!-- **scripts** -->
+<script type="text/javascript" src="https://www.companionway.net/js/jquery.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/index.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script>
+<script type="text/javascript" src="https://www.companionway.net/js/custom.js"></script>
+<script id="dsq-count-scr" src="//companionway-net.disqus.com/count.js" async></script>
+<!-- **EOB scripts** -->
+
+
+
+
+<section class="share">
+<hr>
+	<center>
+	<h4>Credits:</h4>
+	
+	<a href="https://www.netlify.com">
+	  <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" height="62" title="netlify"/>
+	</a>
+
+	
+	<a href="http://www.hugo.org">
+        <img src="https://www.companionway.net/img/hugo-logo.png" height="62" title="Hugo"/>
+	</a>
+
+	
+	<a href="https://github.com/w0rp/ale">
+    <img src="https://www.companionway.net/img/ale-logo.jpg" height="62" title="vim Ale"/>
+	</a>
+
+	
+	<a href="http://www.fabfile.org">
+	  <img src="https://www.companionway.net/img/fabric-logo.png" height="62" title="Python Fabric"/>
+	</a>
+
+	
+
+	
+	<a href="https://github.com">
+	  <img src="https://www.companionway.net/img/github-logo.jpg" height="62" title="github"/>
+	</a>
+
+
+	
+  <a href="https://git-scm.com"/>
+    <img src="https://www.companionway.net/img/git-logo.png" height="62" title="git"/>
+	</a>
+
+	
+  <a href="https://codepen.io/"/>
+    <img src="https://www.companionway.net/img/codepen-logo.png" height="62" title="codepen"/>
+	</a>
+
+	
+	</center>
+<hr>
+</section>
+
+
+
+<footer class="site-footer clearfix">
+	<center>
+		<div id="site-footer">
+			<hr style="padding: 0px; margin: 0px;">
+			<span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+			<span>
+				
+				All rights reserved - companionway - 2019
+				
+			</span>
+			<hr style="padding: 0px; margin: 0px;">
+		</div>
+	</center>
+	
+
+</footer>
+</div> 
+</body>
+</html>
+<!-- **EOB footer** -->
+
+<!-- **EOB _default/single** -->

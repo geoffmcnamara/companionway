@@ -1,12 +1,10 @@
-<!-- _default/single.html -->
-<!--- we are in _default/single.html now -->
+{{ printf "<!-- **_default/single** -->"  | safeHTML }}
 {{ partial "header.html" . }}
 {{ $baseurl := .Site.BaseURL }}
-
 {{if .Params.image}}
 {{if or (eq (substr .Params.image 0 7) "http://") (eq (substr .Params.image 0 8) "https://")}}
-<header class="main-header post-head" style="background-image: url({{.Params.image}})">
-	{{ else }}
+    <header class="main-header post-head" style="background-image: url({{.Params.image}})">
+{{ else }}
 	<header class="main-header post-head" style="background-image: url({{ $baseurl }}{{.Params.image}})">
 		{{ end }}
 		<nav class="main-nav overlay clearfix">
@@ -14,7 +12,6 @@
 			<header class="main-header post-head no-cover">
 				<nav class="main-nav clearfix">
 					{{end}}
-
 					{{ if .Site.Params.logo }}
 					<a class="blog-logo" href="{{.Site.BaseURL}}"><img src="{{.Site.BaseURL}}{{ .Site.Params.logo }}" alt="Home" /></a>
 					{{end}}
@@ -23,18 +20,14 @@
 					{{else}}
 					<a class="menu-button icon-feed" href="{{ .Site.BaseURL }}index.xml">&nbsp;&nbsp;Subscribe</a>
 					{{end}}
-				</nav>
-			</header>
-
-
-
+                </nav>
+            </header>
             <div class="content_margin">
 			<main class="content" role="main">
 				<article class="{{ .Section }}">
 					<header class="post-header">
 						<h1 class="post-title">{{.Title}}</h1>
 						<small>{{.Description}}</small>
-
 						<section class="post-meta">
 							{{ if eq .Section "post"}}
 							<time class="post-date" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }}">
@@ -46,30 +39,21 @@
 							{{ end }}
 						</section>
 					</header>
-
 					<section class="post-content">
 						{{ .Content }}
 					</section>
-
-
 					<footer class="post-footer">
-
-
 						{{if .Site.Params.logo}}
 						<figure class="author-image">
 							<a class="img" href="{{.Site.BaseURL}}" style="background-image: url({{ $baseurl }}{{.Site.Params.logo}})"><span class="hidden">{{.Site.Params.author}}'s Picture</span></a>
 						</figure>
 						{{end}}
-
 						{{ partial "author.html" . }}
-
 						{{ partial "share.html" . }}
-
 						{{ partial "disqus.html" . }}
-
 					</footer>
 				</article>
-
 			</main>
         </div>
 			{{ partial "footer.html" . }}
+{{ printf "<!-- **EOB _default/single** -->"  | safeHTML }}

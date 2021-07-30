@@ -1,0 +1,35 @@
+<!--
+    This shortcode is called eg: { { fa money 2 } }
+    This uses fa.html with params name "money" and size "2"
+    Then if inserts fontawesome (fa) money with size 2
+    It just tells what fontawesome icon to use and what size
+fontawesome shortcode
+param1 = name
+param2 = size
+-->
+
+<!-- Part 1 
+params 1-2
+Can be positional or named
+position 0, name: name
+position 1, name: size
+-->
+{{ $numOfParams := len .Params }}
+{{ if and (ge $numOfParams 0) (le $numOfParams 2) }}
+    <!-- Check if the Parameter is positional or named
+    we can handle both. -->
+    {{ if .IsNamedParams }}
+        {{ $.Scratch.Set "name" (.Get "name") }}
+        {{ $.Scratch.Set "size" (.Get "size") }}
+    {{ else }}
+        {{ $.Scratch.Set "name" (.Get 0) }}
+        {{ $.Scratch.Set "size" (.Get 1) }}
+    {{ end }}
+{{ end }}
+
+<!-- Part 2 -->
+{{ $name := $.Scratch.Get "name" }}
+{{ $size := $.Scratch.Get "size" }}
+
+<!-- Main Code -->
+<i class="fa fa-{{ $name }} fa-{{ $size }}x"></i>

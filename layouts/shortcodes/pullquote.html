@@ -1,0 +1,9 @@
+<aside>
+    <p class="dropfirst"><q>
+    {{ .Inner }}
+    </q></p>
+{{ if .Get "author" }}
+<span class="ref">- {{ .Get `author` }}</span>
+{{ end }}
+</aside>
+

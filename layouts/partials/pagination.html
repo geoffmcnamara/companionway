@@ -1,3 +1,4 @@
+{{ printf "<!-- **pagination** -->"  | safeHTML }}
 <nav class="pagination" role="navigation">
 	{{if .HasPrev}}
 	    <a class="newer-posts" href="{{ .Prev.URL }}">&larr; Newer Posts</a>
@@ -7,3 +8,4 @@
 	    <a class="older-posts" href="{{ .Next.URL }}">Older Posts &rarr;</a>
 	{{end}}
 </nav>
+{{ printf "<!-- **EOB pagination** -->"  | safeHTML }}

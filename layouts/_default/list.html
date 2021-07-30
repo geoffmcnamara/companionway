@@ -1,18 +1,17 @@
-<!--DEBUG: ;ayouts/_default/lists.html-->
+{{ printf "<!-- **_default/list** -->"  | safeHTML }}
 {{ partial "header.html" . }}
 {{ $baseurl := .Site.BaseURL }}
-
-{{if .Params.cover}}
-    {{if or (eq (substr .Params.cover 0 7) "http://") (eq (substr .Params.cover 0 8) "https://")}}
-        <header class="main-header tag-head" style="background-image: url({{.Params.cover}})">
+{{if .Params.image}}
+    {{if or (eq (substr .Params.image 0 7) "http://") (eq (substr .Params.image 0 8) "https://")}}
+        <header class="main-header tag-head" style="background-image: url({{.Params.image}})">
     {{ else }}
-        <header class="main-header tag-head" style="background-image: url({{ $baseurl }}{{.Params.cover}})">
+        <header class="main-header tag-head" style="background-image: url({{ $baseurl }}{{.Params.image}})">
     {{ end }}
-{{else if .Site.Params.cover}}
-    {{if or (eq (substr .Site.Params.cover 0 7) "http://") (eq (substr .Site.Params.cover 0 8) "https://")}}
-        <header class="main-header tag-head" style="background-image: url({{.Site.Params.cover}})">
+{{else if .Site.Params.image}}
+    {{if or (eq (substr .Site.Params.image 0 7) "http://") (eq (substr .Site.Params.image 0 8) "https://")}}
+        <header class="main-header tag-head" style="background-image: url({{.Site.Params.image}})">
     {{ else }}
-        <header class="main-header tag-head" style="background-image: url({{ $baseurl }}{{.Site.Params.cover}})">
+        <header class="main-header tag-head" style="background-image: url({{ $baseurl }}{{.Site.Params.image}})">
     {{ end }}
 {{else}}
     <header class="main-header tag-head no-cover">
@@ -34,6 +33,7 @@
 <div class="vertical">
     <div class="main-header-content inner">
         <h1 class="page-title">{{.Title}}</h1>
+        {{ printf "<!-- layouts/_default/list.html -->" | safeHTML }}
         <h2 class="page-description">
         {{if .Params.description}}
             {{.Params.description}}
@@ -47,6 +47,7 @@
 {{ $paginator := .Paginator }}
 
 <div class="extra-pagination inner">
+    {{ printf "<!-- layouts/_default/list.html -->" | safeHTML }}
     {{ partial "pagination.html" $paginator }}
 </div>
 
@@ -58,3 +59,4 @@
 </main>
 
 {{ partial "footer.html" . }}
+{{ printf "<!-- **EOB _default/list** -->"  | safeHTML }}

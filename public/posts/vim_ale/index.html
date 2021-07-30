@@ -1,0 +1,423 @@
+<!-- **_default/single** -->
+<!DOCTYPE html>
+<!-- **header** -->
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		
+
+
+    
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://www.companionway.net/img/ale-logo.jpg" />
+    
+
+
+<meta name="twitter:title" content="Vim ALE" />
+
+
+
+		<meta property="og:title" content="
+             
+                Vim ALE 
+                &middot; 
+             
+            companionway" />
+		<meta property="og:site_name" content="companionway" />
+		<meta property="og:url" content="https://www.companionway.net/posts/vim_ale/" />
+		
+            <meta property="og:type" content="article" />
+            <meta property="og:article:published_time" content="2018-08-08T09:30:10-04:00" />
+            
+                <meta property="og:article:tag" content="vim" />
+            
+                <meta property="og:article:tag" content="ale" />
+            
+                <meta property="og:article:tag" content="linters" />
+            
+                <meta property="og:article:tag" content="markdown" />
+            
+		
+		<title>
+             
+                Vim ALE 
+                &middot; 
+            
+            companionway
+        </title>
+		<meta name="description" content="Meeting challenges with success!" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="shortcut icon" href="https://www.companionway.net/img/favicon.ico">
+		<link rel="apple-touch-icon" href="https://www.companionway.net/img/apple-touch-icon.png" />
+		<!-- **styles** --> 
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/screen.css" />
+<link rel="stylesheet" type="text/css" href="https://www.companionway.net/css/nav.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="../../css/custom.css" /> 
+<!-- **EOB styles** -->
+
+		
+		
+            <link href="https://www.companionway.netindex.xml" rel="alternate" type="application/rss+xml" title="companionway" />
+		
+		
+    
+    <meta name="generator" content="Hugo 0.80.0" />
+    <link rel="canonical" href="https://www.companionway.net/posts/vim_ale/" />
+    <!-- **fonts** --> 
+<link ref="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=EB+Garamond" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Architects Daughter" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine|Open+Sans:300" >
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Philosopher">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<!-- **EOB fonts** -->
+
+
+        
+            
+            
+                <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                ga('create', 'UA-6970218-1', 'auto');
+                ga('send', 'pageview');
+                </script>
+                
+                <script async src="https://www.googletagmanager.com/gtag/js?id=UA-6970218-1"></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'UA-6970218-1');
+                  gtag('set', {'user_id': 'USER_ID'}); 
+                </script>
+            
+        
+		
+	</head>
+	<body class="nav-closed">
+        
+		
+<!-- **navigation** -->
+<div class="nav">
+	<h3 class="nav-title">Menu</h3>
+	<a href="#" class="nav-close">
+		<span class="hidden">Close</span>
+	</a>
+	<ul>
+		
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../">Home</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../posts">Posts</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../pages/about/">About</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../pages/dlfiles/">Download Files</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../financial/">Financial</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../pages/links/">Links</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../articles/">Newspaper</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../posts/">Posts</a>
+            </li>
+		
+            
+            <li class="nav-opened" role="presentation">
+                <a href="../../pages/projects/">Projects</a>
+            </li>
+		
+	</ul>
+	
+        <a class="subscribe-button icon-feed" href="https://www.companionway.netindex.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+<!-- **EOB navigation** -->
+
+		<div class="site-wrapper">
+<!-- **EOB header** -->
+
+
+
+
+	<header class="main-header post-head" style="background-image: url(https://www.companionway.net/img/ale-logo.jpg)">
+		
+		<nav class="main-nav overlay clearfix">
+			
+					
+					<a class="blog-logo" href="https://www.companionway.net"><img src="https://www.companionway.net/img/sailboat.png" alt="Home" /></a>
+					
+					
+					<a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+					
+                </nav>
+            </header>
+            <div class="content_margin">
+			<main class="content" role="main">
+				<article class="posts">
+					<header class="post-header">
+						<h1 class="post-title">Vim ALE</h1>
+						<small></small>
+						<section class="post-meta">
+							
+							
+							<span class="post-tag small"><a href="https://www.companionway.nettags/vim/">#vim</a></span>
+							
+							<span class="post-tag small"><a href="https://www.companionway.nettags/ale/">#ale</a></span>
+							
+							<span class="post-tag small"><a href="https://www.companionway.nettags/linters/">#linters</a></span>
+							
+							<span class="post-tag small"><a href="https://www.companionway.nettags/markdown/">#markdown</a></span>
+							
+						</section>
+					</header>
+					<section class="post-content">
+						<p>VIM is a standard for me. My UNIX career hung on my &ldquo;vi&rdquo; savvy which I learned appreciate from mentors who
+encouraged me to learn the tips and tricks of using vi. My learning curve with vi/vim has never leveled
+off, but rather, always gives me new features and tricks that energize me again. The latest vim &ldquo;trick&rdquo;
+is ALE (Asynchronous Lint Engine).</p>
+<p>ALE came to light for me while working on building git hooks (especially pre-commit hooks) that force me
+to test and run a linter against my code before it gets committed. It has forced me (in a good way) to clean
+up my python code. It wasn&rsquo;t as hard as I had expected and the gain is worth it. All this work using
+python doctest (which I love) and autopeg8 and flake8 has made me realize that much of my &ldquo;after-the-fact&rdquo; pain
+could be drastically reduced if my editor alerted me as I typed and assisted me in discovering or avoiding
+syntax or simple coding errors. It wasn&rsquo;t until I started to work the myriad of shell scripts that I found
+shellcheck and in turn vim ALE.</p>
+<p>Vim ALE can be found here <a href="https://github.com/w0rp/ale%5D">Vim ALE</a> but it can easily be installed with these
+commands:</p>
+<pre><code>mkdir -p  ~/.vim/pack/git-plugins/start
+git clone https://github.com/w0rp/ale.git ~/.vim/pack/git-plugins/start/ale
+</code></pre><p>Now while you edit vim ALE will run in the background (hence the ALEngine) while you edit and
+sets up a &ldquo;gutter&rdquo; on the left column to alert or notify you of issues from underlying &ldquo;linters&rdquo;.
+The initial problem I ran into was the highlighting of specific characters which needed attention. It made
+reading the underlying character is difficult for my old eyes so I needed a way to leave the &ldquo;gutter&rdquo;
+alerts but turn off the highlighting. So I added a line to my .vimrc to turn ALE highlighting off by default.
+I also run into a problem with ALE trying to run a linter against some of my plain text files so I added
+a line to easily toggle ALE on or off. Here is my .vimrc section for using ALE</p>
+<pre><code>&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot; for ale &quot;&quot;&quot;&quot;&quot;&quot;
+&quot; Install ALE with:
+&quot; mkdir -p ~/.vim/pack/git-plugins/start
+&quot; git clone https://github.com/w0rp/ale.git ~/.vim/pack/git-plugins/start/ale
+
+&quot; next line turns off the highlighting for ALE (it makes code hard to read)
+&quot; but leaves the &quot;gutter&quot; notifications
+let g:ale_set_highlights = 0
+map &lt;leader&gt;at :ALEToggle&lt;CR&gt;
+
+&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+</code></pre><p>Only 2 active lines here but I documented how to use ALE for when I move to a new system.</p>
+<p>BTW: A recent article discussing the history of VIM is posted here (VIM History)[[200~https://twobithistory.org/2018/08/05/where-vim-came-from.html].
+It is an interesting read.</p>
+<p>Enjoy
+-g-</p>
+					</section>
+					<footer class="post-footer">
+						
+						<figure class="author-image">
+							<a class="img" href="https://www.companionway.net" style="background-image: url(https://www.companionway.net/img/sailboat.png)"><span class="hidden">Geoff McNamara's Picture</span></a>
+						</figure>
+						
+						
+
+
+
+
+
+<section class="author">
+<h4><a href="https://www.companionway.net">Geoff McNamara</a></h4>
+
+<p>&#34;Do not meddle in the affairs of wizards, for they are subtle and quick to anger.” J.R.R Tolkien</p>
+
+<div class="author-meta">
+
+<i class="fa fa-map-marker"></i>
+
+<span class="author-location">Elizabeth City, NC
+</span>
+
+
+<i class="fa fa-link"></i>
+<span class="author-link"><a href="https://www.companionway.net">https://www.companionway.net</a></span>
+
+
+</div>
+</section>
+
+
+						
+
+<section class="share">
+	<h4>Share this posts</h4>
+    
+    <a class="bloglogo" href="https://twitter.com/geoffmcnamara" target="_blank">
+        <i class="fab fa-twitter fa-1x" style="color:green;"></i>
+    </a>
+    &nbsp;
+    
+    
+	 <a class="bloglogo" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwww.companionway.net%2fposts%2fvim_ale%2f">
+		<i class="fab fa-facebook fa-1x" style="color:blue;"></i>
+	</a>
+    &nbsp;
+    
+    
+	 <a class="bloglogo" href="https://www.linkedin.com/in/companionway" target="_blank">
+        <i class="fab fa-linkedin fa-1x" style="color:red;"></i>
+    </a>
+    &nbsp;
+    
+    
+    <a class="bloglogo" href="https://github.com/geoffmcnamara" target="_blank">
+        <i class="fab fa-github fa-1x" style="color:orange;"></i>
+    </a>
+    &nbsp;
+    
+</section>
+
+
+						
+
+<div id="disqus_thread"></div>
+<i class="fa fa-comment"></i>
+
+
+
+	<script type="text/javascript">
+		
+
+
+
+(function() { 
+	var d = document, s = d.createElement('script');
+	s.src = 'https://companionway-net.disqus.com/embed.js';
+	s.setAttribute('data-timestamp', +new Date());
+	(d.head || d.body).appendChild(s);
+})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+	
+	
+
+					</footer>
+				</article>
+			</main>
+        </div>
+			<!-- **footer** -->
+<!-- **scripts** -->
+<script type="text/javascript" src="https://www.companionway.net/js/jquery.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/index.js"></script>
+<script type="text/javascript" src="https://www.companionway.net/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async></script>
+<script type="text/javascript" src="https://www.companionway.net/js/custom.js"></script>
+<script id="dsq-count-scr" src="//companionway-net.disqus.com/count.js" async></script>
+<!-- **EOB scripts** -->
+
+
+
+
+<section class="share">
+<hr>
+	<center>
+	<h4>Credits:</h4>
+	
+	<a href="https://www.netlify.com">
+	  <img src="https://www.netlify.com/img/global/badges/netlify-color-bg.svg" height="62" title="netlify"/>
+	</a>
+
+	
+	<a href="http://www.hugo.org">
+        <img src="https://www.companionway.net/img/hugo-logo.png" height="62" title="Hugo"/>
+	</a>
+
+	
+	<a href="https://github.com/w0rp/ale">
+    <img src="https://www.companionway.net/img/ale-logo.jpg" height="62" title="vim Ale"/>
+	</a>
+
+	
+	<a href="http://www.fabfile.org">
+	  <img src="https://www.companionway.net/img/fabric-logo.png" height="62" title="Python Fabric"/>
+	</a>
+
+	
+
+	
+	<a href="https://github.com">
+	  <img src="https://www.companionway.net/img/github-logo.jpg" height="62" title="github"/>
+	</a>
+
+
+	
+  <a href="https://git-scm.com"/>
+    <img src="https://www.companionway.net/img/git-logo.png" height="62" title="git"/>
+	</a>
+
+	
+  <a href="https://codepen.io/"/>
+    <img src="https://www.companionway.net/img/codepen-logo.png" height="62" title="codepen"/>
+	</a>
+
+	
+	</center>
+<hr>
+</section>
+
+
+
+<footer class="site-footer clearfix">
+	<center>
+		<div id="site-footer">
+			<hr style="padding: 0px; margin: 0px;">
+			<span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+			<span>
+				
+				All rights reserved - companionway - 2019
+				
+			</span>
+			<hr style="padding: 0px; margin: 0px;">
+		</div>
+	</center>
+	
+
+</footer>
+</div> 
+</body>
+</html>
+<!-- **EOB footer** -->
+
+<!-- **EOB _default/single** -->

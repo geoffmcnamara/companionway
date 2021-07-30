@@ -1,3 +1,4 @@
+{{ printf "<!-- **widgets/content/share** -->"  | safeHTML }}
 {{ if eq .Type "post" }}
 <ul class="list-inline share" style="margin-top: 15px; margin-left: 0px">
 	<li class="facebook-share"><a target="_blank" href="https://www.facebook.com/sharer.php?u={{ .Permalink }}"><i class="fa fa-facebook fa-lg"></i>Facebook</a></li>
@@ -8,3 +9,4 @@
 	<li class="stumbleupon-share"><a target="_blank" href="https://www.stumbleupon.com/submit?url={{ .Permalink }}&amp;title={{ .Title }}"><i class="fa fa-stumbleupon fa-lg"></i>StumbleUpon</a></li>
 </ul>
 {{ end }}
+{{ printf "<!-- **EOB widgets/content/share** -->"  | safeHTML }}

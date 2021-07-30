@@ -42,6 +42,8 @@ blockquote p:last-of-type {
   box-shadow: 2px 0 15px -1px rgba(31, 73, 125, 0.8), -2px 0 8px -1px rgba(31, 73, 125, 0.8);
 }
 
+
+/** best use: <aside class="pullquote dropfirst">text</aside> **/ 
 .pullquote {
   float: right;
   width: 30%;
@@ -56,6 +58,7 @@ blockquote p:last-of-type {
   font-size: 20px;
 }
 
+/** use: <p class="dropfirst">paragraph</p> **/
 .dropfirst::first-letter {
   float: left;
   font-size: 45px;
@@ -67,6 +70,7 @@ blockquote p:last-of-type {
   text-shadow: #690 .05em .05em;
 }
 
+
 .darkcol {
   background-color: #888888;
 }
@@ -77,7 +81,7 @@ blockquote p:last-of-type {
 }
 
 .content {
-  margin: 5px 100px 100px 5px
+  margin: 5px 100px 5px 100px;
 }
 
 .content a {
@@ -105,7 +109,7 @@ blockquote p:last-of-type {
 }
 
 .content_margin {
-  margin: 20px 10px 10px 5px;
+  margin: 10px 100px 5px 100px;
 }
 
 /* snatched from codepen */
@@ -158,4 +162,57 @@ img {
   /*font-size: 30px;*/
   /*text-align: center;*/
 }
+
+hr.green5 {
+  border: 5px solid green;
+  border-radius: 5px;
+}
+
+hr.red5 {
+  border: 5px solid red;
+  border-radius: 5px;
+}
+
+hr.black5 {
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+hr.grey5 {
+  border: 5px solid grey;
+  border-radius: 5px;
+}
+
+hr.blue5 {
+  border: 5px solid blue;
+  border-radius: 5px;
+}
+
+/** pull-quote styles **/
+.left-pull { 
+  display: block; 
+  padding: 7px 11px; 
+  margin-left: 5px; 
+  width: 170px; 
+  float: left; 
+  margin-right: 10px; 
+  background: #555; 
+  color: #bcbcbc;
+  font-weight: bold; 
+  line-height: 17px; 
+  font-size: 15px; 
+  border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  -webkit-border-radius: 5px; 
+}
+
+.left-pull p { 
+  font-style: italic; 
+  color: #d5d5d5; 
+}
+
+.left-pull .ref { 
+  font-size: 11px; 
+}
+/** EOB pull-quote styles **/
 

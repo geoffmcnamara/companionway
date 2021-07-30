@@ -7,18 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2019</copyright>
-    <lastBuildDate>Sat, 17 Jul 2021 19:46:42 -0400</lastBuildDate>
-    
-	<atom:link href="https://www.companionway.net/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 21 Jul 2021 12:16:00 +0000</lastBuildDate><atom:link href="https://www.companionway.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How the heck does async/await work in Python 3.5?</title>
       <link>https://www.companionway.net/readysetcode/1/</link>
       <pubDate>Mon, 22 Apr 2019 10:24:00 -0400</pubDate>
       
       <guid>https://www.companionway.net/readysetcode/1/</guid>
-      <description></description>
+      <description>
+This is a great in-depth article/essay on asyncio/await/coroutines in python. Strap on your seat belt and brew a fresh pot.
+Find it here </description>
     </item>
     
     <item>
@@ -27,7 +25,9 @@
       <pubDate>Wed, 30 Nov 2016 11:20:35 -0500</pubDate>
       
       <guid>https://www.companionway.net/hmpg-blocks/readysetcode/</guid>
-      <description> 36 Amazing Python Open Source Projects (v.2019)  Posted: April 22, 2019      How the heck does async/await work in Python 3.5?  Posted: April 22, 2019      Curio - A Tutorial Introduction  Posted: April 21, 2019         All: &#34;Ready Set Code&#34; Posts   </description>
+      <description>Ready, Set, Code! Recent code related posts on other website that piqued my interest    36 Amazing Python Open Source Projects (v.2019)  Posted: April 22, 2019   
+This link has a brief summary of apps or projects written in python that are fun, useful, or interesting.
+Find it here    How the heck does async/await work in Python 3.5?  Posted: April 22, 2019</description>
     </item>
     
     <item>
@@ -36,31 +36,81 @@
       <pubDate>Wed, 10 Apr 2019 14:00:26 -0400</pubDate>
       
       <guid>https://www.companionway.net/hmpg-blocks/musings/</guid>
-      <description>Read more   Social Trust Game  By wocos on May 16, 2019 This is a very interesting game dealing with social trust, benfits of cooperation, damge of miscommunication, cheating etc. This helps us to understand why in the middle of WWI soldiers from both side stopped fighting on Christmas day… Try this game. If you are like me, you will get sucked in just to find out what the final conclusions are… only takes a few minutes of your valuable time: https://ncase.</description>
+      <description>&#34;Musings&#34;      Read more   Bronze Age Collapse  on July 21, 2021 Where did the cities go? What happen to written language? Is there any other time in history where such a dramatic change in civilization took place? Writing disappeared for centuries (approx 1200 BCE - 800 BCE) so we are unable to know for sure why pervasive devastation around the Mediterranean Sea took place.</description>
     </item>
     
     <item>
-      <title>Fixing_web_images</title>
-      <link>https://www.companionway.net/post/fixing_web_images/</link>
+      <title>Opening Remarks</title>
+      <link>https://www.companionway.net/financial/opening-remarks/</link>
+      <pubDate>Fri, 11 Jul 2014 10:54:24 +0200</pubDate>
+      
+      <guid>https://www.companionway.net/financial/opening-remarks/</guid>
+      <description>&lt;i class=&#34;fa fa-money fa-2x&#34;&gt;&lt;/i&gt;
+
+&lt;p&gt;Here we present a collection series of posts related to financial issues.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Feedback is welome as usual.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bronze Age Collapse</title>
+      <link>https://www.companionway.net/musings/bronze-age-collapse/</link>
+      <pubDate>Wed, 21 Jul 2021 12:16:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/musings/bronze-age-collapse/</guid>
+      <description>&lt;br&gt;
+&lt;p class=&#34;dropfirst&#34;&gt;Where did the cities go? What happen to written language? Is there any other time in history where such a dramatic change in civilization took place? Writing disappeared for centuries (approx 1200 BCE - 800 BCE) so we are unable to know for sure why pervasive devastation around the Mediterranean Sea took place.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Attending to Persuasion</title>
+      <link>https://www.companionway.net/musings/persuasion/</link>
+      <pubDate>Mon, 19 Jul 2021 12:56:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/musings/persuasion/</guid>
+      <description>&lt;p&gt;Aristotle mentions these rheotrical methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ethos: declare credibility&lt;/li&gt;
+&lt;li&gt;Pathos: emotional appeal&lt;/li&gt;
+&lt;li&gt;Logos:employing  reason, logic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This post is a quick share of my appreciation for those who possess the skill to persuade. My respect for the acient Greeks is woven into the fabric here. I fall short of those who are gifted in this area.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>George Washington, Vaccinating to Win</title>
+      <link>https://www.companionway.net/musings/george_washington_valley_forge_smallpx/</link>
+      <pubDate>Sun, 18 Jul 2021 21:14:04 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/musings/george_washington_valley_forge_smallpx/</guid>
+      <description>&lt;p&gt;See: &lt;a href=&#34;https://www.verywellhealth.com/smallpox-inoculation-and-american-revolution-3969759#:~:text=Smallpox%20at%20Valley%20Forge&amp;text=Washington&#39;s%20decision%20to%20inoculate%20his,and%20eventually%20win%20the%20war.&#34;&gt;Smallpox at Valley Forge&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The article referenced above is a facinating write-up about early use of vaccinations in America and how George Washington ordered it for his troops.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fixing Flipped or Reversed Web Images</title>
+      <link>https://www.companionway.net/posts/fixing_web_images/</link>
       <pubDate>Sat, 17 Jul 2021 19:46:42 -0400</pubDate>
       
-      <guid>https://www.companionway.net/post/fixing_web_images/</guid>
-      <description>&lt;h1 id=&#34;quick-fix-for-web-images&#34;&gt;Quick Fix for Web images&lt;/h1&gt;
-&lt;p&gt;The tool of choice is mogrify which come from the imagemagic package on your linux platform.&lt;/p&gt;
-&lt;p&gt;I had one image that looked fine when I displayed it using display tools in linux but when placed into a webpage the image would be reversed.&lt;/p&gt;
-&lt;p&gt;I tried using css style transform: auto-orient; but all attempts failed. My css files are complicated to the point where even I get lost. So  I needed to find another external solution.&lt;/p&gt;
-&lt;p&gt;It seems that the jpg image file had an internal orientation that refused to be respected by any web server.&lt;/p&gt;
-&lt;p&gt;The solution was to transform the file using:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;mogrify -rotate &lt;span style=&#34;color:#ae81ff&#34;&gt;180&lt;/span&gt; path/to/file.jpg
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This reversed the image externally and now both bash display command and any web server displays the file correctly. Problem solved.&lt;/p&gt;</description>
+      <guid>https://www.companionway.net/posts/fixing_web_images/</guid>
+      <description>&lt;p&gt;The tool of choice is mogrify which come from the imagemagic package on your linux platform.&lt;/p&gt;
+&lt;p&gt;I had one image that looked fine when I displayed it using display tools in linux but when placed into a webpage the image would be reversed.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Python&#39;s all() function</title>
+      <link>https://www.companionway.net/posts/python_all_function/</link>
+      <pubDate>Mon, 28 Jun 2021 14:00:00 +0000</pubDate>
+      
+      <guid>https://www.companionway.net/posts/python_all_function/</guid>
+      <description>Python all() function Much of my coding efforts are directed towards analyzing financial data specifically targeting potential cash secured puts or covered calls. Recently, I had to refine some market overview displays. I needed a listing of the current market &amp;ldquo;gainers&amp;rdquo; and market &amp;ldquo;losers&amp;rdquo;. There is one site which I scrape using panda read_html function to grab a hadful of tables. My problem arises from two factors. One is there are no labels or titles to the tables and they can vary.</description>
     </item>
     
     <item>
       <title>Social Trust Game</title>
-      <link>https://www.companionway.net/musing/socialgametheory/</link>
-      <pubDate>Thu, 16 May 2019 08:25:04 -0400</pubDate>
+      <link>https://www.companionway.net/musings/socialgametheory/</link>
+      <pubDate>Thu, 16 May 2019 08:25:04 +0000</pubDate>
       
-      <guid>https://www.companionway.net/musing/socialgametheory/</guid>
+      <guid>https://www.companionway.net/musings/socialgametheory/</guid>
       <description>This is a very interesting game dealing with social trust, benfits of cooperation, damge of miscommunication, cheating etc.
 This helps us to understand why in the middle of WWI soldiers from both side stopped fighting on Christmas day&amp;hellip;
 Try this game. If you are like me, you will get sucked in just to find out what the final conclusions are&amp;hellip; only takes a few minutes of your valuable time:
@@ -69,10 +119,10 @@ https://ncase.me/trust</description>
     
     <item>
       <title>HarvardX</title>
-      <link>https://www.companionway.net/musing/20190423/</link>
+      <link>https://www.companionway.net/musings/20190423/</link>
       <pubDate>Tue, 23 Apr 2019 20:13:55 -0400</pubDate>
       
-      <guid>https://www.companionway.net/musing/20190423/</guid>
+      <guid>https://www.companionway.net/musings/20190423/</guid>
       <description>HarvardX - free classes (if you audit them)
 These are awesome online classes. The first one that caught me was CS50 which is a tremendous in depth overview of Computer Science &amp;mdash; really a very impressive class even if you are an old salt.
 Today I got an email about a new series of classes they are offering. The Shakespeare classes have pulled me in but I would love to take them all.</description>
@@ -80,10 +130,10 @@ Today I got an email about a new series of classes they are offering. The Shakes
     
     <item>
       <title>What Happend? The End of the Bronze Age</title>
-      <link>https://www.companionway.net/musing/20190422-1036/</link>
+      <link>https://www.companionway.net/musings/20190422-1036/</link>
       <pubDate>Mon, 22 Apr 2019 10:38:31 -0400</pubDate>
       
-      <guid>https://www.companionway.net/musing/20190422-1036/</guid>
+      <guid>https://www.companionway.net/musings/20190422-1036/</guid>
       <description>I frequently read history books or articles related to the origins of Western Civilization, primary Ancient Greece. You can&amp;rsquo;t read about Ancient Greece without understanding the entire Mediterranean. Recently, my fascination has focused on the collapse of the Bronze Age1, also known as the Greek Dark Ages. This reference (Greek Dark Age) is understating the situation dramatically as the destruction, poverty, and defensive conditions were pervasive across the entire Mediterranean.</description>
     </item>
     
@@ -93,7 +143,9 @@ Today I got an email about a new series of classes they are offering. The Shakes
       <pubDate>Mon, 22 Apr 2019 10:25:53 -0400</pubDate>
       
       <guid>https://www.companionway.net/readysetcode/20190422/</guid>
-      <description></description>
+      <description>
+This link has a brief summary of apps or projects written in python that are fun, useful, or interesting.
+Find it here </description>
     </item>
     
     <item>
@@ -102,15 +154,17 @@ Today I got an email about a new series of classes they are offering. The Shakes
       <pubDate>Sun, 21 Apr 2019 10:26:17 -0400</pubDate>
       
       <guid>https://www.companionway.net/readysetcode/2/</guid>
-      <description></description>
+      <description>
+Curio is a library for performing concurrent I/O using Python coroutines and the async/await syntax introduced in Python 3.5. Its programming model is based on existing system programming abstractions such as threads, sockets, files, locks, and queues.
+Find it here </description>
     </item>
     
     <item>
       <title>Mural Joe</title>
-      <link>https://www.companionway.net/musing/20190420-1139/</link>
+      <link>https://www.companionway.net/musings/20190420-1139/</link>
       <pubDate>Sat, 20 Apr 2019 11:39:57 -0400</pubDate>
       
-      <guid>https://www.companionway.net/musing/20190420-1139/</guid>
+      <guid>https://www.companionway.net/musings/20190420-1139/</guid>
       <description>Artists who can paint bring light into my world. I have watched the &amp;ldquo;Mural Joe&amp;rdquo; series on YouTube for a few years now. I came across another one today and it reminded me of how good he is at explaining colors, light, and perspective. He does murals (or at least that is how his series started) but his principalsare transferable to anything style of paining. One of the first videos I watched depicted his work on a childrens room in a hospital with a pirate scene.</description>
     </item>
     
@@ -120,15 +174,18 @@ Today I got an email about a new series of classes they are offering. The Shakes
       <pubDate>Sat, 20 Apr 2019 10:27:08 -0400</pubDate>
       
       <guid>https://www.companionway.net/readysetcode/3/</guid>
-      <description></description>
+      <description> This is intended as a quick reference and showcase. Quick-n-simple.
+Find it here  
+This is intended as a quick reference and showcase. Quick-n-simple.
+Find it here </description>
     </item>
     
     <item>
       <title>Amor Fati</title>
-      <link>https://www.companionway.net/musing/20190419-1946/</link>
+      <link>https://www.companionway.net/musings/20190419-1946/</link>
       <pubDate>Fri, 19 Apr 2019 20:09:05 -0400</pubDate>
       
-      <guid>https://www.companionway.net/musing/20190419-1946/</guid>
+      <guid>https://www.companionway.net/musings/20190419-1946/</guid>
       <description>&lt;p&gt;The stoics of ancient Greece had an impact on many aspects of our lives. It influenced everything for Christian thought to contemporary self-help books. Today&amp;rsquo;s stoic thought revolves around &amp;ldquo;Amor Fati&amp;rdquo;, loosely defined as loving fate. This single philosophic perspective, practiced well, can change your heart and your life.&lt;/p&gt;</description>
     </item>
     
@@ -143,22 +200,20 @@ Today I got an email about a new series of classes they are offering. The Shakes
     
     <item>
       <title>Managing Vim and Essential Plugins</title>
-      <link>https://www.companionway.net/post/control_vim_and_plugins/</link>
+      <link>https://www.companionway.net/posts/control_vim_and_plugins/</link>
       <pubDate>Fri, 12 Apr 2019 08:09:20 -0400</pubDate>
       
-      <guid>https://www.companionway.net/post/control_vim_and_plugins/</guid>
-      <description>&lt;p&gt;Our last post discussed using fisa-vimrc and appreciating the simple installation and ease of use. This post will explore, briefly, some tweaks and a short &amp;ldquo;how to&amp;rdquo; for each of the loaded plugins. This exercise will be worth your time if you have not explored these tools before.&lt;/p&gt;
-&lt;p&gt;Do not be concerned about finishing this post in one sitting. Take a section at a time and play with it. Move on when you are ready. A lot of information is here but that is because you have lot available to you under the hood. The sections below minimumly scratch the surface. Go play with each plug-in to at least find out what features it offers.&lt;/p&gt;</description>
+      <guid>https://www.companionway.net/posts/control_vim_and_plugins/</guid>
+      <description>&lt;p&gt;Our last post discussed using fisa-vimrc and appreciating the simple installation and ease of use. This post will explore, briefly, some tweaks and a short &amp;ldquo;how to&amp;rdquo; for each of the loaded plugins. This exercise will be worth your time if you have not explored these tools before.&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>2019-04-09</title>
-      <link>https://www.companionway.net/musing/20190409/</link>
+      <title>Musing amid Chaos</title>
+      <link>https://www.companionway.net/musings/20190409/</link>
       <pubDate>Tue, 09 Apr 2019 15:21:03 -0400</pubDate>
       
-      <guid>https://www.companionway.net/musing/20190409/</guid>
-      <description>&lt;h1 id=&#34;musings-amid-chaos&#34;&gt;Musings amid Chaos&lt;/h1&gt;
-&lt;h3 id=&#34;stoicism&#34;&gt;Stoicism:&lt;/h3&gt;
+      <guid>https://www.companionway.net/musings/20190409/</guid>
+      <description>&lt;h3 id=&#34;stoicism&#34;&gt;Stoicism:&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Being good, associating with good, and rationally accepting what is, reduces risk of peril and sets the stage for contentment.&lt;/li&gt;
 &lt;/ul&gt;
@@ -170,10 +225,10 @@ Today I got an email about a new series of classes they are offering. The Shakes
     
     <item>
       <title>Vim-Plug Quick Setup</title>
-      <link>https://www.companionway.net/post/vim-plug_quick_setup/</link>
+      <link>https://www.companionway.net/posts/vim-plug_quick_setup/</link>
       <pubDate>Fri, 15 Mar 2019 15:07:41 -0400</pubDate>
       
-      <guid>https://www.companionway.net/post/vim-plug_quick_setup/</guid>
+      <guid>https://www.companionway.net/posts/vim-plug_quick_setup/</guid>
       <description>&lt;p&gt;I want you to try this .vimrc setup.&lt;/p&gt;
 &lt;p&gt;I have had my own .vimrc for years. I recently came across &lt;a href=&#34;http://fisadev.github.io/fisa-vim-config/&#34;&gt;fisa-vim-config&lt;/a&gt;
 and ended up dropping my extensive .vimrc, adopting the one above and adding a few tweaks to make it friendly to me. I
@@ -183,10 +238,10 @@ was actually looking for more ALE-fixers when I found this gem.&lt;/p&gt;
     
     <item>
       <title>Quick Note about fabric and pipenv</title>
-      <link>https://www.companionway.net/post/quick_note_about_fabric_and_pipenv/</link>
+      <link>https://www.companionway.net/posts/quick_note_about_fabric_and_pipenv/</link>
       <pubDate>Wed, 13 Mar 2019 10:56:05 -0400</pubDate>
       
-      <guid>https://www.companionway.net/post/quick_note_about_fabric_and_pipenv/</guid>
+      <guid>https://www.companionway.net/posts/quick_note_about_fabric_and_pipenv/</guid>
       <description>&lt;p&gt;I have posted several articles about python fabric and yet I failed to warn you about the dangers of
 version and module chaos.&lt;/p&gt;
 &lt;p&gt;Initially, fabric came as a python2 only application. They added support for python3 later. Here is the version
@@ -202,10 +257,10 @@ It is simple, clean, and almost fool proof which is essential for me.&lt;/p&gt;<
     
     <item>
       <title>Python fabric - Dynamically Discover Hosts</title>
-      <link>https://www.companionway.net/post/using_fabric_to_dynamically_discover_hosts/</link>
+      <link>https://www.companionway.net/posts/using_fabric_to_dynamically_discover_hosts/</link>
       <pubDate>Tue, 12 Mar 2019 09:18:43 -0400</pubDate>
       
-      <guid>https://www.companionway.net/post/using_fabric_to_dynamically_discover_hosts/</guid>
+      <guid>https://www.companionway.net/posts/using_fabric_to_dynamically_discover_hosts/</guid>
       <description>&lt;p&gt;Python fabric is a library tool for executing ssh commands remotely and responding as you desire.
 I use python fabric for promoting code and web content. Essentially it is my devops tool to satisfy the
 single most important devops rule: never log into a server! I use this over ansible or some of the other
@@ -217,29 +272,20 @@ Using the option &amp;ndash;skip_bad_hosts with fabric is one way to do this but
     </item>
     
     <item>
-      <title>Nother</title>
-      <link>https://www.companionway.net/musing/nother/</link>
-      <pubDate>Sat, 09 Mar 2019 14:57:22 -0400</pubDate>
-      
-      <guid>https://www.companionway.net/musing/nother/</guid>
-      <description>&lt;h4 id=&#34;just-nother-post&#34;&gt;Just &amp;lsquo;nother post&lt;/h4&gt;</description>
-    </item>
-    
-    <item>
       <title>Replace PHP with WSGI python</title>
-      <link>https://www.companionway.net/post/replace_php_with_wsgi_python/</link>
+      <link>https://www.companionway.net/posts/replace_php_with_wsgi_python/</link>
       <pubDate>Tue, 20 Nov 2018 10:54:24 +0200</pubDate>
       
-      <guid>https://www.companionway.net/post/replace_php_with_wsgi_python/</guid>
+      <guid>https://www.companionway.net/posts/replace_php_with_wsgi_python/</guid>
       <description>&lt;p&gt;This post is a brief description of replacing PHP code with python using WSGI (Web Server Gateway Interface). The journey here comes from how I monitor my servers (mostly raspberry pi&amp;rsquo;s). I used a PHP script on all my servers that delivered the hostname and basic server information and I use &lt;a href=&#34;http://xymon.sourceforge.net/&#34;&gt;xymon monitoring&lt;/a&gt; to poll that PHP script on all the servers and test to see if the hostname is contained in the returned page. My focus lately has been on python and my interest in PHP has waned. The goal was to replace my PHP script with a python script. The end result provides a simple means of delivering dynamic web pages. I will be using &lt;a href=&#34;http://bottlepy.org&#34;&gt;bottlepy&lt;/a&gt; as the wsgi web-framework. My development was done on an ubuntu 18.10 (&amp;ldquo;cosmic&amp;rdquo; release).&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Using a generic git pre-commit hook</title>
-      <link>https://www.companionway.net/post/git_pre-commit/</link>
+      <link>https://www.companionway.net/posts/git_pre-commit/</link>
       <pubDate>Sun, 07 Oct 2018 10:05:52 -0400</pubDate>
       
-      <guid>https://www.companionway.net/post/git_pre-commit/</guid>
+      <guid>https://www.companionway.net/posts/git_pre-commit/</guid>
       <description>&lt;h4 id=&#34;test_it--commit_it--reject_it&#34;&gt;test_it &amp;amp;&amp;amp; commit_it || reject_it&lt;/h4&gt;
 &lt;p&gt;Using a pre-commit script when committing code makes sense and fits with every respectable dev-ops model.
 The goal is to have respectable code &lt;em&gt;before&lt;/em&gt; it lands in a repository. Git makes this very easy through the use
@@ -248,10 +294,10 @@ of &amp;ldquo;hooks&amp;rdquo;. If you look in any of your git project directori
     
     <item>
       <title>Vim ALE</title>
-      <link>https://www.companionway.net/post/vim_ale/</link>
+      <link>https://www.companionway.net/posts/vim_ale/</link>
       <pubDate>Wed, 08 Aug 2018 09:30:10 -0400</pubDate>
       
-      <guid>https://www.companionway.net/post/vim_ale/</guid>
+      <guid>https://www.companionway.net/posts/vim_ale/</guid>
       <description>&lt;p&gt;VIM is a standard for me. My UNIX career hung on my &amp;ldquo;vi&amp;rdquo; savvy which I learned appreciate from mentors who
 encouraged me to learn the tips and tricks of using vi. My learning curve with vi/vim has never leveled
 off, but rather, always gives me new features and tricks that energize me again. The latest vim &amp;ldquo;trick&amp;rdquo;
@@ -260,10 +306,10 @@ is ALE (Asynchronous Lint Engine).&lt;/p&gt;</description>
     
     <item>
       <title>Vim Scriptable Templates</title>
-      <link>https://www.companionway.net/post/vim_scriptable_templates/</link>
+      <link>https://www.companionway.net/posts/vim_scriptable_templates/</link>
       <pubDate>Sun, 15 Jul 2018 14:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/vim_scriptable_templates/</guid>
+      <guid>https://www.companionway.net/posts/vim_scriptable_templates/</guid>
       <description>&lt;h3 id=&#34;dynamic-vim-templates&#34;&gt;Dynamic vim Templates&lt;/h3&gt;
 &lt;p&gt;Vim (or vi in the anceint past) has been my partner in getting things done. Like an rich tool it
 has lots of features that go untapped or undiscovered. A few days ago I decided I wanted a script within
@@ -289,10 +335,10 @@ but the bottom line is that I needed a way to script it for to avoid mistakes.&l
     
     <item>
       <title>Hugo and Fabric</title>
-      <link>https://www.companionway.net/post/hugo_and_fabric/</link>
+      <link>https://www.companionway.net/posts/hugo_and_fabric/</link>
       <pubDate>Sat, 14 Jul 2018 15:33:19 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/hugo_and_fabric/</guid>
+      <guid>https://www.companionway.net/posts/hugo_and_fabric/</guid>
       <description>&lt;p&gt;Python Fabric is a denatured version of ansible and, if you enjoy python, fabric makes a small scale devops strategy a whole lot less painful.
 Combined with hugo static website generator, fabic makes testing and promoting a website a whole lot easier.&lt;/p&gt;
 &lt;p&gt;I have struggled in the past with one challenge that made promoting website code from my workbench to dev, staging, and ultimately production tricky.
@@ -302,10 +348,10 @@ code it goes through this workflow process:&lt;/p&gt;</description>
     
     <item>
       <title>Fabric_vs_ansible</title>
-      <link>https://www.companionway.net/post/fabric_vs_ansible/</link>
+      <link>https://www.companionway.net/posts/fabric_vs_ansible/</link>
       <pubDate>Tue, 10 Jul 2018 09:30:14 -0400</pubDate>
       
-      <guid>https://www.companionway.net/post/fabric_vs_ansible/</guid>
+      <guid>https://www.companionway.net/posts/fabric_vs_ansible/</guid>
       <description>&lt;p&gt;I have wrestled with ansible for too long. It is an awesome tool but you need to learn the syntax of three
 different languages (ansible, yaml, and maybe some python) to hold it down and control it. Every time I go
 to use it I have to learn how to do what I need to do. But the most frustrating aspect of ansible when learning
@@ -322,7 +368,7 @@ I end up with a hodgepodge of debug lines commented out.&lt;/p&gt;</description>
       <guid>https://www.companionway.net/articles/newspaper-hugo-subtheme/</guid>
       <description>&lt;p&gt;First credit goes to Silke V at codepen.io name &amp;ldquo;silkine&amp;rdquo; [http://www.silkevoigts.de/].&lt;/p&gt;
 &lt;p&gt;Original source code can be found here: &lt;a href=&#34;https://codepen.io/silkine/pen/jldif&#34;&gt;https://codepen.io/silkine/pen/jldif&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/newspaper-hugo-subtheme.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/newspaper-hugo-subtheme.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;I had a coworker who had a non-profit business blog that wanted to offer a newsletter to her clients.
 So I got interested in finding an HTML format that gave an old traditional newspaper style.
 Silke offered a solution that provided a strong simple css base. Currently (2017) I find
@@ -341,10 +387,10 @@ pulled from ./archtypes/articles.md.&lt;/p&gt;
     
     <item>
       <title>How this theme evolved</title>
-      <link>https://www.companionway.net/post/newspaper-hugo-subtheme/</link>
+      <link>https://www.companionway.net/posts/newspaper-hugo-subtheme/</link>
       <pubDate>Fri, 03 Nov 2017 10:54:24 +0200</pubDate>
       
-      <guid>https://www.companionway.net/post/newspaper-hugo-subtheme/</guid>
+      <guid>https://www.companionway.net/posts/newspaper-hugo-subtheme/</guid>
       <description>&lt;h3 id=&#34;announcing-a-new-project-newspaper-hugo-subtheme&#34;&gt;Announcing a new project: newspaper-hugo-subtheme&lt;/h3&gt;
 &lt;p&gt;First credit goes to Silke V at codepen.io name &amp;ldquo;silkine&amp;rdquo; [http://www.silkevoigts.de/].
 Original source code can be found here: &lt;a href=&#34;https://codepen.io/silkine/pen/jldif&#34;&gt;https://codepen.io/silkine/pen/jldif&lt;/a&gt;&lt;/p&gt;
@@ -354,7 +400,7 @@ and Silke offered a solution that provided a strong simple css base. Currently (
 the hugo cms system to be the easiest most portable static web building application freely available.
 The challenge was to create a full newsletter style theme as a subtheme within an existing theme
 structure. So I mocked up a ported version of Silke&amp;rsquo;s newspaper css into a hugo &amp;ldquo;section&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;An example of this subtheme can be seen here: &lt;a href=&#34;https://www.companionway.net/articles&#34;&gt;[newspaper-hugo-subtheme]&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;An example of this subtheme can be seen here: &lt;a href=&#34;./articles&#34;&gt;[newspaper-hugo-subtheme]&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;This project is a drop in offering to any existing hugo themed structure which will produce
 a newsletter format in an &amp;ldquo;article(s)&amp;rdquo; hugo section. A user only needs to change the title, city,
 and state varbiable that are stored as front matter in the ./content/articles/_index.md file.
@@ -399,7 +445,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus tortor 
       <pubDate>Tue, 24 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.companionway.net/articles/article4/</guid>
-      <description>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &amp;ldquo;de Finibus Bonorum et Malorum&amp;rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &amp;ldquo;Lorem ipsum dolor sit amet..&amp;quot;, comes from a line in section 1.10.32.
+      <description>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &amp;ldquo;de Finibus Bonorum et Malorum&amp;rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &amp;ldquo;Lorem ipsum dolor sit amet..&amp;rdquo;, comes from a line in section 1.10.32.
 &amp;ldquo;Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit&amp;hellip;&amp;rdquo;</description>
     </item>
     
@@ -424,18 +470,25 @@ Suspendisse a enim sit amet massa efficitur malesuada.</description>
     
     <item>
       <title>MagicMirro2 and fauxmo</title>
-      <link>https://www.companionway.net/post/post-title/</link>
+      <link>https://www.companionway.net/posts/post-title/</link>
       <pubDate>Wed, 11 Jan 2017 14:27:35 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/post-title/</guid>
+      <guid>https://www.companionway.net/posts/post-title/</guid>
       <description>&lt;h3 id=&#34;warning-what-follows-is-a-cascade-of-issues-and-lessons-learned-but-just-plain-fun&#34;&gt;Warning: what follows is a cascade of issues and lessons learned&amp;hellip; but just plain fun!&lt;/h3&gt;
 &lt;h2 id=&#34;the-goal&#34;&gt;The goal&lt;/h2&gt;
 &lt;p&gt;This project is designed to provide a reliable MagicMirror2 on a Raspberry Pi fitted with a 5 inch touchscreen that doubles to provide browsing if needed. This comes from a desire to have a quick aide in the kitchen that reports standard information when needed or a browser for looking up and displaying recipes etc.&lt;/p&gt;
 &lt;p&gt;The result is a raspberry pi with one wire that stands on its edge without a case and has a 5 inch display. The display can show any of the modules provided for magicmirror2 on command to Alexa or stop magicmirror on command. The rasbian desktop along with an inboard keyboard pad and touch &amp;ldquo;pen&amp;rdquo; allows you to launch a browser (or any other program) and navigate to any url. When the desktop is idle a screensaver comes up with anynumber of pleasing animations - selectable and can be rotated with screen blanking possible as well. The backlight of the screen is enough to act as a soothing nightlight. All in all, I am very pleased (and so is my wife) with the final result of this project.&lt;/p&gt;
 &lt;p&gt;There is a LOT of information here and lots of steps but it is worth it and you will definately learn lots of useful tricks. I am sure there are many improvements that could be made.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/k-pi1.jpg#floatright&#34; alt=&#34;Kitchen Pi Image:1&#34;&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;&lt;img src=&#34;./img/k-pi1.jpg#floatright&#34; alt=&#34;Kitchen Pi Image:1&#34;&gt;&lt;/p&gt;
+&lt;!--
+&lt;figure&gt;
+    &lt;img src=&#34;./img/k-pi1.jpg&#34;
+         alt=&#34;KitchenPi&#34; width=&#34;60%&#34;/&gt; &lt;figcaption&gt;
+            &lt;h4&gt;KitchenPi Image:1&lt;/h4&gt;&lt;p&gt;KitchenPi&lt;/p&gt;
+        &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+--&gt;
 &lt;h2 id=&#34;materials&#34;&gt;Materials&lt;/h2&gt;
 &lt;p&gt;Hardware&lt;/p&gt;
 &lt;ul&gt;
@@ -458,10 +511,10 @@ Suspendisse a enim sit amet massa efficitur malesuada.</description>
     
     <item>
       <title>Sorting IPs</title>
-      <link>https://www.companionway.net/post/sorting_ips/</link>
+      <link>https://www.companionway.net/posts/sorting_ips/</link>
       <pubDate>Sun, 01 Jan 2017 15:53:14 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/sorting_ips/</guid>
+      <guid>https://www.companionway.net/posts/sorting_ips/</guid>
       <description>&lt;p&gt;I scan my home network frequently. There are a good number of smarthome devices, raspberry pies, phones,
 laptops, PCs etc. Using nmap to quickly scan a network is too slow for me - and it is a challenge to
 parse the output for easy reading (of course I would use awk to do that). So I use arp-scan (available
@@ -470,20 +523,20 @@ in most repositories). So output might look like this:&lt;/p&gt;</description>
     
     <item>
       <title>Quick N Dirty Python Debug Function</title>
-      <link>https://www.companionway.net/post/quick-n-dirty-python-debug-function/</link>
+      <link>https://www.companionway.net/posts/quick-n-dirty-python-debug-function/</link>
       <pubDate>Thu, 22 Dec 2016 14:08:05 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/quick-n-dirty-python-debug-function/</guid>
+      <guid>https://www.companionway.net/posts/quick-n-dirty-python-debug-function/</guid>
       <description>&lt;p&gt;Pdb is a great debugger for python but I like to use my own simple debug functions.
 Here is a simple debug function for python which could definitely be improved:&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Raspberry Pi and Xrdp</title>
-      <link>https://www.companionway.net/post/raspberry-pi-and-xrdp/</link>
+      <link>https://www.companionway.net/posts/raspberry-pi-and-xrdp/</link>
       <pubDate>Fri, 16 Dec 2016 12:27:36 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/raspberry-pi-and-xrdp/</guid>
+      <guid>https://www.companionway.net/posts/raspberry-pi-and-xrdp/</guid>
       <description>&lt;p&gt;I decided to have some remote desktop fun with one of my raspberry pies. Remote desktop for the raspberry pi (or
 any linux machine) can be done so many different ways - but the easiest from my perspective is xrdp. It is available
 really on any linux distro and works with Windows remote desktop protocol (kinda). It requires that you install
@@ -494,10 +547,10 @@ almost any linux distro.&lt;/p&gt;</description>
     
     <item>
       <title>Sometimes It Is The Obvious</title>
-      <link>https://www.companionway.net/post/sometimes-it-is-the-obvious/</link>
+      <link>https://www.companionway.net/posts/sometimes-it-is-the-obvious/</link>
       <pubDate>Thu, 15 Dec 2016 16:36:42 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/sometimes-it-is-the-obvious/</guid>
+      <guid>https://www.companionway.net/posts/sometimes-it-is-the-obvious/</guid>
       <description>&lt;p&gt;This was one of those &amp;ldquo;problems&amp;rdquo; that nagged me for many hours until the obvious dawned on me.
 I wrote a python script to grab the temperature and humidity from a DHT22 sensor and then write the
 output with the proper syntax to send to my monitoring program [xymon]. The wrapper bash script ran
@@ -509,10 +562,10 @@ python script independently for testing or for curiosity.&lt;/p&gt;</description
     
     <item>
       <title>Always Use Visudo</title>
-      <link>https://www.companionway.net/post/always-use-visudo/</link>
+      <link>https://www.companionway.net/posts/always-use-visudo/</link>
       <pubDate>Wed, 14 Dec 2016 10:59:38 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/always-use-visudo/</guid>
+      <guid>https://www.companionway.net/posts/always-use-visudo/</guid>
       <description>&lt;h2 id=&#34;familiarity-breeds-contempt&#34;&gt;&amp;ldquo;familiarity breeds contempt&amp;rdquo;&lt;/h2&gt;
 &lt;p&gt;I get very comfortable with using the vim editor (take cover&amp;hellip; flame way ensuing) so
 comfortable that using any other editor leaves me just a bit unnerved. I constantly use it
@@ -529,10 +582,10 @@ back to the monitor server.&lt;/p&gt;
     
     <item>
       <title>Recursively Replace Text</title>
-      <link>https://www.companionway.net/post/recursive-replace-text/</link>
+      <link>https://www.companionway.net/posts/recursive-replace-text/</link>
       <pubDate>Sat, 10 Dec 2016 20:38:12 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/recursive-replace-text/</guid>
+      <guid>https://www.companionway.net/posts/recursive-replace-text/</guid>
       <description>&lt;p&gt;Recently I had to do a find and replace text on multiple files recursively. I had to look up how to do it to remind myself of the exact syntax. If I had to look it up, you have to suffer seeing it in my blog post&amp;hellip; [smile]&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;find ./ -name \*.md -print0 | xargs -0 sed -i &#39;s/header-img/img/&#39;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Be careful here. I used the -0 option to deal with any filename that have spaces in the name BUT it really requires that the find command contain the -print0 option otherwise things will not operate in the manner expected.&lt;/p&gt;</description>
@@ -540,12 +593,12 @@ back to the monitor server.&lt;/p&gt;
     
     <item>
       <title>Switched to Hugo</title>
-      <link>https://www.companionway.net/post/switched-to-hugo/</link>
+      <link>https://www.companionway.net/posts/switched-to-hugo/</link>
       <pubDate>Fri, 09 Dec 2016 10:57:45 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/switched-to-hugo/</guid>
+      <guid>https://www.companionway.net/posts/switched-to-hugo/</guid>
       <description>&lt;p&gt;I am swtiching from jekyll to hugo for flat file for a Content Managment System (CMS).
-&lt;!-- raw HTML omitted --&gt;&lt;img src=&#34;https://www.companionway.net/img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34;&gt;&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;a href=&#34;https://gohugo.io&#34;&gt;&lt;img src=&#34;./img/hugo-h.jpg&#34; alt=&#34;alt text&#34; title=&#34;goHugo.io&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Here is why:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;It comes as a binary file that runs on pretty much any platform. A single file&amp;hellip; without a list of dependencies&lt;/li&gt;
@@ -574,41 +627,41 @@ or &amp;hellip; just git push it to hithub and use something like netlify.com to
     
     <item>
       <title>Converting Images</title>
-      <link>https://www.companionway.net/post/converting-images/</link>
+      <link>https://www.companionway.net/posts/converting-images/</link>
       <pubDate>Tue, 06 Dec 2016 11:58:20 -0500</pubDate>
       
-      <guid>https://www.companionway.net/post/converting-images/</guid>
+      <guid>https://www.companionway.net/posts/converting-images/</guid>
       <description>I have fought with trying to remember the syntax for Imagemagik&amp;rsquo;s convert command for years. I finaly caved in [from my normal position of &amp;ldquo;if you can&amp;rsquo;t do it from the commandline, then you are a wimp&amp;rdquo; and sought out a gui to help me quickly convert images to use on a website. Or to just roll a picture 90 or 180 degrees. The easy solution and a standard ubuntu repository file is &amp;ldquo;converseen&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>shell/bash uppercase arguments</title>
-      <link>https://www.companionway.net/post/2015-05-11-post1/</link>
+      <link>https://www.companionway.net/posts/2015-05-11-post1/</link>
       <pubDate>Mon, 11 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-05-11-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-05-11-post1/</guid>
       <description>To make a long story short&amp;hellip;
 #!/bin/bash PATTERN=$(echo $1 | tr [:lower:] [:upper:]) # or PATTERN=$(echo $1 | tr [a-z] [A-Z]) # or PATTERN=$(echo $1 | awk &#39;{print toupper($0)}&#39;) echo &amp;quot;Your \$1 argument is now uppercase: $1&amp;quot; To make a short story long&amp;hellip;
 Just to let you know a little more about me and reveal a few more shells tricks along the way.
-I am a very conservative investor - always have been but the low interest rates over the recent past has forced me to try a squeeze a little more out of the stock market also known as a &amp;ldquo;a gentleman&amp;rsquo;s gambling parlor of greedy people&amp;rdquo;.</description>
+ I am a very conservative investor - always have been but the low interest rates over the recent past has forced me to try a squeeze a little more out of the stock market also known as a &amp;ldquo;a gentleman&amp;rsquo;s gambling parlor of greedy people&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>The GrovePi kit</title>
-      <link>https://www.companionway.net/post/grovepi/</link>
+      <link>https://www.companionway.net/posts/grovepi/</link>
       <pubDate>Sat, 09 May 2015 10:54:24 +0200</pubDate>
       
-      <guid>https://www.companionway.net/post/grovepi/</guid>
+      <guid>https://www.companionway.net/posts/grovepi/</guid>
       <description>Check out GrovePi These kits make working with the Raspberry Pi GPIO pins so simple and clean. I just ordered one of these kits and I will try to write up a review after I work it over.
 If you are interested in building a quick and easy raspberry pi for experimenting with the &amp;ldquo;Internet of Things&amp;rdquo; (aka IoT) platform - this board and kit looks like it will get you there in minutes.</description>
     </item>
     
     <item>
       <title>How to print the remainder of a line using awk</title>
-      <link>https://www.companionway.net/post/2015-05-02-post1/</link>
+      <link>https://www.companionway.net/posts/2015-05-02-post1/</link>
       <pubDate>Sat, 02 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-05-02-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-05-02-post1/</guid>
       <description>&lt;p&gt;#How to print remainder of line using awk&lt;/p&gt;
 &lt;h2 id=&#34;eliminate-the-first-x-columns&#34;&gt;eliminate the first X columns&amp;hellip;&lt;/h2&gt;
 &lt;p&gt;Here is your challenge you have a list of cronjobs and you
@@ -631,10 +684,10 @@ first entry with its arguments as a test run:&lt;/p&gt;
     
     <item>
       <title>Creating that special character in vim</title>
-      <link>https://www.companionway.net/post/2015-04-30-post1/</link>
+      <link>https://www.companionway.net/posts/2015-04-30-post1/</link>
       <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-30-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-04-30-post1/</guid>
       <description>&lt;h1 id=&#34;entering-special-characters-into-vim&#34;&gt;Entering special characters into vim&lt;/h1&gt;
 &lt;p&gt;I use vim as my editor. Despite this first sentence, this is not a
 beginning volley to an editor flame war. I will save that for another
@@ -652,13 +705,22 @@ characters.&lt;/p&gt;</description>
     
     <item>
       <title>git inside, git better, git stronger</title>
-      <link>https://www.companionway.net/post/2015-04-28-post1/</link>
+      <link>https://www.companionway.net/posts/2015-04-28-post1/</link>
       <pubDate>Tue, 28 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-28-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-04-28-post1/</guid>
       <description>&lt;h2 id=&#34;-exploring-git-from-the-inside-out-&#34;&gt;&amp;hellip; exploring git from the inside out &amp;hellip;&lt;/h2&gt;
 &lt;p&gt;###Preface&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;p class=&#34;highcap&#34;&gt;Apologies up front - this is long... very long, but there is food for the brain here.
+I will discuss git for personal use. Using it with many other contributors is 
+an extension of the principle covered here. For simplicity, I am only going
+to discuss you working alone and only using a single &#34;branch&#34; of code for
+each project - again, for simplicity. Additionally we are going to examine
+the git &#34;database&#34; (stored as compressed SHA-1 named files/objects) as we go.
+We can gain a better understanding by reviewing the changes to the guts of
+your personal git repository. We will not cover branches, tags, or the git daemon
+in this discussion.
+&lt;/p&gt;
 &lt;p&gt;###Why git? (skip this if you are less than patient)&lt;/p&gt;
 &lt;p&gt;Many years ago I used backups of my projects or just documents, notes, etc.
 All worked well until it didn&amp;rsquo;t. If you make a mistake and back it up guess what,&lt;/p&gt;</description>
@@ -666,10 +728,10 @@ All worked well until it didn&amp;rsquo;t. If you make a mistake and back it up 
     
     <item>
       <title>Centering a string</title>
-      <link>https://www.companionway.net/post/2015-04-02-post1/</link>
+      <link>https://www.companionway.net/posts/2015-04-02-post1/</link>
       <pubDate>Thu, 02 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-02-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-04-02-post1/</guid>
       <description>&lt;h1 id=&#34;center-a-string-using-awk&#34;&gt;Center a string using awk&lt;/h1&gt;
 &lt;h2 id=&#34;awk--everyones-favorite---right&#34;&gt;awk = everyone&amp;rsquo;s favorite - right?&lt;/h2&gt;
 &lt;p&gt;People who know me also know that I prefer simple
@@ -687,20 +749,58 @@ features of awk.&lt;/p&gt;</description>
     </item>
     
     <item>
+      <title>Let Warren Buffett be Your Guide</title>
+      <link>https://www.companionway.net/financial/buffett/</link>
+      <pubDate>Fri, 11 Jul 2014 10:54:24 +0200</pubDate>
+      
+      <guid>https://www.companionway.net/financial/buffett/</guid>
+      <description>&lt;p&gt;You&amp;rsquo;ve heard Warren Buffett say:&lt;/p&gt;
+&lt;p&gt;Rule No. 1: Never lose money.&lt;/p&gt;
+&lt;p&gt;Rule No. 2: Don&amp;rsquo;t forget rule No. 1.&amp;quot;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Minimize Risk</title>
+      <link>https://www.companionway.net/financial/minimize_risk/</link>
+      <pubDate>Fri, 11 Jul 2014 10:54:24 +0200</pubDate>
+      
+      <guid>https://www.companionway.net/financial/minimize_risk/</guid>
+      <description>&lt;p&gt;I am a value investor so that means: &amp;hellip;much of this info is also in &lt;a href=&#34;./financial/buffett/&#34;&gt;Let Buffett be you Guide&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;I try to keep every investment less than 5% of your portfolio and spread across sectors.
+&lt;ul&gt;
+&lt;li&gt;Stock selections should be across a spectrum of sectors to maintain diversification. This is a challenge for me as one other consideration is to only buy what you know&amp;hellip; and what I know is limited.&lt;/li&gt;
+&lt;li&gt;This means you will have a 20+ universe of stocks. It can be a challenge tracking more than say 30+ stocks.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;I look for large cap stocks with a &amp;ldquo;moat&amp;rdquo; around them - competetive advantage&lt;/li&gt;
+&lt;li&gt;find one with a P/E of less than 15 (which is the market average over time) and I look for a forward P/E that is lower
+than the current P/E - suggests improving earnings.&lt;/li&gt;
+&lt;li&gt;I buy stocks with a dividend - these are generally stocks that have been around for a while and I want one I expect
+to be around 10 years from now. I prefer a dividend yield over 1.50.&lt;/li&gt;
+&lt;li&gt;It should be a market leader - again look at the market cap compared to others in the same sector.&lt;/li&gt;
+&lt;li&gt;Return on Equite (ROE) of over 10%/yr.&lt;/li&gt;
+&lt;li&gt;Is this stock &amp;ldquo;suitable&amp;rdquo;? Is it in my risk tolerance boundries and am I confortable with management, product, location etc&lt;/li&gt;
+&lt;li&gt;Speaking of management - I look for companies I trust - this is a challenge and it is important&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
+    
+    <item>
       <title>About</title>
-      <link>https://www.companionway.net/page/about/</link>
+      <link>https://www.companionway.net/pages/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/page/about/</guid>
-      <description>After attending George Mason University and facing a recession, I maneuvered my way into the Fairfax County Fire Department. I had a wonderful 25 year career with the Fire Service and built strong friendships with many good people. I had the opportunity to serve in many capacities while with the Fire Department. I continued attending college, studying a variety of subjects, one of which turned out to be my second career and passion - computers.</description>
+      <guid>https://www.companionway.net/pages/about/</guid>
+      <description>I am a native of Northern Virginia, grew up there, and worked most of my life there. I had all advantages that come with the area including a good school system and a relatively resilient economy.
+After attending George Mason University and facing a recession, I maneuvered my way into the Fairfax County Fire Department. I had a wonderful 25 year career with the Fire Service and built strong friendships with many good people.</description>
     </item>
     
     <item>
       <title>Adding fade in and down javascript</title>
-      <link>https://www.companionway.net/post/2015-04-05-post1/</link>
+      <link>https://www.companionway.net/posts/2015-04-05-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-05-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-04-05-post1/</guid>
       <description>&lt;h1 id=&#34;javascript-fade-in-and-down&#34;&gt;Javascript fade in and down&lt;/h1&gt;
 &lt;p&gt;I wanted to change the header on the theme for my web site
 to display a slide down and in header.&lt;/p&gt;
@@ -724,10 +824,10 @@ network is failing then my web site probably is too.&lt;/p&gt;</description>
     
     <item>
       <title>Ansible - modifying sudoers</title>
-      <link>https://www.companionway.net/post/2015-04-17-post1/</link>
+      <link>https://www.companionway.net/posts/2015-04-17-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-17-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-04-17-post1/</guid>
       <description>&lt;h1 id=&#34;ansible---modifying-etcsudoers&#34;&gt;Ansible - modifying /etc/sudoers&lt;/h1&gt;
 &lt;p&gt;I have locked administrators out of using sudo with a simple typo.&lt;/p&gt;
 &lt;p&gt;With ansible you can lockup sudo on every machine with a single error. So
@@ -752,10 +852,10 @@ when using ansible. This is in my &lt;code&gt;$ANSIBLE_DIR/roles/common/tasks/ma
     
     <item>
       <title>Command line disk tree</title>
-      <link>https://www.companionway.net/post/2015-04-27-post1/</link>
+      <link>https://www.companionway.net/posts/2015-04-27-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-27-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-04-27-post1/</guid>
       <description>&lt;h1 id=&#34;command-line-disk-tree&#34;&gt;Command line disk tree&lt;/h1&gt;
 &lt;p&gt;I am writing another article on the basics of using git. It
 was going to be a short article however, given the subject it is
@@ -769,10 +869,10 @@ with you today.&lt;/p&gt;</description>
     
     <item>
       <title>Delete the last X files using sed</title>
-      <link>https://www.companionway.net/post/2015-04-26-post1/</link>
+      <link>https://www.companionway.net/posts/2015-04-26-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-26-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-04-26-post1/</guid>
       <description>&lt;h2 id=&#34;simple-sed-trick---keeping-the-last-x-files&#34;&gt;Simple sed trick - keeping the last X files&lt;/h2&gt;
 &lt;p&gt;How would you remove all but the last 10 files in a directory?&lt;/p&gt;
 &lt;p&gt;So let&amp;rsquo;s create 15 files with one second between there
@@ -790,28 +890,28 @@ done
     
     <item>
       <title>Download Files</title>
-      <link>https://www.companionway.net/page/dlfiles/</link>
+      <link>https://www.companionway.net/pages/dlfiles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/page/dlfiles/</guid>
+      <guid>https://www.companionway.net/pages/dlfiles/</guid>
       <description> modified-fisa-vimrc.raw Download nodeinfo.zip Download  </description>
     </item>
     
     <item>
       <title>Links</title>
-      <link>https://www.companionway.net/page/links/</link>
+      <link>https://www.companionway.net/pages/links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/page/links/</guid>
+      <guid>https://www.companionway.net/pages/links/</guid>
       <description>sysadmin or web dev tools  Link for gihub Ling for git-scm Link for ansible Link for vagrant Link for lxc Link for formspree.io Link for adminer   Quick tech headline news  Link for LinuxToday Link for DailyRotation   dynamic content management systems [dynamic CMS]  hugo Wordpress Drupal Joomla   static content managment systems [static CMS]  jekyll hugo gravCMS picoCMS statamic kirby FrogCMS CushyCMS   learning   learn python fundamentals canonical ubuntu tutorials realpython great-tutorials and tips   financial   barchart iextrading signup and use their api to pull down stock info I have a python script that I use almost every day to pull data for analyzing stock data investing seekingalpha finviz   science / educational  Best YouTube Science Channels Vsauce Ted Talks Google Talks Khan Academy Science Channel Sixty Symbols  </description>
     </item>
     
     <item>
       <title>MT7630e Wifi build and install</title>
-      <link>https://www.companionway.net/post/2015-04-26-post2/</link>
+      <link>https://www.companionway.net/posts/2015-04-26-post2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-26-post2/</guid>
+      <guid>https://www.companionway.net/posts/2015-04-26-post2/</guid>
       <description>&lt;h1 id=&#34;wifi-mt7630e&#34;&gt;Wifi mt7630e&lt;/h1&gt;
 &lt;p&gt;Today&amp;rsquo;s hero is Jakub Kicinski. He rewrote the Mediatek MT7630e drivers
 to clean up the code &lt;em&gt;and&lt;/em&gt; work with the new kernels. I have been waiting
@@ -823,19 +923,19 @@ for someone to do this since they (ubuntu) moved forward from kernel 3.13.xxxx.&
     
     <item>
       <title>Projects</title>
-      <link>https://www.companionway.net/page/projects/</link>
+      <link>https://www.companionway.net/pages/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/page/projects/</guid>
+      <guid>https://www.companionway.net/pages/projects/</guid>
       <description>gomenu - [link to gomenu]  This is a bash shell script that builds and allows editing of menus on the command-line newspaper-hugo-subtheme - [link to newspaper-hugo-subtheme]  This project allows you to add a newspaper look and feel theme to an existing hugo website. myfiles: [discontinued] this is an older php project which allows html control of directories for file upload or download - not available publicly pyfiles: [link to pyfiles])https://github.</description>
     </item>
     
     <item>
       <title>SSH basics</title>
-      <link>https://www.companionway.net/post/2015-04-15-post1/</link>
+      <link>https://www.companionway.net/posts/2015-04-15-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-15-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-04-15-post1/</guid>
       <description>&lt;h1 id=&#34;ssh&#34;&gt;SSH&lt;/h1&gt;
 &lt;h2 id=&#34;debug-with-verbose-output&#34;&gt;Debug with verbose output&lt;/h2&gt;
 &lt;p&gt;$HOME/.ssh/config first and foremost - debug with -vvvv&lt;/p&gt;
@@ -859,10 +959,10 @@ Finland, designed the first version of the protocol (now called SSH-1) prompted 
     
     <item>
       <title>vagrant and ansible</title>
-      <link>https://www.companionway.net/post/2015-04-23-post1/</link>
+      <link>https://www.companionway.net/posts/2015-04-23-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-23-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-04-23-post1/</guid>
       <description>&lt;h1 id=&#34;vagrant-and-ansible&#34;&gt;vagrant and ansible&lt;/h1&gt;
 &lt;h2 id=&#34;putting-vagrant-on-steroids&#34;&gt;putting vagrant on steroids&lt;/h2&gt;
 &lt;p&gt;First, set up vagrant to create a group of guest virtual machines (see previous posts).
@@ -879,10 +979,10 @@ there are and handful of packages you typically want one every machine.&lt;/p&gt
     
     <item>
       <title>vagrant lxc nodes</title>
-      <link>https://www.companionway.net/post/2015-04-22-post1/</link>
+      <link>https://www.companionway.net/posts/2015-04-22-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-22-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-04-22-post1/</guid>
       <description>&lt;h1 id=&#34;using-vagrant-with-lxc&#34;&gt;Using vagrant with lxc&lt;/h1&gt;
 &lt;h3 id=&#34;one-command-vagrant-up&#34;&gt;One command; vagrant up&lt;/h3&gt;
 &lt;p&gt;Now that I successfully managed to get vagrant-lxc plugin to
@@ -902,10 +1002,10 @@ small network.&lt;/p&gt;</description>
     
     <item>
       <title>vagrant-lxc plugin</title>
-      <link>https://www.companionway.net/post/2015-04-21-post1/</link>
+      <link>https://www.companionway.net/posts/2015-04-21-post1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.companionway.net/post/2015-04-21-post1/</guid>
+      <guid>https://www.companionway.net/posts/2015-04-21-post1/</guid>
       <description>&lt;h1 id=&#34;vagrant-lxc-plugin&#34;&gt;vagrant-lxc plugin&lt;/h1&gt;
 &lt;p&gt;OK today I finally had time to get vagrant-lxc to work.
 Up until now I have had vagrant virtualbox working just fine but

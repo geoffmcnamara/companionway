@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{{ printf "<!-- **header** -->" | safeHTML }}
 <html lang="{{.Site.LanguageCode}}">
 	<head>
 		<meta charset="utf-8" />
@@ -54,7 +55,22 @@
     {{ partial "fonts.html" . }}
         {{ if in (printf "%v" $.Site.BaseURL) "localhost:" }}
             <!-- code for localhost only -->
-            <!--This is localhost-->
+            {{ printf "<!-- code for localhost only -->" | safeHTML }}
+            <br>googleAnalytics... would go here...<br>
+            <br>This is localhost so lets get some basic info...<br>
+            <p>
+                =========================================<br>
+                There are {{ len .Site.RegularPages }} pages currently on this site. <br>
+                {{ len (where .Site.RegularPages "Section" "=" "posts") }} not draft entries in section posts [<a href="/posts">/posts</a>],<br> 
+                {{ len (where .Site.RegularPages "Section" "=" "otherposts") }} not draft entries in section otherposts [<a href="/otherposts">/otherposts</a>],<br> 
+                {{ len (where .Site.RegularPages "Section" "=" "pages") }} not draft entries in section pages  [<a href="/pages">/pages</a>],<br> 
+                {{ len (where .Site.RegularPages "Section" "=" "musings") }} not draft entries in section musings [<a href="/musings">/musings</a>],<br> 
+                {{ len (where .Site.RegularPages "Section" "=" "articles") }} not draft entries in section articles [<a href="/articles">/articles</a>],<br> 
+                {{ len (where .Site.RegularPages "Section" "=" "hmpg-blocks") }} not draft entries in section  hmpg-blocks [<a href="/hmpg-blocks">/hmpg-blocks</a>],<br> 
+                {{ len (where .Site.RegularPages "Section" "=" "readysetcode") }} not draft entries in section  readysetcode [<a href="/readysetcode">/readysetcode</a>],<br> 
+                and {{ len (where .Site.RegularPages "Type" "=" "post") }} not draft entries of type post [<a href="/post">post</a>]<br>
+                =========================================
+            </p>
         {{ else }}
             <!--This is not localhost-->
             {{with  .Site.Params.googleAnalyticsUserID }}
@@ -82,6 +98,7 @@
 		{{ end }}
 	</head>
 	<body class="nav-closed">
-		{{ partial "navigation.html" . }}
         <!--DEBUG: loading partial navigation-->
+		{{ partial "navigation.html" . }}
 		<div class="site-wrapper">
+{{ printf "<!-- **EOB header** -->"  | safeHTML }}

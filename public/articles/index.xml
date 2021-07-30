@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>All rights reserved - companionway - 2019</copyright>
-    <lastBuildDate>Fri, 03 Nov 2017 10:54:24 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.companionway.net/articles/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 03 Nov 2017 10:54:24 +0200</lastBuildDate><atom:link href="https://www.companionway.net/articles/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How this theme evolved</title>
       <link>https://www.companionway.net/articles/newspaper-hugo-subtheme/</link>
@@ -20,7 +16,7 @@
       <guid>https://www.companionway.net/articles/newspaper-hugo-subtheme/</guid>
       <description>&lt;p&gt;First credit goes to Silke V at codepen.io name &amp;ldquo;silkine&amp;rdquo; [http://www.silkevoigts.de/].&lt;/p&gt;
 &lt;p&gt;Original source code can be found here: &lt;a href=&#34;https://codepen.io/silkine/pen/jldif&#34;&gt;https://codepen.io/silkine/pen/jldif&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://www.companionway.net/img/newspaper-hugo-subtheme.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../img/newspaper-hugo-subtheme.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;I had a coworker who had a non-profit business blog that wanted to offer a newsletter to her clients.
 So I got interested in finding an HTML format that gave an old traditional newspaper style.
 Silke offered a solution that provided a strong simple css base. Currently (2017) I find
@@ -71,7 +67,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent cursus tortor 
       <pubDate>Tue, 24 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://www.companionway.net/articles/article4/</guid>
-      <description>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &amp;ldquo;de Finibus Bonorum et Malorum&amp;rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &amp;ldquo;Lorem ipsum dolor sit amet..&amp;quot;, comes from a line in section 1.10.32.
+      <description>Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &amp;ldquo;de Finibus Bonorum et Malorum&amp;rdquo; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &amp;ldquo;Lorem ipsum dolor sit amet..&amp;rdquo;, comes from a line in section 1.10.32.
 &amp;ldquo;Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit&amp;hellip;&amp;rdquo;</description>
     </item>
     

@@ -1,8 +1,12 @@
+{{ printf "<!-- **widgets/publications** -->"  | safeHTML }}
 {{ $ := .root }}
 {{ $page := .page }}
 {{ $pubs_selected_len := .pubs_selected_len }}
 
-{{ $pubs_len := len (where $.Data.Pages "Type" "publication") }}
+<!--
+{ { $pubs_len := len (where $.Data.Pages "Type" "publication") } }
+-->
+{{ $pubs_len := len (where $.Site.Pages "Type" "publication") }}
 {{ if gt $pubs_len 0 }}
 <!-- Publications widget -->
 <section {{ if eq $pubs_selected_len 0 }}id="publications" {{ end }}class="home-section">
@@ -25,12 +29,18 @@
         {{ with $page.Content }}<p>{{ . | markdownify }}</p>{{ end }}
 
         {{ if $page.Params.detailed_list }}
-        {{ range first $page.Params.count (where $.Data.Pages "Type" "publication") }}
+        <!--
+        { { range first $page.Params.count (where $.Data.Pages "Type" "publication") } }
+        -->
+        {{ range first $page.Params.count (where $.Site.Pages "Type" "publication") }}
         {{ partial "publication_li_detailed" . }}
         {{ end }}
         {{ else }}
         <ul class="fa-ul">
-          {{ range first $page.Params.count (where $.Data.Pages "Type" "publication") }}
+            <!--
+          { { range first $page.Params.count (where $.Data.Pages "Type" "publication") } }
+            -->
+          {{ range first $page.Params.count (where $.Site.Pages "Type" "publication") }}
           {{ partial "publication_li_simple" . }}
           {{ end }}
         </ul>
@@ -41,3 +51,4 @@
   </div>
 </section>
 {{ end }}
+{{ printf "<!-- **EOB widgets/publications** -->"  | safeHTML }}

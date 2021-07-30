@@ -1,7 +1,11 @@
+{{ printf "<!-- **widgets/posts** -->"  | safeHTML }}
 {{ $ := .root }}
 {{ $page := .page }}
 
-{{ $posts_len := len (where (where $.Data.Pages "Type" "post") ".Params.notonhomepage" nil) }}
+<!--
+{ { $posts_len := len (where (where $.Data.Pages "Type" "post") ".Params.notonhomepage" nil) } }
+-->
+{{ $posts_len := len (where (where $.Site.Pages "Type" "post") ".Params.notonhomepage" nil) }}
 {{ if gt $posts_len 0 }}
 <!-- Blog Posts widget -->
 <section id="posts" class="home-section">
@@ -24,7 +28,10 @@
         {{ with $page.Content }}<p>{{ . | markdownify }}</p>{{ end }}
 
         {{ if $page.Params.tags }}
-          {{ range first $page.Params.count (where (where (where $.Data.Pages "Type" "post") ".Params.tags" "intersect" $page.Params.tags) ".Params.notonhomepage" nil) }}
+        <!--
+          { { range first $page.Params.count (where (where (where $.Data.Pages "Type" "post") ".Params.tags" "intersect" $page.Params.tags) ".Params.notonhomepage" nil) } }
+        -->
+          {{ range first $page.Params.count (where (where (where $.Site.Pages "Type" "post") ".Params.tags" "intersect" $page.Params.tags) ".Params.notonhomepage" nil) }}
             {{ $params := dict "post" . "page" $page }}
             {{ partial "post_li" $params }}
           {{ end }}
@@ -40,3 +47,4 @@
   </div>
 </section>
 {{ end }}
+{{ printf "<!-- **EOB widgets/posts** -->"  | safeHTML }}

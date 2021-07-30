@@ -1,5 +1,5 @@
 
-
+<!-- **articles/single** -->
 <!DOCTYPE html>
 
 <html>
@@ -58,7 +58,7 @@
 		
 		
 		 <li style="list-style:none;">
-			 <a href="/">
+			 <a href="../../">
 				 
 				 <span>Home</span>
 			 </a>
@@ -67,7 +67,7 @@
 		 
 		
 		 <li style="list-style:none;">
-			 <a href="/post">
+			 <a href="../../posts">
 				 
 				 <span>Posts</span>
 			 </a>
@@ -76,7 +76,7 @@
 		 
 		
 		 <li style="list-style:none;">
-			 <a href="/page/about/">
+			 <a href="../../pages/about/">
 				 
 				 <span>About</span>
 			 </a>
@@ -85,7 +85,7 @@
 		 
 		
 		 <li style="list-style:none;">
-			 <a href="/page/dlfiles/">
+			 <a href="../../pages/dlfiles/">
 				 
 				 <span>Download Files</span>
 			 </a>
@@ -94,7 +94,16 @@
 		 
 		
 		 <li style="list-style:none;">
-			 <a href="/page/links/">
+			 <a href="../../financial/">
+				 
+				 <span>Financial</span>
+			 </a>
+			 
+		 </li>
+		 
+		
+		 <li style="list-style:none;">
+			 <a href="../../pages/links/">
 				 
 				 <span>Links</span>
 			 </a>
@@ -103,7 +112,7 @@
 		 
 		
 		 <li style="list-style:none;">
-			 <a href="/articles/">
+			 <a href="../../articles/">
 				 
 				 <span>Newspaper</span>
 			 </a>
@@ -112,7 +121,16 @@
 		 
 		
 		 <li style="list-style:none;">
-			 <a href="/page/projects/">
+			 <a href="../../posts/">
+				 
+				 <span>Posts</span>
+			 </a>
+			 
+		 </li>
+		 
+		
+		 <li style="list-style:none;">
+			 <a href="../../pages/projects/">
 				 
 				 <span>Projects</span>
 			 </a>
@@ -159,7 +177,7 @@
 	<br>
 	<p>First credit goes to Silke V at codepen.io name &ldquo;silkine&rdquo; [http://www.silkevoigts.de/].</p>
 <p>Original source code can be found here: <a href="https://codepen.io/silkine/pen/jldif">https://codepen.io/silkine/pen/jldif</a></p>
-<p><img src="/img/newspaper-hugo-subtheme.png" alt=""></p>
+<p><img src="../../img/newspaper-hugo-subtheme.png" alt=""></p>
 <p>I had a coworker who had a non-profit business blog that wanted to offer a newsletter to her clients.
 So I got interested in finding an HTML format that gave an old traditional newspaper style.
 Silke offered a solution that provided a strong simple css base. Currently (2017) I find
@@ -175,8 +193,39 @@ files. Running hugo new articles/mynewarticle.md will create a new file with the
 pulled from ./archtypes/articles.md.</p>
 <p>This project becomes a drop in addition to any hugo theme to add a newspaper type subtheme section.</p>
 <p>It might be useful to examine the directoy file structure for this project:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre>
+============================================================
++-----archtypes
+|     +-----articles.md # this file is used by hugo when you create a new article - provides front matter
++-----content
+|     +-----articles # this is where all user created article markdown postings reside
+|     |     +-----_index.md # this file is used by hugo to read front matter and populate general variable - similar to a config file
+|     |     +-----newspaper-hugo-subtheme.md # this file - an article posting
++-----layouts
+|     +-----articles # layout template specific to single page articles
+|     |     +-----single.html # hugo uses this template to produce and single page for a posted article
+|     +-----partials # tmeplates used for building all newsletter-hugo-subtheme pages - thanks and credit to codepen.io name "silkine"
+|     |     +-----np-cols-ftr.html
+|     |     +-----np-cols-hdr.html
+|     |     +-----np-ftr.html
+|     |     +-----np-hdr.html
+|     |     +-----np-morebox.html
+|     |     +-----np-nav.html
+|     |     +-----np-weather.html
+|     +-----section # hugo uses this directory to find "section" specific "list" templates
+|     |     +-----articles.html # hugo uses this template to combine postings into a newletter front page
++-----static
+|     +-----css # needed newspaper styles - (can be shared with other themes of course)
+|     |     +-----np-gen.css # newspaper general styles
+|     |     +-----np-nav.css # styles needed for menu navigation
+|     +-----js # directory for local javascript code - (can be shared with other themes of course)
+|     |     +-----np-nav.js # navigation menu javascript
+|     |     +-----np-weather.js # weatherbox javascript - credit and thanks to simpleweatherjs.com
+|     +-----img # directory for all images used in article (can be shared with other themes of course)
+|     |     +-----np.jpg # used as the background for newpaper-hugo-subtheme
+|     |     +-----royal101.jpg # a sample only
+============================================================
+</pre>
 <p>I have used the hugo &ldquo;casper&rdquo; theme (<a href="https://github.com/vjeantet/hugo-theme-casper.git">https://github.com/vjeantet/hugo-theme-casper.git</a>) as my standard for some time now so the
 menu format is in this project is similar to (but not as good as) the casper theme navigation menu. Note also that the menu
 system used here is the standard hugo menu.main method for generating menu entries. These entries come from either
@@ -208,6 +257,7 @@ contained within. Please let me know of any suggestions or improvements.</p>
 <p><a href="mailto:geoff.mcnamara@gmail.com">geoff.mcnamara@gmail.com</a></p>
 </div> 
 
+<!-- **np-cols-ftr** -->
 </div>
 </div>
 
@@ -215,7 +265,7 @@ contained within. Please let me know of any suggestions or improvements.</p>
 
 	
 	 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.simpleWeather/3.1.0/jquery.simpleWeather.min.js"></script>
-	 <script type="text/javascript" src="/js/np-weather.js"></script>
+	 <script type="text/javascript" src="../../js/np-weather.js"></script>
 
 	 
 	 <footer class="np-footer">

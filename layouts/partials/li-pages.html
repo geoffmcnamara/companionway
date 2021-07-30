@@ -1,3 +1,4 @@
+{{ printf "<!-- **li-pages** -->"  | safeHTML }}
 {{ $baseurl := .Site.BaseURL }}
 <article class="{{ .Section }}">
 	<header class="post-header">
@@ -35,3 +36,4 @@
 		</time>
 	</footer>
 </article>
+{{ printf "<!-- **EOB li-pages** -->"  | safeHTML }}

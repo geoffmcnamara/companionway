@@ -1,3 +1,4 @@
+{{ printf "<!-- **404** -->"  | safeHTML }}
 {{ partial "header.html" . }}
 
 {{if .Site.Params.cover}}
@@ -5,7 +6,6 @@
 	{{else}}
 	<header class="main-header no-cover">
 		{{end}}
-
 		<nav class="main-nav overlay clearfix">
 			{{ if .Site.Params.logo }}
 			<a class="blog-logo" href="{{ .Permalink }}"><img src="{{.Site.BaseURL}}{{ .Site.Params.logo }}" alt="Blog Logo" /></a>
@@ -77,3 +77,4 @@
 	</main>
 
 	{{ partial "footer.html" . }}
+{{ printf "<!-- **EOB 404** -->"  | safeHTML }}
